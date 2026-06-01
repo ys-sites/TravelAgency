@@ -1,0 +1,102 @@
+﻿@import "tailwindcss";
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 26 24% 14%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 26 24% 14%;
+
+  --primary: 26 32% 21%; /* Earth brown: #4A3525 */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 35 30% 98%; /* Cream: #FAF8F5 */
+  --secondary-foreground: 26 32% 21%;
+
+  --muted: 24 10% 92%;
+  --muted-foreground: 24 8% 50%;
+
+  --accent: 358 68% 46%; /* Red price accent: #c2272d */
+  --accent-foreground: 0 0% 100%;
+
+  --border: 24 10% 88%;
+  --input: 24 10% 88%;
+  --ring: 26 32% 21%;
+
+  --radius: 1.5rem;
+
+  /* Brand specifics */
+  --brand-brown: #4A3525;
+  --brand-brown-dark: #322318;
+  --brand-cream: #FAF8F5;
+  --brand-red: #c2272d;
+  --brand-gray: #8c827a;
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.16);
+}
+
+@theme {
+  --font-heading: var(--font-montserrat);
+  --font-serif: var(--font-playfair-display);
+  --font-body: var(--font-inter);
+
+  --color-wonderland-brown: var(--brand-brown);
+  --color-wonderland-brown-dark: var(--brand-brown-dark);
+  --color-wonderland-cream: var(--brand-cream);
+  --color-wonderland-red: var(--brand-red);
+  --color-wonderland-gray: var(--brand-gray);
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  --shadow-card-soft: 0 10px 40px rgba(74, 53, 37, 0.04), 0 2px 8px rgba(74, 53, 37, 0.02);
+  --shadow-glass: inset 0 1px 0 rgba(255,255,255,0.1), 0 12px 40px rgba(0,0,0,0.15);
+}
+
+/* Custom Utilities under @utility since Tailwind v4 uses @utility instead of @layer components */
+@utility glass-nav {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 12px 36px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@utility glass-tag {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@utility fine-brown-border {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(74, 53, 37, 0.12),
+      rgba(74, 53, 37, 0.04) 45%,
+      rgba(74, 53, 37, 0.2)
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-inter), sans-serif;
+}
