@@ -4,54 +4,55 @@ import { useLang } from "../context/lang-context";
 
 const t = {
   description: {
-    FR: "Nous organisons des voyages d'exception en Russie et dans les contrées sauvages voisines. Explorez avec authenticité et raffinement.",
+    TN: "Мы организуем исключительные путешествия по России и диким приграничным территориям. Откройте для себя первозданную красоту с премиальным комфортом.",
     EN: "We curate exceptional journeys across Russia and neighboring wild frontiers. Discover the raw beauty with premium comfort."
   },
   destinations: {
-    FR: "Destinations",
+    TN: "Направления",
     EN: "Destinations"
   },
   altai: {
-    FR: "Monts Altaï",
+    TN: "Алтайские горы",
     EN: "Altai Mountains"
   },
   kamchatka: {
-    FR: "Kamtchatka",
+    TN: "Полуостров Камчатка",
     EN: "Kamchatka Peninsula"
   },
   teriberka: {
-    FR: "Mer de Barents & Teriberka",
+    TN: "Баренцево море и Териберка",
     EN: "Barents Sea & Teriberka"
   },
   baikal: {
-    FR: "Lac Baïkal",
+    TN: "Озеро Байкал",
     EN: "Lake Baikal"
   },
   company: {
-    FR: "Entreprise",
+    TN: "Компания",
     EN: "Company"
   },
   about: {
-    FR: "À propos de nous",
+    TN: "О нас",
     EN: "About Us"
   },
   news: {
-    FR: "Actualités",
+    TN: "Новости",
     EN: "News & Stories"
   },
   vacancies: {
-    FR: "Offres d'emploi",
+    TN: "Вакансии",
     EN: "Careers"
   },
   contact: {
-    FR: "Contact",
+    TN: "Контакты",
     EN: "Contact"
   },
   copyright: {
-    FR: "© 2026 WonderLand Tour. Tous droits réservés.",
+    TN: "© 2026 WonderLand Tour. Все права защищены.",
     EN: "© 2026 WonderLand Tour. All rights reserved."
   }
 };
+
 
 export default function Footer() {
   const { lang } = useLang();

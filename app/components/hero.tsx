@@ -5,14 +5,15 @@ import { useLang } from "../context/lang-context";
 
 const t = {
   welcome: {
-    FR: "BIENVENUE DANS VOTRE",
+    TN: "ДОБРО ПОЖАЛОВАТЬ В",
     EN: "WELCOME TO YOUR",
   },
   subtext: {
-    FR: "Nous organisons des circuits en Russie et dans les pays voisins. Découvrez la beauté de votre pays d'origine avec WonderLand Tour.",
+    TN: "Мы организуем туры по России и ближнему зарубежью. Откройте для себя красоту родной страны с WonderLand Tour.",
     EN: "We organize tours in Russia and neighboring countries. Discover the beauty of your home country with WonderLand Tour.",
   },
 };
+
 
 export default function Hero() {
   const { lang } = useLang();

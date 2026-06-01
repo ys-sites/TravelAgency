@@ -4,12 +4,12 @@ import { ChevronDown } from "lucide-react";
 import { useLang } from "../context/lang-context";
 
 const t = {
-  tours:     { FR: "Circuits", EN: "Tours" },
-  directions:{ FR: "Destinations", EN: "Directions" },
-  about:     { FR: "À propos", EN: "About us" },
-  news:      { FR: "Actualités", EN: "News" },
-  vacancies: { FR: "Offres", EN: "Vacancies" },
-  contacts:  { FR: "Contact", EN: "Contacts" },
+  tours:     { TN: "Туры", EN: "Tours" },
+  directions:{ TN: "Направления", EN: "Directions" },
+  about:     { TN: "О нас", EN: "About us" },
+  news:      { TN: "Новости", EN: "News" },
+  vacancies: { TN: "Вакансии", EN: "Vacancies" },
+  contacts:  { TN: "Контакты", EN: "Contacts" },
 };
 
 export default function Navbar() {
@@ -48,18 +48,18 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Language Toggle FR / EN */}
+        {/* Language Toggle TN / EN */}
         <div className="flex items-center gap-2 bg-black/20 rounded-full p-1 border border-white/10">
           <button
-            id="lang-fr"
-            onClick={() => setLang("FR")}
+            id="lang-tn"
+            onClick={() => setLang("TN")}
             className={`flex h-8 w-8 items-center justify-center rounded-full text-[11px] font-bold transition-all duration-300 ${
-              lang === "FR"
-                ? "bg-white text-wonderland-brown shadow-sm"
-                : "text-white/60 hover:text-white"
+              lang === "TN"
+                ? "bg-black/60 text-white shadow-sm"
+                : "text-white/60 hover:text-white cursor-pointer"
             }`}
           >
-            FR
+            TN
           </button>
           <button
             id="lang-en"
@@ -67,7 +67,7 @@ export default function Navbar() {
             className={`flex h-8 items-center gap-1 rounded-full px-4 text-[11px] font-bold transition-all duration-300 ${
               lang === "EN"
                 ? "bg-white text-wonderland-brown shadow-sm"
-                : "text-white/60 hover:text-white"
+                : "text-white/60 hover:text-white cursor-pointer"
             }`}
           >
             EN <ChevronDown className="h-3 w-3" />
@@ -75,5 +75,6 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+
   );
 }

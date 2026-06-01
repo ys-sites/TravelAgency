@@ -9,48 +9,49 @@ export default function Stats() {
     {
       value: "2 124 000",
       label: {
-        FR: "kilomètres",
+        TN: "километров",
         EN: "kilometers"
       },
       subtext: {
-        FR: "parcourus par nos voyageurs",
+        TN: "пройдено нашими путешественниками",
         EN: "passed by our travelers"
       }
     },
     {
       value: "8 200",
       label: {
-        FR: "voyageurs",
+        TN: "путешественников",
         EN: "travelers"
       },
       subtext: {
-        FR: "ont participé à nos circuits",
+        TN: "приняли участие в наших турах",
         EN: "participated in our tours"
       }
     },
     {
       value: "345",
       label: {
-        FR: "avis positifs",
+        TN: "положительных отзывов",
         EN: "positive feedback"
       },
       subtext: {
-        FR: "sur toutes les années d'existence",
+        TN: "за все годы работы компании",
         EN: "for all years of the company"
       }
     },
     {
       value: "14",
       label: {
-        FR: "années d'activité",
+        TN: "лет работы",
         EN: "years of work"
       },
       subtext: {
-        FR: "pour vos expériences merveilleuses",
+        TN: "для ваших чудесных впечатлений",
         EN: "for your wonderful experiences"
       }
     }
   ];
+
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

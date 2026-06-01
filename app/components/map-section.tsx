@@ -6,27 +6,27 @@ import { useLang } from "../context/lang-context";
 
 const t = {
   getKnow: {
-    FR: "DÉCOUVREZ LES",
+    TN: "ПОЗНАКОМЬТЕСЬ С",
     EN: "GET TO KNOW"
   },
   title: {
-    FR: "Monts Altaï",
+    TN: "Алтайскими горами",
     EN: "Altai Mountains"
   },
   description: {
-    FR: "Des lacs turquoise et des rivières tumultueuses, des plaines steppiques et des sommets montagneux, ainsi que les plus belles routes du monde et une vallée semblable à Mars vous attendent.",
+    TN: "Бирюзовые озера и бурные реки, степные просторы и горные вершины, самые красивые дороги мира и марсианская долина ждут вас",
     EN: "Turquoise lakes and turbulent rivers, steppe expanses and mountain peaks, and the most beautiful roads in the world and a valley similar to Mars are waiting for you."
   },
   attractions: {
-    FR: "attractions",
+    TN: "достопримечательности",
     EN: "attractions"
   },
   similarDestinations: {
-    FR: "destinations similaires",
+    TN: "похожие направления",
     EN: "similar destinations"
   },
   chooseTour: {
-    FR: "CHOISIR UN CIRCUIT",
+    TN: "ВЫБРАТЬ ТУР",
     EN: "CHOOSE A TOUR"
   }
 };
@@ -35,12 +35,13 @@ export default function MapSection() {
   const { lang } = useLang();
 
   const locations = [
-    { name: { FR: "Mont Béloukh", EN: "Mount Belukha" }, top: "15%", left: "75%" },
-    { name: { FR: "Lac Teletskoïe", EN: "Lake Teletskoye" }, top: "45%", left: "82%" },
-    { name: { FR: "Grottes de Tavdinsky", EN: "Tavdinsky Caves" }, top: "65%", left: "70%" },
-    { name: { FR: "Cascade de Korbu", EN: "Korbu Waterfall" }, top: "52%", left: "48%" },
-    { name: { FR: "Katu-Yaryk", EN: "Katu-Yaryk" }, top: "78%", left: "55%" }
+    { name: { TN: "Гора Белуха", EN: "Mount Belukha" }, top: "15%", left: "75%" },
+    { name: { TN: "Телецкое озеро", EN: "Lake Teletskoye" }, top: "45%", left: "82%" },
+    { name: { TN: "Тавдинские пещеры", EN: "Tavdinsky Caves" }, top: "65%", left: "70%" },
+    { name: { TN: "Водопад Корбу", EN: "Korbu Waterfall" }, top: "52%", left: "48%" },
+    { name: { TN: "Кату-Ярык", EN: "Katu-Yaryk" }, top: "78%", left: "55%" }
   ];
+
 
   return (
     <div className="relative max-w-[1200px] mx-auto my-20 px-8 py-16 rounded-[2.5rem] overflow-hidden bg-wonderland-cream/30 border border-wonderland-cream/50 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

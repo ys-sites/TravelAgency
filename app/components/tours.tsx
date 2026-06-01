@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from "react";
 import { motion } from "motion/react";
 import { Calendar, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "../context/lang-context";
@@ -7,13 +8,13 @@ import { useLang } from "../context/lang-context";
 interface TourCard {
   id: number;
   image: string;
-  category: { FR: string; EN: string };
-  title: { FR: string; EN: string };
-  description: { FR: string; EN: string };
-  days: { FR: string; EN: string };
-  people: { FR: string; EN: string };
-  oldPrice: { FR: string; EN: string };
-  price: { FR: string; EN: string };
+  category: { TN: string; EN: string };
+  title: { TN: string; EN: string };
+  description: { TN: string; EN: string };
+  days: { TN: string; EN: string };
+  people: { TN: string; EN: string };
+  oldPrice: string;
+  price: string;
   iconType: "mountain" | "water" | "lighthouse";
 }
 
@@ -22,120 +23,112 @@ const toursList: TourCard[] = [
     id: 1,
     image: "/images/tour-altai.png",
     category: {
-      FR: "rafting sur rivière - excursions en montagne - randonnée sous tente",
+      TN: "рафтинг по рекам - горные экскурсии - походы с палатками",
       EN: "river rafting - mountain excursions - hiking with tents"
     },
     title: {
-      FR: "Monts Altaï — immersion totale",
+      TN: "Алтайские горы — полное погружение",
       EN: "Altai mountains — full immersion"
     },
     description: {
-      FR: "Les plus beaux paysages du territoire de l'Altaï en 2 semaines",
+      TN: "Лучшие достопримечательности Алтайского края за 2 недели",
       EN: "The best sights of the Altai Territory in 2 weeks"
     },
     days: {
-      FR: "14 jours",
+      TN: "14 дней",
       EN: "14 days"
     },
     people: {
-      FR: "2 personnes",
-      EN: "2 people"
+      TN: "2 человека",
+      EN: "2 person"
     },
-    oldPrice: {
-      FR: "2 150 $ CAD",
-      EN: "$2,150 CAD"
-    },
-    price: {
-      FR: "1 850 $ CAD",
-      EN: "$1,850 CAD"
-    },
+    oldPrice: "140 800 P",
+    price: "120 800 P",
     iconType: "mountain"
   },
   {
     id: 2,
     image: "/images/tour-kamchatka.png",
     category: {
-      FR: "sources chaudes - excursions en montagne - geysers",
+      TN: "горячие источники - горные экскурсии - гейзеры",
       EN: "hot springs - mountain excursions - geysers"
     },
     title: {
-      FR: "Aventures au Kamtchatka",
+      TN: "Приключения на Камчатке",
       EN: "Adventures by Kamchatka"
     },
     description: {
-      FR: "À la recherche d'aventures. Circuit au Kamtchatka sans tente ni sac à dos",
+      TN: "В поисках приключений. Тур на Камчатку без палаток и рюкзаков",
       EN: "In search of adventures. Tour to Kamchatka without tents and backpacks"
     },
     days: {
-      FR: "7 jours",
+      TN: "7 дней",
       EN: "7 days"
     },
     people: {
-      FR: "1 personne",
+      TN: "1 человек",
       EN: "1 person"
     },
-    oldPrice: {
-      FR: "1 500 $ CAD",
-      EN: "$1,500 CAD"
-    },
-    price: {
-      FR: "1 290 $ CAD",
-      EN: "$1,290 CAD"
-    },
+    oldPrice: "98 600 P",
+    price: "84 200 P",
     iconType: "water"
   },
   {
     id: 3,
     image: "/images/tour-teriberka.png",
     category: {
-      FR: "circuit arctique - croisière en bateau - aurores boréales",
+      TN: "арктический тур - круиз на корабле - северное сияние",
       EN: "arctic tour - cruise in ship - northern lights"
     },
     title: {
-      FR: "Voyage à Teriberka",
+      TN: "Путешествие в Териберку",
       EN: "Journey to Teriberka"
     },
     description: {
-      FR: "Ressourcez-vous sur les rives de la mer de Barents et découvrez la vie dans le Grand Nord russe",
+      TN: "Перезагрузка на берегах Баренцева моря и знакомство с жизнью Русского Севера",
       EN: "Reboot on the shores of the Barents Sea and find out how the Russian North lives"
     },
     days: {
-      FR: "4 jours",
+      TN: "4 дня",
       EN: "4 days"
     },
     people: {
-      FR: "1 personne",
+      TN: "1 человек",
       EN: "1 person"
     },
-    oldPrice: {
-      FR: "1 050 $ CAD",
-      EN: "$1,050 CAD"
-    },
-    price: {
-      FR: "790 $ CAD",
-      EN: "$790 CAD"
-    },
+    oldPrice: "68 800 P",
+    price: "51 700 P",
     iconType: "lighthouse"
   }
 ];
 
 const t = {
   title: {
-    FR: "Spécialement pour vous",
+    TN: "Специально для вас",
     EN: "Special for you"
   },
   allTours: {
-    FR: "tous les circuits",
+    TN: "все туры",
     EN: "all tours"
   },
   book: {
-    FR: "RÉSERVER",
+    TN: "ЗАБРОНИРОВАТЬ",
     EN: "BOOK"
   }
 };
 
 export default function Tours() {
   const { lang } = useLang();
+  const scrollRef = React.useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth / 2;
+      const scrollTo = direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-20 mt-12">
@@ -152,14 +145,23 @@ export default function Tours() {
       {/* Grid of Cards */}
       <div className="relative">
         {/* Navigation Arrows */}
-        <button className="absolute left-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-10 w-10 items-center justify-center rounded-full border border-wonderland-cream bg-white text-wonderland-brown hover:bg-wonderland-cream transition-colors shadow-sm cursor-pointer">
+        <button
+          onClick={() => scroll("left")}
+          className="absolute left-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-10 w-10 items-center justify-center rounded-full border border-wonderland-cream bg-white text-wonderland-brown hover:bg-wonderland-cream transition-colors shadow-sm cursor-pointer z-20"
+        >
           <ChevronLeft className="h-5 w-5" />
         </button>
-        <button className="absolute right-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-10 w-10 items-center justify-center rounded-full border border-wonderland-cream bg-white text-wonderland-brown hover:bg-wonderland-cream transition-colors shadow-sm cursor-pointer">
+        <button
+          onClick={() => scroll("right")}
+          className="absolute right-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-10 w-10 items-center justify-center rounded-full border border-wonderland-cream bg-white text-wonderland-brown hover:bg-wonderland-cream transition-colors shadow-sm cursor-pointer z-20"
+        >
           <ChevronRight className="h-5 w-5" />
         </button>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          ref={scrollRef}
+          className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible scrollbar-none snap-x snap-mandatory pb-4 w-full"
+        >
           {toursList.map((tour, index) => (
             <motion.div
               key={tour.id}
@@ -167,7 +169,7 @@ export default function Tours() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-              className="group flex flex-col rounded-[1.5rem] bg-[#FFFFFF] p-3 border border-wonderland-cream/60 shadow-sm hover:shadow-card-soft transition-all duration-300"
+              className="group flex flex-col min-w-[280px] md:min-w-0 snap-center rounded-[1.5rem] bg-[#FFFFFF] p-3 border border-wonderland-cream/60 shadow-sm hover:shadow-card-soft transition-all duration-300 flex-1"
             >
               {/* Image Container */}
               <div className="relative w-full h-[220px] overflow-hidden rounded-[1.2rem]">
@@ -180,17 +182,23 @@ export default function Tours() {
                 <div className="glass-tag absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full text-white">
                   {tour.iconType === "mountain" && (
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L2 12h3v8h14v-8h3L12 3z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m8 3 4 8 5-5 5 15H2L8 3z" />
                     </svg>
                   )}
                   {tour.iconType === "water" && (
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M3 14h18m-9-9v14" />
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 20 Q 5 17 8 20 T 14 20 T 20 20 T 22 20" />
+                      <path d="M6 16 L 10 8 L 14 13 L 17 9 L 21 16" />
                     </svg>
                   )}
                   {tour.iconType === "lighthouse" && (
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v20M8 5h8M9 9h6M10 13h4M11 17h2" />
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 21h6" />
+                      <path d="M10 21l1-12h2l1 12" />
+                      <path d="M11 9V5a1 1 0 0 1 2 0v4" />
+                      <path d="M9 5h6" />
+                      <path d="M12 2v2" />
+                      <path d="M8 12h8" />
                     </svg>
                   )}
                 </div>
@@ -227,10 +235,10 @@ export default function Tours() {
                 <div className="flex items-center justify-between pt-4 mt-auto">
                   <div className="flex flex-col">
                     <span className="text-[11px] line-through text-wonderland-gray/60 leading-none mb-1">
-                      {tour.oldPrice[lang]}
+                      {tour.oldPrice}
                     </span>
                     <span className="text-[20px] font-bold text-wonderland-red font-heading leading-none">
-                      {tour.price[lang]}
+                      {tour.price}
                     </span>
                   </div>
                   <button className="rounded-full bg-wonderland-brown px-6 py-2.5 text-[11px] font-bold uppercase tracking-wider text-white hover:bg-wonderland-brown-dark transition-colors cursor-pointer">
@@ -245,3 +253,4 @@ export default function Tours() {
     </div>
   );
 }
+

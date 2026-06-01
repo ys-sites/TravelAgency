@@ -5,18 +5,19 @@ import { useLang } from "../context/lang-context";
 
 const t = {
   placeholder: {
-    FR: "Saisir le nom du circuit",
+    TN: "Введите название тура",
     EN: "Enter tour name"
   },
   dates: {
-    FR: "14 mars 2022 - 14 avril 2022",
-    EN: "March 14, 2022 - April 14, 2022"
+    TN: "14.03.2022 - 14.04.2022",
+    EN: "14.03.2022 - 14.04.2022"
   },
   search: {
-    FR: "RECHERCHER DES CIRCUITS",
+    TN: "НАЙТИ ТУРЫ",
     EN: "SEARCH TOURS"
   }
 };
+
 
 export default function SearchBar() {
   const { lang } = useLang();
