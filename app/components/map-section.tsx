@@ -6,28 +6,28 @@ import { useLang } from "../context/lang-context";
 
 const t = {
   getKnow: {
-    TN: "ПОЗНАКОМЬТЕСЬ С",
-    EN: "GET TO KNOW"
+    FR: "DÉCOUVREZ LE ROYAUME",
+    EN: "GET TO KNOW THE KINGDOM"
   },
   title: {
-    TN: "Алтайскими горами",
-    EN: "Altai Mountains"
+    FR: "Merveilles du Maroc",
+    EN: "Wonders of Morocco"
   },
   description: {
-    TN: "Бирюзовые озера и бурные реки, степные просторы и горные вершины, самые красивые дороги мира и марсианская долина ждут вас",
-    EN: "Turquoise lakes and turbulent rivers, steppe expanses and mountain peaks, and the most beautiful roads in the world and a valley similar to Mars are waiting for you."
+    FR: "Des souks animés de Marrakech aux dunes spectaculaires du Sahara en passant par les sommets enneigés de l'Atlas, vivez un dépaysement total.",
+    EN: "From the bustling souks of Marrakech to the majestic Sahara dunes and the high Atlas peaks, experience a sensory immersion."
   },
   attractions: {
-    TN: "достопримечательности",
-    EN: "attractions"
+    FR: "itinéraires",
+    EN: "itineraries"
   },
   similarDestinations: {
-    TN: "похожие направления",
-    EN: "similar destinations"
+    FR: "voyage sur mesure",
+    EN: "custom trips"
   },
   chooseTour: {
-    TN: "ВЫБРАТЬ ТУР",
-    EN: "CHOOSE A TOUR"
+    FR: "EXPLORER",
+    EN: "EXPLORE"
   }
 };
 
@@ -35,90 +35,63 @@ export default function MapSection() {
   const { lang } = useLang();
 
   const locations = [
-    { name: { TN: "Гора Белуха", EN: "Mount Belukha" }, top: "15%", left: "75%" },
-    { name: { TN: "Телецкое озеро", EN: "Lake Teletskoye" }, top: "45%", left: "82%" },
-    { name: { TN: "Тавдинские пещеры", EN: "Tavdinsky Caves" }, top: "65%", left: "70%" },
-    { name: { TN: "Водопад Корбу", EN: "Korbu Waterfall" }, top: "52%", left: "48%" },
-    { name: { TN: "Кату-Ярык", EN: "Katu-Yaryk" }, top: "78%", left: "55%" }
+    { name: { FR: "Palais de Marrakech", EN: "Marrakech Palace" }, top: "65%", left: "32%" },
+    { name: { FR: "Dunes du Sahara", EN: "Sahara Dunes" }, top: "78%", left: "75%" },
+    { name: { FR: "Mont Toubkal (Atlas)", EN: "Mount Toubkal" }, top: "52%", left: "45%" },
+    { name: { FR: "Aït-Ben-Haddou", EN: "Ait Benhaddou Kasbah" }, top: "45%", left: "58%" },
+    { name: { FR: "Chefchaouen la Bleue", EN: "Chefchaouen Blue City" }, top: "18%", left: "62%" }
   ];
 
-
   return (
-    <div className="relative max-w-[1200px] mx-auto my-20 px-8 py-16 rounded-[2.5rem] overflow-hidden bg-wonderland-cream/30 border border-wonderland-cream/50 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <div className="relative max-w-[1200px] mx-auto my-20 px-8 py-16 rounded-[2.5rem] overflow-hidden bg-zinc-950/60 border border-white/10 shadow-glass grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-white">
       {/* Sepia landscape background mask */}
       <img
-        src="/images/altai-map-bg.png"
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.08] mix-blend-multiply pointer-events-none"
+        src="/images/morocco-sahara-dunes.png"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.05] pointer-events-none"
         alt="Map background"
       />
 
       {/* Left content description */}
       <div className="lg:col-span-5 flex flex-col items-start z-10">
-        <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-wonderland-gray">
+        <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-brand-gold">
           {t.getKnow[lang]}
         </span>
-        <h2 className="flex items-center gap-3 font-serif text-[42px] font-bold text-wonderland-brown mt-2 leading-tight">
-          <svg className="h-8 w-8 text-wonderland-brown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
+        <h2 className="flex items-center gap-3 font-serif text-[42px] font-bold text-white mt-2 leading-tight uppercase">
+          <svg className="h-8 w-8 text-brand-gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
           </svg>
           {t.title[lang]}
         </h2>
-        <p className="text-[13px] leading-relaxed text-wonderland-gray/90 mt-6 max-w-[420px] font-light">
+        <p className="text-[13px] leading-relaxed text-white/60 mt-6 max-w-[420px] font-light">
           {t.description[lang]}
         </p>
 
         {/* Links */}
-        <div className="flex flex-wrap items-center gap-6 mt-8">
-          <a href="#" className="text-[12px] font-bold uppercase tracking-wider text-wonderland-brown/85 hover:text-wonderland-brown hover:underline">
+        <div className="flex flex-wrap items-center gap-6 mt-8 font-mono text-[11px] tracking-wider uppercase">
+          <a href="/#portfolios" className="text-brand-gold hover:text-white hover:underline transition-colors">
             {t.attractions[lang]} &rarr;
           </a>
-          <a href="#" className="text-[12px] font-bold uppercase tracking-wider text-wonderland-brown/85 hover:text-wonderland-brown hover:underline">
+          <a href="/custom-trip" className="text-brand-gold hover:text-white hover:underline transition-colors">
             {t.similarDestinations[lang]} &rarr;
           </a>
         </div>
 
         {/* CTA Button */}
-        <button className="mt-8 rounded-full border-2 border-wonderland-brown bg-transparent px-8 py-3 text-[11px] font-bold uppercase tracking-wider text-wonderland-brown hover:bg-wonderland-brown hover:text-white transition-all duration-300 cursor-pointer">
+        <a href="/#portfolios" className="mt-8 rounded-full border border-brand-gold/50 bg-brand-gold/10 hover:bg-white hover:text-black hover:border-white px-8 py-3 text-[11px] font-bold uppercase tracking-wider text-white transition-luxury cursor-pointer inline-block">
           {t.chooseTour[lang]}
-        </button>
+        </a>
       </div>
 
       {/* Right Map illustration */}
-      <div className="lg:col-span-7 relative flex items-center justify-center z-10 min-h-[400px] w-full bg-black/5 rounded-[2rem] border border-wonderland-cream/30 overflow-hidden">
+      <div className="lg:col-span-7 relative flex items-center justify-center z-10 min-h-[400px] w-full rounded-[2rem] border border-white/10 overflow-hidden shadow-inner">
         {/* Map image base */}
         <img
-          src="/images/altai-map-bg.png"
-          className="absolute inset-0 w-full h-full object-cover brightness-95 contrast-105"
+          src="/images/morocco-sahara-dunes.png"
+          className="absolute inset-0 w-full h-full object-cover brightness-75 contrast-[1.05]"
           alt={t.title[lang]}
         />
-
-        {/* Hiker transparent overlay */}
-        <img
-          src="/images/people-cliff.png"
-          className="absolute bottom-0 right-0 w-[280px] object-contain pointer-events-none z-20"
-          alt="Hikers cliff"
-        />
-
-        {/* Dotted paths SVG overlay */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" xmlns="http://www.w3.org/2000/svg">
-          {/* Path linking locations: Katu-Yaryk -> Korbu -> Caves -> Belukha -> Teletskoye */}
-          <path
-            d="M 280 320 Q 230 260 250 210 T 360 110 T 420 80"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeDasharray="4 4"
-            className="opacity-70"
-          />
-          <path
-            d="M 250 210 Q 300 230 330 270"
-            fill="none"
-            stroke="white"
-            strokeWidth="2"
-            strokeDasharray="4 4"
-            className="opacity-70"
-          />
-        </svg>
 
         {/* Interactive Location Pins */}
         {locations.map((loc, index) => (
@@ -133,14 +106,14 @@ export default function MapSection() {
           >
             {/* Interactive Pulse Pin */}
             <div className="relative flex h-6 w-6 items-center justify-center">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/40 opacity-75"></span>
-              <div className="relative flex h-3 w-3 items-center justify-center rounded-full bg-white border border-wonderland-brown cursor-pointer shadow-sm">
-                <div className="h-1 w-1 rounded-full bg-wonderland-red"></div>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold/40 opacity-75"></span>
+              <div className="relative flex h-3 w-3 items-center justify-center rounded-full bg-black border border-brand-gold cursor-pointer shadow-sm">
+                <div className="h-1 w-1 rounded-full bg-brand-gold animate-pulse"></div>
               </div>
             </div>
 
             {/* Label box */}
-            <span className="mt-1 bg-wonderland-brown-dark/95 border border-white/10 text-white text-[10px] px-2 py-0.5 rounded shadow-md pointer-events-none group-hover:scale-105 transition-transform duration-300 font-heading font-medium tracking-wide">
+            <span className="mt-1 bg-black/90 border border-white/10 text-white text-[9px] px-2 py-0.5 rounded shadow-md pointer-events-none group-hover:scale-105 transition-transform duration-300 font-heading font-medium tracking-wide">
               {loc.name[lang]}
             </span>
           </motion.div>
@@ -148,7 +121,7 @@ export default function MapSection() {
 
         {/* Slider dots pagination */}
         <div className="absolute bottom-4 left-6 flex items-center gap-1.5 z-20">
-          <span className="h-2 w-2 rounded-full bg-white" />
+          <span className="h-2 w-2 rounded-full bg-brand-gold" />
           <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
           <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
           <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
@@ -157,3 +130,4 @@ export default function MapSection() {
     </div>
   );
 }
+

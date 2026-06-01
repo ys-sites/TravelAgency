@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from "react";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Calendar, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "../context/lang-context";
@@ -8,11 +9,11 @@ import { useLang } from "../context/lang-context";
 interface TourCard {
   id: number;
   image: string;
-  category: { TN: string; EN: string };
-  title: { TN: string; EN: string };
-  description: { TN: string; EN: string };
-  days: { TN: string; EN: string };
-  people: { TN: string; EN: string };
+  category: { FR: string; EN: string };
+  title: { FR: string; EN: string };
+  description: { FR: string; EN: string };
+  days: { FR: string; EN: string };
+  people: { FR: string; EN: string };
   oldPrice: string;
   price: string;
   iconType: "mountain" | "water" | "lighthouse";
@@ -21,99 +22,126 @@ interface TourCard {
 const toursList: TourCard[] = [
   {
     id: 1,
-    image: "/images/tour-altai.png",
+    image: "/images/morocco-sahara-dunes.png",
     category: {
-      TN: "рафтинг по рекам - горные экскурсии - походы с палатками",
-      EN: "river rafting - mountain excursions - hiking with tents"
+      FR: "désert du sahara - hébergement de riad - survol en hélicoptère",
+      EN: "sahara desert - riad buyouts - helicopter transfers"
     },
     title: {
-      TN: "Алтайские горы — полное погружение",
-      EN: "Altai mountains — full immersion"
+      FR: "Expédition Marrakech & Sahara",
+      EN: "Marrakech & Sahara Expedition"
     },
     description: {
-      TN: "Лучшие достопримечательности Алтайского края за 2 недели",
-      EN: "The best sights of the Altai Territory in 2 weeks"
+      FR: "Séjournez dans un riad privé, explorez le Sahara en hélicoptère et profitez d'une nuit exclusive sous les étoiles.",
+      EN: "Stay in an exclusive private riad, fly over the Atlas in a helicopter, and camp under the starry desert sky."
     },
     days: {
-      TN: "14 дней",
-      EN: "14 days"
+      FR: "8 jours",
+      EN: "8 days"
     },
     people: {
-      TN: "2 человека",
-      EN: "2 person"
+      FR: "2 personnes",
+      EN: "2 people"
     },
-    oldPrice: "140 800 P",
-    price: "120 800 P",
+    oldPrice: "C$ 14,800",
+    price: "C$ 12,400",
     iconType: "mountain"
   },
   {
     id: 2,
-    image: "/images/tour-kamchatka.png",
+    image: "/images/gulf-desert-sunset.png",
     category: {
-      TN: "горячие источники - горные экскурсии - гейзеры",
-      EN: "hot springs - mountain excursions - geysers"
+      FR: "safari de dunes - suites burj khalifa - yacht privé",
+      EN: "sand dune safari - burj khalifa suites - private yacht charter"
     },
     title: {
-      TN: "Приключения на Камчатке",
-      EN: "Adventures by Kamchatka"
+      FR: "Oasis Moderne de Dubaï & Abou Dabi",
+      EN: "Dubai & Abu Dhabi Modern Oasis"
     },
     description: {
-      TN: "В поисках приключений. Тур на Камчатку без палаток и рюкзаков",
-      EN: "In search of adventures. Tour to Kamchatka without tents and backpacks"
+      FR: "Découvrez le summum du luxe moderne : suites exclusives à Dubaï, et dîners gastronomiques dans le désert.",
+      EN: "Experience the pinnacle of modern luxury: exclusive suites in Dubai, and fine dining under the dunes of Abu Dhabi."
     },
     days: {
-      TN: "7 дней",
-      EN: "7 days"
+      FR: "10 jours",
+      EN: "10 days"
     },
     people: {
-      TN: "1 человек",
-      EN: "1 person"
+      FR: "2 personnes",
+      EN: "2 people"
     },
-    oldPrice: "98 600 P",
-    price: "84 200 P",
+    oldPrice: "C$ 18,900",
+    price: "C$ 16,500",
     iconType: "water"
   },
   {
     id: 3,
-    image: "/images/tour-teriberka.png",
+    image: "/images/oman-wadi-canyon.png",
     category: {
-      TN: "арктический тур - круиз на корабле - северное сияние",
-      EN: "arctic tour - cruise in ship - northern lights"
+      FR: "wadis de montagne - forts médiévaux - fjords de musandam",
+      EN: "mountain wadis - medieval forts - musandam fjord cruise"
     },
     title: {
-      TN: "Путешествие в Териберку",
-      EN: "Journey to Teriberka"
+      FR: "Héritage du Sultanat d'Oman",
+      EN: "Sultanate of Oman Heritage"
     },
     description: {
-      TN: "Перезагрузка на берегах Баренцева моря и знакомство с жизнью Русского Севера",
-      EN: "Reboot on the shores of the Barents Sea and find out how the Russian North lives"
+      FR: "Explorez les canyons du Jebel Akhdar, logez dans des forts convertis et naviguez dans les fjords en yacht privé.",
+      EN: "Explore the canyons of Jebel Akhdar, lodge in historic converted forts, and cruise the fjords by private yacht."
     },
     days: {
-      TN: "4 дня",
-      EN: "4 days"
+      FR: "12 jours",
+      EN: "12 days"
     },
     people: {
-      TN: "1 человек",
-      EN: "1 person"
+      FR: "2 personnes",
+      EN: "2 people"
     },
-    oldPrice: "68 800 P",
-    price: "51 700 P",
+    oldPrice: "C$ 16,500",
+    price: "C$ 14,800",
     iconType: "lighthouse"
+  },
+  {
+    id: 4,
+    image: "/images/saudi-alula-canyon.png",
+    category: {
+      FR: "tombes de hegra - glamping de prestige - yacht mer rouge",
+      EN: "hegra tombs - luxury desert glamping - red sea yacht"
+    },
+    title: {
+      FR: "Merveilles d'AlUla & Mer Rouge",
+      EN: "AlUla & Red Sea Wonders"
+    },
+    description: {
+      FR: "Découvrez les anciennes tombes de Hegra, profitez d'un pavillon de miroir de luxe et naviguez sur la Mer Rouge.",
+      EN: "Explore the ancient sandstone tombs of Hegra, check-in to a luxury mirrored canyon villa, and cruise the Red Sea."
+    },
+    days: {
+      FR: "14 jours",
+      EN: "14 days"
+    },
+    people: {
+      FR: "2 personnes",
+      EN: "2 people"
+    },
+    oldPrice: "C$ 28,500",
+    price: "C$ 24,900",
+    iconType: "mountain"
   }
 ];
 
 const t = {
   title: {
-    TN: "Специально для вас",
-    EN: "Special for you"
+    FR: "Portefeuilles d'Exception",
+    EN: "Curated Portfolios"
   },
   allTours: {
-    TN: "все туры",
-    EN: "all tours"
+    FR: "toutes les destinations",
+    EN: "all destinations"
   },
   book: {
-    TN: "ЗАБРОНИРОВАТЬ",
-    EN: "BOOK"
+    FR: "DÉCOUVRIR",
+    EN: "DISCOVER"
   }
 };
 
@@ -131,15 +159,20 @@ export default function Tours() {
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-20 mt-12">
+    <div className="max-w-[1200px] mx-auto px-6 py-20 mt-12 bg-black text-white">
       {/* Header */}
-      <div className="flex items-baseline justify-between mb-10">
-        <h2 className="font-serif text-[38px] font-bold text-wonderland-brown">
-          {t.title[lang]}
-        </h2>
-        <a href="#" className="font-body text-[13px] font-semibold text-wonderland-brown/85 hover:underline cursor-pointer">
-          {t.allTours[lang]} &rarr;
-        </a>
+      <div className="flex items-baseline justify-between mb-12 border-b border-white/10 pb-6">
+        <div className="space-y-1">
+          <span className="text-brand-gold font-mono text-[10px] tracking-[0.3em] uppercase block">
+            {lang === "FR" ? "Évasions de Prestige" : "Elite Collections"}
+          </span>
+          <h2 className="font-serif text-[38px] font-bold text-white tracking-wide uppercase">
+            {t.title[lang]}
+          </h2>
+        </div>
+        <Link href="/custom-trip" className="font-body text-[12px] font-semibold text-brand-gold hover:underline cursor-pointer tracking-wider uppercase">
+          {lang === "FR" ? "Sur Mesure" : "Custom passage"} &rarr;
+        </Link>
       </div>
 
       {/* Grid of Cards */}
@@ -147,52 +180,52 @@ export default function Tours() {
         {/* Navigation Arrows */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-10 w-10 items-center justify-center rounded-full border border-wonderland-cream bg-white text-wonderland-brown hover:bg-wonderland-cream transition-colors shadow-sm cursor-pointer z-20"
+          className="absolute left-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-zinc-950/80 text-white hover:bg-white hover:text-black transition-colors shadow-lg cursor-pointer z-20"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
         <button
           onClick={() => scroll("right")}
-          className="absolute right-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-10 w-10 items-center justify-center rounded-full border border-wonderland-cream bg-white text-wonderland-brown hover:bg-wonderland-cream transition-colors shadow-sm cursor-pointer z-20"
+          className="absolute right-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-zinc-950/80 text-white hover:bg-white hover:text-black transition-colors shadow-lg cursor-pointer z-20"
         >
           <ChevronRight className="h-5 w-5" />
         </button>
 
         <div
           ref={scrollRef}
-          className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible scrollbar-none snap-x snap-mandatory pb-4 w-full"
+          className="flex overflow-x-auto md:grid md:grid-cols-2 gap-8 scrollbar-none snap-x snap-mandatory pb-4 w-full"
         >
           {toursList.map((tour, index) => (
             <motion.div
               key={tour.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-              className="group flex flex-col min-w-[280px] md:min-w-0 snap-center rounded-[1.5rem] bg-[#FFFFFF] p-3 border border-wonderland-cream/60 shadow-sm hover:shadow-card-soft transition-all duration-300 flex-1"
+              className="group flex flex-col min-w-[290px] md:min-w-0 snap-center rounded-[1.5rem] bg-zinc-950/60 p-4 border border-white/10 shadow-glass hover:border-brand-gold transition-luxury flex-1"
             >
               {/* Image Container */}
-              <div className="relative w-full h-[220px] overflow-hidden rounded-[1.2rem]">
+              <div className="relative w-full h-[260px] overflow-hidden rounded-[1.2rem]">
                 <img
                   src={tour.image}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
                   alt={tour.title[lang]}
                 />
                 {/* Top-Right Badge Overlay */}
-                <div className="glass-tag absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full text-white">
+                <div className="glass-tag absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full text-white">
                   {tour.iconType === "mountain" && (
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <svg className="h-4 w-4 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="m8 3 4 8 5-5 5 15H2L8 3z" />
                     </svg>
                   )}
                   {tour.iconType === "water" && (
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="h-4 w-4 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M2 20 Q 5 17 8 20 T 14 20 T 20 20 T 22 20" />
                       <path d="M6 16 L 10 8 L 14 13 L 17 9 L 21 16" />
                     </svg>
                   )}
                   {tour.iconType === "lighthouse" && (
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg className="h-4 w-4 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M9 21h6" />
                       <path d="M10 21l1-12h2l1 12" />
                       <path d="M11 9V5a1 1 0 0 1 2 0v4" />
@@ -206,44 +239,44 @@ export default function Tours() {
 
               {/* Content */}
               <div className="p-4 flex flex-col flex-1">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-wonderland-gray/80 mb-2 block">
+                <span className="text-[9px] font-mono uppercase font-semibold tracking-[0.2em] text-brand-gold mb-3 block">
                   {tour.category[lang]}
                 </span>
-                <h3 className="font-heading text-[16px] font-bold text-wonderland-brown leading-snug group-hover:text-wonderland-brown-dark transition-colors">
+                <h3 className="font-serif text-[22px] font-bold text-white tracking-wide leading-snug group-hover:text-brand-gold transition-colors">
                   {tour.title[lang]}
                 </h3>
-                <p className="text-[12px] text-wonderland-gray mt-2 leading-relaxed flex-1">
+                <p className="text-[12px] text-white/60 mt-3 leading-relaxed font-light flex-1">
                   {tour.description[lang]}
                 </p>
 
                 {/* Details Row */}
-                <div className="flex items-center gap-4 py-4 border-b border-wonderland-cream/60 text-[11px] text-wonderland-gray/90">
+                <div className="flex items-center gap-4 py-4 border-b border-white/5 text-[11px] text-white/50 font-mono tracking-wider">
                   <div className="flex items-center gap-1.5">
-                    <Calendar className="h-3.5 w-3.5" />
+                    <Calendar className="h-3.5 w-3.5 text-brand-gold" />
                     <span>{tour.days[lang]}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Users className="h-3.5 w-3.5" />
+                    <Users className="h-3.5 w-3.5 text-brand-gold" />
                     <span>{tour.people[lang]}</span>
                   </div>
                   <div className="ml-auto">
-                    <MapPin className="h-3.5 w-3.5 cursor-pointer text-wonderland-brown hover:text-wonderland-red" />
+                    <MapPin className="h-3.5 w-3.5 text-brand-gold hover:text-white transition-colors" />
                   </div>
                 </div>
 
                 {/* Booking Footer */}
-                <div className="flex items-center justify-between pt-4 mt-auto">
+                <div className="flex items-center justify-between pt-5 mt-auto">
                   <div className="flex flex-col">
-                    <span className="text-[11px] line-through text-wonderland-gray/60 leading-none mb-1">
+                    <span className="text-[11px] font-mono line-through text-white/30 leading-none mb-1">
                       {tour.oldPrice}
                     </span>
-                    <span className="text-[20px] font-bold text-wonderland-red font-heading leading-none">
+                    <span className="text-[22px] font-bold text-brand-gold font-heading leading-none">
                       {tour.price}
                     </span>
                   </div>
-                  <button className="rounded-full bg-wonderland-brown px-6 py-2.5 text-[11px] font-bold uppercase tracking-wider text-white hover:bg-wonderland-brown-dark transition-colors cursor-pointer">
+                  <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[11px] tracking-[0.18em] uppercase px-6 py-3 transition-luxury cursor-pointer hover:scale-105">
                     {t.book[lang]}
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -253,4 +286,5 @@ export default function Tours() {
     </div>
   );
 }
+
 

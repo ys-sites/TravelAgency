@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
-export type Lang = "TN" | "EN";
+export type Lang = "FR" | "EN";
 
 interface LangContextType {
   lang: Lang;
@@ -26,4 +26,5 @@ export function LangProvider({ children }: { children: ReactNode }) {
 export function useLang() {
   return useContext(LangContext);
 }
+
 
