@@ -1,28 +1,23 @@
-﻿import type { Metadata } from "next";
-import { Montserrat, Playfair_Display, Inter } from "next/font/google";
+import type { Metadata } from "next";
+import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+import { LangProvider } from "./context/lang-context";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "WonderLand Tours",
-  description: "Curated adventure travel agency and luxury natural tours.",
+  title: "Majestic Experiences Voyages | Voyages de Golf de Luxe",
+  description: "Forfaits de golf tout inclus sur mesure au Club Med Marrakech La Palmeraie et sur les plus beaux parcours du Maroc.",
 };
 
 export default function RootLayout({
@@ -32,10 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${montserrat.variable} ${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
+      lang="fr"
+      className={`${playfairDisplay.variable} ${plusJakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <LangProvider>
+          {children}
+        </LangProvider>
+      </body>
     </html>
   );
 }

@@ -1,8 +1,22 @@
-﻿'use client';
+'use client';
 
 import { motion } from "motion/react";
+import { useLang } from "../context/lang-context";
+
+const t = {
+  welcome: {
+    FR: "BIENVENUE DANS VOTRE",
+    EN: "WELCOME TO YOUR",
+  },
+  subtext: {
+    FR: "Nous organisons des circuits en Russie et dans les pays voisins. Découvrez la beauté de votre pays d'origine avec WonderLand Tour.",
+    EN: "We organize tours in Russia and neighboring countries. Discover the beauty of your home country with WonderLand Tour.",
+  },
+};
 
 export default function Hero() {
+  const { lang } = useLang();
+
   return (
     <div className="relative w-full h-[680px] overflow-hidden rounded-[2rem]">
       {/* Background Volcano Image */}
@@ -27,7 +41,7 @@ export default function Hero() {
             <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
           </svg>
           <span className="text-white/70 font-heading text-[11px] font-medium tracking-[0.25em] uppercase">
-            WELCOME TO YOUR
+            {t.welcome[lang]}
           </span>
 
           <h1 className="font-heading text-[64px] font-bold text-white tracking-[0.02em] mt-3 md:text-[76px] leading-none">
@@ -35,9 +49,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-[520px] text-white/80 font-body text-[13px] leading-relaxed font-light">
-            We organize tours in Russia and neighboring countries.
-            <br />
-            Discover the beauty of your home country with WonderLand Tour
+            {t.subtext[lang]}
           </p>
         </motion.div>
       </div>

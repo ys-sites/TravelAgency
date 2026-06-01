@@ -1,15 +1,45 @@
-﻿'use client';
+'use client';
 
 import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
+import { useLang } from "../context/lang-context";
+
+const t = {
+  getKnow: {
+    FR: "DÉCOUVREZ LES",
+    EN: "GET TO KNOW"
+  },
+  title: {
+    FR: "Monts Altaï",
+    EN: "Altai Mountains"
+  },
+  description: {
+    FR: "Des lacs turquoise et des rivières tumultueuses, des plaines steppiques et des sommets montagneux, ainsi que les plus belles routes du monde et une vallée semblable à Mars vous attendent.",
+    EN: "Turquoise lakes and turbulent rivers, steppe expanses and mountain peaks, and the most beautiful roads in the world and a valley similar to Mars are waiting for you."
+  },
+  attractions: {
+    FR: "attractions",
+    EN: "attractions"
+  },
+  similarDestinations: {
+    FR: "destinations similaires",
+    EN: "similar destinations"
+  },
+  chooseTour: {
+    FR: "CHOISIR UN CIRCUIT",
+    EN: "CHOOSE A TOUR"
+  }
+};
 
 export default function MapSection() {
+  const { lang } = useLang();
+
   const locations = [
-    { name: "Mount Belukha", top: "15%", left: "75%" },
-    { name: "Lake Teletskoye", top: "45%", left: "82%" },
-    { name: "Tavdinsky Caves", top: "65%", left: "70%" },
-    { name: "Korbu Waterfall", top: "52%", left: "48%" },
-    { name: "Katu-Yaryk", top: "78%", left: "55%" }
+    { name: { FR: "Mont Béloukh", EN: "Mount Belukha" }, top: "15%", left: "75%" },
+    { name: { FR: "Lac Teletskoïe", EN: "Lake Teletskoye" }, top: "45%", left: "82%" },
+    { name: { FR: "Grottes de Tavdinsky", EN: "Tavdinsky Caves" }, top: "65%", left: "70%" },
+    { name: { FR: "Cascade de Korbu", EN: "Korbu Waterfall" }, top: "52%", left: "48%" },
+    { name: { FR: "Katu-Yaryk", EN: "Katu-Yaryk" }, top: "78%", left: "55%" }
   ];
 
   return (
@@ -24,33 +54,31 @@ export default function MapSection() {
       {/* Left content description */}
       <div className="lg:col-span-5 flex flex-col items-start z-10">
         <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-wonderland-gray">
-          GET TO KNOW
+          {t.getKnow[lang]}
         </span>
         <h2 className="flex items-center gap-3 font-serif text-[42px] font-bold text-wonderland-brown mt-2 leading-tight">
           <svg className="h-8 w-8 text-wonderland-brown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
           </svg>
-          Altai Mountains
+          {t.title[lang]}
         </h2>
         <p className="text-[13px] leading-relaxed text-wonderland-gray/90 mt-6 max-w-[420px] font-light">
-          Turquoise lakes and turbulent rivers, steppe expanses and mountain peaks,
-          and the most beautiful roads in the world and a valley similar to Mars
-          are waiting for you
+          {t.description[lang]}
         </p>
 
         {/* Links */}
         <div className="flex flex-wrap items-center gap-6 mt-8">
           <a href="#" className="text-[12px] font-bold uppercase tracking-wider text-wonderland-brown/85 hover:text-wonderland-brown hover:underline">
-            attractions &rarr;
+            {t.attractions[lang]} &rarr;
           </a>
           <a href="#" className="text-[12px] font-bold uppercase tracking-wider text-wonderland-brown/85 hover:text-wonderland-brown hover:underline">
-            similar destinations &rarr;
+            {t.similarDestinations[lang]} &rarr;
           </a>
         </div>
 
         {/* CTA Button */}
         <button className="mt-8 rounded-full border-2 border-wonderland-brown bg-transparent px-8 py-3 text-[11px] font-bold uppercase tracking-wider text-wonderland-brown hover:bg-wonderland-brown hover:text-white transition-all duration-300 cursor-pointer">
-          CHOOSE A TOUR
+          {t.chooseTour[lang]}
         </button>
       </div>
 
@@ -60,7 +88,7 @@ export default function MapSection() {
         <img
           src="/images/altai-map-bg.png"
           className="absolute inset-0 w-full h-full object-cover brightness-95 contrast-105"
-          alt="Altai Mountains"
+          alt={t.title[lang]}
         />
 
         {/* Hiker transparent overlay */}
@@ -112,7 +140,7 @@ export default function MapSection() {
 
             {/* Label box */}
             <span className="mt-1 bg-wonderland-brown-dark/95 border border-white/10 text-white text-[10px] px-2 py-0.5 rounded shadow-md pointer-events-none group-hover:scale-105 transition-transform duration-300 font-heading font-medium tracking-wide">
-              {loc.name}
+              {loc.name[lang]}
             </span>
           </motion.div>
         ))}

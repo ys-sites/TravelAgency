@@ -1,13 +1,14 @@
-﻿import Navbar from "./components/navbar";
+import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import SearchBar from "./components/search-bar";
 import Tours from "./components/tours";
 import Stats from "./components/stats";
 import MapSection from "./components/map-section";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#FFFFFF] text-wonderland-brown font-body antialiased pb-12">
+    <div className="min-h-screen bg-[#FFFFFF] text-wonderland-brown font-body antialiased">
       {/* Upper Wrapper */}
       <div className="relative mx-auto max-w-[1440px] px-4 pt-4">
         <div className="relative overflow-visible rounded-[2.5rem] bg-wonderland-cream pb-12 md:pb-0">
@@ -26,6 +27,8 @@ export default function Home() {
         <Stats />
         <MapSection />
       </main>
+
+      <Footer />
     </div>
   );
 }

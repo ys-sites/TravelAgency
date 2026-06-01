@@ -1,10 +1,19 @@
-﻿'use client';
+'use client';
 
-import { useState } from "react";
-import { ChevronDown, Globe } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { useLang } from "../context/lang-context";
+
+const t = {
+  tours:     { FR: "Circuits", EN: "Tours" },
+  directions:{ FR: "Destinations", EN: "Directions" },
+  about:     { FR: "À propos", EN: "About us" },
+  news:      { FR: "Actualités", EN: "News" },
+  vacancies: { FR: "Offres", EN: "Vacancies" },
+  contacts:  { FR: "Contact", EN: "Contacts" },
+};
 
 export default function Navbar() {
-  const [lang, setLang] = useState<"TN" | "EN">("EN");
+  const { lang, setLang } = useLang();
 
   return (
     <nav className="absolute top-6 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1100px] -translate-x-1/2">
@@ -20,38 +29,40 @@ export default function Navbar() {
         {/* Navigation Links */}
         <div className="hidden lg:flex items-center gap-8 text-white/90 font-body text-[13px] font-medium">
           <a href="#" className="flex items-center gap-1 hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-            Tours <ChevronDown className="h-3 w-3" />
+            {t.tours[lang]} <ChevronDown className="h-3 w-3" />
           </a>
           <a href="#" className="flex items-center gap-1 hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-            Directions <ChevronDown className="h-3 w-3" />
+            {t.directions[lang]} <ChevronDown className="h-3 w-3" />
           </a>
           <a href="#" className="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-            About us
+            {t.about[lang]}
           </a>
           <a href="#" className="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-            News
+            {t.news[lang]}
           </a>
           <a href="#" className="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-            Vacancies
+            {t.vacancies[lang]}
           </a>
           <a href="#" className="hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
-            Contacts
+            {t.contacts[lang]}
           </a>
         </div>
 
-        {/* Right language controls */}
+        {/* Language Toggle FR / EN */}
         <div className="flex items-center gap-2 bg-black/20 rounded-full p-1 border border-white/10">
           <button
-            onClick={() => setLang("TN")}
+            id="lang-fr"
+            onClick={() => setLang("FR")}
             className={`flex h-8 w-8 items-center justify-center rounded-full text-[11px] font-bold transition-all duration-300 ${
-              lang === "TN"
+              lang === "FR"
                 ? "bg-white text-wonderland-brown shadow-sm"
                 : "text-white/60 hover:text-white"
             }`}
           >
-            TN
+            FR
           </button>
           <button
+            id="lang-en"
             onClick={() => setLang("EN")}
             className={`flex h-8 items-center gap-1 rounded-full px-4 text-[11px] font-bold transition-all duration-300 ${
               lang === "EN"

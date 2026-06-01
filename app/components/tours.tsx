@@ -1,18 +1,19 @@
-﻿'use client';
+'use client';
 
 import { motion } from "motion/react";
 import { Calendar, Users, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+import { useLang } from "../context/lang-context";
 
 interface TourCard {
   id: number;
   image: string;
-  category: string;
-  title: string;
-  description: string;
-  days: string;
-  people: string;
-  oldPrice: string;
-  price: string;
+  category: { FR: string; EN: string };
+  title: { FR: string; EN: string };
+  description: { FR: string; EN: string };
+  days: { FR: string; EN: string };
+  people: { FR: string; EN: string };
+  oldPrice: { FR: string; EN: string };
+  price: { FR: string; EN: string };
   iconType: "mountain" | "water" | "lighthouse";
 }
 
@@ -20,51 +21,131 @@ const toursList: TourCard[] = [
   {
     id: 1,
     image: "/images/tour-altai.png",
-    category: "river rafting - mountain excursions - hiking with tents",
-    title: "Altai mountains — full immersion",
-    description: "The best sights of the Altai Territory in 2 weeks",
-    days: "14 days",
-    people: "2 person",
-    oldPrice: "140 800 P",
-    price: "120 800 P",
+    category: {
+      FR: "rafting sur rivière - excursions en montagne - randonnée sous tente",
+      EN: "river rafting - mountain excursions - hiking with tents"
+    },
+    title: {
+      FR: "Monts Altaï — immersion totale",
+      EN: "Altai mountains — full immersion"
+    },
+    description: {
+      FR: "Les plus beaux paysages du territoire de l'Altaï en 2 semaines",
+      EN: "The best sights of the Altai Territory in 2 weeks"
+    },
+    days: {
+      FR: "14 jours",
+      EN: "14 days"
+    },
+    people: {
+      FR: "2 personnes",
+      EN: "2 people"
+    },
+    oldPrice: {
+      FR: "2 150 $ CAD",
+      EN: "$2,150 CAD"
+    },
+    price: {
+      FR: "1 850 $ CAD",
+      EN: "$1,850 CAD"
+    },
     iconType: "mountain"
   },
   {
     id: 2,
     image: "/images/tour-kamchatka.png",
-    category: "hot springs - mountain excursions - geysers",
-    title: "Adventures by Kamchatka",
-    description: "In search of adventures. Tour to Kamchatka without tents and backpacks",
-    days: "7 days",
-    people: "1 person",
-    oldPrice: "98 600 P",
-    price: "84 200 P",
+    category: {
+      FR: "sources chaudes - excursions en montagne - geysers",
+      EN: "hot springs - mountain excursions - geysers"
+    },
+    title: {
+      FR: "Aventures au Kamtchatka",
+      EN: "Adventures by Kamchatka"
+    },
+    description: {
+      FR: "À la recherche d'aventures. Circuit au Kamtchatka sans tente ni sac à dos",
+      EN: "In search of adventures. Tour to Kamchatka without tents and backpacks"
+    },
+    days: {
+      FR: "7 jours",
+      EN: "7 days"
+    },
+    people: {
+      FR: "1 personne",
+      EN: "1 person"
+    },
+    oldPrice: {
+      FR: "1 500 $ CAD",
+      EN: "$1,500 CAD"
+    },
+    price: {
+      FR: "1 290 $ CAD",
+      EN: "$1,290 CAD"
+    },
     iconType: "water"
   },
   {
     id: 3,
     image: "/images/tour-teriberka.png",
-    category: "arctic tour - cruise in ship - northern lights",
-    title: "Journey to Teriberka",
-    description: "Reboot on the shores of the Barents Sea and find out how the Russian North lives",
-    days: "4 days",
-    people: "1 person",
-    oldPrice: "68 800 P",
-    price: "51 700 P",
+    category: {
+      FR: "circuit arctique - croisière en bateau - aurores boréales",
+      EN: "arctic tour - cruise in ship - northern lights"
+    },
+    title: {
+      FR: "Voyage à Teriberka",
+      EN: "Journey to Teriberka"
+    },
+    description: {
+      FR: "Ressourcez-vous sur les rives de la mer de Barents et découvrez la vie dans le Grand Nord russe",
+      EN: "Reboot on the shores of the Barents Sea and find out how the Russian North lives"
+    },
+    days: {
+      FR: "4 jours",
+      EN: "4 days"
+    },
+    people: {
+      FR: "1 personne",
+      EN: "1 person"
+    },
+    oldPrice: {
+      FR: "1 050 $ CAD",
+      EN: "$1,050 CAD"
+    },
+    price: {
+      FR: "790 $ CAD",
+      EN: "$790 CAD"
+    },
     iconType: "lighthouse"
   }
 ];
 
+const t = {
+  title: {
+    FR: "Spécialement pour vous",
+    EN: "Special for you"
+  },
+  allTours: {
+    FR: "tous les circuits",
+    EN: "all tours"
+  },
+  book: {
+    FR: "RÉSERVER",
+    EN: "BOOK"
+  }
+};
+
 export default function Tours() {
+  const { lang } = useLang();
+
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-20 mt-12">
       {/* Header */}
       <div className="flex items-baseline justify-between mb-10">
         <h2 className="font-serif text-[38px] font-bold text-wonderland-brown">
-          Special for you
+          {t.title[lang]}
         </h2>
         <a href="#" className="font-body text-[13px] font-semibold text-wonderland-brown/85 hover:underline cursor-pointer">
-          all tours &rarr;
+          {t.allTours[lang]} &rarr;
         </a>
       </div>
 
@@ -93,7 +174,7 @@ export default function Tours() {
                 <img
                   src={tour.image}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  alt={tour.title}
+                  alt={tour.title[lang]}
                 />
                 {/* Top-Right Badge Overlay */}
                 <div className="glass-tag absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full text-white">
@@ -118,24 +199,24 @@ export default function Tours() {
               {/* Content */}
               <div className="p-4 flex flex-col flex-1">
                 <span className="text-[10px] uppercase font-bold tracking-wider text-wonderland-gray/80 mb-2 block">
-                  {tour.category}
+                  {tour.category[lang]}
                 </span>
                 <h3 className="font-heading text-[16px] font-bold text-wonderland-brown leading-snug group-hover:text-wonderland-brown-dark transition-colors">
-                  {tour.title}
+                  {tour.title[lang]}
                 </h3>
                 <p className="text-[12px] text-wonderland-gray mt-2 leading-relaxed flex-1">
-                  {tour.description}
+                  {tour.description[lang]}
                 </p>
 
                 {/* Details Row */}
                 <div className="flex items-center gap-4 py-4 border-b border-wonderland-cream/60 text-[11px] text-wonderland-gray/90">
                   <div className="flex items-center gap-1.5">
                     <Calendar className="h-3.5 w-3.5" />
-                    <span>{tour.days}</span>
+                    <span>{tour.days[lang]}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Users className="h-3.5 w-3.5" />
-                    <span>{tour.people}</span>
+                    <span>{tour.people[lang]}</span>
                   </div>
                   <div className="ml-auto">
                     <MapPin className="h-3.5 w-3.5 cursor-pointer text-wonderland-brown hover:text-wonderland-red" />
@@ -146,14 +227,14 @@ export default function Tours() {
                 <div className="flex items-center justify-between pt-4 mt-auto">
                   <div className="flex flex-col">
                     <span className="text-[11px] line-through text-wonderland-gray/60 leading-none mb-1">
-                      {tour.oldPrice}
+                      {tour.oldPrice[lang]}
                     </span>
                     <span className="text-[20px] font-bold text-wonderland-red font-heading leading-none">
-                      {tour.price}
+                      {tour.price[lang]}
                     </span>
                   </div>
                   <button className="rounded-full bg-wonderland-brown px-6 py-2.5 text-[11px] font-bold uppercase tracking-wider text-white hover:bg-wonderland-brown-dark transition-colors cursor-pointer">
-                    BOOK
+                    {t.book[lang]}
                   </button>
                 </div>
               </div>

@@ -1,24 +1,54 @@
-﻿export default function Stats() {
+'use client';
+
+import { useLang } from "../context/lang-context";
+
+export default function Stats() {
+  const { lang } = useLang();
+
   const statsList = [
     {
       value: "2 124 000",
-      label: "kilometers",
-      subtext: "passed by our travelers"
+      label: {
+        FR: "kilomètres",
+        EN: "kilometers"
+      },
+      subtext: {
+        FR: "parcourus par nos voyageurs",
+        EN: "passed by our travelers"
+      }
     },
     {
       value: "8 200",
-      label: "travelers",
-      subtext: "participated in our tours"
+      label: {
+        FR: "voyageurs",
+        EN: "travelers"
+      },
+      subtext: {
+        FR: "ont participé à nos circuits",
+        EN: "participated in our tours"
+      }
     },
     {
       value: "345",
-      label: "positive feedback",
-      subtext: "for all years of the company"
+      label: {
+        FR: "avis positifs",
+        EN: "positive feedback"
+      },
+      subtext: {
+        FR: "sur toutes les années d'existence",
+        EN: "for all years of the company"
+      }
     },
     {
       value: "14",
-      label: "years of work",
-      subtext: "for your wonderful experiences"
+      label: {
+        FR: "années d'activité",
+        EN: "years of work"
+      },
+      subtext: {
+        FR: "pour vos expériences merveilleuses",
+        EN: "for your wonderful experiences"
+      }
     }
   ];
 
@@ -33,10 +63,10 @@
             {stat.value}
           </span>
           <span className="font-heading text-[12px] font-bold text-wonderland-brown uppercase mt-3 tracking-wider">
-            {stat.label}
+            {stat.label[lang]}
           </span>
           <span className="font-body text-[12px] text-wonderland-gray mt-1 leading-relaxed">
-            {stat.subtext}
+            {stat.subtext[lang]}
           </span>
         </div>
       ))}
