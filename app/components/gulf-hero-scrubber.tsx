@@ -29,7 +29,7 @@ export default function GulfHeroScrubber() {
           initial={{ opacity: 0, scale: 0.96, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center max-w-4xl pointer-events-auto text-center"
+          className="flex flex-col items-center max-w-4xl pointer-events-auto text-center -translate-y-16 md:-translate-y-20"
         >
           <img
             src="/images/logo.png"

@@ -175,82 +175,69 @@ export default function ItinerariesPage() {
           {toursList.map((tour) => (
             <div
               key={tour.id}
-              className="group relative flex flex-col justify-end rounded-[1.8rem] overflow-hidden p-5 border border-zinc-200/60 shadow-md hover:shadow-xl hover:border-brand-gold transition-luxury h-[440px] cursor-pointer"
+              className="group relative flex flex-col rounded-[2rem] overflow-hidden border border-zinc-200/55 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-luxury bg-white h-full"
             >
-              {/* Full-bleed Image Background */}
-              <div className="absolute inset-0 z-0 overflow-hidden">
+              {/* Image Header with Tags */}
+              <div className="h-[200px] w-full relative overflow-hidden">
                 <img
                   src={tour.image}
                   className="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-105"
                   alt={tour.title[lang]}
                 />
-                {/* Luxury Vignette Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-95" />
-              </div>
-
-              {/* Top-Right Badge Overlay */}
-              <div className="glass-tag absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full text-white z-20 shadow-md">
-                {tour.iconType === "mountain" && (
-                  <svg className="h-4.5 w-4.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m8 3 4 8 5-5 5 15H2L8 3z" />
-                  </svg>
-                )}
-                {tour.iconType === "water" && (
-                  <svg className="h-4.5 w-4.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M2 20 Q 5 17 8 20 T 14 20 T 20 20 T 22 20" />
-                    <path d="M6 16 L 10 8 L 14 13 L 17 9 L 21 16" />
-                  </svg>
-                )}
-                {tour.iconType === "lighthouse" && (
-                  <svg className="h-4.5 w-4.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9 21h6" />
-                    <path d="M10 21l1-12h2l1 12" />
-                    <path d="M11 9V5a1 1 0 0 1 2 0v4" />
-                    <path d="M9 5h6" />
-                    <path d="M12 2v2" />
-                    <path d="M8 12h8" />
-                  </svg>
-                )}
-              </div>
-
-              {/* Content Container */}
-              <div className="relative z-20 flex flex-col justify-end h-full">
-                <span className="text-[9px] font-mono uppercase font-semibold tracking-[0.2em] text-brand-gold mb-2 block">
-                  {tour.category[lang]}
-                </span>
-                <h3 className="font-serif text-[18px] md:text-[20px] font-bold text-white tracking-wide leading-tight group-hover:text-brand-gold transition-colors">
-                  {tour.title[lang]}
-                </h3>
-                <p className="text-[11px] text-white/70 mt-2.5 leading-relaxed font-light line-clamp-3">
-                  {tour.description[lang]}
-                </p>
-
-                {/* Details Row */}
-                <div className="flex items-center gap-4 py-3 border-b border-white/10 text-[10px] text-white/60 font-mono tracking-wider mt-3.5">
-                  <div className="flex items-center gap-1.5">
-                    <Calendar className="h-3.5 w-3.5 text-brand-gold" />
-                    <span>{tour.days[lang]}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <Users className="h-3.5 w-3.5 text-brand-gold" />
-                    <span>{tour.people[lang]}</span>
-                  </div>
-                  <div className="ml-auto">
-                    <MapPin className="h-3.5 w-3.5 text-brand-gold hover:text-white transition-colors" />
-                  </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
+                
+                {/* Promo Badge */}
+                <div className="absolute top-5 left-5 bg-brand-gold text-black font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full shadow-md">
+                  {tour.id === 1 ? "15% OFF" : tour.id === 2 ? "12% OFF" : tour.id === 3 ? "10% OFF" : "12% OFF"}
                 </div>
 
-                {/* Booking Footer */}
-                <div className="flex items-center justify-between pt-3.5 mt-1.5">
+                <div className="absolute top-5 right-5 glass-tag px-3 py-1.5 rounded-full text-white font-mono text-[8px] tracking-wider uppercase font-semibold">
+                  {tour.iconType === "mountain" ? "SIGNATURE" : tour.iconType === "water" ? "EXCLUSIVE" : "SOVEREIGN"}
+                </div>
+              </div>
+
+              {/* Card Body */}
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 text-[10px] text-zinc-400 font-mono tracking-wider">
+                    <div className="flex items-center gap-1.5">
+                      <Calendar className="w-3.5 h-3.5 text-brand-gold" />
+                      <span>{tour.days[lang]}</span>
+                    </div>
+                    <span>•</span>
+                    <div className="flex items-center gap-1.5">
+                      <Users className="w-3.5 h-3.5 text-brand-gold" />
+                      <span>{tour.people[lang]}</span>
+                    </div>
+                  </div>
+
+                  <h3 className="font-serif text-base md:text-lg font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
+                    {tour.title[lang]}
+                  </h3>
+
+                  <p className="text-[12px] leading-relaxed text-zinc-500 font-light pt-1 border-t border-zinc-100 line-clamp-2">
+                    <span className="font-mono text-[9px] uppercase tracking-wider text-brand-gold block mb-1">
+                      {lang === "FR" ? "INCLUSIONS EXCLUSIVES" : "EXCLUSIVE INCLUSIONS"}
+                    </span>
+                    {tour.category[lang]}
+                  </p>
+                </div>
+
+                {/* Footer / Pricing */}
+                <div className="flex items-center justify-between pt-4 border-t border-zinc-100">
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-mono line-through text-white/40 leading-none mb-1 tabular-nums">
+                    <span className="text-[10px] font-mono line-through text-zinc-400 leading-none mb-1">
                       {tour.oldPrice}
                     </span>
-                    <span className="text-[20px] font-bold text-brand-gold font-heading leading-none tabular-nums">
-                      {tour.price}
+                    <span className="text-[18px] font-bold text-zinc-900 font-heading leading-none">
+                      {tour.price} <span className="text-[10px] font-mono text-zinc-400">CAD</span>
                     </span>
                   </div>
-                  <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[10px] tracking-[0.15em] uppercase px-5 py-2.5 transition-luxury cursor-pointer hover:-translate-y-0.5 shadow-md">
+
+                  <Link 
+                    href={`/itineraries/${tour.id}`}
+                    className="bg-zinc-900 hover:bg-brand-gold hover:text-black text-white font-semibold text-[10px] tracking-[0.15em] uppercase px-4 py-2.5 rounded-full transition-luxury cursor-pointer shadow-sm"
+                  >
                     {t.book[lang]}
                   </Link>
                 </div>
