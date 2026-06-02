@@ -6,7 +6,7 @@ import { useLang } from "../context/lang-context";
 
 const t = {
   portfolios: { FR: "Portefeuilles", EN: "Portfolios" },
-  itineraries:{ FR: "Itinéraires", EN: "Itinéraires" },
+  itineraries:{ FR: "Itinéraires", EN: "Itineraries" },
   about:      { FR: "À Propos", EN: "About Us" },
   customTrip: { FR: "Voyage Sur Mesure", EN: "Custom Trip" },
   contacts:   { FR: "Contacts", EN: "Contacts" },

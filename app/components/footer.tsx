@@ -103,7 +103,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
             <li><a href="/#about" className="hover:text-brand-gold transition-colors">{t.about[lang]}</a></li>
             <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{t.customTrip[lang]}</Link></li>
-            <li><a href="#" className="hover:text-brand-gold transition-colors">{t.news[lang]}</a></li>
+            <li><Link href="/travel-stories" className="hover:text-brand-gold transition-colors">{t.news[lang]}</Link></li>
           </ul>
         </div>
 

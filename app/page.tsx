@@ -2,6 +2,8 @@ import Navbar from "./components/navbar";
 import GulfHeroScrubber from "./components/gulf-hero-scrubber";
 import Tours from "./components/tours";
 import Promotions from "./components/promotions";
+import AboutUsSection from "./components/about-us-section";
+import TestimonialsSection from "./components/testimonials-section";
 import Footer from "./components/footer";
 
 export default function Home() {
@@ -19,6 +21,8 @@ export default function Home() {
         <div id="portfolios">
           <Tours />
         </div>
+        <AboutUsSection />
+        <TestimonialsSection />
       </main>
 
       <Footer />

@@ -79,8 +79,12 @@ const t = {
     FR: "Sur demande"
   },
   submitInquiry: {
-    EN: "Transmit Secured Inquiry",
-    FR: "Transmettre l'Enquête Sécurisée"
+    EN: "Send My Enquiry →",
+    FR: "Envoyer Mon Enquête →"
+  },
+  reassurance: {
+    EN: "No payment is taken at this stage. Our concierge will contact you within 24 hours to begin crafting your passage.",
+    FR: "Aucun paiement n'est effectué à ce stade. Notre concierge vous contactera dans les 24 heures pour commencer à concevoir votre passage."
   },
   moroccoLabel: { EN: "Morocco", FR: "Maroc" },
   uaeLabel: { EN: "United Arab Emirates", FR: "Émirats Arabes Unis" },
@@ -400,7 +404,7 @@ export default function CustomTripBuilder() {
                   
                   <div>
                     <label className={`block text-[9px] font-mono tracking-widest uppercase mb-1.5 transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
-                      {lang === "FR" ? "Nom Complet" : "Full Name"}
+                      {lang === "FR" ? "Votre Nom" : "Your name"}
                     </label>
                     <input
                       type="text"
@@ -414,7 +418,7 @@ export default function CustomTripBuilder() {
 
                   <div>
                     <label className={`block text-[9px] font-mono tracking-widest uppercase mb-1.5 transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
-                      {lang === "FR" ? "Adresse Courriel" : "Secure Email"}
+                      {lang === "FR" ? "Votre Adresse Courriel" : "Your email address"}
                     </label>
                     <input
                       type="email"
@@ -444,7 +448,7 @@ export default function CustomTripBuilder() {
                   <div className={`pt-4 border-t space-y-3 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
                     <div className="flex items-center justify-between">
                       <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
-                        {lang === "FR" ? "PASSAGERS" : "PASSENGERS"}
+                        {lang === "FR" ? "GROUPE DE VOYAGE" : "Travelling party"}
                       </label>
                       <div className="flex items-center gap-2">
                         <button
@@ -499,7 +503,7 @@ export default function CustomTripBuilder() {
                   <div className={`pt-4 border-t space-y-3 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
                     <div className="flex items-center justify-between">
                       <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
-                        {lang === "FR" ? "DURÉE EN NUITS" : "NIGHTS DURATION"}
+                        {lang === "FR" ? "DURÉE PRÉFÉRÉE" : "Preferred duration"}
                       </label>
                       <span className={`text-[13px] font-bold font-heading tabular-nums ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
                         {nights} {lang === "FR" ? "Nuits" : "Nights"}
@@ -570,6 +574,9 @@ export default function CustomTripBuilder() {
                     <Lock className="text-brand-gold w-3.5 h-3.5" />
                     <span>256-Bit Encrypted Concierge Channel</span>
                   </div>
+                  <p className={`text-[12px] leading-relaxed transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-600'}`}>
+                    {t.reassurance[lang]}
+                  </p>
                   <button
                     type="submit"
                     disabled={isSubmitting}

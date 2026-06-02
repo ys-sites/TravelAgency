@@ -1250,7 +1250,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                 <div className="space-y-4">
                   <div>
                     <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                      {lang === "FR" ? "Nom Complet" : "Full Name"}
+                      {lang === "FR" ? "Votre Nom" : "Your name"}
                     </label>
                     <input
                       type="text"
@@ -1263,7 +1263,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                   </div>
                   <div>
                     <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                      {lang === "FR" ? "Adresse Courriel" : "Secure Email"}
+                      {lang === "FR" ? "Votre Adresse Courriel" : "Your email address"}
                     </label>
                     <input
                       type="email"
@@ -1276,7 +1276,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                   </div>
                   <div>
                     <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                      {lang === "FR" ? "Exigences Circadiennes ou de Sécurité" : "Specialized Requirements / Remarks"}
+                      {lang === "FR" ? "Désirs Spéciaux" : "Any special wishes, dietary needs, or occasions we should know about?"}
                     </label>
                     <textarea
                       rows={4}
@@ -1293,7 +1293,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                   {/* Header row with stepper */}
                   <div className="flex items-center justify-between">
                     <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
-                      {lang === "FR" ? "NOMBRE DE PASSAGERS" : "PASSENGERS"}
+                      {lang === "FR" ? "GROUPE DE VOYAGE" : "Travelling party"}
                     </label>
                     <div className="flex items-center gap-2">
                       <button
@@ -1338,7 +1338,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                 <div className="bg-white border border-zinc-200/80 rounded-2xl px-5 py-4 space-y-3">
                   <div className="flex items-center justify-between">
                     <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
-                      {lang === "FR" ? "DURÉE EN NUITS" : "NIGHTS DURATION"}
+                      {lang === "FR" ? "DURÉE PRÉFÉRÉE" : "Preferred duration"}
                     </label>
                     <span className="text-[13px] font-bold text-zinc-900 font-heading tabular-nums">
                       {nights} {lang === "FR" ? "Nuits" : "Nights"}
@@ -1368,7 +1368,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                 <div className="space-y-3">
                   <div className="flex items-center space-x-2 text-[10px] text-zinc-500 font-mono">
                     <Shield className="text-brand-gold w-4 h-4" />
-                    <span>{lang === "FR" ? "Règlement Escrow Sécurisé" : "Secure 256-Bit Escrow Portal"}</span>
+                    <span>{lang === "FR" ? "Aucun paiement n'est effectué à ce stade. Notre conciergerie vous contactera dans les 24 heures pour commencer à concevoir votre passage." : "No payment is taken at this stage. Our concierge will contact you within 24 hours to begin crafting your passage."}</span>
                   </div>
                   <button
                     type="submit"

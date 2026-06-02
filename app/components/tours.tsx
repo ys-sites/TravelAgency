@@ -52,14 +52,14 @@ const toursList: TourCard[] = [
     },
     oldPrice: "C$ 7,400",
     price: "C$ 6,200",
-    tag: "SAVE C$ 1,200",
+    tag: "Early Reservation Privilege — C$1,200 included",
     badge: {
       FR: "SIGNATURE",
       EN: "SIGNATURE"
     },
     promoText: {
-      FR: "Réservez avant le 15 août 2026 et économisez 1 200 $ / pers.",
-      EN: "Book before August 15, 2026 and save 1,200 $ / pers."
+      FR: "Réservez avant le 15 août 2026 — C$1 200 en inclusions complémentaires / pers.",
+      EN: "Reserve before August 15, 2026 — C$1,200 in complimentary inclusions per guest"
     },
     iconType: "mountain"
   },
@@ -92,14 +92,14 @@ const toursList: TourCard[] = [
     },
     oldPrice: "C$ 9,450",
     price: "C$ 8,250",
-    tag: "SAVE C$ 1,200",
+    tag: "Prestige Access — C$1,200 included",
     badge: {
       FR: "EXCLUSIVE",
       EN: "EXCLUSIVE"
     },
     promoText: {
-      FR: "Réservez avant le 20 sept 2026 et économisez 1 200 $ / pers.",
-      EN: "Book before Sept 20, 2026 and save 1,200 $ / pers."
+      FR: "Réservez avant le 20 sept 2026 — C$1 200 en inclusions complémentaires / pers.",
+      EN: "Reserve before Sept 20, 2026 — C$1,200 in complimentary inclusions per guest"
     },
     iconType: "water"
   },
@@ -130,9 +130,9 @@ const toursList: TourCard[] = [
       FR: "Pension complète",
       EN: "Full board"
     },
-    oldPrice: "C$ 8,250",
+    oldPrice: "C$ 8,400",
     price: "C$ 7,400",
-    tag: "SAVE C$ 850",
+    tag: "Early Reservation Privilege — C$1,000 included",
     badge: {
       FR: "SOVEREIGN",
       EN: "SOVEREIGN"
