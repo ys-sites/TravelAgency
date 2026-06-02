@@ -519,6 +519,12 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             <p className="text-[14px] md:text-[15px] leading-relaxed text-zinc-600 font-light">
               {itinerary.overview[lang]}
             </p>
+            <a 
+              href="#booking-form"
+              className="inline-flex items-center gap-2 rounded-full bg-zinc-950 text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury hover:bg-zinc-800 shadow-md cursor-pointer mt-4"
+            >
+              {lang === "FR" ? "Réserver ce voyage" : "Book this Journey"} &rarr;
+            </a>
           </div>
 
           {/* Destination Showcase Image with animation */}
@@ -674,6 +680,22 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             </div>
           </motion.div>
 
+          {/* Booking CTA for the end of details */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex justify-center pt-8 border-t border-zinc-100"
+          >
+            <a 
+              href="#booking-form"
+              className="inline-flex items-center gap-2 rounded-full bg-zinc-950 text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-5 transition-luxury hover:bg-zinc-800 shadow-md cursor-pointer"
+            >
+              {lang === "FR" ? "RÉSERVER VOTRE PASSAGE" : "RESERVE YOUR JOURNEY"} &rarr;
+            </a>
+          </motion.div>
+
         </div>
 
         {/* Right Side: Video + Booking Panel (Span 4) */}
@@ -693,6 +715,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
 
           {/* Contact Form Block — sticky only with scroll entrance */}
           <motion.div 
+            id="booking-form"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -796,6 +819,44 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                 </button>
               </div>
             )}
+
+            {/* Conditions Disclaimer */}
+            <div className="mt-8 pt-6 border-t border-zinc-200/60 text-center select-none">
+              <h4 className="font-serif text-sm font-bold text-zinc-900 mb-3 uppercase tracking-wider">
+                {lang === "FR" ? "Conditions" : "Terms & Conditions"}
+              </h4>
+              <p className="text-[10px] md:text-[11px] leading-relaxed text-zinc-500 italic font-light mb-4">
+                {lang === "FR" 
+                  ? "Tarif calculé le 1 juin 2026, pour un séjour du 13 au 20 janvier 2027 (à destination). Les dates et composantes sont modifiables à votre guise. Les hôtels et activités proposés le sont à titre indicatif et peuvent être modifiés selon vos besoins."
+                  : "Rate calculated on June 1, 2026, for a stay from January 13 to 20, 2027 (at destination). Dates and components can be modified at your convenience. Proposed hotels and activities are indicative and can be modified according to your needs."
+                }
+              </p>
+              <p className="text-[10px] md:text-[11px] leading-relaxed text-zinc-500 italic font-light mb-4">
+                {lang === "FR"
+                  ? "Les tarifs sont sujets à changement selon la tarification dynamique du jour. Aucune place n'est réservée d'avance et les disponibilités sont sujettes à changement selon les fournisseurs."
+                  : "Rates are subject to change based on daily dynamic pricing. No spots are reserved in advance and availability is subject to change by suppliers."
+                }
+              </p>
+              <p className="text-[10px] md:text-[11px] leading-relaxed text-zinc-500 font-light">
+                {lang === "FR" ? (
+                  <>
+                    Consultez nos conditions complètes au{" "}
+                    <Link href="/conditions" className="text-brand-gold hover:underline font-semibold">
+                      lien suivant
+                    </Link>
+                    .
+                  </>
+                ) : (
+                  <>
+                    Consult our full conditions at the{" "}
+                    <Link href="/conditions" className="text-brand-gold hover:underline font-semibold">
+                      following link
+                    </Link>
+                    .
+                  </>
+                )}
+              </p>
+            </div>
           </motion.div>
         </div>
 
