@@ -759,7 +759,8 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                   {lang === "FR" ? "Modifier la requête" : "Modify inquiry"}
                 </button>
               </div>
-          )}
+            )}
+          </div>
         </div>
 
       </section>
