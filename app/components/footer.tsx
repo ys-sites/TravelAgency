@@ -65,7 +65,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 md:gap-4">
             <img 
               src="/images/logo.png" 
-              className="h-20 md:h-24 w-auto object-contain hover:opacity-90 transition-opacity duration-300" 
+              className="h-24 md:h-28 w-auto object-contain hover:opacity-90 transition-opacity duration-300" 
               alt="Majestic Experiences Voyages Logo" 
             />
             <div className="flex flex-col text-white">
