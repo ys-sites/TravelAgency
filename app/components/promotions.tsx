@@ -158,11 +158,19 @@ export default function Promotions() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
                 
                 {/* Promo Badge */}
-                <div className="absolute top-5 left-5 bg-brand-gold text-black font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full shadow-md">
+                <div className={`absolute top-5 left-5 font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full shadow-md ${
+                  deal.tag === "SAVE C$ 1,200"
+                    ? "bg-[#8B2635] text-[#faf9f5]"
+                    : "bg-brand-gold text-black"
+                }`}>
                   {deal.tag}
                 </div>
 
-                <div className="absolute top-5 right-5 glass-tag px-3 py-1.5 rounded-full text-white font-mono text-[8px] tracking-wider uppercase font-semibold">
+                <div className={`absolute top-5 right-5 px-3 py-1.5 rounded-full font-mono text-[8px] tracking-wider uppercase font-semibold ${
+                  deal.badge.FR === "OFFRE EXCLUSIVE" || deal.badge.EN === "EXCEPTIONAL RATE"
+                    ? "bg-[#8B2635] text-[#faf9f5] shadow-md"
+                    : "glass-tag text-white"
+                }`}>
                   {deal.badge[lang]}
                 </div>
 
