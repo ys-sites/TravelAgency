@@ -647,18 +647,16 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
         {/* Right Side: Video + Booking Panel (Span 4) */}
         <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28 h-fit">
 
-          {/* Video Block — always separate, full 16:9 aspect ratio */}
+          {/* Video Block — full ratio, no cropping */}
           <div className="w-full rounded-2xl overflow-hidden border border-zinc-200/60 shadow-md bg-black">
-            <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
-              <video
-                src="https://v1.pinimg.com/videos/iht/expMp4/81/24/b8/8124b8c7cd11c22123a7b75cfabf32fc_720w.mp4"
-                className="absolute inset-0 w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-            </div>
+            <video
+              src="https://v1.pinimg.com/videos/iht/expMp4/81/24/b8/8124b8c7cd11c22123a7b75cfabf32fc_720w.mp4"
+              className="w-full h-auto block"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           </div>
 
           {/* Contact Form Block — always separate, beneath the video */}
