@@ -22,8 +22,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WonderLand — Premium Travel & Adventure Tours",
-  description: "Explore the raw beauty of Altai Mountains, Kamchatka, and Teriberka with WonderLand Tour. We organize premium, curated travel experiences.",
+  title: "Majestic Experiences — Premium Travel & Adventure Tours",
+  description: "Explore the raw beauty of Morocco and the Arabian Gulf with Majestic Experiences Voyages. We organize premium, curated travel experiences.",
 };
 
 export default function RootLayout({

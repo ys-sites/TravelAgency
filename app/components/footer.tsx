@@ -49,8 +49,8 @@ const t = {
     EN: "Contact"
   },
   copyright: {
-    FR: "© 2026 WonderLand Gulf Concierge. Tous droits réservés.",
-    EN: "© 2026 WonderLand Gulf Concierge. All rights reserved."
+    FR: "© 2026 Majestic Experiences Voyages Concierge. Tous droits réservés.",
+    EN: "© 2026 Majestic Experiences Voyages Concierge. All rights reserved."
   }
 };
 
@@ -62,13 +62,9 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-white/70 px-6">
         {/* Brand Column */}
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2 text-white font-heading font-semibold text-[18px] tracking-wider">
-            <svg className="h-5 w-5 text-brand-gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
-            <span className="font-serif uppercase tracking-[0.1em] text-sm">WonderLand <span className="text-brand-gold">Gulf</span></span>
+          <div className="flex items-center gap-3 text-white font-heading font-semibold text-[18px] tracking-wider">
+            <img src="/images/logo.png" className="h-8 w-auto object-contain brightness-0 invert" alt="logo" />
+            <span className="font-serif uppercase tracking-[0.1em] text-sm">Majestic Experiences <span className="text-brand-gold">Voyages</span></span>
           </div>
           <p className="text-[12px] text-white/50 leading-relaxed font-light max-w-[240px]">
             {t.description[lang]}
@@ -107,7 +103,7 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
             <li>+212 524 456 789</li>
-            <li>concierge@wonderlandgulf.ca</li>
+            <li>concierge@majesticexperiences.ca</li>
             <li className="leading-relaxed">Rue du Temple, Hivernage,<br />Marrakech 40000, Maroc</li>
           </ul>
         </div>

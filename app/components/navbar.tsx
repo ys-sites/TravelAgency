@@ -19,13 +19,9 @@ export default function Navbar() {
     <nav className="absolute top-6 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1100px] -translate-x-1/2">
       <div className="glass-nav flex h-[64px] items-center justify-between rounded-full px-8 py-3">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 text-white font-heading font-semibold text-[16px] tracking-wider cursor-pointer decoration-none">
-          <svg className="h-5 w-5 text-brand-gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-            <path d="M2 17l10 5 10-5" />
-            <path d="M2 12l10 5 10-5" />
-          </svg>
-          <span className="font-serif tracking-[0.1em] text-sm uppercase">WonderLand <span className="text-brand-gold">Gulf</span></span>
+        <Link href="/" className="flex items-center gap-3 text-white font-heading font-semibold text-[16px] tracking-wider cursor-pointer decoration-none">
+          <img src="/images/logo.png" className="h-7 w-auto object-contain brightness-0 invert" alt="logo" />
+          <span className="font-serif tracking-[0.1em] text-xs uppercase sm:text-sm">Majestic Experiences <span className="text-brand-gold">Voyages</span></span>
         </Link>
 
         {/* Navigation Links */}
