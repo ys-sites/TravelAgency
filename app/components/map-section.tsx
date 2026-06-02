@@ -348,7 +348,7 @@ export default function MapSection() {
                 className={`font-sans text-[9px] tracking-widest font-semibold uppercase cursor-pointer transition-colors duration-300 ${
                   isActive ? "fill-[#8B2635] font-bold" : "fill-[#6B5335]/90 hover:fill-[#8B2635]"
                 }`}
-                style={{ textAnchor: reg.labelPos.align }}
+                style={{ textAnchor: reg.labelPos.align as "start" | "end" | "middle" }}
                 onMouseEnter={() => setActiveRegion(reg)}
                 onMouseLeave={() => setActiveRegion(null)}
               >
