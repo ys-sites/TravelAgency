@@ -228,11 +228,7 @@ export default function Tours() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
                   
                   {/* Promo Badge */}
-                  <div className={`absolute top-5 left-5 font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full shadow-md ${
-                    tour.tag === "SAVE C$ 1,200"
-                      ? "bg-[#8B2635] text-[#faf9f5]"
-                      : "bg-brand-gold text-black"
-                  }`}>
+                  <div className="absolute top-5 left-5 bg-[#8B2635] text-[#faf9f5] font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full shadow-md">
                     {tour.tag}
                   </div>
 
@@ -288,7 +284,7 @@ export default function Tours() {
 
                     <Link 
                       href={`/itineraries/${tour.id}`}
-                      className="bg-zinc-900 hover:bg-zinc-800 text-white font-semibold text-[10px] tracking-[0.15em] uppercase px-4 py-2.5 rounded-full border border-zinc-900 hover:border-zinc-800 transition-luxury cursor-pointer shadow-sm"
+                      className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[10px] tracking-[0.15em] uppercase px-4 py-2.5 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
                     >
                       {t.book[lang]}
                     </Link>

@@ -521,7 +521,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             </p>
             <a 
               href="#booking-form"
-              className="inline-flex items-center gap-2 rounded-full bg-zinc-950 text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury hover:bg-zinc-800 shadow-md cursor-pointer mt-4"
+              className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury hover:bg-[#72202b] shadow-md cursor-pointer mt-4"
             >
               {lang === "FR" ? "Réserver ce voyage" : "Book this Journey"} &rarr;
             </a>
@@ -690,7 +690,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
           >
             <a 
               href="#booking-form"
-              className="inline-flex items-center gap-2 rounded-full bg-zinc-950 text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-5 transition-luxury hover:bg-zinc-800 shadow-md cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-5 transition-luxury hover:bg-[#72202b] shadow-md cursor-pointer"
             >
               {lang === "FR" ? "RÉSERVER VOTRE PASSAGE" : "RESERVE YOUR JOURNEY"} &rarr;
             </a>
@@ -732,7 +732,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                   </span>
                   <div className="flex items-baseline justify-between">
                     <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD / pers.</span></h3>
-                    <span className="text-[9px] font-mono text-brand-gold uppercase bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 rounded">
+                    <span className="text-[9px] font-mono text-[#faf9f5] uppercase bg-[#8B2635] px-2 py-0.5 rounded shadow-sm">
                       {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
                     </span>
                   </div>
@@ -786,7 +786,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-zinc-900 hover:bg-zinc-800 text-white font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-zinc-900 shadow-md cursor-pointer"
+                    className="w-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-[#8B2635] shadow-md cursor-pointer"
                   >
                     {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
                   </button>
