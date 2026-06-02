@@ -59,6 +59,14 @@ const t = {
   escrowTerms: {
     FR: "Conditions de Dépôt Fiduciaire",
     EN: "Security Escrow Terms"
+  },
+  brandName1: { FR: "Majestic", EN: "Majestic" },
+  brandName2: { FR: "Experiences Voyages", EN: "Experiences Voyages" },
+  phone: { FR: "+212 524 456 789", EN: "+212 524 456 789" },
+  email: { FR: "concierge@majesticexperiences.ca", EN: "concierge@majesticexperiences.ca" },
+  address: {
+    FR: "Rue du Temple, Hivernage, Marrakech 40000, Maroc",
+    EN: "Rue du Temple, Hivernage, Marrakech 40000, Morocco"
   }
 };
 
@@ -78,10 +86,10 @@ export default function Footer() {
             />
             <div className="flex flex-col text-white">
               <span className="font-serif text-[14px] md:text-[18px] uppercase tracking-[0.25em] font-bold leading-none">
-                Majestic
+                {translate(t.brandName1, lang)}
               </span>
               <span className="font-sans text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-white font-light mt-0.5 leading-none">
-                Experiences Voyages
+                {translate(t.brandName2, lang)}
               </span>
             </div>
           </div>
@@ -121,9 +129,9 @@ export default function Footer() {
             {translate(t.contact, lang)}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
-            <li>+212 524 456 789</li>
-            <li>concierge@majesticexperiences.ca</li>
-            <li className="leading-relaxed">Rue du Temple, Hivernage,<br />Marrakech 40000, Maroc</li>
+            <li>{translate(t.phone, lang)}</li>
+            <li>{translate(t.email, lang)}</li>
+            <li className="leading-relaxed">{translate(t.address, lang)}</li>
           </ul>
         </div>
       </div>

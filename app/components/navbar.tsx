@@ -10,6 +10,8 @@ const t = {
   about:      { FR: "À Propos", EN: "About Us" },
   customTrip: { FR: "Voyage Sur Mesure", EN: "Custom Trip" },
   contacts:   { FR: "Contacts", EN: "Contacts" },
+  brandName1: { FR: "Majestic", EN: "Majestic" },
+  brandName2: { FR: "Experiences Voyages", EN: "Experiences Voyages" },
 };
 
 export default function Navbar() {
@@ -27,10 +29,10 @@ export default function Navbar() {
           />
           <div className="flex flex-col text-white">
             <span className="font-serif text-[12px] sm:text-[15px] md:text-[18px] uppercase tracking-[0.25em] font-bold leading-none">
-              Majestic
+              {translate(t.brandName1, lang)}
             </span>
             <span className="font-sans text-[8px] sm:text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-white font-light mt-1.5 leading-none">
-              Experiences Voyages
+              {translate(t.brandName2, lang)}
             </span>
           </div>
         </Link>
