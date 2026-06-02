@@ -10,12 +10,13 @@ export default function GulfHeroScrubber() {
     <div className="relative h-screen w-full bg-black overflow-hidden">
       {/* Render Cloudinary Video Embed Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
-        <iframe
-          src="https://player.cloudinary.com/embed/?cloud_name=dmnoikwb9&public_id=Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx&autoplay=true&muted=true&loop=true&controls=false"
-          className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-110"
-          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-          allowFullScreen
-          frameBorder="0"
+        <video
+          src="https://res.cloudinary.com/dmnoikwb9/video/upload/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.mp4"
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
       </div>
       

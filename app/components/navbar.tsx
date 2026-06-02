@@ -16,13 +16,13 @@ export default function Navbar() {
   const { lang, setLang } = useLang();
 
   return (
-    <nav className="absolute top-3 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1100px] -translate-x-1/2">
-      <div className="glass-nav flex h-[76px] sm:h-[90px] md:h-[102px] items-center justify-between rounded-full px-8 py-0.5">
+    <nav className="absolute top-0 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1100px] -translate-x-1/2">
+      <div className="glass-nav flex h-[54px] sm:h-[64px] md:h-[74px] items-center justify-between rounded-full px-8 py-0.5">
         {/* Logo and Company Name */}
         <Link href="/" className="flex items-center gap-3 md:gap-4 cursor-pointer decoration-none group">
           <img 
             src="/images/logo.png" 
-            className="h-[72px] sm:h-[86px] md:h-[98px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-90" 
+            className="h-[46px] sm:h-[56px] md:h-[66px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-90" 
             alt="Majestic Experiences Voyages" 
           />
           <div className="flex flex-col text-white">

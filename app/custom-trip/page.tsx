@@ -67,8 +67,8 @@ const t = {
     FR: "3. Paramètres de Durée & Escrow"
   },
   stepContact: {
-    EN: "4. Secure Credentials & Escrow",
-    FR: "4. Informations de Sécurité & Escrow"
+    EN: "4. Contact & Selected Itineraries",
+    FR: "4. Contact & Itinéraires Sélectionnés"
   },
   estimateCost: {
     EN: "Estimated Package Value",
@@ -411,29 +411,43 @@ export default function CustomTripBuilder() {
                     />
                   </div>
 
-                  {/* Payment Info Section */}
-                  <div className={`pt-4 space-y-4 border-t transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
-                    <div className="flex items-center gap-1 text-[10px] font-mono text-brand-gold uppercase">
-                      <CreditCard className="w-3.5 h-3.5 text-brand-gold" />
-                      <span>{lang === "FR" ? "Dépôt d'Escrow (Facultatif)" : "Secure Escrow Deposit (Optional)"}</span>
+                  {/* Selected Itineraries / Experiences */}
+                  {selectedDests.length > 0 && (
+                    <div className={`pt-4 border-t space-y-2 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
+                      <label className={`block text-[9px] font-mono tracking-widest uppercase transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
+                        {lang === "FR" ? "Destinations sélectionnées" : "Selected Itineraries"}
+                      </label>
+                      <div className="flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto pr-1">
+                        {selectedDests.map(id => {
+                          const dest = DESTINATIONS.find(d => d.id === id);
+                          return dest ? (
+                            <span key={id} className={`text-[9px] font-medium border px-2.5 py-1 rounded-full transition-colors duration-1000 ${isPremium ? 'bg-white/5 border-white/10 text-white/80' : 'bg-zinc-100 border-zinc-200 text-zinc-700'}`}>
+                              {dest.title[lang]}
+                            </span>
+                          ) : null;
+                        })}
+                      </div>
                     </div>
-                    <div>
-                      <input
-                        type="text"
-                        value={cardNumber}
-                        onChange={(e) => setCardNumber(e.target.value)}
-                        placeholder="Card Number / Numéro de Carte"
-                        className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 mb-2 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
-                      />
-                      <input
-                        type="text"
-                        value={cardExpiry}
-                        onChange={(e) => setCardExpiry(e.target.value)}
-                        placeholder="MM/YY"
-                        className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
-                      />
+                  )}
+
+                  {/* Selected Activities */}
+                  {selectedActs.length > 0 && (
+                    <div className={`pt-4 border-t space-y-2 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
+                      <label className={`block text-[9px] font-mono tracking-widest uppercase transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
+                        {lang === "FR" ? "Activités sélectionnées" : "Selected Activities"}
+                      </label>
+                      <div className="flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto pr-1">
+                        {selectedActs.map(id => {
+                          const act = ACTIVITIES.find(a => a.id === id);
+                          return act ? (
+                            <span key={id} className={`text-[9px] font-medium border px-2.5 py-1 rounded-full transition-colors duration-1000 ${isPremium ? 'bg-brand-gold/10 border-brand-gold/25 text-brand-gold' : 'bg-brand-gold/15 border-brand-gold/30 text-brand-gold-dark'}`}>
+                              {act.title[lang]}
+                            </span>
+                          ) : null;
+                        })}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 <div className="space-y-4 pt-2">
@@ -475,6 +489,47 @@ export default function CustomTripBuilder() {
                 : `Thank you, ${fullName}. Your customized package parameters for ${nights} nights are encrypted and transmitted. Your private travel architect will verify booking conditions within 15 minutes.`
               }
             </p>
+            
+            {/* Package Recap summary */}
+            <div className={`w-full text-left p-6 rounded-2xl border transition-colors duration-1000 ${isPremium ? 'bg-white/5 border-white/10 text-white' : 'bg-zinc-50 border-zinc-200 text-zinc-900'} space-y-4`}>
+              <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-brand-gold">
+                {lang === "FR" ? "Itinéraire Personnalisé" : "Custom Package Recap"}
+              </h4>
+              <div className="text-[11px] font-mono space-y-1">
+                <div>
+                  <span className={`${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>{lang === "FR" ? "Durée:" : "Duration:"}</span>{" "}
+                  <span className="font-bold text-brand-gold">{nights} {lang === "FR" ? "Nuits" : "Nights"}</span>
+                </div>
+                <div>
+                  <span className={`${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>{lang === "FR" ? "Catégorie:" : "Tier:"}</span>{" "}
+                  <span className="font-bold text-brand-gold">{isPremium ? (lang === "FR" ? "Souverain de Prestige" : "Sovereign Prestige") : (lang === "FR" ? "Passage Sur Mesure" : "Bespoke Passage")}</span>
+                </div>
+              </div>
+              
+              {selectedDests.length > 0 && (
+                <div className="space-y-1">
+                  <span className={`block text-[10px] font-mono uppercase ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>{lang === "FR" ? "Destinations:" : "Selected Itineraries:"}</span>
+                  <ul className={`list-disc pl-4 text-xs font-light space-y-1 ${isPremium ? 'text-white/80' : 'text-zinc-700'}`}>
+                    {selectedDests.map(id => {
+                      const dest = DESTINATIONS.find(d => d.id === id);
+                      return dest ? <li key={id}>{dest.title[lang]}</li> : null;
+                    })}
+                  </ul>
+                </div>
+              )}
+
+              {selectedActs.length > 0 && (
+                <div className="space-y-1">
+                  <span className={`block text-[10px] font-mono uppercase ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>{lang === "FR" ? "Activités de Prestige:" : "Activities selected:"}</span>
+                  <ul className={`list-disc pl-4 text-xs font-light space-y-1 ${isPremium ? 'text-white/80' : 'text-zinc-700'}`}>
+                    {selectedActs.map(id => {
+                      const act = ACTIVITIES.find(a => a.id === id);
+                      return act ? <li key={id}>{act.title[lang]}</li> : null;
+                    })}
+                  </ul>
+                </div>
+              )}
+            </div>
             <button
               onClick={() => {
                 setIsSuccess(false);
