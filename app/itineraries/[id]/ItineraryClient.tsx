@@ -186,7 +186,7 @@ export default function ItineraryClient({ id }: { id: string }) {
       {theme && (
         <div className="relative bg-[#faf9f5]">
           <div className="py-12">
-            <MapSection />
+            <MapSection countryId={id} />
           </div>
 
           {/* Experience Grid Section */}
