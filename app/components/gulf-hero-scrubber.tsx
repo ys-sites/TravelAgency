@@ -23,28 +23,37 @@ export default function GulfHeroScrubber() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-1" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none z-1" />
 
-      {/* Centered Premium Logo & Call to Actions */}
+      {/* Centered Premium Logo */}
       <div className="absolute inset-0 flex items-center justify-center z-10 px-6 select-none pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center max-w-4xl pointer-events-auto text-center -translate-y-16 md:-translate-y-20"
+          className="flex flex-col items-center max-w-4xl pointer-events-auto text-center"
         >
           <img
             src="/images/logo.png"
             alt="Majestic Experiences Logo"
-            className="w-[200px] sm:w-[260px] md:w-[300px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] mb-8"
+            className="w-[200px] sm:w-[260px] md:w-[300px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
           />
-          
-          <h2 className="font-serif text-xl sm:text-2xl md:text-3xl text-white tracking-[0.1em] uppercase font-light max-w-2xl mb-8 leading-relaxed">
+        </motion.div>
+      </div>
+      
+      {/* Bottom Subtext & Call to Actions */}
+      <div className="absolute bottom-28 left-0 right-0 z-10 flex flex-col items-center px-6 select-none pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col items-center max-w-4xl pointer-events-auto text-center space-y-6"
+        >
+          <h2 className="font-serif text-lg sm:text-xl md:text-2xl text-white tracking-[0.1em] uppercase font-light max-w-2xl leading-relaxed">
             {lang === "FR"
               ? "Concierge de Voyage de Prestige à travers le Golfe et le Maroc"
               : "Bespoke Travel Concierge across the Arabian Gulf & Morocco"
             }
           </h2>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md mx-auto">
             <a
               href="#itineraries"
