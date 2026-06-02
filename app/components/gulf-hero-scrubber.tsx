@@ -31,7 +31,7 @@ export default function GulfHeroScrubber() {
           <img
             src="/images/logo.png"
             alt="WonderLand Logo"
-            className="w-[280px] sm:w-[420px] md:w-[540px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
+            className="w-[200px] sm:w-[280px] md:w-[360px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
           />
         </motion.div>
       </div>
