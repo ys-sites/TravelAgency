@@ -7,8 +7,6 @@ import {
   Calendar, 
   Users, 
   MapPin, 
-  ChevronLeft, 
-  ChevronRight, 
   ShieldCheck, 
   PhoneCall, 
   Home, 
@@ -110,33 +108,6 @@ const toursList: TourCard[] = [
     oldPrice: "C$ 16,500",
     price: "C$ 14,800",
     iconType: "lighthouse"
-  },
-  {
-    id: 4,
-    image: "/images/saudi-alula-canyon.png",
-    category: {
-      FR: "tombes de hegra - glamping de prestige - yacht mer rouge",
-      EN: "hegra tombs - luxury desert glamping - red sea yacht"
-    },
-    title: {
-      FR: "Merveilles d'AlUla & Mer Rouge",
-      EN: "AlUla & Red Sea Wonders"
-    },
-    description: {
-      FR: "Découvrez les anciennes tombes de Hegra, profitez d'un pavillon de miroir de luxe et naviguez sur la Mer Rouge.",
-      EN: "Explore the ancient sandstone tombs of Hegra, check-in to a luxury mirrored canyon villa, and cruise the Red Sea."
-    },
-    days: {
-      FR: "14 jours",
-      EN: "14 days"
-    },
-    people: {
-      FR: "2 personnes",
-      EN: "2 people"
-    },
-    oldPrice: "C$ 28,500",
-    price: "C$ 24,900",
-    iconType: "mountain"
   }
 ];
 
@@ -149,16 +120,6 @@ const t = {
 
 export default function Tours() {
   const { lang } = useLang();
-  const scrollRef = React.useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollAmount = clientWidth / 2;
-      const scrollTo = direction === "left" ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
-      scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
-    }
-  };
 
   const serviceBadges = [
     {
@@ -188,7 +149,7 @@ export default function Tours() {
       {/* Split Layout Container */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
-        {/* Left Column: Heading & Branding (3-span wide for more space for cards) */}
+        {/* Left Column: Heading & Branding */}
         <div className="lg:col-span-3 space-y-6 lg:sticky lg:top-28">
           {/* Logo */}
           <div className="flex items-center gap-3">
@@ -200,67 +161,49 @@ export default function Tours() {
           </div>
           
           <div className="space-y-4 pt-2">
-            <span className="text-brand-gold font-mono text-[10px] tracking-[0.3em] uppercase block">
-              {lang === "FR" ? "Évasions de Prestige" : "Elite Collections"}
+            <span className="text-brand-gold font-serif italic text-[17px] capitalize block">
+              {lang === "FR" ? "Top Destinations" : "Top Destinations"}
             </span>
             <h2 className="font-serif text-3xl font-bold text-zinc-900 tracking-tight uppercase leading-none">
               {lang === "FR" ? "EXPLOREZ DES LIEUX DE RÊVE" : "EXPLORE DREAM PLACES"}
             </h2>
             <p className="text-[13px] leading-relaxed text-zinc-500 font-light">
               {lang === "FR"
-                ? "Où voulez-vous aller ensuite ? Découvrez le sommet du voyage sur mesure avec nos riads impériaux et nos villas côtières d'exception."
-                : "Where do you want to go next? Discover the absolute pinnacle of luxury stays, private charter flights, and bespoke custom passages."
+                ? "Où voulez-vous aller ensuite ? Trouvez les meilleurs endroits où séjourner, les choses à faire et à voir."
+                : "Where do you want to go next? Find the best places to stay, things to do, and see."
               }
             </p>
           </div>
 
-          {/* Call to Action Buttons & Navigation Controls */}
+          {/* Call to Action Buttons */}
           <div className="flex flex-col gap-4 pt-4">
             <Link
-              href="/custom-trip"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 hover:bg-brand-gold hover:text-black text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-3.5 transition-luxury shadow-md cursor-pointer hover:scale-105"
+              href="/itineraries"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 hover:bg-brand-gold hover:text-black text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-4 transition-luxury shadow-md cursor-pointer hover:scale-105"
             >
-              {lang === "FR" ? "CONSTRUIRE UN VOYAGE" : "BUILD CUSTOM PASSAGE"}
+              {lang === "FR" ? "TOUS LES ITINÉRAIRES" : "VIEW ALL DESTINATIONS"} &rarr;
             </Link>
 
             <Link
-              href="/itineraries"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-3.5 transition-luxury shadow-sm cursor-pointer hover:scale-105"
+              href="/custom-trip"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-4 transition-luxury shadow-sm cursor-pointer hover:scale-105"
             >
-              {lang === "FR" ? "TOUS LES ITINÉRAIRES" : "SEE ALL ITINERARIES"}
+              {lang === "FR" ? "VOYAGE SUR MESURE" : "BUILD CUSTOM PASSAGE"}
             </Link>
-            
-            <div className="flex items-center gap-3 justify-start pt-2">
-              <button
-                onClick={() => scroll("left")}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-800 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-colors shadow-sm cursor-pointer"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                onClick={() => scroll("right")}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-800 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-colors shadow-sm cursor-pointer"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
-            </div>
           </div>
         </div>
 
-        {/* Right Column: Sliding Itinerary Cards (9-span wide to fit 3 cards exactly) */}
+        {/* Right Column: 3 Shown Itineraries in a clean static grid */}
         <div className="lg:col-span-9 w-full relative">
-          <div
-            ref={scrollRef}
-            className="flex overflow-x-auto gap-6 scrollbar-none snap-x snap-mandatory pb-4 w-full"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {toursList.map((tour, index) => (
               <motion.div
                 key={tour.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                className="group relative flex flex-col justify-end min-w-[270px] sm:min-w-[272px] lg:min-w-[275px] snap-center rounded-[1.8rem] overflow-hidden p-5 border border-zinc-200/60 shadow-md hover:shadow-xl hover:border-brand-gold transition-luxury h-[440px] cursor-pointer"
+                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+                className="group relative flex flex-col justify-end rounded-[1.8rem] overflow-hidden p-5 border border-zinc-200/60 shadow-md hover:shadow-2xl hover:-translate-y-2 hover:border-brand-gold transition-luxury h-[440px] cursor-pointer"
               >
                 {/* Full-bleed Image Background */}
                 <div className="absolute inset-0 z-0 overflow-hidden">

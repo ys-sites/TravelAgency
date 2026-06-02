@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from "motion/react";
-import Link from "next/link";
 import { useLang } from "../context/lang-context";
 
 export default function GulfHeroScrubber() {
@@ -30,7 +29,7 @@ export default function GulfHeroScrubber() {
           initial={{ opacity: 0, scale: 0.96, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center max-w-5xl pointer-events-auto text-center"
+          className="flex flex-col items-center max-w-4xl pointer-events-auto text-center"
         >
           <img
             src="/images/logo.png"
@@ -38,36 +37,21 @@ export default function GulfHeroScrubber() {
             className="w-[200px] sm:w-[260px] md:w-[300px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] mb-8"
           />
           
-          <span className="text-brand-gold font-mono text-[10px] sm:text-[11px] tracking-[0.35em] uppercase mb-4 block">
-            {lang === "FR" ? "CONCIERGERIE DE VOYAGE DE PRESTIGE" : "PRESTIGE TRAVEL CONCIERGE"}
-          </span>
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white tracking-[0.02em] uppercase leading-tight font-bold max-w-4xl mb-4 drop-shadow-md">
-            {lang === "FR" 
-              ? "Orchestrez Votre Passage Souverain" 
-              : "Orchestrate Your Sovereign Passage"
-            }
-          </h1>
-          <p className="text-white/80 font-body text-[12px] sm:text-sm tracking-wider font-light max-w-2xl mb-8 leading-relaxed">
+          <h2 className="font-serif text-xl sm:text-2xl md:text-3xl text-brand-gold tracking-[0.1em] uppercase font-light max-w-2xl mb-8 leading-relaxed">
             {lang === "FR"
-              ? "Itinéraires sur mesure ultra-luxe, affrètement privé et sanctuaires exclusifs à travers le Golfe et le Maroc."
-              : "Ultra-luxury bespoke itineraries, private charters, and exclusive sanctuary escapes across the Gulf and Morocco."
+              ? "Concierge de Voyage de Prestige à travers le Golfe et le Maroc"
+              : "Bespoke Travel Concierge across the Arabian Gulf & Morocco"
             }
-          </p>
+          </h2>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md mx-auto">
             <a
-              href="#portfolios"
-              className="w-full sm:w-auto border border-brand-gold bg-brand-gold hover:bg-white hover:border-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury rounded-full shadow-md hover:scale-105 inline-block text-center min-w-[200px] cursor-pointer"
+              href="#itineraries"
+              className="w-full border border-brand-gold bg-brand-gold hover:bg-white hover:border-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury rounded-full shadow-md hover:scale-105 inline-block text-center min-w-[220px] cursor-pointer"
             >
-              {lang === "FR" ? "Découvrir la Collection" : "Discover Portfolios"}
+              {lang === "FR" ? "Explorer les Itinéraires" : "Explore Itineraries"}
             </a>
-            <Link
-              href="/custom-trip"
-              className="w-full sm:w-auto border border-white/30 bg-white/10 backdrop-blur-md hover:bg-white hover:text-black hover:border-white text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury rounded-full shadow-md hover:scale-105 inline-block text-center min-w-[200px] cursor-pointer"
-            >
-              {lang === "FR" ? "Voyage sur Mesure" : "Custom Trip"}
-            </Link>
           </div>
         </motion.div>
       </div>
