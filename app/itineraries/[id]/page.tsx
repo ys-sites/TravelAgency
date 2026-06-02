@@ -645,7 +645,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
         </div>
 
         {/* Right Side: Video + Booking Panel (Span 4) */}
-        <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28 h-fit">
+        <div className="lg:col-span-4 space-y-6">
 
           {/* Video Block — full ratio, no cropping */}
           <div className="w-full rounded-2xl overflow-hidden border border-zinc-200/60 shadow-md bg-black">
@@ -659,8 +659,8 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             />
           </div>
 
-          {/* Contact Form Block — always separate, beneath the video */}
-          <div className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden">
+          {/* Contact Form Block — sticky only */}
+          <div className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden lg:sticky lg:top-28">
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-[50px] rounded-full pointer-events-none" />
 
             {!isSubmitted ? (
