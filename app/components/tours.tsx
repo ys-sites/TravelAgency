@@ -123,9 +123,9 @@ export default function Tours() {
                   <div className="space-y-4">
                     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-zinc-500 font-sans font-medium tracking-wide">
                       <span>{translate(tour.duration, lang)}</span>
-                      <span>{lang === "FR" ? "•" : "•"}</span>
+                      <span>{translate({ FR: "•", EN: "•" }, lang)}</span>
                       <span>{translate(tour.flight, lang)}</span>
-                      <span>{lang === "FR" ? "•" : "•"}</span>
+                      <span>{translate({ FR: "•", EN: "•" }, lang)}</span>
                       <span>{translate(tour.meals, lang)}</span>
                     </div>
 

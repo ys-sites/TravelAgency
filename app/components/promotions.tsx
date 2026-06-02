@@ -118,9 +118,9 @@ export default function Promotions() {
                 <div className="space-y-4">
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-zinc-500 font-sans font-medium tracking-wide">
                     <span>{translate(deal.duration, lang)}</span>
-                    <span>{lang === "FR" ? "•" : "•"}</span>
+                    <span>{translate({ FR: "•", EN: "•" }, lang)}</span>
                     <span>{translate(deal.flight, lang)}</span>
-                    <span>{lang === "FR" ? "•" : "•"}</span>
+                    <span>{translate({ FR: "•", EN: "•" }, lang)}</span>
                     <span>{translate(deal.meals, lang)}</span>
                   </div>
 

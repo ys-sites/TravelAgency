@@ -455,7 +455,15 @@ export default function MapSection({ countryId = "1" }: { countryId?: string }) 
   const { lang } = useLang();
   
   // Safe lookup of map configuration based on prop
-  const mapConfig = mapsData[countryId] || mapsData["1"];
+  const mapConfig = (() => {
+    switch (countryId) {
+      case "1": return mapsData["1"];
+      case "2": return mapsData["2"];
+      case "3": return mapsData["3"];
+      case "4": return mapsData["4"];
+      default: return mapsData["1"];
+    }
+  })();
   const [activeRegion, setActiveRegion] = useState<typeof mapConfig.regions[number] | null>(null);
 
   // Determine current active text elements
@@ -581,7 +589,7 @@ export default function MapSection({ countryId = "1" }: { countryId?: string }) 
               className="font-heading font-semibold text-[10px] tracking-[0.3em] fill-[#6B5335]/70 uppercase text-center"
               style={{ textAnchor: "middle" }}
             >
-              SAHARA
+              {translate({ FR: "SAHARA", EN: "SAHARA" }, lang)}
             </text>
           )}
 
