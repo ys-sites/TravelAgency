@@ -583,8 +583,8 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                 </h4>
                 <ul className="space-y-3 pl-1">
                   {itinerary.exclusions[lang].map((item, idx) => (
-                    <li key={idx} className="text-red-500 text-[13px] md:text-[14px] leading-relaxed font-light flex items-start gap-2.5">
-                      <span className="text-red-400 mt-1 text-sm">•</span>
+                    <li key={idx} className="text-zinc-700 text-[13px] md:text-[14px] leading-relaxed font-light flex items-start gap-2.5">
+                      <span className="text-zinc-400 mt-1 text-sm">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
