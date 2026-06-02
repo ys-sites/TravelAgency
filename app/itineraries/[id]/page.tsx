@@ -223,6 +223,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
 
         {/* Right Side: Booking Panel Widget (Span 4) */}
         <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit">
+          {id === "1" ? (
             /* Morocco Contact Form Card with Video Header */
             <div className="bg-white border border-zinc-200/60 shadow-md rounded-[1.5rem] overflow-hidden relative h-[680px] flex flex-col">
               {/* Video Header at the top (stable, doesn't move when scrolling form) */}
