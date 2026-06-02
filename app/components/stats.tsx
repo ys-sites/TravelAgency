@@ -53,19 +53,19 @@ export default function Stats() {
   ];
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-black text-white">
+    <div className="max-w-[1200px] mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-white text-zinc-900">
       {statsList.map((stat, i) => (
         <div
           key={i}
-          className="flex flex-col bg-zinc-950/60 p-6 rounded-[1.5rem] border border-white/10 shadow-glass"
+          className="flex flex-col bg-zinc-50/50 p-6 rounded-[1.5rem] border border-zinc-200/80 shadow-sm hover:shadow-md hover:border-brand-gold/45 transition-luxury"
         >
           <span className="font-heading text-[38px] font-extrabold text-brand-gold tracking-tight leading-none">
             {stat.value}
           </span>
-          <span className="font-heading text-[12px] font-bold text-white uppercase mt-3 tracking-wider">
+          <span className="font-heading text-[12px] font-bold text-zinc-800 uppercase mt-3 tracking-wider">
             {stat.label[lang]}
           </span>
-          <span className="font-body text-[12px] text-white/50 mt-1 leading-relaxed">
+          <span className="font-body text-[12px] text-zinc-500 mt-1 leading-relaxed">
             {stat.subtext[lang]}
           </span>
         </div>

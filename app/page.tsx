@@ -7,7 +7,7 @@ import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0c0c0c] text-white font-body antialiased">
+    <div className="min-h-screen bg-white text-zinc-900 font-body antialiased">
       {/* Header & Navbar */}
       <Navbar />
 
@@ -15,7 +15,7 @@ export default function Home() {
       <GulfHeroScrubber />
 
       {/* Main Body content */}
-      <main className="relative z-10 bg-[#0c0c0c]">
+      <main className="relative z-10 bg-white">
         <div id="portfolios">
           <Tours />
         </div>

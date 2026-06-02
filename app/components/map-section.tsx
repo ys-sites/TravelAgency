@@ -43,11 +43,11 @@ export default function MapSection() {
   ];
 
   return (
-    <div className="relative max-w-[1200px] mx-auto my-20 px-8 py-16 rounded-[2.5rem] overflow-hidden bg-zinc-950/60 border border-white/10 shadow-glass grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-white">
+    <div className="relative max-w-[1200px] mx-auto my-20 px-8 py-16 rounded-[2.5rem] overflow-hidden bg-zinc-50 border border-zinc-200/80 shadow-card-soft grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-zinc-900">
       {/* Sepia landscape background mask */}
       <img
         src="/images/morocco-sahara-dunes.png"
-        className="absolute inset-0 w-full h-full object-cover opacity-[0.05] pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none"
         alt="Map background"
       />
 
@@ -56,7 +56,7 @@ export default function MapSection() {
         <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-brand-gold">
           {t.getKnow[lang]}
         </span>
-        <h2 className="flex items-center gap-3 font-serif text-[42px] font-bold text-white mt-2 leading-tight uppercase">
+        <h2 className="flex items-center gap-3 font-serif text-[42px] font-bold text-zinc-900 mt-2 leading-tight uppercase">
           <svg className="h-8 w-8 text-brand-gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5z" />
             <path d="M2 17l10 5 10-5" />
@@ -64,28 +64,28 @@ export default function MapSection() {
           </svg>
           {t.title[lang]}
         </h2>
-        <p className="text-[13px] leading-relaxed text-white/60 mt-6 max-w-[420px] font-light">
+        <p className="text-[13px] leading-relaxed text-zinc-600 mt-6 max-w-[420px] font-light">
           {t.description[lang]}
         </p>
 
         {/* Links */}
         <div className="flex flex-wrap items-center gap-6 mt-8 font-mono text-[11px] tracking-wider uppercase">
-          <a href="/#portfolios" className="text-brand-gold hover:text-white hover:underline transition-colors">
+          <a href="/#portfolios" className="text-brand-gold hover:text-zinc-900 hover:underline transition-colors font-semibold">
             {t.attractions[lang]} &rarr;
           </a>
-          <a href="/custom-trip" className="text-brand-gold hover:text-white hover:underline transition-colors">
+          <a href="/custom-trip" className="text-brand-gold hover:text-zinc-900 hover:underline transition-colors font-semibold">
             {t.similarDestinations[lang]} &rarr;
           </a>
         </div>
 
         {/* CTA Button */}
-        <a href="/#portfolios" className="mt-8 rounded-full border border-brand-gold/50 bg-brand-gold/10 hover:bg-white hover:text-black hover:border-white px-8 py-3 text-[11px] font-bold uppercase tracking-wider text-white transition-luxury cursor-pointer inline-block">
+        <a href="/#portfolios" className="mt-8 rounded-full border border-brand-gold bg-brand-gold/10 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 px-8 py-3 text-[11px] font-bold uppercase tracking-wider text-zinc-800 transition-luxury cursor-pointer inline-block shadow-sm">
           {t.chooseTour[lang]}
         </a>
       </div>
 
       {/* Right Map illustration */}
-      <div className="lg:col-span-7 relative flex items-center justify-center z-10 min-h-[400px] w-full rounded-[2rem] border border-white/10 overflow-hidden shadow-inner">
+      <div className="lg:col-span-7 relative flex items-center justify-center z-10 min-h-[400px] w-full rounded-[2rem] border border-zinc-200 overflow-hidden shadow-inner">
         {/* Map image base */}
         <img
           src="/images/morocco-sahara-dunes.png"

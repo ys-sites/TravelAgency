@@ -175,18 +175,18 @@ export default function CustomTripBuilder() {
   };
 
   return (
-    <div className={`min-h-screen font-body antialiased transition-colors duration-1000 ${isPremium ? 'bg-[#060606] text-white' : 'bg-[#0c0c0c] text-white'}`}>
+    <div className={`min-h-screen font-body antialiased transition-colors duration-1000 ${isPremium ? 'bg-[#060606] text-white' : 'bg-white text-zinc-900'}`}>
       <Navbar />
 
       {/* Parallax Header */}
       <section className="relative h-[45vh] w-full overflow-hidden bg-zinc-950 flex flex-col justify-end pb-12 px-6 md:px-12">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] to-transparent pointer-events-none" />
+        <div className={`absolute inset-0 bg-gradient-to-t to-transparent pointer-events-none transition-colors duration-1000 ${isPremium ? 'from-[#060606]' : 'from-white'}`} />
         
         <div className="max-w-6xl mx-auto w-full z-10 space-y-4">
           <Link
             href="/"
-            className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase transition-colors"
+            className={`inline-flex items-center space-x-2 text-brand-gold font-mono text-[10px] tracking-widest uppercase transition-colors font-semibold ${isPremium ? 'hover:text-white' : 'hover:text-zinc-900'}`}
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
@@ -207,16 +207,16 @@ export default function CustomTripBuilder() {
         
         {/* Step Toggler (Standard vs. Premium) */}
         <div className="flex justify-center mb-16">
-          <div className="bg-zinc-900/60 border border-white/10 p-1.5 rounded-full flex items-center relative overflow-hidden max-w-sm w-full">
+          <div className={`border p-1.5 rounded-full flex items-center relative overflow-hidden max-w-sm w-full transition-colors duration-1000 ${isPremium ? 'bg-zinc-900/60 border-white/10' : 'bg-zinc-100 border-zinc-200'}`}>
             <button
               onClick={() => setIsPremium(false)}
-              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${!isPremium ? 'bg-white text-black' : 'text-white/60 hover:text-white'}`}
+              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${!isPremium ? 'bg-white text-zinc-900 shadow-sm' : 'text-white/60 hover:text-white'}`}
             >
               {t.standardTab[lang]}
             </button>
             <button
               onClick={() => setIsPremium(true)}
-              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${isPremium ? 'bg-brand-gold text-black shadow-lg shadow-brand-gold/10' : 'text-white/60 hover:text-white'}`}
+              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${isPremium ? 'bg-brand-gold text-black shadow-lg shadow-brand-gold/10' : 'text-zinc-600 hover:text-zinc-900'}`}
             >
               {t.premiumTab[lang]}
             </button>
@@ -232,7 +232,7 @@ export default function CustomTripBuilder() {
               
               {/* Step 1: Destinations */}
               <div className="space-y-6">
-                <h3 className="font-serif text-xl md:text-2xl text-white border-b border-white/10 pb-4">
+                <h3 className={`font-serif text-xl md:text-2xl border-b pb-4 transition-colors duration-1000 ${isPremium ? 'text-white border-white/10' : 'text-zinc-900 border-zinc-200'}`}>
                   {t.stepDestinations[lang]}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -246,19 +246,21 @@ export default function CustomTripBuilder() {
                           active
                             ? isPremium
                               ? 'border-brand-gold bg-brand-gold/5 shadow-[0_0_15px_rgba(212,175,55,0.1)]'
-                              : 'border-white bg-white/5'
-                            : 'border-white/10 bg-zinc-950/20 hover:border-white/35'
+                              : 'border-zinc-800 bg-zinc-800/5'
+                            : isPremium
+                              ? 'border-white/10 bg-zinc-950/20 hover:border-white/35'
+                              : 'border-zinc-200 bg-zinc-50/50 hover:border-zinc-300'
                         }`}
                       >
                         <div className="space-y-0.5">
-                          <span className="text-[9px] font-mono uppercase text-white/40 tracking-wider">
+                          <span className={`text-[9px] font-mono uppercase tracking-wider transition-colors duration-1000 ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>
                             {dest.region}
                           </span>
-                          <h4 className="text-xs md:text-sm font-semibold text-white">
+                          <h4 className={`text-xs md:text-sm font-semibold transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-800'}`}>
                             {dest.title[lang]}
                           </h4>
                         </div>
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center border transition-all duration-300 ${active ? 'border-brand-gold bg-brand-gold text-black' : 'border-white/20 bg-transparent'}`}>
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center border transition-all duration-300 ${active ? 'border-brand-gold bg-brand-gold text-black' : isPremium ? 'border-white/20 bg-transparent' : 'border-zinc-200 bg-transparent'}`}>
                           {active && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                         </div>
                       </div>
@@ -269,7 +271,7 @@ export default function CustomTripBuilder() {
 
               {/* Step 2: Activities */}
               <div className="space-y-6">
-                <h3 className="font-serif text-xl md:text-2xl text-white border-b border-white/10 pb-4">
+                <h3 className={`font-serif text-xl md:text-2xl border-b pb-4 transition-colors duration-1000 ${isPremium ? 'text-white border-white/10' : 'text-zinc-900 border-zinc-200'}`}>
                   {t.stepActivities[lang]}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -286,8 +288,10 @@ export default function CustomTripBuilder() {
                             : active
                               ? isPremium
                                 ? 'border-brand-gold bg-brand-gold/5 shadow-[0_0_15px_rgba(212,175,55,0.1)] cursor-pointer'
-                                : 'border-white bg-white/5 cursor-pointer'
-                              : 'border-white/10 bg-zinc-950/20 hover:border-white/35 cursor-pointer'
+                                : 'border-zinc-800 bg-zinc-800/5 cursor-pointer'
+                              : isPremium
+                                ? 'border-white/10 bg-zinc-950/20 hover:border-white/35 cursor-pointer'
+                                : 'border-zinc-200 bg-zinc-50/50 hover:border-zinc-300 cursor-pointer'
                         }`}
                       >
                         <div className="space-y-1 pr-4">
@@ -296,14 +300,14 @@ export default function CustomTripBuilder() {
                               {lang === "FR" ? "PRESTIGE UNIQUEMENT" : "PREMIUM ONLY"}
                             </span>
                           )}
-                          <h4 className="text-xs md:text-sm font-semibold text-white pt-1">
+                          <h4 className={`text-xs md:text-sm font-semibold pt-1 transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-800'}`}>
                             {act.title[lang]}
                           </h4>
                           <span className="text-[10px] font-mono text-brand-gold block">
                             +C$ {act.cost.toLocaleString()}
                           </span>
                         </div>
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center border transition-all duration-300 ${active ? 'border-brand-gold bg-brand-gold text-black' : 'border-white/20 bg-transparent'}`}>
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center border transition-all duration-300 ${active ? 'border-brand-gold bg-brand-gold text-black' : isPremium ? 'border-white/20 bg-transparent' : 'border-zinc-200 bg-transparent'}`}>
                           {active && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                         </div>
                       </div>
@@ -314,14 +318,14 @@ export default function CustomTripBuilder() {
 
               {/* Step 3: Duration & Budget */}
               <div className="space-y-6">
-                <h3 className="font-serif text-xl md:text-2xl text-white border-b border-white/10 pb-4">
+                <h3 className={`font-serif text-xl md:text-2xl border-b pb-4 transition-colors duration-1000 ${isPremium ? 'text-white border-white/10' : 'text-zinc-900 border-zinc-200'}`}>
                   {t.stepDuration[lang]}
                 </h3>
-                <div className="bg-zinc-950/50 p-6 md:p-8 border border-white/10 rounded-[1.5rem] space-y-6">
+                <div className={`p-6 md:p-8 border rounded-[1.5rem] space-y-6 transition-colors duration-1000 ${isPremium ? 'bg-zinc-950/50 border-white/10' : 'bg-zinc-50/50 border-zinc-200'}`}>
                   <div className="space-y-2">
-                    <div className="flex justify-between items-baseline font-mono text-xs text-white/60">
+                    <div className={`flex justify-between items-baseline font-mono text-xs transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
                       <span>{lang === "FR" ? "DURÉE DES NUITS" : "NIGHTS DURATION"}</span>
-                      <span className="text-white text-lg font-bold">{nights} {lang === "FR" ? "Nuits" : "Nights"}</span>
+                      <span className={`text-lg font-bold transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>{nights} {lang === "FR" ? "Nuits" : "Nights"}</span>
                     </div>
                     <input
                       type="range"
@@ -329,9 +333,9 @@ export default function CustomTripBuilder() {
                       max={30}
                       value={nights}
                       onChange={(e) => setNights(Number(e.target.value))}
-                      className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-brand-gold"
+                      className="w-full h-1 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-brand-gold"
                     />
-                    <div className="flex justify-between font-mono text-[9px] text-white/30">
+                    <div className={`flex justify-between font-mono text-[9px] transition-colors duration-1000 ${isPremium ? 'text-white/30' : 'text-zinc-300'}`}>
                       <span>5</span>
                       <span>15</span>
                       <span>30</span>
@@ -345,28 +349,28 @@ export default function CustomTripBuilder() {
             {/* Right Booking Sidebar Panel (Span 4) */}
             <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit space-y-6">
               
-              <div className="bg-zinc-950/60 p-6 md:p-8 border border-white/10 shadow-glass rounded-[1.5rem] relative overflow-hidden space-y-6">
+              <div className={`p-6 md:p-8 border rounded-[1.5rem] relative overflow-hidden space-y-6 transition-colors duration-1000 ${isPremium ? 'bg-zinc-950/60 border-white/10 shadow-glass text-white' : 'bg-zinc-50/50 border-zinc-200 shadow-md text-zinc-900'}`}>
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-[50px] rounded-full pointer-events-none" />
                 
-                <div className="border-b border-white/5 pb-4 space-y-1">
+                <div className={`pb-4 space-y-1 border-b transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
                   <span className="text-brand-gold font-mono text-[9px] tracking-[0.25em] uppercase block">
                     {t.estimateCost[lang]}
                   </span>
                   <div className="flex items-baseline justify-between">
-                    <h3 className="text-3xl font-bold text-white font-serif">
+                    <h3 className={`text-3xl font-bold font-serif transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
                       C$ {calculateTotalCost().toLocaleString()}
                     </h3>
-                    <span className="text-[10px] font-mono text-white/40">CAD</span>
+                    <span className={`text-[10px] font-mono transition-colors duration-1000 ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>CAD</span>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <h4 className="font-mono text-[10px] tracking-widest uppercase text-white border-b border-white/5 pb-2">
+                  <h4 className={`font-mono text-[10px] tracking-widest uppercase border-b pb-2 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
                     {t.stepContact[lang]}
                   </h4>
                   
                   <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-white/60">
+                    <label className={`block text-[9px] font-mono tracking-widest uppercase mb-1.5 transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
                       {lang === "FR" ? "Nom Complet" : "Full Name"}
                     </label>
                     <input
@@ -375,12 +379,12 @@ export default function CustomTripBuilder() {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="e.g. Sterling Hunt"
-                      className="w-full bg-white/5 border border-white/10 px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-gold"
+                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-white/60">
+                    <label className={`block text-[9px] font-mono tracking-widest uppercase mb-1.5 transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
                       {lang === "FR" ? "Adresse Courriel" : "Secure Email"}
                     </label>
                     <input
@@ -389,12 +393,12 @@ export default function CustomTripBuilder() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="e.g. sterling@portfolio.com"
-                      className="w-full bg-white/5 border border-white/10 px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-gold"
+                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-white/60">
+                    <label className={`block text-[9px] font-mono tracking-widest uppercase mb-1.5 transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
                       {lang === "FR" ? "Numéro de Téléphone" : "Secure Phone"}
                     </label>
                     <input
@@ -403,13 +407,13 @@ export default function CustomTripBuilder() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="e.g. +1 (514) 555-0199"
-                      className="w-full bg-white/5 border border-white/10 px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-gold"
+                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                     />
                   </div>
 
                   {/* Payment Info Section */}
-                  <div className="border-t border-white/5 pt-4 space-y-4">
-                    <div className="flex items-center gap-1 text-[10px] font-mono text-white/60 uppercase">
+                  <div className={`pt-4 space-y-4 border-t transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
+                    <div className="flex items-center gap-1 text-[10px] font-mono text-brand-gold uppercase">
                       <CreditCard className="w-3.5 h-3.5 text-brand-gold" />
                       <span>{lang === "FR" ? "Dépôt d'Escrow (Facultatif)" : "Secure Escrow Deposit (Optional)"}</span>
                     </div>
@@ -419,28 +423,28 @@ export default function CustomTripBuilder() {
                         value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)}
                         placeholder="Card Number / Numéro de Carte"
-                        className="w-full bg-white/5 border border-white/10 px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-gold mb-2"
+                        className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold mb-2 transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                       />
                       <input
                         type="text"
                         value={cardExpiry}
                         onChange={(e) => setCardExpiry(e.target.value)}
                         placeholder="MM/YY"
-                        className="w-full bg-white/5 border border-white/10 px-4 py-3 text-xs text-white focus:outline-none focus:border-brand-gold"
+                        className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                       />
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-4 pt-2">
-                  <div className="flex items-center space-x-2 text-[9px] text-white/40 font-mono">
+                  <div className={`flex items-center space-x-2 text-[9px] font-mono transition-colors duration-1000 ${isPremium ? 'text-white/40' : 'text-zinc-500'}`}>
                     <Lock className="text-brand-gold w-3.5 h-3.5" />
                     <span>256-Bit Encrypted Concierge Channel</span>
                   </div>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-brand-gold hover:bg-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:scale-[1.02] border border-brand-gold shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:scale-[1.02] border border-brand-gold shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>{isSubmitting ? 'TRANSMITTING...' : t.submitInquiry[lang]}</span>
@@ -453,7 +457,7 @@ export default function CustomTripBuilder() {
 
           </form>
         ) : (
-          <div className="text-center py-20 flex flex-col items-center justify-center space-y-6 max-w-lg mx-auto bg-zinc-950/60 border border-white/10 p-12 rounded-[2rem] shadow-glass">
+          <div className={`text-center py-20 flex flex-col items-center justify-center space-y-6 max-w-lg mx-auto border p-12 rounded-[2rem] transition-colors duration-1000 ${isPremium ? 'bg-zinc-950/60 border-white/10 shadow-glass text-white' : 'bg-zinc-50/50 border-zinc-200 shadow-md text-zinc-900'}`}>
             <div className="w-20 h-20 rounded-full bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
               <CheckCircle2 className="text-brand-gold w-9 h-9" />
             </div>
@@ -461,11 +465,11 @@ export default function CustomTripBuilder() {
               <span className="text-brand-gold font-mono text-[10px] tracking-[0.3em] uppercase block">
                 {lang === "FR" ? "Transmission Sécurisée" : "PGP Transmission Secured"}
               </span>
-              <h2 className="font-serif text-3xl text-white tracking-wide uppercase font-bold">
+              <h2 className={`font-serif text-3xl tracking-wide uppercase font-bold transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
                 {lang === "FR" ? "Demande Enregistrée" : "Inquiry Active"}
               </h2>
             </div>
-            <p className="text-white/60 text-xs md:text-sm leading-relaxed font-light">
+            <p className={`text-xs md:text-sm leading-relaxed font-light transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-600'}`}>
               {lang === "FR"
                 ? `Merci, ${fullName}. Les détails de votre passage de prestige de ${nights} nuits ont été encryptés et envoyés. Votre architecte de voyage exclusif vous répondra dans 15 minutes.`
                 : `Thank you, ${fullName}. Your customized package parameters for ${nights} nights are encrypted and transmitted. Your private travel architect will verify booking conditions within 15 minutes.`
@@ -482,7 +486,7 @@ export default function CustomTripBuilder() {
                 setCardNumber("");
                 setCardExpiry("");
               }}
-              className="border border-white/20 bg-white/5 hover:bg-white hover:text-black hover:border-white text-white font-mono text-[9px] tracking-[0.15em] uppercase px-8 py-3 transition-all duration-500 rounded-full"
+              className={`border font-mono text-[9px] tracking-[0.15em] uppercase px-8 py-3 transition-all duration-500 rounded-full ${isPremium ? 'border-white/20 bg-white/5 hover:bg-white hover:text-black hover:border-white text-white' : 'border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700'}`}
             >
               {lang === "FR" ? "Créer un autre itinéraire" : "Build another passage"}
             </button>

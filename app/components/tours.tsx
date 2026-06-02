@@ -159,18 +159,18 @@ export default function Tours() {
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-20 mt-12 bg-black text-white">
+    <div className="max-w-[1200px] mx-auto px-6 py-20 mt-12 bg-white text-zinc-900">
       {/* Header */}
-      <div className="flex items-baseline justify-between mb-12 border-b border-white/10 pb-6">
+      <div className="flex items-baseline justify-between mb-12 border-b border-zinc-200 pb-6">
         <div className="space-y-1">
           <span className="text-brand-gold font-mono text-[10px] tracking-[0.3em] uppercase block">
             {lang === "FR" ? "Évasions de Prestige" : "Elite Collections"}
           </span>
-          <h2 className="font-serif text-[38px] font-bold text-white tracking-wide uppercase">
+          <h2 className="font-serif text-[38px] font-bold text-zinc-900 tracking-wide uppercase">
             {t.title[lang]}
           </h2>
         </div>
-        <Link href="/custom-trip" className="font-body text-[12px] font-semibold text-brand-gold hover:underline cursor-pointer tracking-wider uppercase">
+        <Link href="/custom-trip" className="font-body text-[12px] font-semibold text-brand-gold hover:text-brand-gold-dark cursor-pointer tracking-wider uppercase transition-colors">
           {lang === "FR" ? "Sur Mesure" : "Custom passage"} &rarr;
         </Link>
       </div>
@@ -180,13 +180,13 @@ export default function Tours() {
         {/* Navigation Arrows */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-zinc-950/80 text-white hover:bg-white hover:text-black transition-colors shadow-lg cursor-pointer z-20"
+          className="absolute left-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-12 w-12 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-800 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-colors shadow-md cursor-pointer z-20"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
         <button
           onClick={() => scroll("right")}
-          className="absolute right-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-zinc-950/80 text-white hover:bg-white hover:text-black transition-colors shadow-lg cursor-pointer z-20"
+          className="absolute right-[-58px] top-1/2 -translate-y-1/2 hidden xl:flex h-12 w-12 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-800 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-colors shadow-md cursor-pointer z-20"
         >
           <ChevronRight className="h-5 w-5" />
         </button>
@@ -202,55 +202,58 @@ export default function Tours() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-              className="group flex flex-col min-w-[290px] md:min-w-0 snap-center rounded-[1.5rem] bg-zinc-950/60 p-4 border border-white/10 shadow-glass hover:border-brand-gold transition-luxury flex-1"
+              className="group relative flex flex-col justify-end min-w-[290px] md:min-w-0 snap-center rounded-[1.8rem] overflow-hidden p-6 border border-zinc-200/60 shadow-md hover:shadow-xl hover:border-brand-gold transition-luxury h-[540px] flex-1 cursor-pointer"
             >
-              {/* Image Container */}
-              <div className="relative w-full h-[260px] overflow-hidden rounded-[1.2rem]">
+              {/* Full-bleed Image Background */}
+              <div className="absolute inset-0 z-0 overflow-hidden">
                 <img
                   src={tour.image}
-                  className="w-full h-full object-cover transition-transform duration-[1500ms] group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-105"
                   alt={tour.title[lang]}
                 />
-                {/* Top-Right Badge Overlay */}
-                <div className="glass-tag absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full text-white">
-                  {tour.iconType === "mountain" && (
-                    <svg className="h-4 w-4 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m8 3 4 8 5-5 5 15H2L8 3z" />
-                    </svg>
-                  )}
-                  {tour.iconType === "water" && (
-                    <svg className="h-4 w-4 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M2 20 Q 5 17 8 20 T 14 20 T 20 20 T 22 20" />
-                      <path d="M6 16 L 10 8 L 14 13 L 17 9 L 21 16" />
-                    </svg>
-                  )}
-                  {tour.iconType === "lighthouse" && (
-                    <svg className="h-4 w-4 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M9 21h6" />
-                      <path d="M10 21l1-12h2l1 12" />
-                      <path d="M11 9V5a1 1 0 0 1 2 0v4" />
-                      <path d="M9 5h6" />
-                      <path d="M12 2v2" />
-                      <path d="M8 12h8" />
-                    </svg>
-                  )}
-                </div>
+                {/* Luxury Vignette Gradient Overlay for Text Contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent z-10 transition-opacity duration-500 group-hover:opacity-95" />
               </div>
 
-              {/* Content */}
-              <div className="p-4 flex flex-col flex-1">
-                <span className="text-[9px] font-mono uppercase font-semibold tracking-[0.2em] text-brand-gold mb-3 block">
+              {/* Top-Right Badge Overlay */}
+              <div className="glass-tag absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full text-white z-20 shadow-md">
+                {tour.iconType === "mountain" && (
+                  <svg className="h-4.5 w-4.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m8 3 4 8 5-5 5 15H2L8 3z" />
+                  </svg>
+                )}
+                {tour.iconType === "water" && (
+                  <svg className="h-4.5 w-4.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 20 Q 5 17 8 20 T 14 20 T 20 20 T 22 20" />
+                    <path d="M6 16 L 10 8 L 14 13 L 17 9 L 21 16" />
+                  </svg>
+                )}
+                {tour.iconType === "lighthouse" && (
+                  <svg className="h-4.5 w-4.5 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 21h6" />
+                    <path d="M10 21l1-12h2l1 12" />
+                    <path d="M11 9V5a1 1 0 0 1 2 0v4" />
+                    <path d="M9 5h6" />
+                    <path d="M12 2v2" />
+                    <path d="M8 12h8" />
+                  </svg>
+                )}
+              </div>
+
+              {/* Content Container */}
+              <div className="relative z-20 flex flex-col justify-end h-full">
+                <span className="text-[9px] font-mono uppercase font-semibold tracking-[0.2em] text-brand-gold mb-2 block">
                   {tour.category[lang]}
                 </span>
-                <h3 className="font-serif text-[22px] font-bold text-white tracking-wide leading-snug group-hover:text-brand-gold transition-colors">
+                <h3 className="font-serif text-[24px] font-bold text-white tracking-wide leading-tight group-hover:text-brand-gold transition-colors">
                   {tour.title[lang]}
                 </h3>
-                <p className="text-[12px] text-white/60 mt-3 leading-relaxed font-light flex-1">
+                <p className="text-[12px] text-white/70 mt-3 leading-relaxed font-light line-clamp-3">
                   {tour.description[lang]}
                 </p>
 
                 {/* Details Row */}
-                <div className="flex items-center gap-4 py-4 border-b border-white/5 text-[11px] text-white/50 font-mono tracking-wider">
+                <div className="flex items-center gap-4 py-3.5 border-b border-white/10 text-[11px] text-white/60 font-mono tracking-wider mt-4">
                   <div className="flex items-center gap-1.5">
                     <Calendar className="h-3.5 w-3.5 text-brand-gold" />
                     <span>{tour.days[lang]}</span>
@@ -265,16 +268,16 @@ export default function Tours() {
                 </div>
 
                 {/* Booking Footer */}
-                <div className="flex items-center justify-between pt-5 mt-auto">
+                <div className="flex items-center justify-between pt-4 mt-2">
                   <div className="flex flex-col">
-                    <span className="text-[11px] font-mono line-through text-white/30 leading-none mb-1">
+                    <span className="text-[11px] font-mono line-through text-white/40 leading-none mb-1">
                       {tour.oldPrice}
                     </span>
                     <span className="text-[22px] font-bold text-brand-gold font-heading leading-none">
                       {tour.price}
                     </span>
                   </div>
-                  <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[11px] tracking-[0.18em] uppercase px-6 py-3 transition-luxury cursor-pointer hover:scale-105">
+                  <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[11px] tracking-[0.18em] uppercase px-6 py-3 transition-luxury cursor-pointer hover:scale-105 shadow-md">
                     {t.book[lang]}
                   </Link>
                 </div>
@@ -286,5 +289,3 @@ export default function Tours() {
     </div>
   );
 }
-
-

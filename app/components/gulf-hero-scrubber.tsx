@@ -1,17 +1,8 @@
 'use client';
 
 import { useScroll, motion, useTransform } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useLang } from "../context/lang-context";
-
-const IMAGES = [
-  "/images/gulf-city-skyline.png",
-  "/images/gulf-desert-sunset.png",
-  "/images/morocco-sahara-dunes.png",
-  "/images/morocco-marrakech-riad.png",
-  "/images/oman-wadi-canyon.png",
-  "/images/saudi-alula-canyon.png"
-];
 
 const t = {
   slide1: {
@@ -38,9 +29,6 @@ const t = {
 export default function GulfHeroScrubber() {
   const { lang } = useLang();
   const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const loadedImagesRef = useRef<HTMLImageElement[]>([]);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -48,7 +36,7 @@ export default function GulfHeroScrubber() {
   });
 
   // Calculate values for text anim based on scroll progress
-  // Slide 1 opacity: fades out by 0.3
+  // Slide 1 opacity: fades out by 0.25
   const s1Opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
   const s1Y = useTransform(scrollYProgress, [0, 0.25], [0, -50]);
 
@@ -62,135 +50,23 @@ export default function GulfHeroScrubber() {
 
   const scrollPromptOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
-  // Preload images
-  useEffect(() => {
-    let loadedCount = 0;
-    const loadedImages: HTMLImageElement[] = [];
-
-    IMAGES.forEach((src, idx) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        loadedCount++;
-        loadedImages[idx] = img;
-        if (loadedCount === IMAGES.length) {
-          loadedImagesRef.current = loadedImages;
-          setImagesLoaded(true);
-        }
-      };
-      img.onerror = () => {
-        // Fallback to avoid locks
-        loadedCount++;
-        if (loadedCount === IMAGES.length) {
-          setImagesLoaded(true);
-        }
-      };
-    });
-  }, []);
-
-  // Frame Scrubbing Canvas Loop
-  useEffect(() => {
-    if (!imagesLoaded) return;
-
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const context = canvas.getContext('2d', { alpha: false, colorSpace: 'display-p3' });
-    if (!context) return;
-
-    const render = (progress: number) => {
-      const totalImages = IMAGES.length;
-      const rawIndex = progress * (totalImages - 1);
-      const index = Math.floor(rawIndex);
-      const nextIndex = Math.min(index + 1, totalImages - 1);
-      const progressBetween = rawIndex - index;
-
-      const img1 = loadedImagesRef.current[index];
-      const img2 = loadedImagesRef.current[nextIndex];
-
-      if (!img1) return;
-
-      const dpr = window.devicePixelRatio || 1;
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      context.scale(dpr, dpr);
-
-      // Helper function to draw an image covering the canvas (object-cover style)
-      // with custom opacity and zoom/pan scale factor
-      const drawCover = (img: HTMLImageElement, alpha: number, scaleFactor: number) => {
-        context.globalAlpha = alpha;
-        
-        const imgRatio = img.width / img.height;
-        const canvasRatio = width / height;
-        
-        let drawWidth = width * scaleFactor;
-        let drawHeight = height * scaleFactor;
-        
-        if (imgRatio > canvasRatio) {
-          drawWidth = height * imgRatio * scaleFactor;
-        } else {
-          drawHeight = (width / imgRatio) * scaleFactor;
-        }
-
-        const offsetX = (width - drawWidth) / 2;
-        const offsetY = (height - drawHeight) / 2;
-
-        context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-      };
-
-      // Clear
-      context.fillStyle = "#0c0c0c";
-      context.fillRect(0, 0, width, height);
-
-      // Draw the first image with zoom out effect as we scroll
-      const scale1 = 1.05 - (progressBetween * 0.05);
-      drawCover(img1, 1 - progressBetween, scale1);
-
-      // Draw the next image blending in with zoom in effect
-      if (img2 && progressBetween > 0.001) {
-        const scale2 = 1.0 + ((1 - progressBetween) * 0.05);
-        drawCover(img2, progressBetween, scale2);
-      }
-    };
-
-    // Render initial frame
-    render(0);
-
-    // Bind to scroll progress
-    const unsubscribe = scrollYProgress.on("change", (latest) => {
-      // Limit latest to 0-1 range
-      const progress = Math.max(0, Math.min(1, latest));
-      requestAnimationFrame(() => render(progress));
-    });
-
-    // Resize handler
-    const handleResize = () => {
-      const progress = scrollYProgress.get();
-      render(progress);
-    };
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      unsubscribe();
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [imagesLoaded, scrollYProgress]);
-
   return (
     <div ref={containerRef} className="relative h-[300vh] w-full bg-[#0c0c0c]">
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
-        {/* Render Canvas */}
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full object-cover select-none"
-          style={{ filter: "contrast(1.05) saturate(1.05)" }}
-        />
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
+        {/* Render Cloudinary Video Embed Background */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
+          <iframe
+            src="https://player.cloudinary.com/embed/?cloud_name=dmnoikwb9&public_id=Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx&autoplay=true&muted=true&loop=true&controls=false"
+            className="absolute top-1/2 left-1/2 w-[177.78vh] min-w-full h-[56.25vw] min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-110"
+            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+            allowFullScreen
+            frameBorder="0"
+          />
+        </div>
         
         {/* Cinematic Vignette Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-1" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none z-1" />
 
         {/* Dynamic Typography Overlays */}
         <div className="absolute inset-0 flex items-center justify-center text-center px-6 z-10 select-none pointer-events-none">
