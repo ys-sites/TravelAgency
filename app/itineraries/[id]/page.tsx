@@ -2,7 +2,7 @@
 
 import React, { use, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Users, Shield, CheckCircle, Mail, MapPin, Hotel, Compass } from "lucide-react";
+import { ArrowLeft, Calendar, Users, Shield, CheckCircle, Mail, MapPin, Hotel } from "lucide-react";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import { useLang } from "../../context/lang-context";
@@ -28,6 +28,7 @@ interface ActivityDetail {
 interface ItineraryDetail {
   id: number;
   image: string;
+  contentImage: string;
   title: { FR: string; EN: string };
   duration: { FR: string; EN: string };
   cost: string;
@@ -47,6 +48,7 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   "1": {
     id: 1,
     image: "/images/morocco-sahara-dunes.png",
+    contentImage: "/images/moroco.webp",
     title: { FR: "Expédition Marrakech & Sahara", EN: "Marrakech & Sahara Expedition" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     cost: "C$ 12,400",
@@ -144,6 +146,7 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   "2": {
     id: 2,
     image: "/images/gulf-desert-sunset.png",
+    contentImage: "/images/dubai.webp",
     title: { FR: "Oasis Moderne de Dubaï & Abou Dabi", EN: "Dubai & Abu Dhabi Modern Oasis" },
     duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
     cost: "C$ 16,500",
@@ -243,6 +246,7 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   "3": {
     id: 3,
     image: "/images/oman-wadi-canyon.png",
+    contentImage: "/images/oman-real.jpg",
     title: { FR: "Héritage du Sultanat d'Oman", EN: "Sultanate of Oman Heritage" },
     duration: { FR: "12 jours / 11 nuits", EN: "12 days / 11 nights" },
     cost: "C$ 14,800",
@@ -342,6 +346,7 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   "4": {
     id: 4,
     image: "/images/saudi-alula-canyon.png",
+    contentImage: "/images/alula-redsea.jpg",
     title: { FR: "Merveilles d'AlUla & Mer Rouge", EN: "AlUla & Red Sea Wonders" },
     duration: { FR: "14 jours / 13 nuits", EN: "14 days / 13 nights" },
     cost: "C$ 24,900",
@@ -515,6 +520,15 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             </p>
           </div>
 
+          {/* Destination Showcase Image */}
+          <div className="w-full rounded-2xl overflow-hidden border border-zinc-100 shadow-sm">
+            <img
+              src={itinerary.contentImage}
+              alt={itinerary.title[lang]}
+              className="w-full h-[320px] md:h-[420px] object-cover hover:scale-[1.02] transition-transform duration-700"
+            />
+          </div>
+
           <div className="space-y-10">
             <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
               {lang === "FR" ? "Programme Jour par Jour" : "Day-by-Day Journey"}
@@ -563,14 +577,14 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
 
               {/* Exclusions */}
               <div className="space-y-4">
-                <h4 className="font-serif text-xl md:text-2xl text-zinc-900 flex items-center gap-2.5">
-                  <span className="w-5 h-5 rounded-full border border-zinc-400 flex items-center justify-center text-[10px] text-zinc-500 font-bold shrink-0">X</span>
+                <h4 className="font-serif text-xl md:text-2xl text-red-600 flex items-center gap-2.5">
+                  <span className="w-5 h-5 rounded-full border border-red-400 flex items-center justify-center text-[10px] text-red-500 font-bold shrink-0">✕</span>
                   <span>{lang === "FR" ? "Non inclus" : "Not Included"}</span>
                 </h4>
                 <ul className="space-y-3 pl-1">
                   {itinerary.exclusions[lang].map((item, idx) => (
-                    <li key={idx} className="text-zinc-500 text-[13px] md:text-[14px] leading-relaxed font-light flex items-start gap-2.5">
-                      <span className="text-zinc-400 mt-1 text-sm">•</span>
+                    <li key={idx} className="text-red-500 text-[13px] md:text-[14px] leading-relaxed font-light flex items-start gap-2.5">
+                      <span className="text-red-400 mt-1 text-sm">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -628,241 +642,123 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             </div>
           </div>
 
-          {/* Curated Activities */}
-          <div className="space-y-6 pt-10 border-t border-zinc-100">
-            <h4 className="font-serif text-xl md:text-2xl text-zinc-900 flex items-center gap-2.5">
-              <Compass className="w-5 h-5 text-brand-gold shrink-0" />
-              <span>{lang === "FR" ? "Activités et Expériences Incluses" : "Curated Included Activities"}</span>
-            </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {itinerary.activities.map((act, idx) => (
-                <div key={idx} className="p-6 bg-zinc-50/30 border border-zinc-200/50 rounded-2xl space-y-2 hover:border-brand-gold/30 transition-luxury duration-300">
-                  <h5 className="font-serif text-[15px] font-bold text-zinc-800 leading-snug">{act.title[lang]}</h5>
-                  <p className="text-zinc-500 text-[13px] leading-relaxed font-light">{act.desc[lang]}</p>
-                </div>
-              ))}
+        </div>
+
+        {/* Right Side: Video + Booking Panel (Span 4) */}
+        <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28 h-fit">
+
+          {/* Video Block — always separate, full 16:9 aspect ratio */}
+          <div className="w-full rounded-2xl overflow-hidden border border-zinc-200/60 shadow-md bg-black">
+            <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
+              <video
+                src="https://v1.pinimg.com/videos/iht/expMp4/81/24/b8/8124b8c7cd11c22123a7b75cfabf32fc_720w.mp4"
+                className="absolute inset-0 w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
           </div>
 
-        </div>
+          {/* Contact Form Block — always separate, beneath the video */}
+          <div className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-[50px] rounded-full pointer-events-none" />
 
-        {/* Right Side: Booking Panel Widget (Span 4) */}
-        <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit">
-          {id === "1" ? (
-            /* Morocco Contact Form Card with Video Header */
-            <div className="bg-white border border-zinc-200/60 shadow-md rounded-[1.5rem] overflow-hidden relative h-[680px] flex flex-col">
-              {/* Video Header at the top (stable, doesn't move when scrolling form) */}
-              <div className="relative w-full h-[260px] shrink-0 overflow-hidden border-b border-zinc-100">
-                <video
-                  src="https://v1.pinimg.com/videos/iht/expMp4/81/24/b8/8124b8c7cd11c22123a7b75cfabf32fc_720w.mp4"
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
-              </div>
-
-              {/* Scrollable Form Container below the video */}
-              <div className="flex-1 overflow-y-auto p-6 scrollbar-thin bg-zinc-50/10">
-                {!isSubmitted ? (
-                  <form onSubmit={handleBookingSubmit} className="space-y-6">
-                    <div className="text-center md:text-left border-b border-zinc-200/60 pb-4">
-                      <span className="text-brand-gold font-mono text-[9px] tracking-[0.25em] uppercase block mb-1">
-                        {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
-                      </span>
-                      <div className="flex items-baseline justify-between">
-                        <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD</span></h3>
-                        <span className="text-[9px] font-mono text-brand-gold uppercase bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 rounded">
-                          {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div>
-                        <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                          {lang === "FR" ? "Nom Complet" : "Full Name"}
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          value={bookingName}
-                          onChange={(e) => setBookingName(e.target.value)}
-                          placeholder="e.g. Sterling Hunt"
-                          className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                          {lang === "FR" ? "Adresse Courriel" : "Secure Email"}
-                        </label>
-                        <input
-                          type="email"
-                          required
-                          value={bookingEmail}
-                          onChange={(e) => setBookingEmail(e.target.value)}
-                          placeholder="e.g. sterling@portfolio.com"
-                          className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                          {lang === "FR" ? "Exigences Circadiennes ou de Sécurité" : "Specialized Requirements / Remarks"}
-                        </label>
-                        <textarea
-                          rows={4}
-                          value={bookingMessage}
-                          onChange={(e) => setBookingMessage(e.target.value)}
-                          placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
-                          className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <div className="flex items-center space-x-2 text-[10px] text-zinc-500 font-mono">
-                        <Shield className="text-brand-gold w-4 h-4" />
-                        <span>{lang === "FR" ? "Règlement Escrow Sécurisé" : "Secure 256-Bit Escrow Portal"}</span>
-                      </div>
-                      <button
-                        type="submit"
-                        className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md cursor-pointer"
-                      >
-                        {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
-                      </button>
-                    </div>
-                  </form>
-                ) : (
-                  <div className="text-center py-12 flex flex-col items-center justify-center space-y-6">
-                    <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
-                      <CheckCircle className="text-brand-gold w-7 h-7" />
-                    </div>
-                    <div className="space-y-1">
-                      <span className="text-brand-gold font-mono text-[10px] tracking-[0.25em] uppercase block">
-                        {lang === "FR" ? "Transmission Chiffrée" : "Transmission Secured"}
-                      </span>
-                      <h3 className="font-serif text-2xl text-zinc-900 tracking-wide uppercase">
-                        {lang === "FR" ? "Réservation Initiée" : "Reservation Active"}
-                      </h3>
-                    </div>
-                    <p className="text-zinc-600 text-xs leading-relaxed max-w-[240px] mx-auto font-light">
-                      {lang === "FR" 
-                        ? `Merci, ${bookingName}. Votre conseiller en voyages prépare les protocoles pour ${itinerary.title.FR}.` 
-                        : `Thank you, ${bookingName}. Your dedicated travel architect is initiating protocols for ${itinerary.title.EN}.`
-                      }
-                    </p>
-                    <button
-                      onClick={() => setIsSubmitted(false)}
-                      className="border border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700 font-mono text-[9px] tracking-[0.15em] uppercase px-6 py-2.5 transition-luxury rounded-full shadow-sm"
-                    >
-                      {lang === "FR" ? "Modifier la requête" : "Modify inquiry"}
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          ) : (
-            /* Standard Widget Form Card */
-            <div className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-[50px] rounded-full pointer-events-none" />
-              
-              {!isSubmitted ? (
-                <form onSubmit={handleBookingSubmit} className="space-y-6">
-                  <div className="text-center md:text-left border-b border-zinc-200/60 pb-4">
-                    <span className="text-brand-gold font-mono text-[9px] tracking-[0.25em] uppercase block mb-1">
-                      {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
+            {!isSubmitted ? (
+              <form onSubmit={handleBookingSubmit} className="space-y-6">
+                <div className="text-center md:text-left border-b border-zinc-200/60 pb-4">
+                  <span className="text-brand-gold font-mono text-[9px] tracking-[0.25em] uppercase block mb-1">
+                    {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
+                  </span>
+                  <div className="flex items-baseline justify-between">
+                    <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD</span></h3>
+                    <span className="text-[9px] font-mono text-brand-gold uppercase bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 rounded">
+                      {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
                     </span>
-                    <div className="flex items-baseline justify-between">
-                      <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD</span></h3>
-                      <span className="text-[9px] font-mono text-brand-gold uppercase bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 rounded">
-                        {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
-                      </span>
-                    </div>
                   </div>
+                </div>
 
-                  <div className="space-y-4">
-                    <div>
-                      <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                        {lang === "FR" ? "Nom Complet" : "Full Name"}
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={bookingName}
-                        onChange={(e) => setBookingName(e.target.value)}
-                        placeholder="e.g. Sterling Hunt"
-                        className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                        {lang === "FR" ? "Adresse Courriel" : "Secure Email"}
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        value={bookingEmail}
-                        onChange={(e) => setBookingEmail(e.target.value)}
-                        placeholder="e.g. sterling@portfolio.com"
-                        className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                        {lang === "FR" ? "Exigences Circadiennes ou de Sécurité" : "Specialized Requirements / Remarks"}
-                      </label>
-                      <textarea
-                        rows={4}
-                        value={bookingMessage}
-                        onChange={(e) => setBookingMessage(e.target.value)}
-                        placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
-                        className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
-                      />
-                    </div>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                      {lang === "FR" ? "Nom Complet" : "Full Name"}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={bookingName}
+                      onChange={(e) => setBookingName(e.target.value)}
+                      placeholder="e.g. Sterling Hunt"
+                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
+                    />
                   </div>
+                  <div>
+                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                      {lang === "FR" ? "Adresse Courriel" : "Secure Email"}
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={bookingEmail}
+                      onChange={(e) => setBookingEmail(e.target.value)}
+                      placeholder="e.g. sterling@portfolio.com"
+                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                      {lang === "FR" ? "Exigences Circadiennes ou de Sécurité" : "Specialized Requirements / Remarks"}
+                    </label>
+                    <textarea
+                      rows={4}
+                      value={bookingMessage}
+                      onChange={(e) => setBookingMessage(e.target.value)}
+                      placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
+                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
+                    />
+                  </div>
+                </div>
 
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-2 text-[10px] text-zinc-500 font-mono">
-                      <Shield className="text-brand-gold w-4 h-4" />
-                      <span>{lang === "FR" ? "Règlement Escrow Sécurisé" : "Secure 256-Bit Escrow Portal"}</span>
-                    </div>
-                    <button
-                      type="submit"
-                      className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md cursor-pointer"
-                    >
-                      {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
-                    </button>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-2 text-[10px] text-zinc-500 font-mono">
+                    <Shield className="text-brand-gold w-4 h-4" />
+                    <span>{lang === "FR" ? "Règlement Escrow Sécurisé" : "Secure 256-Bit Escrow Portal"}</span>
                   </div>
-                </form>
-              ) : (
-                <div className="text-center py-12 flex flex-col items-center justify-center space-y-6">
-                  <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
-                    <CheckCircle className="text-brand-gold w-7 h-7" />
-                  </div>
-                  <div className="space-y-1">
-                    <span className="text-brand-gold font-mono text-[10px] tracking-[0.25em] uppercase block">
-                      {lang === "FR" ? "Transmission Chiffrée" : "Transmission Secured"}
-                    </span>
-                    <h3 className="font-serif text-2xl text-zinc-900 tracking-wide uppercase">
-                      {lang === "FR" ? "Réservation Initiée" : "Reservation Active"}
-                    </h3>
-                  </div>
-                  <p className="text-zinc-600 text-xs leading-relaxed max-w-[240px] mx-auto font-light">
-                    {lang === "FR" 
-                      ? `Merci, ${bookingName}. Votre conseiller en voyages prépare les protocoles pour ${itinerary.title.FR}.` 
-                      : `Thank you, ${bookingName}. Your dedicated travel architect is initiating protocols for ${itinerary.title.EN}.`
-                  }
-                  </p>
                   <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="border border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700 font-mono text-[9px] tracking-[0.15em] uppercase px-6 py-2.5 transition-luxury rounded-full shadow-sm"
+                    type="submit"
+                    className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md cursor-pointer"
                   >
-                    {lang === "FR" ? "Modifier la requête" : "Modify inquiry"}
+                    {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
                   </button>
                 </div>
-              )}
-            </div>
+              </form>
+            ) : (
+              <div className="text-center py-12 flex flex-col items-center justify-center space-y-6">
+                <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
+                  <CheckCircle className="text-brand-gold w-7 h-7" />
+                </div>
+                <div className="space-y-1">
+                  <span className="text-brand-gold font-mono text-[10px] tracking-[0.25em] uppercase block">
+                    {lang === "FR" ? "Transmission Chiffrée" : "Transmission Secured"}
+                  </span>
+                  <h3 className="font-serif text-2xl text-zinc-900 tracking-wide uppercase">
+                    {lang === "FR" ? "Réservation Initiée" : "Reservation Active"}
+                  </h3>
+                </div>
+                <p className="text-zinc-600 text-xs leading-relaxed max-w-[240px] mx-auto font-light">
+                  {lang === "FR"
+                    ? `Merci, ${bookingName}. Votre conseiller en voyages prépare les protocoles pour ${itinerary.title.FR}.`
+                    : `Thank you, ${bookingName}. Your dedicated travel architect is initiating protocols for ${itinerary.title.EN}.`
+                  }
+                </p>
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  className="border border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700 font-mono text-[9px] tracking-[0.15em] uppercase px-6 py-2.5 transition-luxury rounded-full shadow-sm"
+                >
+                  {lang === "FR" ? "Modifier la requête" : "Modify inquiry"}
+                </button>
+              </div>
           )}
         </div>
 
