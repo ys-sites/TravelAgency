@@ -62,7 +62,7 @@ export default function TestimonialsSection() {
         {/* Section Header */}
         <div className="text-center space-y-4">
           <span className="text-brand-gold font-mono text-[11px] tracking-[0.2em] uppercase block">
-            GUEST CHRONICLES
+            {lang === "EN" ? "GUEST CHRONICLES" : "CHRONIQUES DE NOS VOYAGEURS"}
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight">
             {lang === "EN" ? "Voices from the Journey" : "Voix du Voyage"}

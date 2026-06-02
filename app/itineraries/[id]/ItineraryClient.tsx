@@ -657,23 +657,11 @@ export default function ItineraryClient({ id }: { id: string }) {
                 }
               </p>
               <p className="text-[10px] md:text-[11px] leading-relaxed text-zinc-500 font-light">
-                {lang === "FR" ? (
-                  <>
-                    Consultez nos conditions complètes au{" "}
-                    <Link href="/conditions" className="text-brand-gold hover:underline font-semibold">
-                      lien suivant
-                    </Link>
-                    .
-                  </>
-                ) : (
-                  <>
-                    Consult our full conditions at the{" "}
-                    <Link href="/conditions" className="text-brand-gold hover:underline font-semibold">
-                      following link
-                    </Link>
-                    .
-                  </>
-                )}
+                {lang === "FR" ? "Consultez nos conditions complètes au " : "Consult our full conditions at the "}
+                <Link href="/conditions" className="text-brand-gold hover:underline font-semibold">
+                  {lang === "FR" ? "lien suivant" : "following link"}
+                </Link>
+                {lang === "FR" ? "." : "."}
               </p>
             </div>
           </motion.div>

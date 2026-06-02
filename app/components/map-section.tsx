@@ -25,7 +25,7 @@ const mapsData: Record<string, {
   spainLabelPos?: { x: number; y: number };
   
   extraLandPaths?: { path: string }[];
-  extraLabels?: { text: string; x: number; y: number }[];
+  extraLabels?: { text: { FR: string; EN: string }; x: number; y: number }[];
   
   regions: {
     id: string;
@@ -68,7 +68,7 @@ const mapsData: Record<string, {
       { path: "M 60 384 Q 65 379 70 386 T 60 384 Z" }
     ],
     extraLabels: [
-      { text: "Canary Islands", x: 85, y: 415 }
+      { text: { EN: "Canary Islands", FR: "Îles Canaries" }, x: 85, y: 415 }
     ],
     
     regions: [
@@ -200,31 +200,32 @@ const mapsData: Record<string, {
     hoverPrompt: { FR: "Survolez les régions pour explorer les Émirats.", EN: "Hover over regions to explore the Emirates." },
     
     viewBox: "0 0 500 500",
-    oceanPath: "M 0 0 L 500 0 L 395 160 L 360 210 L 340 180 L 280 210 L 180 250 L 80 330 L 0 350 Z",
+    oceanPath: "M 0 0 L 500 0 L 500 240 L 400 240 L 380 200 L 375 100 L 340 135 L 315 170 L 275 200 L 230 230 L 195 245 L 140 280 L 100 285 L 30 280 L 0 280 Z",
     oceanLabel: { FR: "Golfe Persique", EN: "Persian Gulf" },
-    oceanLabelPos: { x: 120, y: 150 },
+    oceanLabelPos: { x: 100, y: 150 },
     
-    landPath: "M 80 330 L 180 250 L 280 210 L 340 180 L 380 150 L 395 160 L 360 210 L 385 240 L 340 320 L 150 350 Z",
-    spainLandPath: "M 30 250 L 50 220 L 70 240 L 60 290 Z",
+    landPath: "M 30 280 C 50 280, 80 290, 100 285 C 110 285, 120 270, 130 275 C 140 280, 160 260, 180 250 C 195 245, 210 245, 220 235 C 230 230, 250 215, 260 210 C 275 200, 290 185, 305 175 C 315 170, 325 160, 330 150 C 340 135, 355 110, 365 95 L 375 100 L 385 115 L 385 135 C 390 155, 380 180, 385 200 L 380 220 L 345 270 L 345 350 L 340 395 L 260 380 L 180 370 L 100 365 L 50 360 Z",
+    spainLandPath: "M 20 290 C 15 270, 18 240, 25 235 C 30 230, 35 240, 38 255 C 40 270, 42 285, 38 295 Z",
     spainLabel: { FR: "QATAR", EN: "QATAR" },
-    spainLabelPos: { x: 35, y: 305 },
+    spainLabelPos: { x: 28, y: 310 },
     
     extraLandPaths: [
-      { path: "M 380 150 L 395 130 L 405 140 L 395 160 Z" }
+      { path: "M 365 95 C 368 85, 372 70, 375 60 C 380 50, 385 45, 390 40 C 393 42, 395 50, 395 60 C 392 70, 385 85, 375 100 Z" }
     ],
     extraLabels: [
-      { text: "Oman (exclave)", x: 410, y: 125 }
+      { text: { EN: "Oman (exclave)", FR: "Oman (exclave)" }, x: 410, y: 55 },
+      { text: { EN: "Gulf of Oman", FR: "Golfe d'Oman" }, x: 425, y: 170 }
     ],
     
     regions: [
       {
         id: "dubai",
         name: { EN: "Dubai", FR: "Dubaï" },
-        labelPos: { x: 230, y: 195, align: "end" },
-        pinPos: { x: 310, y: 195 },
+        labelPos: { x: 200, y: 165, align: "end" },
+        pinPos: { x: 280, y: 170 },
         hasLine: true,
-        linePath: "M 235 195 L 310 195",
-        path: "M 280 210 L 340 180 L 360 210 L 300 250 Z",
+        linePath: "M 205 165 L 280 170",
+        path: "M 220 235 C 230 230, 250 215, 260 210 C 275 200, 290 185, 305 175 L 320 210 L 335 240 L 280 340 L 245 280 Z",
         highlights: { EN: "Burj Khalifa & Palm Yacht Cruise", FR: "Burj Khalifa & croisière yacht à Palm Jumeirah" },
         description: {
           EN: "Explore the futuristic skyscraper skyline, luxury dune dining, private yacht charters, and golden beach resorts of Dubai.",
@@ -234,11 +235,11 @@ const mapsData: Record<string, {
       {
         id: "abu-dhabi",
         name: { EN: "Abu Dhabi", FR: "Abou Dabi" },
-        labelPos: { x: 120, y: 270, align: "end" },
-        pinPos: { x: 200, y: 270 },
+        labelPos: { x: 110, y: 250, align: "end" },
+        pinPos: { x: 195, y: 245 },
         hasLine: true,
-        linePath: "M 125 270 L 200 270",
-        path: "M 80 330 L 180 250 L 280 210 L 300 250 L 340 320 L 150 350 Z",
+        linePath: "M 115 250 L 195 245",
+        path: "M 30 280 C 50 280, 80 290, 100 285 C 110 285, 120 270, 130 275 C 140 280, 160 260, 180 250 C 195 245, 210 245, 220 235 L 245 280 L 280 340 L 340 350 L 340 395 L 260 380 L 180 370 L 100 365 L 50 360 Z",
         highlights: { EN: "Sheikh Zayed Grand Mosque & Louvre", FR: "Grande Mosquée Cheikh Zayed & Musée du Louvre" },
         description: {
           EN: "Visit the cultural monuments of the Louvre Abu Dhabi, the spectacular Sheikh Zayed Grand Mosque, and the empty quarter desert.",
@@ -248,11 +249,11 @@ const mapsData: Record<string, {
       {
         id: "northern-emirates",
         name: { EN: "Northern Emirates", FR: "Émirats du Nord" },
-        labelPos: { x: 395, y: 220, align: "start" },
-        pinPos: { x: 370, y: 175 },
+        labelPos: { x: 420, y: 115, align: "start" },
+        pinPos: { x: 360, y: 115 },
         hasLine: true,
-        linePath: "M 370 175 L 390 220",
-        path: "M 340 180 L 380 150 L 395 160 L 360 210 Z",
+        linePath: "M 360 115 L 415 115",
+        path: "M 305 175 C 315 170, 325 160, 330 150 C 340 135, 355 110, 365 95 L 375 100 L 385 115 L 385 135 C 390 155, 380 180, 385 200 L 380 220 L 345 270 L 345 350 L 280 340 L 335 240 L 320 210 Z",
         highlights: { EN: "Hajar Mountains & Sharjah Culture", FR: "Montagnes du Hajar & Musées de Charjah" },
         description: {
           EN: "Trek through the raw mountain valleys of Ras Al Khaimah, view historical museums in Sharjah, and relax on the beaches of Fujairah.",
@@ -278,19 +279,32 @@ const mapsData: Record<string, {
     viewBox: "0 0 500 500",
     oceanPath: "M 500 0 L 500 500 L 150 500 L 150 450 L 250 380 L 350 280 L 390 180 L 375 140 L 340 120 L 500 0 Z",
     oceanLabel: { FR: "Mer d'Arabie", EN: "Arabian Sea" },
-    oceanLabelPos: { x: 380, y: 320 },
+    oceanLabelPos: { x: 320, y: 360 },
     
-    landPath: "M 340 120 L 375 140 L 390 180 L 350 280 L 250 380 L 150 450 L 140 350 L 220 260 L 310 160 Z",
+    landPath: "M 300 130 C 325 140, 350 145, 370 155 C 390 165, 410 180, 425 200 L 435 205 C 425 225, 400 260, 385 275 C 375 290, 350 310, 330 330 C 300 360, 260 395, 230 410 C 200 425, 150 435, 100 430 C 80 425, 60 415, 50 410 L 45 365 L 120 310 L 180 250 L 260 215 L 300 130 Z",
+    spainLandPath: "M 0 500 L 0 0 L 280 0 L 280 40 L 270 60 L 300 130 L 260 215 L 180 250 L 120 310 L 45 365 L 0 365 Z",
+    spainLabel: { FR: "ARABIE SAOUDITE", EN: "SAUDI ARABIA" },
+    spainLabelPos: { x: 60, y: 260 },
+    
+    extraLandPaths: [
+      { path: "M 280 40 C 285 30, 290 20, 295 10 C 300 5, 305 10, 310 20 C 305 30, 298 45, 280 55 Z" },
+      { path: "M 405 270 C 410 260, 420 265, 415 285 C 410 295, 400 290, 405 270 Z" }
+    ],
+    extraLabels: [
+      { text: { EN: "Musandam (Oman)", FR: "Musandam (Oman)" }, x: 335, y: 35 },
+      { text: { EN: "UNITED ARAB EMIRATES", FR: "ÉMIRATS ARABES UNIS" }, x: 130, y: 150 },
+      { text: { EN: "YEMEN", FR: "YÉMEN" }, x: 20, y: 440 }
+    ],
     
     regions: [
       {
         id: "muscat",
         name: { EN: "Muscat & Coast", FR: "Mascate & Côte" },
-        labelPos: { x: 230, y: 145, align: "end" },
-        pinPos: { x: 345, y: 145 },
+        labelPos: { x: 420, y: 140, align: "start" },
+        pinPos: { x: 360, y: 160 },
         hasLine: true,
-        linePath: "M 235 145 L 345 145",
-        path: "M 310 160 L 340 120 L 375 140 L 340 180 Z",
+        linePath: "M 360 160 L 415 140",
+        path: "M 300 130 C 325 140, 350 145, 370 155 C 390 165, 410 180, 415 190 L 350 230 L 280 170 Z",
         highlights: { EN: "Sultan Qaboos Mosque & Dhow Cruise", FR: "Mosquée Sultan Qaboos & croisière en boutre" },
         description: {
           EN: "Stroll through the Mutrah Souq, visit the Sultan Qaboos Grand Mosque, and sail along Muscat's dramatic volcanic coast.",
@@ -300,11 +314,11 @@ const mapsData: Record<string, {
       {
         id: "hajar",
         name: { EN: "Hajar Mountains & Wadis", FR: "Monts Hajar & Wadis" },
-        labelPos: { x: 190, y: 190, align: "end" },
-        pinPos: { x: 310, y: 190 },
+        labelPos: { x: 210, y: 185, align: "end" },
+        pinPos: { x: 300, y: 185 },
         hasLine: true,
-        linePath: "M 195 190 L 310 190",
-        path: "M 280 200 L 310 160 L 340 180 L 320 220 Z",
+        linePath: "M 215 185 L 300 185",
+        path: "M 280 170 L 350 230 L 320 270 L 250 230 L 260 215 L 300 130 Z",
         highlights: { EN: "Jebel Akhdar Canyons & Nizwa Fort", FR: "Canyons du Djebel Akhdar & Fort de Nizwa" },
         description: {
           EN: "Explore Nizwa's historic clay fort, trek through green mountain canyons of Jebel Akhdar, and swim in emerald turquoise wadi waters.",
@@ -314,11 +328,11 @@ const mapsData: Record<string, {
       {
         id: "sharqiyah",
         name: { EN: "Wahiba Desert & Sur", FR: "Désert de Wahiba & Sur" },
-        labelPos: { x: 395, y: 250, align: "start" },
-        pinPos: { x: 360, y: 210 },
+        labelPos: { x: 440, y: 250, align: "start" },
+        pinPos: { x: 385, y: 220 },
         hasLine: true,
-        linePath: "M 360 210 L 390 250",
-        path: "M 320 220 L 340 180 L 390 180 L 350 280 L 280 250 Z",
+        linePath: "M 385 220 L 435 250",
+        path: "M 415 190 L 435 205 C 425 225, 400 260, 385 275 C 375 290, 350 310, 330 330 L 320 270 L 350 230 Z",
         highlights: { EN: "Desert Glamping & Sea Turtle Nesting", FR: "Glamping dans le désert & tortues marines" },
         description: {
           EN: "Spend a luxury night glamping under the stars in the Wahiba Sands desert, and watch green sea turtles nest at Sur's coast.",
@@ -328,11 +342,11 @@ const mapsData: Record<string, {
       {
         id: "dhofar",
         name: { EN: "Dhofar (Salalah)", FR: "Dhofar (Salalah)" },
-        labelPos: { x: 110, y: 390, align: "end" },
-        pinPos: { x: 180, y: 420 },
+        labelPos: { x: 90, y: 350, align: "end" },
+        pinPos: { x: 145, y: 400 },
         hasLine: true,
-        linePath: "M 115 390 L 180 420",
-        path: "M 150 450 L 250 380 L 280 250 L 220 260 L 140 350 Z",
+        linePath: "M 95 350 L 145 400",
+        path: "M 330 330 C 300 360, 260 395, 230 410 C 200 425, 150 435, 100 430 C 80 425, 60 415, 50 410 L 45 365 L 120 310 L 180 250 L 250 230 L 320 270 Z",
         highlights: { EN: "Khareef Green Monsoon & Frankincense", FR: "Mousson verte du Khareef & arbres à encens" },
         description: {
           EN: "Witness the unique green monsoon transformations of Salalah, walk through ancient frankincense trees, and explore the Empty Quarter desert.",
@@ -360,17 +374,31 @@ const mapsData: Record<string, {
     oceanLabel: { FR: "Mer Rouge", EN: "Red Sea" },
     oceanLabelPos: { x: 70, y: 280 },
     
-    landPath: "M 120 120 L 250 140 L 380 160 L 360 250 L 410 320 L 320 360 L 230 380 L 180 280 L 150 200 Z",
+    landPath: "M 60 80 L 120 70 L 200 60 L 280 65 L 340 75 L 380 90 C 390 100, 395 110, 400 120 C 410 130, 420 140, 420 150 L 425 155 L 440 180 L 320 350 L 220 380 L 180 400 C 170 380, 160 350, 155 330 C 145 300, 135 270, 125 250 C 115 220, 105 190, 95 160 C 85 130, 70 100, 60 80 Z",
+    
+    extraLandPaths: [
+      { path: "M 425 155 L 435 140 L 445 145 L 440 160 Z" }
+    ],
+    extraLabels: [
+      { text: { EN: "Persian Gulf", FR: "Golfe Persique" }, x: 410, y: 100 },
+      { text: { EN: "JORDAN", FR: "JORDANIE" }, x: 50, y: 50 },
+      { text: { EN: "IRAQ", FR: "IRAK" }, x: 220, y: 40 },
+      { text: { EN: "KUWAIT", FR: "KOWEÏT" }, x: 360, y: 65 },
+      { text: { EN: "QATAR", FR: "QATAR" }, x: 440, y: 145 },
+      { text: { EN: "UAE", FR: "EAU" }, x: 445, y: 190 },
+      { text: { EN: "OMAN", FR: "OMAN" }, x: 410, y: 290 },
+      { text: { EN: "YEMEN", FR: "YÉMEN" }, x: 200, y: 415 }
+    ],
     
     regions: [
       {
         id: "alula",
         name: { EN: "AlUla & Hegra", FR: "AlUla & Hegra" },
-        labelPos: { x: 230, y: 160, align: "start" },
-        pinPos: { x: 170, y: 160 },
+        labelPos: { x: 210, y: 130, align: "start" },
+        pinPos: { x: 120, y: 140 },
         hasLine: true,
-        linePath: "M 170 160 L 225 160",
-        path: "M 120 120 L 220 135 L 200 220 L 150 200 Z",
+        linePath: "M 120 140 L 205 130",
+        path: "M 60 80 L 150 90 L 180 180 L 110 200 C 95 160, 85 130, 60 80 Z",
         highlights: { EN: "Sandstone Hegra Tombs & Maraya Hall", FR: "Tombes de grès à Hegra & Salle Maraya" },
         description: {
           EN: "Wander through the UNESCO ruins of Hegra, see Elephant Rock, and stand before the world's largest mirrored building, Maraya.",
@@ -380,11 +408,11 @@ const mapsData: Record<string, {
       {
         id: "hejaz",
         name: { EN: "Red Sea & Jeddah", FR: "Mer Rouge & Djeddah" },
-        labelPos: { x: 100, y: 250, align: "end" },
-        pinPos: { x: 190, y: 250 },
+        labelPos: { x: 60, y: 240, align: "end" },
+        pinPos: { x: 140, y: 250 },
         hasLine: true,
-        linePath: "M 105 250 L 190 250",
-        path: "M 150 200 L 200 220 L 220 300 L 180 280 Z",
+        linePath: "M 65 240 L 140 250",
+        path: "M 110 200 L 180 180 L 220 280 L 145 300 C 135 270, 125 250, 110 200 Z",
         highlights: { EN: "Jeddah Al-Balad & Luxury Yachting", FR: "Djeddah Al-Balad & Yachting de Luxe" },
         description: {
           EN: "Explore the coral-brick houses of historic Jeddah Al-Balad, dive pristine Red Sea reefs, and sail on an ultra-luxury private yacht.",
@@ -394,11 +422,11 @@ const mapsData: Record<string, {
       {
         id: "najd",
         name: { EN: "Riyadh & Diriyah", FR: "Riyad & Diriyah" },
-        labelPos: { x: 385, y: 220, align: "start" },
-        pinPos: { x: 300, y: 200 },
+        labelPos: { x: 360, y: 190, align: "start" },
+        pinPos: { x: 280, y: 210 },
         hasLine: true,
-        linePath: "M 300 200 L 380 220",
-        path: "M 220 135 L 380 160 L 360 250 L 310 310 L 200 220 Z",
+        linePath: "M 280 210 L 355 190",
+        path: "M 150 90 L 200 60 L 280 65 L 340 75 L 380 90 C 390 100, 395 110, 400 120 C 410 130, 420 140, 420 150 L 425 155 L 440 180 L 320 350 L 220 280 L 180 180 L 150 90 Z",
         highlights: { EN: "Clay Castle Diriyah & Edge of the World", FR: "Château d'argile de Diriyah & Edge of the World" },
         description: {
           EN: "Visit the clay palaces of Diriyah (the birthplace of the Saudi state), and look out from the dramatic 300m cliffs of the Edge of the World.",
@@ -408,11 +436,11 @@ const mapsData: Record<string, {
       {
         id: "asir",
         name: { EN: "Asir & Abha", FR: "Asir & Abha" },
-        labelPos: { x: 140, y: 340, align: "end" },
-        pinPos: { x: 240, y: 340 },
+        labelPos: { x: 110, y: 350, align: "end" },
+        pinPos: { x: 190, y: 340 },
         hasLine: true,
-        linePath: "M 145 340 L 240 340",
-        path: "M 180 280 L 220 300 L 310 310 L 320 360 L 230 380 Z",
+        linePath: "M 115 350 L 190 340",
+        path: "M 145 300 L 220 280 L 320 350 L 220 380 L 180 400 C 170 380, 160 350, 155 330, 145 300 Z",
         highlights: { EN: "Cable Cars & Rijal Almaa Stone Village", FR: "Téléphériques & village en pierre de Rijal Almaa" },
         description: {
           EN: "Ascend the misty green mountains of Abha, ride cable cars over deep canyons, and explore the ancient gingerbread stone village of Rijal Almaa.",
@@ -513,7 +541,7 @@ export default function MapSection({ countryId = "1" }: { countryId?: string }) 
               y={label.y}
               className="font-sans text-[8px] tracking-wider fill-[#8c827a]/70 font-medium"
             >
-              {label.text}
+              {translate(label.text, lang)}
             </text>
           ))}
 

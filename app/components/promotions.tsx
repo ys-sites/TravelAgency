@@ -88,14 +88,13 @@ export default function Promotions() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
-                
-                {/* Badge container to prevent horizontal overlap on laptop/mobile screens */}
-                <div className="absolute top-5 left-5 right-5 flex flex-col items-start gap-2 z-10 pointer-events-none select-none">
-                  <div className="bg-[#8B2635] text-[#faf9f5] font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full shadow-md">
+                          {/* Badge container to prevent horizontal overlap on laptop/mobile screens */}
+                <div className="absolute top-6 left-6 right-6 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">
+                  <div className="bg-[#8B2635] text-[#faf9f5] font-mono text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full shadow-md">
                     {deal.tag}
                   </div>
 
-                  <div className={`px-3 py-1.5 rounded-full font-mono text-[8px] tracking-wider uppercase font-semibold shadow-md ${
+                  <div className={`px-3.5 py-1.5 rounded-full font-mono text-[9px] tracking-wider uppercase font-semibold shadow-md ${
                     deal.id === 1
                       ? "bg-[#a8c8e8] text-[#1a3a5c] border border-[#7aaed4]/40"
                       : deal.id === 2
@@ -108,29 +107,29 @@ export default function Promotions() {
 
                 {/* Booking Deadline Banner */}
                 {deal.promoText && (
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#8B2635]/90 backdrop-blur-xs text-[#faf9f5] text-[8px] font-mono py-1.5 px-3 tracking-wider text-center uppercase font-bold">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#8B2635]/95 backdrop-blur-xs text-[#faf9f5] text-[10px] font-mono py-2.5 px-4 tracking-wider text-center uppercase font-bold">
                     {translate(deal.promoText, lang)}
                   </div>
                 )}
               </div>
 
               {/* Card Body */}
-              <div className="p-6 md:p-8 flex-1 flex flex-col justify-between space-y-6">
-                <div className="space-y-3">
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] text-zinc-400 font-mono tracking-wider">
+              <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
+                <div className="space-y-4">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-zinc-500 font-sans font-medium tracking-wide">
                     <span>{translate(deal.duration, lang)}</span>
-                    <span>•</span>
+                    <span>{lang === "FR" ? "•" : "•"}</span>
                     <span>{translate(deal.flight, lang)}</span>
-                    <span>•</span>
+                    <span>{lang === "FR" ? "•" : "•"}</span>
                     <span>{translate(deal.meals, lang)}</span>
                   </div>
 
-                  <h3 className="font-serif text-lg md:text-xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
+                  <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
                     {translate(deal.title, lang)}
                   </h3>
 
-                  <p className="text-[12px] leading-relaxed text-zinc-500 font-light pt-1 border-t border-zinc-100">
-                    <span className="font-mono text-[9px] uppercase tracking-wider text-brand-gold block mb-1">
+                  <p className="text-[13.5px] leading-relaxed text-zinc-600 font-light pt-2.5 border-t border-zinc-100">
+                    <span className="font-heading text-[10px] uppercase tracking-wider font-bold text-brand-gold-dark block mb-1">
                       {lang === "FR" ? "INCLUSIONS EXCLUSIVES" : "EXCLUSIVE INCLUSIONS"}
                     </span>
                     {translate(deal.inclusions, lang)}
@@ -138,19 +137,19 @@ export default function Promotions() {
                 </div>
 
                 {/* Footer / Pricing */}
-                <div className="flex items-center justify-between pt-4 border-t border-zinc-100">
+                <div className="flex items-center justify-between pt-5 border-t border-zinc-100">
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-mono line-through text-zinc-400 leading-none mb-1">
+                    <span className="text-[11px] font-mono line-through text-zinc-400 leading-none mb-1">
                       {deal.oldPrice}
                     </span>
-                    <span className="text-[18px] font-bold text-zinc-900 font-heading leading-none">
-                      {deal.newPrice} <span className="text-[9px] font-mono text-zinc-400">{lang === "FR" ? "CAD / pers." : "CAD / guest"}</span>
+                    <span className="text-[19px] font-bold text-zinc-900 font-heading leading-none">
+                      {deal.newPrice} <span className="text-[10px] font-mono text-zinc-400">{lang === "FR" ? "CAD / pers." : "CAD / guest"}</span>
                     </span>
                   </div>
 
                   <Link 
                     href={`/itineraries/${deal.id}`}
-                    className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[10px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
+                    className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
                   >
                     {lang === "FR" ? "EN SAVOIR PLUS" : "BOOK OFFER"}
                   </Link>

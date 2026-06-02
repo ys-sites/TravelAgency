@@ -569,7 +569,7 @@ export default function CustomTripClient() {
                 <div className="space-y-4 pt-2">
                   <div className={`flex items-center space-x-2 text-[9px] font-mono transition-colors duration-1000 ${isPremium ? 'text-white/40' : 'text-zinc-500'}`}>
                     <Lock className="text-brand-gold w-3.5 h-3.5" />
-                    <span>256-Bit Encrypted Concierge Channel</span>
+                    <span>{lang === "FR" ? "Canal Concierge Chiffré 256-Bits" : "256-Bit Encrypted Concierge Channel"}</span>
                   </div>
                   <p className={`text-[12px] leading-relaxed transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-600'}`}>
                     {translate(t.reassurance, lang)}

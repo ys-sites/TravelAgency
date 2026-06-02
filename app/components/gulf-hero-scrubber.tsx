@@ -80,7 +80,7 @@ export default function GulfHeroScrubber() {
         transition={{ delay: 2.2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-10 text-white/80 pointer-events-none"
       >
-        <span className="font-mono text-[9px] tracking-[0.25em] uppercase mb-3">Scroll to Explore</span>
+        <span className="font-mono text-[9px] tracking-[0.25em] uppercase mb-3">{lang === "FR" ? "Défiler pour Explorer" : "Scroll to Explore"}</span>
         <div className="w-[28px] h-[48px] rounded-full border-2 border-white/40 flex justify-center p-1.5 shadow-md">
           <motion.div
             animate={{ y: [0, 16, 0] }}
