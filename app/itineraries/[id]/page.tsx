@@ -188,25 +188,9 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
               {lang === "FR" ? "Aperçu de l'Itinéraire" : "Trip Overview"}
             </h3>
-            <div className="flex flex-col lg:flex-row gap-8 items-start">
-              <div className="flex-1">
-                <p className="text-[14px] md:text-[15px] leading-relaxed text-zinc-600 font-light">
-                  {itinerary.overview[lang]}
-                </p>
-              </div>
-              {id === "1" && (
-                <div className="w-full sm:w-[345px] shrink-0 mx-auto">
-                  <iframe 
-                    src="https://assets.pinterest.com/ext/embed.html?id=563724078383110144" 
-                    height="714" 
-                    width="345" 
-                    frameBorder="0" 
-                    scrolling="no"
-                    className="rounded-[1.5rem] shadow-md border border-zinc-150 max-w-full block mx-auto"
-                  />
-                </div>
-              )}
-            </div>
+            <p className="text-[14px] md:text-[15px] leading-relaxed text-zinc-600 font-light">
+              {itinerary.overview[lang]}
+            </p>
           </div>
 
           <div className="space-y-10">
@@ -238,107 +222,222 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
         </div>
 
         {/* Right Side: Booking Panel Widget (Span 4) */}
-        <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit space-y-6">
-          <div className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-[50px] rounded-full pointer-events-none" />
-            
-            {!isSubmitted ? (
-              <form onSubmit={handleBookingSubmit} className="space-y-6">
-                <div className="text-center md:text-left border-b border-zinc-200/60 pb-4">
-                  <span className="text-brand-gold font-mono text-[9px] tracking-[0.25em] uppercase block mb-1">
-                    {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
-                  </span>
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD</span></h3>
-                    <span className="text-[9px] font-mono text-brand-gold uppercase bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 rounded">
-                      {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
+        <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit">
+            /* Morocco Contact Form Card with Video Header */
+            <div className="bg-white border border-zinc-200/60 shadow-md rounded-[1.5rem] overflow-hidden relative h-[680px] flex flex-col">
+              {/* Video Header at the top (stable, doesn't move when scrolling form) */}
+              <div className="relative w-full h-[260px] shrink-0 overflow-hidden border-b border-zinc-100">
+                <video
+                  src="https://v1.pinimg.com/videos/iht/expMp4/81/24/b8/8124b8c7cd11c22123a7b75cfabf32fc_720w.mp4"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              </div>
+
+              {/* Scrollable Form Container below the video */}
+              <div className="flex-1 overflow-y-auto p-6 scrollbar-thin bg-zinc-50/10">
+                {!isSubmitted ? (
+                  <form onSubmit={handleBookingSubmit} className="space-y-6">
+                    <div className="text-center md:text-left border-b border-zinc-200/60 pb-4">
+                      <span className="text-brand-gold font-mono text-[9px] tracking-[0.25em] uppercase block mb-1">
+                        {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
+                      </span>
+                      <div className="flex items-baseline justify-between">
+                        <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD</span></h3>
+                        <span className="text-[9px] font-mono text-brand-gold uppercase bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 rounded">
+                          {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div>
+                        <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                          {lang === "FR" ? "Nom Complet" : "Full Name"}
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={bookingName}
+                          onChange={(e) => setBookingName(e.target.value)}
+                          placeholder="e.g. Sterling Hunt"
+                          className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                          {lang === "FR" ? "Adresse Courriel" : "Secure Email"}
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={bookingEmail}
+                          onChange={(e) => setBookingEmail(e.target.value)}
+                          placeholder="e.g. sterling@portfolio.com"
+                          className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                          {lang === "FR" ? "Exigences Circadiennes ou de Sécurité" : "Specialized Requirements / Remarks"}
+                        </label>
+                        <textarea
+                          rows={4}
+                          value={bookingMessage}
+                          onChange={(e) => setBookingMessage(e.target.value)}
+                          placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
+                          className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2 text-[10px] text-zinc-500 font-mono">
+                        <Shield className="text-brand-gold w-4 h-4" />
+                        <span>{lang === "FR" ? "Règlement Escrow Sécurisé" : "Secure 256-Bit Escrow Portal"}</span>
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md cursor-pointer"
+                      >
+                        {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
+                      </button>
+                    </div>
+                  </form>
+                ) : (
+                  <div className="text-center py-12 flex flex-col items-center justify-center space-y-6">
+                    <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
+                      <CheckCircle className="text-brand-gold w-7 h-7" />
+                    </div>
+                    <div className="space-y-1">
+                      <span className="text-brand-gold font-mono text-[10px] tracking-[0.25em] uppercase block">
+                        {lang === "FR" ? "Transmission Chiffrée" : "Transmission Secured"}
+                      </span>
+                      <h3 className="font-serif text-2xl text-zinc-900 tracking-wide uppercase">
+                        {lang === "FR" ? "Réservation Initiée" : "Reservation Active"}
+                      </h3>
+                    </div>
+                    <p className="text-zinc-600 text-xs leading-relaxed max-w-[240px] mx-auto font-light">
+                      {lang === "FR" 
+                        ? `Merci, ${bookingName}. Votre conseiller en voyages prépare les protocoles pour ${itinerary.title.FR}.` 
+                        : `Thank you, ${bookingName}. Your dedicated travel architect is initiating protocols for ${itinerary.title.EN}.`
+                      }
+                    </p>
+                    <button
+                      onClick={() => setIsSubmitted(false)}
+                      className="border border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700 font-mono text-[9px] tracking-[0.15em] uppercase px-6 py-2.5 transition-luxury rounded-full shadow-sm"
+                    >
+                      {lang === "FR" ? "Modifier la requête" : "Modify inquiry"}
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          ) : (
+            /* Standard Widget Form Card */
+            <div className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-[50px] rounded-full pointer-events-none" />
+              
+              {!isSubmitted ? (
+                <form onSubmit={handleBookingSubmit} className="space-y-6">
+                  <div className="text-center md:text-left border-b border-zinc-200/60 pb-4">
+                    <span className="text-brand-gold font-mono text-[9px] tracking-[0.25em] uppercase block mb-1">
+                      {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
                     </span>
+                    <div className="flex items-baseline justify-between">
+                      <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD</span></h3>
+                      <span className="text-[9px] font-mono text-brand-gold uppercase bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 rounded">
+                        {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                      {lang === "FR" ? "Nom Complet" : "Full Name"}
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={bookingName}
-                      onChange={(e) => setBookingName(e.target.value)}
-                      placeholder="e.g. Sterling Hunt"
-                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
-                    />
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                        {lang === "FR" ? "Nom Complet" : "Full Name"}
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={bookingName}
+                        onChange={(e) => setBookingName(e.target.value)}
+                        placeholder="e.g. Sterling Hunt"
+                        className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                        {lang === "FR" ? "Adresse Courriel" : "Secure Email"}
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={bookingEmail}
+                        onChange={(e) => setBookingEmail(e.target.value)}
+                        placeholder="e.g. sterling@portfolio.com"
+                        className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                        {lang === "FR" ? "Exigences Circadiennes ou de Sécurité" : "Specialized Requirements / Remarks"}
+                      </label>
+                      <textarea
+                        rows={4}
+                        value={bookingMessage}
+                        onChange={(e) => setBookingMessage(e.target.value)}
+                        placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
+                        className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                      {lang === "FR" ? "Adresse Courriel" : "Secure Email"}
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={bookingEmail}
-                      onChange={(e) => setBookingEmail(e.target.value)}
-                      placeholder="e.g. sterling@portfolio.com"
-                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                      {lang === "FR" ? "Exigences Circadiennes ou de Sécurité" : "Specialized Requirements / Remarks"}
-                    </label>
-                    <textarea
-                      rows={4}
-                      value={bookingMessage}
-                      onChange={(e) => setBookingMessage(e.target.value)}
-                      placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
-                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
-                    />
-                  </div>
-                </div>
 
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-2 text-[10px] text-zinc-500 font-mono">
-                    <Shield className="text-brand-gold w-4 h-4" />
-                    <span>{lang === "FR" ? "Règlement Escrow Sécurisé" : "Secure 256-Bit Escrow Portal"}</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-2 text-[10px] text-zinc-500 font-mono">
+                      <Shield className="text-brand-gold w-4 h-4" />
+                      <span>{lang === "FR" ? "Règlement Escrow Sécurisé" : "Secure 256-Bit Escrow Portal"}</span>
+                    </div>
+                    <button
+                      type="submit"
+                      className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md cursor-pointer"
+                    >
+                      {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
+                    </button>
                   </div>
+                </form>
+              ) : (
+                <div className="text-center py-12 flex flex-col items-center justify-center space-y-6">
+                  <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
+                    <CheckCircle className="text-brand-gold w-7 h-7" />
+                  </div>
+                  <div className="space-y-1">
+                    <span className="text-brand-gold font-mono text-[10px] tracking-[0.25em] uppercase block">
+                      {lang === "FR" ? "Transmission Chiffrée" : "Transmission Secured"}
+                    </span>
+                    <h3 className="font-serif text-2xl text-zinc-900 tracking-wide uppercase">
+                      {lang === "FR" ? "Réservation Initiée" : "Reservation Active"}
+                    </h3>
+                  </div>
+                  <p className="text-zinc-600 text-xs leading-relaxed max-w-[240px] mx-auto font-light">
+                    {lang === "FR" 
+                      ? `Merci, ${bookingName}. Votre conseiller en voyages prépare les protocoles pour ${itinerary.title.FR}.` 
+                      : `Thank you, ${bookingName}. Your dedicated travel architect is initiating protocols for ${itinerary.title.EN}.`
+                  }
+                  </p>
                   <button
-                    type="submit"
-                    className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md cursor-pointer"
+                    onClick={() => setIsSubmitted(false)}
+                    className="border border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700 font-mono text-[9px] tracking-[0.15em] uppercase px-6 py-2.5 transition-luxury rounded-full shadow-sm"
                   >
-                    {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
+                    {lang === "FR" ? "Modifier la requête" : "Modify inquiry"}
                   </button>
                 </div>
-              </form>
-            ) : (
-              <div className="text-center py-12 flex flex-col items-center justify-center space-y-6">
-                <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
-                  <CheckCircle className="text-brand-gold w-7 h-7" />
-                </div>
-                <div className="space-y-1">
-                  <span className="text-brand-gold font-mono text-[10px] tracking-[0.25em] uppercase block">
-                    {lang === "FR" ? "Transmission Chiffrée" : "Transmission Secured"}
-                  </span>
-                  <h3 className="font-serif text-2xl text-zinc-900 tracking-wide uppercase">
-                    {lang === "FR" ? "Réservation Initiée" : "Reservation Active"}
-                  </h3>
-                </div>
-                <p className="text-zinc-600 text-xs leading-relaxed max-w-[240px] mx-auto font-light">
-                  {lang === "FR" 
-                    ? `Merci, ${bookingName}. Votre conseiller en voyages prépare les protocoles pour ${itinerary.title.FR}.` 
-                    : `Thank you, ${bookingName}. Your dedicated travel architect is initiating protocols for ${itinerary.title.EN}.`
-                  }
-                </p>
-                <button
-                  onClick={() => setIsSubmitted(false)}
-                  className="border border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700 font-mono text-[9px] tracking-[0.15em] uppercase px-6 py-2.5 transition-luxury rounded-full shadow-sm"
-                >
-                  {lang === "FR" ? "Modifier la requête" : "Modify inquiry"}
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
+              )}
+            </div>
+          )}
 
       </section>
 

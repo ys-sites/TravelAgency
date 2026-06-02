@@ -19,9 +19,8 @@ export default function Navbar() {
     <nav className="absolute top-6 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1100px] -translate-x-1/2">
       <div className="glass-nav flex h-[64px] items-center justify-between rounded-full px-8 py-3">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 text-white font-heading font-semibold text-[16px] tracking-wider cursor-pointer decoration-none">
-          <img src="/images/logo.png" className="h-7 w-auto object-contain brightness-0 invert" alt="logo" />
-          <span className="font-serif tracking-[0.1em] text-xs uppercase sm:text-sm">Majestic Experiences <span className="text-brand-gold">Voyages</span></span>
+        <Link href="/" className="flex items-center cursor-pointer decoration-none">
+          <img src="/images/logo.png" className="h-12 w-auto object-contain hover:opacity-90 transition-opacity duration-300" alt="Majestic Experiences Voyages" />
         </Link>
 
         {/* Navigation Links */}

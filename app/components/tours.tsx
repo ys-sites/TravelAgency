@@ -126,10 +126,10 @@ export default function Tours() {
         {/* Left Column: Heading & Branding */}
         <div className="lg:col-span-3 space-y-6 lg:sticky lg:top-28">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             <img 
               src="/images/logo.png" 
-              className="h-10 w-auto object-contain filter brightness-0" 
+              className="h-16 w-auto object-contain" 
               alt="logo" 
             />
           </div>

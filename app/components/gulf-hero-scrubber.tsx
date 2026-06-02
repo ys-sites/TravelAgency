@@ -37,7 +37,7 @@ export default function GulfHeroScrubber() {
             className="w-[200px] sm:w-[260px] md:w-[300px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] mb-8"
           />
           
-          <h2 className="font-serif text-xl sm:text-2xl md:text-3xl text-brand-gold tracking-[0.1em] uppercase font-light max-w-2xl mb-8 leading-relaxed">
+          <h2 className="font-serif text-xl sm:text-2xl md:text-3xl text-white tracking-[0.1em] uppercase font-light max-w-2xl mb-8 leading-relaxed">
             {lang === "FR"
               ? "Concierge de Voyage de Prestige à travers le Golfe et le Maroc"
               : "Bespoke Travel Concierge across the Arabian Gulf & Morocco"

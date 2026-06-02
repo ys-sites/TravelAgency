@@ -1,7 +1,7 @@
 import Navbar from "./components/navbar";
 import GulfHeroScrubber from "./components/gulf-hero-scrubber";
 import Tours from "./components/tours";
-import MapSection from "./components/map-section";
+import Promotions from "./components/promotions";
 import Footer from "./components/footer";
 
 export default function Home() {
@@ -15,10 +15,10 @@ export default function Home() {
 
       {/* Main Body content */}
       <main className="relative z-10 bg-white">
+        <Promotions />
         <div id="portfolios">
           <Tours />
         </div>
-        <MapSection />
       </main>
 
       <Footer />
