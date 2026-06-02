@@ -62,8 +62,20 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-white/70 px-6">
         {/* Brand Column */}
         <div className="flex flex-col gap-4">
-          <div className="flex items-center">
-            <img src="/images/logo.png" className="h-20 w-auto object-contain hover:opacity-90 transition-opacity duration-300" alt="Majestic Experiences Voyages Logo" />
+          <div className="flex items-center gap-3 md:gap-4">
+            <img 
+              src="/images/logo.png" 
+              className="h-20 md:h-24 w-auto object-contain hover:opacity-90 transition-opacity duration-300" 
+              alt="Majestic Experiences Voyages Logo" 
+            />
+            <div className="flex flex-col text-white">
+              <span className="font-serif text-[14px] md:text-[18px] uppercase tracking-[0.25em] font-bold leading-none">
+                Majestic
+              </span>
+              <span className="font-sans text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-brand-gold font-light mt-0.5 leading-none">
+                Experiences Voyages
+              </span>
+            </div>
           </div>
           <p className="text-[12px] text-white/50 leading-relaxed font-light max-w-[240px]">
             {t.description[lang]}

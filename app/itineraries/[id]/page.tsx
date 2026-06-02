@@ -3,8 +3,9 @@
 import React, { use, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Users, Shield, CheckCircle, Mail, MapPin, Hotel } from "lucide-react";
+import { motion } from "motion/react";
 import Navbar from "../../components/navbar";
-import Footer from "../../components/footer";
+import Footer from "../../../../components/footer";
 import { useLang } from "../../context/lang-context";
 
 interface DayPlan {
@@ -47,11 +48,11 @@ interface ItineraryDetail {
 const itinerariesData: Record<string, ItineraryDetail> = {
   "1": {
     id: 1,
-    image: "/images/moroco.webp",
-    contentImage: "/images/moroco.webp",
+    image: "/images/marrakech_sunset_hero.png",
+    contentImage: "/images/marrakech_sunset_hero.png",
     title: { FR: "Expédition Marrakech & Sahara", EN: "Marrakech & Sahara Expedition" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    cost: "C$ 12,400",
+    cost: "C$ 6,200",
     overview: {
       FR: "Embarquez pour un voyage impérial à travers les joyaux du Maroc. Découvrez le charme mystique des palais de Marrakech, traversez les montagnes de l'Atlas en hélicoptère et logez dans un bivouac ultra-privé au milieu des dunes de sable fin du Sahara.",
       EN: "Embark on an imperial journey through the crown jewels of Morocco. Experience the mystical charm of Marrakech medinas, soar over the high Atlas mountains by private helicopter, and sleep in an ultra-luxury private desert camp in the heart of the Sahara."
@@ -145,11 +146,11 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "2": {
     id: 2,
-    image: "/images/dubai.webp",
-    contentImage: "/images/dubai.webp",
+    image: "/images/dubai_skyline_hero.png",
+    contentImage: "/images/dubai_skyline_hero.png",
     title: { FR: "Oasis Moderne de Dubaï & Abou Dabi", EN: "Dubai & Abu Dhabi Modern Oasis" },
     duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
-    cost: "C$ 16,500",
+    cost: "C$ 8,250",
     overview: {
       FR: "Plongez dans le luxe contemporain et l'opulence du Golfe. De la suite penthouse surplombant la marina de Dubaï aux safaris exclusifs sous les dunes rouges d'Abou Dabi, vivez une expérience sans aucun compromis.",
       EN: "Immerse yourself in contemporary luxury and Arabian Gulf opulence. From a private penthouse suite overlooking Dubai Marina to exclusive desert glamping under the red dunes of Abu Dhabi, live an experience with zero compromises."
@@ -245,11 +246,11 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "3": {
     id: 3,
-    image: "/images/oman-real.jpg",
-    contentImage: "/images/oman-real.jpg",
+    image: "/images/oman_mountain_hero.png",
+    contentImage: "/images/oman_mountain_hero.png",
     title: { FR: "Héritage du Sultanat d'Oman", EN: "Sultanate of Oman Heritage" },
     duration: { FR: "12 jours / 11 nuits", EN: "12 days / 11 nights" },
-    cost: "C$ 14,800",
+    cost: "C$ 7,400",
     overview: {
       FR: "Découvrez la sérénité pure d'Oman. Traversez les impressionnants wadis de calcaire, séjournez dans des complexes haut de gamme perchés à 2 000 mètres d'altitude dans le Jebel Akhdar et naviguez sur les fjords de Musandam.",
       EN: "Discover the pure serenity of Oman. Hike through spectacular limestone wadi canyons, lodge in elite mountain resorts perched 2,000 meters high on Jebel Akhdar, and cruise the fjords of Musandam by private luxury dhow."
@@ -345,11 +346,11 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "4": {
     id: 4,
-    image: "/images/alula-redsea.jpg",
-    contentImage: "/images/alula-redsea.jpg",
+    image: "/images/alula_canyon_hero.png",
+    contentImage: "/images/alula_canyon_hero.png",
     title: { FR: "Merveilles d'AlUla & Mer Rouge", EN: "AlUla & Red Sea Wonders" },
     duration: { FR: "14 jours / 13 nuits", EN: "14 days / 13 nights" },
-    cost: "C$ 24,900",
+    cost: "C$ 12,450",
     overview: {
       FR: "Découvrez les trésors cachés de l'Arabie Saoudite. Des impressionnants canyons de grès d'AlUla et des tombes nabatéennes de Hegra aux eaux cristallines et îles privées de la Mer Rouge, vivez un séjour majestueux.",
       EN: "Discover the hidden treasures of Saudi Arabia. From the jaw-dropping sandstone canyons of AlUla and ancient Nabataean Hegra tombs to the pristine turquoise waters and private islands of the Red Sea, live a truly majestic voyage."
@@ -388,9 +389,9 @@ const itinerariesData: Record<string, ItineraryDetail> = {
     },
     exclusions: {
       FR: [
-        "Taxe de séjour et frais de visa électronique",
-        "Assurances rapatriement et santé",
-        "Repas libres à Riyad et Djeddah"
+        "Tourism fees and e-visa application costs",
+        "Medical and repatriation travel insurance",
+        "Unspecified meals in Riyadh and Jeddah"
       ],
       EN: [
         "Tourism fees and e-visa application costs",
@@ -479,11 +480,11 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
       <Navbar />
 
       {/* Hero Header Section */}
-      <section className="relative h-[60vh] md:h-[75vh] w-full overflow-hidden">
+      <section className="relative w-full aspect-[16/10] md:aspect-[21/9] min-h-[400px] md:min-h-[500px] lg:min-h-[550px] overflow-hidden bg-zinc-950 flex flex-col justify-end">
         <img
           src={itinerary.image}
           alt={itinerary.title[lang]}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-white" />
         
@@ -520,14 +521,20 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             </p>
           </div>
 
-          {/* Destination Showcase Image */}
-          <div className="w-full rounded-2xl overflow-hidden border border-zinc-100 shadow-sm">
+          {/* Destination Showcase Image with animation */}
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="w-full rounded-2xl overflow-hidden border border-zinc-100 shadow-sm"
+          >
             <img
               src={itinerary.contentImage}
               alt={itinerary.title[lang]}
               className="w-full h-[320px] md:h-[420px] object-cover hover:scale-[1.02] transition-transform duration-700"
             />
-          </div>
+          </motion.div>
 
           <div className="space-y-10">
             <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
@@ -535,8 +542,15 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             </h3>
             
             <div className="relative border-l border-zinc-200 pl-6 md:pl-10 ml-4 space-y-12">
-              {itinerary.timeline.map((item) => (
-                <div key={item.day} className="relative group">
+              {itinerary.timeline.map((item, idx) => (
+                <motion.div 
+                  key={item.day}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: (idx % 4) * 0.1 }}
+                  className="relative group"
+                >
                   {/* Timeline bullet dot */}
                   <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-brand-gold group-hover:bg-brand-gold transition-colors duration-300 z-10" />
                   
@@ -551,13 +565,19 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                       {item.desc[lang]}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* Ce qui est compris / Non inclus (Inclusions & Exclusions) */}
-          <div className="space-y-8 pt-10 border-t border-zinc-100">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8 pt-10 border-t border-zinc-100"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Inclusions */}
               <div className="space-y-4">
@@ -591,10 +611,16 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                 </ul>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Premium Options */}
-          <div className="space-y-5 pt-10 border-t border-zinc-100">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-5 pt-10 border-t border-zinc-100"
+          >
             <h4 className="font-serif text-xl md:text-2xl text-zinc-900 flex items-center gap-2.5">
               <span className="bg-brand-gold/10 text-brand-gold border border-brand-gold/20 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-wider rounded">$$$</span>
               <span>{lang === "FR" ? "Options à la carte" : "A La Carte Options"}</span>
@@ -607,10 +633,16 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Featured Accommodations */}
-          <div className="space-y-6 pt-10 border-t border-zinc-100">
+          <motion.div 
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6 pt-10 border-t border-zinc-100"
+          >
             <h4 className="font-serif text-xl md:text-2xl text-zinc-900 flex items-center gap-2.5">
               <Hotel className="w-5 h-5 text-brand-gold shrink-0" />
               <span>{lang === "FR" ? "Hébergements d'Exception" : "Featured Accommodations"}</span>
@@ -640,7 +672,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
         </div>
 
@@ -659,8 +691,14 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             />
           </div>
 
-          {/* Contact Form Block — sticky only */}
-          <div className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden lg:sticky lg:top-28">
+          {/* Contact Form Block — sticky only with scroll entrance */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden lg:sticky lg:top-28"
+          >
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-[50px] rounded-full pointer-events-none" />
 
             {!isSubmitted ? (
@@ -670,7 +708,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                     {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
                   </span>
                   <div className="flex items-baseline justify-between">
-                    <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD</span></h3>
+                    <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD / pers.</span></h3>
                     <span className="text-[9px] font-mono text-brand-gold uppercase bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 rounded">
                       {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
                     </span>

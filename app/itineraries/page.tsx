@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Users, MapPin } from "lucide-react";
+import { motion } from "motion/react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { useLang } from "../context/lang-context";
@@ -11,12 +12,16 @@ interface TourCard {
   id: number;
   image: string;
   category: { FR: string; EN: string };
+  badge: { FR: string; EN: string };
   title: { FR: string; EN: string };
   description: { FR: string; EN: string };
-  days: { FR: string; EN: string };
-  people: { FR: string; EN: string };
+  duration: { FR: string; EN: string };
+  flight: { FR: string; EN: string };
+  meals: { FR: string; EN: string };
   oldPrice: string;
   price: string;
+  tag: string;
+  promoText?: { FR: string; EN: string };
   iconType: "mountain" | "water" | "lighthouse";
 }
 
@@ -36,16 +41,29 @@ const toursList: TourCard[] = [
       FR: "Séjournez dans un riad privé, explorez le Sahara en hélicoptère et profitez d'une nuit exclusive sous les étoiles.",
       EN: "Stay in an exclusive private riad, fly over the Atlas in a helicopter, and camp under the starry desert sky."
     },
-    days: {
-      FR: "8 jours",
-      EN: "8 days"
+    duration: {
+      FR: "8 jours / 7 nuits",
+      EN: "8 days / 7 nights"
     },
-    people: {
-      FR: "2 personnes",
-      EN: "2 people"
+    flight: {
+      FR: "Vol inclus",
+      EN: "Flight included"
     },
-    oldPrice: "C$ 14,800",
-    price: "C$ 12,400",
+    meals: {
+      FR: "Pension complète",
+      EN: "Full board"
+    },
+    oldPrice: "C$ 7,400",
+    price: "C$ 6,200",
+    tag: "SAVE C$ 1,200",
+    badge: {
+      FR: "SIGNATURE",
+      EN: "SIGNATURE"
+    },
+    promoText: {
+      FR: "Réservez avant le 15 août 2026 et économisez 1 200 $ / pers.",
+      EN: "Book before August 15, 2026 and save 1,200 $ / pers."
+    },
     iconType: "mountain"
   },
   {
@@ -63,16 +81,29 @@ const toursList: TourCard[] = [
       FR: "Découvrez le summum du luxe moderne : suites exclusives à Dubaï, et dîners gastronomiques dans le désert.",
       EN: "Experience the pinnacle of modern luxury: exclusive suites in Dubai, and fine dining under the dunes of Abu Dhabi."
     },
-    days: {
-      FR: "10 jours",
-      EN: "10 days"
+    duration: {
+      FR: "10 jours / 9 nuits",
+      EN: "10 days / 9 nights"
     },
-    people: {
-      FR: "2 personnes",
-      EN: "2 people"
+    flight: {
+      FR: "Vol inclus",
+      EN: "Flight included"
     },
-    oldPrice: "C$ 18,900",
-    price: "C$ 16,500",
+    meals: {
+      FR: "Dîners gourmands",
+      EN: "Gourmet dinners"
+    },
+    oldPrice: "C$ 9,450",
+    price: "C$ 8,250",
+    tag: "SAVE C$ 1,200",
+    badge: {
+      FR: "EXCLUSIVE",
+      EN: "EXCLUSIVE"
+    },
+    promoText: {
+      FR: "Réservez avant le 20 sept 2026 et économisez 1 200 $ / pers.",
+      EN: "Book before Sept 20, 2026 and save 1,200 $ / pers."
+    },
     iconType: "water"
   },
   {
@@ -90,16 +121,29 @@ const toursList: TourCard[] = [
       FR: "Explorez les canyons du Jebel Akhdar, logez dans des forts convertis et naviguez dans les fjords en yacht privé.",
       EN: "Explore the canyons of Jebel Akhdar, lodge in historic converted forts, and cruise the fjords by private yacht."
     },
-    days: {
-      FR: "12 jours",
-      EN: "12 days"
+    duration: {
+      FR: "12 jours / 11 nuits",
+      EN: "12 days / 11 nights"
     },
-    people: {
-      FR: "2 personnes",
-      EN: "2 people"
+    flight: {
+      FR: "Vol inclus",
+      EN: "Flight included"
     },
-    oldPrice: "C$ 16,500",
-    price: "C$ 14,800",
+    meals: {
+      FR: "Pension complète",
+      EN: "Full board"
+    },
+    oldPrice: "C$ 8,250",
+    price: "C$ 7,400",
+    tag: "SAVE C$ 850",
+    badge: {
+      FR: "SOVEREIGN",
+      EN: "SOVEREIGN"
+    },
+    promoText: {
+      FR: "Réservez avant le 10 oct 2026 et économisez 850 $ / pers.",
+      EN: "Book before Oct 10, 2026 and save 850 $ / pers."
+    },
     iconType: "lighthouse"
   },
   {
@@ -117,16 +161,29 @@ const toursList: TourCard[] = [
       FR: "Découvrez les anciennes tombes de Hegra, profitez d'un pavillon de miroir de luxe et naviguez sur la Mer Rouge.",
       EN: "Explore the ancient sandstone tombs of Hegra, check-in to a luxury mirrored canyon villa, and cruise the Red Sea."
     },
-    days: {
-      FR: "14 jours",
-      EN: "14 days"
+    duration: {
+      FR: "14 jours / 13 nuits",
+      EN: "14 days / 13 nights"
     },
-    people: {
-      FR: "2 personnes",
-      EN: "2 people"
+    flight: {
+      FR: "Vol inclus",
+      EN: "Flight included"
     },
-    oldPrice: "C$ 28,500",
-    price: "C$ 24,900",
+    meals: {
+      FR: "Majordome privé",
+      EN: "Private butler"
+    },
+    oldPrice: "C$ 14,250",
+    price: "C$ 12,450",
+    tag: "SAVE C$ 1,800",
+    badge: {
+      FR: "SIGNATURE",
+      EN: "SIGNATURE"
+    },
+    promoText: {
+      FR: "Réservez avant le 30 nov 2026 et économisez 1 800 $ / pers.",
+      EN: "Book before Nov 30, 2026 and save 1,800 $ / pers."
+    },
     iconType: "mountain"
   }
 ];
@@ -172,10 +229,15 @@ export default function ItinerariesPage() {
       {/* Grid of Cards */}
       <section className="py-16 px-6 max-w-6xl mx-auto z-20 relative bg-white">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {toursList.map((tour) => (
-            <div
+          {toursList.map((tour, index) => (
+            <motion.div
               key={tour.id}
-              className="group relative flex flex-col rounded-[2rem] overflow-hidden border border-zinc-200/55 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-luxury bg-white h-full"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
+              transition={{ duration: 0.6, delay: (index % 3) * 0.15, ease: "easeOut" }}
+              className="group relative flex flex-col rounded-[2rem] overflow-hidden border border-zinc-200/55 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300"
             >
               {/* Image Header with Tags */}
               <div className="h-[200px] w-full relative overflow-hidden">
@@ -188,27 +250,30 @@ export default function ItinerariesPage() {
                 
                 {/* Promo Badge */}
                 <div className="absolute top-5 left-5 bg-brand-gold text-black font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full shadow-md">
-                  {tour.id === 1 ? "15% OFF" : tour.id === 2 ? "12% OFF" : tour.id === 3 ? "10% OFF" : "12% OFF"}
+                  {tour.tag}
                 </div>
 
                 <div className="absolute top-5 right-5 glass-tag px-3 py-1.5 rounded-full text-white font-mono text-[8px] tracking-wider uppercase font-semibold">
-                  {tour.iconType === "mountain" ? "SIGNATURE" : tour.iconType === "water" ? "EXCLUSIVE" : "SOVEREIGN"}
+                  {tour.badge[lang]}
                 </div>
+
+                {/* Booking Deadline Banner */}
+                {tour.promoText && (
+                  <div className="absolute bottom-0 left-0 right-0 bg-brand-gold/90 backdrop-blur-xs text-black text-[8px] font-mono py-1.5 px-3 tracking-wider text-center uppercase font-bold">
+                    {tour.promoText[lang]}
+                  </div>
+                )}
               </div>
 
               {/* Card Body */}
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-[10px] text-zinc-400 font-mono tracking-wider">
-                    <div className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-brand-gold" />
-                      <span>{tour.days[lang]}</span>
-                    </div>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] text-zinc-400 font-mono tracking-wider">
+                    <span>{tour.duration[lang]}</span>
                     <span>•</span>
-                    <div className="flex items-center gap-1.5">
-                      <Users className="w-3.5 h-3.5 text-brand-gold" />
-                      <span>{tour.people[lang]}</span>
-                    </div>
+                    <span>{tour.flight[lang]}</span>
+                    <span>•</span>
+                    <span>{tour.meals[lang]}</span>
                   </div>
 
                   <h3 className="font-serif text-base md:text-lg font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
@@ -229,8 +294,8 @@ export default function ItinerariesPage() {
                     <span className="text-[10px] font-mono line-through text-zinc-400 leading-none mb-1">
                       {tour.oldPrice}
                     </span>
-                    <span className="text-[18px] font-bold text-zinc-900 font-heading leading-none">
-                      {tour.price} <span className="text-[10px] font-mono text-zinc-400">CAD</span>
+                    <span className="text-[17px] font-bold text-zinc-900 font-heading leading-none">
+                      {tour.price} <span className="text-[9px] font-mono text-zinc-400">CAD / pers.</span>
                     </span>
                   </div>
 
@@ -242,7 +307,7 @@ export default function ItinerariesPage() {
                   </Link>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

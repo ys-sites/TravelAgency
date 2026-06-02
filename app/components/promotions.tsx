@@ -12,10 +12,13 @@ interface DealCard {
   badge: { FR: string; EN: string };
   title: { FR: string; EN: string };
   duration: { FR: string; EN: string };
+  flight: { FR: string; EN: string };
+  meals: { FR: string; EN: string };
   inclusions: { FR: string; EN: string };
   oldPrice: string;
   newPrice: string;
   tag: string;
+  promoText?: { FR: string; EN: string };
 }
 
 const dealsList: DealCard[] = [
@@ -24,33 +27,51 @@ const dealsList: DealCard[] = [
     image: "/images/morocco-marrakech-riad.png",
     badge: { FR: "OFFRE SAISONNIÈRE", EN: "SEASONAL PRESTIGE" },
     title: { FR: "Évasion Marrakech & Sahara", EN: "Marrakech & Sahara Escape" },
-    duration: { FR: "8 Jours", EN: "8 Days" },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
+    meals: { FR: "Pension complète", EN: "Full board" },
     inclusions: { FR: "Hélicoptère Privé & Riad Exclusif", EN: "Private Heli-flight & Riad Buyouts" },
-    oldPrice: "C$ 14,800",
-    newPrice: "C$ 12,400",
-    tag: "15% OFF"
+    oldPrice: "C$ 7,400",
+    newPrice: "C$ 6,200",
+    tag: "SAVE C$ 1,200",
+    promoText: {
+      FR: "Réservez avant le 15 août 2026 et économisez 1 200 $ / pers.",
+      EN: "Book before August 15, 2026 and save 1,200 $ / pers."
+    }
   },
   {
     id: 2,
     image: "/images/gulf-city-skyline.png",
     badge: { FR: "OFFRE EXCLUSIVE", EN: "EXCEPTIONAL RATE" },
     title: { FR: "Oasis Moderne Dubaï & Abou Dabi", EN: "Dubai & Abu Dhabi Oasis" },
-    duration: { FR: "10 Jours", EN: "10 Days" },
+    duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
+    meals: { FR: "Dîners gourmands", EN: "Gourmet dinners" },
     inclusions: { FR: "Penthouse Marina & Superyacht Privé", EN: "Marina Penthouse & Private Yacht" },
-    oldPrice: "C$ 18,900",
-    newPrice: "C$ 16,500",
-    tag: "12% OFF"
+    oldPrice: "C$ 9,450",
+    newPrice: "C$ 8,250",
+    tag: "SAVE C$ 1,200",
+    promoText: {
+      FR: "Réservez avant le 20 sept 2026 et économisez 1 200 $ / pers.",
+      EN: "Book before Sept 20, 2026 and save 1,200 $ / pers."
+    }
   },
   {
     id: 3,
     image: "/images/oman-wadi-canyon.png",
     badge: { FR: "OFFRE PRIVILÈGE", EN: "SOVEREIGN PRIVILEGE" },
     title: { FR: "Héritage du Sultanat d'Oman", EN: "Oman Sultanate Heritage" },
-    duration: { FR: "12 Jours", EN: "12 Days" },
+    duration: { FR: "12 jours / 11 nuits", EN: "12 days / 11 nights" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
+    meals: { FR: "Pension complète", EN: "Full board" },
     inclusions: { FR: "Suites Jebel Akhdar & Dhow Privé", EN: "Mountain Suites & Private Dhow" },
-    oldPrice: "C$ 16,800",
-    newPrice: "C$ 14,800",
-    tag: "SPECIAL"
+    oldPrice: "C$ 8,400",
+    newPrice: "C$ 7,400",
+    tag: "SAVE C$ 1,000",
+    promoText: {
+      FR: "Réservez avant le 10 oct 2026 et économisez 1 000 $ / pers.",
+      EN: "Book before Oct 10, 2026 and save 1,000 $ / pers."
+    }
   }
 ];
 
@@ -123,8 +144,9 @@ export default function Promotions() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-white rounded-[2rem] overflow-hidden border border-zinc-200/50 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-luxury flex flex-col group"
+              whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
+              transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+              className="bg-white rounded-[2rem] overflow-hidden border border-zinc-200/50 shadow-md hover:shadow-xl flex flex-col group transition-shadow duration-300"
             >
               {/* Image Header with Tags */}
               <div className="h-[240px] w-full relative overflow-hidden">
@@ -143,21 +165,24 @@ export default function Promotions() {
                 <div className="absolute top-5 right-5 glass-tag px-3 py-1.5 rounded-full text-white font-mono text-[8px] tracking-wider uppercase font-semibold">
                   {deal.badge[lang]}
                 </div>
+
+                {/* Booking Deadline Banner */}
+                {deal.promoText && (
+                  <div className="absolute bottom-0 left-0 right-0 bg-brand-gold/90 backdrop-blur-xs text-black text-[8px] font-mono py-1.5 px-3 tracking-wider text-center uppercase font-bold">
+                    {deal.promoText[lang]}
+                  </div>
+                )}
               </div>
 
               {/* Card Body */}
               <div className="p-6 md:p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-[10px] text-zinc-400 font-mono tracking-wider">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-brand-gold" />
-                      <span>{deal.duration[lang]}</span>
-                    </div>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] text-zinc-400 font-mono tracking-wider">
+                    <span>{deal.duration[lang]}</span>
                     <span>•</span>
-                    <div className="flex items-center gap-1">
-                      <Users className="w-3.5 h-3.5 text-brand-gold" />
-                      <span>2 {lang === "FR" ? "Invités" : "Guests"}</span>
-                    </div>
+                    <span>{deal.flight[lang]}</span>
+                    <span>•</span>
+                    <span>{deal.meals[lang]}</span>
                   </div>
 
                   <h3 className="font-serif text-lg md:text-xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
@@ -178,8 +203,8 @@ export default function Promotions() {
                     <span className="text-[10px] font-mono line-through text-zinc-400 leading-none mb-1">
                       {deal.oldPrice}
                     </span>
-                    <span className="text-[20px] font-bold text-zinc-900 font-heading leading-none">
-                      {deal.newPrice} <span className="text-[10px] font-mono text-zinc-400">CAD</span>
+                    <span className="text-[18px] font-bold text-zinc-900 font-heading leading-none">
+                      {deal.newPrice} <span className="text-[9px] font-mono text-zinc-400">CAD / pers.</span>
                     </span>
                   </div>
 
