@@ -103,7 +103,27 @@ export default function CustomTripBuilder() {
   const [phone, setPhone] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [cardExpiry, setCardExpiry] = useState("");
-  
+
+  // Passenger details
+  const [passengerCount, setPassengerCount] = useState(1);
+  const [passengerAges, setPassengerAges] = useState<number[]>([0]);
+
+  const updatePassengerCount = (delta: number) => {
+    setPassengerCount(prev => {
+      const next = Math.min(12, Math.max(1, prev + delta));
+      setPassengerAges(ages => {
+        const copy = [...ages];
+        while (copy.length < next) copy.push(0);
+        return copy.slice(0, next);
+      });
+      return next;
+    });
+  };
+
+  const updatePassengerAge = (idx: number, val: number) => {
+    setPassengerAges(ages => { const a = [...ages]; a[idx] = val; return a; });
+  };
+
   // Submission
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -418,6 +438,61 @@ export default function CustomTripBuilder() {
                       placeholder="e.g. +1 (514) 555-0199"
                       className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                     />
+                  </div>
+
+                  {/* Passenger Count & Ages */}
+                  <div className={`pt-4 border-t space-y-3 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
+                    <div className="flex items-center justify-between">
+                      <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
+                        {lang === "FR" ? "PASSAGERS" : "PASSENGERS"}
+                      </label>
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => updatePassengerCount(-1)}
+                          className={`w-7 h-7 rounded-full border flex items-center justify-center font-bold text-sm transition-colors cursor-pointer ${
+                            isPremium ? 'border-white/10 bg-white/5 hover:bg-white/10 text-white' : 'border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700'
+                          }`}
+                        >−</button>
+                        <span className={`text-[14px] font-bold font-heading tabular-nums w-5 text-center ${isPremium ? 'text-white' : 'text-zinc-900'}`}>{passengerCount}</span>
+                        <button
+                          type="button"
+                          onClick={() => updatePassengerCount(1)}
+                          className={`w-7 h-7 rounded-full border flex items-center justify-center font-bold text-sm transition-colors cursor-pointer ${
+                            isPremium ? 'border-white/10 bg-white/5 hover:bg-white/10 text-white' : 'border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700'
+                          }`}
+                        >+</button>
+                      </div>
+                    </div>
+
+                    {/* Per-passenger age inputs */}
+                    <div className="grid grid-cols-2 gap-2">
+                      {passengerAges.map((age, idx) => (
+                        <div key={idx} className="flex flex-col gap-0.5">
+                          <span className={`text-[8px] font-mono uppercase tracking-wider ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>
+                            {lang === "FR" ? `Passager ${idx + 1}` : `Passenger ${idx + 1}`}
+                          </span>
+                          <div className={`flex items-center gap-1.5 border rounded-lg px-2.5 py-1.5 ${
+                            isPremium ? 'bg-white/5 border-white/10' : 'bg-zinc-50 border-zinc-200'
+                          }`}>
+                            <input
+                              type="number"
+                              min={0}
+                              max={120}
+                              value={age === 0 ? "" : age}
+                              onChange={(e) => updatePassengerAge(idx, parseInt(e.target.value) || 0)}
+                              placeholder="Age"
+                              className={`w-full bg-transparent text-xs focus:outline-none tabular-nums ${
+                                isPremium ? 'text-white placeholder-white/20' : 'text-zinc-800 placeholder-zinc-300'
+                              }`}
+                            />
+                            <span className={`text-[9px] font-mono shrink-0 ${isPremium ? 'text-white/30' : 'text-zinc-400'}`}>
+                              {lang === "FR" ? "ans" : "yrs"}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Selected Itineraries / Experiences */}

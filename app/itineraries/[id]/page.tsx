@@ -610,6 +610,25 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
   const [bookingEmail, setBookingEmail] = useState("");
   const [bookingMessage, setBookingMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [passengerCount, setPassengerCount] = useState(1);
+  const [passengerAges, setPassengerAges] = useState<number[]>([0]);
+
+  const updatePassengerCount = (delta: number) => {
+    setPassengerCount(prev => {
+      const next = Math.min(12, Math.max(1, prev + delta));
+      setPassengerAges(ages => {
+        const copy = [...ages];
+        while (copy.length < next) copy.push(0);
+        return copy.slice(0, next);
+      });
+      return next;
+    });
+  };
+
+  const updatePassengerAge = (idx: number, val: number) => {
+    setPassengerAges(ages => { const a = [...ages]; a[idx] = val; return a; });
+  };
+
   // Parse default nights from itinerary duration string (e.g. "8 days / 7 nights" → 7)
   const defaultNights = (() => {
     const match = itinerary?.duration?.EN?.match(/(\d+)\s*night/);
@@ -1219,6 +1238,52 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                       placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
                       className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
                     />
+                  </div>
+                </div>
+
+                {/* Passenger Count & Ages */}
+                <div className="bg-white border border-zinc-200/80 rounded-2xl px-5 py-4 space-y-4">
+                  {/* Header row with stepper */}
+                  <div className="flex items-center justify-between">
+                    <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
+                      {lang === "FR" ? "NOMBRE DE PASSAGERS" : "PASSENGERS"}
+                    </label>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => updatePassengerCount(-1)}
+                        className="w-7 h-7 rounded-full border border-zinc-200 bg-zinc-50 hover:bg-zinc-100 flex items-center justify-center text-zinc-700 font-bold text-sm transition-colors cursor-pointer"
+                      >−</button>
+                      <span className="text-[14px] font-bold text-zinc-900 font-heading tabular-nums w-5 text-center">{passengerCount}</span>
+                      <button
+                        type="button"
+                        onClick={() => updatePassengerCount(1)}
+                        className="w-7 h-7 rounded-full border border-zinc-200 bg-zinc-50 hover:bg-zinc-100 flex items-center justify-center text-zinc-700 font-bold text-sm transition-colors cursor-pointer"
+                      >+</button>
+                    </div>
+                  </div>
+
+                  {/* Per-passenger age inputs */}
+                  <div className="grid grid-cols-2 gap-2">
+                    {passengerAges.map((age, idx) => (
+                      <div key={idx} className="flex flex-col gap-0.5">
+                        <span className="text-[8px] font-mono text-zinc-400 uppercase tracking-wider">
+                          {lang === "FR" ? `Passager ${idx + 1}` : `Passenger ${idx + 1}`}
+                        </span>
+                        <div className="flex items-center gap-1.5 bg-zinc-50 border border-zinc-200 rounded-lg px-2.5 py-1.5">
+                          <input
+                            type="number"
+                            min={0}
+                            max={120}
+                            value={age === 0 ? "" : age}
+                            onChange={(e) => updatePassengerAge(idx, parseInt(e.target.value) || 0)}
+                            placeholder="Age"
+                            className="w-full bg-transparent text-xs text-zinc-800 placeholder-zinc-300 focus:outline-none tabular-nums"
+                          />
+                          <span className="text-[9px] text-zinc-400 font-mono shrink-0">{lang === "FR" ? "ans" : "yrs"}</span>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
