@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, Users, Shield, CheckCircle, Mail, MapPin, Hotel } from "lucide-react";
 import { motion } from "motion/react";
 import Navbar from "../../components/navbar";
-import Footer from "../../../../components/footer";
+import Footer from "../../components/footer";
 import { useLang } from "../../context/lang-context";
 
 interface DayPlan {
