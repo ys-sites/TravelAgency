@@ -796,7 +796,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                 </button>
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
 
       </section>
