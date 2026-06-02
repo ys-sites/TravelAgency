@@ -48,7 +48,7 @@ export default function GulfHeroScrubber() {
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md mx-auto">
             <a
               href="#itineraries"
-              className="w-full border border-brand-gold bg-brand-gold hover:bg-white hover:border-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury rounded-full shadow-md hover:scale-105 inline-block text-center min-w-[220px] cursor-pointer"
+              className="w-full border border-brand-gold bg-brand-gold hover:bg-white hover:border-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[220px] cursor-pointer"
             >
               {lang === "FR" ? "Explorer les Itinéraires" : "Explore Itineraries"}
             </a>

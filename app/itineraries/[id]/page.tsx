@@ -163,7 +163,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
         <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-12 max-w-7xl mx-auto z-10">
           <Link
             href="/"
-            className="inline-flex items-center space-x-2 text-brand-gold hover:text-zinc-800 font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
+            className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
@@ -172,7 +172,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
               {itinerary.duration[lang]}
             </span>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl tracking-wide uppercase leading-tight font-bold text-gradient-gold">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl tracking-wide uppercase leading-tight font-bold text-white">
               {itinerary.title[lang]}
             </h1>
           </div>
@@ -233,7 +233,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                     {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
                   </span>
                   <div className="flex items-baseline justify-between">
-                    <h3 className="text-3xl font-bold text-zinc-900 font-serif">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD</span></h3>
+                    <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">CAD</span></h3>
                     <span className="text-[9px] font-mono text-brand-gold uppercase bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 rounded">
                       {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
                     </span>
@@ -251,7 +251,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                       value={bookingName}
                       onChange={(e) => setBookingName(e.target.value)}
                       placeholder="e.g. Sterling Hunt"
-                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold transition-colors"
+                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
                     />
                   </div>
                   <div>
@@ -264,7 +264,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                       value={bookingEmail}
                       onChange={(e) => setBookingEmail(e.target.value)}
                       placeholder="e.g. sterling@portfolio.com"
-                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold transition-colors"
+                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
                     />
                   </div>
                   <div>
@@ -276,7 +276,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                       value={bookingMessage}
                       onChange={(e) => setBookingMessage(e.target.value)}
                       placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
-                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold transition-colors resize-none"
+                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
                     />
                   </div>
                 </div>
@@ -288,7 +288,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:scale-[1.02] border border-brand-gold shadow-md cursor-pointer"
+                    className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md cursor-pointer"
                   >
                     {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
                   </button>

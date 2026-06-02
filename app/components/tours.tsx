@@ -179,14 +179,14 @@ export default function Tours() {
           <div className="flex flex-col gap-4 pt-4">
             <Link
               href="/itineraries"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 hover:bg-brand-gold hover:text-black text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-4 transition-luxury shadow-md cursor-pointer hover:scale-105"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 hover:bg-brand-gold hover:text-black text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-4 transition-luxury shadow-md cursor-pointer hover:-translate-y-0.5"
             >
-              {lang === "FR" ? "TOUS LES ITINÉRAIRES" : "VIEW ALL DESTINATIONS"} &rarr;
+              {lang === "FR" ? "TOUS LES ITINÉRAIRES" : "VIEW ALL DESTINATIONS"} <span className="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
             </Link>
 
             <Link
               href="/custom-trip"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-4 transition-luxury shadow-sm cursor-pointer hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-4 transition-luxury shadow-sm cursor-pointer hover:-translate-y-0.5"
             >
               {lang === "FR" ? "VOYAGE SUR MESURE" : "BUILD CUSTOM PASSAGE"}
             </Link>
@@ -271,14 +271,14 @@ export default function Tours() {
                   {/* Booking Footer */}
                   <div className="flex items-center justify-between pt-3.5 mt-1.5">
                     <div className="flex flex-col">
-                      <span className="text-[10px] font-mono line-through text-white/40 leading-none mb-1">
+                      <span className="text-[10px] font-mono line-through text-white/40 leading-none mb-1 tabular-nums">
                         {tour.oldPrice}
                       </span>
-                      <span className="text-[20px] font-bold text-brand-gold font-heading leading-none">
+                      <span className="text-[20px] font-bold text-brand-gold font-heading leading-none tabular-nums">
                         {tour.price}
                       </span>
                     </div>
-                    <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[10px] tracking-[0.15em] uppercase px-5 py-2.5 transition-luxury cursor-pointer hover:scale-105 shadow-md">
+                    <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[10px] tracking-[0.15em] uppercase px-5 py-2.5 transition-luxury cursor-pointer hover:-translate-y-0.5 shadow-md">
                       {t.book[lang]}
                     </Link>
                   </div>

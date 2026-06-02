@@ -195,7 +195,7 @@ export default function CustomTripBuilder() {
             <span className="text-brand-gold font-mono text-[10px] md:text-[12px] tracking-[0.3em] uppercase block mb-1">
               {t.headerWelcome[lang]}
             </span>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white tracking-wide uppercase leading-tight font-bold text-gradient-gold">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white tracking-wide uppercase leading-tight font-bold">
               {t.headerTitle[lang]}
             </h1>
           </div>
@@ -357,7 +357,7 @@ export default function CustomTripBuilder() {
                     {t.estimateCost[lang]}
                   </span>
                   <div className="flex items-baseline justify-between">
-                    <h3 className={`text-3xl font-bold font-serif transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
+                    <h3 className={`text-3xl font-bold font-serif tabular-nums transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
                       C$ {calculateTotalCost().toLocaleString()}
                     </h3>
                     <span className={`text-[10px] font-mono transition-colors duration-1000 ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>CAD</span>
@@ -379,7 +379,7 @@ export default function CustomTripBuilder() {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="e.g. Sterling Hunt"
-                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
+                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                     />
                   </div>
 
@@ -393,7 +393,7 @@ export default function CustomTripBuilder() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="e.g. sterling@portfolio.com"
-                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
+                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                     />
                   </div>
 
@@ -407,7 +407,7 @@ export default function CustomTripBuilder() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="e.g. +1 (514) 555-0199"
-                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
+                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                     />
                   </div>
 
@@ -423,14 +423,14 @@ export default function CustomTripBuilder() {
                         value={cardNumber}
                         onChange={(e) => setCardNumber(e.target.value)}
                         placeholder="Card Number / Numéro de Carte"
-                        className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold mb-2 transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
+                        className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 mb-2 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                       />
                       <input
                         type="text"
                         value={cardExpiry}
                         onChange={(e) => setCardExpiry(e.target.value)}
                         placeholder="MM/YY"
-                        className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold transition-colors ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
+                        className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
                       />
                     </div>
                   </div>
@@ -444,7 +444,7 @@ export default function CustomTripBuilder() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:scale-[1.02] border border-brand-gold shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>{isSubmitting ? 'TRANSMITTING...' : t.submitInquiry[lang]}</span>

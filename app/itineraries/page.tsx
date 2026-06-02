@@ -153,7 +153,7 @@ export default function ItinerariesPage() {
         <div className="max-w-6xl mx-auto w-full z-10 space-y-4">
           <Link
             href="/"
-            className="inline-flex items-center space-x-2 text-brand-gold hover:text-zinc-900 font-mono text-[10px] tracking-widest uppercase transition-colors font-semibold"
+            className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase transition-colors font-semibold"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
@@ -162,7 +162,7 @@ export default function ItinerariesPage() {
             <span className="text-brand-gold font-mono text-[10px] md:text-[12px] tracking-[0.3em] uppercase block mb-1">
               {lang === "FR" ? "Évasions de Prestige" : "Elite Collections"}
             </span>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-gradient-gold tracking-wide uppercase leading-tight font-bold">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white tracking-wide uppercase leading-tight font-bold">
               {lang === "FR" ? "Tous les Itinéraires" : "Curated Portfolios"}
             </h1>
           </div>
@@ -243,14 +243,14 @@ export default function ItinerariesPage() {
                 {/* Booking Footer */}
                 <div className="flex items-center justify-between pt-3.5 mt-1.5">
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-mono line-through text-white/40 leading-none mb-1">
+                    <span className="text-[10px] font-mono line-through text-white/40 leading-none mb-1 tabular-nums">
                       {tour.oldPrice}
                     </span>
-                    <span className="text-[20px] font-bold text-brand-gold font-heading leading-none">
+                    <span className="text-[20px] font-bold text-brand-gold font-heading leading-none tabular-nums">
                       {tour.price}
                     </span>
                   </div>
-                  <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[10px] tracking-[0.15em] uppercase px-5 py-2.5 transition-luxury cursor-pointer hover:scale-105 shadow-md">
+                  <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[10px] tracking-[0.15em] uppercase px-5 py-2.5 transition-luxury cursor-pointer hover:-translate-y-0.5 shadow-md">
                     {t.book[lang]}
                   </Link>
                 </div>

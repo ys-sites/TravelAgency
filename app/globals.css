@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: 0 0% 100%; /* #ffffff */
+  --background: 34 16% 97%; /* Warm linen/sand off-white: #faf9f5 */
   --foreground: 240 10% 3.9%; /* #09090b */
 
-  --card: 0 0% 100%;
+  --card: 34 16% 97%;
   --card-foreground: 240 10% 3.9%;
 
   --primary: 43 65% 53%; /* Gold: #d4af37 */
@@ -69,20 +69,17 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
-@utility text-gradient-gold {
-  background: linear-gradient(135deg, #D4AF37 0%, #FFDF73 50%, #AA7C11 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
 @utility transition-luxury {
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #faf9f5;
   color: #09090b;
   font-family: var(--font-body), sans-serif;
   overflow-x: hidden;
