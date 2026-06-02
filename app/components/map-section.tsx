@@ -316,7 +316,7 @@ export default function MapSection() {
             className="font-heading font-semibold text-[10px] tracking-[0.3em] fill-[#6B5335]/70 uppercase text-center"
             style={{ textAnchor: "middle" }}
           >
-            {lang === "FR" ? "SAHARA" : "SAHARA"}
+            SAHARA
           </text>
 
           {/* Connection Lines from Label to Pin */}
