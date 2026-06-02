@@ -4,6 +4,7 @@ import GulfHeroScrubber from "./components/gulf-hero-scrubber";
 import Tours from "./components/tours";
 import Promotions from "./components/promotions";
 import AboutUsSection from "./components/about-us-section";
+import MapSection from "./components/map-section";
 import TestimonialsSection from "./components/testimonials-section";
 import Footer from "./components/footer";
 
@@ -28,6 +29,7 @@ export default function Home() {
           <Tours />
         </div>
         <AboutUsSection />
+        <MapSection />
         <TestimonialsSection />
       </main>
 
