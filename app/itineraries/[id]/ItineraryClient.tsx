@@ -158,61 +158,9 @@ export default function ItineraryClient({ id }: { id: string }) {
       {/* Discovery Section (with Map pins) */}
       {theme && (
         <div className="relative bg-[#faf9f5]">
-          {id === "1" ? (
-            <div className="py-12">
-              <MapSection />
-            </div>
-          ) : (
-            <section className="py-20 px-6 max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                {/* Map/Graphics Column */}
-                <div className="lg:col-span-7 w-full z-10">
-                  {/* ── Photo + Pins Map (all other destinations) ── */}
-                  <div className="relative flex items-center justify-center min-h-[400px] w-full rounded-[2rem] border border-zinc-200/80 overflow-hidden shadow-inner bg-white">
-                    <img
-                      src={theme.mapImage}
-                      className="absolute inset-0 w-full h-full object-cover brightness-95 contrast-[1.05]"
-                      alt={theme.discoverTitle}
-                    />
-                    {theme.mapPins.map((pin, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ scale: 0, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ type: "spring", stiffness: 100, delay: index * 0.15 }}
-                        style={{ top: pin.top, left: pin.left }}
-                        className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group z-30"
-                      >
-                        <div className="relative flex h-6 w-6 items-center justify-center">
-                           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold/40 opacity-75"></span>
-                           <div className="relative flex h-3 w-3 items-center justify-center rounded-full bg-black border border-brand-gold cursor-pointer shadow-sm">
-                             <div className="h-1 w-1 rounded-full bg-brand-gold animate-pulse"></div>
-                           </div>
-                        </div>
-                        <span className="mt-1 bg-black/90 border border-white/10 text-white text-[9px] px-2 py-0.5 rounded shadow-md pointer-events-none group-hover:scale-105 transition-transform duration-300 font-heading font-medium tracking-wide">
-                          {translate(pin.name, lang)}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Description on the right */}
-                <div className="lg:col-span-5 flex flex-col items-start space-y-6">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em]" style={{ color: theme.themeColor }}>
-                    {lang === "FR" ? "DÉCOUVREZ LE ROYAUME" : "DISCOVER THE REALM"}
-                  </span>
-                  <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 leading-tight uppercase">
-                    {theme.discoverTitle}
-                  </h2>
-                  <p className="text-[14px] leading-relaxed text-zinc-600 font-light max-w-[460px]">
-                    {theme.discoverDesc}
-                  </p>
-                </div>
-              </div>
-            </section>
-          )}
+          <div className="py-12">
+            <MapSection />
+          </div>
 
           {/* Experience Grid Section */}
           <section className="py-16 px-6 max-w-7xl mx-auto border-t border-zinc-200/50">
