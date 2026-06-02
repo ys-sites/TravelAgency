@@ -35,7 +35,7 @@ export default function Tours() {
           
           <div className="space-y-4 pt-2">
             <span className="text-brand-gold font-serif italic text-[17px] capitalize block">
-              {lang === "FR" ? "Top Destinations" : "Top Destinations"}
+              {translate({ FR: "Top Destinations", EN: "Top Destinations" }, lang)}
             </span>
             <h2 className="font-serif text-3xl font-bold text-zinc-900 tracking-tight uppercase leading-none">
               {lang === "FR" ? "EXPLOREZ DES LIEUX DE RÊVE" : "EXPLORE DREAM PLACES"}
@@ -56,7 +56,7 @@ export default function Tours() {
             >
               {lang === "FR" ? "TOUS LES ITINÉRAIRES" : "VIEW ALL DESTINATIONS"}{" "}
               <span className="transition-transform duration-300 group-hover:translate-x-1">
-                {lang === "FR" ? "→" : "→"}
+                {translate({ FR: "→", EN: "→" }, lang)}
               </span>
             </Link>
 

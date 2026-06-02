@@ -123,7 +123,7 @@ export default function CustomTripClient() {
   };
 
   const updatePassengerAge = (idx: number, val: number) => {
-    setPassengerAges(ages => { const a = [...ages]; a[idx] = val; return a; });
+    setPassengerAges(ages => ages.map((age, i) => i === idx ? val : age));
   };
 
   // Submission

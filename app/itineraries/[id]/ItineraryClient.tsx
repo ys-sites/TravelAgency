@@ -661,7 +661,7 @@ export default function ItineraryClient({ id }: { id: string }) {
                 <Link href="/conditions" className="text-brand-gold hover:underline font-semibold">
                   {lang === "FR" ? "lien suivant" : "following link"}
                 </Link>
-                {lang === "FR" ? "." : "."}
+                {translate({ FR: ".", EN: "." }, lang)}
               </p>
             </div>
           </motion.div>
