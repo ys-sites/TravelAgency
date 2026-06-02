@@ -610,6 +610,12 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
   const [bookingEmail, setBookingEmail] = useState("");
   const [bookingMessage, setBookingMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  // Parse default nights from itinerary duration string (e.g. "8 days / 7 nights" → 7)
+  const defaultNights = (() => {
+    const match = itinerary?.duration?.EN?.match(/(\d+)\s*night/);
+    return match ? parseInt(match[1], 10) : 7;
+  })();
+  const [nights, setNights] = useState(defaultNights);
 
   if (!itinerary) {
     return (
@@ -729,34 +735,144 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
           <section className="py-16 px-6 max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Map on the left (col-span-7) */}
-              <div className="lg:col-span-7 relative flex items-center justify-center min-h-[400px] w-full rounded-[2rem] border border-zinc-200/80 overflow-hidden shadow-inner bg-white">
-                <img
-                  src={theme.mapImage}
-                  className="absolute inset-0 w-full h-full object-cover brightness-95 contrast-[1.05]"
-                  alt={theme.discoverTitle}
-                />
-                {/* Interactive Location Pins */}
-                {theme.mapPins.map((pin, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", stiffness: 100, delay: index * 0.15 }}
-                    style={{ top: pin.top, left: pin.left }}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group z-30"
-                  >
-                    <div className="relative flex h-6 w-6 items-center justify-center">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold/40 opacity-75"></span>
-                      <div className="relative flex h-3 w-3 items-center justify-center rounded-full bg-black border border-brand-gold cursor-pointer shadow-sm">
-                        <div className="h-1 w-1 rounded-full bg-brand-gold animate-pulse"></div>
-                      </div>
-                    </div>
-                    <span className="mt-1 bg-black/90 border border-white/10 text-white text-[9px] px-2 py-0.5 rounded shadow-md pointer-events-none group-hover:scale-105 transition-transform duration-300 font-heading font-medium tracking-wide">
-                      {pin.name[lang]}
-                    </span>
-                  </motion.div>
-                ))}
+              <div className="lg:col-span-7 relative flex items-center justify-center min-h-[420px] w-full rounded-[2rem] overflow-hidden">
+                {theme.country === "Morocco" ? (
+                  /* ── Illustrated Morocco Map ── */
+                  <div className="relative w-full min-h-[420px] bg-[#f7f0e6] rounded-[2rem] border border-[#e5d8c4] overflow-hidden shadow-inner">
+                    {/* Watercolor ink-blot corners */}
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                      {/* Top-left ink blot */}
+                      <ellipse cx="30" cy="30" rx="80" ry="55" fill="#c8a97e" opacity="0.18" />
+                      <ellipse cx="10" cy="15" rx="50" ry="35" fill="#b8935c" opacity="0.13" />
+                      <ellipse cx="60" cy="5" rx="40" ry="28" fill="#d4b896" opacity="0.12" />
+                      {/* Top-right ink blot */}
+                      <ellipse cx="680" cy="25" rx="70" ry="50" fill="#c8a97e" opacity="0.16" />
+                      <ellipse cx="700" cy="10" rx="45" ry="30" fill="#b8935c" opacity="0.12" />
+                      {/* Bottom-left ink blot */}
+                      <ellipse cx="25" cy="400" rx="75" ry="45" fill="#c8a97e" opacity="0.15" />
+                      <ellipse cx="5" cy="420" rx="50" ry="32" fill="#b8935c" opacity="0.11" />
+                      {/* Bottom-right ink blot */}
+                      <ellipse cx="675" cy="405" rx="70" ry="44" fill="#c8a97e" opacity="0.17" />
+                      <ellipse cx="700" cy="420" rx="48" ry="30" fill="#b8935c" opacity="0.12" />
+
+                      {/* Morocco shape — simplified SVG path (roughly to scale within 700×420) */}
+                      {/* Main land mass */}
+                      <path
+                        d="M 160,40 L 320,30 L 360,48 L 400,42 L 430,60 L 440,85 L 420,110 L 410,140 L 430,165 L 435,195 L 420,220 L 400,245 L 370,265 L 340,280 L 300,285 L 265,275 L 235,260 L 210,240 L 185,210 L 160,185 L 140,155 L 125,125 L 120,95 L 135,65 Z"
+                        fill="#d4c4a8" stroke="#b8a47c" strokeWidth="1.5" opacity="0.75"
+                      />
+                      {/* Western Sahara region — lighter */}
+                      <path
+                        d="M 110,185 L 140,185 L 160,210 L 175,240 L 180,280 L 170,320 L 155,350 L 130,370 L 100,375 L 80,355 L 70,320 L 75,280 L 85,240 L 95,210 Z"
+                        fill="#e8d8bc" stroke="#c8b490" strokeWidth="1" opacity="0.65"
+                      />
+                      {/* Sahara / south region — warm sand colour */}
+                      <path
+                        d="M 175,260 L 235,265 L 300,290 L 360,295 L 410,280 L 440,260 L 460,290 L 455,330 L 440,360 L 400,375 L 350,380 L 300,378 L 255,370 L 210,355 L 185,330 L 175,300 Z"
+                        fill="#e0cca8" stroke="#c8b490" strokeWidth="1" opacity="0.70"
+                      />
+                      {/* Atlas mountains hatching hint */}
+                      <path d="M 200,140 Q 240,120 280,145 Q 320,130 355,150" stroke="#a89070" strokeWidth="1.5" fill="none" strokeDasharray="4 3" opacity="0.5"/>
+                      <path d="M 210,155 Q 250,140 290,158 Q 330,145 365,162" stroke="#a89070" strokeWidth="1" fill="none" strokeDasharray="3 3" opacity="0.35"/>
+
+                      {/* Dotted route lines */}
+                      <path d="M 230,190 Q 275,195 310,220 Q 355,245 395,235" stroke="#C5A880" strokeWidth="1.2" fill="none" strokeDasharray="5 4" opacity="0.7"/>
+                      <path d="M 310,220 Q 340,280 360,295" stroke="#C5A880" strokeWidth="1.2" fill="none" strokeDasharray="5 4" opacity="0.6"/>
+
+                      {/* Ocean wave hint lines */}
+                      <path d="M 30,150 Q 70,145 90,155 Q 60,162 30,158 Z" fill="none" stroke="#a0b8d0" strokeWidth="1" opacity="0.3"/>
+                      <path d="M 20,180 Q 60,174 85,183 Q 58,191 22,188 Z" fill="none" stroke="#a0b8d0" strokeWidth="1" opacity="0.25"/>
+
+                      {/* Ocean tint */}
+                      <rect x="0" y="60" width="115" height="300" fill="#c8dce8" opacity="0.12" />
+
+                      {/* City dots */}
+                      {/* Marrakech */}
+                      <circle cx="230" cy="190" r="5" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
+                      <text x="237" y="186" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Marrakech</text>
+                      <text x="237" y="196" fontSize="7.5" fontFamily="serif" fill="#8B6A3E" opacity="0.8">&amp; The Plains</text>
+
+                      {/* Casablanca */}
+                      <circle cx="185" cy="148" r="4.5" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
+                      <text x="192" y="145" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Casablanca</text>
+
+                      {/* The North / Fez */}
+                      <circle cx="295" cy="85" r="4.5" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
+                      <text x="302" y="80" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Fès &amp; The North</text>
+
+                      {/* Merzouga / Sahara */}
+                      <circle cx="370" cy="260" r="5" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
+                      <text x="377" y="256" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Merzouga</text>
+                      <text x="377" y="267" fontSize="7.5" fontFamily="serif" fill="#8B6A3E" opacity="0.8">(Sahara)</text>
+
+                      {/* Agadir */}
+                      <circle cx="160" cy="240" r="4" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
+                      <text x="100" y="238" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Agadir</text>
+
+                      {/* Aït Benhaddou */}
+                      <circle cx="308" cy="225" r="4" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
+                      <text x="315" y="221" fontSize="8" fontFamily="serif" fill="#5c3d1a" fontWeight="500">Aït Benhaddou</text>
+
+                      {/* Region Labels */}
+                      <text x="32" y="120" fontSize="10" fontFamily="serif" fill="#7a9bb5" opacity="0.75" fontStyle="italic" letterSpacing="0.5">North Atlantic</text>
+                      <text x="38" y="132" fontSize="10" fontFamily="serif" fill="#7a9bb5" opacity="0.75" fontStyle="italic">Ocean</text>
+
+                      <text x="270" y="55" fontSize="10.5" fontFamily="serif" fill="#9B7A4A" opacity="0.85" fontWeight="600" letterSpacing="0.4">The North</text>
+                      <text x="195" y="170" fontSize="9.5" fontFamily="serif" fill="#9B7A4A" opacity="0.75" fontWeight="500" letterSpacing="0.3">The Atlas</text>
+                      <text x="340" y="340" fontSize="11" fontFamily="serif" fill="#9B7A4A" opacity="0.80" fontWeight="600" letterSpacing="0.6">Sahara</text>
+                      <text x="108" y="290" fontSize="9" fontFamily="serif" fill="#9B7A4A" opacity="0.65" fontStyle="italic">Western</text>
+                      <text x="105" y="300" fontSize="9" fontFamily="serif" fill="#9B7A4A" opacity="0.65" fontStyle="italic">Sahara</text>
+
+                      {/* Compass rose — minimal */}
+                      <g transform="translate(490,345)">
+                        <circle cx="0" cy="0" r="18" fill="none" stroke="#c8b080" strokeWidth="1" opacity="0.5"/>
+                        <text x="-3.5" y="-6" fontSize="8" fontFamily="serif" fill="#9B7A4A" opacity="0.8">N</text>
+                        <path d="M0,-14 L2,-5 L0,-8 L-2,-5 Z" fill="#9B7A4A" opacity="0.7"/>
+                        <path d="M0,14 L2,5 L0,8 L-2,5 Z" fill="#c8b080" opacity="0.5"/>
+                        <path d="M14,0 L5,2 L8,0 L5,-2 Z" fill="#c8b080" opacity="0.5"/>
+                        <path d="M-14,0 L-5,2 L-8,0 L-5,-2 Z" fill="#c8b080" opacity="0.5"/>
+                      </g>
+
+                      {/* Scale bar */}
+                      <g transform="translate(108,378)">
+                        <line x1="0" y1="0" x2="60" y2="0" stroke="#9B7A4A" strokeWidth="1.2" opacity="0.55"/>
+                        <line x1="0" y1="-3" x2="0" y2="3" stroke="#9B7A4A" strokeWidth="1" opacity="0.55"/>
+                        <line x1="60" y1="-3" x2="60" y2="3" stroke="#9B7A4A" strokeWidth="1" opacity="0.55"/>
+                        <text x="18" y="-5" fontSize="7" fontFamily="serif" fill="#9B7A4A" opacity="0.6">~300 km</text>
+                      </g>
+                    </svg>
+                  </div>
+                ) : (
+                  /* ── Photo + Pins Map (all other destinations) ── */
+                  <div className="relative flex items-center justify-center min-h-[400px] w-full rounded-[2rem] border border-zinc-200/80 overflow-hidden shadow-inner bg-white">
+                    <img
+                      src={theme.mapImage}
+                      className="absolute inset-0 w-full h-full object-cover brightness-95 contrast-[1.05]"
+                      alt={theme.discoverTitle}
+                    />
+                    {theme.mapPins.map((pin, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 100, delay: index * 0.15 }}
+                        style={{ top: pin.top, left: pin.left }}
+                        className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group z-30"
+                      >
+                        <div className="relative flex h-6 w-6 items-center justify-center">
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold/40 opacity-75"></span>
+                          <div className="relative flex h-3 w-3 items-center justify-center rounded-full bg-black border border-brand-gold cursor-pointer shadow-sm">
+                            <div className="h-1 w-1 rounded-full bg-brand-gold animate-pulse"></div>
+                          </div>
+                        </div>
+                        <span className="mt-1 bg-black/90 border border-white/10 text-white text-[9px] px-2 py-0.5 rounded shadow-md pointer-events-none group-hover:scale-105 transition-transform duration-300 font-heading font-medium tracking-wide">
+                          {pin.name[lang]}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
               </div>
               
               {/* Description on the right (col-span-5) */}
@@ -773,6 +889,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
               </div>
             </div>
           </section>
+
 
           {/* Experience Grid Section */}
           <section className="py-16 px-6 max-w-7xl mx-auto border-t border-zinc-200/50">
@@ -1102,6 +1219,37 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                       placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
                       className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
                     />
+                  </div>
+                </div>
+
+                {/* Nights Duration Slider */}
+                <div className="bg-white border border-zinc-200/80 rounded-2xl px-5 py-4 space-y-3">
+                  <div className="flex items-center justify-between">
+                    <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
+                      {lang === "FR" ? "DURÉE EN NUITS" : "NIGHTS DURATION"}
+                    </label>
+                    <span className="text-[13px] font-bold text-zinc-900 font-heading tabular-nums">
+                      {nights} {lang === "FR" ? "Nuits" : "Nights"}
+                    </span>
+                  </div>
+                  <div className="relative pt-1">
+                    <input
+                      type="range"
+                      min={5}
+                      max={30}
+                      step={1}
+                      value={nights}
+                      onChange={(e) => setNights(parseInt(e.target.value, 10))}
+                      className="w-full h-[3px] appearance-none bg-zinc-200 rounded-full cursor-pointer accent-zinc-900"
+                      style={{
+                        background: `linear-gradient(to right, #1a1a1a ${((nights - 5) / 25) * 100}%, #e4e4e7 ${((nights - 5) / 25) * 100}%)`
+                      }}
+                    />
+                    <div className="flex justify-between mt-2">
+                      <span className="text-[9px] font-mono text-zinc-400">5</span>
+                      <span className="text-[9px] font-mono text-zinc-400">15</span>
+                      <span className="text-[9px] font-mono text-zinc-400">30</span>
+                    </div>
                   </div>
                 </div>
 

@@ -232,10 +232,14 @@ export default function Tours() {
                     {tour.tag}
                   </div>
 
-                  <div className={`absolute top-5 right-5 px-3 py-1.5 rounded-full font-mono text-[8px] tracking-wider uppercase font-semibold ${
-                    tour.badge.EN === "EXCLUSIVE"
-                      ? "bg-[#8B2635] text-[#faf9f5] shadow-md"
-                      : "glass-tag text-white"
+                  <div className={`absolute top-5 right-5 px-3 py-1.5 rounded-full font-mono text-[8px] tracking-wider uppercase font-semibold shadow-md ${
+                    tour.id === 1
+                      ? "bg-[#a8c8e8] text-[#1a3a5c] border border-[#7aaed4]/40"
+                      : tour.id === 2
+                      ? "bg-[#8B2635] text-[#faf9f5] border border-[#8B2635]"
+                      : tour.id === 3
+                      ? "bg-[#8fada4] text-[#1a3530] border border-[#6e9990]/40"
+                      : "bg-[#c4a882] text-[#3d2410] border border-[#a8896a]/40"
                   }`}>
                     {tour.badge[lang]}
                   </div>

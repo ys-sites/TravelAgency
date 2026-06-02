@@ -184,8 +184,16 @@ export default function CustomTripBuilder() {
 
       {/* Parallax Header */}
       <section className="relative h-[45vh] w-full overflow-hidden bg-zinc-950 flex flex-col justify-end pb-12 px-6 md:px-12">
+        {/* Background image */}
+        <img
+          src="/images/custom_trip_hero_bg.png"
+          alt="Bespoke Custom Trip"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-55"
+        />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)] pointer-events-none" />
         <div className={`absolute inset-0 bg-gradient-to-t to-transparent pointer-events-none transition-colors duration-1000 ${isPremium ? 'from-[#060606]' : 'from-white'}`} />
+        {/* Extra top darkening so navbar text stays legible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full z-10 space-y-4">
           <Link
@@ -205,6 +213,7 @@ export default function CustomTripBuilder() {
           </div>
         </div>
       </section>
+
 
       {/* Main Form Section */}
       <section className="py-12 px-6 max-w-6xl mx-auto z-20 relative">
