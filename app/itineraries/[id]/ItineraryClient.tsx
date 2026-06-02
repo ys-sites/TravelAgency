@@ -6,6 +6,7 @@ import { ArrowLeft, Shield, CheckCircle, Hotel } from "lucide-react";
 import { motion } from "motion/react";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
+import MapSection from "../../components/map-section";
 import { useLang, translate } from "../../context/lang-context";
 import { itinerariesData, itineraryThemes } from "@/data/itineraries";
 
@@ -157,49 +158,16 @@ export default function ItineraryClient({ id }: { id: string }) {
       {/* Discovery Section (with Map pins) */}
       {theme && (
         <div className="relative bg-[#faf9f5]">
-          <section className="py-20 px-6 max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              
-              {/* Map/Graphics Column */}
-              <div className="lg:col-span-7 w-full z-10">
-                {id === "1" ? (
-                  /* ── SVG Styled Map of Morocco ── */
-                  <div className="relative flex items-center justify-center min-h-[420px] md:min-h-[480px] w-full rounded-[2.5rem] border border-zinc-200/80 overflow-hidden shadow-luxury bg-white">
-                    <svg viewBox="0 0 600 500" className="w-full h-full max-w-[560px]">
-                      <defs>
-                        <linearGradient id="mapGradient" x1="0" y1="0" x2="1" y2="1">
-                          <stop offset="0%" stopColor="#fdfcfb" />
-                          <stop offset="100%" stopColor="#f4f1ea" />
-                        </linearGradient>
-                      </defs>
-                      <rect width="100%" height="100%" fill="url(#mapGradient)"/>
-                      <path d="M50,150 Q120,80 220,120 T350,90 T480,180 T550,300 L550,450 L50,450 Z" fill="#e9e5db" opacity="0.45" stroke="#d5cebe" strokeWidth="1"/>
-                      <path d="M50,150 Q120,80 220,120 T350,90 T480,180" fill="none" stroke="#c8bca6" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6"/>
-                      
-                      {/* Interactive pins */}
-                      {theme.mapPins.map((pin, index) => (
-                        <g key={index} transform={`translate(${parseFloat(pin.left)*6}, ${parseFloat(pin.top)*5})`} className="cursor-pointer group">
-                          <circle cx="0" cy="0" r="12" fill="#8a7050" opacity="0.15" className="animate-ping"/>
-                          <circle cx="0" cy="0" r="4.5" fill="#8a7050" stroke="#fff" strokeWidth="1.5" className="shadow-sm"/>
-                          <rect x="-45" y="-30" width="90" height="18" rx="4" fill="#000" opacity="0.8" className="scale-0 group-hover:scale-100 origin-bottom transition-all duration-300"/>
-                          <text x="0" y="-18" fontSize="8" fontFamily="sans-serif" fill="#fff" textAnchor="middle" className="scale-0 group-hover:scale-105 origin-bottom transition-all duration-300">
-                            {translate(pin.name, lang)}
-                          </text>
-                        </g>
-                      ))}
-                      
-                      {/* Scale Bar */}
-                      <g transform="translate(115,393)">
-                        <rect x="0" y="-2" width="70" height="4" rx="2" fill="#c8b080" opacity="0.35"/>
-                        <rect x="0" y="-2" width="35" height="4" rx="2" fill="#c8b080" opacity="0.55"/>
-                        <line x1="0" y1="-5" x2="0" y2="5" stroke="#8a7050" strokeWidth="1" opacity="0.55"/>
-                        <line x1="70" y1="-5" x2="70" y2="5" stroke="#8a7050" strokeWidth="1" opacity="0.55"/>
-                        <text x="18" y="-7" fontSize="7.5" fontFamily="Georgia,serif" fill="#8a7050" opacity="0.75">~300 km</text>
-                      </g>
-                    </svg>
-                  </div>
-                ) : (
-                  /* ── Photo + Pins Map (all other destinations) ── */
+          {id === "1" ? (
+            <div className="py-12">
+              <MapSection />
+            </div>
+          ) : (
+            <section className="py-20 px-6 max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                {/* Map/Graphics Column */}
+                <div className="lg:col-span-7 w-full z-10">
+                  {/* ── Photo + Pins Map (all other destinations) ── */}
                   <div className="relative flex items-center justify-center min-h-[400px] w-full rounded-[2rem] border border-zinc-200/80 overflow-hidden shadow-inner bg-white">
                     <img
                       src={theme.mapImage}
@@ -217,10 +185,10 @@ export default function ItineraryClient({ id }: { id: string }) {
                         className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group z-30"
                       >
                         <div className="relative flex h-6 w-6 items-center justify-center">
-                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold/40 opacity-75"></span>
-                          <div className="relative flex h-3 w-3 items-center justify-center rounded-full bg-black border border-brand-gold cursor-pointer shadow-sm">
-                            <div className="h-1 w-1 rounded-full bg-brand-gold animate-pulse"></div>
-                          </div>
+                           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold/40 opacity-75"></span>
+                           <div className="relative flex h-3 w-3 items-center justify-center rounded-full bg-black border border-brand-gold cursor-pointer shadow-sm">
+                             <div className="h-1 w-1 rounded-full bg-brand-gold animate-pulse"></div>
+                           </div>
                         </div>
                         <span className="mt-1 bg-black/90 border border-white/10 text-white text-[9px] px-2 py-0.5 rounded shadow-md pointer-events-none group-hover:scale-105 transition-transform duration-300 font-heading font-medium tracking-wide">
                           {translate(pin.name, lang)}
@@ -228,23 +196,23 @@ export default function ItineraryClient({ id }: { id: string }) {
                       </motion.div>
                     ))}
                   </div>
-                )}
+                </div>
+                
+                {/* Description on the right */}
+                <div className="lg:col-span-5 flex flex-col items-start space-y-6">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em]" style={{ color: theme.themeColor }}>
+                    {lang === "FR" ? "DÉCOUVREZ LE ROYAUME" : "DISCOVER THE REALM"}
+                  </span>
+                  <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 leading-tight uppercase">
+                    {theme.discoverTitle}
+                  </h2>
+                  <p className="text-[14px] leading-relaxed text-zinc-600 font-light max-w-[460px]">
+                    {theme.discoverDesc}
+                  </p>
+                </div>
               </div>
-              
-              {/* Description on the right */}
-              <div className="lg:col-span-5 flex flex-col items-start space-y-6">
-                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em]" style={{ color: theme.themeColor }}>
-                  {lang === "FR" ? "DÉCOUVREZ LE ROYAUME" : "DISCOVER THE REALM"}
-                </span>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 leading-tight uppercase">
-                  {theme.discoverTitle}
-                </h2>
-                <p className="text-[14px] leading-relaxed text-zinc-600 font-light max-w-[460px]">
-                  {theme.discoverDesc}
-                </p>
-              </div>
-            </div>
-          </section>
+            </section>
+          )}
 
           {/* Experience Grid Section */}
           <section className="py-16 px-6 max-w-7xl mx-auto border-t border-zinc-200/50">
