@@ -145,7 +145,7 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "2": {
     id: 2,
-    image: "/images/gulf-desert-sunset.png",
+    image: "/images/dubai.webp",
     contentImage: "/images/dubai.webp",
     title: { FR: "Oasis Moderne de Dubaï & Abou Dabi", EN: "Dubai & Abu Dhabi Modern Oasis" },
     duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
@@ -245,7 +245,7 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "3": {
     id: 3,
-    image: "/images/oman-wadi-canyon.png",
+    image: "/images/oman-real.jpg",
     contentImage: "/images/oman-real.jpg",
     title: { FR: "Héritage du Sultanat d'Oman", EN: "Sultanate of Oman Heritage" },
     duration: { FR: "12 jours / 11 nuits", EN: "12 days / 11 nights" },
@@ -345,7 +345,7 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "4": {
     id: 4,
-    image: "/images/saudi-alula-canyon.png",
+    image: "/images/alula-redsea.jpg",
     contentImage: "/images/alula-redsea.jpg",
     title: { FR: "Merveilles d'AlUla & Mer Rouge", EN: "AlUla & Red Sea Wonders" },
     duration: { FR: "14 jours / 13 nuits", EN: "14 days / 13 nights" },
