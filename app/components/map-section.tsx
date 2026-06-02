@@ -288,14 +288,14 @@ const mapsData: Record<string, {
     oceanLabel: { FR: "Mer d'Arabie", EN: "Arabian Sea" },
     oceanLabelPos: { x: 320, y: 380 },
     
-    landPath: "M 250 100 L 330 125 C 360 140, 390 160, 410 190 C 400 220, 390 240, 380 260 L 320 330 C 290 360, 240 400, 170 440 L 110 460 L 70 400 L 220 170 Z",
-    spainLandPath: "M 0 500 L 0 0 L 250 0 L 220 170 L 70 400 L 110 460 L 0 500 Z",
+    landPath: "M 240 100 L 330 135 C 360 145, 380 155, 400 170 C 410 190, 390 230, 360 270 C 350 280, 335 300, 320 330 C 290 360, 240 400, 180 440 L 110 460 L 70 400 L 210 170 L 225 140 L 240 140 Z",
+    spainLandPath: "M 0 500 L 0 0 L 220 0 L 210 170 L 70 400 L 110 460 L 0 500 Z",
     spainLabel: { FR: "ARABIE SAOUDITE", EN: "SAUDI ARABIA" },
     spainLabelPos: { x: 80, y: 260 },
     
     extraLandPaths: [
       { path: "M 390 290 C 385 285, 400 280, 405 288 C 402 295, 393 295, 390 290 Z" }, // Masirah Island
-      { path: "M 250 100 L 220 170 L 180 150 L 200 80 L 250 100 Z" }, // UAE land decoration
+      { path: "M 240 100 L 240 140 L 225 140 L 210 170 L 180 150 L 200 80 L 240 100 Z" }, // UAE land decoration
       { path: "M 240 30 L 245 15 L 250 10 L 255 18 L 250 45 Z" } // Musandam (Oman exclave)
     ],
     extraLabels: [
@@ -313,7 +313,7 @@ const mapsData: Record<string, {
         pinPos: { x: 355, y: 155 },
         hasLine: true,
         linePath: "M 355 155 L 410 140",
-        path: "M 330 125 C 360 140, 390 160, 410 190 L 300 180 Z",
+        path: "M 240 100 L 330 135 C 360 145, 380 155, 400 170 L 300 180 Z",
         highlights: { EN: "Sultan Qaboos Mosque & Dhow Cruise", FR: "Mosquée Sultan Qaboos & croisière en boutre" },
         description: {
           EN: "Stroll through the Mutrah Souq, visit the Sultan Qaboos Grand Mosque, and sail along Muscat's dramatic volcanic coast.",
@@ -323,11 +323,11 @@ const mapsData: Record<string, {
       {
         id: "hajar",
         name: { EN: "Hajar Mountains & Wadis", FR: "Monts Hajar & Wadis" },
-        labelPos: { x: 205, y: 185, align: "end" },
-        pinPos: { x: 275, y: 175 },
+        labelPos: { x: 195, y: 185, align: "end" },
+        pinPos: { x: 265, y: 165 },
         hasLine: true,
-        linePath: "M 210 185 L 270 175",
-        path: "M 250 100 L 330 125 L 300 180 L 250 270 L 160 260 L 220 170 Z",
+        linePath: "M 200 185 L 260 165",
+        path: "M 240 100 L 300 180 L 250 270 L 160 260 L 210 170 L 225 140 L 240 140 Z",
         highlights: { EN: "Jebel Akhdar Canyons & Nizwa Fort", FR: "Canyons du Djebel Akhdar & Fort de Nizwa" },
         description: {
           EN: "Explore Nizwa's historic clay fort, trek through green mountain canyons of Jebel Akhdar, and swim in emerald turquoise wadi waters.",
@@ -337,11 +337,11 @@ const mapsData: Record<string, {
       {
         id: "sharqiyah",
         name: { EN: "Wahiba Desert & Sur", FR: "Désert de Wahiba & Sur" },
-        labelPos: { x: 425, y: 270, align: "start" },
-        pinPos: { x: 365, y: 240 },
+        labelPos: { x: 415, y: 265, align: "start" },
+        pinPos: { x: 355, y: 235 },
         hasLine: true,
-        linePath: "M 370 240 L 420 270",
-        path: "M 410 190 C 400 220, 390 240, 380 260 L 320 330 L 250 270 L 300 180 Z",
+        linePath: "M 360 235 L 410 265",
+        path: "M 400 170 C 410 190, 390 230, 360 270 C 350 280, 335 300, 320 330 L 250 270 L 300 180 Z",
         highlights: { EN: "Desert Glamping & Sea Turtle Nesting", FR: "Glamping dans le désert & tortues marines" },
         description: {
           EN: "Spend a luxury night glamping under the stars in the Wahiba Sands desert, and watch green sea turtles nest at Sur's coast.",
@@ -355,7 +355,7 @@ const mapsData: Record<string, {
         pinPos: { x: 175, y: 410 },
         hasLine: true,
         linePath: "M 120 350 L 170 405",
-        path: "M 250 270 L 320 330 C 290 360, 240 400, 170 440 L 110 460 L 70 400 L 160 260 Z",
+        path: "M 250 270 L 320 330 C 290 360, 240 400, 180 440 L 110 460 L 70 400 L 160 260 Z",
         highlights: { EN: "Khareef Green Monsoon & Frankincense", FR: "Mousson verte du Khareef & arbres à encens" },
         description: {
           EN: "Witness the unique green monsoon transformations of Salalah, walk through ancient frankincense trees, and explore the Empty Quarter desert.",
