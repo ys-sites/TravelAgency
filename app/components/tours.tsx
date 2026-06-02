@@ -6,11 +6,7 @@ import { motion } from "motion/react";
 import { 
   Calendar, 
   Users, 
-  MapPin, 
-  ShieldCheck, 
-  PhoneCall, 
-  Home, 
-  Plane 
+  MapPin 
 } from "lucide-react";
 import { useLang } from "../context/lang-context";
 
@@ -121,28 +117,6 @@ const t = {
 export default function Tours() {
   const { lang } = useLang();
 
-  const serviceBadges = [
-    {
-      icon: <ShieldCheck className="h-6 w-6 text-brand-gold" />,
-      title: { EN: "Sovereign Escrow", FR: "Dépôt Sécurisé Escrow" },
-      desc: { EN: "PGP & escrow secured funds for absolute peace of mind.", FR: "Fonds protégés par PGP & escrow pour une tranquillité totale." }
-    },
-    {
-      icon: <PhoneCall className="h-6 w-6 text-brand-gold" />,
-      title: { EN: "24/7 Encrypted Channel", FR: "Canal Chiffré 24/7" },
-      desc: { EN: "Permanent direct line to your dedicated concierge architect.", FR: "Ligne directe permanente vers votre architecte concierge dédié." }
-    },
-    {
-      icon: <Home className="h-6 w-6 text-brand-gold" />,
-      title: { EN: "Elite Sanctums", FR: "Sanctuaires d'Élite" },
-      desc: { EN: "Ultra-luxury private riads, converted forts, and desert domes.", FR: "Riads privés d'exception, forts convertis et dômes du désert." }
-    },
-    {
-      icon: <Plane className="h-6 w-6 text-brand-gold" />,
-      title: { EN: "VIP Tarmac Protocol", FR: "Protocole Tarmac VIP" },
-      desc: { EN: "Fast-track airport gate reception and private SUV chauffeur.", FR: "Accueil VIP à la sortie de l'avion et transfert SUV privé." }
-    }
-  ];
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-20 bg-white text-zinc-900" id="itineraries">
@@ -288,28 +262,6 @@ export default function Tours() {
           </div>
         </div>
 
-      </div>
-
-      {/* Divider */}
-      <div className="border-t border-zinc-200/80 my-16 w-full" />
-
-      {/* Bottom Row: Premium Service Badges */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {serviceBadges.map((badge, idx) => (
-          <div key={idx} className="flex flex-col items-start space-y-3">
-            <div className="p-3 bg-zinc-50 border border-zinc-200/50 rounded-2xl shadow-sm">
-              {badge.icon}
-            </div>
-            <div className="space-y-1">
-              <h4 className="font-heading text-[12px] font-bold text-zinc-900 uppercase tracking-wider">
-                {badge.title[lang]}
-              </h4>
-              <p className="font-body text-[12px] text-zinc-500 leading-relaxed font-light">
-                {badge.desc[lang]}
-              </p>
-            </div>
-          </div>
-        ))}
       </div>
 
     </div>

@@ -1,7 +1,6 @@
 import Navbar from "./components/navbar";
 import GulfHeroScrubber from "./components/gulf-hero-scrubber";
 import Tours from "./components/tours";
-import Stats from "./components/stats";
 import MapSection from "./components/map-section";
 import Footer from "./components/footer";
 
@@ -19,7 +18,6 @@ export default function Home() {
         <div id="portfolios">
           <Tours />
         </div>
-        <Stats />
         <MapSection />
       </main>
 
