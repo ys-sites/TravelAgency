@@ -1029,11 +1029,12 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             <div className="w-full rounded-2xl overflow-hidden border border-zinc-200/60 shadow-md bg-black">
               <video
                 src="https://v1.pinimg.com/videos/iht/expMp4/81/24/b8/8124b8c7cd11c22123a7b75cfabf32fc_720w.mp4"
-                className="w-full h-auto block"
+                className="w-full h-auto block bg-black"
                 autoPlay
                 muted
                 loop
                 playsInline
+                preload="auto"
               />
             </div>
           )}
