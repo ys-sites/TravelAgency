@@ -188,9 +188,25 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
             <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
               {lang === "FR" ? "Aperçu de l'Itinéraire" : "Trip Overview"}
             </h3>
-            <p className="text-[14px] md:text-[15px] leading-relaxed text-zinc-600 font-light">
-              {itinerary.overview[lang]}
-            </p>
+            <div className="flex flex-col lg:flex-row gap-8 items-start">
+              <div className="flex-1">
+                <p className="text-[14px] md:text-[15px] leading-relaxed text-zinc-600 font-light">
+                  {itinerary.overview[lang]}
+                </p>
+              </div>
+              {id === "1" && (
+                <div className="w-full sm:w-[345px] shrink-0 mx-auto">
+                  <iframe 
+                    src="https://assets.pinterest.com/ext/embed.html?id=563724078383110144" 
+                    height="714" 
+                    width="345" 
+                    frameBorder="0" 
+                    scrolling="no"
+                    className="rounded-[1.5rem] shadow-md border border-zinc-150 max-w-full block mx-auto"
+                  />
+                </div>
+              )}
+            </div>
           </div>
 
           <div className="space-y-10">
