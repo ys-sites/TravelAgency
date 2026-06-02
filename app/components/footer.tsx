@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { useLang } from "../context/lang-context";
+import { useLang, translate } from "../context/lang-context";
 
 const t = {
   description: {
@@ -51,6 +51,14 @@ const t = {
   copyright: {
     FR: "© 2026 Majestic Experiences Voyages Concierge. Tous droits réservés.",
     EN: "© 2026 Majestic Experiences Voyages Concierge. All rights reserved."
+  },
+  privacySignoff: {
+    FR: "Politique de Confidentialité",
+    EN: "Privacy signoff"
+  },
+  escrowTerms: {
+    FR: "Conditions de Dépôt Fiduciaire",
+    EN: "Security Escrow Terms"
   }
 };
 
@@ -78,39 +86,39 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-[12px] text-white/50 leading-relaxed font-light max-w-[240px]">
-            {t.description[lang]}
+            {translate(t.description, lang)}
           </p>
         </div>
 
         {/* Column 2: Destinations */}
         <div className="flex flex-col gap-4">
           <h4 className="font-heading text-[12px] font-bold uppercase tracking-wider text-white">
-            {t.destinations[lang]}
+            {translate(t.destinations, lang)}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
-            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{t.morocco[lang]}</a></li>
-            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{t.dubai[lang]}</a></li>
-            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{t.oman[lang]}</a></li>
-            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{t.saudi[lang]}</a></li>
+            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.morocco, lang)}</a></li>
+            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.dubai, lang)}</a></li>
+            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.oman, lang)}</a></li>
+            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.saudi, lang)}</a></li>
           </ul>
         </div>
 
         {/* Column 3: Company */}
         <div className="flex flex-col gap-4">
           <h4 className="font-heading text-[12px] font-bold uppercase tracking-wider text-white">
-            {t.company[lang]}
+            {translate(t.company, lang)}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
-            <li><a href="/#about" className="hover:text-brand-gold transition-colors">{t.about[lang]}</a></li>
-            <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{t.customTrip[lang]}</Link></li>
-            <li><Link href="/travel-stories" className="hover:text-brand-gold transition-colors">{t.news[lang]}</Link></li>
+            <li><a href="/#about" className="hover:text-brand-gold transition-colors">{translate(t.about, lang)}</a></li>
+            <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{translate(t.customTrip, lang)}</Link></li>
+            <li><Link href="/travel-stories" className="hover:text-brand-gold transition-colors">{translate(t.news, lang)}</Link></li>
           </ul>
         </div>
 
         {/* Column 4: Contact details */}
         <div className="flex flex-col gap-4" id="about">
           <h4 className="font-heading text-[12px] font-bold uppercase tracking-wider text-white">
-            {t.contact[lang]}
+            {translate(t.contact, lang)}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
             <li>+212 524 456 789</li>
@@ -122,10 +130,10 @@ export default function Footer() {
 
       {/* Copyright border */}
       <div className="max-w-[1200px] mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[11px] text-white/30 px-6">
-        <span>{t.copyright[lang]}</span>
+        <span>{translate(t.copyright, lang)}</span>
         <div className="flex items-center gap-6 mt-4 md:mt-0 font-light">
-          <a href="#" className="hover:text-brand-gold transition-colors">Privacy signoff</a>
-          <a href="#" className="hover:text-brand-gold transition-colors">Security Escrow Terms</a>
+          <Link href="/conditions" className="hover:text-brand-gold transition-colors">{translate(t.privacySignoff, lang)}</Link>
+          <Link href="/conditions" className="hover:text-brand-gold transition-colors">{translate(t.escrowTerms, lang)}</Link>
         </div>
       </div>
     </footer>

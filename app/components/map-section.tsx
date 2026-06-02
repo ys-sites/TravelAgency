@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { MapPin } from "lucide-react";
-import { useLang } from "../context/lang-context";
+import { useLang, translate } from "../context/lang-context";
 
 const t = {
   getKnow: {
@@ -54,7 +54,7 @@ export default function MapSection() {
       {/* Left content description */}
       <div className="lg:col-span-5 flex flex-col items-start z-10">
         <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-brand-gold">
-          {t.getKnow[lang]}
+          {translate(t.getKnow, lang)}
         </span>
         <h2 className="flex items-center gap-3 font-serif text-[42px] font-bold text-zinc-900 mt-2 leading-tight uppercase">
           <svg className="h-8 w-8 text-brand-gold" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -62,25 +62,25 @@ export default function MapSection() {
             <path d="M2 17l10 5 10-5" />
             <path d="M2 12l10 5 10-5" />
           </svg>
-          {t.title[lang]}
+          {translate(t.title, lang)}
         </h2>
         <p className="text-[13px] leading-relaxed text-zinc-600 mt-6 max-w-[420px] font-light">
-          {t.description[lang]}
+          {translate(t.description, lang)}
         </p>
 
         {/* Links */}
         <div className="flex flex-wrap items-center gap-6 mt-8 font-mono text-[11px] tracking-wider uppercase">
           <a href="/#portfolios" className="text-brand-gold hover:text-zinc-900 hover:underline transition-colors font-semibold">
-            {t.attractions[lang]} &rarr;
+            {translate(t.attractions, lang)} &rarr;
           </a>
           <a href="/custom-trip" className="text-brand-gold hover:text-zinc-900 hover:underline transition-colors font-semibold">
-            {t.similarDestinations[lang]} &rarr;
+            {translate(t.similarDestinations, lang)} &rarr;
           </a>
         </div>
 
         {/* CTA Button */}
         <a href="/#portfolios" className="mt-8 rounded-full border border-brand-gold bg-brand-gold/10 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 px-8 py-3 text-[11px] font-bold uppercase tracking-wider text-zinc-800 transition-luxury cursor-pointer inline-block shadow-sm">
-          {t.chooseTour[lang]}
+          {translate(t.chooseTour, lang)}
         </a>
       </div>
 
@@ -90,7 +90,7 @@ export default function MapSection() {
         <img
           src="/images/moroco.webp"
           className="absolute inset-0 w-full h-full object-cover brightness-75 contrast-[1.05]"
-          alt={t.title[lang]}
+          alt={translate(t.title, lang)}
         />
 
         {/* Interactive Location Pins */}
@@ -114,7 +114,7 @@ export default function MapSection() {
 
             {/* Label box */}
             <span className="mt-1 bg-black/90 border border-white/10 text-white text-[9px] px-2 py-0.5 rounded shadow-md pointer-events-none group-hover:scale-105 transition-transform duration-300 font-heading font-medium tracking-wide">
-              {loc.name[lang]}
+              {translate(loc.name, lang)}
             </span>
           </motion.div>
         ))}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import { LangProvider } from "./context/lang-context";
+import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <LangProvider>
           {children}
+          <WhatsAppFloatingButton />
         </LangProvider>
       </body>
     </html>

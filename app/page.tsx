@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Navbar from "./components/navbar";
 import GulfHeroScrubber from "./components/gulf-hero-scrubber";
 import Tours from "./components/tours";
@@ -5,6 +6,11 @@ import Promotions from "./components/promotions";
 import AboutUsSection from "./components/about-us-section";
 import TestimonialsSection from "./components/testimonials-section";
 import Footer from "./components/footer";
+
+export const metadata: Metadata = {
+  title: "Majestic Experiences Voyages — Ultra-Luxury Travel to Morocco & the Arabian Gulf",
+  description: "Bespoke luxury travel concierge for Morocco and the Arabian Gulf. Private helicopter transfers, riad buyouts, desert glamping, and 24/7 bilingual service. Based in Canada.",
+};
 
 export default function Home() {
   return (

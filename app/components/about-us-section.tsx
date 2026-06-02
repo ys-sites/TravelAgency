@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { useLang } from "../context/lang-context";
+import { useLang, translate } from "../context/lang-context";
 
 const t = {
   heading: {
@@ -71,19 +71,19 @@ export default function AboutUsSection() {
           >
             <div className="space-y-3">
               <h2 className="font-serif text-4xl md:text-5xl font-bold text-zinc-900 tracking-tight">
-                {t.heading[lang]}
+                {translate(t.heading, lang)}
               </h2>
               <p className="text-brand-gold font-serif italic text-[18px]">
-                {t.subheading[lang]}
+                {translate(t.subheading, lang)}
               </p>
             </div>
 
             <div className="space-y-4 text-zinc-600 leading-relaxed font-light">
               <p className="text-[16px]">
-                {t.paragraph1[lang]}
+                {translate(t.paragraph1, lang)}
               </p>
               <p className="text-[16px]">
-                {t.paragraph2[lang]}
+                {translate(t.paragraph2, lang)}
               </p>
             </div>
           </motion.div>
@@ -99,30 +99,30 @@ export default function AboutUsSection() {
             {/* Credential Card 1 */}
             <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-8 space-y-3 hover:border-brand-gold/30 transition-colors duration-300">
               <div className="text-4xl md:text-5xl font-bold text-brand-gold font-serif">
-                {t.credential1Label[lang]}
+                {translate(t.credential1Label, lang)}
               </div>
               <p className="text-zinc-700 font-light text-[15px]">
-                {t.credential1Desc[lang]}
+                {translate(t.credential1Desc, lang)}
               </p>
             </div>
 
             {/* Credential Card 2 */}
             <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-8 space-y-3 hover:border-brand-gold/30 transition-colors duration-300">
               <div className="text-4xl md:text-5xl font-bold text-brand-gold font-serif">
-                {t.credential2Label[lang]}
+                {translate(t.credential2Label, lang)}
               </div>
               <p className="text-zinc-700 font-light text-[15px]">
-                {t.credential2Desc[lang]}
+                {translate(t.credential2Desc, lang)}
               </p>
             </div>
 
             {/* Credential Card 3 */}
             <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-8 space-y-3 hover:border-brand-gold/30 transition-colors duration-300">
               <div className="text-4xl md:text-5xl font-bold text-brand-gold font-serif">
-                {t.credential3Label[lang]}
+                {translate(t.credential3Label, lang)}
               </div>
               <p className="text-zinc-700 font-light text-[15px]">
-                {t.credential3Desc[lang]}
+                {translate(t.credential3Desc, lang)}
               </p>
             </div>
           </motion.div>
@@ -140,7 +140,7 @@ export default function AboutUsSection() {
             href="/custom-trip"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 hover:bg-brand-gold hover:text-black text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury shadow-md cursor-pointer hover:-translate-y-0.5"
           >
-            {t.cta[lang]}
+            {translate(t.cta, lang)}
           </Link>
         </motion.div>
       </div>

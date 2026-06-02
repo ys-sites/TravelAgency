@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
 export type Lang = "FR" | "EN";
 
@@ -16,6 +16,17 @@ const LangContext = createContext<LangContextType>({
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("EN");
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.navigator) {
+      const isFrCA = window.navigator.language === "fr-CA" || 
+                     (window.navigator.languages && window.navigator.languages.includes("fr-CA"));
+      if (isFrCA) {
+        setLang("FR");
+      }
+    }
+  }, []);
+
   return (
     <LangContext.Provider value={{ lang, setLang }}>
       {children}
@@ -25,6 +36,13 @@ export function LangProvider({ children }: { children: ReactNode }) {
 
 export function useLang() {
   return useContext(LangContext);
+}
+
+export function translate<T>(obj: { FR: T; EN: T } | undefined, lang: Lang): T {
+  if (!obj) {
+    throw new Error("Translation object is undefined");
+  }
+  return lang === "FR" ? obj.FR : obj.EN;
 }
 
 

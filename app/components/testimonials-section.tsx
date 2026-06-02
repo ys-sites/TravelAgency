@@ -1,7 +1,8 @@
 'use client';
 
 import { motion } from "motion/react";
-import { useLang } from "../context/lang-context";
+import { useLang, translate } from "../context/lang-context";
+import { Check, Shield } from "lucide-react";
 
 interface Testimonial {
   quote: { EN: string; FR: string };
@@ -45,10 +46,10 @@ const testimonials: Testimonial[] = [
 ];
 
 const trustBadges = [
-  { label: { EN: "Bilingual Concierge Service", FR: "Service Concierge Bilingue" }, icon: "✓" },
-  { label: { EN: "256-Bit Secure Booking", FR: "Réservation Sécurisée 256-Bit" }, icon: "🔒" },
-  { label: { EN: "100% Tailor-Made Itineraries", FR: "100% Itinéraires Sur Mesure" }, icon: "✓" },
-  { label: { EN: "Canadian-Based, Globally Connected", FR: "Basé au Canada, Mondialement Connecté" }, icon: "✓" }
+  { label: { EN: "Bilingual Concierge Service", FR: "Service Concierge Bilingue" }, icon: Check },
+  { label: { EN: "256-Bit Secure Booking", FR: "Réservation Sécurisée 256-Bit" }, icon: Shield },
+  { label: { EN: "100% Tailor-Made Itineraries", FR: "100% Itinéraires Sur Mesure" }, icon: Check },
+  { label: { EN: "Canadian-Based, Globally Connected", FR: "Basé au Canada, Mondialement Connecté" }, icon: Check }
 ];
 
 export default function TestimonialsSection() {
@@ -81,7 +82,7 @@ export default function TestimonialsSection() {
             >
               {/* Quote */}
               <blockquote className="text-[15px] leading-relaxed text-white/90 font-light italic">
-                "{testimonial.quote[lang]}"
+                "{translate(testimonial.quote, lang)}"
               </blockquote>
 
               {/* Star Rating */}
@@ -100,7 +101,7 @@ export default function TestimonialsSection() {
                   {testimonial.location}
                 </p>
                 <p className="text-[12px] text-brand-gold font-mono tracking-wide">
-                  {testimonial.tripName[lang]}
+                  {translate(testimonial.tripName, lang)}
                 </p>
               </div>
             </motion.div>
@@ -110,22 +111,25 @@ export default function TestimonialsSection() {
         {/* Trust Badges */}
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-            {trustBadges.map((badge, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-center gap-2 text-[12px] text-white/70 font-light"
-              >
-                <span className="text-brand-gold font-bold text-lg">{badge.icon}</span>
-                <span>{badge.label[lang]}</span>
-                {index < trustBadges.length - 1 && (
-                  <span className="hidden md:inline text-white/20 ml-2">•</span>
-                )}
-              </motion.div>
-            ))}
+            {trustBadges.map((badge, index) => {
+              const IconComponent = badge.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="flex items-center gap-2 text-[12px] text-white/70 font-light"
+                >
+                  <IconComponent className="text-brand-gold w-4 h-4 shrink-0" />
+                  <span>{translate(badge.label, lang)}</span>
+                  {index < trustBadges.length - 1 && (
+                    <span className="hidden md:inline text-white/20 ml-2">•</span>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

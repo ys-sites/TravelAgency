@@ -4,76 +4,8 @@ import * as React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Calendar, Users, Percent, Sparkles, Flame } from "lucide-react";
-import { useLang } from "../context/lang-context";
-
-interface DealCard {
-  id: number;
-  image: string;
-  badge: { FR: string; EN: string };
-  title: { FR: string; EN: string };
-  duration: { FR: string; EN: string };
-  flight: { FR: string; EN: string };
-  meals: { FR: string; EN: string };
-  inclusions: { FR: string; EN: string };
-  oldPrice: string;
-  newPrice: string;
-  tag: string;
-  promoText?: { FR: string; EN: string };
-}
-
-const dealsList: DealCard[] = [
-  {
-    id: 1,
-    image: "/images/moroco.webp",
-    badge: { FR: "OFFRE SAISONNIÈRE", EN: "SEASONAL PRESTIGE" },
-    title: { FR: "Évasion Marrakech & Sahara", EN: "Marrakech & Sahara Escape" },
-    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Pension complète", EN: "Full board" },
-    inclusions: { FR: "Hélicoptère Privé & Riad Exclusif", EN: "Private Heli-flight & Riad Buyouts" },
-    oldPrice: "C$ 7,400",
-    newPrice: "C$ 6,200",
-    tag: "SAVE C$ 1,200",
-    promoText: {
-      FR: "Réservez avant le 15 août 2026 et économisez 1 200 $ / pers.",
-      EN: "Book before August 15, 2026 and save 1,200 $ / pers."
-    }
-  },
-  {
-    id: 2,
-    image: "/images/gulf-city-skyline.png",
-    badge: { FR: "OFFRE EXCLUSIVE", EN: "EXCEPTIONAL RATE" },
-    title: { FR: "Oasis Moderne Dubaï & Abou Dabi", EN: "Dubai & Abu Dhabi Oasis" },
-    duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
-    flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Dîners gourmands", EN: "Gourmet dinners" },
-    inclusions: { FR: "Penthouse Marina & Superyacht Privé", EN: "Marina Penthouse & Private Yacht" },
-    oldPrice: "C$ 9,450",
-    newPrice: "C$ 8,250",
-    tag: "SAVE C$ 1,200",
-    promoText: {
-      FR: "Réservez avant le 20 sept 2026 et économisez 1 200 $ / pers.",
-      EN: "Book before Sept 20, 2026 and save 1,200 $ / pers."
-    }
-  },
-  {
-    id: 3,
-    image: "/images/oman-wadi-canyon.png",
-    badge: { FR: "OFFRE PRIVILÈGE", EN: "SOVEREIGN PRIVILEGE" },
-    title: { FR: "Héritage du Sultanat d'Oman", EN: "Oman Sultanate Heritage" },
-    duration: { FR: "12 jours / 11 nuits", EN: "12 days / 11 nights" },
-    flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Pension complète", EN: "Full board" },
-    inclusions: { FR: "Suites Jebel Akhdar & Dhow Privé", EN: "Mountain Suites & Private Dhow" },
-    oldPrice: "C$ 8,400",
-    newPrice: "C$ 7,400",
-    tag: "SAVE C$ 1,000",
-    promoText: {
-      FR: "Réservez avant le 10 oct 2026 et économisez 1 000 $ / pers.",
-      EN: "Book before Oct 10, 2026 and save 1,000 $ / pers."
-    }
-  }
-];
+import { useLang, translate } from "../context/lang-context";
+import { dealsList } from "@/data/itineraries";
 
 export default function Promotions() {
   const { lang } = useLang();
@@ -152,7 +84,7 @@ export default function Promotions() {
               <div className="h-[240px] w-full relative overflow-hidden">
                 <img 
                   src={deal.image} 
-                  alt={deal.title[lang]} 
+                  alt={translate(deal.title, lang)} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
@@ -169,13 +101,13 @@ export default function Promotions() {
                     ? "bg-[#8B2635] text-[#faf9f5] border border-[#8B2635]"
                     : "bg-[#8fada4] text-[#1a3530] border border-[#6e9990]/40"
                 }`}>
-                  {deal.badge[lang]}
+                  {translate(deal.badge, lang)}
                 </div>
 
                 {/* Booking Deadline Banner */}
                 {deal.promoText && (
                   <div className="absolute bottom-0 left-0 right-0 bg-[#8B2635]/90 backdrop-blur-xs text-[#faf9f5] text-[8px] font-mono py-1.5 px-3 tracking-wider text-center uppercase font-bold">
-                    {deal.promoText[lang]}
+                    {translate(deal.promoText, lang)}
                   </div>
                 )}
               </div>
@@ -184,22 +116,22 @@ export default function Promotions() {
               <div className="p-6 md:p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] text-zinc-400 font-mono tracking-wider">
-                    <span>{deal.duration[lang]}</span>
+                    <span>{translate(deal.duration, lang)}</span>
                     <span>•</span>
-                    <span>{deal.flight[lang]}</span>
+                    <span>{translate(deal.flight, lang)}</span>
                     <span>•</span>
-                    <span>{deal.meals[lang]}</span>
+                    <span>{translate(deal.meals, lang)}</span>
                   </div>
 
                   <h3 className="font-serif text-lg md:text-xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
-                    {deal.title[lang]}
+                    {translate(deal.title, lang)}
                   </h3>
 
                   <p className="text-[12px] leading-relaxed text-zinc-500 font-light pt-1 border-t border-zinc-100">
                     <span className="font-mono text-[9px] uppercase tracking-wider text-brand-gold block mb-1">
                       {lang === "FR" ? "INCLUSIONS EXCLUSIVES" : "EXCLUSIVE INCLUSIONS"}
                     </span>
-                    {deal.inclusions[lang]}
+                    {translate(deal.inclusions, lang)}
                   </p>
                 </div>
 

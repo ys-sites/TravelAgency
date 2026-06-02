@@ -18,12 +18,12 @@ export default function GulfHeroScrubber() {
           playsInline
           preload="auto"
           style={{
-            backgroundImage: "url('https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto,f_auto,w_1280/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.jpg')"
+            backgroundImage: "url('https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto,f_auto,w_1920/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.jpg')"
           }}
-          poster="https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto,f_auto,w_1280/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.jpg"
+          poster="https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto,f_auto,w_1920/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.jpg"
         >
-          <source src="https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto:eco,w_1280,vc_vp9/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.webm" type="video/webm" />
-          <source src="https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto:eco,w_1280,vc_h264/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto,w_1920,vc_vp9/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.webm" type="video/webm" />
+          <source src="https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto,w_1920,vc_h264/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.mp4" type="video/mp4" />
         </video>
       </div>
       
