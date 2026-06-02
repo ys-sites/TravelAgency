@@ -450,6 +450,156 @@ const itinerariesData: Record<string, ItineraryDetail> = {
   }
 };
 
+
+interface MapPinDetail {
+  name: { FR: string; EN: string };
+  top: string;
+  left: string;
+}
+
+interface ExperienceCard {
+  label: string;
+  img: string;
+}
+
+interface ItineraryTheme {
+  country: string;
+  heroTitle: string;
+  heroSub: string;
+  heroBtn: string;
+  heroBg: string;
+  themeColor: string;
+  themeColorHover: string;
+  watercolorColor: string;
+  mapImage: string;
+  discoverTitle: string;
+  discoverDesc: string;
+  experienceTitle: string;
+  experienceDesc: string;
+  mapPins: MapPinDetail[];
+  experienceGrid: ExperienceCard[];
+}
+
+const itineraryThemes: Record<string, ItineraryTheme> = {
+  "1": {
+    country: "Morocco",
+    heroTitle: "Morocco",
+    heroSub: "Epic's journey started in Morocco, land of rich diversity, superb landscapes and people who light up the visitor experience.",
+    heroBtn: "Get the inside track",
+    heroBg: "/images/morocco-sahara-dunes.png",
+    themeColor: "#C5A880",
+    themeColorHover: "#A3835B",
+    watercolorColor: "#C5A880",
+    mapImage: "/images/moroco.webp",
+    discoverTitle: "Discover Morocco",
+    discoverDesc: "We are adventurers at heart, so uncovering the secrets of Morocco is something we've had a lot of experience in. Find out more about what the regions of Morocco have to offer.",
+    experienceTitle: "Experience Morocco",
+    experienceDesc: "Morocco has many different aspects to its personality. Adventure, Culinary, Culture; it's all here. Experience the many different, rich, exciting layers of Morocco. Experience it your way.",
+    mapPins: [
+      { name: { FR: "Palais de Marrakech", EN: "Marrakech Palace" }, top: "65%", left: "32%" },
+      { name: { FR: "Dunes du Sahara", EN: "Sahara Dunes" }, top: "78%", left: "75%" },
+      { name: { FR: "Mont Toubkal (Atlas)", EN: "Mount Toubkal" }, top: "52%", left: "45%" },
+      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Benhaddou Kasbah" }, top: "45%", left: "58%" },
+      { name: { FR: "Chefchaouen la Bleue", EN: "Chefchaouen Blue City" }, top: "18%", left: "62%" }
+    ],
+    experienceGrid: [
+      { label: "Adventure", img: "/images/morocco_adventure.png" },
+      { label: "Culinary", img: "/images/morocco_culinary.png" },
+      { label: "Culture", img: "/images/morocco-marrakech-riad.png" },
+      { label: "Off Beat", img: "/images/morocco-sahara-dunes.png" },
+      { label: "Go Local", img: "/images/people-cliff.png" }
+    ]
+  },
+  "2": {
+    country: "UAE",
+    heroTitle: "Dubaï & Abou Dabi",
+    heroSub: "Experience the contemporary luxury, futuristic architecture, and timeless deserts of the Arabian Gulf.",
+    heroBtn: "Explore the Emirates",
+    heroBg: "/images/dubai_skyline_hero.png",
+    themeColor: "#00A3C4",
+    themeColorHover: "#00839C",
+    watercolorColor: "#00A3C4",
+    mapImage: "/images/uae_map.png",
+    discoverTitle: "Discover the Emirates",
+    discoverDesc: "From the sparkling skyscrapers of Dubai Marina to the tranquil desert fortresses of Abu Dhabi, discover a land where modern dreams meet heritage.",
+    experienceTitle: "Experience the Gulf",
+    experienceDesc: "The UAE brings together unmatched luxury, world-class culinary art, and ancient Bedouin culture. Explore the dynamic contrast between sky-high heights and pristine dunes.",
+    mapPins: [
+      { name: { FR: "Dubaï Marina", EN: "Dubai Marina" }, top: "30%", left: "60%" },
+      { name: { FR: "Burj Al Arab", EN: "Burj Al Arab" }, top: "38%", left: "58%" },
+      { name: { FR: "Palm Jumeirah", EN: "Palm Jumeirah" }, top: "45%", left: "50%" },
+      { name: { FR: "Île de Yas", EN: "Yas Island" }, top: "55%", left: "35%" },
+      { name: { FR: "Mosquée Sheikh Zayed", EN: "Sheikh Zayed Mosque" }, top: "62%", left: "30%" },
+      { name: { FR: "Qasr Al Sarab", EN: "Qasr Al Sarab" }, top: "80%", left: "25%" }
+    ],
+    experienceGrid: [
+      { label: "Adventure", img: "/images/gulf-desert-sunset.png" },
+      { label: "Culinary", img: "/images/gulf-city-skyline.png" },
+      { label: "Culture", img: "/images/dubai.webp" },
+      { label: "Off Beat", img: "/images/dubai_skyline_hero.png" },
+      { label: "Go Local", img: "/images/people-cliff.png" }
+    ]
+  },
+  "3": {
+    country: "Oman",
+    heroTitle: "Sultanat d'Oman",
+    heroSub: "Discover pure serenity. Hike through spectacular wadi canyons, lodge in elite mountain resorts, and sail the fjords of Musandam.",
+    heroBtn: "Discover Oman",
+    heroBg: "/images/oman_mountain_hero.png",
+    themeColor: "#5A8266",
+    themeColorHover: "#476851",
+    watercolorColor: "#5A8266",
+    mapImage: "/images/oman_map.png",
+    discoverTitle: "Discover Oman",
+    discoverDesc: "Immerse yourself in the authentic heritage and breathtaking landscapes of the Sultanate, where rugged mountain peaks meet turquoise waters.",
+    experienceTitle: "Experience Oman",
+    experienceDesc: "Oman offers an escape into pure nature and deep culture. From ancient forts and traditional souqs to green mountain canyons and ocean dhow voyages.",
+    mapPins: [
+      { name: { FR: "The Chedi Mascate", EN: "The Chedi Muscat" }, top: "35%", left: "68%" },
+      { name: { FR: "Alila Jebel Akhdar", EN: "Alila Jebel Akhdar" }, top: "45%", left: "58%" },
+      { name: { FR: "Wadi Bani Khalid", EN: "Wadi Bani Khalid" }, top: "58%", left: "65%" },
+      { name: { FR: "Désert de Wahiba", EN: "Wahiba Sands" }, top: "68%", left: "62%" },
+      { name: { FR: "Péninsule de Musandam", EN: "Musandam Peninsula" }, top: "15%", left: "50%" }
+    ],
+    experienceGrid: [
+      { label: "Adventure", img: "/images/oman-wadi-canyon.png" },
+      { label: "Culinary", img: "/images/oman-real.jpg" },
+      { label: "Culture", img: "/images/oman_mountain_hero.png" },
+      { label: "Off Beat", img: "/images/people-cliff.png" },
+      { label: "Go Local", img: "/images/oman-real.jpg" }
+    ]
+  },
+  "4": {
+    country: "Saudi Arabia",
+    heroTitle: "Arabie Saoudite",
+    heroSub: "Embark on a majestic journey from the sandstone canyons of AlUla to the untouched coral reefs of the Red Sea.",
+    heroBtn: "Unveil the Kingdom",
+    heroBg: "/images/alula_canyon_hero.png",
+    themeColor: "#C2593F",
+    themeColorHover: "#A14833",
+    watercolorColor: "#C2593F",
+    mapImage: "/images/saudi_map.png",
+    discoverTitle: "Discover Saudi Arabia",
+    discoverDesc: "Explore Saudi Arabia's heritage, from the ancient Nabataean Hegra tombs of AlUla to the modern skyline of Riyadh and the pristine islands of the Red Sea.",
+    experienceTitle: "Experience the Kingdom",
+    experienceDesc: "Saudi Arabia is a land of wonder. Walk through ancient history, experience ultimate desert serenity, and dive into the spectacular coral reefs of the Red Sea.",
+    mapPins: [
+      { name: { FR: "Riyad Diriyah", EN: "Riyadh Diriyah" }, top: "55%", left: "65%" },
+      { name: { FR: "Banyan Tree AlUla", EN: "Banyan Tree AlUla" }, top: "35%", left: "28%" },
+      { name: { FR: "Tombes de Hegra", EN: "Hegra Tombs" }, top: "30%", left: "25%" },
+      { name: { FR: "Rocher de l'Éléphant", EN: "Elephant Rock" }, top: "40%", left: "32%" },
+      { name: { FR: "Complexe de la Mer Rouge", EN: "Red Sea Resort" }, top: "50%", left: "20%" }
+    ],
+    experienceGrid: [
+      { label: "Adventure", img: "/images/alula-redsea.jpg" },
+      { label: "Culinary", img: "/images/saudi-alula-canyon.png" },
+      { label: "Culture", img: "/images/alula_canyon_hero.png" },
+      { label: "Off Beat", img: "/images/saudi-alula-canyon.png" },
+      { label: "Go Local", img: "/images/people-cliff.png" }
+    ]
+  }
+};
+
 export default function ItinerarySubpage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
   const { lang } = useLang();
@@ -475,72 +625,245 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
     setIsSubmitted(true);
   };
 
+  const theme = itineraryThemes[id];
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-body antialiased">
       <Navbar />
 
       {/* Hero Header Section */}
-      <section className="relative w-full aspect-[16/10] md:aspect-[21/9] min-h-[400px] md:min-h-[500px] lg:min-h-[550px] overflow-hidden bg-zinc-950 flex flex-col justify-end">
-        <img
-          src={itinerary.image}
-          alt={itinerary.title[lang]}
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-white" />
-        
-        <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-12 max-w-7xl mx-auto z-10">
-          <Link
-            href="/"
-            className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
-          </Link>
-          <div className="space-y-4">
-            <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
-              {itinerary.duration[lang]}
-            </span>
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl tracking-wide uppercase leading-tight font-bold text-white">
-              {itinerary.title[lang]}
-            </h1>
+      {theme ? (
+        <section className="relative w-full aspect-[16/10] md:aspect-[21/9] min-h-[500px] md:min-h-[600px] lg:min-h-[650px] overflow-hidden bg-zinc-950 flex flex-col justify-end">
+          <img
+            src={theme.heroBg}
+            alt={theme.heroTitle}
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+          
+          <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-24 max-w-7xl mx-auto z-10">
+            <Link
+              href="/"
+              className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
+            </Link>
+            <div className="max-w-2xl space-y-6">
+              <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
+                {itinerary.duration[lang]}
+              </span>
+              <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide uppercase leading-tight font-bold text-brand-gold">
+                {theme.heroTitle}
+              </h1>
+              <p className="text-[14px] sm:text-[16px] leading-relaxed text-zinc-300 font-light max-w-lg">
+                {theme.heroSub}
+              </p>
+              <a 
+                href="#itinerary-details"
+                className="inline-flex items-center gap-2.5 rounded-full px-8 py-3.5 font-semibold text-[11px] tracking-[0.2em] uppercase transition-all duration-300 shadow-md cursor-pointer hover:scale-105"
+                style={{
+                  backgroundColor: theme.themeColor,
+                  color: "#faf9f5",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = theme.themeColorHover;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = theme.themeColor;
+                }}
+              >
+                <span>{theme.heroBtn}</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
           </div>
+
+          {/* Watercolor Divider Mask */}
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 select-none pointer-events-none">
+            <svg
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+              className="relative block w-full h-[60px] md:h-[100px]"
+              style={{ fill: "#faf9f5" }}
+            >
+              <path d="M0,0 C150,90 350,10 500,70 C650,110 850,20 1000,80 C1100,110 1150,90 1200,60 L1200,120 L0,120 Z" />
+              <path d="M0,20 C180,70 320,30 480,90 C620,10 800,100 950,50 C1080,20 1150,80 1200,40 L1200,120 L0,120 Z" opacity="0.3" />
+              <path d="M0,40 C200,30 380,80 520,40 C700,90 880,30 1020,70 C1120,40 1160,60 1200,50 L1200,120 L0,120 Z" opacity="0.15" />
+            </svg>
+          </div>
+        </section>
+      ) : (
+        <section className="relative w-full aspect-[16/10] md:aspect-[21/9] min-h-[400px] md:min-h-[500px] lg:min-h-[550px] overflow-hidden bg-zinc-950 flex flex-col justify-end">
+          <img
+            src={itinerary.image}
+            alt={itinerary.title[lang]}
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-white" />
+          
+          <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-12 max-w-7xl mx-auto z-10">
+            <Link
+              href="/"
+              className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
+            </Link>
+            <div className="space-y-4">
+              <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
+                {itinerary.duration[lang]}
+              </span>
+              <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl tracking-wide uppercase leading-tight font-bold text-white">
+                {itinerary.title[lang]}
+              </h1>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Themed Map & Experience Sections */}
+      {theme && (
+        <div className="bg-[#faf9f5]">
+          {/* Discover Map Section */}
+          <section className="py-16 px-6 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              {/* Map on the left (col-span-7) */}
+              <div className="lg:col-span-7 relative flex items-center justify-center min-h-[400px] w-full rounded-[2rem] border border-zinc-200/80 overflow-hidden shadow-inner bg-white">
+                <img
+                  src={theme.mapImage}
+                  className="absolute inset-0 w-full h-full object-cover brightness-95 contrast-[1.05]"
+                  alt={theme.discoverTitle}
+                />
+                {/* Interactive Location Pins */}
+                {theme.mapPins.map((pin, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: "spring", stiffness: 100, delay: index * 0.15 }}
+                    style={{ top: pin.top, left: pin.left }}
+                    className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group z-30"
+                  >
+                    <div className="relative flex h-6 w-6 items-center justify-center">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-gold/40 opacity-75"></span>
+                      <div className="relative flex h-3 w-3 items-center justify-center rounded-full bg-black border border-brand-gold cursor-pointer shadow-sm">
+                        <div className="h-1 w-1 rounded-full bg-brand-gold animate-pulse"></div>
+                      </div>
+                    </div>
+                    <span className="mt-1 bg-black/90 border border-white/10 text-white text-[9px] px-2 py-0.5 rounded shadow-md pointer-events-none group-hover:scale-105 transition-transform duration-300 font-heading font-medium tracking-wide">
+                      {pin.name[lang]}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* Description on the right (col-span-5) */}
+              <div className="lg:col-span-5 flex flex-col items-start space-y-6">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em]" style={{ color: theme.themeColor }}>
+                  {lang === "FR" ? "DÉCOUVREZ LE ROYAUME" : "DISCOVER THE REALM"}
+                </span>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-zinc-900 leading-tight uppercase">
+                  {theme.discoverTitle}
+                </h2>
+                <p className="text-[14px] leading-relaxed text-zinc-600 font-light max-w-[460px]">
+                  {theme.discoverDesc}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Experience Grid Section */}
+          <section className="py-16 px-6 max-w-7xl mx-auto border-t border-zinc-200/50">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+              {/* Text block */}
+              <div className="lg:col-span-4 flex flex-col justify-center items-start space-y-6">
+                <span className="w-12 h-1 border-t-2" style={{ borderColor: theme.themeColor }} />
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-zinc-900 leading-tight uppercase">
+                  {theme.experienceTitle}
+                </h2>
+                <p className="text-[14px] leading-relaxed text-zinc-600 font-light">
+                  {theme.experienceDesc}
+                </p>
+              </div>
+              {/* Adventure card */}
+              <div className="lg:col-span-8 rounded-[2rem] overflow-hidden relative group min-h-[300px] md:min-h-[400px] shadow-md border border-zinc-200/50">
+                <img
+                  src={theme.experienceGrid[0].img}
+                  alt={theme.experienceGrid[0].label}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+                />
+                <div className="absolute inset-0 bg-black/35 group-hover:bg-black/25 transition-colors duration-500" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white font-bold tracking-wide uppercase">
+                    {theme.experienceGrid[0].label}
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Other 4 Experience Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+              {theme.experienceGrid.slice(1).map((card, idx) => (
+                <div key={idx} className="rounded-[1.5rem] overflow-hidden relative group aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] shadow-sm border border-zinc-200/50">
+                  <img
+                    src={card.img}
+                    alt={card.label}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-black/35 group-hover:bg-black/25 transition-colors duration-500" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <h3 className="font-serif text-xl sm:text-2xl text-white font-bold tracking-wide uppercase">
+                      {card.label}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
-      </section>
+      )}
 
       {/* Main Content Layout */}
       <section className="py-16 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-20 bg-white">
         
         {/* Left Side: Overview and Day-by-Day Timeline (Span 8) */}
-        <div className="lg:col-span-8 space-y-16">
-          <div className="space-y-6">
-            <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
-              {lang === "FR" ? "Aperçu de l'Itinéraire" : "Trip Overview"}
-            </h3>
-            <p className="text-[14px] md:text-[15px] leading-relaxed text-zinc-600 font-light">
-              {itinerary.overview[lang]}
-            </p>
-            <a 
-              href="#booking-form"
-              className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury hover:bg-[#72202b] shadow-md cursor-pointer mt-4"
-            >
-              {lang === "FR" ? "Réserver ce voyage" : "Book this Journey"} &rarr;
-            </a>
-          </div>
+        <div className="lg:col-span-8 space-y-16" id="itinerary-details">
+          {!theme ? (
+            <>
+              <div className="space-y-6">
+                <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
+                  {lang === "FR" ? "Aperçu de l'Itinéraire" : "Trip Overview"}
+                </h3>
+                <p className="text-[14px] md:text-[15px] leading-relaxed text-zinc-600 font-light">
+                  {itinerary.overview[lang]}
+                </p>
+                <a 
+                  href="#booking-form"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury hover:bg-[#72202b] shadow-md cursor-pointer mt-4"
+                >
+                  {lang === "FR" ? "Réserver ce voyage" : "Book this Journey"} &rarr;
+                </a>
+              </div>
 
-          {/* Destination Showcase Image with animation */}
-          <motion.div 
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="w-full rounded-2xl overflow-hidden border border-zinc-100 shadow-sm"
-          >
-            <img
-              src={itinerary.contentImage}
-              alt={itinerary.title[lang]}
-              className="w-full h-[320px] md:h-[420px] object-cover hover:scale-[1.02] transition-transform duration-700"
-            />
-          </motion.div>
+              {/* Destination Showcase Image with animation */}
+              <motion.div 
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="w-full rounded-2xl overflow-hidden border border-zinc-100 shadow-sm"
+              >
+                <img
+                  src={itinerary.contentImage}
+                  alt={itinerary.title[lang]}
+                  className="w-full h-[320px] md:h-[420px] object-cover hover:scale-[1.02] transition-transform duration-700"
+                />
+              </motion.div>
+            </>
+          ) : null}
+
 
           <div className="space-y-10">
             <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
@@ -701,17 +1024,19 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
         {/* Right Side: Video + Booking Panel (Span 4) */}
         <div className="lg:col-span-4 space-y-6">
 
-          {/* Video Block — full ratio, no cropping */}
-          <div className="w-full rounded-2xl overflow-hidden border border-zinc-200/60 shadow-md bg-black">
-            <video
-              src="https://v1.pinimg.com/videos/iht/expMp4/81/24/b8/8124b8c7cd11c22123a7b75cfabf32fc_720w.mp4"
-              className="w-full h-auto block"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
-          </div>
+          {/* Video Block — only for Marrakech & Sahara Expedition (ID 1) */}
+          {itinerary.id === 1 && (
+            <div className="w-full rounded-2xl overflow-hidden border border-zinc-200/60 shadow-md bg-black">
+              <video
+                src="https://v1.pinimg.com/videos/iht/expMp4/81/24/b8/8124b8c7cd11c22123a7b75cfabf32fc_720w.mp4"
+                className="w-full h-auto block"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            </div>
+          )}
 
           {/* Contact Form Block — sticky only with scroll entrance */}
           <motion.div 

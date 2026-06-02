@@ -11,13 +11,17 @@ export default function GulfHeroScrubber() {
       {/* Render Cloudinary Video Embed Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
         <video
-          src="https://res.cloudinary.com/dmnoikwb9/video/upload/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.mp4"
           className="w-full h-full object-cover"
           autoPlay
           muted
           loop
           playsInline
-        />
+          preload="auto"
+          poster="https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto,f_auto/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.jpg"
+        >
+          <source src="https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto,vc_vp9/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.webm" type="video/webm" />
+          <source src="https://res.cloudinary.com/dmnoikwb9/video/upload/q_auto,vc_h264/Morocco_Cinematic_Video_-_SONY_A7SIII_-_Chema_Balbuena_1080p_h264_kc6dcx.mp4" type="video/mp4" />
+        </video>
       </div>
       
       {/* Cinematic Vignette Gradients */}

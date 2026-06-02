@@ -263,7 +263,7 @@ export default function ItinerariesPage() {
 
                 {/* Booking Deadline Banner */}
                 {tour.promoText && (
-                  <div className="absolute bottom-0 left-0 right-0 bg-brand-gold/90 backdrop-blur-xs text-black text-[8px] font-mono py-1.5 px-3 tracking-wider text-center uppercase font-bold">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#8B2635]/90 backdrop-blur-xs text-[#faf9f5] text-[8px] font-mono py-1.5 px-3 tracking-wider text-center uppercase font-bold">
                     {tour.promoText[lang]}
                   </div>
                 )}
