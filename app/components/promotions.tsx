@@ -89,19 +89,21 @@ export default function Promotions() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
                 
-                {/* Promo Badge */}
-                <div className="absolute top-5 left-5 bg-[#8B2635] text-[#faf9f5] font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full shadow-md">
-                  {deal.tag}
-                </div>
+                {/* Badge container to prevent horizontal overlap on laptop/mobile screens */}
+                <div className="absolute top-5 left-5 right-5 flex flex-col items-start gap-2 z-10 pointer-events-none select-none">
+                  <div className="bg-[#8B2635] text-[#faf9f5] font-mono text-[9px] tracking-widest uppercase font-bold px-3 py-1.5 rounded-full shadow-md">
+                    {deal.tag}
+                  </div>
 
-                <div className={`absolute top-5 right-5 px-3 py-1.5 rounded-full font-mono text-[8px] tracking-wider uppercase font-semibold shadow-md ${
-                  deal.id === 1
-                    ? "bg-[#a8c8e8] text-[#1a3a5c] border border-[#7aaed4]/40"
-                    : deal.id === 2
-                    ? "bg-[#8B2635] text-[#faf9f5] border border-[#8B2635]"
-                    : "bg-[#8fada4] text-[#1a3530] border border-[#6e9990]/40"
-                }`}>
-                  {translate(deal.badge, lang)}
+                  <div className={`px-3 py-1.5 rounded-full font-mono text-[8px] tracking-wider uppercase font-semibold shadow-md ${
+                    deal.id === 1
+                      ? "bg-[#a8c8e8] text-[#1a3a5c] border border-[#7aaed4]/40"
+                      : deal.id === 2
+                      ? "bg-[#8B2635] text-[#faf9f5] border border-[#8B2635]"
+                      : "bg-[#8fada4] text-[#1a3530] border border-[#6e9990]/40"
+                  }`}>
+                    {translate(deal.badge, lang)}
+                  </div>
                 </div>
 
                 {/* Booking Deadline Banner */}
