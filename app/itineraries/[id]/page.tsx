@@ -763,7 +763,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md cursor-pointer"
+                    className="w-full bg-zinc-900 hover:bg-zinc-800 text-white font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-zinc-900 shadow-md cursor-pointer"
                   >
                     {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
                   </button>

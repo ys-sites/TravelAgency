@@ -301,7 +301,7 @@ export default function ItinerariesPage() {
 
                   <Link 
                     href={`/itineraries/${tour.id}`}
-                    className="bg-zinc-900 hover:bg-brand-gold hover:text-black text-white font-semibold text-[10px] tracking-[0.15em] uppercase px-4 py-2.5 rounded-full transition-luxury cursor-pointer shadow-sm"
+                    className="bg-zinc-900 hover:bg-zinc-800 text-white font-semibold text-[10px] tracking-[0.15em] uppercase px-4 py-2.5 rounded-full border border-zinc-900 hover:border-zinc-800 transition-luxury cursor-pointer shadow-sm"
                   >
                     {t.book[lang]}
                   </Link>

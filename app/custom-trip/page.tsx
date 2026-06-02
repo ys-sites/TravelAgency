@@ -220,7 +220,7 @@ export default function CustomTripBuilder() {
             </button>
             <button
               onClick={() => setIsPremium(true)}
-              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${isPremium ? 'bg-brand-gold text-black shadow-lg shadow-brand-gold/10' : 'text-zinc-600 hover:text-zinc-900'}`}
+              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${isPremium ? 'bg-white text-zinc-900 shadow-sm' : isPremium ? 'text-white/60 hover:text-white' : 'text-zinc-600 hover:text-zinc-900'}`}
             >
               {t.premiumTab[lang]}
             </button>
@@ -444,7 +444,7 @@ export default function CustomTripBuilder() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-brand-gold hover:bg-zinc-900 hover:text-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-brand-gold shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className={`w-full font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 ${isPremium ? 'bg-white hover:bg-transparent text-zinc-950 hover:text-white border border-white' : 'bg-zinc-950 hover:bg-transparent text-white hover:text-zinc-950 border border-zinc-950'}`}
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>{isSubmitting ? 'TRANSMITTING...' : t.submitInquiry[lang]}</span>
