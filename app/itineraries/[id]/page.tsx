@@ -47,7 +47,7 @@ interface ItineraryDetail {
 const itinerariesData: Record<string, ItineraryDetail> = {
   "1": {
     id: 1,
-    image: "/images/morocco-sahara-dunes.png",
+    image: "/images/moroco.webp",
     contentImage: "/images/moroco.webp",
     title: { FR: "Expédition Marrakech & Sahara", EN: "Marrakech & Sahara Expedition" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
