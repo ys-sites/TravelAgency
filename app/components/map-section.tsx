@@ -232,7 +232,7 @@ const mapsData: Record<string, {
         pinPos: { x: 400, y: 155 },
         hasLine: true,
         linePath: "M 325 155 L 395 155",
-        path: "M 375 185 C 390 170, 400 155, 410 145 L 430 190 L 380 320 L 350 240 Z",
+        path: "M 375 185 C 390 170, 400 155, 410 145 C 420 165, 430 185, 440 210 C 410 235, 385 220, 375 185 Z",
         highlights: { EN: "Burj Khalifa & Palm Yacht Cruise", FR: "Burj Khalifa & croisière yacht à Palm Jumeirah" },
         description: {
           EN: "Explore the futuristic skyscraper skyline, luxury dune dining, private yacht charters, and golden beach resorts of Dubai.",
@@ -246,7 +246,7 @@ const mapsData: Record<string, {
         pinPos: { x: 310, y: 235 },
         hasLine: true,
         linePath: "M 235 230 L 305 235",
-        path: "M 60 280 C 80 270, 100 260, 120 260 C 160 255, 200 250, 240 250 C 270 240, 290 230, 310 235 C 330 230, 350 210, 375 185 L 350 240 L 380 320 L 450 280 L 380 410 L 140 410 L 140 340 L 60 340 Z",
+        path: "M 60 280 C 80 270, 100 260, 120 260 C 160 255, 200 250, 240 250 C 270 240, 290 230, 310 235 C 330 230, 350 210, 375 185 C 385 220, 410 235, 440 210 L 450 280 L 380 410 L 140 410 L 140 340 L 60 340 Z",
         highlights: { EN: "Sheikh Zayed Grand Mosque & Louvre", FR: "Grande Mosquée Cheikh Zayed & Musée du Louvre" },
         description: {
           EN: "Visit the cultural monuments of the Louvre Abu Dhabi, the spectacular Sheikh Zayed Grand Mosque, and the empty quarter desert.",
@@ -260,7 +260,7 @@ const mapsData: Record<string, {
         pinPos: { x: 445, y: 100 },
         hasLine: true,
         linePath: "M 450 100 L 505 100",
-        path: "M 410 145 C 425 125, 440 100, 450 90 L 465 50 L 485 90 L 490 220 L 450 280 L 380 320 L 420 180 L 430 190 Z",
+        path: "M 410 145 C 425 125, 440 100, 450 90 L 465 50 L 485 90 L 490 220 L 450 280 L 440 210 C 430 185, 420 165, 410 145 Z",
         highlights: { EN: "Hajar Mountains & Sharjah Culture", FR: "Montagnes du Hajar & Musées de Charjah" },
         description: {
           EN: "Trek through the raw mountain valleys of Ras Al Khaimah, view historical museums in Sharjah, and relax on the beaches of Fujairah.",
