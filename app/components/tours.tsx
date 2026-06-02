@@ -184,12 +184,12 @@ export default function Tours() {
   ];
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6 py-20 bg-white text-zinc-900">
+    <div className="max-w-[1200px] mx-auto px-6 py-20 bg-white text-zinc-900" id="itineraries">
       {/* Split Layout Container */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
-        {/* Left Column: Heading & Branding */}
-        <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+        {/* Left Column: Heading & Branding (3-span wide for more space for cards) */}
+        <div className="lg:col-span-3 space-y-6 lg:sticky lg:top-28">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <img 
@@ -203,7 +203,7 @@ export default function Tours() {
             <span className="text-brand-gold font-mono text-[10px] tracking-[0.3em] uppercase block">
               {lang === "FR" ? "Évasions de Prestige" : "Elite Collections"}
             </span>
-            <h2 className="font-serif text-3xl md:text-[38px] font-bold text-zinc-900 tracking-tight uppercase leading-none">
+            <h2 className="font-serif text-3xl font-bold text-zinc-900 tracking-tight uppercase leading-none">
               {lang === "FR" ? "EXPLOREZ DES LIEUX DE RÊVE" : "EXPLORE DREAM PLACES"}
             </h2>
             <p className="text-[13px] leading-relaxed text-zinc-500 font-light">
@@ -214,16 +214,23 @@ export default function Tours() {
             </p>
           </div>
 
-          {/* Call to Action Button & Navigation Controls */}
-          <div className="flex flex-col sm:flex-row lg:flex-col gap-4 pt-4">
+          {/* Call to Action Buttons & Navigation Controls */}
+          <div className="flex flex-col gap-4 pt-4">
             <Link
               href="/custom-trip"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 hover:bg-brand-gold hover:text-black text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury shadow-md cursor-pointer hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-900 hover:bg-brand-gold hover:text-black text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-3.5 transition-luxury shadow-md cursor-pointer hover:scale-105"
             >
-              {lang === "FR" ? "CONSTRUIRE UN VOYAGE" : "BUILD CUSTOM PASSAGE"} &rarr;
+              {lang === "FR" ? "CONSTRUIRE UN VOYAGE" : "BUILD CUSTOM PASSAGE"}
+            </Link>
+
+            <Link
+              href="/itineraries"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-3.5 transition-luxury shadow-sm cursor-pointer hover:scale-105"
+            >
+              {lang === "FR" ? "TOUS LES ITINÉRAIRES" : "SEE ALL ITINERARIES"}
             </Link>
             
-            <div className="flex items-center gap-3 justify-start">
+            <div className="flex items-center gap-3 justify-start pt-2">
               <button
                 onClick={() => scroll("left")}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-800 hover:bg-zinc-900 hover:text-white hover:border-zinc-900 transition-colors shadow-sm cursor-pointer"
@@ -240,8 +247,8 @@ export default function Tours() {
           </div>
         </div>
 
-        {/* Right Column: Sliding Itinerary Cards */}
-        <div className="lg:col-span-8 w-full relative">
+        {/* Right Column: Sliding Itinerary Cards (9-span wide to fit 3 cards exactly) */}
+        <div className="lg:col-span-9 w-full relative">
           <div
             ref={scrollRef}
             className="flex overflow-x-auto gap-6 scrollbar-none snap-x snap-mandatory pb-4 w-full"
@@ -253,7 +260,7 @@ export default function Tours() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                className="group relative flex flex-col justify-end min-w-[280px] sm:min-w-[345px] snap-center rounded-[1.8rem] overflow-hidden p-6 border border-zinc-200/60 shadow-md hover:shadow-xl hover:border-brand-gold transition-luxury h-[480px] cursor-pointer"
+                className="group relative flex flex-col justify-end min-w-[270px] sm:min-w-[272px] lg:min-w-[275px] snap-center rounded-[1.8rem] overflow-hidden p-5 border border-zinc-200/60 shadow-md hover:shadow-xl hover:border-brand-gold transition-luxury h-[440px] cursor-pointer"
               >
                 {/* Full-bleed Image Background */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
@@ -296,15 +303,15 @@ export default function Tours() {
                   <span className="text-[9px] font-mono uppercase font-semibold tracking-[0.2em] text-brand-gold mb-2 block">
                     {tour.category[lang]}
                   </span>
-                  <h3 className="font-serif text-[22px] font-bold text-white tracking-wide leading-tight group-hover:text-brand-gold transition-colors">
+                  <h3 className="font-serif text-[18px] md:text-[20px] font-bold text-white tracking-wide leading-tight group-hover:text-brand-gold transition-colors">
                     {tour.title[lang]}
                   </h3>
-                  <p className="text-[12px] text-white/70 mt-3 leading-relaxed font-light line-clamp-3">
+                  <p className="text-[11px] text-white/70 mt-2.5 leading-relaxed font-light line-clamp-3">
                     {tour.description[lang]}
                   </p>
 
                   {/* Details Row */}
-                  <div className="flex items-center gap-4 py-3.5 border-b border-white/10 text-[11px] text-white/60 font-mono tracking-wider mt-4">
+                  <div className="flex items-center gap-4 py-3 border-b border-white/10 text-[10px] text-white/60 font-mono tracking-wider mt-3.5">
                     <div className="flex items-center gap-1.5">
                       <Calendar className="h-3.5 w-3.5 text-brand-gold" />
                       <span>{tour.days[lang]}</span>
@@ -319,16 +326,16 @@ export default function Tours() {
                   </div>
 
                   {/* Booking Footer */}
-                  <div className="flex items-center justify-between pt-4 mt-2">
+                  <div className="flex items-center justify-between pt-3.5 mt-1.5">
                     <div className="flex flex-col">
-                      <span className="text-[11px] font-mono line-through text-white/40 leading-none mb-1">
+                      <span className="text-[10px] font-mono line-through text-white/40 leading-none mb-1">
                         {tour.oldPrice}
                       </span>
-                      <span className="text-[22px] font-bold text-brand-gold font-heading leading-none">
+                      <span className="text-[20px] font-bold text-brand-gold font-heading leading-none">
                         {tour.price}
                       </span>
                     </div>
-                    <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[11px] tracking-[0.18em] uppercase px-6 py-3 transition-luxury cursor-pointer hover:scale-105 shadow-md">
+                    <Link href={`/itineraries/${tour.id}`} className="rounded-full bg-brand-gold hover:bg-white text-black font-semibold text-[10px] tracking-[0.15em] uppercase px-5 py-2.5 transition-luxury cursor-pointer hover:scale-105 shadow-md">
                       {t.book[lang]}
                     </Link>
                   </div>

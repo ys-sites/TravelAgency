@@ -1,8 +1,12 @@
 'use client';
 
 import { motion } from "motion/react";
+import Link from "next/link";
+import { useLang } from "../context/lang-context";
 
 export default function GulfHeroScrubber() {
+  const { lang } = useLang();
+
   return (
     <div className="relative h-screen w-full bg-black overflow-hidden">
       {/* Render Cloudinary Video Embed Background */}
@@ -20,31 +24,68 @@ export default function GulfHeroScrubber() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-1" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none z-1" />
 
-      {/* Centered Premium Logo */}
+      {/* Centered Premium Logo & Call to Actions */}
       <div className="absolute inset-0 flex items-center justify-center z-10 px-6 select-none pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center max-w-5xl"
+          className="flex flex-col items-center max-w-5xl pointer-events-auto text-center"
         >
           <img
             src="/images/logo.png"
             alt="Majestic Experiences Logo"
-            className="w-[200px] sm:w-[280px] md:w-[360px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
+            className="w-[200px] sm:w-[260px] md:w-[300px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)] mb-8"
           />
+          
+          <span className="text-brand-gold font-mono text-[10px] sm:text-[11px] tracking-[0.35em] uppercase mb-4 block">
+            {lang === "FR" ? "CONCIERGERIE DE VOYAGE DE PRESTIGE" : "PRESTIGE TRAVEL CONCIERGE"}
+          </span>
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white tracking-[0.02em] uppercase leading-tight font-bold max-w-4xl mb-4 drop-shadow-md">
+            {lang === "FR" 
+              ? "Orchestrez Votre Passage Souverain" 
+              : "Orchestrate Your Sovereign Passage"
+            }
+          </h1>
+          <p className="text-white/80 font-body text-[12px] sm:text-sm tracking-wider font-light max-w-2xl mb-8 leading-relaxed">
+            {lang === "FR"
+              ? "Itinéraires sur mesure ultra-luxe, affrètement privé et sanctuaires exclusifs à travers le Golfe et le Maroc."
+              : "Ultra-luxury bespoke itineraries, private charters, and exclusive sanctuary escapes across the Gulf and Morocco."
+            }
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md mx-auto">
+            <a
+              href="#portfolios"
+              className="w-full sm:w-auto border border-brand-gold bg-brand-gold hover:bg-white hover:border-white text-black font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury rounded-full shadow-md hover:scale-105 inline-block text-center min-w-[200px] cursor-pointer"
+            >
+              {lang === "FR" ? "Découvrir la Collection" : "Discover Portfolios"}
+            </a>
+            <Link
+              href="/custom-trip"
+              className="w-full sm:w-auto border border-white/30 bg-white/10 backdrop-blur-md hover:bg-white hover:text-black hover:border-white text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury rounded-full shadow-md hover:scale-105 inline-block text-center min-w-[200px] cursor-pointer"
+            >
+              {lang === "FR" ? "Voyage sur Mesure" : "Custom Trip"}
+            </Link>
+          </div>
         </motion.div>
       </div>
 
-      {/* Subtle Scroll Down Prompt */}
+      {/* Highly Visible Mouse Scroll Down Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center z-10 text-white/50 pointer-events-none"
+        animate={{ opacity: 0.95 }}
+        transition={{ delay: 2.2, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-10 text-white/80 pointer-events-none"
       >
-        <div className="w-[1px] h-10 bg-white/20 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-brand-gold animate-bounce" />
+        <span className="font-mono text-[9px] tracking-[0.25em] uppercase mb-3">Scroll to Explore</span>
+        <div className="w-[28px] h-[48px] rounded-full border-2 border-white/40 flex justify-center p-1.5 shadow-md">
+          <motion.div
+            animate={{ y: [0, 16, 0] }}
+            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+            className="w-1.5 h-1.5 rounded-full bg-brand-gold shadow-sm"
+          />
         </div>
       </motion.div>
     </div>
