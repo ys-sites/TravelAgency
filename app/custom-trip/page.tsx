@@ -495,6 +495,37 @@ export default function CustomTripBuilder() {
                     </div>
                   </div>
 
+                  {/* Nights Duration Slider */}
+                  <div className={`pt-4 border-t space-y-3 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
+                    <div className="flex items-center justify-between">
+                      <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
+                        {lang === "FR" ? "DURÉE EN NUITS" : "NIGHTS DURATION"}
+                      </label>
+                      <span className={`text-[13px] font-bold font-heading tabular-nums ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
+                        {nights} {lang === "FR" ? "Nuits" : "Nights"}
+                      </span>
+                    </div>
+                    <div className="relative pt-1">
+                      <input
+                        type="range"
+                        min={5}
+                        max={30}
+                        step={1}
+                        value={nights}
+                        onChange={(e) => setNights(Number(e.target.value))}
+                        className="w-full h-[3px] appearance-none rounded-full cursor-pointer"
+                        style={{
+                          background: `linear-gradient(to right, ${isPremium ? '#C5A880' : '#1a1a1a'} ${((nights - 5) / 25) * 100}%, ${isPremium ? 'rgba(255,255,255,0.12)' : '#e4e4e7'} ${((nights - 5) / 25) * 100}%)`
+                        }}
+                      />
+                      <div className={`flex justify-between mt-2 font-mono text-[9px] ${isPremium ? 'text-white/30' : 'text-zinc-400'}`}>
+                        <span>5</span>
+                        <span>15</span>
+                        <span>30</span>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Selected Itineraries / Experiences */}
                   {selectedDests.length > 0 && (
                     <div className={`pt-4 border-t space-y-2 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
