@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Users, MapPin } from "lucide-react";
 import { motion } from "motion/react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";

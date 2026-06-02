@@ -3,11 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { 
-  Calendar, 
-  Users, 
-  MapPin 
-} from "lucide-react";
 import { useLang } from "../context/lang-context";
 
 interface TourCard {

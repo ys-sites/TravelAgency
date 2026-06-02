@@ -16,8 +16,8 @@ export default function Navbar() {
   const { lang, setLang } = useLang();
 
   return (
-    <nav className="absolute top-6 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1100px] -translate-x-1/2">
-      <div className="glass-nav flex h-[100px] md:h-[118px] items-center justify-between rounded-full px-8 py-3">
+    <nav className="absolute top-3 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1100px] -translate-x-1/2">
+      <div className="glass-nav flex h-[76px] sm:h-[90px] md:h-[102px] items-center justify-between rounded-full px-8 py-0.5">
         {/* Logo and Company Name */}
         <Link href="/" className="flex items-center gap-3 md:gap-4 cursor-pointer decoration-none group">
           <img 

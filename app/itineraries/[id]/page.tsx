@@ -2,7 +2,7 @@
 
 import React, { use, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Users, Shield, CheckCircle, Mail, MapPin, Hotel } from "lucide-react";
+import { ArrowLeft, Shield, CheckCircle, Hotel } from "lucide-react";
 import { motion } from "motion/react";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
