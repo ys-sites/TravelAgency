@@ -46,7 +46,7 @@ export default function MapSection() {
     <div className="relative max-w-[1200px] mx-auto my-20 px-8 py-16 rounded-[2.5rem] overflow-hidden bg-zinc-50 border border-zinc-200/80 shadow-card-soft grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-zinc-900">
       {/* Sepia landscape background mask */}
       <img
-        src="/images/morocco-sahara-dunes.png"
+        src="/images/moroco.webp"
         className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none"
         alt="Map background"
       />
@@ -88,7 +88,7 @@ export default function MapSection() {
       <div className="lg:col-span-7 relative flex items-center justify-center z-10 min-h-[400px] w-full rounded-[2rem] border border-zinc-200 overflow-hidden shadow-inner">
         {/* Map image base */}
         <img
-          src="/images/morocco-sahara-dunes.png"
+          src="/images/moroco.webp"
           className="absolute inset-0 w-full h-full object-cover brightness-75 contrast-[1.05]"
           alt={t.title[lang]}
         />

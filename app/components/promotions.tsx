@@ -24,7 +24,7 @@ interface DealCard {
 const dealsList: DealCard[] = [
   {
     id: 1,
-    image: "/images/morocco-marrakech-riad.png",
+    image: "/images/moroco.webp",
     badge: { FR: "OFFRE SAISONNIÈRE", EN: "SEASONAL PRESTIGE" },
     title: { FR: "Évasion Marrakech & Sahara", EN: "Marrakech & Sahara Escape" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },

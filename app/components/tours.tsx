@@ -30,7 +30,7 @@ interface TourCard {
 const toursList: TourCard[] = [
   {
     id: 1,
-    image: "/images/morocco-sahara-dunes.png",
+    image: "/images/moroco.webp",
     category: {
       FR: "désert du sahara - hébergement de riad - survol en hélicoptère",
       EN: "sahara desert - riad buyouts - helicopter transfers"
