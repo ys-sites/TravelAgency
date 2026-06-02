@@ -756,111 +756,158 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
               {/* Map on the left (col-span-7) */}
               <div className="lg:col-span-7 relative flex items-center justify-center min-h-[420px] w-full rounded-[2rem] overflow-hidden">
                 {theme.country === "Morocco" ? (
-                  /* ── Illustrated Morocco Map ── */
-                  <div className="relative w-full min-h-[420px] bg-[#f7f0e6] rounded-[2rem] border border-[#e5d8c4] overflow-hidden shadow-inner">
-                    {/* Watercolor ink-blot corners */}
-                    <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 700 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-                      {/* Top-left ink blot */}
-                      <ellipse cx="30" cy="30" rx="80" ry="55" fill="#c8a97e" opacity="0.18" />
-                      <ellipse cx="10" cy="15" rx="50" ry="35" fill="#b8935c" opacity="0.13" />
-                      <ellipse cx="60" cy="5" rx="40" ry="28" fill="#d4b896" opacity="0.12" />
-                      {/* Top-right ink blot */}
-                      <ellipse cx="680" cy="25" rx="70" ry="50" fill="#c8a97e" opacity="0.16" />
-                      <ellipse cx="700" cy="10" rx="45" ry="30" fill="#b8935c" opacity="0.12" />
-                      {/* Bottom-left ink blot */}
-                      <ellipse cx="25" cy="400" rx="75" ry="45" fill="#c8a97e" opacity="0.15" />
-                      <ellipse cx="5" cy="420" rx="50" ry="32" fill="#b8935c" opacity="0.11" />
-                      {/* Bottom-right ink blot */}
-                      <ellipse cx="675" cy="405" rx="70" ry="44" fill="#c8a97e" opacity="0.17" />
-                      <ellipse cx="700" cy="420" rx="48" ry="30" fill="#b8935c" opacity="0.12" />
+                  /* ── Illustrated Morocco Map — exact reference style ── */
+                  <div className="relative w-full min-h-[420px] bg-[#f2ece0] rounded-[2rem] border border-[#e0d4bc] overflow-hidden shadow-inner">
+                    <svg
+                      className="absolute inset-0 w-full h-full"
+                      viewBox="0 0 660 420"
+                      preserveAspectRatio="xMidYMid meet"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      {/* ── DEFS: diagonal hatch pattern for Atlantic coast ── */}
+                      <defs>
+                        <pattern id="atl-hatch" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
+                          <line x1="0" y1="0" x2="0" y2="7" stroke="#a8c4d8" strokeWidth="1.1" opacity="0.55"/>
+                        </pattern>
+                        <clipPath id="main-clip">
+                          <path d="M 200,38 C 230,28 270,25 310,30 C 345,34 370,42 395,48 C 420,54 438,65 445,82 C 452,100 448,118 440,138 C 432,158 428,172 435,192 C 441,210 438,228 428,244 C 418,260 400,272 378,280 C 356,287 330,288 308,284 C 286,280 264,270 245,258 C 226,246 208,230 192,215 C 176,200 162,182 152,162 C 142,142 136,118 136,96 C 136,74 148,56 165,46 Z"/>
+                        </clipPath>
+                        <clipPath id="w-sahara-clip">
+                          <path d="M 100,228 C 118,220 138,218 152,228 C 166,238 172,255 174,272 C 176,290 170,315 160,335 C 150,355 134,370 116,374 C 98,378 80,368 70,350 C 60,332 62,308 68,288 C 74,268 82,236 100,228 Z"/>
+                        </clipPath>
+                      </defs>
 
-                      {/* Morocco shape — simplified SVG path (roughly to scale within 700×420) */}
-                      {/* Main land mass */}
+                      {/* ── WATERCOLOR CORNER BLOBS ── */}
+                      {/* Top-right large blob */}
+                      <ellipse cx="640" cy="30" rx="90" ry="65" fill="#b8895a" opacity="0.30"/>
+                      <ellipse cx="660" cy="10" rx="60" ry="42" fill="#c89860" opacity="0.22"/>
+                      <ellipse cx="610" cy="5"  rx="45" ry="28" fill="#d4aa72" opacity="0.18"/>
+                      <ellipse cx="650" cy="55" rx="50" ry="38" fill="#a07840" opacity="0.15"/>
+
+                      {/* Bottom-left large blob */}
+                      <ellipse cx="28"  cy="400" rx="85" ry="52" fill="#b8895a" opacity="0.28"/>
+                      <ellipse cx="5"   cy="420" rx="58" ry="40" fill="#c89860" opacity="0.20"/>
+                      <ellipse cx="55"  cy="415" rx="42" ry="30" fill="#d4aa72" opacity="0.16"/>
+                      <ellipse cx="10"  cy="385" rx="40" ry="28" fill="#a07840" opacity="0.14"/>
+
+                      {/* Subtle small blobs top-left & bottom-right */}
+                      <ellipse cx="20"  cy="22"  rx="38" ry="26" fill="#c09060" opacity="0.13"/>
+                      <ellipse cx="640" cy="408" rx="42" ry="28" fill="#c09060" opacity="0.12"/>
+
+                      {/* ── ATLANTIC COAST HATCHED ZONE ── */}
+                      {/* Hatched blob shape mirroring left coast of Morocco */}
                       <path
-                        d="M 160,40 L 320,30 L 360,48 L 400,42 L 430,60 L 440,85 L 420,110 L 410,140 L 430,165 L 435,195 L 420,220 L 400,245 L 370,265 L 340,280 L 300,285 L 265,275 L 235,260 L 210,240 L 185,210 L 160,185 L 140,155 L 125,125 L 120,95 L 135,65 Z"
-                        fill="#d4c4a8" stroke="#b8a47c" strokeWidth="1.5" opacity="0.75"
+                        d="M 90,80 C 110,65 148,58 165,66 C 152,78 143,96 140,118 C 137,140 140,162 152,180 C 138,188 118,200 100,218 C 82,200 72,178 70,154 C 68,130 72,96 90,80 Z"
+                        fill="url(#atl-hatch)"
+                        stroke="#8ab2cc"
+                        strokeWidth="0.5"
+                        opacity="0.85"
                       />
-                      {/* Western Sahara region — lighter */}
+
+                      {/* ── MAIN MOROCCO LAND MASS ── */}
                       <path
-                        d="M 110,185 L 140,185 L 160,210 L 175,240 L 180,280 L 170,320 L 155,350 L 130,370 L 100,375 L 80,355 L 70,320 L 75,280 L 85,240 L 95,210 Z"
-                        fill="#e8d8bc" stroke="#c8b490" strokeWidth="1" opacity="0.65"
+                        d="M 200,38 C 230,28 270,25 310,30 C 345,34 370,42 395,48 C 420,54 438,65 445,82 C 452,100 448,118 440,138 C 432,158 428,172 435,192 C 441,210 438,228 428,244 C 418,260 400,272 378,280 C 356,287 330,288 308,284 C 286,280 264,270 245,258 C 226,246 208,230 192,215 C 176,200 162,182 152,162 C 142,142 136,118 136,96 C 136,74 148,56 165,46 Z"
+                        fill="#cbbfa0"
+                        stroke="#b0a080"
+                        strokeWidth="1.2"
+                        opacity="0.90"
                       />
-                      {/* Sahara / south region — warm sand colour */}
+
+                      {/* ── WESTERN SAHARA BLOB ── */}
                       <path
-                        d="M 175,260 L 235,265 L 300,290 L 360,295 L 410,280 L 440,260 L 460,290 L 455,330 L 440,360 L 400,375 L 350,380 L 300,378 L 255,370 L 210,355 L 185,330 L 175,300 Z"
-                        fill="#e0cca8" stroke="#c8b490" strokeWidth="1" opacity="0.70"
+                        d="M 100,228 C 118,220 138,218 152,228 C 166,238 172,255 174,272 C 176,290 170,315 160,335 C 150,355 134,370 116,374 C 98,378 80,368 70,350 C 60,332 62,308 68,288 C 74,268 82,236 100,228 Z"
+                        fill="#d8ccb0"
+                        stroke="#b8aa88"
+                        strokeWidth="1"
+                        opacity="0.82"
                       />
-                      {/* Atlas mountains hatching hint */}
-                      <path d="M 200,140 Q 240,120 280,145 Q 320,130 355,150" stroke="#a89070" strokeWidth="1.5" fill="none" strokeDasharray="4 3" opacity="0.5"/>
-                      <path d="M 210,155 Q 250,140 290,158 Q 330,145 365,162" stroke="#a89070" strokeWidth="1" fill="none" strokeDasharray="3 3" opacity="0.35"/>
 
-                      {/* Dotted route lines */}
-                      <path d="M 230,190 Q 275,195 310,220 Q 355,245 395,235" stroke="#C5A880" strokeWidth="1.2" fill="none" strokeDasharray="5 4" opacity="0.7"/>
-                      <path d="M 310,220 Q 340,280 360,295" stroke="#C5A880" strokeWidth="1.2" fill="none" strokeDasharray="5 4" opacity="0.6"/>
+                      {/* ── SAHARA BLOB (bottom, large) ── */}
+                      <path
+                        d="M 162,300 C 188,288 222,285 258,288 C 295,291 335,296 372,296 C 408,296 438,288 455,296 C 472,304 472,322 465,342 C 458,362 440,378 412,386 C 384,394 348,396 315,394 C 282,392 248,385 218,372 C 188,359 165,340 158,320 C 152,305 158,305 162,300 Z"
+                        fill="#d4c8a8"
+                        stroke="#b8aa88"
+                        strokeWidth="1"
+                        opacity="0.85"
+                      />
 
-                      {/* Ocean wave hint lines */}
-                      <path d="M 30,150 Q 70,145 90,155 Q 60,162 30,158 Z" fill="none" stroke="#a0b8d0" strokeWidth="1" opacity="0.3"/>
-                      <path d="M 20,180 Q 60,174 85,183 Q 58,191 22,188 Z" fill="none" stroke="#a0b8d0" strokeWidth="1" opacity="0.25"/>
+                      {/* ── DOTTED ROUTE LINES ── */}
+                      {/* Casablanca → Marrakech → Aït Benhaddou → Merzouga */}
+                      <path
+                        d="M 215,148 Q 245,168 268,188 Q 330,230 358,252 Q 385,262 410,258"
+                        stroke="#b89050"
+                        strokeWidth="1.3"
+                        fill="none"
+                        strokeDasharray="5 4"
+                        opacity="0.75"
+                      />
 
-                      {/* Ocean tint */}
-                      <rect x="0" y="60" width="115" height="300" fill="#c8dce8" opacity="0.12" />
-
-                      {/* City dots */}
-                      {/* Marrakech */}
-                      <circle cx="230" cy="190" r="5" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
-                      <text x="237" y="186" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Marrakech</text>
-                      <text x="237" y="196" fontSize="7.5" fontFamily="serif" fill="#8B6A3E" opacity="0.8">&amp; The Plains</text>
+                      {/* ── CITY DOTS & LABELS ── */}
+                      {/* Fès & The North */}
+                      <circle cx="330" cy="105" r="5" fill="#c4924a" stroke="#8B6A2E" strokeWidth="1.2"/>
+                      <text x="340" y="100" fontSize="10" fontFamily="Georgia,serif" fill="#5a3a12" fontWeight="700">Fès &amp; The North</text>
 
                       {/* Casablanca */}
-                      <circle cx="185" cy="148" r="4.5" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
-                      <text x="192" y="145" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Casablanca</text>
+                      <circle cx="213" cy="152" r="5" fill="#c4924a" stroke="#8B6A2E" strokeWidth="1.2"/>
+                      <text x="222" y="148" fontSize="10" fontFamily="Georgia,serif" fill="#5a3a12" fontWeight="700">Casablanca</text>
 
-                      {/* The North / Fez */}
-                      <circle cx="295" cy="85" r="4.5" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
-                      <text x="302" y="80" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Fès &amp; The North</text>
-
-                      {/* Merzouga / Sahara */}
-                      <circle cx="370" cy="260" r="5" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
-                      <text x="377" y="256" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Merzouga</text>
-                      <text x="377" y="267" fontSize="7.5" fontFamily="serif" fill="#8B6A3E" opacity="0.8">(Sahara)</text>
-
-                      {/* Agadir */}
-                      <circle cx="160" cy="240" r="4" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
-                      <text x="100" y="238" fontSize="9" fontFamily="serif" fill="#5c3d1a" fontWeight="600" letterSpacing="0.3">Agadir</text>
+                      {/* Marrakech */}
+                      <circle cx="268" cy="192" r="5.5" fill="#c4924a" stroke="#8B6A2E" strokeWidth="1.3"/>
+                      <text x="276" y="187" fontSize="10.5" fontFamily="Georgia,serif" fill="#5a3a12" fontWeight="700">Marrakech</text>
+                      <text x="276" y="199" fontSize="8" fontFamily="Georgia,serif" fill="#8B6A2E" opacity="0.85">&amp; The Plains</text>
 
                       {/* Aït Benhaddou */}
-                      <circle cx="308" cy="225" r="4" fill="#C5A880" stroke="#8B6A3E" strokeWidth="1.2"/>
-                      <text x="315" y="221" fontSize="8" fontFamily="serif" fill="#5c3d1a" fontWeight="500">Aït Benhaddou</text>
+                      <circle cx="357" cy="235" r="4.5" fill="#c4924a" stroke="#8B6A2E" strokeWidth="1.2"/>
+                      <text x="365" y="231" fontSize="9" fontFamily="Georgia,serif" fill="#5a3a12" fontWeight="600">Aït Benhaddou</text>
 
-                      {/* Region Labels */}
-                      <text x="32" y="120" fontSize="10" fontFamily="serif" fill="#7a9bb5" opacity="0.75" fontStyle="italic" letterSpacing="0.5">North Atlantic</text>
-                      <text x="38" y="132" fontSize="10" fontFamily="serif" fill="#7a9bb5" opacity="0.75" fontStyle="italic">Ocean</text>
+                      {/* Merzouga */}
+                      <circle cx="408" cy="260" r="5" fill="#c4924a" stroke="#8B6A2E" strokeWidth="1.2"/>
+                      <text x="416" y="255" fontSize="10" fontFamily="Georgia,serif" fill="#5a3a12" fontWeight="700">Merzouga</text>
+                      <text x="416" y="267" fontSize="8" fontFamily="Georgia,serif" fill="#8B6A2E" opacity="0.85">(Sahara)</text>
 
-                      <text x="270" y="55" fontSize="10.5" fontFamily="serif" fill="#9B7A4A" opacity="0.85" fontWeight="600" letterSpacing="0.4">The North</text>
-                      <text x="195" y="170" fontSize="9.5" fontFamily="serif" fill="#9B7A4A" opacity="0.75" fontWeight="500" letterSpacing="0.3">The Atlas</text>
-                      <text x="340" y="340" fontSize="11" fontFamily="serif" fill="#9B7A4A" opacity="0.80" fontWeight="600" letterSpacing="0.6">Sahara</text>
-                      <text x="108" y="290" fontSize="9" fontFamily="serif" fill="#9B7A4A" opacity="0.65" fontStyle="italic">Western</text>
-                      <text x="105" y="300" fontSize="9" fontFamily="serif" fill="#9B7A4A" opacity="0.65" fontStyle="italic">Sahara</text>
+                      {/* Agadir */}
+                      <circle cx="152" cy="248" r="4.5" fill="#c4924a" stroke="#8B6A2E" strokeWidth="1.2"/>
+                      <text x="90" y="245" fontSize="10" fontFamily="Georgia,serif" fill="#5a3a12" fontWeight="700">Agadir</text>
 
-                      {/* Compass rose — minimal */}
-                      <g transform="translate(490,345)">
-                        <circle cx="0" cy="0" r="18" fill="none" stroke="#c8b080" strokeWidth="1" opacity="0.5"/>
-                        <text x="-3.5" y="-6" fontSize="8" fontFamily="serif" fill="#9B7A4A" opacity="0.8">N</text>
-                        <path d="M0,-14 L2,-5 L0,-8 L-2,-5 Z" fill="#9B7A4A" opacity="0.7"/>
-                        <path d="M0,14 L2,5 L0,8 L-2,5 Z" fill="#c8b080" opacity="0.5"/>
-                        <path d="M14,0 L5,2 L8,0 L5,-2 Z" fill="#c8b080" opacity="0.5"/>
-                        <path d="M-14,0 L-5,2 L-8,0 L-5,-2 Z" fill="#c8b080" opacity="0.5"/>
+                      {/* ── REGION LABELS ── */}
+                      {/* The North */}
+                      <text x="290" y="62" fontSize="11" fontFamily="Georgia,serif" fill="#8a7050" opacity="0.90" fontWeight="600" letterSpacing="0.5">The North</text>
+
+                      {/* North Atlantic Ocean — blue italic left side */}
+                      <text x="28" y="128" fontSize="9.5" fontFamily="Georgia,serif" fill="#7090a8" opacity="0.85" fontStyle="italic">North Atlantic</text>
+                      <text x="40" y="141" fontSize="9.5" fontFamily="Georgia,serif" fill="#7090a8" opacity="0.85" fontStyle="italic">Ocean</text>
+
+                      {/* The Atlas — italic inside land mass */}
+                      <text x="240" y="165" fontSize="9" fontFamily="Georgia,serif" fill="#7a6040" opacity="0.70" fontStyle="italic">The Atlas</text>
+
+                      {/* Western Sahara */}
+                      <text x="74" y="295" fontSize="8.5" fontFamily="Georgia,serif" fill="#7a6840" opacity="0.70" fontStyle="italic">Western</text>
+                      <text x="76" y="307" fontSize="8.5" fontFamily="Georgia,serif" fill="#7a6840" opacity="0.70" fontStyle="italic">Sahara</text>
+
+                      {/* Sahara */}
+                      <text x="268" y="348" fontSize="14" fontFamily="Georgia,serif" fill="#8a7050" opacity="0.82" fontWeight="600" letterSpacing="1">Sahara</text>
+
+                      {/* ── COMPASS ROSE ── */}
+                      <g transform="translate(562,345)">
+                        <circle cx="0" cy="0" r="20" fill="#f2ece0" stroke="#c8ae80" strokeWidth="1.2" opacity="0.80"/>
+                        <text x="-3" y="-8" fontSize="8" fontFamily="Georgia,serif" fill="#7a5e30" opacity="0.90" fontWeight="700">N</text>
+                        <path d="M0,-16 L3,-6 L0,-10 L-3,-6 Z" fill="#7a5e30" opacity="0.80"/>
+                        <path d="M0,16 L3,6 L0,10 L-3,6 Z" fill="#c8b080" opacity="0.50"/>
+                        <line x1="0" y1="-16" x2="0" y2="16" stroke="#c8b080" strokeWidth="0.5" opacity="0.30"/>
+                        <line x1="-16" y1="0" x2="16" y2="0" stroke="#c8b080" strokeWidth="0.5" opacity="0.30"/>
                       </g>
 
-                      {/* Scale bar */}
-                      <g transform="translate(108,378)">
-                        <line x1="0" y1="0" x2="60" y2="0" stroke="#9B7A4A" strokeWidth="1.2" opacity="0.55"/>
-                        <line x1="0" y1="-3" x2="0" y2="3" stroke="#9B7A4A" strokeWidth="1" opacity="0.55"/>
-                        <line x1="60" y1="-3" x2="60" y2="3" stroke="#9B7A4A" strokeWidth="1" opacity="0.55"/>
-                        <text x="18" y="-5" fontSize="7" fontFamily="serif" fill="#9B7A4A" opacity="0.6">~300 km</text>
+                      {/* ── SCALE BAR ── */}
+                      <g transform="translate(115,393)">
+                        <rect x="0" y="-2" width="70" height="4" rx="2" fill="#c8b080" opacity="0.35"/>
+                        <rect x="0" y="-2" width="35" height="4" rx="2" fill="#c8b080" opacity="0.55"/>
+                        <line x1="0" y1="-5" x2="0" y2="5" stroke="#8a7050" strokeWidth="1" opacity="0.55"/>
+                        <line x1="70" y1="-5" x2="70" y2="5" stroke="#8a7050" strokeWidth="1" opacity="0.55"/>
+                        <text x="18" y="-7" fontSize="7.5" fontFamily="Georgia,serif" fill="#8a7050" opacity="0.75">~300 km</text>
                       </g>
                     </svg>
                   </div>
+
                 ) : (
                   /* ── Photo + Pins Map (all other destinations) ── */
                   <div className="relative flex items-center justify-center min-h-[400px] w-full rounded-[2rem] border border-zinc-200/80 overflow-hidden shadow-inner bg-white">
