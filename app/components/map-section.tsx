@@ -204,17 +204,17 @@ const mapsData: Record<string, {
     oceanLabel: { FR: "Golfe Persique", EN: "Persian Gulf" },
     oceanLabelPos: { x: 180, y: 110 },
     
-    landPath: "M 40 260 C 60 250, 100 240, 120 240 C 150 245, 180 235, 200 235 C 230 230, 260 220, 280 220 C 295 210, 310 205, 315 215 C 325 220, 345 200, 365 175 C 380 155, 390 145, 400 135 C 415 115, 430 95, 450 75 L 465 50 L 480 90 L 485 170 L 490 220 L 450 280 L 380 410 L 70 380 Z",
-    spainLandPath: "M 0 480 L 0 250 L 15 240 L 48 245 L 40 260 L 70 380 L 380 410 L 450 280 L 420 380 L 400 480 L 0 480 Z",
+    landPath: "M 60 280 C 80 270, 100 260, 120 260 C 160 255, 200 250, 240 250 C 270 240, 290 230, 310 235 C 330 230, 350 210, 375 185 C 390 170, 400 155, 410 145 C 425 125, 440 100, 450 90 L 465 50 L 485 90 L 490 220 L 450 280 L 380 410 L 140 410 L 140 340 L 60 340 Z",
+    spainLandPath: "M 0 480 L 0 250 L 35 250 L 68 255 L 60 280 L 60 340 L 140 340 L 140 410 L 380 410 L 450 280 L 420 380 L 400 480 L 0 480 Z",
     spainLabel: { FR: "ARABIE SAOUDITE", EN: "SAUDI ARABIA" },
     spainLabelPos: { x: 120, y: 440 },
     
     extraLandPaths: [
       { path: "M 450 280 L 490 220 L 520 230 L 530 350 L 480 440 L 380 410 Z" }, // Oman Mainland
       { path: "M 15 240 C 10 200, 15 170, 25 160 C 35 150, 42 165, 40 195 C 38 215, 45 235, 48 245 Z" }, // Qatar Peninsula
-      { path: "M 100 225 C 95 220, 110 215, 115 222 C 112 228, 103 230, 100 225 Z" }, // Sir Baniyas
-      { path: "M 180 220 C 175 218, 195 212, 198 218 C 190 224, 182 225, 180 220 Z" }, // Marawah
-      { path: "M 230 215 C 225 212, 245 208, 248 214 C 240 220, 232 218, 230 215 Z" }, // Abu Al Abyad
+      { path: "M 110 245 C 105 240, 120 235, 125 242 C 122 248, 113 250, 110 245 Z" }, // Sir Baniyas
+      { path: "M 190 238 C 185 236, 205 230, 208 236 C 200 242, 192 243, 190 238 Z" }, // Marawah
+      { path: "M 245 242 C 240 239, 260 235, 263 241 C 255 247, 247 245, 245 242 Z" }, // Abu Al Abyad
       { path: "M 465 50 L 472 25 L 480 20 L 488 35 L 480 90 Z" } // Musandam (Oman exclave)
     ],
     extraLabels: [
@@ -228,11 +228,11 @@ const mapsData: Record<string, {
       {
         id: "dubai",
         name: { EN: "Dubai", FR: "Dubaï" },
-        labelPos: { x: 320, y: 140, align: "end" },
-        pinPos: { x: 395, y: 140 },
+        labelPos: { x: 320, y: 155, align: "end" },
+        pinPos: { x: 400, y: 155 },
         hasLine: true,
-        linePath: "M 325 140 L 390 140",
-        path: "M 365 175 C 380 155, 390 145, 400 135 L 420 180 L 370 320 L 340 230 Z",
+        linePath: "M 325 155 L 395 155",
+        path: "M 375 185 C 390 170, 400 155, 410 145 L 430 190 L 380 320 L 350 240 Z",
         highlights: { EN: "Burj Khalifa & Palm Yacht Cruise", FR: "Burj Khalifa & croisière yacht à Palm Jumeirah" },
         description: {
           EN: "Explore the futuristic skyscraper skyline, luxury dune dining, private yacht charters, and golden beach resorts of Dubai.",
@@ -242,11 +242,11 @@ const mapsData: Record<string, {
       {
         id: "abu-dhabi",
         name: { EN: "Abu Dhabi", FR: "Abou Dabi" },
-        labelPos: { x: 230, y: 220, align: "end" },
-        pinPos: { x: 310, y: 210 },
+        labelPos: { x: 230, y: 230, align: "end" },
+        pinPos: { x: 310, y: 235 },
         hasLine: true,
-        linePath: "M 235 220 L 305 212",
-        path: "M 40 260 C 60 250, 100 240, 120 240 C 150 245, 180 235, 200 235 C 230 230, 260 220, 280 220 C 295 210, 310 205, 315 215 C 325 220, 345 200, 365 175 L 340 230 L 370 320 L 450 280 L 380 410 L 70 380 Z",
+        linePath: "M 235 230 L 305 235",
+        path: "M 60 280 C 80 270, 100 260, 120 260 C 160 255, 200 250, 240 250 C 270 240, 290 230, 310 235 C 330 230, 350 210, 375 185 L 350 240 L 380 320 L 450 280 L 380 410 L 140 410 L 140 340 L 60 340 Z",
         highlights: { EN: "Sheikh Zayed Grand Mosque & Louvre", FR: "Grande Mosquée Cheikh Zayed & Musée du Louvre" },
         description: {
           EN: "Visit the cultural monuments of the Louvre Abu Dhabi, the spectacular Sheikh Zayed Grand Mosque, and the empty quarter desert.",
@@ -256,11 +256,11 @@ const mapsData: Record<string, {
       {
         id: "northern-emirates",
         name: { EN: "Northern Emirates", FR: "Émirats du Nord" },
-        labelPos: { x: 510, y: 90, align: "start" },
-        pinPos: { x: 445, y: 85 },
+        labelPos: { x: 510, y: 100, align: "start" },
+        pinPos: { x: 445, y: 100 },
         hasLine: true,
-        linePath: "M 450 85 L 505 90",
-        path: "M 400 135 C 415 115, 430 95, 450 75 L 465 50 L 480 90 L 485 170 L 490 220 L 450 280 L 370 320 L 420 180 Z",
+        linePath: "M 450 100 L 505 100",
+        path: "M 410 145 C 425 125, 440 100, 450 90 L 465 50 L 485 90 L 490 220 L 450 280 L 380 320 L 420 180 L 430 190 Z",
         highlights: { EN: "Hajar Mountains & Sharjah Culture", FR: "Montagnes du Hajar & Musées de Charjah" },
         description: {
           EN: "Trek through the raw mountain valleys of Ras Al Khaimah, view historical museums in Sharjah, and relax on the beaches of Fujairah.",
