@@ -439,6 +439,7 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
               )}
             </div>
           )}
+        </div>
 
       </section>
 
