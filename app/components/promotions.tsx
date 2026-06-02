@@ -144,7 +144,7 @@ export default function Promotions() {
                       {deal.oldPrice}
                     </span>
                     <span className="text-[18px] font-bold text-zinc-900 font-heading leading-none">
-                      {deal.newPrice} <span className="text-[9px] font-mono text-zinc-400">CAD / pers.</span>
+                      {deal.newPrice} <span className="text-[9px] font-mono text-zinc-400">{lang === "FR" ? "CAD / pers." : "CAD / guest"}</span>
                     </span>
                   </div>
 

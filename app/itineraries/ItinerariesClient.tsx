@@ -126,7 +126,7 @@ export default function ItinerariesClient() {
                       {tour.oldPrice}
                     </span>
                     <span className="text-[17px] font-bold text-zinc-900 font-heading leading-none">
-                      {tour.price} <span className="text-[9px] font-mono text-zinc-400">CAD / pers.</span>
+                      {tour.price} <span className="text-[9px] font-mono text-zinc-400">{lang === "FR" ? "CAD / pers." : "CAD / guest"}</span>
                     </span>
                   </div>
 
