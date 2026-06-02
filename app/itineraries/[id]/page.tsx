@@ -2,13 +2,25 @@
 
 import React, { use, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Users, Shield, CheckCircle, Mail, MapPin } from "lucide-react";
+import { ArrowLeft, Calendar, Users, Shield, CheckCircle, Mail, MapPin, Hotel, Compass } from "lucide-react";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import { useLang } from "../../context/lang-context";
 
 interface DayPlan {
   day: number;
+  title: { FR: string; EN: string };
+  desc: { FR: string; EN: string };
+}
+
+interface HotelDetail {
+  name: string;
+  stars: number;
+  desc: { FR: string; EN: string };
+  link: string;
+}
+
+interface ActivityDetail {
   title: { FR: string; EN: string };
   desc: { FR: string; EN: string };
 }
@@ -21,6 +33,14 @@ interface ItineraryDetail {
   cost: string;
   overview: { FR: string; EN: string };
   timeline: DayPlan[];
+  inclusions: { FR: string[]; EN: string[] };
+  exclusions: { FR: string[]; EN: string[] };
+  options: {
+    FR: { name: string; price: string }[];
+    EN: { name: string; price: string }[];
+  };
+  hotels: HotelDetail[];
+  activities: ActivityDetail[];
 }
 
 const itinerariesData: Record<string, ItineraryDetail> = {
@@ -43,6 +63,82 @@ const itinerariesData: Record<string, ItineraryDetail> = {
       { day: 6, title: { FR: "Vol Parallaxe & Canyon", EN: "Parallax Flight & Canyons" }, desc: { FR: "Survol des gorges du Dadès et déjeuner privé au-dessus des canyons.", EN: "Scenic flight over the Gorges du Dadès with a private cliffside tasting menu." } },
       { day: 7, title: { FR: "Sérénité Royale Hammam", EN: "Royal Hammam Serenity" }, desc: { FR: "Retour à Marrakech pour un rituel spa hammam de 3 heures entièrement privatisé.", EN: "Return to Marrakech for a fully privatized 3-hour luxury spa hammam and wellness treatment." } },
       { day: 8, title: { FR: "Passage de Retour", EN: "Sovereign Departure" }, desc: { FR: "Transfert privé vers le terminal VIP de l'aéroport pour votre vol de retour.", EN: "Private transfer to the airport VIP lounge and dedicated check-in desk for your flight home." } }
+    ],
+    inclusions: {
+      FR: [
+        "Vol direct aller-retour Montréal-Marrakech en classe Affaires",
+        "7 nuits d'hébergement dans des établissements ultra-luxe",
+        "Transferts en hélicoptère privé et SUV haut de gamme",
+        "Formule pension complète avec dîners gastronomiques",
+        "Concierge privé bilingue disponible 24/7"
+      ],
+      EN: [
+        "Round-trip Business Class flight Montreal-Marrakech",
+        "7 nights accommodation in ultra-luxury boutique properties",
+        "Private helicopter and premium SUV transfers",
+        "Gourmet full board dining package",
+        "24/7 dedicated bilingual private concierge service"
+      ]
+    },
+    exclusions: {
+      FR: [
+        "Assurance voyage personnelle obligatoire",
+        "Pourboires pour les chauffeurs, guides et personnel du camp",
+        "Dépenses personnelles et boissons alcoolisées premium hors formule"
+      ],
+      EN: [
+        "Mandatory personal travel insurance",
+        "Gratuities for drivers, guides, and camp staff",
+        "Personal expenditures and premium alcoholic beverages"
+      ]
+    },
+    options: {
+      FR: [
+        { name: "Surclassement en Jet Privé", price: "C$ 8,500" },
+        { name: "Rituel de Spa Impérial Additionnel (2h)", price: "C$ 450" },
+        { name: "Extension de 3 jours à Essaouira", price: "C$ 2,200" }
+      ],
+      EN: [
+        { name: "Private Jet Charter Upgrade", price: "C$ 8,500" },
+        { name: "Additional Imperial Spa Treatment (2h)", price: "C$ 450" },
+        { name: "3-Day Coastal Extension in Essaouira", price: "C$ 2,200" }
+      ]
+    },
+    hotels: [
+      {
+        name: "La Villa des Orangers (Marrakech)",
+        stars: 5,
+        desc: {
+          FR: "Riad historique d'exception dans la médina, membre Relais & Châteaux, avec cour parfumée d'orangers, piscines chauffées et soins de spa traditionnels.",
+          EN: "Exceptional historic riad in the medina, Relais & Châteaux member, featuring orange-blossom courtyards, heated pools, and authentic hammam treatments."
+        },
+        link: "#"
+      },
+      {
+        name: "Royal Mansour Desert Camp (Sahara)",
+        stars: 5,
+        desc: {
+          FR: "Oasis privée nomade nichée au creux des dunes du Sahara. Tentes de toile royale avec majordome dédié, salon d'apparat et vue infinie sur le désert.",
+          EN: "A private nomadic sanctuary set deep in the Sahara dunes. Royal canvas tents with private butler service, dining salon, and endless desert views."
+        },
+        link: "#"
+      }
+    ],
+    activities: [
+      {
+        title: { FR: "Survol Privé de l'Atlas", EN: "Private Atlas Heli-Flight" },
+        desc: {
+          FR: "Une traversée aérienne spectaculaire des sommets de l'Atlas en hélicoptère privé, reliant Marrakech au désert en un instant magique.",
+          EN: "A dramatic scenic flight over the snow-capped Atlas peaks in a private helicopter, connecting Marrakech to the desert in style."
+        }
+      },
+      {
+        title: { FR: "Gastronomie chez l'Habitant", EN: "Gastronomic Cooking Masterclass" },
+        desc: {
+          FR: "Cours de haute cuisine marocaine mené par un chef étoilé local, suivi d'une dégustation dans les jardins du riad.",
+          EN: "Bespoke Moroccan culinary masterclass led by a renowned chef, followed by a degustation dinner in the riad's lush gardens."
+        }
+      }
     ]
   },
   "2": {
@@ -66,6 +162,82 @@ const itinerariesData: Record<string, ItineraryDetail> = {
       { day: 8, title: { FR: "Yas Island & Golf Dunes", EN: "Yas Island & Sunset Cruise" }, desc: { FR: "Journée de détente sur l'île de Yas, dîner au coucher du soleil à bord d'un catamaran privé.", EN: "Relaxing day at Yas Marina, with a private catamaran sunset cruise around the mangroves." } },
       { day: 9, title: { FR: "Plage & Spa Privé", EN: "Beach & Royal Spa Buyout" }, desc: { FR: "Journée exclusive au Saadiyat Beach Club avec cabane privée et massage royal.", EN: "Exclusive cabana at Saadiyat Beach Club, royal message, and private chef beachside dinner." } },
       { day: 10, title: { FR: "Départ Sécurisé", EN: "Sovereign Departure" }, desc: { FR: "Transfert sécurisé vers le terminal VIP de l'aéroport d'Abou Dabi pour votre retour.", EN: "Limousine transfer to Abu Dhabi VIP terminal for your private checkout protocols." } }
+    ],
+    inclusions: {
+      FR: [
+        "Vols aller-retour Montréal-Dubaï en classe Affaires",
+        "9 nuits dans des suites Penthouse et forteresses de désert",
+        "Chauffeur privé en limousine haut de gamme pour tous les transferts",
+        "Dîners gastronomiques inclus dans des restaurants étoilés Michelin",
+        "Accès VIP prioritaire au Musée du Louvre et à la Mosquée Sheikh Zayed"
+      ],
+      EN: [
+        "Round-trip Business Class flights Montreal-Dubai",
+        "9 nights in sky penthouse suites and desert fortress resorts",
+        "Dedicated private chauffeur in luxury limousine for all journeys",
+        "Gourmet dining experiences at Michelin-starred restaurants",
+        "VIP fast-track entries to the Louvre Museum and Sheikh Zayed Mosque"
+      ]
+    },
+    exclusions: {
+      FR: [
+        "Assurances voyage et frais de santé personnels",
+        "Dépenses de shopping et activités de loisirs hors programme",
+        "Repas de midi non spécifiés"
+      ],
+      EN: [
+        "Travel insurance and personal health expenses",
+        "Shopping expenditures and leisure activities not in the itinerary",
+        "Lunch meals not explicitly specified"
+      ]
+    },
+    options: {
+      FR: [
+        { name: "Surclassement en Suite Présidentielle (Qasr Al Sarab)", price: "C$ 3,100" },
+        { name: "Expérience de Pilotage Formule 1 (Yas Marina)", price: "C$ 950" },
+        { name: "Survol de la ville en Hélicoptère Privé (30 min)", price: "C$ 1,400" }
+      ],
+      EN: [
+        { name: "Presidential Suite Upgrade (Qasr Al Sarab)", price: "C$ 3,100" },
+        { name: "Formula 1 Driving Experience (Yas Marina Circuit)", price: "C$ 950" },
+        { name: "Private City Helicopter Tour (30 min)", price: "C$ 1,400" }
+      ]
+    },
+    hotels: [
+      {
+        name: "The Lana - Dorchester Collection (Dubai)",
+        stars: 5,
+        desc: {
+          FR: "Élégance ultime au cœur de la ville avec piscine à débordement sur le toit et intérieurs signés par de grands designers.",
+          EN: "Ultimate architectural elegance in the city center with a rooftop infinity pool and bespoke designer interiors."
+        },
+        link: "#"
+      },
+      {
+        name: "Anantara Qasr Al Sarab (Abu Dhabi)",
+        stars: 5,
+        desc: {
+          FR: "Forteresse de luxe digne des Mille et Une Nuits érigée au milieu des plus grandes dunes de sable du monde.",
+          EN: "Majestic luxury fortress straight from the Arabian Nights, perched amidst the largest sand dunes in the world."
+        },
+        link: "#"
+      }
+    ],
+    activities: [
+      {
+        title: { FR: "Croisière en Superyacht Privé", EN: "Private Superyacht Sailing" },
+        desc: {
+          FR: "Une après-midi de croisière exclusive sur un yacht de 100 pieds avec équipage complet, chef et dégustation de champagne au coucher du soleil.",
+          EN: "An afternoon sailing on a private 100ft superyacht with a full crew, private chef, and sunset champagne tasting."
+        }
+      },
+      {
+        title: { FR: "Safari dans les Dunes Rouges", EN: "Red Dunes Desert Safari" },
+        desc: {
+          FR: "Traversée des dunes en SUV de luxe, spectacle privé de fauconnerie et dîner gastronomique traditionnel sous les étoiles.",
+          EN: "Thrilling dune drive in a luxury 4x4, private falconry show, and traditional gourmet dinner under the desert sky."
+        }
+      }
     ]
   },
   "3": {
@@ -91,6 +263,80 @@ const itinerariesData: Record<string, ItineraryDetail> = {
       { day: 10, title: { FR: "Dîner de Homard en Mer", EN: "Sunset Lobster Dhow Dinner" }, desc: { FR: "Dîner de homards grillés au coucher du soleil à bord de votre yacht privé.", EN: "Private chef dinner with locally caught grilled lobsters and fresh oysters on your dhow yacht." } },
       { day: 11, title: { FR: "Sérénité Spa & Wellness", EN: "Retreat Spa & Wellness" }, desc: { FR: "Journée de détente absolue et de yoga surplombant la baie.", EN: "Sunrise coastal yoga, custom herbal treatments, and absolute relaxation." } },
       { day: 12, title: { FR: "Départ de Mascate", EN: "Sovereign Departure" }, desc: { FR: "Vol retour de Khasab et transfert VIP vers votre vol international.", EN: "Charter flight to Muscat and VIP fast-track to your international departure." } }
+    ],
+    inclusions: {
+      FR: [
+        "Vols aller-retour Montréal-Mascate en classe Affaires",
+        "11 nuits en éco-resorts de falaise et hôtels de plage haut de gamme",
+        "Véhicule 4x4 de luxe avec chauffeur-guide professionnel francophone",
+        "Vol charter intérieur privé vers la péninsule de Musandam",
+        "Croisière d'une journée en dhow traditionnel privatisé"
+      ],
+      EN: [
+        "Round-trip Business Class flights Montreal-Muscat",
+        "11 nights in high-end cliffside eco-resorts and beachfront hotels",
+        "Luxury private 4x4 vehicle with professional English-speaking guide",
+        "Private internal charter flight to the Musandam Peninsula",
+        "Full-day cruise on a privatized traditional wooden dhow"
+      ]
+    },
+    exclusions: {
+      FR: [
+        "Frais de visa touristique à l'arrivée",
+        "Assurance annulation et bagages",
+        "Pourboires et dépenses personnelles"
+      ],
+      EN: [
+        "Tourist visa fees on arrival",
+        "Cancellation and baggage travel insurance",
+        "Gratuities and personal expenditures"
+      ]
+    },
+    options: {
+      FR: [
+        { name: "Surclassement en Villa avec Piscine Privée (Six Senses)", price: "C$ 4,500" },
+        { name: "Séance Photo Professionnelle Privée dans les Canyons", price: "C$ 600" }
+      ],
+      EN: [
+        { name: "Pool Villa Upgrade at Six Senses Zighy Bay", price: "C$ 4,500" },
+        { name: "Private Professional Photoshoot in the Canyons", price: "C$ 600" }
+      ]
+    },
+    hotels: [
+      {
+        name: "The Chedi Muscat",
+        stars: 5,
+        desc: {
+          FR: "Élégant sanctuaire en bord de mer alliant le minimalisme asiatique zen à la splendeur de l'architecture omanaise traditionnelle.",
+          EN: "Elegant beachfront sanctuary combining Asian minimalist zen aesthetics with the splendor of Omani architecture."
+        },
+        link: "#"
+      },
+      {
+        name: "Alila Jabal Akhdar",
+        stars: 5,
+        desc: {
+          FR: "Eco-resort de luxe spectaculaire sculpté dans la roche de la Montagne Verte, suspendu à 2 000 mètres d'altitude.",
+          EN: "Spectacular luxury eco-resort sculpted from the green mountainside rock, perched 2,000 meters above sea level."
+        },
+        link: "#"
+      }
+    ],
+    activities: [
+      {
+        title: { FR: "Randonnée Secrète des Wadis", EN: "Secret Wadi Canyons Swim" },
+        desc: {
+          FR: "Baignade privée et randonnée guidée à travers les piscines naturelles d'eau émeraude du Wadi Bani Khalid.",
+          EN: "Private swimming and guided hiking through the pristine emerald spring pools of Wadi Bani Khalid."
+        }
+      },
+      {
+        title: { FR: "Croisière en Dhow à Musandam", EN: "Fjord Dhow Sailing" },
+        desc: {
+          FR: "Une navigation majestueuse dans les fjords omani surnommés la Norvège d'Arabie, avec plongée au milieu des coraux.",
+          EN: "A majestic sailing journey in the spectacular Omani fjords, with snorkeling amongst vibrant coral reefs."
+        }
+      }
     ]
   },
   "4": {
@@ -118,6 +364,82 @@ const itinerariesData: Record<string, ItineraryDetail> = {
       { day: 12, title: { FR: "L'Histoire de Djeddah", EN: "Jeddah Historic Al-Balad" }, desc: { FR: "Vol vers Djeddah, visite guidée privée du quartier historique Al-Balad.", EN: "Fly to Jeddah, private guided tour of the historic coral-stone houses of Al-Balad." } },
       { day: 13, title: { FR: "La Mosquée Flottante", EN: "Floating Mosque Lounge" }, desc: { FR: "Visite exclusive de la Mosquée Flottante au coucher du soleil et accès lounge privé.", EN: "Sunset lounge at the Corniche, overlooking the Floating Mosque with traditional coffee." } },
       { day: 14, title: { FR: "Départ Souverain", EN: "Sovereign Departure" }, desc: { FR: "SUV privé de luxe vers le terminal VIP de Riyad ou Djeddah pour votre vol de retour.", EN: "Private transfer to the airport VIP lounge and dedicated check-in desk for your flight home." } }
+    ],
+    inclusions: {
+      FR: [
+        "Vols internationaux en classe Affaires vers Riyad / de Djeddah",
+        "13 nuits dans des propriétés ultra-luxe (Banyan Tree & Mer Rouge)",
+        "Vol charter intérieur privé pour AlUla et transferts en jet/hélicoptère",
+        "Visites privées exclusives guidées par des archéologues d'État",
+        "Service complet de majordome privé et de concierge 24h/24"
+      ],
+      EN: [
+        "International Business Class flights to Riyadh / from Jeddah",
+        "13 nights in ultra-luxury properties (Banyan Tree & Red Sea)",
+        "Private internal charter flights to AlUla and heli/jet transfers",
+        "Exclusive private tours guided by state archaeologists",
+        "24/7 dedicated butler service and private concierge protocols"
+      ]
+    },
+    exclusions: {
+      FR: [
+        "Taxe de séjour et frais de visa électronique",
+        "Assurances rapatriement et santé",
+        "Repas libres à Riyad et Djeddah"
+      ],
+      EN: [
+        "Tourism fees and e-visa application costs",
+        "Medical and repatriation travel insurance",
+        "Unspecified meals in Riyadh and Jeddah"
+      ]
+    },
+    options: {
+      FR: [
+        { name: "Survol Privé d'AlUla en Montgolfière", price: "C$ 1,200" },
+        { name: "Dîner Spectacle Privé dans un Canyon Caché", price: "C$ 1,800" },
+        { name: "Extension Vol d'une journée à Riyad avec Jet Privé", price: "C$ 4,900" }
+      ],
+      EN: [
+        { name: "Private Hot Air Balloon Flight over AlUla", price: "C$ 1,200" },
+        { name: "Private Bespoke Dinner Setup in a Hidden Canyon", price: "C$ 1,800" },
+        { name: "Private Jet Day-Trip Extension to Riyadh", price: "C$ 4,900" }
+      ]
+    },
+    hotels: [
+      {
+        name: "Banyan Tree AlUla",
+        stars: 5,
+        desc: {
+          FR: "Sanctuaire de villas sous tente exclusives nichées au cœur des formations rocheuses de la vallée d'Ashar.",
+          EN: "A high-end sanctuary of tented pool villas nestled within the stunning rock formations of the Ashar Valley."
+        },
+        link: "#"
+      },
+      {
+        name: "The St. Regis Red Sea Resort",
+        stars: 5,
+        desc: {
+          FR: "Paradis d'île privée avec villas de luxe sur l'eau, plages de sable blanc et récifs coralliens préservés.",
+          EN: "Private island paradise featuring luxury overwater villas, white sand beaches, and untouched coral reefs."
+        },
+        link: "#"
+      }
+    ],
+    activities: [
+      {
+        title: { FR: "Exploration Vintage de Hegra", EN: "Vintage Land Rover Hegra Tour" },
+        desc: {
+          FR: "Visite guidée exclusive à bord d'une Land Rover décapotable de collection des tombes nabatéennes classées à l'UNESCO.",
+          EN: "An exclusive guided tour in a vintage open-top Land Rover through the spectacular UNESCO Nabataean tombs."
+        }
+      },
+      {
+        title: { FR: "Plongée dans la Mer Rouge", EN: "Red Sea Yacht & Coral Diving" },
+        desc: {
+          FR: "Affrètement de yacht privé avec biologiste marin pour explorer les récifs coralliens les plus préservés au monde.",
+          EN: "Private yacht charter with an expert marine biologist to dive and snorkel the world's most pristine coral reefs."
+        }
+      }
     ]
   }
 };
@@ -219,6 +541,109 @@ export default function ItinerarySubpage({ params }: { params: Promise<{ id: str
               ))}
             </div>
           </div>
+
+          {/* Ce qui est compris / Non inclus (Inclusions & Exclusions) */}
+          <div className="space-y-8 pt-10 border-t border-zinc-100">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Inclusions */}
+              <div className="space-y-4">
+                <h4 className="font-serif text-xl md:text-2xl text-zinc-900 flex items-center gap-2.5">
+                  <CheckCircle className="w-5 h-5 text-emerald-600 shrink-0" />
+                  <span>{lang === "FR" ? "Ce qui est compris" : "What's Included"}</span>
+                </h4>
+                <ul className="space-y-3 pl-1">
+                  {itinerary.inclusions[lang].map((item, idx) => (
+                    <li key={idx} className="text-zinc-600 text-[13px] md:text-[14px] leading-relaxed font-light flex items-start gap-2.5">
+                      <span className="text-emerald-500 font-bold mt-1 text-sm">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Exclusions */}
+              <div className="space-y-4">
+                <h4 className="font-serif text-xl md:text-2xl text-zinc-900 flex items-center gap-2.5">
+                  <span className="w-5 h-5 rounded-full border border-zinc-400 flex items-center justify-center text-[10px] text-zinc-500 font-bold shrink-0">X</span>
+                  <span>{lang === "FR" ? "Non inclus" : "Not Included"}</span>
+                </h4>
+                <ul className="space-y-3 pl-1">
+                  {itinerary.exclusions[lang].map((item, idx) => (
+                    <li key={idx} className="text-zinc-500 text-[13px] md:text-[14px] leading-relaxed font-light flex items-start gap-2.5">
+                      <span className="text-zinc-400 mt-1 text-sm">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Premium Options */}
+          <div className="space-y-5 pt-10 border-t border-zinc-100">
+            <h4 className="font-serif text-xl md:text-2xl text-zinc-900 flex items-center gap-2.5">
+              <span className="bg-brand-gold/10 text-brand-gold border border-brand-gold/20 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-wider rounded">$$$</span>
+              <span>{lang === "FR" ? "Options à la carte" : "A La Carte Options"}</span>
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {itinerary.options[lang].map((opt, idx) => (
+                <div key={idx} className="p-5 bg-zinc-50/50 border border-zinc-200/60 rounded-2xl flex flex-col justify-between hover:border-brand-gold/40 transition-luxury duration-300">
+                  <span className="text-zinc-800 text-[13px] font-medium leading-snug">{opt.name}</span>
+                  <span className="text-brand-gold font-mono text-xs font-semibold mt-3 tabular-nums">{opt.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Featured Accommodations */}
+          <div className="space-y-6 pt-10 border-t border-zinc-100">
+            <h4 className="font-serif text-xl md:text-2xl text-zinc-900 flex items-center gap-2.5">
+              <Hotel className="w-5 h-5 text-brand-gold shrink-0" />
+              <span>{lang === "FR" ? "Hébergements d'Exception" : "Featured Accommodations"}</span>
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {itinerary.hotels.map((hotel, idx) => (
+                <div key={idx} className="bg-white border border-zinc-200/80 rounded-2xl overflow-hidden hover:shadow-md transition-luxury duration-300 flex flex-col h-full">
+                  <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-zinc-900 font-serif text-[16px] font-bold leading-tight">{hotel.name}</span>
+                        <div className="flex items-center gap-0.5 text-brand-gold text-[11px]">
+                          {"★".repeat(hotel.stars)}
+                        </div>
+                      </div>
+                      <p className="text-zinc-500 text-[13px] leading-relaxed font-light">
+                        {hotel.desc[lang]}
+                      </p>
+                    </div>
+                    {hotel.link && (
+                      <a href={hotel.link} className="text-brand-gold hover:text-zinc-950 font-mono text-[9px] tracking-widest uppercase inline-flex items-center gap-1.5 transition-colors pt-2">
+                        <span>{lang === "FR" ? "DÉCOUVRIR LE SITE" : "VIEW PROPERTY"}</span>
+                        <span>→</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Curated Activities */}
+          <div className="space-y-6 pt-10 border-t border-zinc-100">
+            <h4 className="font-serif text-xl md:text-2xl text-zinc-900 flex items-center gap-2.5">
+              <Compass className="w-5 h-5 text-brand-gold shrink-0" />
+              <span>{lang === "FR" ? "Activités et Expériences Incluses" : "Curated Included Activities"}</span>
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {itinerary.activities.map((act, idx) => (
+                <div key={idx} className="p-6 bg-zinc-50/30 border border-zinc-200/50 rounded-2xl space-y-2 hover:border-brand-gold/30 transition-luxury duration-300">
+                  <h5 className="font-serif text-[15px] font-bold text-zinc-800 leading-snug">{act.title[lang]}</h5>
+                  <p className="text-zinc-500 text-[13px] leading-relaxed font-light">{act.desc[lang]}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
 
         {/* Right Side: Booking Panel Widget (Span 4) */}
