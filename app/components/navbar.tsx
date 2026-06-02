@@ -17,12 +17,12 @@ export default function Navbar() {
 
   return (
     <nav className="absolute top-6 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1100px] -translate-x-1/2">
-      <div className="glass-nav flex h-[95px] md:h-[112px] items-center justify-between rounded-full px-8 py-3">
+      <div className="glass-nav flex h-[100px] md:h-[118px] items-center justify-between rounded-full px-8 py-3">
         {/* Logo and Company Name */}
         <Link href="/" className="flex items-center gap-3 md:gap-4 cursor-pointer decoration-none group">
           <img 
             src="/images/logo.png" 
-            className="h-16 sm:h-[80px] md:h-[90px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-90" 
+            className="h-[72px] sm:h-[86px] md:h-[98px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-90" 
             alt="Majestic Experiences Voyages" 
           />
           <div className="flex flex-col text-white">

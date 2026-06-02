@@ -74,6 +74,10 @@ const t = {
     EN: "Estimated Package Value",
     FR: "Valeur Estimée du Package"
   },
+  estimateCostVal: {
+    EN: "On Request",
+    FR: "Sur demande"
+  },
   submitInquiry: {
     EN: "Transmit Secured Inquiry",
     FR: "Transmettre l'Enquête Sécurisée"
@@ -303,9 +307,6 @@ export default function CustomTripBuilder() {
                           <h4 className={`text-xs md:text-sm font-semibold pt-1 transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-800'}`}>
                             {act.title[lang]}
                           </h4>
-                          <span className="text-[10px] font-mono text-brand-gold block">
-                            +C$ {act.cost.toLocaleString()}
-                          </span>
                         </div>
                         <div className={`w-5 h-5 rounded-full flex items-center justify-center border transition-all duration-300 ${active ? 'border-brand-gold bg-brand-gold text-black' : isPremium ? 'border-white/20 bg-transparent' : 'border-zinc-200 bg-transparent'}`}>
                           {active && <Check className="w-3.5 h-3.5 stroke-[3]" />}
@@ -357,10 +358,9 @@ export default function CustomTripBuilder() {
                     {t.estimateCost[lang]}
                   </span>
                   <div className="flex items-baseline justify-between">
-                    <h3 className={`text-3xl font-bold font-serif tabular-nums transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
-                      C$ {calculateTotalCost().toLocaleString()}
+                    <h3 className={`text-2xl font-bold font-serif uppercase tracking-wide transition-colors duration-1000 ${isPremium ? 'text-brand-gold' : 'text-zinc-900'}`}>
+                      {t.estimateCostVal[lang]}
                     </h3>
-                    <span className={`text-[10px] font-mono transition-colors duration-1000 ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>CAD</span>
                   </div>
                 </div>
 

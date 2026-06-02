@@ -72,7 +72,7 @@ export default function Footer() {
               <span className="font-serif text-[14px] md:text-[18px] uppercase tracking-[0.25em] font-bold leading-none">
                 Majestic
               </span>
-              <span className="font-sans text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-brand-gold font-light mt-0.5 leading-none">
+              <span className="font-sans text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-white font-light mt-0.5 leading-none">
                 Experiences Voyages
               </span>
             </div>
