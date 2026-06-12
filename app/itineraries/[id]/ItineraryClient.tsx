@@ -20,6 +20,7 @@ export default function ItineraryClient({ id }: { id: string }) {
       case "2": return itinerariesData["2"];
       case "3": return itinerariesData["3"];
       case "4": return itinerariesData["4"];
+      case "5": return itinerariesData["5"];
       default: return null;
     }
   })();
@@ -83,6 +84,7 @@ export default function ItineraryClient({ id }: { id: string }) {
       case "2": return itineraryThemes["2"];
       case "3": return itineraryThemes["3"];
       case "4": return itineraryThemes["4"];
+      case "5": return itineraryThemes["5"];
       default: return null;
     }
   })();
@@ -186,7 +188,7 @@ export default function ItineraryClient({ id }: { id: string }) {
       {theme && (
         <div className="relative bg-[#faf9f5]">
           <div className="py-12">
-            <MapSection countryId={id} />
+            <MapSection countryId="1" />
           </div>
 
           {/* Experience Grid Section */}
