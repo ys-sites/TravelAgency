@@ -1,7 +1,7 @@
 # Next.js build and dependency directories
-Hyliox/node_modules/
-Hyliox/.next/
-Hyliox/out/
+node_modules/
+.next/
+out/
 
 # Temp folders and scratch areas
 temp_clone/
