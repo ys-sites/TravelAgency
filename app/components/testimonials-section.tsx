@@ -80,9 +80,8 @@ export default function TestimonialsSection() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className="bg-zinc-900/50 border border-white/10 rounded-2xl p-8 space-y-6 backdrop-blur-sm hover:border-brand-gold/20 transition-colors duration-300"
             >
-              {/* Quote */}
               <blockquote className="text-[15px] leading-relaxed text-white/90 font-light italic">
-                "{translate(testimonial.quote, lang)}"
+                &ldquo;{translate(testimonial.quote, lang)}&rdquo;
               </blockquote>
 
               {/* Star Rating */}

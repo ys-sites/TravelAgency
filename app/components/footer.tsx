@@ -104,10 +104,10 @@ export default function Footer() {
             {translate(t.destinations, lang)}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
-            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.morocco, lang)}</a></li>
-            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.dubai, lang)}</a></li>
-            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.oman, lang)}</a></li>
-            <li><a href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.saudi, lang)}</a></li>
+            <li><Link href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.morocco, lang)}</Link></li>
+            <li><Link href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.dubai, lang)}</Link></li>
+            <li><Link href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.oman, lang)}</Link></li>
+            <li><Link href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.saudi, lang)}</Link></li>
           </ul>
         </div>
 
@@ -117,7 +117,7 @@ export default function Footer() {
             {translate(t.company, lang)}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
-            <li><a href="/#about" className="hover:text-brand-gold transition-colors">{translate(t.about, lang)}</a></li>
+            <li><Link href="/#about" className="hover:text-brand-gold transition-colors">{translate(t.about, lang)}</Link></li>
             <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{translate(t.customTrip, lang)}</Link></li>
             <li><Link href="/travel-stories" className="hover:text-brand-gold transition-colors">{translate(t.news, lang)}</Link></li>
           </ul>

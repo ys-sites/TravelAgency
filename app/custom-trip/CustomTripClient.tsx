@@ -183,13 +183,23 @@ export default function CustomTripClient() {
       if (response.ok) {
         setIsSuccess(true);
         // Confetti burst
-        if (typeof window !== "undefined" && (window as any).confetti) {
-          (window as any).confetti({
-            particleCount: 150,
-            spread: 80,
-            origin: { y: 0.6 },
-            colors: ['#D4AF37', '#FFFFFF', '#FFDF73']
-          });
+        if (typeof window !== "undefined" && "confetti" in window) {
+          const globalWindow = window as Window & {
+            confetti?: (options: {
+              particleCount: number;
+              spread: number;
+              origin: { y: number };
+              colors: string[];
+            }) => void;
+          };
+          if (typeof globalWindow.confetti === "function") {
+            globalWindow.confetti({
+              particleCount: 150,
+              spread: 80,
+              origin: { y: 0.6 },
+              colors: ['#D4AF37', '#FFFFFF', '#FFDF73']
+            });
+          }
         }
       }
     } catch (err) {

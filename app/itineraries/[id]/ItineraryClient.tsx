@@ -12,7 +12,7 @@ import { itinerariesData, itineraryThemes } from "@/data/itineraries";
 
 export default function ItineraryClient({ id }: { id: string }) {
   const { lang } = useLang();
-  
+
   // Safe lookup to prevent securecoder CWE-94 dynamic bracket notation warning
   const itinerary = (() => {
     switch (id) {
@@ -100,7 +100,7 @@ export default function ItineraryClient({ id }: { id: string }) {
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
-          
+
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-24 max-w-7xl mx-auto z-10">
             <Link
               href="/"
@@ -119,7 +119,7 @@ export default function ItineraryClient({ id }: { id: string }) {
               <p className="text-[14px] sm:text-[16px] leading-relaxed text-zinc-300 font-light max-w-lg">
                 {theme.heroSub}
               </p>
-              <a 
+              <a
                 href="#itinerary-details"
                 className="inline-flex items-center gap-2.5 rounded-full px-8 py-3.5 font-semibold text-[11px] tracking-[0.2em] uppercase transition-all duration-300 shadow-md cursor-pointer hover:scale-105"
                 style={{
@@ -161,7 +161,7 @@ export default function ItineraryClient({ id }: { id: string }) {
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-white" />
-          
+
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-12 max-w-7xl mx-auto z-10">
             <Link
               href="/"
@@ -242,7 +242,7 @@ export default function ItineraryClient({ id }: { id: string }) {
 
       {/* Main Content Layout */}
       <section className="py-16 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-20 bg-white">
-        
+
         {/* Left Side: Overview and Day-by-Day Timeline */}
         <div className="lg:col-span-8 space-y-16" id="itinerary-details">
           {!theme ? (
@@ -254,7 +254,7 @@ export default function ItineraryClient({ id }: { id: string }) {
                 <p className="text-[14px] md:text-[15px] leading-relaxed text-zinc-600 font-light">
                   {translate(itinerary.overview, lang)}
                 </p>
-                <a 
+                <a
                   href="#booking-form"
                   className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury hover:bg-[#72202b] shadow-md cursor-pointer mt-4"
                 >
@@ -263,7 +263,7 @@ export default function ItineraryClient({ id }: { id: string }) {
               </div>
 
               {/* Destination Showcase Image */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -284,10 +284,10 @@ export default function ItineraryClient({ id }: { id: string }) {
             <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
               {lang === "FR" ? "Programme Jour par Jour" : "Day-by-Day Journey"}
             </h3>
-            
+
             <div className="relative border-l border-zinc-200 pl-6 md:pl-10 ml-4 space-y-12">
               {itinerary.timeline.map((item, idx) => (
-                <motion.div 
+                <motion.div
                   key={item.day}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -297,7 +297,7 @@ export default function ItineraryClient({ id }: { id: string }) {
                 >
                   {/* Timeline bullet dot */}
                   <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-brand-gold group-hover:bg-brand-gold transition-colors duration-300 z-10" />
-                  
+
                   <div className="space-y-2">
                     <span className="font-mono text-[10px] tracking-[0.3em] text-brand-gold uppercase font-semibold">
                       {lang === "FR" ? `JOUR ${item.day}` : `DAY ${item.day}`}
@@ -315,7 +315,7 @@ export default function ItineraryClient({ id }: { id: string }) {
           </div>
 
           {/* Inclusions & Exclusions */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -358,7 +358,7 @@ export default function ItineraryClient({ id }: { id: string }) {
           </motion.div>
 
           {/* Premium Options */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -380,7 +380,7 @@ export default function ItineraryClient({ id }: { id: string }) {
           </motion.div>
 
           {/* Featured Accommodations */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -427,7 +427,7 @@ export default function ItineraryClient({ id }: { id: string }) {
             transition={{ duration: 0.6 }}
             className="flex justify-center pt-8 border-t border-zinc-100"
           >
-            <a 
+            <a
               href="#booking-form"
               className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-5 transition-luxury hover:bg-[#72202b] shadow-md cursor-pointer"
             >
@@ -456,7 +456,7 @@ export default function ItineraryClient({ id }: { id: string }) {
           )}
 
           {/* Contact Form Block */}
-          <motion.div 
+          <motion.div
             id="booking-form"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -645,7 +645,7 @@ export default function ItineraryClient({ id }: { id: string }) {
                 {lang === "FR" ? "Conditions" : "Terms & Conditions"}
               </h4>
               <p className="text-[10px] md:text-[11px] leading-relaxed text-zinc-500 italic font-light mb-4">
-                {lang === "FR" 
+                {lang === "FR"
                   ? "Tarif calculé le 1 juin 2026, pour un séjour du 13 au 20 janvier 2027 (à destination). Les dates et composantes sont modifiables à votre guise. Les hôtels et activités proposés le sont à titre indicatif et peuvent être modifiés selon vos besoins."
                   : "Rate calculated on June 1, 2026, for a stay from January 13 to 20, 2027 (at destination). Dates and components can be modified at your convenience. Proposed hotels and activities are indicative and can be modified according to your needs."
                 }

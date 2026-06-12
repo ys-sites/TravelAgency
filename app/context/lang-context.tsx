@@ -22,6 +22,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
       const isFrCA = window.navigator.language === "fr-CA" || 
                      (window.navigator.languages && window.navigator.languages.includes("fr-CA"));
       if (isFrCA) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setLang("FR");
       }
     }

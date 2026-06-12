@@ -39,21 +39,21 @@ export default function Navbar() {
 
         {/* Navigation Links */}
         <div className="hidden lg:flex items-center gap-8 text-white/90 font-body text-[13px] font-medium">
-          <a href="/#portfolios" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+          <Link href="/#portfolios" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.portfolios, lang)}
-          </a>
+          </Link>
           <Link href="/itineraries" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.itineraries, lang)}
           </Link>
           <Link href="/custom-trip" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.customTrip, lang)}
           </Link>
-          <a href="/#about" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+          <Link href="/#about" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.about, lang)}
-          </a>
-          <a href="/#contacts" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+          </Link>
+          <Link href="/#contacts" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.contacts, lang)}
-          </a>
+          </Link>
         </div>
 
         {/* Language Toggle FR / EN */}
