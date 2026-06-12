@@ -98,7 +98,7 @@ export default function ItineraryClient({ id }: { id: string }) {
         <section className="relative w-full aspect-[16/10] md:aspect-[21/9] min-h-[500px] md:min-h-[600px] lg:min-h-[650px] overflow-hidden bg-zinc-950 flex flex-col justify-end">
           <img
             src={theme.heroBg}
-            alt={theme.heroTitle}
+            alt={translate(theme.heroTitle, lang)}
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
@@ -116,10 +116,10 @@ export default function ItineraryClient({ id }: { id: string }) {
                 {translate(itinerary.duration, lang)}
               </span>
               <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide uppercase leading-tight font-bold text-brand-gold">
-                {theme.heroTitle}
+                {translate(theme.heroTitle, lang)}
               </h1>
               <p className="text-[14px] sm:text-[16px] leading-relaxed text-zinc-300 font-light max-w-lg">
-                {theme.heroSub}
+                {translate(theme.heroSub, lang)}
               </p>
               <a
                 href="#itinerary-details"
@@ -135,7 +135,7 @@ export default function ItineraryClient({ id }: { id: string }) {
                   e.currentTarget.style.backgroundColor = theme.themeColor;
                 }}
               >
-                <span>{theme.heroBtn}</span>
+                <span>{translate(theme.heroBtn, lang)}</span>
                 <span>&rarr;</span>
               </a>
             </div>
@@ -198,23 +198,23 @@ export default function ItineraryClient({ id }: { id: string }) {
               <div className="lg:col-span-4 flex flex-col justify-center items-start space-y-6">
                 <span className="w-12 h-1 border-t-2" style={{ borderColor: theme.themeColor }} />
                 <h2 className="font-serif text-3xl md:text-4xl font-bold text-zinc-900 leading-tight uppercase">
-                  {theme.experienceTitle}
+                  {translate(theme.experienceTitle, lang)}
                 </h2>
                 <p className="text-[14px] leading-relaxed text-zinc-600 font-light">
-                  {theme.experienceDesc}
+                  {translate(theme.experienceDesc, lang)}
                 </p>
               </div>
               {/* Featured Experience Cover */}
               <div className="lg:col-span-8 rounded-[2rem] overflow-hidden relative group min-h-[300px] md:min-h-[400px] shadow-md border border-zinc-200/50">
                 <img
                   src={theme.experienceGrid[0].img}
-                  alt={theme.experienceGrid[0].label}
+                  alt={translate(theme.experienceGrid[0].label, lang)}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-black/35 group-hover:bg-black/25 transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl text-white font-bold tracking-wide uppercase">
-                    {theme.experienceGrid[0].label}
+                    {translate(theme.experienceGrid[0].label, lang)}
                   </h3>
                 </div>
               </div>
@@ -226,13 +226,13 @@ export default function ItineraryClient({ id }: { id: string }) {
                 <div key={idx} className="rounded-[1.5rem] overflow-hidden relative group aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] shadow-sm border border-zinc-200/50">
                   <img
                     src={card.img}
-                    alt={card.label}
+                    alt={translate(card.label, lang)}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-black/35 group-hover:bg-black/25 transition-colors duration-500" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <h3 className="font-serif text-xl sm:text-2xl text-white font-bold tracking-wide uppercase">
-                      {card.label}
+                      {translate(card.label, lang)}
                     </h3>
                   </div>
                 </div>

@@ -74,24 +74,24 @@ export interface MapPinDetail {
 }
 
 export interface ExperienceCard {
-  label: string;
+  label: { FR: string; EN: string };
   img: string;
 }
 
 export interface ItineraryTheme {
   country: string;
-  heroTitle: string;
-  heroSub: string;
-  heroBtn: string;
+  heroTitle: { FR: string; EN: string };
+  heroSub: { FR: string; EN: string };
+  heroBtn: { FR: string; EN: string };
   heroBg: string;
   themeColor: string;
   themeColorHover: string;
   watercolorColor: string;
   mapImage: string;
-  discoverTitle: string;
-  discoverDesc: string;
-  experienceTitle: string;
-  experienceDesc: string;
+  discoverTitle: { FR: string; EN: string };
+  discoverDesc: { FR: string; EN: string };
+  experienceTitle: { FR: string; EN: string };
+  experienceDesc: { FR: string; EN: string };
   mapPins: MapPinDetail[];
   experienceGrid: ExperienceCard[];
 }
@@ -847,18 +847,27 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
 export const itineraryThemes: Record<string, ItineraryTheme> = {
   "1": {
     country: "Morocco",
-    heroTitle: "Morocco Prestige",
-    heroSub: "Morocco Prestige – Ultimate Luxury Journey. Experience the royal treatment with stay at Royal Mansour riads, private calligraphy masterclass, and hot air balloon over Atlas.",
-    heroBtn: "Unveil the Luxury",
+    heroTitle: { FR: "Maroc Prestige", EN: "Morocco Prestige" },
+    heroSub: {
+      FR: "Morocco Prestige – Voyage de Luxe Ultime. Vivez comme des rois avec des séjours au Royal Mansour, des ateliers de calligraphie privés et un vol en montgolfière au lever du soleil.",
+      EN: "Morocco Prestige – Ultimate Luxury Journey. Experience the royal treatment with stay at Royal Mansour riads, private calligraphy masterclass, and hot air balloon over Atlas."
+    },
+    heroBtn: { FR: "Découvrir le Prestige", EN: "Unveil the Luxury" },
     heroBg: "/images/morocco-marrakech-riad.png",
     themeColor: "#C5A880",
     themeColorHover: "#A3835B",
     watercolorColor: "#C5A880",
     mapImage: "/images/moroco.webp",
-    discoverTitle: "Discover Morocco",
-    discoverDesc: "We are adventurers at heart, so uncovering the secrets of Morocco is something we've had a lot of experience in. Find out more about what the regions of Morocco have to offer.",
-    experienceTitle: "Experience Morocco",
-    experienceDesc: "Morocco has many different aspects to its personality. Adventure, Culinary, Culture; it's all here. Experience the many different, rich, exciting layers of Morocco. Experience it your way.",
+    discoverTitle: { FR: "Découvrir le Maroc", EN: "Discover Morocco" },
+    discoverDesc: {
+      FR: "Nous sommes des aventuriers dans l'âme. Découvrez ce que les régions du Maroc ont à vous offrir.",
+      EN: "We are adventurers at heart, so uncovering the secrets of Morocco is something we've had a lot of experience in. Find out more about what the regions of Morocco have to offer."
+    },
+    experienceTitle: { FR: "Vivre le Maroc", EN: "Experience Morocco" },
+    experienceDesc: {
+      FR: "Le Maroc a de nombreuses facettes : Aventure, Gastronomie, Culture... Vivez ces expériences enrichissantes et passionnantes à votre manière.",
+      EN: "Morocco has many different aspects to its personality. Adventure, Culinary, Culture; it's all here. Experience the many different, rich, exciting layers of Morocco. Experience it your way."
+    },
     mapPins: [
       { name: { FR: "Palais de Marrakech", EN: "Marrakech Palace" }, top: "65%", left: "32%" },
       { name: { FR: "Dunes du Sahara", EN: "Sahara Dunes" }, top: "78%", left: "75%" },
@@ -867,27 +876,36 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Chefchaouen la Bleue", EN: "Chefchaouen Blue City" }, top: "18%", left: "62%" }
     ],
     experienceGrid: [
-      { label: "Adventure", img: "/images/morocco_adventure.png" },
-      { label: "Culinary", img: "/images/morocco_culinary.png" },
-      { label: "Culture", img: "/images/morocco-marrakech-riad.png" },
-      { label: "Off Beat", img: "/images/morocco-sahara-dunes.png" },
-      { label: "Go Local", img: "/images/people-cliff.png" }
+      { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
+      { label: { FR: "Gastronomie", EN: "Culinary" }, img: "/images/morocco_culinary.png" },
+      { label: { FR: "Culture", EN: "Culture" }, img: "/images/morocco-marrakech-riad.png" },
+      { label: { FR: "Insolite", EN: "Off Beat" }, img: "/images/morocco-sahara-dunes.png" },
+      { label: { FR: "Immersion", EN: "Go Local" }, img: "/images/people-cliff.png" }
     ]
   },
   "2": {
     country: "Morocco",
-    heroTitle: "Imperial Morocco",
-    heroSub: "Imperial Morocco & Sahara Discovery. Discover Casablanca, Rabat, Chefchaouen blue city, Fes ancient medina, and spend two nights under the Sahara desert stars.",
-    heroBtn: "Unveil the Culture",
+    heroTitle: { FR: "Maroc Impérial", EN: "Imperial Morocco" },
+    heroSub: {
+      FR: "Maroc Impérial & Découverte du Sahara. Découvrez Casablanca, Rabat, la ville bleue de Chefchaouen, l'ancienne médina de Fès, et passez deux nuits sous les étoiles du Sahara.",
+      EN: "Imperial Morocco & Sahara Discovery. Discover Casablanca, Rabat, Chefchaouen blue city, Fes ancient medina, and spend two nights under the Sahara desert stars."
+    },
+    heroBtn: { FR: "Découvrir la Culture", EN: "Unveil the Culture" },
     heroBg: "/images/moroco.webp",
     themeColor: "#5A8266",
     themeColorHover: "#476851",
     watercolorColor: "#5A8266",
     mapImage: "/images/moroco.webp",
-    discoverTitle: "Discover Morocco",
-    discoverDesc: "Explore historical imperial cities, the high Rif mountains, Roman ruins of Volubilis, and the vast dunes of Merzouga desert.",
-    experienceTitle: "Experience Morocco",
-    experienceDesc: "Experience the deep architectural roots and traditions of Morocco. Learn historical stories, taste street foods, and see how tanneries still operate.",
+    discoverTitle: { FR: "Découvrir le Maroc", EN: "Discover Morocco" },
+    discoverDesc: {
+      FR: "Explorez les villes impériales historiques, les montagnes du Rif, les ruines romaines de Volubilis et les dunes de Merzouga.",
+      EN: "Explore historical imperial cities, the high Rif mountains, Roman ruins of Volubilis, and the vast dunes of Merzouga desert."
+    },
+    experienceTitle: { FR: "Vivre le Maroc", EN: "Experience Morocco" },
+    experienceDesc: {
+      FR: "Vivez l'expérience des racines architecturales et des traditions profondes du Maroc. Découvrez des récits historiques, goûtez à la cuisine de rue et visitez les tanneries.",
+      EN: "Experience the deep architectural roots and traditions of Morocco. Learn historical stories, taste street foods, and see how tanneries still operate."
+    },
     mapPins: [
       { name: { FR: "Casablanca Mosquée", EN: "Casablanca Mosque" }, top: "35%", left: "40%" },
       { name: { FR: "Rabat Capitale", EN: "Rabat Capital" }, top: "30%", left: "45%" },
@@ -896,27 +914,36 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Sahara Désert", EN: "Sahara Desert" }, top: "78%", left: "75%" }
     ],
     experienceGrid: [
-      { label: "Adventure", img: "/images/morocco_adventure.png" },
-      { label: "Culinary", img: "/images/morocco_culinary.png" },
-      { label: "Culture", img: "/images/morocco-marrakech-riad.png" },
-      { label: "Off Beat", img: "/images/morocco-sahara-dunes.png" },
-      { label: "Go Local", img: "/images/people-cliff.png" }
+      { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
+      { label: { FR: "Gastronomie", EN: "Culinary" }, img: "/images/morocco_culinary.png" },
+      { label: { FR: "Culture", EN: "Culture" }, img: "/images/morocco-marrakech-riad.png" },
+      { label: { FR: "Insolite", EN: "Off Beat" }, img: "/images/morocco-sahara-dunes.png" },
+      { label: { FR: "Immersion", EN: "Go Local" }, img: "/images/people-cliff.png" }
     ]
   },
   "3": {
     country: "Morocco",
-    heroTitle: "Sahara Deep Dive",
-    heroSub: "Sahara Deep Dive – Desert Immersion Experience. Spend three full nights in Erg Chebbi desert dunes with camels, sandboarding, local Gnawa music, and campfire stars.",
-    heroBtn: "Unveil the Sahara",
+    heroTitle: { FR: "Immersion Sahara", EN: "Sahara Deep Dive" },
+    heroSub: {
+      FR: "Sahara Deep Dive – Immersion Désert. Passez trois nuits complètes dans les dunes de l'Erg Chebbi avec chameaux, sandboard, musique Gnawa locale et bivouac étoilé.",
+      EN: "Sahara Deep Dive – Desert Immersion Experience. Spend three full nights in Erg Chebbi desert dunes with camels, sandboarding, local Gnawa music, and campfire stars."
+    },
+    heroBtn: { FR: "Découvrir le Sahara", EN: "Unveil the Sahara" },
     heroBg: "/images/morocco-sahara-dunes.png",
     themeColor: "#C2593F",
     themeColorHover: "#A14833",
     watercolorColor: "#C2593F",
     mapImage: "/images/moroco.webp",
-    discoverTitle: "Discover the Desert",
-    discoverDesc: "Focus completely on the Sahara life: walk guided through silent dunes, do desert photography, and exchange culture with local Berber communities.",
-    experienceTitle: "Experience Desert Life",
-    experienceDesc: "Deep desert immersion allows you to stargaze under the world's cleanest skies, sleep in tents, and travel the sandstone gorges of Todra and Dades.",
+    discoverTitle: { FR: "Découvrir le Désert", EN: "Discover the Desert" },
+    discoverDesc: {
+      FR: "Vivez au rythme du Sahara : marche guidée dans les dunes silencieuses, photographie du désert et échanges culturels avec les communautés berbères.",
+      EN: "Focus completely on the Sahara life: walk guided through silent dunes, do desert photography, and exchange culture with local Berber communities."
+    },
+    experienceTitle: { FR: "Vivre le Désert", EN: "Experience Desert Life" },
+    experienceDesc: {
+      FR: "Une immersion profonde dans le désert pour observer les étoiles sous le ciel le plus pur au monde, dormir sous tente et explorer les gorges du Todra et du Dadès.",
+      EN: "Deep desert immersion allows you to stargaze under the world's cleanest skies, sleep in tents, and travel the sandstone gorges of Todra and Dades."
+    },
     mapPins: [
       { name: { FR: "Marrakech Riad", EN: "Marrakech Riad" }, top: "65%", left: "32%" },
       { name: { FR: "Aït-Ben-Haddou", EN: "Ait Benhaddou" }, top: "45%", left: "58%" },
@@ -925,27 +952,36 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Merzouga Dunes", EN: "Merzouga Dunes" }, top: "78%", left: "75%" }
     ],
     experienceGrid: [
-      { label: "Adventure", img: "/images/morocco_adventure.png" },
-      { label: "Culinary", img: "/images/morocco_culinary.png" },
-      { label: "Culture", img: "/images/morocco-marrakech-riad.png" },
-      { label: "Off Beat", img: "/images/morocco-sahara-dunes.png" },
-      { label: "Go Local", img: "/images/people-cliff.png" }
+      { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
+      { label: { FR: "Gastronomie", EN: "Culinary" }, img: "/images/morocco_culinary.png" },
+      { label: { FR: "Culture", EN: "Culture" }, img: "/images/morocco-marrakech-riad.png" },
+      { label: { FR: "Insolite", EN: "Off Beat" }, img: "/images/morocco-sahara-dunes.png" },
+      { label: { FR: "Immersion", EN: "Go Local" }, img: "/images/people-cliff.png" }
     ]
   },
   "4": {
     country: "Morocco",
-    heroTitle: "Golf à Taghazout",
-    heroSub: "Bespoke Golf Escape in Taghazout Bay. Stay 7 nights at the 5★ Hilton Taghazout and play 4 rounds of golf at Tazegzout, du Soleil, and Les Dunes courses.",
-    heroBtn: "Explore Golf Escape",
+    heroTitle: { FR: "Golf à Taghazout", EN: "Golf in Taghazout" },
+    heroSub: {
+      FR: "Forfait Golf de Prestige à Taghazout Bay. Séjournez 7 nuits au Hilton Taghazout 5★ et jouez 4 parties de golf sur les parcours de Tazegzout, du Soleil et des Dunes.",
+      EN: "Bespoke Golf Escape in Taghazout Bay. Stay 7 nights at the 5★ Hilton Taghazout and play 4 rounds of golf at Tazegzout, du Soleil, and Les Dunes courses."
+    },
+    heroBtn: { FR: "Découvrir le Forfait", EN: "Explore Golf Escape" },
     heroBg: "/images/hilton_taghazout_5.avif",
     themeColor: "#00A3C4",
     themeColorHover: "#00839C",
     watercolorColor: "#00A3C4",
     mapImage: "/images/moroco.webp",
-    discoverTitle: "Discover Taghazout",
-    discoverDesc: "Experience first-class golf facing the Atlantic ocean, with pristine sandy beaches, argan oil discovery, and premium wellness.",
-    experienceTitle: "Experience Atlantic Golf",
-    experienceDesc: "Play on Kyle Phillips-designed fairways carved into seaside cliffs, enjoy gourmet dining with wine, and relax at Taghazout Bay.",
+    discoverTitle: { FR: "Découvrir Taghazout", EN: "Discover Taghazout" },
+    discoverDesc: {
+      FR: "Vivez le golf de premier choix face à l'océan Atlantique, avec des plages de sable fin, la découverte de l'argan et le bien-être.",
+      EN: "Experience first-class golf facing the Atlantic ocean, with pristine sandy beaches, argan oil discovery, and premium wellness."
+    },
+    experienceTitle: { FR: "Vivre le Golf Côtier", EN: "Experience Atlantic Golf" },
+    experienceDesc: {
+      FR: "Jouez sur des fairways dessinés par Kyle Phillips au sommet des falaises côtières, savourez des dîners gastronomiques et détendez-vous à Taghazout.",
+      EN: "Play on Kyle Phillips-designed fairways carved into seaside cliffs, enjoy gourmet dining with wine, and relax at Taghazout Bay."
+    },
     mapPins: [
       { name: { FR: "Hilton Taghazout", EN: "Hilton Taghazout" }, top: "75%", left: "15%" },
       { name: { FR: "Tazegzout Golf", EN: "Tazegzout Golf" }, top: "72%", left: "12%" },
@@ -953,27 +989,36 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Golf Les Dunes", EN: "Golf Les Dunes" }, top: "85%", left: "18%" }
     ],
     experienceGrid: [
-      { label: "Golfing", img: "/images/hilton_taghazout_1.avif" },
-      { label: "Beachfront", img: "/images/hilton_taghazout_2.avif" },
-      { label: "Wellness", img: "/images/hilton_taghazout_3.avif" },
-      { label: "Luxury Rooms", img: "/images/hilton_taghazout_4.avif" },
-      { label: "Sunset", img: "/images/hilton_taghazout_5.avif" }
+      { label: { FR: "Golf de Rêve", EN: "Golfing" }, img: "/images/hilton_taghazout_1.avif" },
+      { label: { FR: "Face à la Mer", EN: "Beachfront" }, img: "/images/hilton_taghazout_2.avif" },
+      { label: { FR: "Bien-être", EN: "Wellness" }, img: "/images/hilton_taghazout_3.avif" },
+      { label: { FR: "Suites de Luxe", EN: "Luxury Rooms" }, img: "/images/hilton_taghazout_4.avif" },
+      { label: { FR: "Coucher de Soleil", EN: "Sunset" }, img: "/images/hilton_taghazout_5.avif" }
     ]
   },
   "5": {
     country: "Morocco",
-    heroTitle: "Golf à Marrakech",
-    heroSub: "Royal Golf & All-Inclusive Wellness in Marrakech. Stay 11 nights at 5★ Hôtel du Golf and play 6 rounds at Royal Golf, Assoufid, Amelkis, Samanah, Ourika, and Noria.",
-    heroBtn: "Explore Royal Golf",
+    heroTitle: { FR: "Golf à Marrakech", EN: "Golf in Marrakech" },
+    heroSub: {
+      FR: "Séjour Golf Royal & Bien-être Tout-Inclus à Marrakech. Séjournez 11 nuits à l'Hôtel du Golf 5★ et jouez 6 parties sur les plus prestigieux parcours de Marrakech.",
+      EN: "Royal Golf & All-Inclusive Wellness in Marrakech. Stay 11 nights at 5★ Hôtel du Golf and play 6 rounds at Royal Golf, Assoufid, Amelkis, Samanah, Ourika, and Noria."
+    },
+    heroBtn: { FR: "Découvrir le Golf Royal", EN: "Explore Royal Golf" },
     heroBg: "/images/marrakech_sunset_hero.png",
     themeColor: "#8B2635",
     themeColorHover: "#72202b",
     watercolorColor: "#8B2635",
     mapImage: "/images/moroco.webp",
-    discoverTitle: "Discover Marrakech Golf",
-    discoverDesc: "Play on some of the world's most historic and design-signature courses located at the gates of the Sahara and facing the Atlas mountains.",
-    experienceTitle: "Experience Royal Courses",
-    experienceDesc: "Experience direct flight Transat access, all-inclusive gourmet dining, historic clay medina tours, and wellness spa hammam buyouts.",
+    discoverTitle: { FR: "Découvrir les Parcours", EN: "Discover Marrakech Golf" },
+    discoverDesc: {
+      FR: "Jouez sur des parcours de légende aux portes du désert et face aux sommets enneigés de l'Atlas.",
+      EN: "Play on some of the world's most historic and design-signature courses located at the gates of the Sahara and facing the Atlas mountains."
+    },
+    experienceTitle: { FR: "Vivre le Golf de Légende", EN: "Experience Royal Courses" },
+    experienceDesc: {
+      FR: "Bénéficiez d'un vol direct Transat, d'une formule tout-inclus gourmet, de visites privées de la médina et d'un rituel bien-être hammam privé.",
+      EN: "Experience direct flight Transat access, all-inclusive gourmet dining, historic clay medina tours, and wellness spa hammam buyouts."
+    },
     mapPins: [
       { name: { FR: "Hôtel du Golf", EN: "Hotel du Golf" }, top: "62%", left: "32%" },
       { name: { FR: "Royal Golf de Marrakech", EN: "Royal Golf Marrakech" }, top: "65%", left: "35%" },
@@ -981,11 +1026,11 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Golf Amelkis", EN: "Golf Amelkis" }, top: "66%", left: "37%" }
     ],
     experienceGrid: [
-      { label: "Royal Golf", img: "/images/marrakech_sunset_hero.png" },
-      { label: "All-Inclusive", img: "/images/morocco-marrakech-riad.png" },
-      { label: "Atlas Views", img: "/images/people-cliff.png" },
-      { label: "Culture", img: "/images/morocco_adventure.png" },
-      { label: "Wellness", img: "/images/morocco_culinary.png" }
+      { label: { FR: "Golf Royal", EN: "Royal Golf" }, img: "/images/marrakech_sunset_hero.png" },
+      { label: { FR: "Tout-Inclus", EN: "All-Inclusive" }, img: "/images/morocco-marrakech-riad.png" },
+      { label: { FR: "Vue sur l'Atlas", EN: "Atlas Views" }, img: "/images/people-cliff.png" },
+      { label: { FR: "Culture", EN: "Culture" }, img: "/images/morocco_adventure.png" },
+      { label: { FR: "Bien-être", EN: "Wellness" }, img: "/images/morocco_culinary.png" }
     ]
   }
 };
