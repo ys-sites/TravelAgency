@@ -48,7 +48,7 @@ export default function GulfHeroScrubber() {
       </div>
       
       {/* Bottom Subtext & Call to Actions */}
-      <div className="absolute bottom-28 left-0 right-0 z-10 flex flex-col items-center px-6 select-none pointer-events-none">
+      <div className="absolute bottom-36 left-0 right-0 z-10 flex flex-col items-center px-6 select-none pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
