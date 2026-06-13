@@ -296,6 +296,86 @@ export const toursList: TourCard[] = [
       EN: "Reserve before Nov 1, 2026 — C$1,000 in complimentary inclusions per guest"
     },
     iconType: "mountain"
+  },
+  {
+    id: 6,
+    image: "/images/moroco.webp",
+    category: {
+      FR: "villes impériales - trek chameau sahara - ruines de volubilis",
+      EN: "imperial cities - sahara camel trek - volubilis ruins"
+    },
+    title: {
+      FR: "Villes Impériales & Découverte du Désert",
+      EN: "Imperial Cities & Desert Discovery"
+    },
+    description: {
+      FR: "Un grand voyage historique à travers les villes impériales du Maroc: Casablanca, Rabat, Fès et Meknès, agrémenté d'une nuit magique en bivouac à Merzouga.",
+      EN: "Embark on a grand historical tour of Morocco's imperial cities: Casablanca, Rabat, Fes, and Meknes, combined with a magical desert camp stay in Merzouga."
+    },
+    duration: {
+      FR: "12 jours / 11 nuits",
+      EN: "11 days / 10 nights"
+    },
+    flight: {
+      FR: "Vol inclus",
+      EN: "Flight included"
+    },
+    meals: {
+      FR: "Demi-pension & dîners désert",
+      EN: "Half board & desert dinners"
+    },
+    oldPrice: "C$ 5,500",
+    price: "C$ 4,800",
+    tag: "Imperial Privilege — C$700 included",
+    badge: {
+      FR: "CULTURE",
+      EN: "CULTURE"
+    },
+    promoText: {
+      FR: "Réservez avant le 1er oct 2026 — C$700 en inclusions complémentaires / pers.",
+      EN: "Reserve before Oct 1, 2026 — C$700 in complimentary inclusions per guest"
+    },
+    iconType: "water"
+  },
+  {
+    id: 7,
+    image: "/images/morocco-marrakech-riad.png",
+    category: {
+      FR: "chefchaouen perle bleue - tanger détroit de gibraltar - essaouira plage",
+      EN: "blue pearl chefchaouen - tangier gibraltar view - essaouira beach"
+    },
+    title: {
+      FR: "Villes Impériales, Chefchaouen & Côte Atlantique",
+      EN: "Imperial Cities, Chefchaouen & Atlantic Coast"
+    },
+    description: {
+      FR: "Le grand tour du Maroc par excellence: explorez les ruelles bleues de Chefchaouen, Tanger, Fès, le désert de Merzouga, Marrakech, et les remparts d'Essaouira.",
+      EN: "Morocco's ultimate grand tour: discover Chefchaouen's blue streets, historic Tangier, Fes, dunes of Merzouga, Marrakech, and the ocean ramparts of Essaouira."
+    },
+    duration: {
+      FR: "15 jours / 14 nuits",
+      EN: "15 days / 14 nights"
+    },
+    flight: {
+      FR: "Vol inclus",
+      EN: "Flight included"
+    },
+    meals: {
+      FR: "Demi-pension & dîners gourmets",
+      EN: "Half board & desert dinners"
+    },
+    oldPrice: "C$ 8,400",
+    price: "C$ 7,200",
+    tag: "Grand Voyage — C$1,200 included",
+    badge: {
+      FR: "GRAND VOYAGE",
+      EN: "GRAND VOYAGE"
+    },
+    promoText: {
+      FR: "Réservez avant le 15 août 2026 — C$1 200 en inclusions complémentaires / pers.",
+      EN: "Reserve before August 15, 2026 — C$1,200 in complimentary inclusions per guest"
+    },
+    iconType: "lighthouse"
   }
 ];
 
@@ -841,6 +921,213 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         }
       }
     ]
+  },
+  "6": {
+    id: 6,
+    image: "/images/moroco.webp",
+    contentImage: "/images/moroco.webp",
+    title: { FR: "Villes Impériales & Découverte du Désert", EN: "Imperial Cities & Desert Discovery" },
+    duration: { FR: "12 jours / 11 nuits", EN: "11 days / 10 nights" },
+    cost: "C$ 4,800",
+    overview: {
+      FR: "Découvrez l'histoire impériale et l'âme du désert marocain. Explorez les trésors de Casablanca, la capitale de Rabat, la ville romaine de Volubilis et la médina de Fès avant de traverser l'Atlas pour monter à chameau et dormir au milieu des dunes de l'Erg Chebbi à Merzouga.",
+      EN: "Discover the imperial history and desert soul of Morocco. Explore the architectural treasures of Casablanca, the capital Rabat, the Roman ruins of Volubilis, and the historic medina of Fes, before crossing the Atlas to ride camels and sleep under the stars in the Merzouga desert."
+    },
+    timeline: [
+      { day: 1, title: { FR: "Arrivée à Casablanca", EN: "Arrival in Casablanca" }, desc: { FR: "Accueil à l'aéroport de Casablanca, transfert privé vers votre hôtel et installation. Soirée libre.", EN: "Meet and greet at Casablanca airport, private transfer to your hotel, and check-in. Evening at leisure." } },
+      { day: 2, title: { FR: "Visite de Casablanca", EN: "Casablanca Guided Tour" }, desc: { FR: "Découvrez la mosquée Hassan II (visite extérieure), la place Mohammed V, le quartier des Habous et la Corniche.", EN: "Guided tour of Casablanca, featuring the Hassan II Mosque (exterior), Mohammed V Square, and the scenic Corniche." } },
+      { day: 3, title: { FR: "Casablanca vers Rabat", EN: "Casablanca to Rabat" }, desc: { FR: "Départ pour Rabat. Visite guidée incluant la Tour Hassan, le somptueux Mausolée de Mohammed V et la pittoresque Kasbah des Oudayas.", EN: "Drive to Rabat. Take a guided tour of the capital, including the Hassan Tower, Mohammed V Mausoleum, and Kasbah of the Oudayas." } },
+      { day: 4, title: { FR: "Rabat vers Fès via Meknès & Volubilis", EN: "Rabat to Fes via Meknes & Volubilis" }, desc: { FR: "Route vers Meknès et découverte des ruines romaines de Volubilis classées UNESCO. Continuation vers Fès.", EN: "Travel to Meknes for a panoramic tour, visit the ancient Roman site of Volubilis (UNESCO), and check in to your riad in Fes." } },
+      { day: 5, title: { FR: "Découverte Culturelle de Fès", EN: "Fes Guided Medina Exploration" }, desc: { FR: "Journée complète dans la médina de Fès (UNESCO), l'Université Al Quaraouiyine, la tannerie Chouara et la médersa Bou Inania.", EN: "Enjoy a full-day guided walking tour of Fes El Bali medina, visiting the historic tanneries, artisan workshops, and ancient schools." } },
+      { day: 6, title: { FR: "Fès vers le Désert de Merzouga", EN: "Fes to Merzouga Desert" }, desc: { FR: "Longue route vers l'Erg Chebbi via Ifrane, la forêt d'Azrou (singes de Barbarie) et Midelt. Arrivée à Merzouga en fin de journée.", EN: "Drive through Middle Atlas forests, stop in Ifrane and Azrou, lunch in Midelt, and continue through the Ziz Valley to Merzouga." } },
+      { day: 7, title: { FR: "Merzouga & Coucher de Soleil à Chameau", EN: "Sahara Sunset Camel Trek" }, desc: { FR: "Matinée libre pour vous reposer ou explorer. L'après-midi, départ à dos de chameau pour voir le coucher du soleil. Dîner traditionnel et nuit en bivouac.", EN: "Free morning in Merzouga. Afternoon sunset camel ride across Erg Chebbi dunes. Enjoy a nomadic campfire dinner and sleep in a desert camp." } },
+      { day: 8, title: { FR: "Merzouga vers Ouarzazate via Aït-Ben-Haddou", EN: "Merzouga to Ouarzazate via Ait Ben Haddou" }, desc: { FR: "Route par Rissani et la vallée du Drâa. Visite guidée de la Kasbah fortifiée d'Aït-Ben-Haddou (UNESCO) avant d'arriver à Ouarzazate.", EN: "Drive through the palm-filled Draa Valley. Visit the world-famous fortified Kasbah of Ait Ben Haddou (UNESCO) before reaching Ouarzazate." } },
+      { day: 9, title: { FR: "Ouarzazate vers Marrakech", EN: "Ouarzazate to Marrakech" }, desc: { FR: "Traversée du Haut Atlas par le col spectaculaire du Tizi n'Tichka. Arrivée et nuit à Marrakech.", EN: "Cross the High Atlas Mountains via the panoramic Tizi n'Tichka Pass. Arrive and check in to your hotel in Marrakech." } },
+      { day: 10, title: { FR: "Visite de Marrakech", EN: "Marrakech Guided Tour" }, desc: { FR: "Visite de la place Jemaa el-Fna, la Koutoubia, le palais de la Bahia et les souks. Balade en calèche au coucher du soleil.", EN: "Discover the Koutoubia Mosque, Bahia Palace, Saadian Tombs, and the lively souks of the medina. Sunset horse carriage ride." } },
+      { day: 11, title: { FR: "Journée Libre à Marrakech / Retour Casablanca", EN: "Marrakech Free Day / Return to Casablanca" }, desc: { FR: "Pour le forfait FR (11 nuits): Journée complète libre à Marrakech pour détente, souks ou hammam. Pour le forfait EN (10 nuits): Transfert direct vers Casablanca.", EN: "Enjoy a free day in Marrakech to relax, or transfer back to Casablanca Airport according to your departure flights." } },
+      { day: 12, title: { FR: "Transfert vers l'Aéroport", EN: "Departure" }, desc: { FR: "Petit-déjeuner et transfert privé vers l'aéroport de Casablanca pour votre vol de retour. Fin des services.", EN: "Breakfast and private transfer to Casablanca airport for your flight home. End of services." } }
+    ],
+    inclusions: {
+      FR: [
+        "11 nuits d'hébergement en hôtels premium et riads de charme (dont 1 nuit au désert)",
+        "Transport terrestre privé en véhicule climatisé avec chauffeur professionnel",
+        "Guides locaux à Rabat, Volubilis, Fès et Marrakech",
+        "Randonnée à chameau à Erg Chebbi et dîner sous les étoiles",
+        "Petits-déjeuners quotidiens et dîners désignés"
+      ],
+      EN: [
+        "10 nights in premium riads and hotels (including 1 night in desert camp)",
+        "All land transport in private air-conditioned vehicle with dedicated driver",
+        "Local expert guides in Rabat, Volubilis, Fes, and Marrakech",
+        "Erg Chebbi sunset camel trek and desert stargazing camp",
+        "Daily breakfast and designated dinners"
+      ]
+    },
+    exclusions: {
+      FR: [
+        "Vols internationaux",
+        "Assurance voyage personnelle obligatoire",
+        "Repas du midi et boissons non mentionnés",
+        "Pourboires et dépenses personnelles"
+      ],
+      EN: [
+        "International flights",
+        "Mandatory personal travel insurance",
+        "Lunches and beverages outside of set dinners",
+        "Tips for guides/drivers and personal expenditures"
+      ]
+    },
+    options: {
+      FR: [
+        { name: "Excursion quad dans le désert (2h)", price: "C$ 180" },
+        { name: "Rituel Hammam Traditionnel (2h)", price: "C$ 150" }
+      ],
+      EN: [
+        { name: "Desert Quad Biking Adventure (2h)", price: "C$ 180" },
+        { name: "Traditional Hammam Treatment (2h)", price: "C$ 150" }
+      ]
+    },
+    hotels: [
+      {
+        name: "Riad Fes (Fes)",
+        stars: 5,
+        desc: {
+          FR: "Membre Relais & Châteaux, combinant design moderne et héritage andalou exceptionnel.",
+          EN: "Relais & Châteaux member combining contemporary design and Andalusian heritage."
+        },
+        link: "https://www.riadfes.com/"
+      },
+      {
+        name: "La Maison Arabe (Marrakech)",
+        stars: 5,
+        desc: {
+          FR: "Riad de grand luxe légendaire dans la médina de Marrakech avec jardin et piscine d'exception.",
+          EN: "A legendary luxury riad in Marrakech medina featuring exquisite gardens and pool."
+        },
+        link: "https://www.lamaisonarabe.com/"
+      }
+    ],
+    activities: [
+      {
+        title: { FR: "Randonnée à Chameau à Erg Chebbi", EN: "Erg Chebbi Camel Trek" },
+        desc: {
+          FR: "Une promenade magique à dos de chameau dans les dunes géantes de Merzouga au coucher du soleil.",
+          EN: "A magical camel trek into the giant dunes of Merzouga at sunset."
+        }
+      },
+      {
+        title: { FR: "Ruines Romaines de Volubilis", EN: "Volubilis Roman Ruins" },
+        desc: {
+          FR: "Exploration des superbes mosaïques et vestiges romains avec un guide archéologue local.",
+          EN: "Explore the ancient Roman ruins and stunning mosaics with an expert local guide."
+        }
+      }
+    ]
+  },
+  "7": {
+    id: 7,
+    image: "/images/morocco-marrakech-riad.png",
+    contentImage: "/images/morocco-marrakech-riad.png",
+    title: { FR: "Villes Impériales, Chefchaouen & Côte Atlantique", EN: "Imperial Cities, Chefchaouen & Atlantic Coast" },
+    duration: { FR: "15 jours / 14 nuits", EN: "15 days / 14 nights" },
+    cost: "C$ 7,200",
+    overview: {
+      FR: "L'itinéraire ultime de 15 jours. Explorez le nord historique à Tanger, flânez dans les ruelles bleues de Chefchaouen, visitez le patrimoine impérial de Fès et de Rabat, chevauchez des chameaux au Sahara, visitez Marrakech et profitez du port de pêche d'Essaouira sur l'Atlantique.",
+      EN: "Morocco's ultimate grand tour. A comprehensive 15-day itinerary covering the blue town of Chefchaouen, the northern coast of Tangier, the imperial heritage of Rabat and Fes, the dunes of Erg Chebbi, the palaces of Marrakech, and the relaxing seaside ramparts of Essaouira."
+    },
+    timeline: [
+      { day: 1, title: { FR: "Arrivée à Casablanca", EN: "Arrival in Casablanca" }, desc: { FR: "Accueil à l'aéroport de Casablanca, transfert privé vers votre hôtel et installation. Nuit à Casablanca.", EN: "Meet and greet at Casablanca Airport and private transfer to your hotel. Overnight in Casablanca." } },
+      { day: 2, title: { FR: "Casablanca vers Rabat", EN: "Casablanca to Rabat" }, desc: { FR: "Visite de la célèbre Mosquée Hassan II et promenade sur la Corniche, puis route vers Rabat. Visite guidée incluant la Tour Hassan et Kasbah des Oudayas.", EN: "Tour the Hassan II Mosque, then transfer to Rabat. Explore Hassan Tower and Kasbah of the Oudayas." } },
+      { day: 3, title: { FR: "Rabat vers Tanger", EN: "Rabat to Tangier" }, desc: { FR: "Voyage vers le nord à Tanger. Découverte de Cap Spartel, des Grottes d'Hercule et de la Kasbah surplombant le détroit de Gibraltar.", EN: "Travel north to Tangier. Explore Cap Spartel, the Hercules Caves, and the historic Kasbah overlooking the Strait of Gibraltar." } },
+      { day: 4, title: { FR: "Excursion à Chefchaouen la Bleue", EN: "Day Trip to Chefchaouen" }, desc: { FR: "Route vers Chefchaouen dans le Rif. Temps libre pour flâner et prendre des photos dans les ruelles bleues de la médina. Retour à Tanger.", EN: "Drive to Chefchaouen in the Rif Mountains. Explore the famous blue streets of the medina, then return to Tangier in the afternoon." } },
+      { day: 5, title: { FR: "Tanger vers Fès", EN: "Tangier to Fes" }, desc: { FR: "Départ matinal pour Fès. Installation au riad et temps libre pour commencer votre exploration.", EN: "Depart Tangier and drive south to Fes. Check in to your riad and enjoy a free evening." } },
+      { day: 6, title: { FR: "Visite Guidée de Fès", EN: "Fes Guided Medina Exploration" }, desc: { FR: "Journée complète de visite guidée de la médina Fès El Bali, l'Université Al Quaraouiyine, la tannerie Chouara et la médersa Bou Inania.", EN: "Guided tour of Fes Medina (UNESCO), Chouara tanneries, Al Quaraouiyine University, and Bou Inania Madrasa." } },
+      { day: 7, title: { FR: "Fès vers le Désert de Merzouga", EN: "Fes to Merzouga Sahara" }, desc: { FR: "Route vers le Sahara avec arrêts à Ifrane, la forêt de cèdres d'Azrou et déjeuner à Midelt. Nuit à l'hôtel à Merzouga.", EN: "Drive through Middle Atlas forest, Azrou cedar forest, and Midelt. Arrive in Merzouga in the late afternoon. Overnight at hotel." } },
+      { day: 8, title: { FR: "Désert & Coucher de Soleil à Chameau", EN: "Sahara Sunset Camel Trek" }, desc: { FR: "Matinée libre. L'après-midi, départ à dos de chameau dans les dunes géantes d'Erg Chebbi pour admirer le coucher du soleil. Dîner nomade et nuit en camp.", EN: "Free morning in Merzouga. Afternoon camel trek into Erg Chebbi dunes for sunset. Campfire dinner and overnight at desert camp." } },
+      { day: 9, title: { FR: "Merzouga vers Ouarzazate via Aït-Ben-Haddou", EN: "Merzouga to Ouarzazate" }, desc: { FR: "Départ du désert via Rissani, la vallée du Drâa et visite de la Kasbah classée UNESCO d'Aït-Ben-Haddou. Nuit à Ouarzazate.", EN: "Drive through the Draa Valley. Visit the historic UNESCO site of Ait Ben Haddou before continuing to Ouarzazate." } },
+      { day: 10, title: { FR: "Ouarzazate vers Marrakech", EN: "Ouarzazate to Marrakech" }, desc: { FR: "Route à travers le Haut Atlas par le col spectaculaire du Tizi n'Tichka. Arrivée et nuit à Marrakech.", EN: "Cross the High Atlas Mountains via the scenic Tizi n'Tichka Pass. Check in to your hotel in Marrakech." } },
+      { day: 11, title: { FR: "Visite Guidée de Marrakech", EN: "Marrakech Guided Discovery" }, desc: { FR: "Découvrez le palais de la Bahia, les tombeaux saadiens, la place Jemaa el-Fna et flânez dans les souks de la médina.", EN: "Guided city tour including Bahia Palace, Saadian Tombs, Jemaa el-Fna, and free time in the souks." } },
+      { day: 12, title: { FR: "Marrakech Journée Libre", EN: "Marrakech Leisure Day" }, desc: { FR: "Profitez d'une journée libre pour vous détendre au riad, faire un spa hammam traditionnel ou explorer les jardins Majorelle.", EN: "Free day to enjoy Marrakech at your own pace. Optional traditional hammam experience or Majorelle Garden visit." } },
+      { day: 13, title: { FR: "Marrakech vers Essaouira", EN: "Marrakech to Essaouira" }, desc: { FR: "Départ pour Essaouira. Découvrez la charmante médina fortifiée, le port de pêche et profitez de la plage. Nuit à Essaouira.", EN: "Drive to Essaouira on the Atlantic coast. Discover the charming medina, the fishing port, and the historic ramparts." } },
+      { day: 14, title: { FR: "Essaouira vers Casablanca", EN: "Essaouira to Casablanca" }, desc: { FR: "Route de retour vers Casablanca. Installation à l'hôtel et temps libre en soirée. Nuit à Casablanca.", EN: "Return drive to Casablanca. Check in to your hotel and enjoy a final free evening in Casablanca." } },
+      { day: 15, title: { FR: "Départ de Casablanca", EN: "Casablanca Departure" }, desc: { FR: "Transfert privé vers l'aéroport Mohammed V selon l'horaire de votre vol. Fin des services.", EN: "Private transfer to Mohammed V International Airport for your departure flight. End of services." } }
+    ],
+    inclusions: {
+      FR: [
+        "14 nuits d'hébergement en hôtels premium et riads de charme (dont 1 nuit au désert)",
+        "Transport terrestre privé en véhicule climatisé avec chauffeur professionnel",
+        "Guides locaux à Rabat, Tanger, Fès, Marrakech et Essaouira",
+        "Randonnée à chameau à Erg Chebbi et dîner sous les étoiles",
+        "Petits-déjeuners quotidiens et dîners désignés"
+      ],
+      EN: [
+        "14 nights in premium riads and hotels (including 1 night in desert camp)",
+        "All land transport in private air-conditioned vehicle with dedicated driver",
+        "Local expert guides in Rabat, Tangier, Fes, Marrakech, and Essaouira",
+        "Erg Chebbi sunset camel trek and desert stargazing camp",
+        "Daily breakfast and designated dinners"
+      ]
+    },
+    exclusions: {
+      FR: [
+        "Vols internationaux",
+        "Assurance voyage personnelle obligatoire",
+        "Repas du midi et boissons non mentionnés",
+        "Pourboires et dépenses personnelles"
+      ],
+      EN: [
+        "International flights",
+        "Mandatory personal travel insurance",
+        "Lunches and beverages outside of set dinners",
+        "Tips for guides/drivers and personal expenditures"
+      ]
+    },
+    options: {
+      FR: [
+        { name: "Cours de cuisine à Marrakech", price: "C$ 120" },
+        { name: "Vol en Montgolfière au lever du soleil", price: "C$ 420" }
+      ],
+      EN: [
+        { name: "Cooking Masterclass in Marrakech", price: "C$ 120" },
+        { name: "Sunrise Hot Air Balloon Flight", price: "C$ 420" }
+      ]
+    },
+    hotels: [
+      {
+        name: "Riad Fes (Fes)",
+        stars: 5,
+        desc: {
+          FR: "Riad d'exception combinant design moderne et héritage andalou.",
+          EN: "A boutique riad combining contemporary design and Andalusian heritage."
+        },
+        link: "https://www.riadfes.com/"
+      },
+      {
+        name: "Riad Lina & Spa (Chefchaouen)",
+        stars: 4,
+        desc: {
+          FR: "Riad d'exception avec spa niché au cœur de la ville bleue.",
+          EN: "Boutique riad and spa set in the heart of the blue town of Chefchaouen."
+        },
+        link: "https://www.riadlina.com/"
+      }
+    ],
+    activities: [
+      {
+        title: { FR: "Exploration de Chefchaouen la Bleue", EN: "Exploring Chefchaouen Medina" },
+        desc: {
+          FR: "Découverte des ruelles bleues de Chefchaouen et coucher de soleil depuis la mosquée espagnole.",
+          EN: "Walk through the iconic blue pathways and enjoy a sunset view from the Spanish Mosque."
+        }
+      },
+      {
+        title: { FR: "Découverte d'Essaouira", EN: "Essaouira Seaside Ramble" },
+        desc: {
+          FR: "Exploration des remparts maritimes d'Essaouira et de son port de pêche dynamique.",
+          EN: "Explore the maritime ramparts of Essaouira and its busy traditional fishing port."
+        }
+      }
+    ]
   }
 };
 
@@ -1031,6 +1318,82 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { label: { FR: "Vue sur l'Atlas", EN: "Atlas Views" }, img: "/images/people-cliff.png" },
       { label: { FR: "Culture", EN: "Culture" }, img: "/images/morocco_adventure.png" },
       { label: { FR: "Bien-être", EN: "Wellness" }, img: "/images/morocco_culinary.png" }
+    ]
+  },
+  "6": {
+    country: "Morocco",
+    heroTitle: { FR: "Villes Impériales", EN: "Imperial Cities & Desert" },
+    heroSub: {
+      FR: "Villes Impériales & Découverte du Désert. Explorez Casablanca, Rabat, Fès, Meknès et vivez la magie d'une nuit en bivouac au milieu des dunes de l'Erg Chebbi.",
+      EN: "Imperial Cities & Desert Discovery. Explore Casablanca, Rabat, Fes, and Meknes, combined with a magical camel ride and desert overnight under the stars."
+    },
+    heroBtn: { FR: "Découvrir le Circuit", EN: "Explore the Circuit" },
+    heroBg: "/images/moroco.webp",
+    themeColor: "#5A8266",
+    themeColorHover: "#476851",
+    watercolorColor: "#5A8266",
+    mapImage: "/images/moroco.webp",
+    discoverTitle: { FR: "Découvrir le Maroc", EN: "Discover Morocco" },
+    discoverDesc: {
+      FR: "Explorez les cités impériales historiques et passez de l'océan Atlantique aux dunes grandioses du Sahara.",
+      EN: "Explore the historic imperial strongholds and transition from the Atlantic ocean to the grand dunes of the Sahara."
+    },
+    experienceTitle: { FR: "Vivre le Voyage", EN: "Experience the Voyage" },
+    experienceDesc: {
+      FR: "Découvrez des récits anciens, observez les étoiles depuis le campement du désert et visitez les magnifiques vestiges romains de Volubilis.",
+      EN: "Discover ancient historic tales, gaze at infinite stars from the desert camp, and tour the beautiful Roman ruins of Volubilis."
+    },
+    mapPins: [
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "35%", left: "40%" },
+      { name: { FR: "Rabat", EN: "Rabat" }, top: "30%", left: "45%" },
+      { name: { FR: "Volubilis", EN: "Volubilis" }, top: "38%", left: "60%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "40%", left: "65%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "78%", left: "75%" }
+    ],
+    experienceGrid: [
+      { label: { FR: "Histoire", EN: "History" }, img: "/images/moroco.webp" },
+      { label: { FR: "Désert", EN: "Desert" }, img: "/images/morocco-sahara-dunes.png" },
+      { label: { FR: "Culture", EN: "Culture" }, img: "/images/morocco-marrakech-riad.png" },
+      { label: { FR: "Monuments", EN: "Monuments" }, img: "/images/people-cliff.png" },
+      { label: { FR: "Tradition", EN: "Tradition" }, img: "/images/morocco_culinary.png" }
+    ]
+  },
+  "7": {
+    country: "Morocco",
+    heroTitle: { FR: "Grand Tour", EN: "Grand Imperial Tour" },
+    heroSub: {
+      FR: "Villes Impériales, Chefchaouen & Côte Atlantique. Notre grand circuit de 15 jours couvrant Chefchaouen la bleue, Tanger, Fès, le Sahara, Marrakech et Essaouira.",
+      EN: "Imperial Cities, Chefchaouen & Atlantic Coast. A comprehensive 15-day itinerary covering Chefchaouen blue city, Tangier, Fes, Sahara camp, Marrakech, and Essaouira."
+    },
+    heroBtn: { FR: "Découvrir le Grand Voyage", EN: "Explore Grand Voyage" },
+    heroBg: "/images/morocco-marrakech-riad.png",
+    themeColor: "#C5A880",
+    themeColorHover: "#A3835B",
+    watercolorColor: "#C5A880",
+    mapImage: "/images/moroco.webp",
+    discoverTitle: { FR: "Découvrir le Maroc", EN: "Discover Morocco" },
+    discoverDesc: {
+      FR: "Explorez tout le Maroc du Nord au Sud, des montagnes du Rif aux plages de l'Atlantique et aux dunes du désert.",
+      EN: "Explore the entirety of Morocco from North to South, from Rif mountain peaks to Atlantic beaches and Sahara desert dunes."
+    },
+    experienceTitle: { FR: "Vivre le Grand Tour", EN: "Experience the Grand Tour" },
+    experienceDesc: {
+      FR: "Vivez le voyage ultime: ruelles bleues, souks de Marrakech, nuit au camp de désert et air marin d'Essaouira.",
+      EN: "Experience the ultimate Moroccan journey: blue pathways, Marrakech souks, desert camp stargazing, and sea air at Essaouira."
+    },
+    mapPins: [
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "35%", left: "40%" },
+      { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "18%", left: "62%" },
+      { name: { FR: "Tanger", EN: "Tangier" }, top: "12%", left: "55%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "40%", left: "65%" },
+      { name: { FR: "Essaouira", EN: "Essaouira" }, top: "70%", left: "18%" }
+    ],
+    experienceGrid: [
+      { label: { FR: "Chefchaouen la Bleue", EN: "Chefchaouen Blue" }, img: "/images/moroco.webp" },
+      { label: { FR: "Essaouira", EN: "Essaouira Coast" }, img: "/images/people-cliff.png" },
+      { label: { FR: "Sahara Dunes", EN: "Sahara Desert" }, img: "/images/morocco-sahara-dunes.png" },
+      { label: { FR: "Marrakech Souk", EN: "Marrakech Life" }, img: "/images/morocco-marrakech-riad.png" },
+      { label: { FR: "Volubilis", EN: "Ancient Heritage" }, img: "/images/morocco_culinary.png" }
     ]
   }
 };
