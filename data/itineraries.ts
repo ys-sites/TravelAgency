@@ -1159,7 +1159,7 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Casablanca", EN: "Casablanca" }, top: "36%", left: "53%" },
       { name: { FR: "Rabat", EN: "Rabat" }, top: "32%", left: "56%" },
       { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
-      { name: { FR: "Merzouga (Sahara)", EN: "Merzouga" }, top: "60%", left: "74%" },
+      { name: { FR: "Merzouga (Sahara)", EN: "Merzouga" }, top: "85%", left: "42%" },
       { name: { FR: "Skoura", EN: "Skoura" }, top: "60%", left: "61%" },
       { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
       { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" }
@@ -1201,7 +1201,7 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "21%", left: "63%" },
       { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
       { name: { FR: "Meknès & Volubilis", EN: "Meknes & Volubilis" }, top: "33%", left: "63%" },
-      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "60%", left: "74%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "85%", left: "42%" },
       { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "55%", left: "66%" },
       { name: { FR: "Vallée du Dadès", EN: "Dades Valley" }, top: "56%", left: "63%" },
       { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" }
@@ -1243,7 +1243,7 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61%", left: "59%" },
       { name: { FR: "Vallée du Dadès", EN: "Dades Valley" }, top: "56%", left: "63%" },
       { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "55%", left: "66%" },
-      { name: { FR: "Merzouga — 3 nuits désert", EN: "Merzouga — 3 desert nights" }, top: "60%", left: "74%" }
+      { name: { FR: "Merzouga — 3 nuits désert", EN: "Merzouga — 3 desert nights" }, top: "85%", left: "42%" }
     ],
     experienceGrid: [
       { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
@@ -1358,7 +1358,7 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Meknès", EN: "Meknes" }, top: "33%", left: "63%" },
       { name: { FR: "Volubilis", EN: "Volubilis" }, top: "32%", left: "63%" },
       { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
-      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "60%", left: "74%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "85%", left: "42%" },
       { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
       { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61%", left: "59%" },
       { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" }
@@ -1400,7 +1400,7 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Tanger", EN: "Tangier" }, top: "15%", left: "60%" },
       { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "21%", left: "63%" },
       { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
-      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "60%", left: "74%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "85%", left: "42%" },
       { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
       { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61%", left: "59%" },
       { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" },

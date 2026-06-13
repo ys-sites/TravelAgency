@@ -710,21 +710,30 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
 
         {/* Dynamic Itinerary Specific Pins */}
         {itineraryPins && itineraryPins.map((pin, index) => {
+          const isHovered = activeItineraryPin === pin;
+          const isAnyPinHovered = activeItineraryPin !== null;
+          const opacityVal = isHovered ? 1 : (isAnyPinHovered ? 0.25 : 1);
+          const scaleVal = isHovered ? 1.25 : (isAnyPinHovered ? 0.8 : 1);
+          const zIndexVal = isHovered ? 30 : 20;
+
           return (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.15, duration: 0.4, type: "spring", stiffness: 200 }}
-              whileHover={{ scale: 1.25, transition: { duration: 0.2 } }}
-              style={{ top: pin.top, left: pin.left }}
-              className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20 pointer-events-auto cursor-pointer"
+              animate={{ opacity: opacityVal, scale: scaleVal }}
+              transition={{
+                delay: isAnyPinHovered ? 0 : index * 0.1,
+                opacity: { duration: 0.2 },
+                scale: { type: "spring", stiffness: 200, damping: 20 }
+              }}
+              style={{ top: pin.top, left: pin.left, zIndex: zIndexVal }}
+              className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-auto cursor-pointer"
               onMouseEnter={() => setActiveItineraryPin(pin)}
               onMouseLeave={() => setActiveItineraryPin(null)}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" overflow="visible">
                 {/* Pulsing outer ring — only when hovered */}
-                {activeItineraryPin === pin && (
+                {isHovered && (
                   <circle
                     cx="12" cy="12" r="10"
                     fill="#8B2635"
@@ -736,15 +745,15 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
                 {/* Outer ring circle */}
                 <circle
                   cx="12" cy="12" r="6"
-                  fill={activeItineraryPin === pin ? "#8B2635" : "#FAF8F5"}
-                  stroke={activeItineraryPin === pin ? "#FAF8F5" : "#A3835B"}
+                  fill={isHovered ? "#8B2635" : "#FAF8F5"}
+                  stroke={isHovered ? "#FAF8F5" : "#A3835B"}
                   strokeWidth="1.5"
                   style={{ transition: 'all 0.3s ease' }}
                 />
                 {/* Inner center dot */}
                 <circle
                   cx="12" cy="12" r="2.2"
-                  fill={activeItineraryPin === pin ? "#FAF8F5" : "#A3835B"}
+                  fill={isHovered ? "#FAF8F5" : "#A3835B"}
                   style={{ transition: 'all 0.3s ease' }}
                 />
               </svg>
