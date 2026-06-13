@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { useLang, translate } from "../context/lang-context";
 import { toursList } from "@/data/itineraries";
+import { getTierStyle } from "../utils/tier-styles";
 
 const t = {
   book: {
@@ -19,6 +20,14 @@ export default function Tours() {
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-20 bg-white text-zinc-900" id="itineraries">
+      {/* Shimmer animation styles */}
+      <style>{`
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
+
       {/* Split Layout Container */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
@@ -93,21 +102,19 @@ export default function Tours() {
                   
                   {/* Badge container to prevent horizontal overlap on laptop/mobile screens */}
                   <div className="absolute top-6 left-6 right-6 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">
-                    <div className="bg-[#8B2635] text-[#faf9f5] font-mono text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full shadow-md">
-                      {tour.tag}
-                    </div>
-
-                    <div className={`px-3.5 py-1.5 rounded-full font-mono text-[9px] tracking-wider uppercase font-semibold shadow-md ${
-                      tour.id === 1
-                        ? "bg-[#a8c8e8] text-[#1a3a5c] border border-[#7aaed4]/40"
-                        : tour.id === 2
-                        ? "bg-[#8B2635] text-[#faf9f5] border border-[#8B2635]"
-                        : tour.id === 3
-                        ? "bg-[#8fada4] text-[#1a3530] border border-[#6e9990]/40"
-                        : "bg-[#c4a882] text-[#3d2410] border border-[#a8896a]/40"
-                    }`}>
-                      {translate(tour.badge, lang)}
-                    </div>
+                    {/* Styled Tier Badge with Framer Motion and Shimmer */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
+                      whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
+                      style={getTierStyle(translate(tour.badge, lang))}
+                      className="relative overflow-hidden px-3.5 py-1.5 rounded-full font-sans text-[11px] tracking-wider uppercase font-semibold shadow-md pointer-events-auto cursor-default"
+                    >
+                      {/* Shimmer overlay */}
+                      <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2.5s_infinite]" />
+                      <span className="relative z-10">{translate(tour.badge, lang)}</span>
+                    </motion.div>
                   </div>
 
                   {/* Booking Deadline Banner */}

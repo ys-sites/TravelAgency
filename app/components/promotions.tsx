@@ -6,12 +6,21 @@ import { motion } from "motion/react";
 import { Calendar, Users, Percent, Sparkles, Flame } from "lucide-react";
 import { useLang, translate } from "../context/lang-context";
 import { dealsList } from "@/data/itineraries";
+import { getTierStyle } from "../utils/tier-styles";
 
 export default function Promotions() {
   const { lang } = useLang();
 
   return (
     <div className="w-full bg-zinc-50/50 py-24 relative overflow-hidden border-y border-zinc-200/40">
+      {/* Shimmer animation styles */}
+      <style>{`
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
+
       {/* Decorative Flight Path Background */}
       <div className="absolute inset-0 pointer-events-none select-none z-0 opacity-20">
         <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,9 +99,19 @@ export default function Promotions() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none" />
                           {/* Badge container to prevent horizontal overlap on laptop/mobile screens */}
                 <div className="absolute top-6 left-6 right-6 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">
-                  <div className="bg-[#8B2635] text-[#faf9f5] font-sans font-semibold text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded-full shadow-md">
-                    {deal.tag}
-                  </div>
+                  {/* Styled Tier Badge with Framer Motion and Shimmer */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
+                    style={getTierStyle(translate(deal.badge, lang))}
+                    className="relative overflow-hidden px-3.5 py-1.5 rounded-full font-sans text-[11px] tracking-wider uppercase font-semibold shadow-md pointer-events-auto cursor-default"
+                  >
+                    {/* Shimmer overlay */}
+                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2.5s_infinite]" />
+                    <span className="relative z-10">{translate(deal.badge, lang)}</span>
+                  </motion.div>
                 </div>
 
                 {/* Booking Deadline Banner */}
