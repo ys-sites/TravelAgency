@@ -477,15 +477,19 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
   })();
 
   const itineraryTheme = itineraryId ? itineraryThemes[itineraryId] : null;
+  const itineraryPins = itineraryTheme?.mapPins || null;
 
   const [activeRegion, setActiveRegion] = useState<typeof mapConfig.regions[number] | null>(null);
+  const [activeItineraryPin, setActiveItineraryPin] = useState<MapPinDetail | null>(null);
 
   // Determine current active text elements
   const currentTitle = activeRegion 
     ? translate(activeRegion.name, lang) 
-    : (itineraryTheme 
-        ? translate(itineraryTheme.discoverTitle, lang) 
-        : translate(mapConfig.discoverTitle, lang));
+    : (activeItineraryPin 
+        ? translate(activeItineraryPin.name, lang) 
+        : (itineraryTheme 
+            ? translate(itineraryTheme.discoverTitle, lang) 
+            : translate(mapConfig.discoverTitle, lang)));
 
   const currentDesc = activeRegion 
     ? translate(activeRegion.description, lang) 
@@ -591,7 +595,7 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
 
           {/* Regional Interactive Layer Paths */}
           {mapConfig.regions.map((reg) => {
-            const isActive = activeRegion?.id === reg.id;
+            const isActive = !itineraryId && activeRegion?.id === reg.id;
             return (
               <path
                 key={reg.id}
@@ -601,9 +605,9 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
                 stroke={isActive ? "#A3835B" : "#e4e4e7"}
                 strokeWidth={isActive ? "1.5" : "0.5"}
                 filter={isActive ? "url(#glow)" : undefined}
-                className="cursor-pointer transition-all duration-300 ease-in-out hover:fill-[#C5A880]/30"
-                onMouseEnter={() => setActiveRegion(reg)}
-                onMouseLeave={() => setActiveRegion(null)}
+                className={itineraryId ? "" : "cursor-pointer transition-all duration-300 ease-in-out hover:fill-[#C5A880]/30"}
+                onMouseEnter={itineraryId ? undefined : () => setActiveRegion(reg)}
+                onMouseLeave={itineraryId ? undefined : () => setActiveRegion(null)}
               />
             );
           })}
@@ -622,7 +626,7 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
           )}
 
           {/* Connection Lines from Label to Pin */}
-          {mapConfig.regions.map((reg) => {
+          {!itineraryId && mapConfig.regions.map((reg) => {
             if (!reg.hasLine || !reg.linePath) return null;
             const isActive = activeRegion?.id === reg.id;
             return (
@@ -639,7 +643,7 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
           })}
 
           {/* Interactive Pointer Text Labels */}
-          {mapConfig.regions.map((reg) => {
+          {!itineraryId && mapConfig.regions.map((reg) => {
             const isActive = activeRegion?.id === reg.id;
             return (
               <text
@@ -659,7 +663,7 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
           })}
 
           {/* Animated Cities / Regions Pin Nodes */}
-          {mapConfig.regions.map((reg) => {
+          {!itineraryId && mapConfig.regions.map((reg) => {
             const isActive = activeRegion?.id === reg.id;
             return (
               <g
@@ -704,6 +708,54 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
           })}
         </svg>
 
+        {/* Dynamic Itinerary Specific Pins */}
+        {itineraryPins && itineraryPins.map((pin, index) => {
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: index * 0.15, duration: 0.4, type: "spring", stiffness: 200 }}
+              whileHover={{ scale: 1.25, transition: { duration: 0.2 } }}
+              style={{ top: pin.top, left: pin.left }}
+              className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20 pointer-events-auto cursor-pointer"
+              onMouseEnter={() => setActiveItineraryPin(pin)}
+              onMouseLeave={() => setActiveItineraryPin(null)}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" overflow="visible">
+                {/* Pulsing outer ring — only when hovered */}
+                {activeItineraryPin === pin && (
+                  <circle
+                    cx="12" cy="12" r="10"
+                    fill="#8B2635"
+                    opacity="0.35"
+                    className="animate-ping"
+                    style={{ transformOrigin: '12px 12px' }}
+                  />
+                )}
+                {/* Outer ring circle */}
+                <circle
+                  cx="12" cy="12" r="6"
+                  fill={activeItineraryPin === pin ? "#8B2635" : "#FAF8F5"}
+                  stroke={activeItineraryPin === pin ? "#FAF8F5" : "#A3835B"}
+                  strokeWidth="1.5"
+                  style={{ transition: 'all 0.3s ease' }}
+                />
+                {/* Inner center dot */}
+                <circle
+                  cx="12" cy="12" r="2.2"
+                  fill={activeItineraryPin === pin ? "#FAF8F5" : "#A3835B"}
+                  style={{ transition: 'all 0.3s ease' }}
+                />
+              </svg>
+              {/* Tooltip label — always visible */}
+              <div className="bg-zinc-950/85 backdrop-blur-md px-2 py-0.5 rounded-md border border-white/10 text-[#faf9f5] text-[9px] font-sans font-medium tracking-wide whitespace-nowrap mt-0.5 shadow-sm pointer-events-none">
+                {translate(pin.name, lang)}
+              </div>
+            </motion.div>
+          );
+        })}
+
         {/* Hover/Tap Hint Badge */}
         <div className="absolute bottom-4 right-4 bg-zinc-950/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 text-white font-sans text-[8px] sm:text-[9px] tracking-wider uppercase font-semibold">
           {translate(mapConfig.hoverPrompt, lang)}
@@ -747,6 +799,28 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
                   <span className="h-2 w-2 rounded-full bg-[#8B2635] shrink-0" />
                   {translate(activeRegion.highlights, lang)}
                 </div>
+              </motion.div>
+            ) : itineraryPins ? (
+              <motion.div
+                key="itinerary-list"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="grid grid-cols-2 gap-x-4 gap-y-2.5"
+              >
+                {itineraryPins.map((pin, pIdx) => (
+                  <div
+                    key={pIdx}
+                    className="flex items-center gap-2 cursor-pointer group"
+                    onMouseEnter={() => setActiveItineraryPin(pin)}
+                    onMouseLeave={() => setActiveItineraryPin(null)}
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-zinc-300 group-hover:bg-[#8B2635] transition-colors shrink-0" />
+                    <span className="font-sans text-[11px] font-medium text-zinc-500 group-hover:text-zinc-900 transition-colors">
+                      {translate(pin.name, lang)}
+                    </span>
+                  </div>
+                ))}
               </motion.div>
             ) : (
               <motion.div

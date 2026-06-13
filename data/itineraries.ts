@@ -1156,12 +1156,13 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Morocco has many different aspects to its personality. Adventure, Culinary, Culture; it's all here. Experience the many different, rich, exciting layers of Morocco. Experience it your way."
     },
     mapPins: [
-      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "38%", left: "52%" },
-      { name: { FR: "Rabat", EN: "Rabat" }, top: "33%", left: "53%" },
-      { name: { FR: "Fès", EN: "Fes" }, top: "33%", left: "68%" },
-      { name: { FR: "Merzouga (Sahara)", EN: "Merzouga" }, top: "85%", left: "42%" },
-      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "63%", left: "62%" },
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "52%", left: "51%" }
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "36%", left: "53%" },
+      { name: { FR: "Rabat", EN: "Rabat" }, top: "32%", left: "56%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
+      { name: { FR: "Merzouga (Sahara)", EN: "Merzouga" }, top: "60%", left: "74%" },
+      { name: { FR: "Skoura", EN: "Skoura" }, top: "60%", left: "61%" },
+      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" }
     ],
     experienceGrid: [
       { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
@@ -1195,14 +1196,15 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Experience the deep architectural roots and traditions of Morocco. Learn historical stories, taste street foods, and see how tanneries still operate."
     },
     mapPins: [
-      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "38%", left: "52%" },
-      { name: { FR: "Rabat", EN: "Rabat" }, top: "33%", left: "53%" },
-      { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "20%", left: "67%" },
-      { name: { FR: "Fès", EN: "Fes" }, top: "33%", left: "68%" },
-      { name: { FR: "Meknès & Volubilis", EN: "Meknes & Volubilis" }, top: "30%", left: "63%" },
-      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "85%", left: "42%" },
-      { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "59%", left: "67%" },
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "52%", left: "51%" }
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "36%", left: "53%" },
+      { name: { FR: "Rabat", EN: "Rabat" }, top: "32%", left: "56%" },
+      { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "21%", left: "63%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
+      { name: { FR: "Meknès & Volubilis", EN: "Meknes & Volubilis" }, top: "33%", left: "63%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "60%", left: "74%" },
+      { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "55%", left: "66%" },
+      { name: { FR: "Vallée du Dadès", EN: "Dades Valley" }, top: "56%", left: "63%" },
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" }
     ],
     experienceGrid: [
       { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
@@ -1236,12 +1238,12 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Deep desert immersion allows you to stargaze under the world's cleanest skies, sleep in tents, and travel the sandstone gorges of Todra and Dades."
     },
     mapPins: [
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "52%", left: "51%" },
-      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "63%", left: "62%" },
-      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "65%", left: "63%" },
-      { name: { FR: "Vallée du Dadès", EN: "Dades Valley" }, top: "57%", left: "65%" },
-      { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "59%", left: "67%" },
-      { name: { FR: "Merzouga (3 nuits)", EN: "Merzouga (3 nights)" }, top: "85%", left: "42%" }
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" },
+      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
+      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61%", left: "59%" },
+      { name: { FR: "Vallée du Dadès", EN: "Dades Valley" }, top: "56%", left: "63%" },
+      { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "55%", left: "66%" },
+      { name: { FR: "Merzouga — 3 nuits désert", EN: "Merzouga — 3 desert nights" }, top: "60%", left: "74%" }
     ],
     experienceGrid: [
       { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
@@ -1275,11 +1277,11 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Play on Kyle Phillips-designed fairways carved into seaside cliffs, enjoy gourmet dining with wine, and relax at Taghazout Bay."
     },
     mapPins: [
-      { name: { FR: "Agadir", EN: "Agadir" }, top: "68%", left: "44%" },
-      { name: { FR: "Hilton Taghazout Bay", EN: "Hilton Taghazout" }, top: "64%", left: "43%" },
-      { name: { FR: "Golf Tazegzout", EN: "Tazegzout Golf" }, top: "65%", left: "41%" },
-      { name: { FR: "Golf du Soleil", EN: "Golf du Soleil" }, top: "70%", left: "45%" },
-      { name: { FR: "Golf Les Dunes", EN: "Golf Les Dunes" }, top: "72%", left: "44%" }
+      { name: { FR: "Agadir", EN: "Agadir" }, top: "66%", left: "46%" },
+      { name: { FR: "Taghazout Bay", EN: "Taghazout Bay" }, top: "65%", left: "45%" },
+      { name: { FR: "Golf Tazegzout", EN: "Tazegzout Golf" }, top: "64%", left: "44%" },
+      { name: { FR: "Golf du Soleil", EN: "Golf du Soleil" }, top: "67%", left: "46%" },
+      { name: { FR: "Golf Les Dunes", EN: "Golf Les Dunes" }, top: "68%", left: "47%" }
     ],
     experienceGrid: [
       { label: { FR: "Golf de Rêve", EN: "Golfing" }, img: "/images/hilton_taghazout_1.avif" },
@@ -1313,11 +1315,11 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Experience direct flight Transat access, all-inclusive gourmet dining, historic clay medina tours, and wellness spa hammam buyouts."
     },
     mapPins: [
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "52%", left: "51%" },
-      { name: { FR: "Royal Golf Marrakech", EN: "Royal Golf" }, top: "54%", left: "50%" },
-      { name: { FR: "Golf Amelkis", EN: "Golf Amelkis" }, top: "51%", left: "53%" },
-      { name: { FR: "Golf Assoufid", EN: "Golf Assoufid" }, top: "56%", left: "51%" },
-      { name: { FR: "Vallée de l'Ourika", EN: "Ourika Valley" }, top: "58%", left: "54%" }
+      { name: { FR: "Marrakech — Hôtel du Golf", EN: "Marrakech — Hotel du Golf" }, top: "55%", left: "53%" },
+      { name: { FR: "Royal Golf de Marrakech", EN: "Royal Golf" }, top: "56%", left: "52%" },
+      { name: { FR: "Golf Amelkis", EN: "Golf Amelkis" }, top: "54%", left: "54%" },
+      { name: { FR: "Golf Assoufid", EN: "Golf Assoufid" }, top: "57%", left: "53%" },
+      { name: { FR: "Vallée de l'Ourika", EN: "Ourika Valley" }, top: "59%", left: "55%" }
     ],
     experienceGrid: [
       { label: { FR: "Golf Royal", EN: "Royal Golf" }, img: "/images/marrakech_sunset_hero.png" },
@@ -1351,14 +1353,15 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Discover ancient historic tales, gaze at infinite stars from the desert camp, and tour the beautiful Roman ruins of Volubilis."
     },
     mapPins: [
-      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "38%", left: "52%" },
-      { name: { FR: "Rabat", EN: "Rabat" }, top: "33%", left: "53%" },
-      { name: { FR: "Meknès", EN: "Meknes" }, top: "30%", left: "63%" },
-      { name: { FR: "Volubilis", EN: "Volubilis" }, top: "29%", left: "64%" },
-      { name: { FR: "Fès", EN: "Fes" }, top: "33%", left: "68%" },
-      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "85%", left: "42%" },
-      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "63%", left: "62%" },
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "52%", left: "51%" }
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "36%", left: "53%" },
+      { name: { FR: "Rabat", EN: "Rabat" }, top: "32%", left: "56%" },
+      { name: { FR: "Meknès", EN: "Meknes" }, top: "33%", left: "63%" },
+      { name: { FR: "Volubilis", EN: "Volubilis" }, top: "32%", left: "63%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "60%", left: "74%" },
+      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
+      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61%", left: "59%" },
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" }
     ],
     experienceGrid: [
       { label: { FR: "Histoire", EN: "History" }, img: "/images/moroco.webp" },
@@ -1392,15 +1395,16 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Experience the ultimate Moroccan journey: blue pathways, Marrakech souks, desert camp stargazing, and sea air at Essaouira."
     },
     mapPins: [
-      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "38%", left: "52%" },
-      { name: { FR: "Rabat", EN: "Rabat" }, top: "33%", left: "53%" },
-      { name: { FR: "Tanger", EN: "Tangier" }, top: "14%", left: "62%" },
-      { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "20%", left: "67%" },
-      { name: { FR: "Fès", EN: "Fes" }, top: "33%", left: "68%" },
-      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "85%", left: "42%" },
-      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "63%", left: "62%" },
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "52%", left: "51%" },
-      { name: { FR: "Essaouira", EN: "Essaouira" }, top: "57%", left: "43%" }
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "36%", left: "53%" },
+      { name: { FR: "Rabat", EN: "Rabat" }, top: "32%", left: "56%" },
+      { name: { FR: "Tanger", EN: "Tangier" }, top: "15%", left: "60%" },
+      { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "21%", left: "63%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "60%", left: "74%" },
+      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
+      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61%", left: "59%" },
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" },
+      { name: { FR: "Essaouira", EN: "Essaouira" }, top: "56%", left: "44%" }
     ],
     experienceGrid: [
       { label: { FR: "Chefchaouen la Bleue", EN: "Chefchaouen Blue" }, img: "/images/moroco.webp" },
