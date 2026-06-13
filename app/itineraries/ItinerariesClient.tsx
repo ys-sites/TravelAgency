@@ -32,9 +32,15 @@ export default function ItinerariesClient() {
       <Navbar />
 
       {/* Header Section */}
-      <section className="relative h-[40vh] w-full overflow-hidden bg-zinc-950 flex flex-col justify-end pb-12 px-6 md:px-12">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+      <section className="relative h-[48vh] w-full overflow-hidden bg-zinc-950 flex flex-col justify-end pb-12 px-6 md:px-12">
+        {/* Hero background image */}
+        <img
+          src="/images/moroco.webp"
+          alt="Curated Moroccan Portfolios"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full z-10 space-y-4">
           <Link

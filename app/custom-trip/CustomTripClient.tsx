@@ -362,25 +362,44 @@ export default function CustomTripClient() {
                 <h3 className={`font-serif text-xl md:text-2xl border-b pb-4 transition-colors duration-1000 ${isPremium ? 'text-white border-white/10' : 'text-zinc-900 border-zinc-200'}`}>
                   {translate(t.stepDuration, lang)}
                 </h3>
-                <div className={`p-6 md:p-8 border rounded-[1.5rem] space-y-6 transition-colors duration-1000 ${isPremium ? 'bg-zinc-950/50 border-white/10' : 'bg-zinc-50/50 border-zinc-200'}`}>
-                  <div className="space-y-2">
-                    <div className={`flex justify-between items-baseline font-mono text-xs transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
-                      <span>{lang === "FR" ? "Durée préférée" : "Preferred duration"}</span>
-                      <span className={`text-lg font-bold transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>{nights} {lang === "FR" ? "Nuits" : "Nights"}</span>
+                <div className={`p-6 md:p-8 border rounded-[1.5rem] space-y-4 transition-colors duration-1000 ${isPremium ? 'bg-zinc-950/50 border-white/10' : 'bg-zinc-50/50 border-zinc-200'}`}>
+                  {/* Display-only duration value — controlled by the sidebar slider */}
+                  <div className="flex items-center justify-between">
+                    <div className="space-y-1">
+                      <span className={`font-mono text-[10px] tracking-widest uppercase ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>
+                        {lang === "FR" ? "Durée sélectionnée" : "Selected duration"}
+                      </span>
+                      <div className="flex items-baseline gap-2">
+                        <span className={`text-3xl font-bold font-heading tabular-nums transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
+                          {nights}
+                        </span>
+                        <span className={`text-sm font-light ${isPremium ? 'text-white/50' : 'text-zinc-500'}`}>
+                          {lang === "FR" ? "nuits" : "nights"}
+                        </span>
+                      </div>
                     </div>
-                    <input
-                      type="range"
-                      min={5}
-                      max={30}
-                      value={nights}
-                      onChange={(e) => setNights(Number(e.target.value))}
-                      className="w-full h-1 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-brand-gold"
+                    <div className={`text-[11px] font-light text-right max-w-[160px] leading-relaxed ${isPremium ? 'text-white/30' : 'text-zinc-400'}`}>
+                      {lang === "FR"
+                        ? "Ajustez via le curseur dans le panneau de droite →"
+                        : "Adjust with the slider in the booking panel →"
+                      }
+                    </div>
+                  </div>
+
+                  {/* Mini visual progress bar — read-only */}
+                  <div className={`h-[3px] rounded-full overflow-hidden ${isPremium ? 'bg-white/10' : 'bg-zinc-200'}`}>
+                    <div
+                      className="h-full rounded-full transition-all duration-500"
+                      style={{
+                        width: `${((nights - 5) / 25) * 100}%`,
+                        background: isPremium ? '#C5A880' : '#1a1a1a'
+                      }}
                     />
-                    <div className={`flex justify-between font-mono text-[9px] transition-colors duration-1000 ${isPremium ? 'text-white/30' : 'text-zinc-300'}`}>
-                      <span>5</span>
-                      <span>15</span>
-                      <span>30</span>
-                    </div>
+                  </div>
+
+                  <div className={`flex justify-between font-mono text-[9px] ${isPremium ? 'text-white/20' : 'text-zinc-300'}`}>
+                    <span>5 {lang === "FR" ? "nuits" : "nights"}</span>
+                    <span>30 {lang === "FR" ? "nuits" : "nights"}</span>
                   </div>
                 </div>
               </div>

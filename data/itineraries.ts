@@ -219,7 +219,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 4,
-    image: "/images/hilton_taghazout_5.avif",
+    image: "/images/tgz_course_ocean.jpg",
     category: {
       FR: "séjour golf - complexe face à l'océan - parcours de prestige",
       EN: "golf getaway - oceanfront resort - premium courses"
@@ -259,7 +259,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 5,
-    image: "/images/marrakech_sunset_hero.png",
+    image: "/images/almaaden_golf_2.jpg",
     category: {
       FR: "golf royal - tout-inclus - bien-être & spa",
       EN: "royal golf - all-inclusive board - wellness & spa"
@@ -738,8 +738,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "4": {
     id: 4,
-    image: "/images/hilton_taghazout_5.avif",
-    contentImage: "/images/hilton_taghazout_1.avif",
+    image: "/images/tgz_course_ocean.jpg",
+    contentImage: "/images/tgz_course_hotel.jpg",
     title: { FR: "Golf de Prestige à Taghazout Bay", EN: "Bespoke Golf Escape in Taghazout Bay" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     cost: "C$ 3,600",
@@ -829,8 +829,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "5": {
     id: 5,
-    image: "/images/marrakech_sunset_hero.png",
-    contentImage: "/images/marrakech_sunset_hero.png",
+    image: "/images/almaaden_golf_2.jpg",
+    contentImage: "/images/almaaden_golf_8.jpg",
     title: { FR: "Séjour Golf Royal à Marrakech", EN: "Royal Golf & All-Inclusive Wellness" },
     duration: { FR: "12 jours / 11 nuits", EN: "12 days / 11 nights" },
     cost: "C$ 5,200",
@@ -1261,7 +1261,7 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Bespoke Golf Escape in Taghazout Bay. Stay 7 nights at the 5★ Hilton Taghazout and play 4 rounds of golf at Tazegzout, du Soleil, and Les Dunes courses."
     },
     heroBtn: { FR: "Découvrir le Forfait", EN: "Explore Golf Escape" },
-    heroBg: "/images/hilton_taghazout_5.avif",
+    heroBg: "/images/tgz_course_ocean.jpg",
     themeColor: "#00A3C4",
     themeColorHover: "#00839C",
     watercolorColor: "#00A3C4",
@@ -1284,11 +1284,11 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Golf Les Dunes", EN: "Golf Les Dunes" }, top: "68%", left: "47%" }
     ],
     experienceGrid: [
-      { label: { FR: "Golf de Rêve", EN: "Golfing" }, img: "/images/hilton_taghazout_1.avif" },
-      { label: { FR: "Face à la Mer", EN: "Beachfront" }, img: "/images/hilton_taghazout_2.avif" },
-      { label: { FR: "Bien-être", EN: "Wellness" }, img: "/images/hilton_taghazout_3.avif" },
-      { label: { FR: "Suites de Luxe", EN: "Luxury Rooms" }, img: "/images/hilton_taghazout_4.avif" },
-      { label: { FR: "Coucher de Soleil", EN: "Sunset" }, img: "/images/hilton_taghazout_5.avif" }
+      { label: { FR: "Fairways Côtiers", EN: "Clifftop Fairways" }, img: "/images/tgz_course_1.jpg" },
+      { label: { FR: "Vue Océan", EN: "Ocean Views" }, img: "/images/tgz_course_ocean.jpg" },
+      { label: { FR: "Trou 18", EN: "Hole 18" }, img: "/images/tgz_course_hotel.jpg" },
+      { label: { FR: "Parcours Aérien", EN: "Aerial Course" }, img: "/images/tgz_course_aerial.jpg" },
+      { label: { FR: "Face à la Mer", EN: "Beachfront" }, img: "/images/hilton_taghazout_5.avif" }
     ]
   },
   "5": {
@@ -1299,7 +1299,7 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Royal Golf & All-Inclusive Wellness in Marrakech. Stay 11 nights at 5★ Hôtel du Golf and play 6 rounds at Royal Golf, Assoufid, Amelkis, Samanah, Ourika, and Noria."
     },
     heroBtn: { FR: "Découvrir le Golf Royal", EN: "Explore Royal Golf" },
-    heroBg: "/images/marrakech_sunset_hero.png",
+    heroBg: "/images/almaaden_golf_2.jpg",
     themeColor: "#8B2635",
     themeColorHover: "#72202b",
     watercolorColor: "#8B2635",
@@ -1322,11 +1322,11 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Vallée de l'Ourika", EN: "Ourika Valley" }, top: "59%", left: "55%" }
     ],
     experienceGrid: [
-      { label: { FR: "Golf Royal", EN: "Royal Golf" }, img: "/images/marrakech_sunset_hero.png" },
-      { label: { FR: "Tout-Inclus", EN: "All-Inclusive" }, img: "/images/morocco-marrakech-riad.png" },
-      { label: { FR: "Vue sur l'Atlas", EN: "Atlas Views" }, img: "/images/people-cliff.png" },
-      { label: { FR: "Culture", EN: "Culture" }, img: "/images/morocco_adventure.png" },
-      { label: { FR: "Bien-être", EN: "Wellness" }, img: "/images/morocco_culinary.png" }
+      { label: { FR: "Al Maaden — Vue Atlas", EN: "Al Maaden — Atlas Views" }, img: "/images/almaaden_golf_2.jpg" },
+      { label: { FR: "Royal Golf de Marrakech", EN: "Royal Golf Club" }, img: "/images/royal_golf_marrakech_1.jpg" },
+      { label: { FR: "Akenza Golf", EN: "Akenza Golf" }, img: "/images/akenza_golf_1.jpg" },
+      { label: { FR: "Coucher de Soleil", EN: "Sunset Round" }, img: "/images/royal_golf_sunset.jpg" },
+      { label: { FR: "Restaurant Gourmet", EN: "Gourmet Dining" }, img: "/images/almaaden_restaurant1.jpg" }
     ]
   },
   "6": {

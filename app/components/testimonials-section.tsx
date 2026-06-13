@@ -1,5 +1,6 @@
 'use client';
 
+import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
 import { useLang, translate } from "../context/lang-context";
 import { Check, Shield } from "lucide-react";
@@ -16,11 +17,11 @@ const testimonials: Testimonial[] = [
   {
     quote: {
       EN: "From the tarmac greeting in Marrakech to the private helicopter over the Atlas — every detail was orchestrated with a level of care I've never experienced from any travel service. Truly sovereign.",
-      FR: "De l'accueil sur le tarmac à Marrakech au vol en hélicoptère privé au-dessus de l'Atlas — chaque détail a été orchestré avec un niveau de soin que je n'ai jamais expérimenté auprès d'aucun service de voyages. Véritablement souverain."
+      FR: "De l'accueil sur le tarmac à Marrakech au vol en hélicoptère privé au-dessus de l'Atlas — chaque détail a été orchestré avec un niveau de soin que je n'ai jamais expérimenté. Véritablement souverain."
     },
     name: "Sophie L.",
     location: "Montréal, QC",
-    tripName: { EN: "Marrakech & Sahara Escape", FR: "Fuite Marrakech & Sahara" },
+    tripName: { EN: "Morocco Prestige – Ultimate Luxury", FR: "Maroc Prestige – Luxe Ultime" },
     rating: 5
   },
   {
@@ -35,12 +36,62 @@ const testimonials: Testimonial[] = [
   },
   {
     quote: {
-      EN: "Dubai and Oman in 10 days, completely private, completely seamless. The marina penthouse and Musandam dhow were the highlights of our year. Majestic Experiences is simply in a class of its own.",
-      FR: "Dubaï et Oman en 10 jours, complètement privé, complètement transparente. Le penthouse Marina et le dhow Musandam ont été les points culminants de notre année. Majestic Experiences est simplement dans une classe à part."
+      EN: "The Taghazout Bay Golf package was flawlessly planned. Tazegzout Golf's cliffside holes are unlike anything I've played in Europe. The Hilton staff treated us like royalty throughout.",
+      FR: "Le forfait Golf de Taghazout Bay était impeccablement planifié. Les trous en falaise de Tazegzout Golf sont uniques en leur genre. Le personnel du Hilton nous a traités comme des rois."
     },
     name: "Marc-André T.",
     location: "Québec City, QC",
-    tripName: { EN: "Dubai & Oman Grand Circuit", FR: "Grand Circuit Dubaï & Oman" },
+    tripName: { EN: "Bespoke Golf Escape in Taghazout", FR: "Golf de Prestige à Taghazout" },
+    rating: 5
+  },
+  {
+    quote: {
+      EN: "Six rounds across Marrakech's finest courses — Royal Golf, Amelkis, Assoufid — with Atlas peaks as a backdrop. The all-inclusive experience at Hôtel du Golf was absolutely world-class.",
+      FR: "Six parties sur les plus beaux parcours de Marrakech — Royal Golf, Amelkis, Assoufid — avec les sommets de l'Atlas en toile de fond. L'expérience tout-inclus à l'Hôtel du Golf était de classe mondiale."
+    },
+    name: "Jean-Paul R.",
+    location: "Laval, QC",
+    tripName: { EN: "Royal Golf & All-Inclusive Marrakech", FR: "Séjour Golf Royal à Marrakech" },
+    rating: 5
+  },
+  {
+    quote: {
+      EN: "Chefchaouen, Fes, the Sahara, and Essaouira in one perfectly woven journey. Our private driver-guide was extraordinarily knowledgeable and felt like a true friend by the end.",
+      FR: "Chefchaouen, Fès, le Sahara et Essaouira en un voyage parfaitement tissé. Notre chauffeur-guide privé était extraordinairement cultivé et semblait être un véritable ami à la fin."
+    },
+    name: "Isabelle & François D.",
+    location: "Ottawa, ON",
+    tripName: { EN: "Imperial Cities & Atlantic Coast", FR: "Villes Impériales & Côte Atlantique" },
+    rating: 5
+  },
+  {
+    quote: {
+      EN: "Three nights in Erg Chebbi dunes was transformative. The Tiziri camp's silence, the Gnawa music in Khamlia, the stargazing — this is how travel should feel. 10/10 without hesitation.",
+      FR: "Trois nuits dans les dunes d'Erg Chebbi fut transformateur. Le silence du camp Tiziri, la musique Gnawa à Khamlia, l'observation des étoiles — c'est ainsi que doit se sentir le voyage."
+    },
+    name: "Amélie G.",
+    location: "Brossard, QC",
+    tripName: { EN: "Sahara Deep Dive – Desert Immersion", FR: "Sahara Deep Dive – Immersion Désert" },
+    rating: 5
+  },
+  {
+    quote: {
+      EN: "The family trip through Morocco's imperial cities was everything we hoped for and more. Volubilis at golden hour, the Fes medina, and the camel sunset in Merzouga — magical memories forever.",
+      FR: "Le voyage en famille à travers les villes impériales du Maroc était tout ce que nous espérions. Volubilis à l'heure dorée, la médina de Fès et le coucher de soleil à chameau à Merzouga — des souvenirs magiques."
+    },
+    name: "The Bergeron Family",
+    location: "Longueuil, QC",
+    tripName: { EN: "Imperial Cities & Desert Discovery", FR: "Villes Impériales & Découverte Désert" },
+    rating: 5
+  },
+  {
+    quote: {
+      EN: "I was skeptical about booking through a boutique agency, but Majestic Experiences exceeded every expectation. The attention to detail, the hand-picked hotels, and the 24/7 support were extraordinary.",
+      FR: "J'étais sceptique quant à la réservation via une agence boutique, mais Majestic Experiences a dépassé toutes mes attentes. L'attention aux détails, les hôtels sélectionnés à la main et le support 24/7 étaient extraordinaires."
+    },
+    name: "David H.",
+    location: "Vancouver, BC",
+    tripName: { EN: "Morocco Prestige – Ultimate Luxury", FR: "Maroc Prestige – Luxe Ultime" },
     rating: 5
   }
 ];
@@ -52,64 +103,119 @@ const trustBadges = [
   { label: { EN: "Canadian-Based, Globally Connected", FR: "Basé au Canada, Mondialement Connecté" }, icon: Check }
 ];
 
+// Duplicate for seamless loop
+const doubled = [...testimonials, ...testimonials];
+
 export default function TestimonialsSection() {
   const { lang } = useLang();
+  const [isPaused, setIsPaused] = useState(false);
 
   return (
-    <section className="bg-zinc-950 text-white py-20 px-6">
-      <div className="max-w-[1200px] mx-auto space-y-16">
-        
+    <section
+      className="relative overflow-hidden py-24"
+      style={{ background: "linear-gradient(135deg, #07090d 0%, #0e1118 50%, #07090d 100%)" }}
+    >
+      {/* Subtle radial gold glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(197,168,128,0.08)_0%,transparent_65%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(139,38,53,0.06)_0%,transparent_65%)] pointer-events-none" />
+
+      <div className="max-w-[1200px] mx-auto px-6 space-y-14">
+
         {/* Section Header */}
-        <div className="text-center space-y-4">
-          <span className="text-brand-gold font-mono text-[11px] tracking-[0.2em] uppercase block">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center space-y-3"
+        >
+          <span className="text-[#C5A880] font-mono text-[10px] tracking-[0.3em] uppercase block">
             {lang === "EN" ? "GUEST CHRONICLES" : "CHRONIQUES DE NOS VOYAGEURS"}
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-white">
             {lang === "EN" ? "Voices from the Journey" : "Voix du Voyage"}
           </h2>
-        </div>
+          <p className="text-white/40 text-sm font-light max-w-xl mx-auto">
+            {lang === "EN"
+              ? "What our guests say about their curated Moroccan experience."
+              : "Ce que nos voyageurs disent de leur expérience marocaine sur mesure."
+            }
+          </p>
+        </motion.div>
+      </div>
 
-        {/* Testimonial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
+      {/* Infinite Horizontal Scroll Strip */}
+      <div
+        className="mt-12 w-full overflow-hidden relative"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Edge fade masks */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to right, #07090d, transparent)" }} />
+        <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to left, #07090d, transparent)" }} />
+
+        <style>{`
+          @keyframes marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee-track {
+            animation: marquee-scroll 40s linear infinite;
+          }
+          .marquee-track.paused {
+            animation-play-state: paused;
+          }
+        `}</style>
+
+        <div className={`marquee-track flex gap-6 w-max ${isPaused ? 'paused' : ''}`}>
+          {doubled.map((testimonial, index) => (
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-zinc-900/50 border border-white/10 rounded-2xl p-8 space-y-6 backdrop-blur-sm hover:border-brand-gold/20 transition-colors duration-300"
+              className="w-[340px] shrink-0 relative rounded-2xl border p-7 space-y-5 backdrop-blur-sm"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                borderColor: "rgba(255,255,255,0.07)",
+              }}
             >
-              <blockquote className="text-[15px] leading-relaxed text-white/90 font-light italic">
-                &ldquo;{translate(testimonial.quote, lang)}&rdquo;
-              </blockquote>
+              {/* Gold quote mark */}
+              <span
+                className="absolute top-5 right-7 text-5xl font-serif leading-none select-none pointer-events-none"
+                style={{ color: "rgba(197,168,128,0.12)" }}
+              >
+                "
+              </span>
 
-              {/* Star Rating */}
-              <div className="flex items-center gap-1">
+              {/* Stars */}
+              <div className="flex items-center gap-0.5">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <span key={i} className="text-brand-gold text-lg">★</span>
+                  <span key={i} style={{ color: "#C5A880" }} className="text-base">★</span>
                 ))}
               </div>
 
+              {/* Quote */}
+              <blockquote className="text-[13.5px] leading-relaxed text-white/75 font-light italic line-clamp-4">
+                &ldquo;{translate(testimonial.quote, lang)}&rdquo;
+              </blockquote>
+
               {/* Guest Info */}
-              <div className="border-t border-white/10 pt-6 space-y-2">
-                <p className="font-semibold text-white">
-                  {testimonial.name}
-                </p>
-                <p className="text-[13px] text-white/60 font-light">
-                  {testimonial.location}
-                </p>
-                <p className="text-[12px] text-brand-gold font-mono tracking-wide">
+              <div className="border-t pt-4 space-y-0.5" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
+                <p className="font-semibold text-white text-sm">{testimonial.name}</p>
+                <p className="text-[12px] text-white/40 font-light">{testimonial.location}</p>
+                <p className="text-[11px] font-mono tracking-wide" style={{ color: "#C5A880" }}>
                   {translate(testimonial.tripName, lang)}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
+      </div>
 
-        {/* Trust Badges */}
-        <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+      {/* Trust Badges */}
+      <div className="max-w-[1200px] mx-auto px-6 mt-16">
+        <div className="border-t pt-8" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
             {trustBadges.map((badge, index) => {
               const IconComponent = badge.icon;
               return (
@@ -119,12 +225,12 @@ export default function TestimonialsSection() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-center gap-2 text-[12px] text-white/70 font-light"
+                  className="flex items-center gap-2 text-[12px] text-white/50 font-light"
                 >
-                  <IconComponent className="text-brand-gold w-4 h-4 shrink-0" />
+                  <IconComponent style={{ color: "#C5A880" }} className="w-4 h-4 shrink-0" />
                   <span>{translate(badge.label, lang)}</span>
                   {index < trustBadges.length - 1 && (
-                    <span className="hidden md:inline text-white/20 ml-2">•</span>
+                    <span className="hidden md:inline text-white/15 ml-2">•</span>
                   )}
                 </motion.div>
               );
