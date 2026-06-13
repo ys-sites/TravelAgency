@@ -87,27 +87,17 @@ export default function Promotions() {
                   alt={translate(deal.title, lang)} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none" />
                           {/* Badge container to prevent horizontal overlap on laptop/mobile screens */}
                 <div className="absolute top-6 left-6 right-6 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">
-                  <div className="bg-[#8B2635] text-[#faf9f5] font-mono text-[10px] tracking-widest uppercase font-bold px-3.5 py-1.5 rounded-full shadow-md">
+                  <div className="bg-[#8B2635] text-[#faf9f5] font-sans font-semibold text-[11px] tracking-widest uppercase px-3.5 py-1.5 rounded-full shadow-md">
                     {deal.tag}
-                  </div>
-
-                  <div className={`px-3.5 py-1.5 rounded-full font-mono text-[9px] tracking-wider uppercase font-semibold shadow-md ${
-                    deal.id === 1
-                      ? "bg-[#a8c8e8] text-[#1a3a5c] border border-[#7aaed4]/40"
-                      : deal.id === 2
-                      ? "bg-[#8B2635] text-[#faf9f5] border border-[#8B2635]"
-                      : "bg-[#8fada4] text-[#1a3530] border border-[#6e9990]/40"
-                  }`}>
-                    {translate(deal.badge, lang)}
                   </div>
                 </div>
 
                 {/* Booking Deadline Banner */}
                 {deal.promoText && (
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#8B2635]/95 backdrop-blur-xs text-[#faf9f5] text-[10px] font-mono py-2.5 px-4 tracking-wider text-center uppercase font-bold">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#8B2635]/95 backdrop-blur-xs text-[#faf9f5] text-[11px] font-sans py-2 px-4 tracking-wider text-center uppercase font-bold">
                     {translate(deal.promoText, lang)}
                   </div>
                 )}
