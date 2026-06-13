@@ -716,19 +716,34 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.15, duration: 0.4, type: "spring", stiffness: 200 }}
-              whileHover={{ scale: 1.3, transition: { duration: 0.2 } }}
               style={{ top: pin.top, left: pin.left }}
               className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-20 pointer-events-auto cursor-pointer"
               onMouseEnter={() => setActiveItineraryPin(pin)}
               onMouseLeave={() => setActiveItineraryPin(null)}
             >
-              {/* Pin dot with pulsing ring */}
-              <div className="relative flex items-center justify-center w-6 h-6">
-                <span className="absolute w-4 h-4 bg-[#8B2635] rounded-full animate-ping opacity-75" />
-                <span className="relative w-2.5 h-2.5 bg-[#8B2635] border border-white rounded-full shadow-sm" />
-              </div>
-              {/* Pin label tooltip */}
-              <div className="bg-zinc-950/80 backdrop-blur-md px-2 py-1 rounded-md border border-white/10 text-[#faf9f5] text-[9px] font-sans font-medium tracking-wide whitespace-nowrap mt-1 shadow-sm">
+              {/* Geometric marker — SVG matching the existing map pin style */}
+              <svg width="22" height="22" viewBox="0 0 22 22">
+                {/* Outer ping ring on hover */}
+                {activeItineraryPin === pin && (
+                  <circle cx="11" cy="11" r="9" fill="#8B2635" className="animate-ping" style={{ transformOrigin: '11px 11px' }} />
+                )}
+                {/* Outer ring */}
+                <circle
+                  cx="11" cy="11" r="6"
+                  fill={activeItineraryPin === pin ? "#8B2635" : "#FAF8F5"}
+                  stroke={activeItineraryPin === pin ? "#FAF8F5" : "#A3835B"}
+                  strokeWidth="1.5"
+                  style={{ transition: 'all 0.3s' }}
+                />
+                {/* Inner center dot */}
+                <circle
+                  cx="11" cy="11" r="2"
+                  fill={activeItineraryPin === pin ? "#FAF8F5" : "#A3835B"}
+                  style={{ transition: 'all 0.3s' }}
+                />
+              </svg>
+              {/* Tooltip label */}
+              <div className="bg-zinc-950/80 backdrop-blur-md px-2 py-1 rounded-md border border-white/10 text-[#faf9f5] text-[9px] font-sans font-medium tracking-wide whitespace-nowrap mt-0.5 shadow-sm">
                 {translate(pin.name, lang)}
               </div>
             </motion.div>
