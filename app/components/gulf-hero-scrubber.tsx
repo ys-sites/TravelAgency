@@ -32,7 +32,7 @@ export default function GulfHeroScrubber() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none z-1" />
 
       {/* Centered Premium Logo */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 px-6 select-none pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-center -translate-y-10 z-10 px-6 select-none pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function GulfHeroScrubber() {
       </div>
       
       {/* Bottom Subtext & Call to Actions */}
-      <div className="absolute bottom-36 left-0 right-0 z-10 flex flex-col items-center px-6 select-none pointer-events-none">
+      <div className="absolute bottom-24 left-0 right-0 z-10 flex flex-col items-center px-6 select-none pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export default function GulfHeroScrubber() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.95 }}
         transition={{ delay: 2.2, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-10 text-white/80 pointer-events-none"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center z-10 text-white/80 pointer-events-none"
       >
         <span className="font-mono text-[9px] tracking-[0.25em] uppercase mb-3">{lang === "FR" ? "Défiler pour Explorer" : "Scroll to Explore"}</span>
         <div className="w-[28px] h-[48px] rounded-full border-2 border-white/40 flex justify-center p-1.5 shadow-md">
