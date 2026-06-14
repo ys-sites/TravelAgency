@@ -131,7 +131,7 @@ export const conditionsSections: ConditionsSection[] = [
         }
       },
       {
-        title: { FR: "Golf", EN: "Golf" },
+        title: { FR: "Forfaits Signature", EN: "Signature Packages" },
         desc: {
           FR: "Pour nos groupes accompagnés et nos forfaits individuels-offres exclusives, l’échéancier de paiement final varie de 70 à 90 jours avant le départ selon le fournisseur. Veuillez vous référer à l’information affichée sur le site web pour le groupe accompagné ou le forfait individuel-offre exclusive en question ou à la date apparaissant sur votre facture.",
           EN: "For hosted groups and signature packages, final payment schedule varies between 70 to 90 days before departure depending on suppliers."
@@ -185,8 +185,8 @@ export const conditionsSections: ConditionsSection[] = [
     },
     paragraphs: [
       {
-        FR: "Majestic Experiences Voyages se dégage de toute responsabilité concernant un dommage relatif aux bagages ou tout équipement sportif (sac de golf, paddleboard, valises, etc.) durant tous types de transports et la manutention par les employés de Majestic Experiences Voyages ou de ses fournisseurs. Majestic Experiences Voyages ne peut être tenu responsable d’un bris ou d’une perte de bagages et d’équipements sportifs auprès d’un service de voyages Majestic ou d’un fournisseur.",
-        EN: "Majestic Experiences Voyages is not liable for loss or damage to baggage or sports equipment (golf bags, paddleboards, suitcases, etc.) during transport or handling by our staff and suppliers. Travel insurance is highly recommended."
+        FR: "Majestic Experiences Voyages se dégage de toute responsabilité concernant un dommage relatif aux bagages ou tout équipement sportif (paddleboard, vélos, valises, etc.) durant tous types de transports et la manutention par les employés de Majestic Experiences Voyages ou de ses fournisseurs. Majestic Experiences Voyages ne peut être tenu responsable d’un bris ou d’une perte de bagages et d’équipements sportifs auprès d’un service de voyages Majestic ou d’un fournisseur.",
+        EN: "Majestic Experiences Voyages is not liable for loss or damage to baggage or sports equipment (paddleboards, surfboards, suitcases, etc.) during transport or handling by our staff and suppliers. Travel insurance is highly recommended."
       }
     ]
   },
