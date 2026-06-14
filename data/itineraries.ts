@@ -219,58 +219,58 @@ export const toursList: TourCard[] = [
   },
   {
     id: 4,
-    image: "/images/tgz_course_ocean.jpg",
+    image: "/images/gulf-city-skyline.png",
     category: {
-      FR: "séjour golf - complexe face à l'océan - parcours de prestige",
-      EN: "golf getaway - oceanfront resort - premium courses"
+      FR: "villas de luxe - croisière privée en yacht - hélicoptère & désert",
+      EN: "luxury villas - private yacht cruise - helicopter & desert"
     },
     title: {
-      FR: "Golf de Prestige à Taghazout Bay",
-      EN: "Bespoke Golf Escape in Taghazout Bay"
+      FR: "Splendeurs du Golfe : Dubaï & Abou Dabi",
+      EN: "Gulf Splendors: Dubai & Abu Dhabi"
     },
     description: {
-      FR: "Forfait golf sur la côte atlantique : séjournez 7 nuits face à la mer au Hilton Taghazout 5★ et jouez 4 parties sur des terrains de prestige.",
-      EN: "Elite golf package along the Atlantic coast: stay 7 nights at the 5★ Hilton Taghazout and play 4 rounds on Taghazout's scenic courses."
+      FR: "Un séjour ultra-luxe entre modernité et traditions : 7 nuits en suite d'exception, croisière privée au coucher du soleil et dîner de prestige dans les dunes.",
+      EN: "An ultra-luxury escape balancing futuristic wonder and desert heritage: 7 nights in elite suites, private sunset yacht cruise, and dune dining."
     },
     duration: {
       FR: "8 jours / 7 nuits",
       EN: "8 days / 7 nights"
     },
     flight: {
-      FR: "Vol direct Transat inclus",
-      EN: "Direct flight Transat included"
+      FR: "Vol en classe Affaires inclus",
+      EN: "Business Class flight included"
     },
     meals: {
-      FR: "Demi-pension gourmande",
-      EN: "Gourmet half board"
+      FR: "Pension complète gastronomique",
+      EN: "Gourmet full board"
     },
-    oldPrice: "C$ 4,200",
-    price: "C$ 3,600",
-    tag: "Oceanfront Privilege — C$600 included",
+    oldPrice: "C$ 18,500",
+    price: "C$ 16,500",
+    tag: "Gulf Privilege — C$2,000 included",
     badge: {
-      FR: "GOLF EXCLUSIF",
-      EN: "PREMIUM GOLF"
+      FR: "GOLFE DE PRESTIGE",
+      EN: "GULF PRESTIGE"
     },
     promoText: {
-      FR: "Réservez avant le 1er sept 2026 — C$600 d'inclusions complémentaires / pers.",
-      EN: "Reserve before Sept 1, 2026 — C$600 in complimentary inclusions per guest"
+      FR: "Réservez avant le 1er sept 2026 — C$2 000 d'inclusions complémentaires / pers.",
+      EN: "Reserve before Sept 1, 2026 — C$2,000 in complimentary inclusions per guest"
     },
     iconType: "water"
   },
   {
     id: 5,
-    image: "/images/almaaden_golf_2.jpg",
+    image: "/images/gulf-desert-sunset.png",
     category: {
-      FR: "golf royal - tout-inclus - bien-être & spa",
-      EN: "royal golf - all-inclusive board - wellness & spa"
+      FR: "glamping de luxe - canyons du hajar - fjords du musandam",
+      EN: "luxury glamping - hajar canyons - musandam fjords"
     },
     title: {
-      FR: "Séjour Golf Royal à Marrakech",
-      EN: "Royal Golf & All-Inclusive Wellness"
+      FR: "Oman Souverain : Désert & Canyons",
+      EN: "Sovereign Oman: Desert & Canyons"
     },
     description: {
-      FR: "Échappée golf tout-inclus à Marrakech : 11 nuits au Hôtel du Golf 5★ et 6 parties de golf sur les plus prestigieux parcours de la ville.",
-      EN: "Ultimate golf escape in Marrakech: 11 nights in Deluxe rooms at the 5★ Hôtel du Golf and 6 rounds of golf on Marrakech's finest courses."
+      FR: "Une immersion royale dans le Sultanat d'Oman : 11 nuits d'exception dans des wadis sauvages, glamping sous les étoiles et croisière dans les fjords du Musandam.",
+      EN: "A royal immersion in the Sultanate of Oman: 11 nights of wonders across wild wadis, stargazing glamping, and private Musandam fjord cruise."
     },
     duration: {
       FR: "12 jours / 11 nuits",
@@ -284,16 +284,16 @@ export const toursList: TourCard[] = [
       FR: "Tout-inclus prestige",
       EN: "All-inclusive board"
     },
-    oldPrice: "C$ 6,200",
-    price: "C$ 5,200",
-    tag: "Marrakech Royalty — C$1,000 included",
+    oldPrice: "C$ 12,200",
+    price: "C$ 10,800",
+    tag: "Oman Royalty — C$1,400 included",
     badge: {
-      FR: "GOLF ROYAL",
-      EN: "ROYAL GOLF"
+      FR: "GOLFE DE LUXE",
+      EN: "LUXURY GULF"
     },
     promoText: {
-      FR: "Réservez avant le 1er nov 2026 — C$1 000 d'inclusions complémentaires / pers.",
-      EN: "Reserve before Nov 1, 2026 — C$1,000 in complimentary inclusions per guest"
+      FR: "Réservez avant le 1er nov 2026 — C$1 400 d'inclusions complémentaires / pers.",
+      EN: "Reserve before Nov 1, 2026 — C$1,400 in complimentary inclusions per guest"
     },
     iconType: "mountain"
   },
@@ -738,186 +738,196 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "4": {
     id: 4,
-    image: "/images/tgz_course_ocean.jpg",
-    contentImage: "/images/tgz_course_hotel.jpg",
-    title: { FR: "Golf de Prestige à Taghazout Bay", EN: "Bespoke Golf Escape in Taghazout Bay" },
+    image: "/images/gulf-city-skyline.png",
+    contentImage: "/images/gulf-city-skyline.png",
+    title: { FR: "Splendeurs du Golfe : Dubaï & Abou Dabi", EN: "Gulf Splendors: Dubai & Abu Dhabi" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    cost: "C$ 3,600",
+    cost: "C$ 16,500",
     overview: {
-      FR: "Un forfait de golf haut de gamme sur la côte atlantique. Volez directement de Montréal à Agadir et séjournez 7 nuits en chambre vue piscine au Hilton Taghazout 5★. Jouez 4 parties de golf sur les parcours de Tazegzout, du Soleil et des Dunes, avec voiturette électrique et demi-pension gastronomique.",
-      EN: "An elite golf package along the Atlantic coast. Fly directly from Montreal to Agadir and stay 7 nights in a pool-view room at the 5★ Hilton Taghazout. Play 4 rounds of golf at the scenic Tazegzout, du Soleil, and Les Dunes courses, complete with shared electric carts, half-board gourmet dining, and 24/7 concierge assistance."
+      FR: "Vivez l'ultra-luxe au cœur des Émirats Arabes Unis. Séjournez dans des suites somptueuses, survolez Dubaï en hélicoptère privé, naviguez à bord d'un yacht haut de gamme à Palm Jumeirah et dînez dans les dunes infinies sous les étoiles.",
+      EN: "Experience the peak of contemporary luxury in the United Arab Emirates. Stay in spectacular suites, fly over Dubai on a private helicopter charter, cruise Palm Jumeirah on a premium yacht, and enjoy gourmet dining in the dunes."
     },
     timeline: [
-      { day: 1, title: { FR: "Arrivée à Agadir & Taghazout", EN: "Arrival in Agadir & Taghazout" }, desc: { FR: "Vol direct Montréal-Agadir, transfert privé depuis l'aéroport vers le Hilton Taghazout 5★. Cocktail de bienvenue et installation en chambre vue piscine.", EN: "Direct flight Montreal to Agadir, VIP airport transfer to the 5★ Hilton Taghazout. Welcome cocktail and check-in to your Pool View guest room." } },
-      { day: 2, title: { FR: "Partie 1 : Tazegzout Golf", EN: "Round 1: Tazegzout Golf Club" }, desc: { FR: "Jouez votre première partie au Golf de Tazegzout, perché à 80m au-dessus de la mer avec une vue spectaculaire sur l'océan. Voiturette électrique incluse.", EN: "Play your first round at Tazegzout Golf, perched 80m above sea level with dramatic ocean views on every hole. Shared electric cart included." } },
-      { day: 3, title: { FR: "Détente & Découverte Côtière", EN: "Sightseeing & Coastal Leisure" }, desc: { FR: "Journée libre pour vous détendre sur les plages de Taghazout, essayer le surf ou explorer les souks locaux et coopératives d'huile d'argan.", EN: "Free day to relax on the sandy beaches of Taghazout, try surfing, or explore the local souks and traditional argan oil cooperatives." } },
-      { day: 4, title: { FR: "Partie 2 : Golf du Soleil", EN: "Round 2: Golf du Soleil" }, desc: { FR: "Deuxième partie de golf au Golf du Soleil, niché au cœur d'un domaine d'eucalyptus avec cascades et lacs.", EN: "Play your second round at Golf du Soleil, set in a lush landscape of lakes, eucalyptus trees, and professional-grade fairways." } },
-      { day: 5, title: { FR: "Partie 3 : Golf Les Dunes", EN: "Round 3: Golf Les Dunes" }, desc: { FR: "Troisième partie de golf au Golf Les Dunes, un superbe parcours de 27 trous dessiné par Cabell B. Robinson.", EN: "Play your third round at Golf Les Dunes, a wonderful 27-hole championship layout designed by Cabell B. Robinson." } },
-      { day: 6, title: { FR: "Partie 4 : Tazegzout Golf - Deuxième Session", EN: "Round 4: Tazegzout Golf - Second Session" }, desc: { FR: "Quatrième et dernière partie de golf de retour au Golf de Tazegzout, en se concentrant sur les trous de falaise signature.", EN: "Play your final round back at Tazegzout Golf, focusing on the challenging signature cliffside finishing holes." } },
-      { day: 7, title: { FR: "Détente & Dîner Gastronomique", EN: "Leisure & Gourmet Half-Board Dinner" }, desc: { FR: "Journée libre de détente au spa de l'hôtel, suivie d'un dîner gastronomique de 3 services avec vin fin et thé.", EN: "A free day for ocean spa relaxation, followed by a final gourmet 3-course dinner with premium wine and tea." } },
-      { day: 8, title: { FR: "Départ d'Agadir", EN: "Departure" }, desc: { FR: "Transfert privé vers l'aéroport d'Agadir pour votre vol direct de retour vers Montréal. Fin des services.", EN: "VIP airport transfer for your direct return flight to Montreal. End of services." } }
+      { day: 1, title: { FR: "Arrivée VIP à Dubaï", EN: "VIP Arrival in Dubai" }, desc: { FR: "Accueil personnalisé sur le tarmac, assistance rapide à l'aéroport et transfert privé en véhicule de luxe vers l'hôtel. Nuit à Dubaï.", EN: "VIP meet and greet at the plane door, fast-track customs clearance, and private luxury transfer to your hotel. Stay in Dubai." } },
+      { day: 2, title: { FR: "Survol en Hélicoptère & Vieux Dubaï", EN: "Helicopter Flight & Old Dubai" }, desc: { FR: "Vol privé de 22 minutes en hélicoptère pour admirer les îles Palm et le Burj Khalifa. Après-midi dans les souks de l'or et des épices. Nuit à Dubaï.", EN: "Private 22-minute helicopter flight over Palm Jumeirah and Burj Khalifa. Afternoon private guided tour of the historic gold and spice souks. Stay in Dubai." } },
+      { day: 3, title: { FR: "Croisière en Yacht Privé à Palm Jumeirah", EN: "Private Yacht Cruise & Beach Club" }, desc: { FR: "Demi-journée à bord d'un yacht privé de 50 pieds avec capitaine et équipage. Soirée détente au club de plage. Nuit à Dubaï.", EN: "Half-day private luxury yacht charter around Palm Jumeirah with catering and crew. Evening at a premier beach club. Stay in Dubai." } },
+      { day: 4, title: { FR: "Désert de Liwa & Dîner sous les Étoiles", EN: "Liwa Desert & Dunes Safari" }, desc: { FR: "Excursion privée en 4x4 de luxe dans le désert. Dîner gastronomique préparé par un chef privé au milieu des dunes de sable rouge. Nuit à Dubaï.", EN: "Private luxury SUV desert safari. Custom gourmet dinner prepared by a private chef in the red dunes. Stay in Dubai." } },
+      { day: 5, title: { FR: "Dubaï à Abou Dabi & Musée du Louvre", EN: "Dubai to Abu Dhabi & Louvre" }, desc: { FR: "Transfert privé vers Abou Dabi (~1h30). Visite guidée privée du Louvre Abou Dabi et installation à l'hôtel. Nuit à Abou Dabi.", EN: "Private luxury transfer to Abu Dhabi (~1.5h). Guided tour of the Louvre Abu Dhabi and check-in to your resort. Stay in Abu Dhabi." } },
+      { day: 6, title: { FR: "Grande Mosquée Cheikh Zayed", EN: "Sheikh Zayed Grand Mosque" }, desc: { FR: "Visite guidée privée exclusive de la Grande Mosquée Cheikh Zayed, puis après-midi libre pour le shopping ou le spa. Nuit à Abou Dabi.", EN: "Exclusive private guided tour of the Sheikh Zayed Grand Mosque, followed by an afternoon of luxury or spa relaxation. Stay in Abu Dhabi." } },
+      { day: 7, title: { FR: "Île de Yas & Circuit de Formule 1", EN: "Yas Island & F1 Track Experience" }, desc: { FR: "Explorez l'île de Yas, jouez sur le parcours Yas Links Club ou faites des tours de piste privés sur le circuit Yas Marina. Nuit à Abou Dabi.", EN: "Explore Yas Island, play at the scenic Yas Links Club or enjoy private track laps at the Yas Marina F1 Circuit. Stay in Abu Dhabi." } },
+      { day: 8, title: { FR: "Départ d'Abou Dabi", EN: "Departure" }, desc: { FR: "Transfert privé vers l'aéroport d'Abou Dabi pour votre vol de retour. Fin des services.", EN: "Private luxury transfer to Abu Dhabi International Airport for your departure flight. End of services." } }
     ],
     inclusions: {
       FR: [
-        "Vols directs Montréal-Agadir aller-retour avec Air Transat (classe Économie)",
-        "7 nuits en Chambre Vue Piscine double au Hilton Taghazout 5★",
-        "Demi-pension gourmande (dîner 3 services, 1/2 bouteille de vin/eau, café/thé)",
-        "4 parties de golf (Tazegzout, du Soleil, Les Dunes) avec voiturette",
-        "Réservations des temps de départ et assistance 24/7",
-        "Couverture par le fonds d'indemnisation FICAV"
+        "Vols aller-retour Montréal-Dubaï en classe Affaires",
+        "7 nuits d'hébergement dans des hôtels ultra-luxe 5★ (Suites)",
+        "Toutes les excursions privées avec guides francophones certifiés",
+        "Survol de 22 minutes en hélicoptère privé et yacht privé de 4 heures",
+        "Tous les transferts et transports terrestres privés en SUV de luxe"
       ],
       EN: [
-        "Direct round-trip flights Montreal-Agadir with Air Transat (Standard Economy)",
-        "7 nights in double occupancy Pool View Room at Hilton Taghazout 5★",
-        "Half-board dining (3-course dinner, 1/2 bottle of wine & water, coffee/tea)",
-        "4 rounds of golf (Tazegzout, du Soleil, Les Dunes) with electric cart",
-        "Tee time reservations and 24/7 assistance",
-        "FICAV travel protection fund coverage"
+        "Round-trip Business Class flights Montreal-Dubai",
+        "7 nights in luxury 5★ properties (Suites occupancy)",
+        "All excursions with professional local guides and drivers",
+        "Private 22-minute helicopter charter and 4-hour yacht cruise",
+        "All private land transfers in luxury SUVs"
       ]
     },
     exclusions: {
       FR: [
         "Assurance voyage personnelle obligatoire",
-        "Pourboires pour les caddies et le personnel hôtelier",
-        "Dîners non spécifiés et boissons premium hors formule",
-        "Achats personnels"
+        "Pourboires pour les chauffeurs, guides et personnel",
+        "Dépenses de shopping et repas de midi non listés"
       ],
       EN: [
         "Mandatory personal travel insurance",
-        "Gratuities for caddies and hotel staff",
-        "Lunches and alcoholic drinks outside of half-board package",
-        "Personal shopping expenses"
+        "Gratuities for drivers, guides, and hotel staff",
+        "Personal expenditures and lunches not listed in the program"
       ]
     },
     options: {
       FR: [
-        { name: "Spa Hammam Riad Privatisé (3h)", price: "C$ 220" },
-        { name: "Visite guidée privée d'Agadir", price: "C$ 120" }
+        { name: "Surclassement en Suite Présidentielle", price: "C$ 4,500" },
+        { name: "Accès Privé aux Coulisses F1", price: "C$ 1,200" }
       ],
       EN: [
-        { name: "Riad Spa Hammam Buyout (3h)", price: "C$ 220" },
-        { name: "Agadir City Tour with Private Guide", price: "C$ 120" }
+        { name: "Presidential Suite Upgrade", price: "C$ 4,500" },
+        { name: "Behind-the-Scenes F1 Track Pass", price: "C$ 1,200" }
       ]
     },
     hotels: [
       {
-        name: "Hilton Taghazout Bay Beach Resort & Spa",
+        name: "One&Only One Za'abeel (Dubai)",
         stars: 5,
         desc: {
-          FR: "Hôtel 5★ exceptionnel face à l'océan Atlantique avec piscine, spa et plages magnifiques.",
-          EN: "Stunning 5★ beachfront hotel facing the Atlantic ocean with pools, spa, and sandy beaches."
+          FR: "Une icône architecturale moderne offrant un luxe vertical exceptionnel.",
+          EN: "A modern architectural marvel offering high-end vertical luxury."
         },
-        link: "https://www.hilton.com/"
+        link: "https://www.oneandonlyresorts.com/"
+      },
+      {
+        name: "The St. Regis Saadiyat Island (Abu Dhabi)",
+        stars: 5,
+        desc: {
+          FR: "Complexe de plage de classe mondiale surplombant les eaux turquoise du Golfe.",
+          EN: "A world-class beachfront resort overlooking the turquoise waters of the Gulf."
+        },
+        link: "https://www.marriott.com/"
       }
     ],
     activities: [
       {
-        title: { FR: "Golf à Tazegzout", EN: "Tazegzout Golfing Session" },
+        title: { FR: "Hélicoptère Privé", EN: "Private Helicopter Charter" },
         desc: {
-          FR: "Parcours de golf magnifique dessiné par Kyle Phillips sur une falaise dominant l'océan.",
-          EN: "Stunning Kyle Phillips-designed cliffside course overlooking the Atlantic ocean."
+          FR: "Un vol majestueux au-dessus de Dubaï avec vue sur Palm Jumeirah et Burj Khalifa.",
+          EN: "A spectacular aerial flight over Dubai sky landmarks."
         }
       },
       {
-        title: { FR: "Spa & Hammam de l'Hôtel", EN: "Hotel Spa & Hammam" },
+        title: { FR: "Grande Mosquée Privée", EN: "Grand Mosque Private Tour" },
         desc: {
-          FR: "Soin d'eucalyptus et massage traditionnel argan dans le spa haut de gamme du Hilton.",
-          EN: "Gourmet argan oil massage and eucalyptus steam in the Hilton's high-end spa."
+          FR: "Visite guidée privée de la mosquée pour admirer les marbres et lustres monumentaux.",
+          EN: "A dedicated guided discovery of Abu Dhabi's monumental architecture."
         }
       }
     ]
   },
   "5": {
     id: 5,
-    image: "/images/almaaden_golf_2.jpg",
-    contentImage: "/images/almaaden_golf_8.jpg",
-    title: { FR: "Séjour Golf Royal à Marrakech", EN: "Royal Golf & All-Inclusive Wellness" },
+    image: "/images/gulf-desert-sunset.png",
+    contentImage: "/images/gulf-desert-sunset.png",
+    title: { FR: "Oman Souverain : Désert & Canyons", EN: "Sovereign Oman: Desert & Canyons" },
     duration: { FR: "12 jours / 11 nuits", EN: "12 days / 11 nights" },
-    cost: "C$ 5,200",
+    cost: "C$ 10,800",
     overview: {
-      FR: "L'échappée golf tout-inclus ultime à Marrakech. Volez directement de Montréal à Marrakech et séjournez 11 nuits en Chambre Deluxe Vue Jardin au prestigieux Hôtel du Golf 5★. Jouez 6 parties de golf sur les plus beaux parcours de Marrakech (Royal Golf, Amelkis, Palm Ourika, Assoufid, Samanah, Noria).",
-      EN: "An ultimate all-inclusive golf escape in Marrakech. Fly directly from Montreal to Marrakech with Air Transat and spend 11 nights in a Deluxe Garden View room at the 5★ Hôtel du Golf. Play 6 rounds of golf across Marrakech's finest courses (Royal Golf, Amelkis, Palm Ourika, Assoufid, Samanah, Noria) with shared electric carts, gourmet dining, and full premium leisure."
+      FR: "Découvrez l'âme authentique de l'Arabie à travers le Sultanat d'Oman. Explorez les montagnes du Djebel Akhdar, baignez-vous dans des wadis sauvages aux eaux turquoise, passez des nuits de glamping sous les étoiles et naviguez dans les fjords spectaculaires du Musandam.",
+      EN: "Discover the authentic soul of Arabia in the Sultanate of Oman. Explore the canyons of Jebel Akhdar, swim in wild wadis with emerald waters, sleep in luxury desert camps, and sail through the majestic fjords of Musandam."
     },
     timeline: [
-      { day: 1, title: { FR: "Accueil Royal à Marrakech", EN: "Royal Welcome in Marrakech" }, desc: { FR: "Vol direct Montréal-Marrakech, transfert privé de luxe en SUV vers l'Hôtel du Golf 5★. Installation en Chambre Deluxe Vue Jardin avec formule tout-inclus.", EN: "Direct flight Montreal to Marrakech, private luxury SUV transfer to the 5★ Hôtel du Golf. Check in to your Deluxe Garden View room with all-inclusive access." } },
-      { day: 2, title: { FR: "Partie 1 : Royal Golf de Marrakech", EN: "Round 1: Royal Golf de Marrakech" }, desc: { FR: "Première partie de golf au Royal Golf de Marrakech, un parcours légendaire dessiné dans les années 1920 et fréquenté par la royauté.", EN: "Play your first round at the historic Royal Golf de Marrakech, a legendary course designed in the 1920s and frequented by royalty." } },
-      { day: 3, title: { FR: "Partie 2 : Golf Amelkis", EN: "Round 2: Golf Amelkis" }, desc: { FR: "Deuxième partie de golf au Golf Amelkis, dessiné par Cabell B. Robinson, avec des palmiers superbes et des obstacles de sable stimulants.", EN: "Play your second round at Golf Amelkis, designed by Cabell B. Robinson, featuring beautiful palms and challenging bunkers." } },
-      { day: 4, title: { FR: "Souks & Découverte Culturelle de Marrakech", EN: "Marrakech Souks & Cultural Discovery" }, desc: { FR: "Journée libre pour découvrir les sites historiques de Marrakech, y compris le palais de la Bahia et les tombeaux saadiens avec guide privé.", EN: "Free day to discover Marrakech's historical sites, including Bahia Palace and Saadian Tombs, with a private guide." } },
-      { day: 5, title: { FR: "Partie 3 : Golf Palm Ourika", EN: "Round 3: Golf Palm Ourika" }, desc: { FR: "Troisième partie de golf au Golf Palm Ourika, tracé dans une oliveraie avec vue sur les cimes enneigées de l'Atlas.", EN: "Play your third round at Golf Palm Ourika, set in an olive grove with spectacular views of the snow-capped Atlas peaks." } },
-      { day: 6, title: { FR: "Partie 4 : Golf Assoufid", EN: "Round 4: Golf Assoufid" }, desc: { FR: "Quatrième partie au Golf Assoufid, un parcours de style désert primé à plusieurs reprises, avec vue sur l'Atlas.", EN: "Play your fourth round at Assoufid Golf Club, an award-winning desert-style design with magnificent Atlas views." } },
-      { day: 7, title: { FR: "Détente & Spa Hammam Traditionnel", EN: "Wellness & Spa Hammam Day" }, desc: { FR: "Journée de détente absolue au spa de l'hôtel avec rituel hammam marocain traditionnel et massage à l'huile d'argan.", EN: "Relax at the hotel's luxury spa with a traditional Moroccan hammam ritual and argan oil massage." } },
-      { day: 8, title: { FR: "Partie 5 : Golf Samanah", EN: "Round 5: Golf Samanah" }, desc: { FR: "Cinquième partie au Samanah Golf Club, un parcours de championnat Jack Nicklaus Signature exigeant.", EN: "Play your fifth round at Samanah Golf Club, a challenging Jack Nicklaus Signature course with wide fairways." } },
-      { day: 9, title: { FR: "Partie 6 : Golf Noria", EN: "Round 6: Golf Noria" }, desc: { FR: "Sixième et dernière partie de golf au Golf Noria, un tracé unique intégrant une noria traditionnelle.", EN: "Play your final round at Golf Noria, a unique design featuring a traditional Moroccan waterwheel and modern layout." } },
-      { day: 10, title: { FR: "Excursion de la Vallée de l'Ourika", EN: "Ourika Valley Sightseeing Excursion" }, desc: { FR: "Excursion panoramique dans la vallée de l'Ourika, explorez les villages berbères et découvrez les cascades.", EN: "Take a scenic drive to the Ourika Valley, explore local Berber villages, and walk along waterfalls." } },
-      { day: 11, title: { FR: "Détente & Restauration Tout-Inclus", EN: "Leisure & All-Inclusive Gourmet Dining" }, desc: { FR: "Journée complète pour profiter des piscines et savourer les dîners, boissons premium et soins tout-compris.", EN: "A full day to relax at the pools and enjoy all-inclusive dining, premium drinks, and high-quality services." } },
-      { day: 12, title: { FR: "Départ de Marrakech", EN: "Sovereign Departure" }, desc: { FR: "Transfert privé vers l'aéroport Marrakech Ménara pour votre vol direct de retour. Fin des services.", EN: "Private transfer to Marrakech Menara Airport for your direct return flight to Montreal. End of services." } }
+      { day: 1, title: { FR: "Arrivée à Mascate", EN: "Arrival in Muscat" }, desc: { FR: "Accueil privé à l'aéroport et transfert vers l'hôtel The Chedi Muscat. Soirée libre au bord de la plage.", EN: "Private airport meet and luxury transfer to The Chedi Muscat. Enjoy a relaxed beachside evening." } },
+      { day: 2, title: { FR: "Mascate & Mosquée Sultan Qaboos", EN: "Muscat City Exploration" }, desc: { FR: "Visite privée de la Grande Mosquée du Sultan Qaboos, du marché de Mutrah et du palais royal d'Al Alam. Nuit à Mascate.", EN: "Private tour of the Sultan Qaboos Grand Mosque, Mutrah Souq, and Al Alam Palace. Stay in Muscat." } },
+      { day: 3, title: { FR: "Fjords de Musandam & Dauphins", EN: "Musandam Fjords Cruise" }, desc: { FR: "Vol local vers le Musandam. Croisière privée d'une journée en dhow traditionnel à travers les fjords et observation des dauphins. Nuit au Musandam.", EN: "Local flight to Musandam. Full-day private cruise in a traditional wooden dhow through fjord cliffs with dolphin watching. Stay in Musandam." } },
+      { day: 4, title: { FR: "Musandam à Mascate", EN: "Musandam back to Muscat" }, desc: { FR: "Retour à Mascate. Après-midi de détente au spa et hammam traditionnel. Nuit à Mascate.", EN: "Return flight to Muscat. Enjoy a premium spa and traditional hammam session. Stay in Muscat." } },
+      { day: 5, title: { FR: "Mascate vers les Monts Hajar via Nizwa", EN: "Muscat to Hajar Mountains via Nizwa" }, desc: { FR: "Route vers Nizwa, visite du fort médiéval en terre et du marché aux bétails. Montée dans les montagnes du Djebel Akhdar. Nuit au Djebel Akhdar.", EN: "Drive to Nizwa, tour the historic clay fort and souq. Ascend into the Hajar Mountains range to Jebel Akhdar. Stay in Jebel Akhdar." } },
+      { day: 6, title: { FR: "Randonnée dans les Canyons", EN: "Canyon Hiking Experience" }, desc: { FR: "Randonnée privée guidée à travers les villages de montagne en terrasses, les vergers de grenades et les canyons. Nuit au Djebel Akhdar.", EN: "Private guided hike through mountain farming terraces, rose gardens, and deep sandstone canyons. Stay in Jebel Akhdar." } },
+      { day: 7, title: { FR: "Djebel Akhdar vers Wadi Bani Khalid", EN: "Jebel Akhdar to Wadi Bani Khalid" }, desc: { FR: "Descente vers le Wadi Bani Khalid, baignade dans les piscines naturelles d'eau turquoise. Route vers le désert de Wahiba Sands. Nuit en camp de désert.", EN: "Drive to Wadi Bani Khalid. Swim in the deep emerald natural rock pools. Continue into the Wahiba Sands desert. Stay in Desert Camp." } },
+      { day: 8, title: { FR: "Glamping dans le Désert de Wahiba", EN: "Desert Glamping & Sunset" }, desc: { FR: "Journée libre dans le désert : surf des sables, rencontre avec les bédouins et coucher de soleil sur les dunes géantes. Nuit en camp de désert.", EN: "Free day in the desert: try sandboarding, meet local Bedouins, and watch sunset over giant dunes. Stay in Desert Camp." } },
+      { day: 9, title: { FR: "Wahiba Sands vers la Côte de Sur", EN: "Desert to Sur Coastal Plain" }, desc: { FR: "Route vers la ville côtière de Sur. Visite du chantier de dhows traditionnels et observation nocturne des tortues de mer. Nuit à Sur.", EN: "Drive to the seaside town of Sur. Visit the traditional dhow shipyard and watch green sea turtles nest on the beach. Stay in Sur." } },
+      { day: 10, title: { FR: "Wadi Shab & Retour à Mascate", EN: "Wadi Shab Hike & Muscat Return" }, desc: { FR: "Randonnée spectaculaire dans le canyon de Wadi Shab, baignade dans la grotte secrète, puis route vers Mascate. Nuit à Mascate.", EN: "Hike through the sandstone gorge of Wadi Shab, swim into the hidden waterfall cave, and drive back to Muscat. Stay in Muscat." } },
+      { day: 11, title: { FR: "Détente Tout-Compris", EN: "Muscat Relaxation & Fine Dining" }, desc: { FR: "Journée complète pour profiter des piscines de l'hôtel, savourer la haute gastronomie omanaise et faire du shopping de souvenirs. Nuit à Mascate.", EN: "Enjoy a final free day at your resort, swimming in infinity pools, and dining on fine Arabian cuisine. Stay in Muscat." } },
+      { day: 12, title: { FR: "Départ de Mascate", EN: "Departure" }, desc: { FR: "Transfert privé vers l'aéroport international de Mascate pour votre vol de retour. Fin des services.", EN: "Private luxury transfer to Muscat International Airport for your flight home. End of services." } }
     ],
     inclusions: {
       FR: [
-        "Vols directs Montréal-Marrakech aller-retour avec Air Transat (classe Économie)",
-        "11 nuits en Chambre Deluxe Vue Jardin au Hôtel du Golf 5★",
-        "Formule tout-inclus (dîners gourmets, boissons illimitées, café/thé)",
-        "6 parties de golf (Royal Golf, Amelkis, Palm Ourika, Assoufid, Samanah, Noria) avec voiturette",
-        "Réservations des temps de départ et assistance 24/7",
-        "Couverture par le fonds d'indemnisation FICAV"
+        "Vols aller-retour Montréal-Mascate en classe Économie Premium",
+        "11 nuits d'hébergement en hôtels 5★ et camps écologiques de luxe",
+        "Tous les transferts terrestres en véhicule 4x4 privé avec chauffeur-guide",
+        "Vols intérieurs Mascate-Musandam-Mascate",
+        "Toutes les activités guidées et excursions mentionnées"
       ],
       EN: [
-        "Direct round-trip flights Montreal-Marrakech with Air Transat (Standard Economy)",
-        "11 nights in Deluxe Garden View Room at 5★ Hôtel du Golf",
-        "All-inclusive board (unlimited gourmet dining, premium drinks, coffee/tea)",
-        "6 rounds of golf (Royal Golf, Amelkis, Palm Ourika, Assoufid, Samanah, Noria) with electric cart",
-        "Tee time reservations and 24/7 concierge assistance",
-        "FICAV compensation fund coverage"
+        "Round-trip Montreal-Muscat flights in Premium Economy",
+        "11 nights in 5★ properties and eco-luxury desert camps",
+        "All land travel in private 4x4 vehicles with driver-guide",
+        "Domestic return flights Muscat-Musandam-Muscat",
+        "All guided activities and entry fees listed"
       ]
     },
     exclusions: {
       FR: [
         "Assurance voyage personnelle obligatoire",
-        "Pourboires pour les chauffeurs et caddies",
-        "Excursions facultatives non listées",
-        "Achats personnels"
+        "Pourboires pour les chauffeurs et guides locaux",
+        "Boissons alcoolisées non incluses dans les formules"
       ],
       EN: [
         "Personal travel insurance",
-        "Tips for drivers and caddies",
-        "Unlisted optional excursions",
-        "Personal shopping"
+        "Gratuities for local guides and drivers",
+        "Alcoholic beverages where not package-inclusive"
       ]
     },
     options: {
       FR: [
-        { name: "Visite guidée privée Médina (Journée)", price: "C$ 150" },
-        { name: "Vol en montgolfière au-dessus de l'Atlas", price: "C$ 450" }
+        { name: "Surclassement en Classe Affaires", price: "C$ 3,800" },
+        { name: "Nuit Supplémentaire au Camp de Désert", price: "C$ 650" }
       ],
       EN: [
-        { name: "Private Guided Medina Tour (Full Day)", price: "C$ 150" },
-        { name: "Hot Air Balloon Flight over Atlas Mountains", price: "C$ 450" }
+        { name: "Business Class Flights Upgrade", price: "C$ 3,800" },
+        { name: "Additional Night at Desert Camp", price: "C$ 650" }
       ]
     },
     hotels: [
       {
-        name: "Hôtel du Golf Rotana Marrakech Palmeraie",
+        name: "The Chedi Muscat",
         stars: 5,
         desc: {
-          FR: "Hôtel 5★ prestigieux au cœur de la Palmeraie offrant détente tout-inclus et golf d'exception.",
-          EN: "A prestigious 5★ hotel in the heart of the Palmeraie offering all-inclusive relaxation."
+          FR: "Un complexe hôtelier d'exception alliant design zen et architecture omanaise.",
+          EN: "A stunning luxury resort combining minimalist design and Omani heritage."
         },
-        link: "https://www.rotana.com/"
+        link: "https://www.ghmhotels.com/"
+      },
+      {
+        name: "Alila Jabal Akhdar",
+        stars: 5,
+        desc: {
+          FR: "Hôtel de luxe perched à 2000 mètres d'altitude surplombant les gorges du Hajar.",
+          EN: "A spectacular clifftop resort set 2,000 meters above sea level in the canyons."
+        },
+        link: "https://www.alilahotels.com/"
       }
     ],
     activities: [
       {
-        title: { FR: "Royal Golf de Marrakech", EN: "Royal Golf Session" },
+        title: { FR: "Fjords du Musandam en Dhow", EN: "Musandam Fjord Cruise" },
         desc: {
-          FR: "Jouez sur l'un des plus anciens et mythiques terrains de golf du Maroc sous les eucalyptus.",
-          EN: "Play on one of the oldest and most legendary golf courses in Morocco amidst eucalyptus trees."
+          FR: "Croisière en bateau de bois traditionnel à travers les canyons marins et dauphins.",
+          EN: "Sailing in a traditional wooden boat among dramatic coastal cliffs."
         }
       },
       {
-        title: { FR: "Détente Palmeraie Spa", EN: "Palmeraie Spa Wellness" },
+        title: { FR: "Baignade à Wadi Bani Khalid", EN: "Wadi Bani Khalid Swimming" },
         desc: {
-          FR: "Soin oriental de 2 heures avec hammam privé et gommage traditionnel.",
-          EN: "Gourmet 2-hour oriental spa treatment with private hammam steam and scrub."
+          FR: "Une baignade magique dans les oasis de roches et d'eau turquoise au cœur du désert.",
+          EN: "Swim in pristine emerald pools surrounded by palms and red sands."
         }
       }
     ]
@@ -1254,79 +1264,77 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
     ]
   },
   "4": {
-    country: "Morocco",
-    heroTitle: { FR: "Golf à Taghazout", EN: "Golf in Taghazout" },
+    country: "UAE",
+    heroTitle: { FR: "Dubaï & Abou Dabi", EN: "Dubai & Abu Dhabi" },
     heroSub: {
-      FR: "Forfait Golf de Prestige à Taghazout Bay. Séjournez 7 nuits au Hilton Taghazout 5★ et jouez 4 parties de golf sur les parcours de Tazegzout, du Soleil et des Dunes.",
-      EN: "Bespoke Golf Escape in Taghazout Bay. Stay 7 nights at the 5★ Hilton Taghazout and play 4 rounds of golf at Tazegzout, du Soleil, and Les Dunes courses."
+      FR: "Splendeurs du Golfe : Dubaï & Abou Dabi. Un voyage ultra-luxe entre modernité et traditions.",
+      EN: "Gulf Splendors: Dubai & Abu Dhabi. An ultra-luxury escape balancing futuristic wonder and desert heritage."
     },
-    heroBtn: { FR: "Découvrir le Forfait", EN: "Explore Golf Escape" },
-    heroBg: "/images/tgz_course_ocean.jpg",
-    themeColor: "#00A3C4",
-    themeColorHover: "#00839C",
-    watercolorColor: "#00A3C4",
-    mapImage: "/images/moroco.webp",
-    discoverTitle: { FR: "Découvrir Taghazout", EN: "Discover Taghazout" },
+    heroBtn: { FR: "Découvrir le Golfe", EN: "Explore the Gulf" },
+    heroBg: "/images/gulf-city-skyline.png",
+    themeColor: "#C5A880",
+    themeColorHover: "#A3835B",
+    watercolorColor: "#C5A880",
+    mapImage: "/images/gulf-city-skyline.png",
+    discoverTitle: { FR: "Découvrir les Émirats", EN: "Discover UAE" },
     discoverDesc: {
-      FR: "Vivez le golf de premier choix face à l'océan Atlantique, avec des plages de sable fin, la découverte de l'argan et le bien-être.",
-      EN: "Experience first-class golf facing the Atlantic ocean, with pristine sandy beaches, argan oil discovery, and premium wellness."
+      FR: "Découvrez le luxe contemporain, l'architecture futuriste et les déserts intemporels.",
+      EN: "Experience the contemporary luxury, futuristic architecture, and timeless deserts."
     },
-    experienceTitle: { FR: "Vivre le Golf Côtier", EN: "Experience Atlantic Golf" },
+    experienceTitle: { FR: "Vivre le Golfe", EN: "Experience the Gulf" },
     experienceDesc: {
-      FR: "Jouez sur fairways dessinés par Kyle Phillips au sommet des falaises côtières, savourez des dîners gastronomiques et détendez-vous à Taghazout.",
-      EN: "Play on Kyle Phillips-designed fairways carved into seaside cliffs, enjoy gourmet dining with wine, and relax at Taghazout Bay."
+      FR: "Vivez des moments inoubliables : croisière sur yacht privé, survol en hélicoptère et dîners d'exception dans le désert.",
+      EN: "Create unforgettable memories: private yacht cruises, helicopter flights, and gourmet desert safaris."
     },
     mapPins: [
-      { name: { FR: "Agadir", EN: "Agadir" }, top: "66%", left: "46%" },
-      { name: { FR: "Taghazout Bay", EN: "Taghazout Bay" }, top: "65%", left: "45%" },
-      { name: { FR: "Golf Tazegzout", EN: "Tazegzout Golf" }, top: "64%", left: "44%" },
-      { name: { FR: "Golf du Soleil", EN: "Golf du Soleil" }, top: "67%", left: "46%" },
-      { name: { FR: "Golf Les Dunes", EN: "Golf Les Dunes" }, top: "68%", left: "47%" }
+      { name: { FR: "Dubaï", EN: "Dubai" }, top: "32.2%", left: "66.6%" },
+      { name: { FR: "Abou Dabi", EN: "Abu Dhabi" }, top: "48.9%", left: "51.6%" },
+      { name: { FR: "Désert de Liwa", EN: "Liwa Desert" }, top: "72.9%", left: "40%" },
+      { name: { FR: "Yas Island", EN: "Yas Island" }, top: "41.6%", left: "58.3%" }
     ],
     experienceGrid: [
-      { label: { FR: "Fairways Côtiers", EN: "Clifftop Fairways" }, img: "/images/tgz_course_1.jpg" },
-      { label: { FR: "Vue Océan", EN: "Ocean Views" }, img: "/images/tgz_course_ocean.jpg" },
-      { label: { FR: "Trou 18", EN: "Hole 18" }, img: "/images/tgz_course_hotel.jpg" },
-      { label: { FR: "Parcours Aérien", EN: "Aerial Course" }, img: "/images/tgz_course_aerial.jpg" },
-      { label: { FR: "Face à la Mer", EN: "Beachfront" }, img: "/images/hilton_taghazout_5.avif" }
+      { label: { FR: "Dubaï Marina", EN: "Dubai Marina" }, img: "/images/gulf-city-skyline.png" },
+      { label: { FR: "Yacht Privé", EN: "Private Yacht" }, img: "/images/gulf-city-skyline.png" },
+      { label: { FR: "Safari Désert", EN: "Desert Safari" }, img: "/images/gulf-desert-sunset.png" },
+      { label: { FR: "Vol Hélicoptère", EN: "Helicopter Charter" }, img: "/images/gulf-city-skyline.png" },
+      { label: { FR: "Musée du Louvre", EN: "Louvre Abu Dhabi" }, img: "/images/gulf-city-skyline.png" }
     ]
   },
   "5": {
-    country: "Morocco",
-    heroTitle: { FR: "Golf à Marrakech", EN: "Golf in Marrakech" },
+    country: "Oman",
+    heroTitle: { FR: "Oman Souverain", EN: "Sovereign Oman" },
     heroSub: {
-      FR: "Séjour Golf Royal & Bien-être Tout-Inclus à Marrakech. Séjournez 11 nuits à l'Hôtel du Golf 5★ et jouez 6 parties sur les plus prestigieux parcours de Marrakech.",
-      EN: "Royal Golf & All-Inclusive Wellness in Marrakech. Stay 11 nights at 5★ Hôtel du Golf and play 6 rounds at Royal Golf, Assoufid, Amelkis, Samanah, Ourika, and Noria."
+      FR: "Oman Souverain : Désert & Canyons. Une immersion royale dans le Sultanat d'Oman, entre wadis sauvages et glamping étoilé.",
+      EN: "Sovereign Oman: Desert & Canyons. A royal immersion in the Sultanate of Oman, across wild wadis and stargazing glamping."
     },
-    heroBtn: { FR: "Découvrir le Golf Royal", EN: "Explore Royal Golf" },
-    heroBg: "/images/almaaden_golf_2.jpg",
-    themeColor: "#8B2635",
-    themeColorHover: "#72202b",
-    watercolorColor: "#8B2635",
-    mapImage: "/images/moroco.webp",
-    discoverTitle: { FR: "Découvrir les Parcours", EN: "Discover Marrakech Golf" },
+    heroBtn: { FR: "Découvrir l'Oman", EN: "Explore Oman" },
+    heroBg: "/images/gulf-desert-sunset.png",
+    themeColor: "#C5A880",
+    themeColorHover: "#A3835B",
+    watercolorColor: "#C5A880",
+    mapImage: "/images/gulf-desert-sunset.png",
+    discoverTitle: { FR: "Découvrir l'Oman", EN: "Discover Oman" },
     discoverDesc: {
-      FR: "Jouez sur des parcours de légende aux portes du désert et face aux sommets enneigés de l'Atlas.",
-      EN: "Play on some of the world's most historic and design-signature courses located at the gates of the Sahara and facing the Atlas mountains."
+      FR: "Explorez les wadis de montagne, les forts médiévaux et naviguez dans les fjords du Musandam.",
+      EN: "Explore mountain wadis, ancient converted forts, and cruise Musandam fjords."
     },
-    experienceTitle: { FR: "Vivre le Golf de Légende", EN: "Experience Royal Courses" },
+    experienceTitle: { FR: "Vivre l'Oman", EN: "Experience Oman" },
     experienceDesc: {
-      FR: "Bénéficiez d'un vol direct Transat, d'une formule tout-inclus gourmet, de visites privées de la médina et d'un rituel bien-être hammam privé.",
-      EN: "Experience direct flight Transat access, all-inclusive gourmet dining, historic clay medina tours, and wellness spa hammam buyouts."
+      FR: "Une immersion profonde dans le désert pour observer les étoiles sous le ciel le plus pur au monde, dormir sous tente et explorer les wadis.",
+      EN: "Deep desert immersion allows you to stargaze under the cleanest skies, sleep in luxury camps, and swim in turquoise wadis."
     },
     mapPins: [
-      { name: { FR: "Marrakech — Hôtel du Golf", EN: "Marrakech — Hotel du Golf" }, top: "55%", left: "53%" },
-      { name: { FR: "Royal Golf de Marrakech", EN: "Royal Golf" }, top: "56%", left: "52%" },
-      { name: { FR: "Golf Amelkis", EN: "Golf Amelkis" }, top: "54%", left: "54%" },
-      { name: { FR: "Golf Assoufid", EN: "Golf Assoufid" }, top: "57%", left: "53%" },
-      { name: { FR: "Vallée de l'Ourika", EN: "Ourika Valley" }, top: "59%", left: "55%" }
+      { name: { FR: "Mascate", EN: "Muscat" }, top: "31%", left: "71%" },
+      { name: { FR: "Djebel Akhdar", EN: "Jebel Akhdar" }, top: "33%", left: "53%" },
+      { name: { FR: "Désert de Wahiba", EN: "Wahiba Desert" }, top: "47%", left: "71%" },
+      { name: { FR: "Fjords de Musandam", EN: "Musandam Fjords" }, top: "4%", left: "50%" }
     ],
     experienceGrid: [
-      { label: { FR: "Al Maaden — Vue Atlas", EN: "Al Maaden — Atlas Views" }, img: "/images/almaaden_golf_2.jpg" },
-      { label: { FR: "Royal Golf de Marrakech", EN: "Royal Golf Club" }, img: "/images/royal_golf_marrakech_1.jpg" },
-      { label: { FR: "Akenza Golf", EN: "Akenza Golf" }, img: "/images/akenza_golf_1.jpg" },
-      { label: { FR: "Coucher de Soleil", EN: "Sunset Round" }, img: "/images/royal_golf_sunset.jpg" },
-      { label: { FR: "Restaurant Gourmet", EN: "Gourmet Dining" }, img: "/images/almaaden_restaurant1.jpg" }
+      { label: { FR: "Wahiba Sands", EN: "Wahiba Sands" }, img: "/images/gulf-desert-sunset.png" },
+      { label: { FR: "Mascate", EN: "Muscat Coast" }, img: "/images/gulf-city-skyline.png" },
+      { label: { FR: "Djebel Akhdar", EN: "Jebel Akhdar" }, img: "/images/gulf-desert-sunset.png" },
+      { label: { FR: "Fjords Musandam", EN: "Musandam Fjords" }, img: "/images/gulf-city-skyline.png" },
+      { label: { FR: "Wadi Bani Khalid", EN: "Wadi Bani Khalid" }, img: "/images/gulf-desert-sunset.png" }
     ]
   },
   "6": {

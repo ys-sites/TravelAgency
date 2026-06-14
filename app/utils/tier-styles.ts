@@ -30,7 +30,7 @@ export function getTierStyle(badgeText: string): TierStyle {
     };
   }
   
-  if (text.includes("PREMIUM GOLF") || text.includes("GOLF EXCLUSIF")) {
+  if (text.includes("PREMIUM GULF") || text.includes("GULFE EXCLUSIF") || text.includes("GULF PRESTIGE") || text.includes("GOLFE DE PRESTIGE")) {
     // Silver
     return {
       background: "linear-gradient(135deg, #d0d0d0, #b0b0b0, #909090)",
@@ -38,7 +38,7 @@ export function getTierStyle(badgeText: string): TierStyle {
     };
   }
   
-  if (text.includes("ROYAL GOLF") || text.includes("GOLF ROYAL")) {
+  if (text.includes("ROYAL GULF") || text.includes("GULFE ROYAL") || text.includes("LUXURY GULF") || text.includes("GOLFE DE LUXE")) {
     // Rose Gold
     return {
       background: "linear-gradient(135deg, #f7cac9, #e8a598, #c97b6e)",

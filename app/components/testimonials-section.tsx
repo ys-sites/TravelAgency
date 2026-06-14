@@ -36,22 +36,22 @@ const testimonials: Testimonial[] = [
   },
   {
     quote: {
-      EN: "The Taghazout Bay Golf package was flawlessly planned. Tazegzout Golf's cliffside holes are unlike anything I've played in Europe. The Hilton staff treated us like royalty throughout.",
-      FR: "Le forfait Golf de Taghazout Bay était impeccablement planifié. Les trous en falaise de Tazegzout Golf sont uniques en leur genre. Le personnel du Hilton nous a traités comme des rois."
+      EN: "The Dubai and Abu Dhabi luxury package was flawlessly planned. The private yacht cruise at sunset was unlike anything we've experienced in Europe. The Hilton staff treated us like royalty throughout.",
+      FR: "Le forfait de luxe à Dubaï et Abou Dabi était impeccablement planifié. La croisière privée en yacht au coucher du soleil était unique en son genre. Le personnel du Hilton nous a traités comme des rois."
     },
     name: "Marc-André T.",
     location: "Québec City, QC",
-    tripName: { EN: "Bespoke Golf Escape in Taghazout", FR: "Golf de Prestige à Taghazout" },
+    tripName: { EN: "Gulf Splendors: Dubai & Abu Dhabi", FR: "Splendeurs du Golfe : Dubaï & Abou Dabi" },
     rating: 5
   },
   {
     quote: {
-      EN: "Six rounds across Marrakech's finest courses — Royal Golf, Amelkis, Assoufid — with Atlas peaks as a backdrop. The all-inclusive experience at Hôtel du Golf was absolutely world-class.",
-      FR: "Six parties sur les plus beaux parcours de Marrakech — Royal Golf, Amelkis, Assoufid — avec les sommets de l'Atlas en toile de fond. L'expérience tout-inclus à l'Hôtel du Golf était de classe mondiale."
+      EN: "An incredible exploration of the Sultanate of Oman. Stargazing in the Wahiba desert, swimming in turquoise wadis, and sailing the Musandam fjords — Majestic Experiences designed a masterpiece.",
+      FR: "Une exploration incroyable du Sultanat d'Oman. L'observation des étoiles dans le désert de Wahiba, les baignades dans les wadis turquoise et la navigation dans les fjords du Musandam — Majestic Experiences a conçu un chef-d'œuvre."
     },
     name: "Jean-Paul R.",
     location: "Laval, QC",
-    tripName: { EN: "Royal Golf & All-Inclusive Marrakech", FR: "Séjour Golf Royal à Marrakech" },
+    tripName: { EN: "Sovereign Oman: Desert & Canyons", FR: "Oman Souverain : Désert & Canyons" },
     rating: 5
   },
   {
@@ -137,8 +137,8 @@ export default function TestimonialsSection() {
           </h2>
           <p className="text-white/40 text-sm font-light max-w-xl mx-auto">
             {lang === "EN"
-              ? "What our guests say about their curated Moroccan experience."
-              : "Ce que nos voyageurs disent de leur expérience marocaine sur mesure."
+              ? "What our guests say about their curated Moroccan & Gulf experience."
+              : "Ce que nos voyageurs disent de leur expérience sur mesure au Maroc et dans le Golfe."
             }
           </p>
         </motion.div>
