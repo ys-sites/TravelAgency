@@ -100,7 +100,7 @@ export interface ItineraryTheme {
 export const toursList: TourCard[] = [
   {
     id: 10,
-    image: "/images/18 parcours rouge.jpg",
+    image: "/images/rgdes_parcours_rouge_18.jpg",
     category: { FR: "Golf & Prestige", EN: "Golf & Prestige" },
     badge: { FR: "Signature", EN: "Signature" },
     title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
@@ -157,7 +157,7 @@ export const toursList: TourCard[] = [
 export const dealsList: DealCard[] = [
   {
     id: 10,
-    image: "/images/18 parcours rouge.jpg",
+    image: "/images/rgdes_parcours_rouge_18.jpg",
     badge: { FR: "Signature", EN: "Signature" },
     title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
     duration: { FR: "5 jours / 4 nuits", EN: "5 days / 4 nights" },
@@ -211,8 +211,8 @@ export const dealsList: DealCard[] = [
 export const itinerariesData: Record<string, ItineraryDetail> = {
   "10": {
     id: 10,
-    image: "/images/18 parcours rouge.jpg",
-    contentImage: "/images/PARCOURS ROUGE Trous n°09-17.jpg",
+    image: "/images/rgdes_parcours_rouge_18.jpg",
+    contentImage: "/images/rgdes_parcours_rouge_09_17.jpg",
     title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
     duration: { FR: "5 jours / 4 nuits", EN: "5 days / 4 nights" },
     cost: { FR: "Sur devis", EN: "On request" },
