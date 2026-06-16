@@ -210,7 +210,7 @@ export default function CustomTripClient() {
   };
 
   return (
-    <div className={`min-h-screen font-body antialiased transition-colors duration-1000 ${isPremium ? 'bg-[#060606] text-white' : 'bg-white text-zinc-900'}`}>
+    <div className="min-h-screen font-body antialiased bg-white text-zinc-900">
       <Navbar />
 
       {/* Parallax Header */}
@@ -222,14 +222,14 @@ export default function CustomTripClient() {
           className="absolute inset-0 w-full h-full object-cover object-center opacity-55"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)] pointer-events-none" />
-        <div className={`absolute inset-0 bg-gradient-to-t to-transparent pointer-events-none transition-colors duration-1000 ${isPremium ? 'from-[#060606]' : 'from-white'}`} />
+        <div className="absolute inset-0 bg-gradient-to-t to-transparent pointer-events-none from-white" />
         {/* Extra top darkening so navbar text stays legible */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none" />
         
         <div className="max-w-6xl mx-auto w-full z-10 space-y-4">
           <Link
             href="/"
-            className={`inline-flex items-center space-x-2 text-brand-gold font-mono text-[10px] tracking-widest uppercase transition-colors font-semibold ${isPremium ? 'hover:text-white' : 'hover:text-zinc-900'}`}
+            className="inline-flex items-center space-x-2 text-brand-gold font-mono text-[10px] tracking-widest uppercase transition-colors font-semibold hover:text-zinc-900"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
@@ -251,16 +251,16 @@ export default function CustomTripClient() {
         
         {/* Step Toggler (Standard vs. Premium) */}
         <div className="flex justify-center mb-16">
-          <div className={`border p-1.5 rounded-full flex items-center relative overflow-hidden max-w-sm w-full transition-colors duration-1000 ${isPremium ? 'bg-zinc-900/60 border-white/10' : 'bg-zinc-100 border-zinc-200'}`}>
+          <div className="border p-1.5 rounded-full flex items-center relative overflow-hidden max-w-sm w-full bg-zinc-100 border-zinc-200">
             <button
               onClick={() => setIsPremium(false)}
-              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${!isPremium ? 'bg-white text-zinc-900 shadow-sm' : 'text-white/60 hover:text-white'}`}
+              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${!isPremium ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-600 hover:text-zinc-900'}`}
             >
               {translate(t.standardTab, lang)}
             </button>
             <button
               onClick={() => setIsPremium(true)}
-              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${isPremium ? 'bg-white text-zinc-900 shadow-sm' : isPremium ? 'text-white/60 hover:text-white' : 'text-zinc-600 hover:text-zinc-900'}`}
+              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${isPremium ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-600 hover:text-zinc-900'}`}
             >
               {translate(t.premiumTab, lang)}
             </button>
@@ -276,7 +276,7 @@ export default function CustomTripClient() {
               
               {/* Step 1: Destinations */}
               <div className="space-y-6">
-                <h3 className={`font-serif text-xl md:text-2xl border-b pb-4 transition-colors duration-1000 ${isPremium ? 'text-white border-white/10' : 'text-zinc-900 border-zinc-200'}`}>
+                <h3 className="font-serif text-xl md:text-2xl border-b pb-4 text-zinc-900 border-zinc-200">
                   {translate(t.stepDestinations, lang)}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -288,23 +288,19 @@ export default function CustomTripClient() {
                         onClick={() => toggleDest(dest.id)}
                         className={`p-4 border rounded-[1.2rem] flex items-center justify-between cursor-pointer transition-luxury ${
                           active
-                            ? isPremium
-                              ? 'border-brand-gold bg-brand-gold/5 shadow-[0_0_15px_rgba(212,175,55,0.1)]'
-                              : 'border-zinc-800 bg-zinc-800/5'
-                            : isPremium
-                              ? 'border-white/10 bg-zinc-950/20 hover:border-white/35'
-                              : 'border-zinc-200 bg-zinc-50/50 hover:border-zinc-300'
+                            ? 'border-brand-gold bg-brand-gold/5 shadow-[0_0_15px_rgba(212,175,55,0.08)]'
+                            : 'border-zinc-200 bg-zinc-50/50 hover:border-zinc-300'
                         }`}
                       >
                         <div className="space-y-0.5">
-                          <span className={`text-[9px] font-mono uppercase tracking-wider transition-colors duration-1000 ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>
+                          <span className="text-[9px] font-mono uppercase tracking-wider text-zinc-400">
                             {dest.region}
                           </span>
-                          <h4 className={`text-xs md:text-sm font-semibold transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-800'}`}>
+                          <h4 className="text-xs md:text-sm font-semibold text-zinc-800">
                             {translate(dest.title, lang)}
                           </h4>
                         </div>
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center border transition-all duration-300 ${active ? 'border-brand-gold bg-brand-gold text-black' : isPremium ? 'border-white/20 bg-transparent' : 'border-zinc-200 bg-transparent'}`}>
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center border transition-all duration-300 ${active ? 'border-brand-gold bg-brand-gold text-black' : 'border-zinc-200 bg-transparent'}`}>
                           {active && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                         </div>
                       </div>
@@ -315,7 +311,7 @@ export default function CustomTripClient() {
 
               {/* Step 2: Activities */}
               <div className="space-y-6">
-                <h3 className={`font-serif text-xl md:text-2xl border-b pb-4 transition-colors duration-1000 ${isPremium ? 'text-white border-white/10' : 'text-zinc-900 border-zinc-200'}`}>
+                <h3 className="font-serif text-xl md:text-2xl border-b pb-4 text-zinc-900 border-zinc-200">
                   {translate(t.stepActivities, lang)}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -328,14 +324,10 @@ export default function CustomTripClient() {
                         onClick={() => !disabled && toggleAct(act.id)}
                         className={`p-4 border rounded-[1.2rem] flex items-center justify-between transition-luxury ${
                           disabled
-                            ? 'opacity-30 border-white/5 bg-transparent cursor-not-allowed'
+                            ? 'opacity-30 border-zinc-200 bg-transparent cursor-not-allowed'
                             : active
-                              ? isPremium
-                                ? 'border-brand-gold bg-brand-gold/5 shadow-[0_0_15px_rgba(212,175,55,0.1)] cursor-pointer'
-                                : 'border-zinc-800 bg-zinc-800/5 cursor-pointer'
-                              : isPremium
-                                ? 'border-white/10 bg-zinc-950/20 hover:border-white/35 cursor-pointer'
-                                : 'border-zinc-200 bg-zinc-50/50 hover:border-zinc-300 cursor-pointer'
+                              ? 'border-brand-gold bg-brand-gold/5 shadow-[0_0_15px_rgba(212,175,55,0.08)] cursor-pointer'
+                              : 'border-zinc-200 bg-zinc-50/50 hover:border-zinc-300 cursor-pointer'
                         }`}
                       >
                         <div className="space-y-1 pr-4">
@@ -344,11 +336,11 @@ export default function CustomTripClient() {
                               {lang === "FR" ? "PRESTIGE UNIQUEMENT" : "PREMIUM ONLY"}
                             </span>
                           )}
-                          <h4 className={`text-xs md:text-sm font-semibold pt-1 transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-800'}`}>
+                          <h4 className="text-xs md:text-sm font-semibold pt-1 text-zinc-800">
                             {translate(act.title, lang)}
                           </h4>
                         </div>
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center border transition-all duration-300 ${active ? 'border-brand-gold bg-brand-gold text-black' : isPremium ? 'border-white/20 bg-transparent' : 'border-zinc-200 bg-transparent'}`}>
+                        <div className={`w-5 h-5 rounded-full flex items-center justify-center border transition-all duration-300 ${active ? 'border-brand-gold bg-brand-gold text-black' : 'border-zinc-200 bg-transparent'}`}>
                           {active && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                         </div>
                       </div>
@@ -359,26 +351,26 @@ export default function CustomTripClient() {
 
               {/* Step 3: Duration & Budget */}
               <div className="space-y-6">
-                <h3 className={`font-serif text-xl md:text-2xl border-b pb-4 transition-colors duration-1000 ${isPremium ? 'text-white border-white/10' : 'text-zinc-900 border-zinc-200'}`}>
+                <h3 className="font-serif text-xl md:text-2xl border-b pb-4 text-zinc-900 border-zinc-200">
                   {translate(t.stepDuration, lang)}
                 </h3>
-                <div className={`p-6 md:p-8 border rounded-[1.5rem] space-y-4 transition-colors duration-1000 ${isPremium ? 'bg-zinc-950/50 border-white/10' : 'bg-zinc-50/50 border-zinc-200'}`}>
+                <div className="p-6 md:p-8 border rounded-[1.5rem] space-y-4 bg-zinc-50/50 border-zinc-200">
                   {/* Display-only duration value — controlled by the sidebar slider */}
                   <div className="flex items-center justify-between">
                     <div className="space-y-1">
-                      <span className={`font-mono text-[10px] tracking-widest uppercase ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>
+                      <span className="font-mono text-[10px] tracking-widest uppercase text-zinc-400">
                         {lang === "FR" ? "Durée sélectionnée" : "Selected duration"}
                       </span>
                       <div className="flex items-baseline gap-2">
-                        <span className={`text-3xl font-bold font-heading tabular-nums transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
+                        <span className="text-3xl font-bold font-heading tabular-nums text-zinc-900">
                           {nights}
                         </span>
-                        <span className={`text-sm font-light ${isPremium ? 'text-white/50' : 'text-zinc-500'}`}>
+                        <span className="text-sm font-light text-zinc-500">
                           {lang === "FR" ? "nuits" : "nights"}
                         </span>
                       </div>
                     </div>
-                    <div className={`text-[11px] font-light text-right max-w-[160px] leading-relaxed ${isPremium ? 'text-white/30' : 'text-zinc-400'}`}>
+                    <div className="text-[11px] font-light text-right max-w-[160px] leading-relaxed text-zinc-400">
                       {lang === "FR"
                         ? "Ajustez via le curseur dans le panneau de droite →"
                         : "Adjust with the slider in the booking panel →"
@@ -387,17 +379,17 @@ export default function CustomTripClient() {
                   </div>
 
                   {/* Mini visual progress bar — read-only */}
-                  <div className={`h-[3px] rounded-full overflow-hidden ${isPremium ? 'bg-white/10' : 'bg-zinc-200'}`}>
+                  <div className="h-[3px] rounded-full overflow-hidden bg-zinc-200">
                     <div
                       className="h-full rounded-full transition-all duration-500"
                       style={{
                         width: `${((nights - 5) / 25) * 100}%`,
-                        background: isPremium ? '#C5A880' : '#1a1a1a'
+                        background: '#C5A880'
                       }}
                     />
                   </div>
 
-                  <div className={`flex justify-between font-mono text-[9px] ${isPremium ? 'text-white/20' : 'text-zinc-300'}`}>
+                  <div className="flex justify-between font-mono text-[9px] text-zinc-400">
                     <span>5 {lang === "FR" ? "nuits" : "nights"}</span>
                     <span>30 {lang === "FR" ? "nuits" : "nights"}</span>
                   </div>
@@ -409,27 +401,27 @@ export default function CustomTripClient() {
             {/* Right Booking Sidebar Panel (Span 4) */}
             <div className="lg:col-span-4 lg:sticky lg:top-28 h-fit space-y-6">
               
-              <div className={`p-6 md:p-8 border rounded-[1.5rem] relative overflow-hidden space-y-6 transition-colors duration-1000 ${isPremium ? 'bg-zinc-950/60 border-white/10 shadow-glass text-white' : 'bg-zinc-50/50 border-zinc-200 shadow-md text-zinc-900'}`}>
+              <div className="p-6 md:p-8 border rounded-[1.5rem] relative overflow-hidden space-y-6 bg-zinc-50/50 border-zinc-200 shadow-md text-zinc-900">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-[50px] rounded-full pointer-events-none" />
                 
-                <div className={`pb-4 space-y-1 border-b transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
+                <div className="pb-4 space-y-1 border-b border-zinc-200">
                   <span className="text-brand-gold font-mono text-[9px] tracking-[0.25em] uppercase block">
                     {translate(t.estimateCost, lang)}
                   </span>
                   <div className="flex items-baseline justify-between">
-                    <h3 className={`text-2xl font-bold font-serif uppercase tracking-wide transition-colors duration-1000 ${isPremium ? 'text-brand-gold' : 'text-zinc-900'}`}>
+                    <h3 className="text-2xl font-bold font-serif uppercase tracking-wide text-zinc-900">
                       {translate(t.estimateCostVal, lang)}
                     </h3>
                   </div>
                 </div>
 
                 <div className="space-y-4">
-                  <h4 className={`font-mono text-[10px] tracking-widest uppercase border-b pb-2 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
+                  <h4 className="font-mono text-[10px] tracking-widest uppercase border-b pb-2 border-zinc-200">
                     {translate(t.stepContact, lang)}
                   </h4>
                   
                   <div>
-                    <label className={`block text-[9px] font-mono tracking-widest uppercase mb-1.5 transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
+                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
                       {lang === "FR" ? "Votre nom" : "Your name"}
                     </label>
                     <input
@@ -438,12 +430,12 @@ export default function CustomTripClient() {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="e.g. Sterling Hunt"
-                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
+                      className="w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400"
                     />
                   </div>
 
                   <div>
-                    <label className={`block text-[9px] font-mono tracking-widest uppercase mb-1.5 transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
+                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
                       {lang === "FR" ? "Votre adresse courriel" : "Your email address"}
                     </label>
                     <input
@@ -452,12 +444,12 @@ export default function CustomTripClient() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="e.g. sterling@portfolio.com"
-                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
+                      className="w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400"
                     />
                   </div>
 
                   <div>
-                    <label className={`block text-[9px] font-mono tracking-widest uppercase mb-1.5 transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
+                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
                       {lang === "FR" ? "Numéro de téléphone" : "Your phone number"}
                     </label>
                     <input
@@ -466,12 +458,12 @@ export default function CustomTripClient() {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="e.g. +1 (514) 555-0199"
-                      className={`w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 ${isPremium ? 'bg-white/5 border border-white/10 text-white' : 'bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400'}`}
+                      className="w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 bg-white border border-zinc-200 text-zinc-800 placeholder-zinc-400"
                     />
                   </div>
 
                   {/* Travelling party (Passengers) */}
-                  <div className={`pt-4 border-t space-y-3 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
+                  <div className="pt-4 border-t space-y-3 border-zinc-200">
                     <div className="flex items-center justify-between">
                       <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
                         {lang === "FR" ? "Groupe de voyage" : "Travelling party"}
@@ -480,17 +472,13 @@ export default function CustomTripClient() {
                         <button
                           type="button"
                           onClick={() => updatePassengerCount(-1)}
-                          className={`w-7 h-7 rounded-full border flex items-center justify-center font-bold text-sm transition-colors cursor-pointer ${
-                            isPremium ? 'border-white/10 bg-white/5 hover:bg-white/10 text-white' : 'border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700'
-                          }`}
+                          className="w-7 h-7 rounded-full border flex items-center justify-center font-bold text-sm transition-colors cursor-pointer border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700"
                         >−</button>
-                        <span className={`text-[14px] font-bold font-heading tabular-nums w-5 text-center ${isPremium ? 'text-white' : 'text-zinc-900'}`}>{passengerCount}</span>
+                        <span className="text-[14px] font-bold font-heading tabular-nums w-5 text-center text-zinc-900">{passengerCount}</span>
                         <button
                           type="button"
                           onClick={() => updatePassengerCount(1)}
-                          className={`w-7 h-7 rounded-full border flex items-center justify-center font-bold text-sm transition-colors cursor-pointer ${
-                            isPremium ? 'border-white/10 bg-white/5 hover:bg-white/10 text-white' : 'border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700'
-                          }`}
+                          className="w-7 h-7 rounded-full border flex items-center justify-center font-bold text-sm transition-colors cursor-pointer border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700"
                         >+</button>
                       </div>
                     </div>
@@ -499,12 +487,10 @@ export default function CustomTripClient() {
                     <div className="grid grid-cols-2 gap-2">
                       {passengerAges.map((age, idx) => (
                         <div key={idx} className="flex flex-col gap-0.5">
-                          <span className={`text-[8px] font-mono uppercase tracking-wider ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>
+                          <span className="text-[8px] font-mono uppercase tracking-wider text-zinc-400">
                             {lang === "FR" ? `Passager ${idx + 1}` : `Passenger ${idx + 1}`}
                           </span>
-                          <div className={`flex items-center gap-1.5 border rounded-lg px-2.5 py-1.5 ${
-                            isPremium ? 'bg-white/5 border-white/10' : 'bg-zinc-50 border-zinc-200'
-                          }`}>
+                          <div className="flex items-center gap-1.5 border rounded-lg px-2.5 py-1.5 bg-zinc-50 border-zinc-200">
                             <input
                               type="number"
                               min={0}
@@ -512,11 +498,9 @@ export default function CustomTripClient() {
                               value={age === 0 ? "" : age}
                               onChange={(e) => updatePassengerAge(idx, parseInt(e.target.value) || 0)}
                               placeholder="Age"
-                              className={`w-full bg-transparent text-xs focus:outline-none tabular-nums ${
-                                isPremium ? 'text-white placeholder-white/20' : 'text-zinc-800 placeholder-zinc-300'
-                              }`}
+                              className="w-full bg-transparent text-xs focus:outline-none tabular-nums text-zinc-800 placeholder-zinc-300"
                             />
-                            <span className={`text-[9px] font-mono shrink-0 ${isPremium ? 'text-white/30' : 'text-zinc-400'}`}>
+                            <span className="text-[9px] font-mono shrink-0 text-zinc-400">
                               {lang === "FR" ? "ans" : "yrs"}
                             </span>
                           </div>
@@ -526,12 +510,12 @@ export default function CustomTripClient() {
                   </div>
 
                   {/* Nights Duration Slider */}
-                  <div className={`pt-4 border-t space-y-3 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
+                  <div className="pt-4 border-t space-y-3 border-zinc-200">
                     <div className="flex items-center justify-between">
                       <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
                         {lang === "FR" ? "Durée préférée" : "Preferred duration"}
                       </label>
-                      <span className={`text-[13px] font-bold font-heading tabular-nums ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
+                      <span className="text-[13px] font-bold font-heading tabular-nums text-zinc-900">
                         {nights} {lang === "FR" ? "Nuits" : "Nights"}
                       </span>
                     </div>
@@ -545,10 +529,10 @@ export default function CustomTripClient() {
                         onChange={(e) => setNights(Number(e.target.value))}
                         className="w-full h-[3px] appearance-none rounded-full cursor-pointer"
                         style={{
-                          background: `linear-gradient(to right, ${isPremium ? '#C5A880' : '#1a1a1a'} ${((nights - 5) / 25) * 100}%, ${isPremium ? 'rgba(255,255,255,0.12)' : '#e4e4e7'} ${((nights - 5) / 25) * 100}%)`
+                          background: `linear-gradient(to right, #C5A880 ${((nights - 5) / 25) * 100}%, #e4e4e7 ${((nights - 5) / 25) * 100}%)`
                         }}
                       />
-                      <div className={`flex justify-between mt-2 font-mono text-[9px] ${isPremium ? 'text-white/30' : 'text-zinc-400'}`}>
+                      <div className="flex justify-between mt-2 font-mono text-[9px] text-zinc-400">
                         <span>5</span>
                         <span>15</span>
                         <span>30</span>
@@ -558,15 +542,15 @@ export default function CustomTripClient() {
 
                   {/* Selected Itineraries / Experiences */}
                   {selectedDests.length > 0 && (
-                    <div className={`pt-4 border-t space-y-2 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
-                      <label className={`block text-[9px] font-mono tracking-widest uppercase transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
+                    <div className="pt-4 border-t space-y-2 border-zinc-200">
+                      <label className="block text-[9px] font-mono tracking-widest uppercase text-zinc-500">
                         {lang === "FR" ? "Destinations sélectionnées" : "Selected Itineraries"}
                       </label>
                       <div className="flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto pr-1">
                         {selectedDests.map(id => {
                           const dest = DESTINATIONS.find(d => d.id === id);
                           return dest ? (
-                            <span key={id} className={`text-[9px] font-medium border px-2.5 py-1 rounded-full transition-colors duration-1000 ${isPremium ? 'bg-white/5 border-white/10 text-white/80' : 'bg-zinc-100 border-zinc-200 text-zinc-700'}`}>
+                            <span key={id} className="text-[9px] font-medium border px-2.5 py-1 rounded-full transition-colors duration-1000 bg-zinc-100 border-zinc-200 text-zinc-700">
                               {translate(dest.title, lang)}
                             </span>
                           ) : null;
@@ -577,15 +561,15 @@ export default function CustomTripClient() {
 
                   {/* Selected Activities */}
                   {selectedActs.length > 0 && (
-                    <div className={`pt-4 border-t space-y-2 transition-colors duration-1000 ${isPremium ? 'border-white/5' : 'border-zinc-200'}`}>
-                      <label className={`block text-[9px] font-mono tracking-widest uppercase transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-500'}`}>
+                    <div className="pt-4 border-t space-y-2 border-zinc-200">
+                      <label className="block text-[9px] font-mono tracking-widest uppercase text-zinc-500">
                         {lang === "FR" ? "Activités sélectionnées" : "Selected Activities"}
                       </label>
                       <div className="flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto pr-1">
                         {selectedActs.map(id => {
                           const act = ACTIVITIES.find(a => a.id === id);
                           return act ? (
-                            <span key={id} className={`text-[9px] font-medium border px-2.5 py-1 rounded-full transition-colors duration-1000 ${isPremium ? 'bg-brand-gold/10 border-brand-gold/25 text-brand-gold' : 'bg-brand-gold/15 border-brand-gold/30 text-brand-gold-dark'}`}>
+                            <span key={id} className="text-[9px] font-medium border px-2.5 py-1 rounded-full transition-colors duration-1000 bg-brand-gold/15 border-brand-gold/30 text-brand-gold-dark">
                               {translate(act.title, lang)}
                             </span>
                           ) : null;
@@ -596,17 +580,17 @@ export default function CustomTripClient() {
                 </div>
 
                 <div className="space-y-4 pt-2">
-                  <div className={`flex items-center space-x-2 text-[9px] font-mono transition-colors duration-1000 ${isPremium ? 'text-white/40' : 'text-zinc-500'}`}>
+                  <div className="flex items-center space-x-2 text-[9px] font-mono text-zinc-500">
                     <Lock className="text-brand-gold w-3.5 h-3.5" />
                     <span>{lang === "FR" ? "Canal Concierge Chiffré 256-Bits" : "256-Bit Encrypted Concierge Channel"}</span>
                   </div>
-                  <p className={`text-[12px] leading-relaxed transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-600'}`}>
+                  <p className="text-[12px] leading-relaxed text-zinc-600">
                     {translate(t.reassurance, lang)}
                   </p>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 ${isPremium ? 'bg-white hover:bg-transparent text-zinc-950 hover:text-white border border-white' : 'bg-zinc-950 hover:bg-transparent text-white hover:text-zinc-950 border border-zinc-950'}`}
+                    className="w-full font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 bg-zinc-950 hover:bg-transparent text-white hover:text-zinc-950 border border-zinc-950"
                   >
                     <Send className="w-3.5 h-3.5" />
                     <span>{isSubmitting ? 'TRANSMITTING...' : translate(t.submitInquiry, lang)}</span>
@@ -619,7 +603,7 @@ export default function CustomTripClient() {
 
           </form>
         ) : (
-          <div className={`text-center py-20 flex flex-col items-center justify-center space-y-6 max-w-lg mx-auto border p-12 rounded-[2rem] transition-colors duration-1000 ${isPremium ? 'bg-zinc-950/60 border-white/10 shadow-glass text-white' : 'bg-zinc-50/50 border-zinc-200 shadow-md text-zinc-900'}`}>
+          <div className="text-center py-20 flex flex-col items-center justify-center space-y-6 max-w-lg mx-auto border p-12 rounded-[2rem] bg-zinc-50/50 border-zinc-200 shadow-md text-zinc-900">
             <div className="w-20 h-20 rounded-full bg-brand-gold/10 flex items-center justify-center border border-brand-gold/30">
               <CheckCircle2 className="text-brand-gold w-9 h-9" />
             </div>
@@ -627,11 +611,11 @@ export default function CustomTripClient() {
               <span className="text-brand-gold font-mono text-[10px] tracking-[0.3em] uppercase block">
                 {lang === "FR" ? "Transmission Sécurisée" : "PGP Transmission Secured"}
               </span>
-              <h2 className={`font-serif text-3xl tracking-wide uppercase font-bold transition-colors duration-1000 ${isPremium ? 'text-white' : 'text-zinc-900'}`}>
+              <h2 className="font-serif text-3xl tracking-wide uppercase font-bold text-zinc-900">
                 {lang === "FR" ? "Demande Enregistrée" : "Inquiry Active"}
               </h2>
             </div>
-            <p className={`text-xs md:text-sm leading-relaxed font-light transition-colors duration-1000 ${isPremium ? 'text-white/60' : 'text-zinc-600'}`}>
+            <p className="text-xs md:text-sm leading-relaxed font-light text-zinc-600">
               {lang === "FR"
                 ? `Merci, ${fullName}. Les détails de votre passage de prestige de ${nights} nuits ont été encryptés et envoyés. Votre architecte de voyage exclusif vous répondra dans 15 minutes.`
                 : `Thank you, ${fullName}. Your customized package parameters for ${nights} nights are encrypted and transmitted. Your private travel architect will verify booking conditions within 15 minutes.`
@@ -639,25 +623,25 @@ export default function CustomTripClient() {
             </p>
             
             {/* Package Recap summary */}
-            <div className={`w-full text-left p-6 rounded-2xl border transition-colors duration-1000 ${isPremium ? 'bg-white/5 border-white/10 text-white' : 'bg-zinc-50 border-zinc-200 text-zinc-900'} space-y-4`}>
+            <div className="w-full text-left p-6 rounded-2xl border bg-zinc-50 border-zinc-200 text-zinc-900 space-y-4">
               <h4 className="font-serif text-sm font-bold uppercase tracking-wider text-brand-gold">
                 {lang === "FR" ? "Itinéraire Personnalisé" : "Custom Package Recap"}
               </h4>
               <div className="text-[11px] font-mono space-y-1">
                 <div>
-                  <span className={`${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>{lang === "FR" ? "Durée:" : "Duration:"}</span>{" "}
+                  <span className="text-zinc-400">{lang === "FR" ? "Durée:" : "Duration:"}</span>{" "}
                   <span className="font-bold text-brand-gold">{nights} {lang === "FR" ? "Nuits" : "Nights"}</span>
                 </div>
                 <div>
-                  <span className={`${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>{lang === "FR" ? "Catégorie:" : "Tier:"}</span>{" "}
+                  <span className="text-zinc-400">{lang === "FR" ? "Catégorie:" : "Tier:"}</span>{" "}
                   <span className="font-bold text-brand-gold">{isPremium ? (lang === "FR" ? "Souverain de Prestige" : "Sovereign Prestige") : (lang === "FR" ? "Passage Sur Mesure" : "Bespoke Passage")}</span>
                 </div>
               </div>
               
               {selectedDests.length > 0 && (
                 <div className="space-y-1">
-                  <span className={`block text-[10px] font-mono uppercase ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>{lang === "FR" ? "Destinations:" : "Selected Itineraries:"}</span>
-                  <ul className={`list-disc pl-4 text-xs font-light space-y-1 ${isPremium ? 'text-white/80' : 'text-zinc-700'}`}>
+                  <span className="block text-[10px] font-mono uppercase text-zinc-400">{lang === "FR" ? "Destinations:" : "Selected Itineraries:"}</span>
+                  <ul className="list-disc pl-4 text-xs font-light space-y-1 text-zinc-700">
                     {selectedDests.map(id => {
                       const dest = DESTINATIONS.find(d => d.id === id);
                       return dest ? <li key={id}>{translate(dest.title, lang)}</li> : null;
@@ -668,8 +652,8 @@ export default function CustomTripClient() {
 
               {selectedActs.length > 0 && (
                 <div className="space-y-1">
-                  <span className={`block text-[10px] font-mono uppercase ${isPremium ? 'text-white/40' : 'text-zinc-400'}`}>{lang === "FR" ? "Activités de Prestige:" : "Activities selected:"}</span>
-                  <ul className={`list-disc pl-4 text-xs font-light space-y-1 ${isPremium ? 'text-white/80' : 'text-zinc-700'}`}>
+                  <span className="block text-[10px] font-mono uppercase text-zinc-400">{lang === "FR" ? "Activités de Prestige:" : "Activities selected:"}</span>
+                  <ul className="list-disc pl-4 text-xs font-light space-y-1 text-zinc-700">
                     {selectedActs.map(id => {
                       const act = ACTIVITIES.find(a => a.id === id);
                       return act ? <li key={id}>{translate(act.title, lang)}</li> : null;
@@ -687,7 +671,7 @@ export default function CustomTripClient() {
                 setEmail("");
                 setPhone("");
               }}
-              className={`border font-mono text-[9px] tracking-[0.15em] uppercase px-8 py-3 transition-all duration-500 rounded-full ${isPremium ? 'border-white/20 bg-white/5 hover:bg-white hover:text-black hover:border-white text-white' : 'border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700'}`}
+              className="border font-mono text-[9px] tracking-[0.15em] uppercase px-8 py-3 transition-all duration-500 rounded-full border-zinc-200 bg-white hover:bg-zinc-900 hover:text-white hover:border-zinc-900 text-zinc-700"
             >
               {lang === "FR" ? "Créer un autre itinéraire" : "Build another passage"}
             </button>

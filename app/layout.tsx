@@ -23,8 +23,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Majestic Experiences — Premium Travel & Adventure Tours",
-  description: "Explore the raw beauty of Morocco and the Arabian Gulf with Majestic Experiences Voyages. We organize premium, curated travel experiences.",
+  title: "Majestic Experiences Voyages — Golf & Voyage de Prestige au Maroc",
+  description: "Explore the beauty of Morocco with premium golf packages and bespoke curated experiences organized by Majestic Experiences Voyages.",
 };
 
 export default function RootLayout({

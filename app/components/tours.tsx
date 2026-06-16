@@ -189,9 +189,20 @@ export default function Tours() {
                       <span className="text-[11px] font-mono line-through text-zinc-400 leading-none mb-1">
                         {tour.oldPrice}
                       </span>
-                      <span className="text-[19px] font-bold text-zinc-900 font-heading leading-none">
-                        {tour.price} <span className="text-[10px] font-mono text-zinc-400">{lang === "FR" ? "CAD / pers." : "CAD / guest"}</span>
-                      </span>
+                      {(() => {
+                        const priceText = translate(tour.price, lang);
+                        const isRequest = priceText.toLowerCase().includes("devis") || priceText.toLowerCase().includes("request");
+                        return (
+                          <span className="text-[19px] font-bold text-zinc-900 font-heading leading-none">
+                            {priceText}
+                            {!isRequest && (
+                              <span className="text-[10px] font-mono text-zinc-400 ml-1">
+                                {lang === "FR" ? "CAD / pers." : "CAD / guest"}
+                              </span>
+                            )}
+                          </span>
+                        );
+                      })()}
                     </div>
 
                     <Link 

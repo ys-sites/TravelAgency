@@ -14,22 +14,23 @@ const getGalleryImages = (itineraryId: number) => {
   switch (itineraryId) {
     case 10:
       return [
-        "/images/royal_golf_aerial_1.jpg",
-        "/images/royal_golf_aerial_2.jpg",
-        "/images/royal_golf_aerial_3.jpg",
-        "/images/royal_golf_aerial_4.jpg",
-        "/images/royal_golf_aerial_5.jpg",
-        "/images/royal_golf_aerial_6.jpg",
-        "/images/royal_golf_clubhouse.jpg",
-        "/images/royal_golf_evening.jpg",
-        "/images/royal_golf_marrakech_1.jpg",
-        "/images/royal_golf_marrakech_2.jpg",
-        "/images/royal_golf_rouge11.jpg",
-        "/images/royal_golf_sunset.jpg",
-        "/images/marrakech_golf_blue10.jpg",
-        "/images/marrakech_golf_blue5.jpg",
-        "/images/marrakech_golf_rouge18.jpg",
-        "/images/marrakech_golf_yellow9.jpg"
+        "/images/18 parcours rouge.jpg",
+        "/images/10 parcours BLEU.jpg",
+        "/images/5 BLUE COURSE.JPG",
+        "/images/5ROUGE.JPG",
+        "/images/7bleu TGP.JPG",
+        "/images/9 JAUNE.JPG",
+        "/images/9BLEU MATIN.JPG",
+        "/images/CLUB HOUSE .JPG",
+        "/images/IMG_3723.JPG",
+        "/images/IMG_3752.JPG",
+        "/images/PARADISE OF FLOWERS .JPG",
+        "/images/PARCOURS ROUGE Trous n°09-17.jpg",
+        "/images/PARCOURS ROUGE Trous n°11.jpg",
+        "/images/PARCOURS ROUGE Trous n°12.jpg",
+        "/images/PARCOURS ROUGE Trous n°13.jpg",
+        "/images/coucher d_été.jpg",
+        "/images/soleil couchant.JPG"
       ];
     case 11:
       return [
@@ -67,16 +68,19 @@ const getGalleryImages = (itineraryId: number) => {
       ];
     case 12:
       return [
-        "/images/almaaden_golf_1.jpg",
-        "/images/almaaden_golf_2.jpg",
-        "/images/almaaden_golf_3.jpg",
-        "/images/almaaden_golf_4.jpg",
-        "/images/almaaden_golf_5.jpg",
-        "/images/almaaden_golf_6.jpg",
-        "/images/almaaden_golf_7.jpg",
-        "/images/almaaden_golf_8.jpg",
-        "/images/almaaden_restaurant1.jpg",
-        "/images/almaaden_restaurant2.jpg"
+        "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
+        "/images/deluxe-room-sea-view.jpg",
+        "/images/deluxe-room-swim-up-view.jpg",
+        "/images/beach-area.jpg",
+        "/images/pool (1).jpg",
+        "/images/pool (2).jpg",
+        "/images/lobby.jpg",
+        "/images/main-restaurant.jpg",
+        "/images/tagine-restaurant.jpg",
+        "/images/spa (1).jpg",
+        "/images/spa (2).jpg",
+        "/images/gym.jpg",
+        "/images/food-court.jpg"
       ];
     default:
       return [];
@@ -576,7 +580,20 @@ export default function ItineraryClient({ id }: { id: string }) {
                     {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
                   </span>
                   <div className="flex items-baseline justify-between">
-                    <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">{itinerary.cost} <span className="text-[10px] font-mono text-zinc-400">{lang === "FR" ? "CAD / pers." : "CAD / guest"}</span></h3>
+                    {(() => {
+                      const costText = translate(itinerary.cost, lang);
+                      const isRequest = costText.toLowerCase().includes("devis") || costText.toLowerCase().includes("request");
+                      return (
+                        <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">
+                          {costText}
+                          {!isRequest && (
+                            <span className="text-[10px] font-mono text-zinc-400 ml-1">
+                              {lang === "FR" ? "CAD / pers." : "CAD / guest"}
+                            </span>
+                          )}
+                        </h3>
+                      );
+                    })()}
                     <span className="text-[9px] font-mono text-[#faf9f5] uppercase bg-[#8B2635] px-2 py-0.5 rounded shadow-sm">
                       {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
                     </span>
@@ -680,7 +697,7 @@ export default function ItineraryClient({ id }: { id: string }) {
                     type="submit"
                     className="w-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-[#8B2635] shadow-md cursor-pointer"
                   >
-                    {lang === "FR" ? "RÉSERVER LE SANCTUAIRE" : "RESERVE SANCTUARY"}
+                    {lang === "FR" ? "DEMANDE POUR SOUMISSION" : "REQUEST A QUOTE"}
                   </button>
                 </div>
               </form>

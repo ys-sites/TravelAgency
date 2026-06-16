@@ -5,28 +5,28 @@ import { useLang, translate } from "../context/lang-context";
 
 const t = {
   description: {
-    FR: "Nous organisons des voyages sur mesure d'ultra-luxe à travers le Golfe et le Maroc. Vivez l'expérience d'une intimité absolue et d'un voyage souverain.",
-    EN: "We curate ultra-luxury bespoke journeys across the Arabian Gulf and Morocco. Experience absolute privacy and sovereign travel."
+    FR: "Nous organisons des voyages de golf sur mesure et d'ultra-luxe au Maroc. Vivez l'expérience d'une intimité absolue et d'un voyage souverain.",
+    EN: "We curate ultra-luxury bespoke golf journeys across Morocco. Experience absolute privacy and sovereign travel."
   },
   destinations: {
     FR: "Destinations",
     EN: "Destinations"
   },
   morocco: {
-    FR: "Royaume du Maroc",
-    EN: "Morocco Kingdom"
+    FR: "Rabat — Royal Golf Dar Es Salam",
+    EN: "Rabat — Royal Golf Dar Es Salam"
   },
   dubai: {
-    FR: "Dubaï & Abou Dabi",
-    EN: "Dubai & Abu Dhabi"
+    FR: "Agadir — Hilton Taghazout 5★",
+    EN: "Agadir — Hilton Taghazout 5★"
   },
   oman: {
-    FR: "Sultanat d'Oman",
-    EN: "Sultanate of Oman"
+    FR: "Agadir — White Beach 5★",
+    EN: "Agadir — White Beach 5★"
   },
   saudi: {
-    FR: "Royaume d'Arabie Saoudite",
-    EN: "Kingdom of Saudi Arabia"
+    FR: "Forfaits Personnalisés",
+    EN: "Bespoke Packages"
   },
   company: {
     FR: "Conciergerie",
@@ -78,20 +78,12 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-white/70 px-6">
         {/* Brand Column */}
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3 md:gap-4">
+          <div className="flex items-center">
             <img 
-              src="/images/logo.png" 
+              src="/footer logo.jpeg" 
               className="h-24 md:h-28 w-auto object-contain hover:opacity-90 transition-opacity duration-300" 
               alt="Majestic Experiences Voyages Logo" 
             />
-            <div className="flex flex-col text-white">
-              <span className="font-serif text-[14px] md:text-[18px] uppercase tracking-[0.25em] font-bold leading-none">
-                {translate(t.brandName1, lang)}
-              </span>
-              <span className="font-sans text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-white font-light mt-0.5 leading-none">
-                {translate(t.brandName2, lang)}
-              </span>
-            </div>
           </div>
           <p className="text-[12px] text-white/50 leading-relaxed font-light max-w-[240px]">
             {translate(t.description, lang)}
@@ -104,10 +96,10 @@ export default function Footer() {
             {translate(t.destinations, lang)}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
-            <li><Link href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.morocco, lang)}</Link></li>
-            <li><Link href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.dubai, lang)}</Link></li>
-            <li><Link href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.oman, lang)}</Link></li>
-            <li><Link href="/#portfolios" className="hover:text-brand-gold transition-colors">{translate(t.saudi, lang)}</Link></li>
+            <li><Link href="/itineraries/10" className="hover:text-brand-gold transition-colors">{translate(t.morocco, lang)}</Link></li>
+            <li><Link href="/itineraries/11" className="hover:text-brand-gold transition-colors">{translate(t.dubai, lang)}</Link></li>
+            <li><Link href="/itineraries/12" className="hover:text-brand-gold transition-colors">{translate(t.oman, lang)}</Link></li>
+            <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{translate(t.saudi, lang)}</Link></li>
           </ul>
         </div>
 

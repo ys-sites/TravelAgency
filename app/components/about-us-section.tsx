@@ -14,8 +14,8 @@ const t = {
     FR: "Un concierge boutique né d'une passion pour le monde arabe et son hospitalité."
   },
   paragraph1: {
-    EN: "Majestic Experiences Voyages was founded by travellers who believed that true luxury is not about opulence alone — it is about meaning, privacy, and connection. We specialize exclusively in the Arabian Gulf and Morocco because we know these destinations deeply: their hidden riads, their desert silences, their royal traditions of hospitality.",
-    FR: "Majestic Experiences Voyages a été fondée par des voyageurs qui croyaient que le vrai luxe n'est pas seulement une opulence — c'est une question de sens, de confidentialité et de connexion. Nous nous spécialisons exclusivement dans le Golfe Arabique et le Maroc car nous connaissons profondément ces destinations : leurs riads cachés, leurs silences désertiques, leurs traditions royales d'hospitalité."
+    EN: "Majestic Experiences Voyages was founded by travellers who believed that true luxury is not about opulence alone — it is about meaning, privacy, and connection. We specialize exclusively in Morocco because we know this destination deeply: its hidden riads, its desert silences, its spectacular golf courses, and its royal traditions of hospitality.",
+    FR: "Majestic Experiences Voyages a été fondée par des voyageurs qui croyaient que le vrai luxe n'est pas seulement une opulence — c'est une question de sens, de confidentialité et de connexion. Nous nous spécialisons exclusivement au Maroc car nous connaissons profondément cette destination : ses riads cachés, ses silences désertiques, ses parcours de golf spectaculaires, et ses traditions royales d'hospitalité."
   },
   paragraph2: {
     EN: "Every journey we design is entirely bespoke. We handle nothing in volume. Our team is bilingual, available 24/7, and works with a curated network of private properties, aviation partners, and local guides that are never available through conventional booking platforms.",

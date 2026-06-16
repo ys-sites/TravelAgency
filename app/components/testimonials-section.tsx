@@ -112,12 +112,12 @@ export default function TestimonialsSection() {
 
   return (
     <section
-      className="relative overflow-hidden py-24"
-      style={{ background: "linear-gradient(135deg, #07090d 0%, #0e1118 50%, #07090d 100%)" }}
+      className="relative overflow-hidden py-24 bg-[#faf9f5]"
+      style={{ background: "linear-gradient(135deg, #faf9f5 0%, #f5f3eb 50%, #faf9f5 100%)" }}
     >
       {/* Subtle radial gold glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(197,168,128,0.08)_0%,transparent_65%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(139,38,53,0.06)_0%,transparent_65%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(197,168,128,0.04)_0%,transparent_65%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(139,38,53,0.02)_0%,transparent_65%)] pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto px-6 space-y-14">
 
@@ -132,10 +132,10 @@ export default function TestimonialsSection() {
           <span className="text-[#C5A880] font-mono text-[10px] tracking-[0.3em] uppercase block">
             {lang === "EN" ? "GUEST CHRONICLES" : "CHRONIQUES DE NOS VOYAGEURS"}
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-white">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">
             {lang === "EN" ? "Voices from the Journey" : "Voix du Voyage"}
           </h2>
-          <p className="text-white/40 text-sm font-light max-w-xl mx-auto">
+          <p className="text-zinc-500 text-sm font-light max-w-xl mx-auto">
             {lang === "EN"
               ? "What our guests say about their curated Moroccan & Gulf experience."
               : "Ce que nos voyageurs disent de leur expérience sur mesure au Maroc et dans le Golfe."
@@ -152,9 +152,9 @@ export default function TestimonialsSection() {
       >
         {/* Edge fade masks */}
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to right, #07090d, transparent)" }} />
+          style={{ background: "linear-gradient(to right, #faf9f5, transparent)" }} />
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-          style={{ background: "linear-gradient(to left, #07090d, transparent)" }} />
+          style={{ background: "linear-gradient(to left, #faf9f5, transparent)" }} />
 
         <style>{`
           @keyframes marquee-scroll {
@@ -173,16 +173,16 @@ export default function TestimonialsSection() {
           {doubled.map((testimonial, index) => (
             <div
               key={index}
-              className="w-[340px] shrink-0 relative rounded-2xl border p-7 space-y-5 backdrop-blur-sm"
+              className="w-[340px] shrink-0 relative rounded-2xl border p-7 space-y-5 backdrop-blur-sm shadow-sm"
               style={{
-                background: "rgba(255,255,255,0.03)",
-                borderColor: "rgba(255,255,255,0.07)",
+                background: "rgba(255,255,255,0.85)",
+                borderColor: "rgba(0,0,0,0.06)",
               }}
             >
               {/* Gold quote mark */}
               <span
                 className="absolute top-5 right-7 text-5xl font-serif leading-none select-none pointer-events-none"
-                style={{ color: "rgba(197,168,128,0.12)" }}
+                style={{ color: "rgba(197,168,128,0.22)" }}
               >
                 "
               </span>
@@ -195,14 +195,14 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-[13.5px] leading-relaxed text-white/75 font-light italic line-clamp-4">
+              <blockquote className="text-[13.5px] leading-relaxed text-zinc-600 font-light italic line-clamp-4">
                 &ldquo;{translate(testimonial.quote, lang)}&rdquo;
               </blockquote>
 
               {/* Guest Info */}
-              <div className="border-t pt-4 space-y-0.5" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
-                <p className="font-semibold text-white text-sm">{testimonial.name}</p>
-                <p className="text-[12px] text-white/40 font-light">{testimonial.location}</p>
+              <div className="border-t pt-4 space-y-0.5" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
+                <p className="font-semibold text-zinc-800 text-sm">{testimonial.name}</p>
+                <p className="text-[12px] text-zinc-500 font-light">{testimonial.location}</p>
                 <p className="text-[11px] font-mono tracking-wide" style={{ color: "#C5A880" }}>
                   {translate(testimonial.tripName, lang)}
                 </p>
@@ -214,7 +214,7 @@ export default function TestimonialsSection() {
 
       {/* Trust Badges */}
       <div className="max-w-[1200px] mx-auto px-6 mt-16">
-        <div className="border-t pt-8" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+        <div className="border-t pt-8" style={{ borderColor: "rgba(0,0,0,0.06)" }}>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
             {trustBadges.map((badge, index) => {
               const IconComponent = badge.icon;
@@ -225,12 +225,12 @@ export default function TestimonialsSection() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-center gap-2 text-[12px] text-white/50 font-light"
+                  className="flex items-center gap-2 text-[12px] text-zinc-600 font-light"
                 >
                   <IconComponent style={{ color: "#C5A880" }} className="w-4 h-4 shrink-0" />
                   <span>{translate(badge.label, lang)}</span>
                   {index < trustBadges.length - 1 && (
-                    <span className="hidden md:inline text-white/15 ml-2">•</span>
+                    <span className="hidden md:inline text-zinc-300 ml-2">•</span>
                   )}
                 </motion.div>
               );

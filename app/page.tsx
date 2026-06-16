@@ -8,8 +8,8 @@ import TestimonialsSection from "./components/testimonials-section";
 import Footer from "./components/footer";
 
 export const metadata: Metadata = {
-  title: "Majestic Experiences Voyages — Ultra-Luxury Travel to Morocco & the Arabian Gulf",
-  description: "Bespoke luxury travel concierge for Morocco and the Arabian Gulf. Private helicopter transfers, riad buyouts, desert glamping, and 24/7 bilingual service. Based in Canada.",
+  title: "Majestic Experiences Voyages — Séjours de Golf & Voyage de Prestige au Maroc | Premium Golf & Bespoke Travel Morocco",
+  description: "Explore premium golf experiences and bespoke luxury travel in Morocco with Majestic Experiences Voyages. 24/7 bilingual concierge services based in Canada.",
 };
 
 export default function Home() {

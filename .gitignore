@@ -30,3 +30,29 @@ public/Reportage2-20260616T201004Z-3-001/
 public/Agadir Hotels with itineraries-20260616T204655Z-3-001/
 public/temp_thumbnails/
 
+# Exclude raw high-res images and zip files
+public/images/*.heic
+public/images/*.HEIC
+public/images/*.tif
+public/images/*.TIF
+public/images/*.zip
+public/images/0L7A9294.png
+public/images/DJI_0053.png
+public/images/tgz 10 side.jpg
+public/images/tgz 17 zoom.jpg
+public/images/tgz 18 hotel.jpg
+public/images/tgz 8th high.jpg
+public/images/PARCOURS ROUGE Trous n°*
+public/images/PARCOURS ROUGE Trous no*
+public/images/CLUB HOUSE .JPG
+public/images/PARADISE OF FLOWERS .JPG
+public/images/TOURNAMENTS .heic
+public/images/FUN DISCOVERY.heic
+public/images/IMG_6717.heic
+public/images/2 JAUNE.heic
+public/images/17 CHAMPIONSHIP.heic
+public/images/*.docx
+public/images/*.pdf
+
+
+

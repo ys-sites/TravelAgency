@@ -9,7 +9,7 @@ export interface TourCard {
   flight: { FR: string; EN: string };
   meals: { FR: string; EN: string };
   oldPrice: string;
-  price: string;
+  price: { FR: string; EN: string };
   tag: string;
   promoText?: { FR: string; EN: string };
   iconType: "mountain" | "water" | "lighthouse";
@@ -25,7 +25,7 @@ export interface DealCard {
   meals: { FR: string; EN: string };
   inclusions: { FR: string; EN: string };
   oldPrice: string;
-  newPrice: string;
+  newPrice: { FR: string; EN: string };
   tag: string;
   promoText?: { FR: string; EN: string };
 }
@@ -54,7 +54,7 @@ export interface ItineraryDetail {
   contentImage: string;
   title: { FR: string; EN: string };
   duration: { FR: string; EN: string };
-  cost: string;
+  cost: { FR: string; EN: string };
   overview: { FR: string; EN: string };
   timeline: DayPlan[];
   inclusions: { FR: string[]; EN: string[] };
@@ -99,55 +99,55 @@ export interface ItineraryTheme {
 export const toursList: TourCard[] = [
   {
     id: 10,
-    image: "/images/royal_golf_aerial_1.jpg",
+    image: "/images/18 parcours rouge.jpg",
     category: { FR: "Golf & Prestige", EN: "Golf & Prestige" },
     badge: { FR: "Signature", EN: "Signature" },
-    title: { FR: "Royal Golf de Marrakech", EN: "Royal Golf de Marrakech" },
+    title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
     description: {
-      FR: "Le plus ancien club de golf d'Afrique, fondé en 1933. Trois parcours légendaires — Rouge, Bleu, Jaune — au cœur de la palmeraie de Marrakech.",
-      EN: "The oldest golf club in Africa, founded in 1933. Three legendary courses — Rouge, Bleu, Yellow — nestled within Marrakech's iconic palm grove."
+      FR: "Le joyau de Rabat conçu par Robert Trent Jones Sr, s'étendant sur 440 hectares de forêt. Un parcours légendaire qui accueille les compétitions internationales.",
+      EN: "Rabat's masterpiece designed by Robert Trent Jones Sr, set on 440 hectares of forest. A legendary course that hosts international competitions."
     },
-    duration: { FR: "5 à 10 nuits", EN: "5 to 10 nights" },
-    flight: { FR: "Vol inclus", EN: "Flight included" },
+    duration: { FR: "5 jours / 4 nuits", EN: "5 days / 4 nights" },
+    flight: { FR: "Vol optionnel", EN: "Flight optional" },
     meals: { FR: "Petit-déjeuner inclus", EN: "Breakfast included" },
     oldPrice: "",
-    price: "Sur devis",
+    price: { FR: "Sur devis", EN: "On request" },
     tag: "golf",
-    iconType: "mountain",
+    iconType: "lighthouse",
   },
   {
     id: 11,
     image: "/images/tgz_course_ocean.jpg",
     category: { FR: "Golf & Océan", EN: "Golf & Ocean" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
-    title: { FR: "Akenza Golf — Taghazout Bay", EN: "Akenza Golf — Taghazout Bay" },
+    title: { FR: "Hilton Taghazout Hôtel 5★", EN: "Hilton Taghazout Hôtel 5★" },
     description: {
-      FR: "Un parcours Championship de 18 trous face à l'Atlantique. Séjour au Hilton Taghazout Bay 5★ avec spa et accès direct à la plage.",
-      EN: "An 18-hole Championship course overlooking the Atlantic. Stay at the 5★ Hilton Taghazout Bay with spa and direct beach access."
+      FR: "Forfait comprenant vols de Montréal, 7 nuits au Hilton Taghazout 5★ en chambre vue piscine et 4 rondes sur les plus beaux parcours d'Agadir (Tazegzout, du Soleil, Les Dunes).",
+      EN: "Package including Montreal flights, 7 nights at the 5★ Hilton Taghazout in a pool view room, and 4 rounds on Agadir's top courses (Tazegzout, du Soleil, Les Dunes)."
     },
-    duration: { FR: "5 à 7 nuits", EN: "5 to 7 nights" },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Demi-pension", EN: "Half board" },
+    meals: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
     oldPrice: "",
-    price: "Sur devis",
+    price: { FR: "3 879 $", EN: "C$ 3,879" },
     tag: "golf",
     iconType: "water",
   },
   {
     id: 12,
-    image: "/images/almaaden_golf_1.jpg",
+    image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
     category: { FR: "Golf & Luxe", EN: "Golf & Luxury" },
     badge: { FR: "Premium", EN: "Premium" },
-    title: { FR: "Al Maaden Golf Resort", EN: "Al Maaden Golf Resort" },
+    title: { FR: "White Beach Hôtel 5★", EN: "White Beach Hôtel 5★" },
     description: {
-      FR: "Parcours de 18 trous signé Kyle Phillips au pied de l'Atlas. Hôtel 5★ sur place, spa et restaurants gastronomiques.",
-      EN: "An 18-hole course designed by Kyle Phillips at the foot of the Atlas Mountains. On-site 5★ hotel, spa and fine dining."
+      FR: "Séjour de luxe ultime tout compris (adulte seulement) au White Beach Resort 5★ en chambre vue jardin, vols de Montréal et 4 rondes de golf incluses.",
+      EN: "Ultimate luxury all-inclusive stay (adults only) at the 5★ White Beach Resort in a garden view room, Montreal flights, and 4 rounds of golf included."
     },
-    duration: { FR: "4 à 7 nuits", EN: "4 to 7 nights" },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Petit-déjeuner inclus", EN: "Breakfast included" },
+    meals: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
     oldPrice: "",
-    price: "Sur devis",
+    price: { FR: "4 255 $", EN: "C$ 4,255" },
     tag: "golf",
     iconType: "lighthouse",
   }
@@ -156,53 +156,53 @@ export const toursList: TourCard[] = [
 export const dealsList: DealCard[] = [
   {
     id: 10,
-    image: "/images/royal_golf_aerial_1.jpg",
+    image: "/images/18 parcours rouge.jpg",
     badge: { FR: "Signature", EN: "Signature" },
-    title: { FR: "Royal Golf de Marrakech", EN: "Royal Golf de Marrakech" },
-    duration: { FR: "5 à 10 nuits", EN: "5 to 10 nights" },
-    flight: { FR: "Vol inclus", EN: "Flight included" },
+    title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
+    duration: { FR: "5 jours / 4 nuits", EN: "5 days / 4 nights" },
+    flight: { FR: "Vol optionnel", EN: "Flight optional" },
     meals: { FR: "Petit-déjeuner inclus", EN: "Breakfast included" },
-    inclusions: { FR: "3 parcours légendaires (Rouge, Bleu, Jaune) & caddie", EN: "3 legendary courses (Rouge, Blue, Yellow) & caddie" },
+    inclusions: { FR: "Parcours légendaires Rouge (18T) & Bleu (18T), séjour au Ritz-Carlton", EN: "Legendary Red (18H) & Blue (18H) courses, stay at Ritz-Carlton" },
     oldPrice: "",
-    newPrice: "Sur devis",
+    newPrice: { FR: "Sur devis", EN: "On request" },
     tag: "golf",
     promoText: {
-      FR: "Offre Spéciale — Caddie & buggy inclus pour chaque ronde",
-      EN: "Special Offer — Complimentary caddie & buggy for each round"
+      FR: "Chef-d'œuvre légendaire de Robert Trent Jones Sr.",
+      EN: "Legendary Robert Trent Jones Sr. Masterpiece"
     }
   },
   {
     id: 11,
     image: "/images/tgz_course_ocean.jpg",
     badge: { FR: "Exclusif", EN: "Exclusive" },
-    title: { FR: "Akenza Golf — Taghazout Bay", EN: "Akenza Golf — Taghazout Bay" },
-    duration: { FR: "5 à 7 nuits", EN: "5 to 7 nights" },
+    title: { FR: "Hilton Taghazout Hôtel 5★", EN: "Hilton Taghazout Hôtel 5★" },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Demi-pension", EN: "Half board" },
-    inclusions: { FR: "Hilton 5★ & parcours Championship face à l'océan", EN: "Hilton 5★ & Championship oceanfront course" },
+    meals: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
+    inclusions: { FR: "4 rondes (Tazegzout, du Soleil, Les Dunes) & voiturette", EN: "4 rounds (Tazegzout, du Soleil, Les Dunes) & buggy" },
     oldPrice: "",
-    newPrice: "Sur devis",
+    newPrice: { FR: "3 879 $", EN: "C$ 3,879" },
     tag: "golf",
     promoText: {
-      FR: "Accès Spa Hilton — Soin marocain de 60 minutes offert",
-      EN: "Hilton Spa Access — Complimentary 60-minute Moroccan treatment"
+      FR: "Tarif spécial — Vue piscine & vol Air Transat inclus",
+      EN: "Special Rate — Pool View & Air Transat Included"
     }
   },
   {
     id: 12,
-    image: "/images/almaaden_golf_1.jpg",
+    image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
     badge: { FR: "Premium", EN: "Premium" },
-    title: { FR: "Al Maaden Golf Resort", EN: "Al Maaden Golf Resort" },
-    duration: { FR: "4 à 7 nuits", EN: "4 to 7 nights" },
+    title: { FR: "White Beach Hôtel 5★", EN: "White Beach Hôtel 5★" },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Breakfast inclus", EN: "Breakfast included" },
-    inclusions: { FR: "Hôtel 5★ & parcours Kyle Phillips au pied de l'Atlas", EN: "5★ hotel & Kyle Phillips course at the foot of the Atlas" },
+    meals: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
+    inclusions: { FR: "4 rondes (Tazegzout, du Soleil, Les Dunes) & voiturette", EN: "4 rounds (Tazegzout, du Soleil, Les Dunes) & buggy" },
     oldPrice: "",
-    newPrice: "Sur devis",
+    newPrice: { FR: "4 255 $", EN: "C$ 4,255" },
     tag: "golf",
     promoText: {
-      FR: "Dîner gastronomique — Dîner de bienvenue offert",
-      EN: "Gourmet Dining — Complimentary welcome dinner included"
+      FR: "Séjour de luxe — Vue jardin & vol Air Transat inclus",
+      EN: "Luxury Stay — Garden View & Air Transat Included"
     }
   }
 ];
@@ -210,149 +210,404 @@ export const dealsList: DealCard[] = [
 export const itinerariesData: Record<string, ItineraryDetail> = {
   "10": {
     id: 10,
-    image: "/images/royal_golf_aerial_1.jpg",
-    contentImage: "/images/royal_golf_sunset.jpg",
-    title: { FR: "Royal Golf de Marrakech", EN: "Royal Golf de Marrakech" },
-    duration: { FR: "5 à 10 nuits", EN: "5 to 10 nights" },
-    cost: "Sur devis / On request",
+    image: "/images/18 parcours rouge.jpg",
+    contentImage: "/images/PARCOURS ROUGE Trous n°09-17.jpg",
+    title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
+    duration: { FR: "5 jours / 4 nuits", EN: "5 days / 4 nights" },
+    cost: { FR: "Sur devis", EN: "On request" },
     overview: {
-      FR: "Fondé en 1933, le Royal Golf de Marrakech est le plus ancien club de golf d'Afrique. Niché dans la palmeraie mythique, il offre trois parcours distincts — Rouge (18T), Bleu (9T) et Jaune (9T) — entourés de palmiers centenaires et de roses. Un séjour golf d'exception alliant sport et art de vivre marocain.",
-      EN: "Founded in 1933, Royal Golf de Marrakech is the oldest golf club in Africa. Nestled in the iconic palm grove, it offers three distinct courses — Rouge (18H), Blue (9H) and Yellow (9H) — surrounded by century-old palms and rose gardens. An exceptional golf stay blending sport and Moroccan art de vivre."
+      FR: "Né de la vision de Feu SM Le Roi Hassan II et dessiné par Robert Trent Jones Sr, le Royal Golf Dar Es Salam est un écosystème naturel somptueux de 440 hectares à seulement 15 minutes du centre de Rabat. Avec son légendaire Parcours Rouge (18 trous, parcours signature), son Parcours Bleu (18 trous) et son Parcours Vert (9 trous), ce site d'exception accueille chaque année le prestigieux Trophée Hassan II. Un séjour inoubliable alliant passion du golf, biodiversité riche et hébergement de très haut standing au Ritz-Carlton Rabat Dar Es Salam.",
+      EN: "Born under the vision of His Majesty the late King Hassan II and designed by Robert Trent Jones Sr, Royal Golf Dar Es Salam is a majestic natural ecosystem spanning 440 hectares of forest, just 15 minutes from Rabat city center. Featuring the legendary Red Course (18H, signature), the Blue Course (18H), and the Green Course (9H), this exceptional venue hosts the annual Hassan II Golf Trophy. An unforgettable journey blending golf passion, rich biodiversity, and ultra-luxury stay at The Ritz-Carlton Rabat Dar Es Salam."
     },
     timeline: [
-      { day: 1, title: { FR: "Arrivée & Installation", EN: "Arrival & Check-In" }, desc: { FR: "Accueil à l'aéroport Marrakech-Menara, transfert privé vers l'hôtel 5★, dîner de bienvenue.", EN: "Private airport transfer from Marrakech-Menara, 5★ hotel check-in, welcome dinner." } },
-      { day: 2, title: { FR: "Parcours Rouge — 18 Trous", EN: "Rouge Course — 18 Holes" }, desc: { FR: "Journée sur le légendaire Parcours Rouge. Caddie, buggy et déjeuner au club-house inclus.", EN: "Full day on the legendary Rouge Course. Caddie, buggy and club-house lunch included." } },
-      { day: 3, title: { FR: "Parcours Bleu & Jaune", EN: "Blue & Yellow Courses" }, desc: { FR: "Matinée sur le Parcours Bleu (9T) et après-midi sur le Parcours Jaune (9T). Pause déjeuner en terrasse.", EN: "Morning on the Blue Course (9H) and afternoon on the Yellow Course (9H). Terrace lunch break." } },
-      { day: 4, title: { FR: "Journée Libre — Marrakech", EN: "Free Day — Marrakech" }, desc: { FR: "Souks, Jardins Majorelle, hammam traditionnel ou excursion vers l'Atlas au choix.", EN: "Souks, Majorelle Garden, traditional hammam or Atlas Mountains excursion — your choice." } },
-      { day: 5, title: { FR: "Départ", EN: "Departure" }, desc: { FR: "Petit-déjeuner, dernier tour optionnel, transfert aéroport.", EN: "Breakfast, optional final round, airport transfer." } },
+      {
+        day: 1,
+        title: { FR: "Arrivée à Rabat & Ritz-Carlton", EN: "Arrival in Rabat & Ritz-Carlton" },
+        desc: { FR: "Accueil VIP à l'aéroport Rabat-Salé (ou Casablanca), transfert privé et installation au Ritz-Carlton Rabat Dar Es Salam 5★. Dîner gastronomique de bienvenue.", EN: "VIP welcome at Rabat-Salé (or Casablanca) airport, private transfer and check-in at The Ritz-Carlton Rabat Dar Es Salam 5★. Gourmet welcome dinner." }
+      },
+      {
+        day: 2,
+        title: { FR: "Parcours Rouge — Le Signature (18 Trous)", EN: "Red Course — The Signature (18 Holes)" },
+        desc: { FR: "Une journée complète sur le parcours signature. Voiturette électrique et caddie inclus pour relever les défis de ce chef-d'œuvre restauré par James Duncan.", EN: "A full day on the signature course. Electric cart and caddie included to challenge this masterpiece restored by James Duncan." }
+      },
+      {
+        day: 3,
+        title: { FR: "Parcours Bleu (18 Trous) & Détente", EN: "Blue Course (18 Holes) & Relaxation" },
+        desc: { FR: "Matinée sur le Parcours Bleu. Après-midi détente au Spa et à la piscine du Ritz-Carlton ou visite guidée de la médina de Rabat.", EN: "Morning round on the Blue Course. Afternoon relaxation at the Ritz-Carlton Spa and pool, or guided visit of Rabat's medina." }
+      },
+      {
+        day: 4,
+        title: { FR: "Parcours Vert (9 Trous) & Practice", EN: "Green Course (9 Holes) & Practice Session" },
+        desc: { FR: "Ronde matinale sur le Parcours Vert (9 trous), suivie d'une séance d'entraînement sur le Practice de l'Académie Nationale de Golf. Soirée libre au Ritz-Carlton.", EN: "Morning round on the Green Course (9 holes), followed by a training session at the National Golf Academy driving range. Free evening at the Ritz-Carlton." }
+      },
+      {
+        day: 5,
+        title: { FR: "Départ", EN: "Departure" },
+        desc: { FR: "Petit-déjeuner, transfert privé vers l'aéroport pour votre vol de retour.", EN: "Breakfast, private transfer to the airport for your return flight." }
+      }
     ],
     inclusions: {
-      FR: ["Vol aller-retour depuis Montréal (Classe économique ou Business sur demande)", "Transferts privés aéroport ↔ hôtel", "Hébergement 5★ en chambre double (petit-déjeuner inclus)", "Green fees sur les parcours Rouge, Bleu et Jaune", "Buggy & caddie pour chaque ronde", "Déjeuner au club-house chaque jour de golf", "Assistance concierge bilingue 24/7"],
-      EN: ["Round-trip flight from Montreal (Economy or Business on request)", "Private airport ↔ hotel transfers", "5★ double room accommodation (breakfast included)", "Green fees on Rouge, Blue and Yellow courses", "Buggy & caddie for each round", "Club-house lunch on each golf day", "Bilingual concierge assistance 24/7"]
+      FR: [
+        "Hébergement 5★ de luxe au Ritz-Carlton Rabat Dar Es Salam",
+        "Petit-déjeuner quotidien inclus (BB)",
+        "Green fees pour les parcours Rouge, Bleu et Vert",
+        "Voiturette électrique partagée et buggy de practice inclus",
+        "Accès complet au Driving Range, Chipping & Putting greens",
+        "Transferts privés aéroport ↔ hôtel",
+        "Assistance conciergerie bilingue 24/7"
+      ],
+      EN: [
+        "Luxury 5★ accommodation at The Ritz-Carlton Rabat Dar Es Salam",
+        "Daily breakfast included (BB)",
+        "Green fees on the Red, Blue, and Green courses",
+        "Shared electric golf cart and practice buggy included",
+        "Full access to Driving Range, Chipping & Putting greens",
+        "Private airport ↔ hotel transfers",
+        "24/7 bilingual concierge assistance"
+      ]
     },
     exclusions: {
-      FR: ["Dîners (sauf dîner de bienvenue)", "Activités optionnelles hors programme", "Assurance voyage", "Dépenses personnelles"],
-      EN: ["Dinners (except welcome dinner)", "Optional activities outside the programme", "Travel insurance", "Personal expenses"]
+      FR: [
+        "Vols internationaux",
+        "Assurance voyage",
+        "Repas et boissons non spécifiés",
+        "Frais de caddie (env. 30$ USD par ronde)",
+        "Dépenses personnelles et pourboires"
+      ],
+      EN: [
+        "International flights",
+        "Travel insurance",
+        "Meals and beverages not specified",
+        "Caddie fee (approx. $30 USD per round)",
+        "Personal expenses and gratuities"
+      ]
     },
     options: {
       FR: [
-        { name: "Upgrade Business Class", price: "Sur devis" },
-        { name: "Excursion Atlas Mountains (journée complète)", price: "Sur devis" },
-        { name: "Hammam & Spa privatisé", price: "Sur devis" },
-        { name: "Cours privé avec pro", price: "Sur devis" },
+        { name: "Upgrade Suite Ritz-Carlton", price: "Sur devis" },
+        { name: "Excursion historique guidée de Rabat", price: "Sur devis" },
+        { name: "Leçon privée avec un pro PGA", price: "Sur devis" }
       ],
       EN: [
-        { name: "Business Class Upgrade", price: "On request" },
-        { name: "Atlas Mountains Excursion (full day)", price: "On request" },
-        { name: "Private Hammam & Spa", price: "On request" },
-        { name: "Private pro lesson", price: "On request" },
+        { name: "Ritz-Carlton Suite Upgrade", price: "On request" },
+        { name: "Guided historical tour of Rabat", price: "On request" },
+        { name: "Private pro PGA lesson", price: "On request" }
       ]
     },
     hotels: [
-      { name: "Hôtel 5★ Marrakech (Palmeraie ou Médina)", stars: 5, desc: { FR: "Sélection de l'hôtel selon vos préférences et disponibilités — Palmeraie ou Médina.", EN: "Hotel selection based on your preferences and availability — Palmeraie or Medina." }, link: "" }
+      {
+        name: "The Ritz-Carlton Rabat Dar Es Salam",
+        stars: 5,
+        desc: {
+          FR: "Un havre de paix 5★ niché au cœur d'une forêt de chênes, à côté du prestigieux golf. Spa de classe mondiale, restaurants raffinés et service d'exception.",
+          EN: "A 5★ oasis nestled in an oak forest adjacent to the prestigious golf course. World-class spa, fine dining, and legendary service."
+        },
+        link: "https://www.ritzcarlton.com/en/hotels/rbarz-the-ritz-carlton-rabat-dar-es-salam/overview/"
+      }
     ],
     activities: [
-      { title: { FR: "Parcours Rouge (18T)", EN: "Rouge Course (18H)" }, desc: { FR: "Le parcours signature, fondé en 1933. Idéal pour tous niveaux.", EN: "The signature course, founded in 1933. Suitable for all levels." } },
-      { title: { FR: "Parcours Bleu & Jaune (9T chacun)", EN: "Blue & Yellow Courses (9H each)" }, desc: { FR: "Deux 9 trous complémentaires dans la palmeraie.", EN: "Two complementary 9-hole courses in the palm grove." } },
-      { title: { FR: "Médina & Souks", EN: "Medina & Souks" }, desc: { FR: "Exploration libre ou guidée des souks et palais de Marrakech.", EN: "Free or guided exploration of Marrakech's souks and palaces." } },
+      {
+        title: { FR: "Parcours Rouge Signature (18T)", EN: "Red Signature Course (18H)" },
+        desc: {
+          FR: "Dessiné par Robert Trent Jones Sr. Un tracé technique et majestueux bordé d'arbres.",
+          EN: "Designed by Robert Trent Jones Sr. A technical and majestic tree-lined layout."
+        }
+      },
+      {
+        title: { FR: "Parcours Bleu (18T)", EN: "Blue Course (18H)" },
+        desc: {
+          FR: "Parcours de championnat technique, très apprécié pour son tracé varié.",
+          EN: "Technical championship course, highly appreciated for its varied layout."
+        }
+      },
+      {
+        title: { FR: "Practice de l'Académie Nationale", EN: "National Academy Practice" },
+        desc: {
+          FR: "Installations de pratique haut de gamme pour affiner votre swing.",
+          EN: "Premium practice facilities to perfect your swing."
+        }
+      }
     ]
   },
   "11": {
     id: 11,
     image: "/images/tgz_course_ocean.jpg",
     contentImage: "/images/hilton_taghazout_1.avif",
-    title: { FR: "Akenza Golf — Taghazout Bay", EN: "Akenza Golf — Taghazout Bay" },
-    duration: { FR: "5 à 7 nuits", EN: "5 to 7 nights" },
-    cost: "Sur devis / On request",
+    title: { FR: "Hilton Taghazout Hôtel 5★", EN: "Hilton Taghazout Hôtel 5★" },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
+    cost: { FR: "À partir de 3 879\u00A0$", EN: "Starting from C$\u00A03,879" },
     overview: {
-      FR: "Taghazout Bay abrite l'un des plus beaux parcours Championship d'Afrique : l'Akenza Golf Club, 18 trous face à l'Atlantique. Séjour au Hilton Taghazout Bay 5★, entre mer et montagne, avec accès direct à la plage et spa de prestige.",
-      EN: "Taghazout Bay is home to one of Africa's most stunning Championship courses: Akenza Golf Club, 18 holes overlooking the Atlantic. Stay at the 5★ Hilton Taghazout Bay, between sea and mountain, with direct beach access and a world-class spa."
+      FR: "Offrez-vous un séjour de golf inoubliable à Agadir en résidant au prestigieux Hilton Taghazout Bay Beach Resort 5★. Ce forfait complet comprend les vols directs aller-retour de Montréal à Agadir avec Air Transat. Vous profiterez de 7 nuits d'hébergement en chambre double vue piscine, avec formule petit-déjeuner ou option demi-pension. Jouez 4 rondes de golf de classe mondiale sur les plus beaux parcours de la région : Tazegzout Golf (Championship face à l'océan), Golf du Soleil et Golf Les Dunes. Une voiturette électrique partagée est comprise pour chaque ronde.",
+      EN: "Indulge in an unforgettable golf trip in Agadir, staying at the prestigious 5★ Hilton Taghazout Bay Beach Resort. This complete package includes direct round-trip flights from Montreal to Agadir with Air Transat. You'll enjoy 7 nights of accommodation in a double occupancy room with pool view, on a daily breakfast (BB) or optional half-board (HB) basis. Play 4 rounds of golf on Agadir's premier courses: Tazegzout Golf (oceanfront Championship course), Golf du Soleil, and Golf Les Dunes. A shared electric cart is included for each round."
     },
     timeline: [
-      { day: 1, title: { FR: "Arrivée à Agadir", EN: "Arrival in Agadir" }, desc: { FR: "Transfert privé depuis l'aéroport Al Massira vers le Hilton Taghazout Bay. Dîner en bord de mer.", EN: "Private transfer from Al Massira Airport to Hilton Taghazout Bay. Seaside welcome dinner." } },
-      { day: 2, title: { FR: "Akenza — Parcours Championship", EN: "Akenza — Championship Round" }, desc: { FR: "18 trous sur l'Akenza avec vue panoramique sur l'Atlantique. Buggy, caddie et déjeuner inclus.", EN: "18 holes on the Akenza with panoramic Atlantic views. Buggy, caddie and lunch included." } },
-      { day: 3, title: { FR: "Deuxième Ronde & Plage", EN: "Second Round & Beach" }, desc: { FR: "Matinée golf, après-midi libre sur la plage de Taghazout Bay.", EN: "Morning golf round, free afternoon on Taghazout Bay beach." } },
-      { day: 4, title: { FR: "Spa & Journée Libre", EN: "Spa & Free Day" }, desc: { FR: "Soin spa privatisé au Hilton, surf ou excursion Agadir en option.", EN: "Private Hilton spa treatment, optional surf session or Agadir excursion." } },
-      { day: 5, title: { FR: "Départ", EN: "Departure" }, desc: { FR: "Petit-déjeuner, transfert aéroport.", EN: "Breakfast, airport transfer." } },
+      {
+        day: 1,
+        title: { FR: "Vol Montréal – Agadir & Installation", EN: "Montreal – Agadir Flight & Check-In" },
+        desc: { FR: "Vol direct avec Air Transat. Accueil à l'aéroport d'Agadir-Al Massira, transfert privé et installation au Hilton Taghazout Bay 5★. Soirée détente.", EN: "Direct flight with Air Transat. Welcome at Agadir-Al Massira Airport, private transfer and check-in at 5★ Hilton Taghazout Bay. Relaxing evening." }
+      },
+      {
+        day: 2,
+        title: { FR: "Tazegzout Golf — Face à l'Océan", EN: "Tazegzout Golf — Oceanfront Challenge" },
+        desc: { FR: "Première ronde à Tazegzout Golf, un parcours spectaculaire surplombant l'Atlantique. Voiturette électrique incluse.", EN: "First golf round at Tazegzout Golf, a spectacular course overlooking the Atlantic. Electric cart included." }
+      },
+      {
+        day: 3,
+        title: { FR: "Golf du Soleil — Parcours de Prestige", EN: "Golf du Soleil — Prestige Round" },
+        desc: { FR: "Deuxième ronde au Golf du Soleil, niché au cœur d'une végétation eucalyptus et de lacs. Voiturette électrique incluse.", EN: "Second golf round at Golf du Soleil, nestled in eucalyptus trees and lakes. Electric cart included." }
+      },
+      {
+        day: 4,
+        title: { FR: "Détente au Spa Hilton & Plage", EN: "Hilton Spa Relaxation & Beach" },
+        desc: { FR: "Journée libre. Profitez de la plage privée du Hilton ou réservez un soin relaxant au Spa.", EN: "Free day. Enjoy Hilton's private beach or book a soothing treatment at the Spa." }
+      },
+      {
+        day: 5,
+        title: { FR: "Golf Les Dunes — Parcours Varié", EN: "Golf Les Dunes — Varied Layout" },
+        desc: { FR: "Troisième ronde au Golf Les Dunes, offrant trois parcours de 9 trous dessinés par Cabell B. Robinson.", EN: "Third golf round at Golf Les Dunes, offering three 9-hole courses designed by Cabell B. Robinson." }
+      },
+      {
+        day: 6,
+        title: { FR: "Deuxième Ronde Tazegzout & Vue Océan", EN: "Second Tazegzout Round & Ocean Views" },
+        desc: { FR: "Quatrième ronde sur le parcours de Tazegzout pour parfaire votre score sur ce tracé côtier unique.", EN: "Fourth golf round at Tazegzout course to perfect your score on this unique coastal layout." }
+      },
+      {
+        day: 7,
+        title: { FR: "Relaxation & Shopping Souk El Had", EN: "Relaxation & Souk El Had Shopping" },
+        desc: { FR: "Dernière journée libre pour faire du shopping au souk local, vous détendre en piscine ou faire une excursion.", EN: "Final free day for local souk shopping, poolside relaxation, or optional excursions." }
+      },
+      {
+        day: 8,
+        title: { FR: "Vol de retour", EN: "Return Flight" },
+        desc: { FR: "Petit-déjeuner, transfert privé vers l'aéroport d'Agadir et vol de retour direct vers Montréal.", EN: "Breakfast, private transfer to Agadir airport and direct return flight to Montreal." }
+      }
     ],
     inclusions: {
-      FR: ["Vol aller-retour depuis Montréal", "Transferts privés aéroport ↔ Hilton Taghazout", "Séjour au Hilton Taghazout Bay 5★ (demi-pension)", "Green fees Akenza Golf (2 rondes minimum)", "Buggy & caddie inclus", "Accès spa & piscine Hilton"],
-      EN: ["Round-trip flight from Montreal", "Private airport ↔ Hilton Taghazout transfers", "Stay at Hilton Taghazout Bay 5★ (half board)", "Akenza Golf green fees (2 rounds minimum)", "Buggy & caddie included", "Hilton spa & pool access"]
+      FR: [
+        "Vols directs aller-retour Montréal – Agadir avec Air Transat (1er bagage enregistré inclus)",
+        "7 nuits au Hilton Taghazout Hôtel 5★ en Chambre double Vue Piscine",
+        "Petit-déjeuner quotidien ou option Demi-pension (dîner 3 services, vin, eau, café/thé)",
+        "4 rondes de golf sur Tazegzout, Golf du Soleil et Golf Les Dunes",
+        "Réservations de Tee times & Voiturette électrique partagée",
+        "Assistance conciergerie 24/7 sur place",
+        "Toutes les taxes de vol et contribution au FICAV incluse"
+      ],
+      EN: [
+        "Direct round-trip flights Montreal – Agadir with Air Transat (first checked bag included)",
+        "7 nights at the 5★ Hilton Taghazout Hotel in a double occupancy Pool View Room",
+        "Daily breakfast (BB) or Half Board (HB) with 3-course dinner, wine, water, coffee/tea",
+        "4 rounds of golf on Tazegzout, Golf du Soleil, and Golf Les Dunes",
+        "Tee time reservations & Shared electric golf cart",
+        "24/7 on-site concierge assistance",
+        "All flight taxes & FICAV protection included"
+      ]
     },
     exclusions: {
-      FR: ["Rondes supplémentaires", "Activités de surf ou excursions", "Assurance voyage", "Dépenses personnelles"],
-      EN: ["Additional rounds", "Surf activities or excursions", "Travel insurance", "Personal expenses"]
+      FR: [
+        "Assurance voyage",
+        "Frais pour le 2ème bagage enregistré",
+        "Activités optionnelles hors programme",
+        "Repas et boissons non spécifiés",
+        "Pourboires",
+        "Frais de caddie (env. 30$ USD par ronde)",
+        "Taxes d'hôtel (env. 5$ CAD par nuit)"
+      ],
+      EN: [
+        "Travel insurance",
+        "Second checked bag fee",
+        "Optional activities not specified",
+        "Meals and beverages not specified",
+        "Gratuities",
+        "Caddie fee (approx. $30 USD per round)",
+        "Hotel taxes (approx. $5 CAD per night)"
+      ]
     },
     options: {
       FR: [
-        { name: "Rondes supplémentaires Akenza", price: "Sur devis" },
-        { name: "Leçon avec pro certifié", price: "Sur devis" },
-        { name: "Excursion surf Taghazout", price: "Sur devis" },
-        { name: "Upgrade suite vue mer", price: "Sur devis" },
+        { name: "Surclassement en Chambre Vue Océan", price: "Sur devis" },
+        { name: "Formule Demi-pension Premium", price: "Sur devis" },
+        { name: "Ronde de golf supplémentaire", price: "Sur devis" }
       ],
       EN: [
-        { name: "Extra Akenza rounds", price: "On request" },
-        { name: "Certified pro lesson", price: "On request" },
-        { name: "Taghazout surf excursion", price: "On request" },
-        { name: "Ocean view suite upgrade", price: "On request" },
+        { name: "Ocean View Room Upgrade", price: "On request" },
+        { name: "Premium Half-Board Upgrade", price: "On request" },
+        { name: "Extra golf round", price: "On request" }
       ]
     },
     hotels: [
-      { name: "Hilton Taghazout Bay Beach Resort & Spa", stars: 5, desc: { FR: "Resort 5★ en bord de mer avec accès direct à la plage, spa primé et plusieurs restaurants.", EN: "5★ beachfront resort with direct beach access, award-winning spa and multiple restaurants." }, link: "https://www.hilton.com/en/hotels/agbhihi-hilton-taghazout-bay-beach-resort-and-spa/" }
+      {
+        name: "Hilton Taghazout Bay Beach Resort & Spa",
+        stars: 5,
+        desc: {
+          FR: "Resort 5★ haut de gamme en bord de mer, proposant un spa primé, plusieurs piscines, un accès direct à la plage et des restaurants de renom.",
+          EN: "Premium 5★ beachfront resort, featuring an award-winning spa, multiple pools, direct beach access, and top-tier dining."
+        },
+        link: "https://www.hilton.com/en/hotels/agbhihi-hilton-taghazout-bay-beach-resort-and-spa/"
+      }
     ],
     activities: [
-      { title: { FR: "Akenza Golf Club (18T)", EN: "Akenza Golf Club (18H)" }, desc: { FR: "Parcours Championship avec vue Atlantique. Niveau intermédiaire à expert.", EN: "Championship course with Atlantic views. Intermediate to expert level." } },
-      { title: { FR: "Spa Hilton", EN: "Hilton Spa" }, desc: { FR: "Soins marocains, hammam, piscine intérieure.", EN: "Moroccan treatments, hammam, indoor pool." } },
-      { title: { FR: "Plage de Taghazout", EN: "Taghazout Beach" }, desc: { FR: "Spot de surf et détente en bord de mer.", EN: "Surf spot and beach relaxation." } },
+      {
+        title: { FR: "Tazegzout Golf (18T)", EN: "Tazegzout Golf (18H)" },
+        desc: {
+          FR: "Dessiné par Kyle Phillips. Greens spectaculaires suspendus au-dessus de l'océan.",
+          EN: "Designed by Kyle Phillips. Spectacular greens suspended right over the ocean."
+        }
+      },
+      {
+        title: { FR: "Golf du Soleil (18T)", EN: "Golf du Soleil (18H)" },
+        desc: {
+          FR: "Un oasis de verdure de 85 hectares niché au cœur d'eucalyptus centenaires.",
+          EN: "An 85-hectare green oasis nestled in century-old eucalyptus trees."
+        }
+      },
+      {
+        title: { FR: "Golf Les Dunes (18T)", EN: "Golf Les Dunes (18H)" },
+        desc: {
+          FR: "Tracé vallonné de 27 trous dessiné par Cabell B. Robinson.",
+          EN: "Hilly 27-hole layout designed by Cabell B. Robinson."
+        }
+      }
     ]
   },
   "12": {
     id: 12,
-    image: "/images/almaaden_golf_1.jpg",
-    contentImage: "/images/almaaden_golf_3.jpg",
-    title: { FR: "Al Maaden Golf Resort", EN: "Al Maaden Golf Resort" },
-    duration: { FR: "4 à 7 nuits", EN: "4 to 7 nights" },
-    cost: "Sur devis / On request",
+    image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
+    contentImage: "/images/deluxe-room-sea-view.jpg",
+    title: { FR: "White Beach Hôtel 5★", EN: "White Beach Hôtel 5★" },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
+    cost: { FR: "À partir de 4 255\u00A0$", EN: "Starting from C$\u00A04,255" },
     overview: {
-      FR: "Al Maaden Golf Resort est un complexe 5★ intégré avec un parcours de 18 trous signé Kyle Phillips, au pied des montagnes de l'Atlas. Restaurant gastronomique, spa de luxe et hébergement sur le parcours pour une expérience golf resort complète à Marrakech.",
-      EN: "Al Maaden Golf Resort is an integrated 5★ resort with an 18-hole course designed by Kyle Phillips, at the foot of the Atlas Mountains. Fine dining, luxury spa and on-course accommodation for a complete golf resort experience in Marrakech."
+      FR: "Découvrez le summum du confort tout compris au Pickalbatros White Beach Resort 5★ (Adults Only) à Agadir. Ce forfait exclusif de 8 jours comprend des vols directs Montréal – Agadir avec Air Transat. Séjournez 7 nuits en Chambre Vue Jardin de luxe avec pension tout compris haut de gamme. Profitez de 4 rondes de golf sur les parcours incontournables d'Agadir (Tazegzout Golf, Golf du Soleil et Golf Les Dunes) avec voiturette électrique partagée incluse. Un voyage d'exception alliant relaxation absolue en bord de mer et golf passionnant.",
+      EN: "Discover the pinnacle of adults-only all-inclusive comfort at the 5★ Pickalbatros White Beach Resort in Agadir. This exclusive 8-day package features direct flights from Montreal to Agadir with Air Transat. Stay 7 nights in a luxury Garden View Room with premium all-inclusive boarding. Enjoy 4 rounds of golf on Agadir's premier courses (Tazegzout Golf, Golf du Soleil, and Golf Les Dunes) with a shared electric cart included. A perfect blend of absolute seaside relaxation and exceptional golf."
     },
     timeline: [
-      { day: 1, title: { FR: "Arrivée & Accueil", EN: "Arrival & Welcome" }, desc: { FR: "Transfert depuis Marrakech-Menara, installation à l'Al Maaden Resort 5★, dîner au restaurant gastronomique.", EN: "Transfer from Marrakech-Menara, check-in at Al Maaden Resort 5★, fine dining welcome dinner." } },
-      { day: 2, title: { FR: "Parcours Kyle Phillips — 18 Trous", EN: "Kyle Phillips Course — 18 Holes" }, desc: { FR: "Ronde complète sur le parcours signé Kyle Phillips avec vue sur l'Atlas. Buggy et déjeuner inclus.", EN: "Full round on the Kyle Phillips-designed course with Atlas Mountain views. Buggy and lunch included." } },
-      { day: 3, title: { FR: "Deuxième Ronde & Spa", EN: "Second Round & Spa" }, desc: { FR: "Matinée golf, après-midi spa et hammam au resort.", EN: "Morning golf round, afternoon spa and hammam at the resort." } },
-      { day: 4, title: { FR: "Départ", EN: "Departure" }, desc: { FR: "Petit-déjeuner, transfert aéroport.", EN: "Breakfast, airport transfer." } },
+      {
+        day: 1,
+        title: { FR: "Vol Montréal – Agadir & Accueil VIP", EN: "Montreal – Agadir Flight & VIP Welcome" },
+        desc: { FR: "Vol direct avec Air Transat. Transfert privé et installation au White Beach Resort 5★. Dîner gastronomique inclus.", EN: "Direct flight with Air Transat. Private transfer and check-in at 5★ White Beach Resort. Gourmet dinner included." }
+      },
+      {
+        day: 2,
+        title: { FR: "Golf du Soleil — Ronde d'Ouverture", EN: "Golf du Soleil — Opening Round" },
+        desc: { FR: "Ronde sur le parcours soigné du Golf du Soleil. Buggy et practice inclus.", EN: "Opening round on the pristine Golf du Soleil course. Buggy and practice range included." }
+      },
+      {
+        day: 3,
+        title: { FR: "Tazegzout Golf — Face à l'Atlantique", EN: "Tazegzout Golf — Oceanfront Challenge" },
+        desc: { FR: "Ronde à Tazegzout Golf. Défiez ses trous spectaculaires suspendus au-dessus des falaises côtières.", EN: "Golf round at Tazegzout Golf. Challenge its spectacular holes suspended over coastal cliffs." }
+      },
+      {
+        day: 4,
+        title: { FR: "Spa de Luxe & Plage Privée", EN: "Luxury Spa & Private Beach" },
+        desc: { FR: "Journée libre. Détendez-vous au spa du resort ou profitez du service tout compris sur la plage privée.", EN: "Free day. Relax at the resort's premium spa or enjoy all-inclusive services on the private beach." }
+      },
+      {
+        day: 5,
+        title: { FR: "Golf Les Dunes — 18 Trous Robinson", EN: "Golf Les Dunes — 18 Holes Robinson" },
+        desc: { FR: "Troisième ronde de golf au Golf Les Dunes sur un tracé varié bordé de genêts et de palmiers.", EN: "Third golf round at Golf Les Dunes on a varied layout bordered by palm trees and broom." }
+      },
+      {
+        day: 6,
+        title: { FR: "Deuxième Ronde Tazegzout", EN: "Second Tazegzout Round" },
+        desc: { FR: "Dernière ronde à Tazegzout Golf pour apprécier à nouveau les vues imprenables et peaufiner vos coups.", EN: "Final round at Tazegzout Golf to enjoy the stunning ocean views again and polish your shots." }
+      },
+      {
+        day: 7,
+        title: { FR: "Détente Tout Compris & Shopping", EN: "All-Inclusive Relaxation & Shopping" },
+        desc: { FR: "Journée libre au resort. Cocktails à la piscine, activités de détente ou visite des souks d'Agadir.", EN: "Free day at the resort. Poolside cocktails, relaxing activities, or optional Agadir souks shopping." }
+      },
+      {
+        day: 8,
+        title: { FR: "Vol de retour", EN: "Return Flight" },
+        desc: { FR: "Petit-déjeuner, transfert privé vers l'aéroport d'Agadir pour votre vol direct vers Montréal.", EN: "Breakfast, private transfer to Agadir airport for your direct return flight to Montreal." }
+      }
     ],
     inclusions: {
-      FR: ["Vol aller-retour depuis Montréal", "Transferts privés", "Hébergement 5★ Al Maaden (petit-déjeuner inclus)", "Green fees (2 rondes minimum)", "Buggy inclus", "Accès spa & piscine", "Dîner de bienvenue"],
-      EN: ["Round-trip flight from Montreal", "Private transfers", "5★ Al Maaden accommodation (breakfast included)", "Green fees (2 rounds minimum)", "Buggy included", "Spa & pool access", "Welcome dinner"]
+      FR: [
+        "Vols directs aller-retour Montréal – Agadir avec Air Transat (1er bagage enregistré inclus)",
+        "7 nuits à l'hôtel 5★ White Beach Resort en Chambre double Vue Jardin",
+        "Pension Tout Compris (All-Inclusive) incluant repas, collations et boissons",
+        "4 rondes de golf sur Tazegzout, Golf du Soleil et Golf Les Dunes",
+        "Voiturette électrique partagée pour chaque ronde",
+        "Assistance conciergerie 24/7 sur place",
+        "Toutes les taxes de vol et contribution au FICAV incluse"
+      ],
+      EN: [
+        "Direct round-trip flights Montreal – Agadir with Air Transat (first checked bag included)",
+        "7 nights at the 5★ White Beach Resort in a double occupancy Garden View Room",
+        "Premium All-Inclusive boarding including meals, snacks, and drinks",
+        "4 rounds of golf on Tazegzout, Golf du Soleil, and Golf Les Dunes",
+        "Shared electric golf cart for each round",
+        "24/7 on-site concierge assistance",
+        "All flight taxes & FICAV protection included"
+      ]
     },
     exclusions: {
-      FR: ["Rondes supplémentaires", "Déjeuners et dîners hors programme", "Assurance voyage", "Dépenses personnelles"],
-      EN: ["Additional rounds", "Lunches and dinners outside the program", "Travel insurance", "Personal expenses"]
+      FR: [
+        "Assurance voyage",
+        "Frais pour le 2ème bagage enregistré",
+        "Activités optionnelles hors programme",
+        "Frais de caddie (env. 30$ USD par ronde)",
+        "Taxes d'hôtel (env. 5$ CAD par nuit)",
+        "Dépenses personnelles et pourboires"
+      ],
+      EN: [
+        "Travel insurance",
+        "Second checked bag fee",
+        "Optional activities not specified",
+        "Caddie fee (approx. $30 USD per round)",
+        "Hotel taxes (approx. $5 CAD per night)",
+        "Personal expenses and gratuities"
+      ]
     },
     options: {
       FR: [
-        { name: "Rondes supplémentaires", price: "Sur devis" },
-        { name: "Excursion Médina Marrakech guidée", price: "Sur devis" },
-        { name: "Leçon avec pro", price: "Sur devis" },
+        { name: "Surclassement en Chambre Vue Mer", price: "Sur devis" },
+        { name: "Chambre Swim-Up avec accès piscine", price: "Sur devis" },
+        { name: "Ronde de golf supplémentaire", price: "Sur devis" }
       ],
       EN: [
-        { name: "Additional rounds", price: "On request" },
-        { name: "Guided Marrakech Medina excursion", price: "On request" },
-        { name: "Pro lesson", price: "On request" },
+        { name: "Sea View Room Upgrade", price: "On request" },
+        { name: "Swim-Up Room with pool access", price: "On request" },
+        { name: "Extra golf round", price: "On request" }
       ]
     },
     hotels: [
-      { name: "Al Maaden Golf Resort & Spa", stars: 5, desc: { FR: "Resort 5★ avec parcours intégré, restaurant gastronomique et spa au pied de l'Atlas.", EN: "5★ resort with integrated course, fine dining restaurant and spa at the foot of the Atlas." }, link: "https://www.almaaden.com/" }
+      {
+        name: "Pickalbatros White Beach Resort Agadir",
+        stars: 5,
+        desc: {
+          FR: "Un resort ultra-moderne 5★ tout compris en bord de mer (réservé aux adultes), offrant des piscines magnifiques, un grand spa et un service d'excellence.",
+          EN: "An ultra-modern 5★ adults-only beachfront resort, offering stunning swimming pools, a huge spa, and excellent service."
+        },
+        link: "https://www.pickalbatros.com/"
+      }
     ],
     activities: [
-      { title: { FR: "Parcours 18T Kyle Phillips", EN: "18H Kyle Phillips Course" }, desc: { FR: "Parcours de conception internationale au pied de l'Atlas.", EN: "Internationally-designed course at the foot of the Atlas Mountains." } },
-      { title: { FR: "Spa & Hammam Al Maaden", EN: "Al Maaden Spa & Hammam" }, desc: { FR: "Soins exclusifs et hammam traditionnel.", EN: "Exclusive treatments and traditional hammam." } },
-      { title: { FR: "Restaurant Gastronomique", EN: "Fine Dining Restaurant" }, desc: { FR: "Cuisine marocaine et internationale avec vue sur le parcours.", EN: "Moroccan and international cuisine with course views." } },
+      {
+        title: { FR: "Tazegzout Golf (18T)", EN: "Tazegzout Golf (18H)" },
+        desc: {
+          FR: "Parcours dessiné par Kyle Phillips, mondialement connu pour ses trous côtiers.",
+          EN: "Designed by Kyle Phillips, world-renowned for its dramatic coastal holes."
+        }
+      },
+      {
+        title: { FR: "Golf du Soleil (18T)", EN: "Golf du Soleil (18H)" },
+        desc: {
+          FR: "Un oasis magnifique de 85 hectares avec des lacs scintillants.",
+          EN: "A beautiful 85-hectare oasis with shimmering lakes."
+        }
+      },
+      {
+        title: { FR: "Golf Les Dunes (18T)", EN: "Golf Les Dunes (18H)" },
+        desc: {
+          FR: "Tracé exceptionnel vallonné dessiné par Cabell B. Robinson.",
+          EN: "Exceptional hilly layout designed by Cabell B. Robinson."
+        }
+      }
     ]
   }
-}
+};
 
 export const itineraryThemes: Record<string, ItineraryTheme> = {
   "1": {

@@ -6,7 +6,7 @@ export interface TierStyle {
 export function getTierStyle(badgeText: string): TierStyle {
   const text = badgeText.toUpperCase();
   
-  if (text.includes("ULTRA LUXURY") || text.includes("ULTRA LUXE") || text.includes("PRESTIGE ACCESS") || text.includes("PRESTIGE DE LUXE")) {
+  if (text.includes("ULTRA LUXURY") || text.includes("ULTRA LUXE") || text.includes("PRESTIGE ACCESS") || text.includes("PRESTIGE DE LUXE") || text.includes("PREMIUM")) {
     // Diamond
     return {
       background: "linear-gradient(135deg, #b9f2ff, #e0f7ff, #a8edea)",

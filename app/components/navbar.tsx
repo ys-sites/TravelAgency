@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import { useLang, translate } from "../context/lang-context";
 
 const t = {
-  portfolios: { FR: "Portefeuilles", EN: "Portfolios" },
+  portfolios: { FR: "Forfaits Golf", EN: "Golf Packages" },
   itineraries:{ FR: "Itinéraires", EN: "Itineraries" },
   about:      { FR: "À Propos", EN: "About Us" },
   customTrip: { FR: "Voyage Sur Mesure", EN: "Custom Trip" },
