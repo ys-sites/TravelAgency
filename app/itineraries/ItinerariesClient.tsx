@@ -19,6 +19,19 @@ const t = {
 
 export default function ItinerariesClient() {
   const { lang } = useLang();
+  const [activeFilter, setActiveFilter] = React.useState("Tous");
+
+  const filterPills = [
+    { FR: "Tous", EN: "All" },
+    { FR: "Golf & Prestige", EN: "Golf & Prestige" },
+    { FR: "Golf & Océan", EN: "Golf & Ocean" },
+    { FR: "Golf & Luxe", EN: "Golf & Luxury" }
+  ];
+
+  const filteredTours = toursList.filter((tour) => {
+    if (activeFilter === "Tous") return true;
+    return tour.category.FR === activeFilter;
+  });
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-body antialiased">
@@ -61,17 +74,59 @@ export default function ItinerariesClient() {
         </div>
       </section>
 
+      {/* Build-to-Order Custom Passage Banner */}
+      <section className="pt-12 pb-6 px-6 max-w-4xl mx-auto text-center z-20 relative bg-white">
+        <div className="bg-zinc-50 border border-zinc-200/60 p-8 rounded-[1.8rem] space-y-5 shadow-sm">
+          <p className="text-zinc-700 text-sm md:text-base font-light italic leading-relaxed max-w-2xl mx-auto">
+            {lang === "FR"
+              ? "Tous nos itinéraires sont construits sur mesure selon votre demande."
+              : "All our itineraries are built to order based on your request."}
+          </p>
+          <div>
+            <Link
+              href="/custom-trip"
+              className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury shadow-md cursor-pointer"
+            >
+              {lang === "FR" ? "Créer Mon Voyage" : "Build My Trip"} &rarr;
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Grid of Cards */}
-      <section className="py-16 px-6 max-w-6xl mx-auto z-20 relative bg-white">
+      <section className="pb-24 pt-6 px-6 max-w-6xl mx-auto z-20 relative bg-white">
+        
+        {/* Filter Pills */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {filterPills.map((pill) => {
+            const label = lang === "FR" ? pill.FR : pill.EN;
+            const isActive = activeFilter === pill.FR;
+            return (
+              <button
+                key={pill.FR}
+                onClick={() => setActiveFilter(pill.FR)}
+                className={`px-5 py-2.5 text-[10px] font-mono tracking-widest uppercase transition-all duration-300 rounded-full cursor-pointer ${
+                  isActive
+                    ? "bg-brand-gold text-white shadow-sm"
+                    : "border border-zinc-300 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 bg-white"
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {toursList.map((tour, index) => (
+          {filteredTours.map((tour, index) => (
             <motion.div
               key={tour.id}
+              layout
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95 }}
               whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
-              transition={{ duration: 0.6, delay: (index % 2) * 0.15, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: (index % 2) * 0.1, ease: "easeOut" }}
               className="group relative flex flex-col rounded-[2.2rem] overflow-hidden border border-zinc-200/55 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300"
             >
               {/* Image Header with Tags */}

@@ -8,7 +8,80 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import MapSection from "../../components/map-section";
 import { useLang, translate } from "../../context/lang-context";
-import { itinerariesData, itineraryThemes } from "@/data/itineraries";
+import { itinerariesData, itineraryThemes, ItineraryTheme } from "@/data/itineraries";
+
+const getGalleryImages = (itineraryId: number) => {
+  switch (itineraryId) {
+    case 10:
+      return [
+        "/images/royal_golf_aerial_1.jpg",
+        "/images/royal_golf_aerial_2.jpg",
+        "/images/royal_golf_aerial_3.jpg",
+        "/images/royal_golf_aerial_4.jpg",
+        "/images/royal_golf_aerial_5.jpg",
+        "/images/royal_golf_aerial_6.jpg",
+        "/images/royal_golf_clubhouse.jpg",
+        "/images/royal_golf_evening.jpg",
+        "/images/royal_golf_marrakech_1.jpg",
+        "/images/royal_golf_marrakech_2.jpg",
+        "/images/royal_golf_rouge11.jpg",
+        "/images/royal_golf_sunset.jpg",
+        "/images/marrakech_golf_blue10.jpg",
+        "/images/marrakech_golf_blue5.jpg",
+        "/images/marrakech_golf_rouge18.jpg",
+        "/images/marrakech_golf_yellow9.jpg"
+      ];
+    case 11:
+      return [
+        "/images/tgz_course_1.jpg",
+        "/images/tgz_course_2.jpg",
+        "/images/tgz_course_3.jpg",
+        "/images/tgz_course_4.jpg",
+        "/images/tgz_course_aerial.jpg",
+        "/images/tgz_course_bleu7.jpg",
+        "/images/tgz_course_bleu9.jpg",
+        "/images/tgz_course_hotel.jpg",
+        "/images/tgz_course_ocean.jpg",
+        "/images/akenza_golf_1.jpg",
+        "/images/akenza_golf_2.jpg",
+        "/images/akenza_golf_3.jpg",
+        "/images/hilton_taghazout_1.avif",
+        "/images/hilton_taghazout_2.avif",
+        "/images/hilton_taghazout_3.avif",
+        "/images/hilton_taghazout_4.avif",
+        "/images/hilton_taghazout_5.avif",
+        "/images/hilton_taghazout_6.avif",
+        "/images/hilton_taghazout_7.avif",
+        "/images/hilton_taghazout_8.avif",
+        "/images/hilton_taghazout_9.avif",
+        "/images/hilton_taghazout_10.avif",
+        "/images/hilton_taghazout_11.avif",
+        "/images/hilton_taghazout_12.avif",
+        "/images/hilton_taghazout_13.avif",
+        "/images/hilton_taghazout_14.avif",
+        "/images/hilton_taghazout_15.avif",
+        "/images/hilton_taghazout_16.avif",
+        "/images/hilton_taghazout_17.avif",
+        "/images/hilton_taghazout_18.avif",
+        "/images/taghazout_flowers.jpg"
+      ];
+    case 12:
+      return [
+        "/images/almaaden_golf_1.jpg",
+        "/images/almaaden_golf_2.jpg",
+        "/images/almaaden_golf_3.jpg",
+        "/images/almaaden_golf_4.jpg",
+        "/images/almaaden_golf_5.jpg",
+        "/images/almaaden_golf_6.jpg",
+        "/images/almaaden_golf_7.jpg",
+        "/images/almaaden_golf_8.jpg",
+        "/images/almaaden_restaurant1.jpg",
+        "/images/almaaden_restaurant2.jpg"
+      ];
+    default:
+      return [];
+  }
+};
 
 export default function ItineraryClient({ id }: { id: string }) {
   const { lang } = useLang();
@@ -16,13 +89,9 @@ export default function ItineraryClient({ id }: { id: string }) {
   // Safe lookup to prevent securecoder CWE-94 dynamic bracket notation warning
   const itinerary = (() => {
     switch (id) {
-      case "1": return itinerariesData["1"];
-      case "2": return itinerariesData["2"];
-      case "3": return itinerariesData["3"];
-      case "4": return itinerariesData["4"];
-      case "5": return itinerariesData["5"];
-      case "6": return itinerariesData["6"];
-      case "7": return itinerariesData["7"];
+      case "10": return itinerariesData["10"];
+      case "11": return itinerariesData["11"];
+      case "12": return itinerariesData["12"];
       default: return null;
     }
   })();
@@ -30,6 +99,7 @@ export default function ItineraryClient({ id }: { id: string }) {
   const [bookingName, setBookingName] = useState("");
   const [bookingEmail, setBookingEmail] = useState("");
   const [bookingMessage, setBookingMessage] = useState("");
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [passengerCount, setPassengerCount] = useState(1);
   const [passengerAges, setPassengerAges] = useState<number[]>([0]);
@@ -80,7 +150,7 @@ export default function ItineraryClient({ id }: { id: string }) {
   };
 
   // Safe lookup to prevent securecoder CWE-94 dynamic bracket notation warning
-  const theme = (() => {
+  const theme: ItineraryTheme | null = (() => {
     switch (id) {
       case "1": return itineraryThemes["1"];
       case "2": return itineraryThemes["2"];
@@ -89,6 +159,9 @@ export default function ItineraryClient({ id }: { id: string }) {
       case "5": return itineraryThemes["5"];
       case "6": return itineraryThemes["6"];
       case "7": return itineraryThemes["7"];
+      case "10": return null;
+      case "11": return null;
+      case "12": return null;
       default: return null;
     }
   })();
@@ -282,6 +355,35 @@ export default function ItineraryClient({ id }: { id: string }) {
                   className="w-full h-[320px] md:h-[420px] object-cover hover:scale-[1.02] transition-transform duration-700"
                 />
               </motion.div>
+
+              {/* Image Gallery for Golf Packages */}
+              {(itinerary.id === 10 || itinerary.id === 11 || itinerary.id === 12) && (
+                <div className="space-y-6 pt-10 border-t border-zinc-100">
+                  <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
+                    {lang === "FR" ? "Galerie Photos" : "Photo Gallery"}
+                  </h3>
+                  
+                  {/* Gallery Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    {getGalleryImages(itinerary.id).map((imgSrc, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => setActiveImageIndex(idx)}
+                        className="relative aspect-video overflow-hidden cursor-pointer group border border-zinc-200"
+                      >
+                        <img
+                          src={imgSrc}
+                          alt={`${translate(itinerary.title, lang)} - View ${idx + 1}`}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 rounded-sm"
+                        />
+                        {/* Gold hover overlay */}
+                        <div className="absolute inset-0 bg-brand-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </>
           ) : null}
 
@@ -676,6 +778,69 @@ export default function ItineraryClient({ id }: { id: string }) {
       </section>
 
       <Footer />
+
+      {/* Fullscreen Lightbox Modal */}
+      {activeImageIndex !== null && (() => {
+        const images = getGalleryImages(itinerary.id);
+        if (images.length === 0) return null;
+        
+        return (
+          <div 
+            className="fixed inset-0 z-[9999] bg-zinc-950/95 backdrop-blur-md flex flex-col items-center justify-center p-4 select-none"
+            onClick={() => setActiveImageIndex(null)}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setActiveImageIndex(null)}
+              className="absolute top-6 right-6 text-white hover:text-brand-gold text-2xl font-sans cursor-pointer transition-colors p-2 bg-black/40 hover:bg-black/60 rounded-full focus:outline-none z-50"
+              aria-label="Close lightbox"
+            >
+              ✕
+            </button>
+
+            {/* Previous button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveImageIndex((prev) => (prev !== null ? (prev - 1 + images.length) % images.length : null));
+              }}
+              className="absolute left-6 text-white hover:text-brand-gold text-3xl font-mono cursor-pointer transition-colors p-3 bg-black/40 hover:bg-black/60 rounded-full focus:outline-none z-50"
+              aria-label="Previous image"
+            >
+              ‹
+            </button>
+
+            {/* Next button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setActiveImageIndex((prev) => (prev !== null ? (prev + 1) % images.length : null));
+              }}
+              className="absolute right-6 text-white hover:text-brand-gold text-3xl font-mono cursor-pointer transition-colors p-3 bg-black/40 hover:bg-black/60 rounded-full focus:outline-none z-50"
+              aria-label="Next image"
+            >
+              ›
+            </button>
+
+            {/* Large Image container to catch click and stop propagation */}
+            <div 
+              className="relative max-w-5xl max-h-[80vh] w-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={images[activeImageIndex]}
+                alt={`${translate(itinerary.title, lang)} - View Large`}
+                className="max-w-full max-h-[80vh] object-contain border border-zinc-800 rounded-sm shadow-2xl"
+              />
+            </div>
+
+            {/* Counter */}
+            <div className="text-zinc-400 font-mono text-xs mt-6 z-50 bg-black/30 px-3 py-1 rounded-full">
+              {activeImageIndex + 1} / {images.length}
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }
