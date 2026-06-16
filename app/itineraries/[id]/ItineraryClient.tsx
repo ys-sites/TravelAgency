@@ -120,12 +120,7 @@ export default function ItineraryClient({ id }: { id: string }) {
     setPassengerAges(ages => ages.map((age, i) => i === idx ? val : age));
   };
 
-  // Parse default nights from itinerary duration string (e.g. "8 days / 7 nights" → 7)
-  const defaultNights = (() => {
-    const match = itinerary?.duration?.EN?.match(/(\d+)\s*night/);
-    return match ? parseInt(match[1], 10) : 7;
-  })();
-  const [nights, setNights] = useState(defaultNights);
+
 
   if (!itinerary) {
     const tNotFound = {
@@ -674,36 +669,6 @@ export default function ItineraryClient({ id }: { id: string }) {
                   </div>
                 </div>
 
-                {/* Nights Duration (Preferred duration) */}
-                <div className="bg-white border border-zinc-200/80 rounded-2xl px-5 py-4 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
-                      {lang === "FR" ? "Durée préférée" : "Preferred duration"}
-                    </label>
-                    <span className="text-[13px] font-bold text-zinc-900 font-heading tabular-nums">
-                      {nights} {lang === "FR" ? "Nuits" : "Nights"}
-                    </span>
-                  </div>
-                  <div className="relative pt-1">
-                    <input
-                      type="range"
-                      min={5}
-                      max={30}
-                      step={1}
-                      value={nights}
-                      onChange={(e) => setNights(parseInt(e.target.value, 10))}
-                      className="w-full h-[3px] appearance-none bg-zinc-200 rounded-full cursor-pointer accent-zinc-900"
-                      style={{
-                        background: `linear-gradient(to right, #1a1a1a ${((nights - 5) / 25) * 100}%, #e4e4e7 ${((nights - 5) / 25) * 100}%)`
-                      }}
-                    />
-                    <div className="flex justify-between mt-2">
-                      <span className="text-[9px] font-mono text-zinc-400">5</span>
-                      <span className="text-[9px] font-mono text-zinc-400">15</span>
-                      <span className="text-[9px] font-mono text-zinc-400">30</span>
-                    </div>
-                  </div>
-                </div>
 
                 {/* Submit and Reassurance */}
                 <div className="space-y-4">
