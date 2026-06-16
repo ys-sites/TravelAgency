@@ -62,12 +62,8 @@ const t = {
   },
   brandName1: { FR: "Majestic", EN: "Majestic" },
   brandName2: { FR: "Experiences Voyages", EN: "Experiences Voyages" },
-  phone: { FR: "+212 524 456 789", EN: "+212 524 456 789" },
-  email: { FR: "concierge@majesticexperiences.ca", EN: "concierge@majesticexperiences.ca" },
-  address: {
-    FR: "Rue du Temple, Hivernage, Marrakech 40000, Maroc",
-    EN: "Rue du Temple, Hivernage, Marrakech 40000, Morocco"
-  }
+  phone: { FR: "514 919 6381", EN: "514 919 6381" },
+  email: { FR: "info@mevoyages.com", EN: "info@mevoyages.com" }
 };
 
 export default function Footer() {
@@ -121,9 +117,16 @@ export default function Footer() {
             {translate(t.contact, lang)}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
-            <li>{translate(t.phone, lang)}</li>
-            <li>{translate(t.email, lang)}</li>
-            <li className="leading-relaxed">{translate(t.address, lang)}</li>
+            <li>
+              <a href={`tel:${translate(t.phone, lang).replace(/\s+/g, '')}`} className="hover:text-brand-gold transition-colors">
+                {translate(t.phone, lang)}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${translate(t.email, lang)}`} className="hover:text-brand-gold transition-colors">
+                {translate(t.email, lang)}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
