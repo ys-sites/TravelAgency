@@ -16,7 +16,19 @@ const t = {
 
 export default function Tours() {
   const { lang } = useLang();
+  const [activeFilter, setActiveFilter] = React.useState("Tous");
 
+  const filterPills = [
+    { FR: "Tous", EN: "All" },
+    { FR: "Golf & Prestige", EN: "Golf & Prestige" },
+    { FR: "Golf & Océan", EN: "Golf & Ocean" },
+    { FR: "Golf & Luxe", EN: "Golf & Luxury" }
+  ];
+
+  const filteredTours = toursList.filter((tour) => {
+    if (activeFilter === "Tous") return true;
+    return tour.category.FR === activeFilter;
+  });
 
   return (
     <div className="max-w-[1200px] mx-auto px-6 py-20 bg-white text-zinc-900" id="itineraries">
@@ -79,16 +91,39 @@ export default function Tours() {
         </div>
 
         {/* Right Column: Curated Itineraries in a balanced 2x2 grid */}
-        <div className="lg:col-span-9 w-full relative">
+        <div className="lg:col-span-9 w-full relative space-y-8">
+          
+          {/* Filter Pills */}
+          <div className="flex flex-wrap gap-2.5">
+            {filterPills.map((pill) => {
+              const label = lang === "FR" ? pill.FR : pill.EN;
+              const isActive = activeFilter === pill.FR;
+              return (
+                <button
+                  key={pill.FR}
+                  onClick={() => setActiveFilter(pill.FR)}
+                  className={`px-4.5 py-2 text-[10px] font-mono tracking-widest uppercase transition-all duration-300 rounded-full cursor-pointer ${
+                    isActive
+                      ? "bg-brand-gold text-white shadow-sm"
+                      : "border border-zinc-300 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 bg-white"
+                  }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full">
-            {toursList.map((tour, index) => (
+            {filteredTours.map((tour, index) => (
               <motion.div
                 key={tour.id}
+                layout
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
                 whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
-                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: (index % 2) * 0.1, ease: "easeOut" }}
                 className="group relative flex flex-col rounded-[2.2rem] overflow-hidden border border-zinc-200/50 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300"
               >
                 {/* Image Header with Tags */}

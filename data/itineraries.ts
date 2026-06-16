@@ -155,54 +155,54 @@ export const toursList: TourCard[] = [
 
 export const dealsList: DealCard[] = [
   {
-    id: 1,
-    image: "/images/morocco-marrakech-riad.png",
-    badge: { FR: "PRESTIGE DE LUXE", EN: "Prestige Access" },
-    title: { FR: "Morocco Prestige – Luxe Ultime", EN: "Morocco Prestige – Ultimate Luxury" },
-    duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
+    id: 10,
+    image: "/images/royal_golf_aerial_1.jpg",
+    badge: { FR: "Signature", EN: "Signature" },
+    title: { FR: "Royal Golf de Marrakech", EN: "Royal Golf de Marrakech" },
+    duration: { FR: "5 à 10 nuits", EN: "5 to 10 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Pension complète", EN: "Full board" },
-    inclusions: { FR: "Suites Royal Mansour & Montgolfière Privée", EN: "Royal Mansour Suites & Private Balloon" },
-    oldPrice: "C$ 14,500",
-    newPrice: "C$ 12,500",
-    tag: "Sovereign Privilege — C$2,000 included",
+    meals: { FR: "Petit-déjeuner inclus", EN: "Breakfast included" },
+    inclusions: { FR: "3 parcours légendaires (Rouge, Bleu, Jaune) & caddie", EN: "3 legendary courses (Rouge, Blue, Yellow) & caddie" },
+    oldPrice: "",
+    newPrice: "Sur devis",
+    tag: "golf",
     promoText: {
-      FR: "Réservez avant le 15 août 2026 — C$2 000 en inclusions complémentaires / pers.",
-      EN: "Reserve before August 15, 2026 — C$2,000 in complimentary inclusions per guest"
+      FR: "Offre Spéciale — Caddie & buggy inclus pour chaque ronde",
+      EN: "Special Offer — Complimentary caddie & buggy for each round"
     }
   },
   {
-    id: 2,
-    image: "/images/moroco.webp",
-    badge: { FR: "DECOUVERTE IMPÉRIALE", EN: "Imperial Discovery" },
-    title: { FR: "Maroc Impérial & Découverte Sahara", EN: "Imperial Morocco & Sahara Discovery" },
-    duration: { FR: "12 jours / 11 nuits", EN: "12 days / 11 nights" },
+    id: 11,
+    image: "/images/tgz_course_ocean.jpg",
+    badge: { FR: "Exclusif", EN: "Exclusive" },
+    title: { FR: "Akenza Golf — Taghazout Bay", EN: "Akenza Golf — Taghazout Bay" },
+    duration: { FR: "5 à 7 nuits", EN: "5 to 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Pension complète", EN: "Full board" },
-    inclusions: { FR: "Ville Bleue & 2 nuits Sahara Camp", EN: "Blue City & 2 nights Sahara Camp" },
-    oldPrice: "C$ 6,800",
-    newPrice: "C$ 5,800",
-    tag: "Cultural Privilege — C$1,000 included",
+    meals: { FR: "Demi-pension", EN: "Half board" },
+    inclusions: { FR: "Hilton 5★ & parcours Championship face à l'océan", EN: "Hilton 5★ & Championship oceanfront course" },
+    oldPrice: "",
+    newPrice: "Sur devis",
+    tag: "golf",
     promoText: {
-      FR: "Réservez avant le 15 sept 2026 — C$1 000 en inclusions complémentaires / pers.",
-      EN: "Reserve before Sept 15, 2026 — C$1,000 in complimentary inclusions per guest"
+      FR: "Accès Spa Hilton — Soin marocain de 60 minutes offert",
+      EN: "Hilton Spa Access — Complimentary 60-minute Moroccan treatment"
     }
   },
   {
-    id: 3,
-    image: "/images/morocco-sahara-dunes.png",
-    badge: { FR: "IMMERSION DESERT", EN: "Desert Immersion" },
-    title: { FR: "Sahara Deep Dive – Immersion Désert", EN: "Sahara Deep Dive – Desert Immersion" },
-    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
+    id: 12,
+    image: "/images/almaaden_golf_1.jpg",
+    badge: { FR: "Premium", EN: "Premium" },
+    title: { FR: "Al Maaden Golf Resort", EN: "Al Maaden Golf Resort" },
+    duration: { FR: "4 à 7 nuits", EN: "4 to 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Pension complète", EN: "Full board" },
-    inclusions: { FR: "Traversée de Canyons & Camp de Luxe", EN: "Canyon Gorges & Luxury Camp" },
-    oldPrice: "C$ 5,700",
-    newPrice: "C$ 4,900",
-    tag: "Desert Explorer — C$800 included",
+    meals: { FR: "Breakfast inclus", EN: "Breakfast included" },
+    inclusions: { FR: "Hôtel 5★ & parcours Kyle Phillips au pied de l'Atlas", EN: "5★ hotel & Kyle Phillips course at the foot of the Atlas" },
+    oldPrice: "",
+    newPrice: "Sur devis",
+    tag: "golf",
     promoText: {
-      FR: "Réservez avant le 1er oct 2026 — C$800 en inclusions complémentaires / pers.",
-      EN: "Reserve before Oct 1, 2026 — C$800 in complimentary inclusions per guest"
+      FR: "Dîner gastronomique — Dîner de bienvenue offert",
+      EN: "Gourmet Dining — Complimentary welcome dinner included"
     }
   }
 ];
