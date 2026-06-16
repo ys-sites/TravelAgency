@@ -14,23 +14,23 @@ const getGalleryImages = (itineraryId: number) => {
   switch (itineraryId) {
     case 10:
       return [
-        "/images/18 parcours rouge.jpg",
-        "/images/10 parcours BLEU.jpg",
-        "/images/5 BLUE COURSE.JPG",
-        "/images/5ROUGE.JPG",
-        "/images/7bleu TGP.JPG",
-        "/images/9 JAUNE.JPG",
-        "/images/9BLEU MATIN.JPG",
-        "/images/CLUB HOUSE .JPG",
-        "/images/IMG_3723.JPG",
-        "/images/IMG_3752.JPG",
-        "/images/PARADISE OF FLOWERS .JPG",
-        "/images/PARCOURS ROUGE Trous n°09-17.jpg",
-        "/images/PARCOURS ROUGE Trous n°11.jpg",
-        "/images/PARCOURS ROUGE Trous n°12.jpg",
-        "/images/PARCOURS ROUGE Trous n°13.jpg",
-        "/images/coucher d_été.jpg",
-        "/images/soleil couchant.JPG"
+        "/images/rgdes_parcours_rouge_18.jpg",
+        "/images/rgdes_parcours_bleu_10.jpg",
+        "/images/rgdes_blue_course_5.jpg",
+        "/images/rgdes_rouge_5.jpg",
+        "/images/rgdes_bleu_7_tgp.jpg",
+        "/images/rgdes_jaune_9.jpg",
+        "/images/rgdes_bleu_9_matin.jpg",
+        "/images/rgdes_clubhouse.jpg",
+        "/images/rgdes_img_3723.jpg",
+        "/images/rgdes_img_3752.jpg",
+        "/images/rgdes_paradise_flowers.jpg",
+        "/images/rgdes_parcours_rouge_09_17.jpg",
+        "/images/rgdes_parcours_rouge_11.jpg",
+        "/images/rgdes_parcours_rouge_12.jpg",
+        "/images/rgdes_parcours_rouge_13.jpg",
+        "/images/rgdes_coucher_dete.jpg",
+        "/images/rgdes_soleil_couchant.jpg"
       ];
     case 11:
       return [
@@ -188,9 +188,16 @@ export default function ItineraryClient({ id }: { id: string }) {
               <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
             </Link>
             <div className="max-w-2xl space-y-6">
-              <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
-                {translate(itinerary.duration, lang)}
-              </span>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
+                  {translate(itinerary.duration, lang)}
+                </span>
+                <div className="flex gap-0.5 select-none bg-black/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-md">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-[#C5A880] text-[12px] leading-none">★</span>
+                  ))}
+                </div>
+              </div>
               <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide uppercase leading-tight font-bold text-brand-gold">
                 {translate(theme.heroTitle, lang)}
               </h1>
@@ -249,9 +256,16 @@ export default function ItineraryClient({ id }: { id: string }) {
               <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
             </Link>
             <div className="space-y-4">
-              <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
-                {translate(itinerary.duration, lang)}
-              </span>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
+                  {translate(itinerary.duration, lang)}
+                </span>
+                <div className="flex gap-0.5 select-none bg-black/45 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-md">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-[#C5A880] text-[12px] leading-none">★</span>
+                  ))}
+                </div>
+              </div>
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide uppercase leading-tight font-bold text-brand-gold">
                 {translate(itinerary.title, lang)}
               </h1>

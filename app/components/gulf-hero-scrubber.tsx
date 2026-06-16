@@ -32,7 +32,7 @@ export default function GulfHeroScrubber() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none z-1" />
 
       {/* Centered Premium Logo */}
-      <div className="absolute inset-0 flex items-center justify-center translate-y-4 z-10 px-6 select-none pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-center translate-y-2 z-10 px-6 select-none pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

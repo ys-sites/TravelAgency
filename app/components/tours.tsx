@@ -135,6 +135,13 @@ export default function Tours() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
                   
+                  {/* Star Rating Overlay */}
+                  <div className="absolute top-6 right-6 z-10 bg-black/45 backdrop-blur-md px-2.5 py-1.5 rounded-full flex gap-0.5 shadow-md border border-white/10 select-none">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-[#C5A880] text-[11px] leading-none">★</span>
+                    ))}
+                  </div>
+
                   {/* Badge container to prevent horizontal overlap on laptop/mobile screens */}
                   <div className="absolute top-6 left-6 right-6 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">
                     {/* Styled Tier Badge with Framer Motion and Shimmer */}

@@ -120,7 +120,7 @@ export const toursList: TourCard[] = [
     image: "/images/tgz_course_ocean.jpg",
     category: { FR: "Golf & Océan", EN: "Golf & Ocean" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
-    title: { FR: "Hilton Taghazout Hôtel 5★", EN: "Hilton Taghazout Hôtel 5★" },
+    title: { FR: "Hilton Taghazout Hôtel", EN: "Hilton Taghazout Hotel" },
     description: {
       FR: "Forfait comprenant vols de Montréal, 7 nuits au Hilton Taghazout 5★ en chambre vue piscine et 4 rondes sur les plus beaux parcours d'Agadir (Tazegzout, du Soleil, Les Dunes).",
       EN: "Package including Montreal flights, 7 nights at the 5★ Hilton Taghazout in a pool view room, and 4 rounds on Agadir's top courses (Tazegzout, du Soleil, Les Dunes)."
@@ -138,7 +138,7 @@ export const toursList: TourCard[] = [
     image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
     category: { FR: "Golf & Luxe", EN: "Golf & Luxury" },
     badge: { FR: "Premium", EN: "Premium" },
-    title: { FR: "White Beach Hôtel 5★", EN: "White Beach Hôtel 5★" },
+    title: { FR: "White Beach Hôtel", EN: "White Beach Hotel" },
     description: {
       FR: "Séjour de luxe ultime tout compris (adulte seulement) au White Beach Resort 5★ en chambre vue jardin, vols de Montréal et 4 rondes de golf incluses.",
       EN: "Ultimate luxury all-inclusive stay (adults only) at the 5★ White Beach Resort in a garden view room, Montreal flights, and 4 rounds of golf included."
@@ -175,7 +175,7 @@ export const dealsList: DealCard[] = [
     id: 11,
     image: "/images/tgz_course_ocean.jpg",
     badge: { FR: "Exclusif", EN: "Exclusive" },
-    title: { FR: "Hilton Taghazout Hôtel 5★", EN: "Hilton Taghazout Hôtel 5★" },
+    title: { FR: "Hilton Taghazout Hôtel", EN: "Hilton Taghazout Hotel" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
@@ -192,7 +192,7 @@ export const dealsList: DealCard[] = [
     id: 12,
     image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
     badge: { FR: "Premium", EN: "Premium" },
-    title: { FR: "White Beach Hôtel 5★", EN: "White Beach Hôtel 5★" },
+    title: { FR: "White Beach Hôtel", EN: "White Beach Hotel" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
@@ -333,7 +333,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     id: 11,
     image: "/images/tgz_course_ocean.jpg",
     contentImage: "/images/hilton_taghazout_1.avif",
-    title: { FR: "Hilton Taghazout Hôtel 5★", EN: "Hilton Taghazout Hôtel 5★" },
+    title: { FR: "Hilton Taghazout Hôtel", EN: "Hilton Taghazout Hotel" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     cost: { FR: "À partir de 3 879\u00A0$", EN: "Starting from C$\u00A03,879" },
     overview: {
@@ -473,7 +473,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     id: 12,
     image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
     contentImage: "/images/deluxe-room-sea-view.jpg",
-    title: { FR: "White Beach Hôtel 5★", EN: "White Beach Hôtel 5★" },
+    title: { FR: "White Beach Hôtel", EN: "White Beach Hotel" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     cost: { FR: "À partir de 4 255\u00A0$", EN: "Starting from C$\u00A04,255" },
     overview: {

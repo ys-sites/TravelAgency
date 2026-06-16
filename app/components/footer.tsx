@@ -17,12 +17,12 @@ const t = {
     EN: "Rabat — Royal Golf Dar Es Salam"
   },
   dubai: {
-    FR: "Agadir — Hilton Taghazout 5★",
-    EN: "Agadir — Hilton Taghazout 5★"
+    FR: "Agadir — Hilton Taghazout",
+    EN: "Agadir — Hilton Taghazout"
   },
   oman: {
-    FR: "Agadir — White Beach 5★",
-    EN: "Agadir — White Beach 5★"
+    FR: "Agadir — White Beach",
+    EN: "Agadir — White Beach"
   },
   saudi: {
     FR: "Forfaits Personnalisés",
