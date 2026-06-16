@@ -107,6 +107,7 @@ export default function ItineraryClient({ id }: { id: string }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [passengerCount, setPassengerCount] = useState(1);
   const [passengerAges, setPassengerAges] = useState<number[]>([0]);
+  const [selectedDate, setSelectedDate] = useState("");
 
   const updatePassengerCount = (delta: number) => {
     setPassengerCount(prev => {
@@ -346,6 +347,23 @@ export default function ItineraryClient({ id }: { id: string }) {
                 <p className="text-[14px] md:text-[15px] leading-relaxed text-zinc-600 font-light">
                   {translate(itinerary.overview, lang)}
                 </p>
+
+                {itinerary.dates && (
+                  <div className="bg-zinc-50 border border-zinc-200/60 p-6 rounded-2xl space-y-4 my-6">
+                    <span className="text-brand-gold font-mono text-[10px] tracking-[0.2em] uppercase block font-semibold">
+                      {lang === "FR" ? "Dates de départ disponibles" : "Available Departure Dates"}
+                    </span>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm text-zinc-800">
+                      {translate(itinerary.dates, lang).map((d: string, i: number) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 <a
                   href="#booking-form"
                   className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury hover:bg-[#72202b] shadow-md cursor-pointer mt-4"
@@ -641,6 +659,28 @@ export default function ItineraryClient({ id }: { id: string }) {
                       className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
                     />
                   </div>
+                  {itinerary.dates && (
+                    <div>
+                      <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                        {lang === "FR" ? "Date de départ souhaitée" : "Desired Departure Date"}
+                      </label>
+                      <select
+                        required
+                        value={selectedDate}
+                        onChange={(e) => setSelectedDate(e.target.value)}
+                        className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 cursor-pointer"
+                      >
+                        <option value="">
+                          {lang === "FR" ? "-- Sélectionnez une date de départ --" : "-- Select a departure date --"}
+                        </option>
+                        {translate(itinerary.dates, lang).map((d: string) => (
+                          <option key={d} value={d}>
+                            {d}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
                   <div>
                     <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500 text-wrap leading-tight">
                       {lang === "FR" ? "Vos souhaits particuliers, besoins alimentaires ou occasions spéciales ?" : "Any special wishes, dietary needs, or occasions we should know about?"}

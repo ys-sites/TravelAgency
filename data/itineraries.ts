@@ -65,6 +65,7 @@ export interface ItineraryDetail {
   };
   hotels: HotelDetail[];
   activities: ActivityDetail[];
+  dates?: { FR: string[]; EN: string[] };
 }
 
 export interface MapPinDetail {
@@ -467,7 +468,21 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
           EN: "Hilly 27-hole layout designed by Cabell B. Robinson."
         }
       }
-    ]
+    ],
+    dates: {
+      FR: [
+        "25 septembre 2026 – 3 octobre 2026",
+        "2 octobre 2026 – 10 octobre 2026",
+        "9 octobre 2026 – 17 octobre 2026",
+        "16 octobre 2026 – 24 octobre 2026"
+      ],
+      EN: [
+        "September 25, 2026 – October 3, 2026",
+        "October 2, 2026 – October 10, 2026",
+        "October 9, 2026 – October 17, 2026",
+        "October 16, 2026 – October 24, 2026"
+      ]
+    }
   },
   "12": {
     id: 12,
@@ -605,7 +620,21 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
           EN: "Exceptional hilly layout designed by Cabell B. Robinson."
         }
       }
-    ]
+    ],
+    dates: {
+      FR: [
+        "25 septembre 2026 – 3 octobre 2026",
+        "2 octobre 2026 – 10 octobre 2026",
+        "9 octobre 2026 – 17 octobre 2026",
+        "16 octobre 2026 – 24 octobre 2026"
+      ],
+      EN: [
+        "September 25, 2026 – October 3, 2026",
+        "October 2, 2026 – October 10, 2026",
+        "October 9, 2026 – October 17, 2026",
+        "October 16, 2026 – October 24, 2026"
+      ]
+    }
   }
 };
 
