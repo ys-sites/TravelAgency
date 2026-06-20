@@ -93,8 +93,8 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
             <li><Link href="/itineraries/10" className="hover:text-brand-gold transition-colors">{translate(t.morocco, lang)}</Link></li>
-            <li><Link href="/itineraries/11" className="hover:text-brand-gold transition-colors">{translate(t.dubai, lang)}</Link></li>
-            <li><Link href="/itineraries/12" className="hover:text-brand-gold transition-colors">{translate(t.oman, lang)}</Link></li>
+            <li><Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors">{translate(t.dubai, lang)}</Link></li>
+            <li><Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors">{translate(t.oman, lang)}</Link></li>
             <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{translate(t.saudi, lang)}</Link></li>
           </ul>
         </div>

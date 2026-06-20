@@ -216,7 +216,7 @@ export default function ItinerariesClient() {
                   </div>
 
                   <Link 
-                    href={`/itineraries/${tour.id}`}
+                    href={tour.id === 11 || tour.id === 12 ? "/golf-itineraries/agadir" : `/itineraries/${tour.id}`}
                     className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
                   >
                     {translate(t.book, lang)}

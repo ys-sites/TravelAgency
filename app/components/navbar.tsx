@@ -6,6 +6,7 @@ import { useLang, translate } from "../context/lang-context";
 
 const t = {
   portfolios: { FR: "Forfaits Golf", EN: "Golf Packages" },
+  agadirGolf: { FR: "Golf Agadir", EN: "Agadir Golf" },
   itineraries:{ FR: "Itinéraires", EN: "Itineraries" },
   about:      { FR: "À Propos", EN: "About Us" },
   customTrip: { FR: "Voyage Sur Mesure", EN: "Custom Trip" },
@@ -41,6 +42,9 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-8 text-white/90 font-body text-[13px] font-medium">
           <Link href="/#portfolios" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.portfolios, lang)}
+          </Link>
+          <Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+            {translate(t.agadirGolf, lang)}
           </Link>
           <Link href="/itineraries" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.itineraries, lang)}
