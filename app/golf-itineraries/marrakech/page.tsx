@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import MarrakechGolfClient from "./MarrakechGolfClient";
+import MarrakechGolfClient from "@/app/golf-itineraries/marrakech/MarrakechGolfClient";
 
 export const metadata: Metadata = {
   title: "Premium Marrakech Golf Packages — Elite Travel Morocco | Majestic Experiences",

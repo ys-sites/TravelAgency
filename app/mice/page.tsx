@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import MiceClient from "./MiceClient";
+import MiceClient from "@/app/mice/MiceClient";
 
 export const metadata: Metadata = {
   title: "MICE Corporate Services Morocco — Meetings & Events | Majestic Experiences",
