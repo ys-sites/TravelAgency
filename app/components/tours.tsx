@@ -169,10 +169,10 @@ export default function Tours() {
                     <button
                       key={pill.id}
                       onClick={() => setActiveType(pill.id)}
-                      className={`px-4 py-2.5 text-[9px] font-mono tracking-widest uppercase transition-all duration-300 rounded-full cursor-pointer ${
+                      className={`px-5 py-2.5 text-[11px] md:text-[12px] font-sans font-semibold tracking-wider uppercase transition-all duration-300 rounded-full cursor-pointer ${
                         isActive
-                          ? "bg-brand-gold text-white shadow-sm border border-brand-gold"
-                          : "border border-zinc-300 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 bg-white"
+                          ? "bg-brand-gold text-white shadow-sm border border-brand-gold font-bold"
+                          : "border border-zinc-300/80 text-zinc-600 hover:border-zinc-400 hover:text-zinc-800 bg-white"
                       }`}
                     >
                       {label}
@@ -198,10 +198,10 @@ export default function Tours() {
                     <button
                       key={pill.id}
                       onClick={() => setActiveCity(pill.id)}
-                      className={`px-4 py-2.5 text-[9px] font-mono tracking-widest uppercase transition-all duration-300 rounded-full cursor-pointer ${
+                      className={`px-5 py-2.5 text-[11px] md:text-[12px] font-sans font-semibold tracking-wider uppercase transition-all duration-300 rounded-full cursor-pointer ${
                         isActive
-                          ? "bg-brand-gold text-white shadow-sm border border-brand-gold"
-                          : "border border-zinc-300 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 bg-white"
+                          ? "bg-brand-gold text-white shadow-sm border border-brand-gold font-bold"
+                          : "border border-zinc-300/80 text-zinc-600 hover:border-zinc-400 hover:text-zinc-800 bg-white"
                       }`}
                     >
                       {label}
