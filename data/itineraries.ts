@@ -308,8 +308,28 @@ export const toursList: TourCard[] = [
     tag: "tour",
     iconType: "lighthouse",
     city: { FR: "Villes Impériales", EN: "Imperial Cities" },
+  },
+  {
+    id: 99,
+    image: "/images/gulf-city-skyline.png",
+    category: { FR: "MICE & Corporatif", EN: "MICE & Corporate" },
+    badge: { FR: "Exclusif", EN: "Exclusive" },
+    title: { FR: "Séminaires & Événements d'Affaires", EN: "Meetings, Incentives & Business Events" },
+    description: {
+      FR: "Des solutions clés en main pour vos congrès, séminaires, retraites de direction et team-building au Maroc.",
+      EN: "Turnkey solutions for your conferences, seminars, executive board retreats, and team-building in Morocco."
+    },
+    duration: { FR: "Sur mesure", EN: "Custom duration" },
+    flight: { FR: "Prestations incluses", EN: "All services included" },
+    meals: { FR: "Hébergement & Logistique", EN: "Accommodation & Logistics" },
+    oldPrice: "",
+    price: { FR: "Sur devis", EN: "On request" },
+    tag: "mice",
+    iconType: "lighthouse",
+    city: { FR: "Toutes Villes", EN: "All Cities" },
   }
 ];
+
 
 export const dealsList: DealCard[] = [
   {

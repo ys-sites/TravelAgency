@@ -25,7 +25,8 @@ export default function ItinerariesClient() {
   const typePills = [
     { id: "All", FR: "Tous les Types", EN: "All Travel Types" },
     { id: "Golf", FR: "Forfaits Golf", EN: "Golf Packages" },
-    { id: "Tours", FR: "Tours & Circuits", EN: "Tours & Discovery" }
+    { id: "Tours", FR: "Tours & Circuits", EN: "Tours & Discovery" },
+    { id: "Mice", FR: "MICE & Corporatif", EN: "MICE & Corporate" }
   ];
 
   const cityPills = [
@@ -53,6 +54,8 @@ export default function ItinerariesClient() {
       case 7:
       case 9:
         return "Imperial";
+      case 99:
+        return activeCity;
       default:
         return "Other";
     }
@@ -63,6 +66,7 @@ export default function ItinerariesClient() {
     if (activeType !== "All") {
       if (activeType === "Golf" && tour.tag !== "golf") return false;
       if (activeType === "Tours" && tour.tag !== "tour") return false;
+      if (activeType === "Mice" && tour.tag !== "mice") return false;
     }
     // 2. Filter by City
     if (activeCity !== "All") {
@@ -300,7 +304,9 @@ export default function ItinerariesClient() {
 
                   <Link 
                     href={
-                      tour.id === 11 || tour.id === 12 || tour.id === 13
+                      tour.id === 99
+                        ? "/mice"
+                        : tour.id === 11 || tour.id === 12 || tour.id === 13
                         ? "/golf-itineraries/agadir"
                         : tour.id === 14 || tour.id === 15 || tour.id === 16
                         ? "/golf-itineraries/marrakech"
