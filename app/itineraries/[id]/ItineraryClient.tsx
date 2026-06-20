@@ -250,11 +250,15 @@ export default function ItineraryClient({ id }: { id: string }) {
 
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-12 max-w-7xl mx-auto z-10">
             <Link
-              href="/"
+              href={itinerary.id === 11 || itinerary.id === 12 ? "/golf-itineraries/agadir" : "/"}
               className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
+              <span>
+                {itinerary.id === 11 || itinerary.id === 12
+                  ? (lang === "FR" ? "Retour au Golf Agadir" : "Back to Agadir Golf")
+                  : (lang === "FR" ? "Retour à l'accueil" : "Back to Home")}
+              </span>
             </Link>
             <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-3">
