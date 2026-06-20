@@ -144,7 +144,7 @@ export default function ItineraryPackageCard({
           {/* 4. The hotel/package name as a bold headline */}
           <div className="space-y-1">
             {city && (
-              <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase font-bold text-brand-gold block">
+              <span className="text-[12px] md:text-[13px] font-mono tracking-[0.25em] uppercase font-bold text-brand-gold block">
                 {formatText(city)}
               </span>
             )}

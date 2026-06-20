@@ -259,7 +259,7 @@ export default function ItinerariesClient() {
 
                     <div className="space-y-1.5">
                       {tour.city && (
-                        <span className="text-[10px] font-mono tracking-[0.25em] uppercase font-bold text-brand-gold block">
+                        <span className="text-[12px] md:text-[13px] font-mono tracking-[0.25em] uppercase font-bold text-brand-gold block">
                           {translate(tour.city, lang)}
                         </span>
                       )}
