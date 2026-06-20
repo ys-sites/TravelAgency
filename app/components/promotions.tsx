@@ -8,7 +8,25 @@ import { useLang, translate } from "../context/lang-context";
 import { dealsList } from "@/data/itineraries";
 import { getTierStyle } from "../utils/tier-styles";
 
+const getNightsLabel = (duration: { FR: string; EN: string }, lang: "FR" | "EN") => {
+  const text = lang === "FR" ? duration.FR : duration.EN;
+  const match = text.match(/(\d+)\s*(nuit|night)s?/i);
+  if (match) {
+    const num = match[1];
+    return lang === "FR" ? `- ${num} NUITS` : `- ${num} NIGHTS`;
+  }
+  if (text.toLowerCase().includes("mesure") || text.toLowerCase().includes("custom")) {
+    return lang === "FR" ? "- SUR MESURE" : "- CUSTOM";
+  }
+  return `- ${text.toUpperCase()}`;
+};
+
+const cleanTitle = (title: string) => {
+  return title.replace(/\s*\(\d+N\)\s*$/i, "");
+};
+
 export default function Promotions() {
+
   const { lang } = useLang();
 
   const selectedDeals = [
@@ -148,13 +166,16 @@ export default function Promotions() {
                   </div>
 
                   <div className="pt-1">
-                    <span className="text-[14px] md:text-[15px] font-mono tracking-[0.25em] uppercase font-bold text-[#8B2635] block mb-1.5">
-                      {translate(deal.city, lang)}
-                    </span>
-                    <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
-                      {translate(deal.title, lang)}
+                    {deal.title && (
+                      <span className="text-[14px] md:text-[15px] font-mono tracking-[0.25em] uppercase font-bold text-[#8B2635] block mb-1.5">
+                        {cleanTitle(translate(deal.title, lang))}
+                      </span>
+                    )}
+                    <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug uppercase">
+                      {translate(deal.city, lang)} {getNightsLabel(deal.duration, lang)}
                     </h3>
                   </div>
+
 
                   <p className="text-[13.5px] leading-relaxed text-zinc-600 font-light pt-2.5 border-t border-zinc-100">
                     <span className="font-heading text-[10px] uppercase tracking-wider font-bold text-brand-gold-dark block mb-1">
