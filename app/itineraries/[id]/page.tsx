@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!itinerary) {
     return {
       title: "Curated Luxury Itinerary | Majestic Experiences",
-      description: "Bespoke ultra-luxury travel experiences designed for discerning travellers."
+      description: "Exclusive ultra-luxury travel experiences designed for discerning travellers."
     };
   }
 

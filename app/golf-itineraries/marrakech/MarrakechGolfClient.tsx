@@ -34,7 +34,7 @@ export default function MarrakechGolfClient() {
     },
     customDesc: {
       FR: "Vous souhaitez personnaliser ce séjour ? Modifiez les parcours, étendez la durée ou ajoutez d'autres services de conciergerie privée.",
-      EN: "Want to customize this journey? Change courses, extend your stay, or add bespoke private concierge services."
+      EN: "Want to customize this journey? Change courses, extend your stay, or add exclusive private concierge services."
     },
     customBtn: {
       FR: "Personnaliser Mon Séjour",

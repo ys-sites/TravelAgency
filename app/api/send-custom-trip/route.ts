@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     // Log the custom trip transmission payload to console for full traceability
     console.log("=========================================");
     console.log("SECURE PGP TRANSMISSION INCOMING");
-    console.log("TYPE:", isPremium ? "PREMIUM SOVEREIGN PASSAGE" : "STANDARD BESPOKE PASSAGE");
+    console.log("TYPE:", isPremium ? "PREMIUM SOVEREIGN PASSAGE" : "STANDARD EXCLUSIVE PASSAGE");
     console.log("CLIENT:", contact.fullName);
     console.log("EMAIL:", contact.email);
     console.log("PHONE:", contact.phone);
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     // e.g.:
     // await sendMail({
     //   to: process.env.OWNER_EMAIL,
-    //   subject: `Bespoke Inquiry from ${contact.fullName}`,
+    //   subject: `Exclusive Inquiry from ${contact.fullName}`,
     //   text: `...`
     // });
 

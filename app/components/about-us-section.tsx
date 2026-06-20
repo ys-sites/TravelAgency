@@ -18,7 +18,7 @@ const t = {
     FR: "Majestic Experiences Voyages a été fondée par des voyageurs qui croyaient que le vrai luxe n'est pas seulement une opulence — c'est une question de sens, de confidentialité et de connexion. Nous nous spécialisons exclusivement au Maroc car nous connaissons profondément cette destination : ses riads cachés, ses silences désertiques, ses parcours de golf spectaculaires, et ses traditions royales d'hospitalité."
   },
   paragraph2: {
-    EN: "Every journey we design is entirely bespoke. We handle nothing in volume. Our team is bilingual, available 24/7, and works with a curated network of private properties, aviation partners, and local guides that are never available through conventional booking platforms.",
+    EN: "Every journey we design is entirely exclusive. We handle nothing in volume. Our team is bilingual, available 24/7, and works with a curated network of private properties, aviation partners, and local guides that are never available through conventional booking platforms.",
     FR: "Chaque voyage que nous concevons est entièrement sur mesure. Nous ne traitons rien en volume. Notre équipe est bilingue, disponible 24h/24 et 7j/7, et travaille avec un réseau soigneusement sélectionné de propriétés privées, de partenaires aériens et de guides locaux qui ne sont jamais disponibles par les plateformes de réservation conventionnelles."
   },
   credential1Label: {

@@ -25,7 +25,7 @@ export default function MiceClient() {
     },
     subtitle: {
       FR: "Des solutions sur mesure conçues pour la réussite de vos événements d'affaires.",
-      EN: "Bespoke corporate solutions designed to achieve your business objectives."
+      EN: "Exclusive corporate solutions designed to achieve your business objectives."
     },
     overviewText: {
       FR: "Chez Majestic Experiences Voyages, nous sommes spécialisés dans la création d'expériences MICE d'exception au Maroc. Qu'il s'agisse d'un séminaire d'entreprise, d'un voyage de récompense (incentive), d'un congrès d'envergure, d'un lancement de produit ou d'une retraite de direction, notre équipe offre des solutions fluides, créatives et adaptées à vos objectifs commerciaux.",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import CustomTripClient from "./CustomTripClient";
 
 export const metadata: Metadata = {
-  title: "Build Your Bespoke Journey — Custom Luxury Travel | Majestic Experiences",
+  title: "Build Your Exclusive Journey — Custom Luxury Travel | Majestic Experiences",
   description: "Design your perfect luxury trip to Morocco. Select destinations, activities, and duration. Our bilingual concierge team will handle everything else.",
 };
 
