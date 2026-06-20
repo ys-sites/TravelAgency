@@ -25,7 +25,8 @@ export default function ItinerariesClient() {
     { FR: "Tous", EN: "All" },
     { FR: "Golf & Prestige", EN: "Golf & Prestige" },
     { FR: "Golf & Océan", EN: "Golf & Ocean" },
-    { FR: "Golf & Luxe", EN: "Golf & Luxury" }
+    { FR: "Golf & Luxe", EN: "Golf & Luxury" },
+    { FR: "Tours & Découvertes", EN: "Tours & Discovery" }
   ];
 
   const filteredTours = toursList.filter((tour) => {
@@ -216,7 +217,13 @@ export default function ItinerariesClient() {
                   </div>
 
                   <Link 
-                    href={tour.id === 11 || tour.id === 12 ? "/golf-itineraries/agadir" : `/itineraries/${tour.id}`}
+                    href={
+                      tour.id === 11 || tour.id === 12 || tour.id === 13
+                        ? "/golf-itineraries/agadir"
+                        : tour.id === 14 || tour.id === 15 || tour.id === 16
+                        ? "/golf-itineraries/marrakech"
+                        : `/itineraries/${tour.id}`
+                    }
                     className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
                   >
                     {translate(t.book, lang)}

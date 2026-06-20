@@ -8,7 +8,7 @@ import Footer from "../../components/footer";
 import ItineraryPackageCard from "../../components/ItineraryPackageCard";
 import { useLang, translate } from "../../context/lang-context";
 
-export default function AgadirGolfClient() {
+export default function MarrakechGolfClient() {
   const { lang } = useLang();
 
   const text = {
@@ -21,12 +21,12 @@ export default function AgadirGolfClient() {
       EN: "Elite Golf Collections"
     },
     title: {
-      FR: "Séjours Golf à Agadir",
-      EN: "Agadir Golf Packages"
+      FR: "Séjours Golf à Marrakech",
+      EN: "Marrakech Golf Packages"
     },
     description: {
-      FR: "Découvrez Agadir, la perle de l'Atlantique marocain. Jouez sur des parcours de championnat face à l'océan et profitez d'une hospitalité d'exception dans nos complexes partenaires 5★.",
-      EN: "Discover Agadir, the jewel of the Moroccan Atlantic. Play on championship courses facing the ocean and enjoy exceptional hospitality at our 5★ partner resorts."
+      FR: "Découvrez Marrakech, l'oasis impériale du Maroc. Jouez sur des parcours de championnat de renommée mondiale nichés face aux sommets enneigés de l'Atlas, et profitez du luxe exceptionnel de nos complexes partenaires 5★.",
+      EN: "Discover Marrakech, the imperial oasis of Morocco. Play on world-renowned championship courses nestled against the snow-capped Atlas peaks, and experience the exceptional luxury of our 5★ partner resorts."
     },
     customTitle: {
       FR: "Voyage de Golf Sur Mesure",
@@ -43,78 +43,78 @@ export default function AgadirGolfClient() {
   };
 
   const packageA = {
-    tierLabel: { FR: "Exclusif", EN: "Exclusive" },
-    rating: 5,
-    image: "/images/tgz_course_ocean.jpg",
-    bannerText: {
-      FR: "Tarif spécial — Vue piscine & vol inclus",
-      EN: "Special rate — Pool view & flight included"
-    },
-    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    flightIncluded: true,
-    mealPlan: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
-    packageName: { FR: "Hilton Taghazout Hôtel", EN: "Hilton Taghazout Hotel" },
-    highlights: [
-      { FR: "4 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "4 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
-      { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
-      { FR: "Hébergement 5★ en chambre vue piscine", EN: "5★ accommodation in a Pool View Room" },
-      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
-      { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
-    ],
-    price: "3,879",
-    currency: "C$",
-    ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/11"
-  };
-
-  const packageB = {
     tierLabel: { FR: "Premium", EN: "Premium" },
     rating: 5,
-    image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
+    image: "/images/royal_golf_marrakech_1.jpg",
     bannerText: {
-      FR: "Séjour de luxe — Vue jardin & vol inclus",
-      EN: "Luxury stay — Garden view & flight included"
-    },
-    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    flightIncluded: true,
-    mealPlan: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
-    packageName: { FR: "White Beach Hôtel", EN: "White Beach Hotel" },
-    highlights: [
-      { FR: "4 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "4 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
-      { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
-      { FR: "Séjour tout compris haut de gamme (Adulte Seul)", EN: "Premium all-inclusive stay (Adults Only)" },
-      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
-      { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
-    ],
-    price: "4,255",
-    currency: "C$",
-    ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/12"
-  };
-
-  const packageC = {
-    tierLabel: { FR: "Exclusif", EN: "Exclusive" },
-    rating: 5,
-    image: "/images/tgz_course_hotel.jpg",
-    bannerText: {
-      FR: "Tarif spécial 10 Nuits — Chambre double vue jardin",
-      EN: "Special 10 Nights Rate — Double garden view room"
+      FR: "Séjour de luxe tout inclus — Palmeraie & vol direct",
+      EN: "Luxury all-inclusive stay — Palmeraie & direct flight"
     },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
     flightIncluded: true,
-    mealPlan: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
-    packageName: { FR: "Hilton Taghazout Hôtel (10N)", EN: "Hilton Taghazout Hotel (10N)" },
+    mealPlan: { FR: "Tout Compris", EN: "All Inclusive" },
+    packageName: { FR: "Hôtel du Golf 5★", EN: "Hotel du Golf 5★" },
     highlights: [
-      { FR: "6 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "6 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
+      { FR: "6 rondes de golf de championnat à Marrakech", EN: "6 rounds of championship golf in Marrakech" },
       { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
-      { FR: "Hébergement 5★ en chambre double vue jardin", EN: "5★ accommodation in a double garden view room" },
-      { FR: "Vol direct aller-retour et sac de golf inclus", EN: "Direct round-trip flight and golf bag included" },
-      { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
+      { FR: "Hébergement 5★ haut de gamme tout inclus", EN: "5★ premium all-inclusive accommodation" },
+      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
+      { FR: "Transferts privés aéroport, hôtel et golfs", EN: "Private airport, hotel, and course transfers" }
     ],
-    price: "4,989",
+    price: "5,899",
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/13"
+    ctaHref: "/itineraries/14"
+  };
+
+  const packageB = {
+    tierLabel: { FR: "Exclusif", EN: "Exclusive" },
+    rating: 5,
+    image: "/images/morocco-marrakech-riad.png",
+    bannerText: {
+      FR: "Évasion de luxe — Riad Adults Only & vol direct",
+      EN: "Luxury escape — Adults Only Riad & direct flight"
+    },
+    duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
+    flightIncluded: true,
+    mealPlan: { FR: "Petit-déjeuner ou Pension Complète", EN: "Breakfast or Full Board" },
+    packageName: { FR: "Jaal Riad Hôtel 5★ (10N)", EN: "Jaal Riad Hotel 5★ (10N)" },
+    highlights: [
+      { FR: "6 rondes de golf de championnat à Marrakech", EN: "6 rounds of championship golf in Marrakech" },
+      { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
+      { FR: "Séjour de luxe 5★ réservé aux adultes (Riad)", EN: "Adults-only 5★ luxury Riad accommodation" },
+      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
+      { FR: "Transferts privés aéroport, hôtel et golfs", EN: "Private airport, hotel, and course transfers" }
+    ],
+    price: "4,669",
+    currency: "C$",
+    ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
+    ctaHref: "/itineraries/15"
+  };
+
+  const packageC = {
+    tierLabel: { FR: "Premium", EN: "Premium" },
+    rating: 5,
+    image: "/images/royal_golf_marrakech_2.jpg",
+    bannerText: {
+      FR: "Séjour court — Riad de prestige & vol direct",
+      EN: "Short stay — Prestige Riad & direct flight"
+    },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
+    flightIncluded: true,
+    mealPlan: { FR: "Petit-déjeuner ou Pension Complète", EN: "Breakfast or Full Board" },
+    packageName: { FR: "Jaal Riad Hôtel 5★ (7N)", EN: "Jaal Riad Hotel 5★ (7N)" },
+    highlights: [
+      { FR: "4 rondes de golf de championnat à Marrakech", EN: "4 rounds of championship golf in Marrakech" },
+      { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
+      { FR: "Séjour 5★ d'exception réservé aux adultes", EN: "Exceptional 5★ adults-only stay" },
+      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
+      { FR: "Transferts privés aéroport, hôtel et golfs", EN: "Private airport, hotel, and course transfers" }
+    ],
+    price: "3,979",
+    currency: "C$",
+    ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
+    ctaHref: "/itineraries/16"
   };
 
   return (
@@ -131,8 +131,8 @@ export default function AgadirGolfClient() {
       {/* Hero Header Section */}
       <section className="relative h-[55vh] w-full overflow-hidden bg-zinc-950 flex flex-col justify-end pb-12 px-6 md:px-12">
         <img
-          src="/images/tgz_course_ocean.jpg"
-          alt="Agadir Golf Packages"
+          src="/images/marrakech_sunset_hero.png"
+          alt="Marrakech Golf Packages"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
@@ -164,7 +164,7 @@ export default function AgadirGolfClient() {
         </p>
       </section>
 
-      {/* Side-by-side packages grid */}
+      {/* side-by-side packages grid */}
       <section className="pb-24 pt-6 px-6 max-w-6xl mx-auto z-20 relative bg-white">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           <ItineraryPackageCard {...packageA} index={0} />

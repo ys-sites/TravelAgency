@@ -82,6 +82,47 @@ const getGalleryImages = (itineraryId: number) => {
         "/images/gym.jpg",
         "/images/food-court.jpg"
       ];
+    case 13:
+      return [
+        "/images/tgz_course_1.jpg",
+        "/images/tgz_course_2.jpg",
+        "/images/tgz_course_3.jpg",
+        "/images/tgz_course_4.jpg",
+        "/images/tgz_course_aerial.jpg",
+        "/images/tgz_course_bleu7.jpg",
+        "/images/tgz_course_bleu9.jpg",
+        "/images/tgz_course_hotel.jpg",
+        "/images/tgz_course_ocean.jpg",
+        "/images/hilton_taghazout_1.avif",
+        "/images/hilton_taghazout_2.avif",
+        "/images/hilton_taghazout_3.avif",
+        "/images/hilton_taghazout_4.avif",
+        "/images/hilton_taghazout_5.avif"
+      ];
+    case 14:
+      return [
+        "/images/royal_golf_marrakech_1.jpg",
+        "/images/royal_golf_marrakech_2.jpg",
+        "/images/royal_golf_sunset.jpg",
+        "/images/almaaden_golf_1.jpg",
+        "/images/almaaden_golf_2.jpg",
+        "/images/almaaden_golf_3.jpg",
+        "/images/akenza_golf_1.jpg",
+        "/images/akenza_golf_2.jpg",
+        "/images/akenza_golf_3.jpg"
+      ];
+    case 15:
+    case 16:
+      return [
+        "/images/morocco-marrakech-riad.png",
+        "/images/marrakech_sunset_hero.png",
+        "/images/marrakech_golf_blue5.jpg",
+        "/images/marrakech_golf_rouge18.jpg",
+        "/images/royal_golf_marrakech_1.jpg",
+        "/images/royal_golf_marrakech_2.jpg",
+        "/images/almaaden_golf_1.jpg",
+        "/images/almaaden_golf_2.jpg"
+      ];
     default:
       return [];
   }
@@ -93,9 +134,17 @@ export default function ItineraryClient({ id }: { id: string }) {
   // Safe lookup to prevent securecoder CWE-94 dynamic bracket notation warning
   const itinerary = (() => {
     switch (id) {
+      case "6": return itinerariesData["6"];
+      case "7": return itinerariesData["7"];
+      case "8": return itinerariesData["8"];
+      case "9": return itinerariesData["9"];
       case "10": return itinerariesData["10"];
       case "11": return itinerariesData["11"];
       case "12": return itinerariesData["12"];
+      case "13": return itinerariesData["13"];
+      case "14": return itinerariesData["14"];
+      case "15": return itinerariesData["15"];
+      case "16": return itinerariesData["16"];
       default: return null;
     }
   })();
@@ -159,9 +208,15 @@ export default function ItineraryClient({ id }: { id: string }) {
       case "5": return itineraryThemes["5"];
       case "6": return itineraryThemes["6"];
       case "7": return itineraryThemes["7"];
+      case "8": return null;
+      case "9": return null;
       case "10": return null;
       case "11": return null;
       case "12": return null;
+      case "13": return null;
+      case "14": return null;
+      case "15": return null;
+      case "16": return null;
       default: return null;
     }
   })();
@@ -250,13 +305,21 @@ export default function ItineraryClient({ id }: { id: string }) {
 
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-12 max-w-7xl mx-auto z-10">
             <Link
-              href={itinerary.id === 11 || itinerary.id === 12 ? "/golf-itineraries/agadir" : "/"}
+              href={
+                itinerary.id === 11 || itinerary.id === 12 || itinerary.id === 13
+                  ? "/golf-itineraries/agadir"
+                  : itinerary.id === 14 || itinerary.id === 15 || itinerary.id === 16
+                  ? "/golf-itineraries/marrakech"
+                  : "/"
+              }
               className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>
-                {itinerary.id === 11 || itinerary.id === 12
+                {itinerary.id === 11 || itinerary.id === 12 || itinerary.id === 13
                   ? (lang === "FR" ? "Retour au Golf Agadir" : "Back to Agadir Golf")
+                  : itinerary.id === 14 || itinerary.id === 15 || itinerary.id === 16
+                  ? (lang === "FR" ? "Retour au Golf Marrakech" : "Back to Marrakech Golf")
                   : (lang === "FR" ? "Retour à l'accueil" : "Back to Home")}
               </span>
             </Link>

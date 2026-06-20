@@ -20,9 +20,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       case "5": return itinerariesData["5"];
       case "6": return itinerariesData["6"];
       case "7": return itinerariesData["7"];
+      case "8": return itinerariesData["8"];
+      case "9": return itinerariesData["9"];
       case "10": return itinerariesData["10"];
       case "11": return itinerariesData["11"];
       case "12": return itinerariesData["12"];
+      case "13": return itinerariesData["13"];
+      case "14": return itinerariesData["14"];
+      case "15": return itinerariesData["15"];
+      case "16": return itinerariesData["16"];
       default: return null;
     }
   })();

@@ -7,6 +7,8 @@ import { useLang, translate } from "../context/lang-context";
 const t = {
   portfolios: { FR: "Forfaits Golf", EN: "Golf Packages" },
   agadirGolf: { FR: "Golf Agadir", EN: "Agadir Golf" },
+  marrakechGolf: { FR: "Golf Marrakech", EN: "Marrakech Golf" },
+  mice:       { FR: "MICE", EN: "MICE" },
   itineraries:{ FR: "Itinéraires", EN: "Itineraries" },
   about:      { FR: "À Propos", EN: "About Us" },
   customTrip: { FR: "Voyage Sur Mesure", EN: "Custom Trip" },
@@ -43,8 +45,14 @@ export default function Navbar() {
           <Link href="/#portfolios" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.portfolios, lang)}
           </Link>
-          <Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+  <Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.agadirGolf, lang)}
+          </Link>
+          <Link href="/golf-itineraries/marrakech" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+            {translate(t.marrakechGolf, lang)}
+          </Link>
+          <Link href="/mice" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+            {translate(t.mice, lang)}
           </Link>
           <Link href="/itineraries" className="hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.itineraries, lang)}
