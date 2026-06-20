@@ -14,6 +14,24 @@ const t = {
   }
 };
 
+const getNightsLabel = (duration: { FR: string; EN: string }, lang: "FR" | "EN") => {
+  const text = lang === "FR" ? duration.FR : duration.EN;
+  const match = text.match(/(\d+)\s*(nuit|night)s?/i);
+  if (match) {
+    const num = match[1];
+    return lang === "FR" ? `- ${num} NUITS` : `- ${num} NIGHTS`;
+  }
+  if (text.toLowerCase().includes("mesure") || text.toLowerCase().includes("custom")) {
+    return lang === "FR" ? "- SUR MESURE" : "- CUSTOM";
+  }
+  return `- ${text.toUpperCase()}`;
+};
+
+const cleanTitle = (title: string) => {
+  return title.replace(/\s*\(\d+N\)\s*$/i, "");
+};
+
+
 export default function Tours() {
   const { lang } = useLang();
   const [activeType, setActiveType] = React.useState("All"); // All, Golf, Tours
@@ -259,13 +277,13 @@ export default function Tours() {
                     </div>
 
                     <div className="space-y-1.5">
-                      {tour.city && (
+                      {tour.title && (
                         <span className="text-[14px] md:text-[15px] font-mono tracking-[0.25em] uppercase font-bold text-[#8B2635] block">
-                          {translate(tour.city, lang)}
+                          {cleanTitle(translate(tour.title, lang))}
                         </span>
                       )}
-                      <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
-                        {translate(tour.title, lang)}
+                      <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug uppercase">
+                        {translate(tour.city, lang)} {getNightsLabel(tour.duration, lang)}
                       </h3>
                     </div>
 
