@@ -13,6 +13,7 @@ export interface TourCard {
   tag: string;
   promoText?: { FR: string; EN: string };
   iconType: "mountain" | "water" | "lighthouse";
+  city: { FR: string; EN: string };
 }
 
 export interface DealCard {
@@ -116,6 +117,7 @@ export const toursList: TourCard[] = [
     price: { FR: "Sur devis", EN: "On request" },
     tag: "golf",
     iconType: "lighthouse",
+    city: { FR: "Rabat", EN: "Rabat" },
   },
   {
     id: 11,
@@ -134,6 +136,7 @@ export const toursList: TourCard[] = [
     price: { FR: "3 879 $", EN: "C$ 3,879" },
     tag: "golf",
     iconType: "water",
+    city: { FR: "Agadir", EN: "Agadir" },
   },
   {
     id: 12,
@@ -152,6 +155,7 @@ export const toursList: TourCard[] = [
     price: { FR: "4 255 $", EN: "C$ 4,255" },
     tag: "golf",
     iconType: "lighthouse",
+    city: { FR: "Agadir", EN: "Agadir" },
   },
   {
     id: 13,
@@ -170,6 +174,7 @@ export const toursList: TourCard[] = [
     price: { FR: "4 989 $", EN: "C$ 4,989" },
     tag: "golf",
     iconType: "water",
+    city: { FR: "Agadir", EN: "Agadir" },
   },
   {
     id: 14,
@@ -188,6 +193,7 @@ export const toursList: TourCard[] = [
     price: { FR: "5 899 $", EN: "C$ 5,899" },
     tag: "golf",
     iconType: "lighthouse",
+    city: { FR: "Marrakech", EN: "Marrakech" },
   },
   {
     id: 15,
@@ -206,6 +212,7 @@ export const toursList: TourCard[] = [
     price: { FR: "4 669 $", EN: "C$ 4,669" },
     tag: "golf",
     iconType: "lighthouse",
+    city: { FR: "Marrakech", EN: "Marrakech" },
   },
   {
     id: 16,
@@ -224,6 +231,7 @@ export const toursList: TourCard[] = [
     price: { FR: "3 979 $", EN: "C$ 3,979" },
     tag: "golf",
     iconType: "lighthouse",
+    city: { FR: "Marrakech", EN: "Marrakech" },
   },
   {
     id: 6,
@@ -242,6 +250,7 @@ export const toursList: TourCard[] = [
     price: { FR: "Sur devis", EN: "On request" },
     tag: "tour",
     iconType: "lighthouse",
+    city: { FR: "Villes Impériales", EN: "Imperial Cities" },
   },
   {
     id: 7,
@@ -260,6 +269,7 @@ export const toursList: TourCard[] = [
     price: { FR: "Sur devis", EN: "On request" },
     tag: "tour",
     iconType: "lighthouse",
+    city: { FR: "Villes Impériales & Sud", EN: "Imperial Cities & South" },
   },
   {
     id: 8,
@@ -278,6 +288,7 @@ export const toursList: TourCard[] = [
     price: { FR: "4 789 $", EN: "C$ 4,789" },
     tag: "tour",
     iconType: "mountain",
+    city: { FR: "Marrakech & Atlas", EN: "Marrakech & Atlas" },
   },
   {
     id: 9,
@@ -296,6 +307,7 @@ export const toursList: TourCard[] = [
     price: { FR: "Sur devis", EN: "On request" },
     tag: "tour",
     iconType: "lighthouse",
+    city: { FR: "Villes Impériales", EN: "Imperial Cities" },
   }
 ];
 

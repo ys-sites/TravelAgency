@@ -22,6 +22,7 @@ export interface ItineraryPackageCardProps {
   ctaLabel?: { FR: string; EN: string } | string;
   ctaHref: string;
   index?: number;
+  city?: { FR: string; EN: string } | string;
 }
 
 export default function ItineraryPackageCard({
@@ -39,6 +40,7 @@ export default function ItineraryPackageCard({
   ctaLabel,
   ctaHref,
   index = 0,
+  city,
 }: ItineraryPackageCardProps) {
   const { lang } = useLang();
 
@@ -140,9 +142,16 @@ export default function ItineraryPackageCard({
           </div>
 
           {/* 4. The hotel/package name as a bold headline */}
-          <h3 className="font-serif text-xl md:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
-            {translatedPackageName}
-          </h3>
+          <div className="space-y-1">
+            {city && (
+              <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase font-bold text-brand-gold block">
+                {formatText(city)}
+              </span>
+            )}
+            <h3 className="font-serif text-xl md:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
+              {translatedPackageName}
+            </h3>
+          </div>
 
           {/* 5. A labeled highlights block listing the concrete deliverables */}
           <div className="pt-4 border-t border-zinc-100 space-y-3">

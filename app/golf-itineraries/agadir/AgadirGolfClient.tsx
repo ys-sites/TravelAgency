@@ -64,7 +64,8 @@ export default function AgadirGolfClient() {
     price: "3,879",
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/11"
+    ctaHref: "/itineraries/11",
+    city: { FR: "Agadir", EN: "Agadir" }
   };
 
   const packageB = {
@@ -89,7 +90,8 @@ export default function AgadirGolfClient() {
     price: "4,255",
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/12"
+    ctaHref: "/itineraries/12",
+    city: { FR: "Agadir", EN: "Agadir" }
   };
 
   const packageC = {
@@ -114,7 +116,8 @@ export default function AgadirGolfClient() {
     price: "4,989",
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/13"
+    ctaHref: "/itineraries/13",
+    city: { FR: "Agadir", EN: "Agadir" }
   };
 
   return (

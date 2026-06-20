@@ -64,7 +64,8 @@ export default function MarrakechGolfClient() {
     price: "5,899",
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/14"
+    ctaHref: "/itineraries/14",
+    city: { FR: "Marrakech", EN: "Marrakech" }
   };
 
   const packageB = {
@@ -89,7 +90,8 @@ export default function MarrakechGolfClient() {
     price: "4,669",
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/15"
+    ctaHref: "/itineraries/15",
+    city: { FR: "Marrakech", EN: "Marrakech" }
   };
 
   const packageC = {
@@ -114,7 +116,8 @@ export default function MarrakechGolfClient() {
     price: "3,979",
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/16"
+    ctaHref: "/itineraries/16",
+    city: { FR: "Marrakech", EN: "Marrakech" }
   };
 
   return (

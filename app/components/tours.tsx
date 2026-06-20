@@ -254,9 +254,16 @@ export default function Tours() {
                       <span>{translate(tour.meals, lang)}</span>
                     </div>
 
-                    <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
-                      {translate(tour.title, lang)}
-                    </h3>
+                    <div className="space-y-1.5">
+                      {tour.city && (
+                        <span className="text-[10px] font-mono tracking-[0.25em] uppercase font-bold text-brand-gold block">
+                          {translate(tour.city, lang)}
+                        </span>
+                      )}
+                      <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
+                        {translate(tour.title, lang)}
+                      </h3>
+                    </div>
 
                     <p className="text-[13.5px] leading-relaxed text-zinc-600 font-light pt-2.5 border-t border-zinc-100 line-clamp-2">
                       <span className="font-heading text-[10px] uppercase tracking-wider font-bold text-brand-gold-dark block mb-1">
