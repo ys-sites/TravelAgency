@@ -9,20 +9,15 @@ import { useLang, translate } from "../context/lang-context";
 
 // ~20 Places/Experiences in the Gulf & Morocco
 const DESTINATIONS = [
-  { id: "marrakech", title: { EN: "Marrakech Medina", FR: "Médina de Marrakech" }, region: "Morocco" },
-  { id: "sahara", title: { EN: "Sahara Dunes Glamping", FR: "Glamping Sahara Dunes" }, region: "Morocco" },
-  { id: "atlas", title: { EN: "High Atlas Valleys", FR: "Vallées du Haut Atlas" }, region: "Morocco" },
-  { id: "fes", title: { EN: "Fes El Bali", FR: "Fès El Bali" }, region: "Morocco" },
-  { id: "dubai_marina", title: { EN: "Dubai Marina Penthouse", FR: "Marina Penthouse de Dubaï" }, region: "UAE" },
-  { id: "dubai_safari", title: { EN: "Dubai Red Dunes Safari", FR: "Safari Dunes Rouges Dubaï" }, region: "UAE" },
-  { id: "abu_dhabi_mosque", title: { EN: "Grand Mosque Private Tour", FR: "Grande Mosquée Abou Dabi" }, region: "UAE" },
-  { id: "yas_links", title: { EN: "Yas Links Club", FR: "Yas Links Club" }, region: "UAE" },
-  { id: "oman_canyons", title: { EN: "Jebel Akhdar Canyons", FR: "Canyons du Jebel Akhdar" }, region: "Oman" },
-  { id: "oman_wadi", title: { EN: "Wadi Bani Khalid pools", FR: "Piscines du Wadi Bani Khalid" }, region: "Oman" },
-  { id: "musandam", title: { EN: "Musandam Fjord Sailing", FR: "Voile aux Fjords de Musandam" }, region: "Oman" },
-  { id: "alula_hegra", title: { EN: "AlUla Hegra Tombs", FR: "Tombes de Hegra à AlUla" }, region: "Saudi Arabia" },
-  { id: "red_sea", title: { EN: "Red Sea Private Islands", FR: "Îles Privées Mer Rouge" }, region: "Saudi Arabia" },
-  { id: "riyadh_diriyah", title: { EN: "Diriyah Historic Oasis", FR: "Oasis Historique de Diriyah" }, region: "Saudi Arabia" }
+  { id: "marrakech", title: { EN: "Marrakech (Golf & Medina)", FR: "Marrakech (Golf & Médina)" }, region: "Morocco" },
+  { id: "agadir", title: { EN: "Agadir & Taghazout (Golf & Ocean)", FR: "Agadir & Taghazout (Golf & Océan)" }, region: "Morocco" },
+  { id: "rabat", title: { EN: "Rabat (Dar Es Salam Golf & Culture)", FR: "Rabat (Dar Es Salam Golf & Culture)" }, region: "Morocco" },
+  { id: "casablanca", title: { EN: "Casablanca (Hassan II Mosque)", FR: "Casablanca (Grande Mosquée)" }, region: "Morocco" },
+  { id: "chefchaouen", title: { EN: "Chefchaouen (The Blue Pearl)", FR: "Chefchaouen (La Perle Bleue)" }, region: "Morocco" },
+  { id: "sahara", title: { EN: "Sahara Dunes (Merzouga Desert)", FR: "Dunes du Sahara (Désert de Merzouga)" }, region: "Morocco" },
+  { id: "essaouira", title: { EN: "Essaouira (Atlantic Coastal Oasis)", FR: "Essaouira (Oasis Côtière)" }, region: "Morocco" },
+  { id: "fes", title: { EN: "Fes & Meknes (Imperial Heritage)", FR: "Fès & Meknès (Héritage Impérial)" }, region: "Morocco" },
+  { id: "atlas", title: { EN: "Atlas Mountains (Trekking & Toubkal)", FR: "Montagnes de l'Atlas (Trek & Toubkal)" }, region: "Morocco" }
 ];
 
 // Activities / Add-ons
@@ -39,12 +34,12 @@ const ACTIVITIES = [
 
 const t = {
   headerWelcome: {
-    EN: "ORCHESTRATE YOUR PASSAGE",
-    FR: "ORCHESTREZ VOTRE PASSAGE"
+    EN: "ORCHESTRATE YOUR MOROCCAN JOURNEY",
+    FR: "ORCHESTREZ VOTRE VOYAGE AU MAROC"
   },
   headerTitle: {
-    EN: "Bespoke Custom Trip",
-    FR: "Voyage Sur Mesure"
+    EN: "Custom Morocco Itinerary",
+    FR: "Votre Voyage sur Mesure au Maroc"
   },
   standardTab: {
     EN: "Bespoke Passage",
@@ -96,7 +91,7 @@ export default function CustomTripClient() {
   const { lang } = useLang();
   
   // Custom states
-  const [isPremium, setIsPremium] = useState(false);
+  const isPremium = true;
   const [selectedDests, setSelectedDests] = useState<string[]>([]);
   const [selectedActs, setSelectedActs] = useState<string[]>([]);
   const [nights, setNights] = useState(7);
@@ -249,23 +244,7 @@ export default function CustomTripClient() {
       {/* Main Form Section */}
       <section className="py-12 px-6 max-w-6xl mx-auto z-20 relative">
         
-        {/* Step Toggler (Standard vs. Premium) */}
-        <div className="flex justify-center mb-16">
-          <div className="border p-1.5 rounded-full flex items-center relative overflow-hidden max-w-sm w-full bg-zinc-100 border-zinc-200">
-            <button
-              onClick={() => setIsPremium(false)}
-              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${!isPremium ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-600 hover:text-zinc-900'}`}
-            >
-              {translate(t.standardTab, lang)}
-            </button>
-            <button
-              onClick={() => setIsPremium(true)}
-              className={`flex-1 text-center py-3 text-[11px] font-mono tracking-widest uppercase font-bold rounded-full transition-all duration-500 cursor-pointer ${isPremium ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-600 hover:text-zinc-900'}`}
-            >
-              {translate(t.premiumTab, lang)}
-            </button>
-          </div>
-        </div>
+
 
         {/* Form Wizard */}
         {!isSuccess ? (
@@ -634,7 +613,7 @@ export default function CustomTripClient() {
                 </div>
                 <div>
                   <span className="text-zinc-400">{lang === "FR" ? "Catégorie:" : "Tier:"}</span>{" "}
-                  <span className="font-bold text-brand-gold">{isPremium ? (lang === "FR" ? "Souverain de Prestige" : "Sovereign Prestige") : (lang === "FR" ? "Passage Sur Mesure" : "Bespoke Passage")}</span>
+                  <span className="font-bold text-brand-gold">{lang === "FR" ? "Voyage de Prestige" : "Prestige Journey"}</span>
                 </div>
               </div>
               

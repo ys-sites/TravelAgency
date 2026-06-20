@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import { useLang } from "../context/lang-context";
 
 export default function GulfHeroScrubber() {
@@ -62,13 +63,19 @@ export default function GulfHeroScrubber() {
             }
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-lg mx-auto">
             <a
               href="#itineraries"
-              className="w-full border border-white bg-white hover:bg-transparent text-zinc-950 hover:text-white font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[220px] cursor-pointer"
+              className="w-full sm:w-auto border border-white bg-white hover:bg-brand-gold hover:border-brand-gold text-zinc-950 hover:text-zinc-950 font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[220px] cursor-pointer"
             >
               {lang === "FR" ? "Explorer les Itinéraires" : "Explore Itineraries"}
             </a>
+            <Link
+              href="/custom-trip"
+              className="w-full sm:w-auto border border-white/40 bg-black/40 hover:bg-white hover:border-white text-white hover:text-zinc-950 font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[220px] cursor-pointer"
+            >
+              {lang === "FR" ? "Voyage Sur Mesure" : "Custom Trip"}
+            </Link>
           </div>
         </motion.div>
       </div>
