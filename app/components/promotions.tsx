@@ -79,7 +79,7 @@ export default function Promotions() {
 
         {/* Deals Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {dealsList.map((deal, index) => (
+          {dealsList.slice(0, 3).map((deal, index) => (
             <motion.div
               key={deal.id}
               initial={{ opacity: 0, y: 30 }}

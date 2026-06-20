@@ -16,19 +16,57 @@ const t = {
 
 export default function Tours() {
   const { lang } = useLang();
-  const [activeFilter, setActiveFilter] = React.useState("Tous");
+  const [activeType, setActiveType] = React.useState("All"); // All, Golf, Tours
+  const [activeCity, setActiveCity] = React.useState("All"); // All, Marrakech, Agadir, Rabat, Imperial
 
-  const filterPills = [
-    { FR: "Tous", EN: "All" },
-    { FR: "Golf & Prestige", EN: "Golf & Prestige" },
-    { FR: "Golf & Océan", EN: "Golf & Ocean" },
-    { FR: "Golf & Luxe", EN: "Golf & Luxury" },
-    { FR: "Tours & Découvertes", EN: "Tours & Discovery" }
+  const typePills = [
+    { id: "All", FR: "Tous les Types", EN: "All Travel Types" },
+    { id: "Golf", FR: "Forfaits Golf", EN: "Golf Packages" },
+    { id: "Tours", FR: "Tours & Circuits", EN: "Tours & Discovery" }
   ];
 
+  const cityPills = [
+    { id: "All", FR: "Toutes les Villes", EN: "All Cities" },
+    { id: "Marrakech", FR: "Marrakech", EN: "Marrakech" },
+    { id: "Agadir", FR: "Agadir", EN: "Agadir" },
+    { id: "Rabat", FR: "Rabat", EN: "Rabat" },
+    { id: "Imperial", FR: "Villes Impériales", EN: "Imperial Cities" }
+  ];
+
+  const getCityKey = (id: number) => {
+    switch (id) {
+      case 11:
+      case 12:
+      case 13:
+        return "Agadir";
+      case 14:
+      case 15:
+      case 16:
+      case 8: // Toubkal trekking & Marrakech
+        return "Marrakech";
+      case 10:
+        return "Rabat";
+      case 6:
+      case 7:
+      case 9:
+        return "Imperial";
+      default:
+        return "Other";
+    }
+  };
+
   const filteredTours = toursList.filter((tour) => {
-    if (activeFilter === "Tous") return true;
-    return tour.category.FR === activeFilter;
+    // 1. Filter by Type
+    if (activeType !== "All") {
+      if (activeType === "Golf" && tour.tag !== "golf") return false;
+      if (activeType === "Tours" && tour.tag !== "tour") return false;
+    }
+    // 2. Filter by City
+    if (activeCity !== "All") {
+      const tourCity = getCityKey(tour.id);
+      if (tourCity !== activeCity) return false;
+    }
+    return true;
   });
 
   return (
@@ -94,25 +132,62 @@ export default function Tours() {
         {/* Right Column: Curated Itineraries in a balanced 2x2 grid */}
         <div className="lg:col-span-9 w-full relative space-y-8">
           
-          {/* Filter Pills */}
-          <div className="flex flex-wrap gap-2.5">
-            {filterPills.map((pill) => {
-              const label = lang === "FR" ? pill.FR : pill.EN;
-              const isActive = activeFilter === pill.FR;
-              return (
-                <button
-                  key={pill.FR}
-                  onClick={() => setActiveFilter(pill.FR)}
-                  className={`px-4.5 py-2 text-[10px] font-mono tracking-widest uppercase transition-all duration-300 rounded-full cursor-pointer ${
-                    isActive
-                      ? "bg-brand-gold text-white shadow-sm"
-                      : "border border-zinc-300 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 bg-white"
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
+          {/* Combined Filter Section */}
+          <div className="flex flex-col space-y-5 w-full bg-zinc-50/50 p-6 rounded-3xl border border-zinc-200/50">
+            {/* Row 1: Travel Types */}
+            <div>
+              <span className="text-[10px] font-mono tracking-[0.2em] text-[#C5A880] uppercase block mb-2.5 font-semibold">
+                {lang === "FR" ? "1. Catégorie de Voyage" : "1. Travel Category"}
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {typePills.map((pill) => {
+                  const label = lang === "FR" ? pill.FR : pill.EN;
+                  const isActive = activeType === pill.id;
+                  return (
+                    <button
+                      key={pill.id}
+                      onClick={() => setActiveType(pill.id)}
+                      className={`px-4 py-2.5 text-[9px] font-mono tracking-widest uppercase transition-all duration-300 rounded-full cursor-pointer ${
+                        isActive
+                          ? "bg-brand-gold text-white shadow-sm border border-brand-gold"
+                          : "border border-zinc-300 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 bg-white"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="w-full h-[1px] bg-zinc-200/60" />
+
+            {/* Row 2: Cities/Regions */}
+            <div>
+              <span className="text-[10px] font-mono tracking-[0.2em] text-[#C5A880] uppercase block mb-2.5 font-semibold">
+                {lang === "FR" ? "2. Sélectionner une Ville / Région" : "2. Select a City / Region"}
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {cityPills.map((pill) => {
+                  const label = lang === "FR" ? pill.FR : pill.EN;
+                  const isActive = activeCity === pill.id;
+                  return (
+                    <button
+                      key={pill.id}
+                      onClick={() => setActiveCity(pill.id)}
+                      className={`px-4 py-2.5 text-[9px] font-mono tracking-widest uppercase transition-all duration-300 rounded-full cursor-pointer ${
+                        isActive
+                          ? "bg-brand-gold text-white shadow-sm border border-brand-gold"
+                          : "border border-zinc-300 text-zinc-500 hover:border-zinc-400 hover:text-zinc-700 bg-white"
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full">
