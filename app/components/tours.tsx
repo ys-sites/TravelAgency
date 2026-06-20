@@ -256,7 +256,7 @@ export default function Tours() {
 
                     <div className="space-y-1.5">
                       {tour.city && (
-                        <span className="text-[12px] md:text-[13px] font-mono tracking-[0.25em] uppercase font-bold text-brand-gold block">
+                        <span className="text-[14px] md:text-[15px] font-mono tracking-[0.25em] uppercase font-bold text-[#8B2635] block">
                           {translate(tour.city, lang)}
                         </span>
                       )}

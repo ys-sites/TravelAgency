@@ -148,7 +148,7 @@ export default function Promotions() {
                   </div>
 
                   <div className="pt-1">
-                    <span className="text-[12px] md:text-[13px] font-mono tracking-[0.25em] uppercase font-bold text-brand-gold block mb-1.5">
+                    <span className="text-[14px] md:text-[15px] font-mono tracking-[0.25em] uppercase font-bold text-[#8B2635] block mb-1.5">
                       {translate(deal.city, lang)}
                     </span>
                     <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">

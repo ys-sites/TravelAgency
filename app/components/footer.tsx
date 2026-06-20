@@ -6,7 +6,7 @@ import { useLang, translate } from "../context/lang-context";
 const t = {
   description: {
     FR: "Nous organisons des voyages de golf sur mesure et d'ultra-luxe au Maroc. Vivez l'expérience d'une intimité absolue et d'un voyage souverain.",
-    EN: "We curate ultra-luxury bespoke golf journeys across Morocco. Experience absolute privacy and sovereign travel."
+    EN: "We curate ultra-luxury exclusive golf journeys across Morocco. Experience absolute privacy and sovereign travel."
   },
   destinations: {
     FR: "Destinations",
@@ -30,7 +30,7 @@ const t = {
   },
   saudi: {
     FR: "Forfaits Personnalisés",
-    EN: "Bespoke Packages"
+    EN: "Exclusive Packages"
   },
   company: {
     FR: "Conciergerie",
@@ -144,7 +144,7 @@ export default function Footer() {
         {/* Center: YS Marketing Solutions Signature */}
         <div className="flex justify-center items-center order-1 md:order-none">
           <a 
-            href="https://www.instagram.com/ys.sites/" 
+            href="https://www.ysdev.ca" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/0 border border-white/5 hover:bg-[#ea580c]/5 hover:border-[#ea580c]/20 transition-all duration-300 group"

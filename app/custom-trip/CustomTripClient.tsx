@@ -7,29 +7,34 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { useLang, translate } from "../context/lang-context";
 
-// ~20 Places/Experiences in the Gulf & Morocco
+// Places/Experiences from Client Request itineraries
 const DESTINATIONS = [
-  { id: "marrakech", title: { EN: "Marrakech (Golf & Medina)", FR: "Marrakech (Golf & Médina)" }, region: "Morocco" },
-  { id: "agadir", title: { EN: "Agadir & Taghazout (Golf & Ocean)", FR: "Agadir & Taghazout (Golf & Océan)" }, region: "Morocco" },
-  { id: "rabat", title: { EN: "Rabat (Dar Es Salam Golf & Culture)", FR: "Rabat (Dar Es Salam Golf & Culture)" }, region: "Morocco" },
-  { id: "casablanca", title: { EN: "Casablanca (Hassan II Mosque)", FR: "Casablanca (Grande Mosquée)" }, region: "Morocco" },
-  { id: "chefchaouen", title: { EN: "Chefchaouen (The Blue Pearl)", FR: "Chefchaouen (La Perle Bleue)" }, region: "Morocco" },
-  { id: "sahara", title: { EN: "Sahara Dunes (Merzouga Desert)", FR: "Dunes du Sahara (Désert de Merzouga)" }, region: "Morocco" },
-  { id: "essaouira", title: { EN: "Essaouira (Atlantic Coastal Oasis)", FR: "Essaouira (Oasis Côtière)" }, region: "Morocco" },
-  { id: "fes", title: { EN: "Fes & Meknes (Imperial Heritage)", FR: "Fès & Meknès (Héritage Impérial)" }, region: "Morocco" },
-  { id: "atlas", title: { EN: "Atlas Mountains (Trekking & Toubkal)", FR: "Montagnes de l'Atlas (Trek & Toubkal)" }, region: "Morocco" }
+  { id: "marrakech", title: { EN: "Marrakech (Medina & Bahia Palace)", FR: "Marrakech (Médina & Palais de la Bahia)" }, region: "Morocco" },
+  { id: "rabat", title: { EN: "Rabat (Mausoleum & Oudayas)", FR: "Rabat (Mausolée & Oudayas)" }, region: "Morocco" },
+  { id: "casablanca", title: { EN: "Casablanca (Hassan II Mosque)", FR: "Casablanca (Mosquée Hassan II)" }, region: "Morocco" },
+  { id: "chefchaouen", title: { EN: "Chefchaouen (Rif Mountains & Blue Medina)", FR: "Chefchaouen (Monts du Rif & Médina Bleue)" }, region: "Morocco" },
+  { id: "sahara", title: { EN: "Sahara Dunes (Erg Chebbi Desert Camp)", FR: "Dunes du Sahara (Campement Erg Chebbi)" }, region: "Morocco" },
+  { id: "fes", title: { EN: "Fes (Ancient Medina & Tanneries)", FR: "Fès (Ancienne Médina & Tanneries)" }, region: "Morocco" },
+  { id: "meknes", title: { EN: "Meknes & Volubilis (Roman Ruins)", FR: "Meknès & Volubilis (Ruines Romaines)" }, region: "Morocco" },
+  { id: "skoura", title: { EN: "Skoura & Dades Valley (Valley of Roses)", FR: "Skoura & Vallée du Dadès (Vallée des Roses)" }, region: "Morocco" },
+  { id: "ouarzazate", title: { EN: "Ouarzazate & Ait Ben Haddou (Kasbahs)", FR: "Ouarzazate & Aït Ben Haddou (Kasbahs)" }, region: "Morocco" },
+  { id: "essaouira", title: { EN: "Essaouira (Atlantic Coast Port)", FR: "Essaouira (Port de la Côte Atlantique)" }, region: "Morocco" },
+  { id: "atlas", title: { EN: "Atlas Mountains (Imlil Valley Trekking)", FR: "Montagnes de l'Atlas (Trek Vallée d'Imlil)" }, region: "Morocco" },
+  { id: "tangier", title: { EN: "Tangier (Gibraltar Strait & Cap Spartel)", FR: "Tanger (Détroit de Gibraltar & Cap Spartel)" }, region: "Morocco" }
 ];
 
-// Activities / Add-ons
+// Activities / Add-ons from Client Request itineraries
 const ACTIVITIES = [
-  { id: "heli", title: { EN: "Private Helicopter Charter", FR: "Vol Privé en Hélicoptère" }, standard: true, premiumOnly: false, cost: 2400 },
-  { id: "chef", title: { EN: "Michelin Private Chef", FR: "Chef Privé Étoilé Michelin" }, standard: true, premiumOnly: false, cost: 800 },
-  { id: "yacht", title: { EN: "Luxury Superyacht (4 Hours)", FR: "Superyacht de Luxe (4h)" }, standard: true, premiumOnly: false, cost: 4800 },
-  { id: "historian", title: { EN: "Private Historian Guide", FR: "Guide Historien Privé" }, standard: true, premiumOnly: false, cost: 500 },
-  { id: "spa", title: { EN: "3-Hour Spa Hammam Buyout", FR: "Spa Hammam Privatisé (3h)" }, standard: true, premiumOnly: false, cost: 1200 },
-  { id: "jet", title: { EN: "Gulfstream G650 Transit", FR: "Vol Privé Gulfstream G650" }, standard: false, premiumOnly: true, cost: 24000 },
-  { id: "security", title: { EN: "Close Protection Security Detail", FR: "Sécurité & Protection Rapprochée" }, standard: false, premiumOnly: true, cost: 3500 },
-  { id: "buyout", title: { EN: "Private Oasis Resort Buyout", FR: "Privatisation Complète d'Oasis" }, standard: false, premiumOnly: true, cost: 15000 }
+  { id: "fasttrack", title: { EN: "VIP Airport Meet & Greet & Fast-Track", FR: "Accueil VIP & Fast-Track Aéroport" }, standard: true, premiumOnly: false, cost: 200 },
+  { id: "aperitif", title: { EN: "Sunset Bouregreg River Aperitif", FR: "Apéritif au Coucher du Soleil sur le Bouregreg" }, standard: true, premiumOnly: false, cost: 150 },
+  { id: "workshop", title: { EN: "Private Calligraphy or Pottery Masterclass", FR: "Atelier Privé de Calligraphie ou Poterie" }, standard: true, premiumOnly: false, cost: 250 },
+  { id: "camel", title: { EN: "Camel Trekking & Sunset Campfire Experience", FR: "Randonnée à Chameau & Feu de Camp Experience" }, standard: true, premiumOnly: false, cost: 180 },
+  { id: "excursion", title: { EN: "Private 4x4 Excursion in Erg Chebbi", FR: "Excursion Privée en 4x4 dans l'Erg Chebbi" }, standard: true, premiumOnly: false, cost: 350 },
+  { id: "balloon", title: { EN: "Marrakech Hot Air Balloon Flight", FR: "Vol en Montgolfière au-dessus de Marrakech" }, standard: true, premiumOnly: false, cost: 450 },
+  { id: "spa", title: { EN: "Traditional Hammam & Luxury Spa Treatment", FR: "Hammam Traditionnel & Soins de Spa de Luxe" }, standard: true, premiumOnly: false, cost: 300 },
+  { id: "tea", title: { EN: "Moroccan Tea Ceremony with Local Family", FR: "Cérémonie du Thé Traditionnelle chez l'Habitant" }, standard: true, premiumOnly: false, cost: 120 },
+  { id: "trekking", title: { EN: "Atlas Mountain Guided Trekking", FR: "Trek Guidé dans les Montagnes de l'Atlas" }, standard: true, premiumOnly: false, cost: 280 },
+  { id: "anima", title: { EN: "Anima Garden & Bahia Palace Guided Tour", FR: "Visite Guidée Jardin Anima & Palais de la Bahia" }, standard: true, premiumOnly: false, cost: 160 }
 ];
 
 const t = {
@@ -42,7 +47,7 @@ const t = {
     FR: "Votre Voyage sur Mesure au Maroc"
   },
   standardTab: {
-    EN: "Bespoke Passage",
+    EN: "Exclusive Passage",
     FR: "Passage Sur Mesure"
   },
   premiumTab: {
@@ -213,7 +218,7 @@ export default function CustomTripClient() {
         {/* Background image */}
         <img
           src="/images/custom_trip_hero_bg.png"
-          alt="Bespoke Custom Trip"
+          alt="Exclusive Custom Trip"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-55"
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_70%)] pointer-events-none" />

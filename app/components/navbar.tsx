@@ -21,7 +21,7 @@ export default function Navbar() {
   const { lang, setLang } = useLang();
 
   return (
-    <nav className="absolute top-0 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1100px] -translate-x-1/2">
+    <nav className="absolute top-0 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1200px] -translate-x-1/2">
       <div className="glass-nav flex h-[54px] sm:h-[64px] md:h-[74px] items-center justify-between rounded-full px-8 py-0.5">
         {/* Logo and Company Name */}
         <Link href="/" className="flex items-center gap-2 lg:gap-2.5 xl:gap-4 cursor-pointer decoration-none group">

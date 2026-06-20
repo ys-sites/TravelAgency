@@ -59,7 +59,7 @@ export default function GulfHeroScrubber() {
           <h2 className="font-serif text-lg sm:text-xl md:text-2xl text-white tracking-[0.1em] uppercase font-light max-w-2xl leading-relaxed">
             {lang === "FR"
               ? "Concierge de Voyage de Prestige et Séjours de Golf au Maroc"
-              : "Bespoke Travel Concierge & Premium Golf Experiences in Morocco"
+              : "Exclusive Travel Concierge & Premium Golf Experiences in Morocco"
             }
           </h2>
 
