@@ -139,6 +139,25 @@ export default function Footer() {
           <Link href="/conditions" className="hover:text-brand-gold transition-colors">{translate(t.escrowTerms, lang)}</Link>
         </div>
       </div>
+
+      {/* YS Marketing Solutions Signature */}
+      <div className="max-w-[1200px] mx-auto mt-8 flex justify-center items-center px-6">
+        <a 
+          href="https://www.instagram.com/ys.sites/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/0 border border-white/5 hover:bg-[#ea580c]/5 hover:border-[#ea580c]/20 transition-all duration-300 group"
+        >
+          <img 
+            src="/YS.png" 
+            alt="YS Logo" 
+            className="h-4 w-auto object-contain brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" 
+          />
+          <span className="text-[10px] text-zinc-500 group-hover:text-zinc-300 transition-colors duration-300 leading-none font-light">
+            Made by <strong className="font-semibold text-white group-hover:text-[#ea580c] transition-colors duration-300">YS Marketing Solutions</strong> <span className="text-white/10 mx-1">|</span> Marketing Agency
+          </span>
+        </a>
+      </div>
     </footer>
   );
 }
