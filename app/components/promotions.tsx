@@ -11,6 +11,12 @@ import { getTierStyle } from "../utils/tier-styles";
 export default function Promotions() {
   const { lang } = useLang();
 
+  const selectedDeals = [
+    dealsList.find(d => d.id === 10),
+    dealsList.find(d => d.id === 11),
+    dealsList.find(d => d.id === 14)
+  ].filter((d): d is typeof dealsList[0] => !!d);
+
   return (
     <div className="w-full bg-zinc-50/50 py-24 relative overflow-hidden border-y border-zinc-200/40">
       {/* Shimmer animation styles */}
@@ -79,7 +85,7 @@ export default function Promotions() {
 
         {/* Deals Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {dealsList.slice(0, 3).map((deal, index) => (
+          {selectedDeals.map((deal, index) => (
             <motion.div
               key={deal.id}
               initial={{ opacity: 0, y: 30 }}
@@ -141,9 +147,14 @@ export default function Promotions() {
                     <span>{translate(deal.meals, lang)}</span>
                   </div>
 
-                  <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
-                    {translate(deal.title, lang)}
-                  </h3>
+                  <div className="pt-1">
+                    <span className="text-[10px] font-mono tracking-[0.25em] uppercase font-bold text-brand-gold block mb-1.5">
+                      {translate(deal.city, lang)}
+                    </span>
+                    <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
+                      {translate(deal.title, lang)}
+                    </h3>
+                  </div>
 
                   <p className="text-[13.5px] leading-relaxed text-zinc-600 font-light pt-2.5 border-t border-zinc-100">
                     <span className="font-heading text-[10px] uppercase tracking-wider font-bold text-brand-gold-dark block mb-1">

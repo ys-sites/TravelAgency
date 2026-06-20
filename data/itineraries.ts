@@ -28,6 +28,7 @@ export interface DealCard {
   newPrice: { FR: string; EN: string };
   tag: string;
   promoText?: { FR: string; EN: string };
+  city: { FR: string; EN: string };
 }
 
 export interface DayPlan {
@@ -311,6 +312,7 @@ export const dealsList: DealCard[] = [
     oldPrice: "",
     newPrice: { FR: "Sur devis", EN: "On request" },
     tag: "golf",
+    city: { FR: "Rabat", EN: "Rabat" },
     promoText: {
       FR: "Chef-d'œuvre légendaire de Robert Trent Jones Sr.",
       EN: "Legendary Robert Trent Jones Sr. Masterpiece"
@@ -328,6 +330,7 @@ export const dealsList: DealCard[] = [
     oldPrice: "",
     newPrice: { FR: "3 879 $", EN: "C$ 3,879" },
     tag: "golf",
+    city: { FR: "Agadir", EN: "Agadir" },
     promoText: {
       FR: "Tarif spécial — Vue piscine & vol Air Transat inclus",
       EN: "Special Rate — Pool View & Air Transat Included"
@@ -345,6 +348,7 @@ export const dealsList: DealCard[] = [
     oldPrice: "",
     newPrice: { FR: "4 255 $", EN: "C$ 4,255" },
     tag: "golf",
+    city: { FR: "Agadir", EN: "Agadir" },
     promoText: {
       FR: "Séjour de luxe — Vue jardin & vol Air Transat inclus",
       EN: "Luxury Stay — Garden View & Air Transat Included"
@@ -362,6 +366,7 @@ export const dealsList: DealCard[] = [
     oldPrice: "",
     newPrice: { FR: "4 989 $", EN: "C$ 4,989" },
     tag: "golf",
+    city: { FR: "Agadir", EN: "Agadir" },
     promoText: {
       FR: "Tarif spécial 10 Nuits — Chambre double vue jardin",
       EN: "Special 10 Nights Rate — Double garden view room"
@@ -379,6 +384,7 @@ export const dealsList: DealCard[] = [
     oldPrice: "",
     newPrice: { FR: "5 899 $", EN: "C$ 5,899" },
     tag: "golf",
+    city: { FR: "Marrakech", EN: "Marrakech" },
     promoText: {
       FR: "Golf & Riad Marrakech — Vol direct Air Transat inclus",
       EN: "Marrakech Golf & Riad — Direct Air Transat flight included"
@@ -396,6 +402,7 @@ export const dealsList: DealCard[] = [
     oldPrice: "",
     newPrice: { FR: "4 669 $", EN: "C$ 4,669" },
     tag: "golf",
+    city: { FR: "Marrakech", EN: "Marrakech" },
     promoText: {
       FR: "Évasion de luxe Marrakech — Vol direct Air Transat inclus",
       EN: "Luxury Escape Marrakech — Direct Air Transat flight included"
@@ -413,6 +420,7 @@ export const dealsList: DealCard[] = [
     oldPrice: "",
     newPrice: { FR: "3 979 $", EN: "C$ 3,979" },
     tag: "golf",
+    city: { FR: "Marrakech", EN: "Marrakech" },
     promoText: {
       FR: "Séjour court Marrakech — Vol direct Air Transat inclus",
       EN: "Short Stay Marrakech — Direct Air Transat flight included"
