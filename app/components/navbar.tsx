@@ -41,27 +41,21 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation Links */}
-        <div className="hidden lg:flex items-center gap-2.5 xl:gap-5 text-white/90 font-body text-[11px] xl:text-[13px] font-medium">
-          <Link href="/#portfolios" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
-            {translate(t.portfolios, lang)}
+        <div className="hidden lg:flex items-center gap-4 xl:gap-8 text-white/90 font-body text-[11px] xl:text-[13px] font-semibold tracking-wider uppercase">
+          <Link href="/itineraries?type=Golf" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+            {lang === "FR" ? "Golf" : "Golf"}
           </Link>
-          <Link href="/golf-itineraries/agadir" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
-            {translate(t.agadirGolf, lang)}
-          </Link>
-          <Link href="/golf-itineraries/marrakech" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
-            {translate(t.marrakechGolf, lang)}
+          <Link href="/itineraries?type=Tours" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+            {lang === "FR" ? "Circuits" : "Tours"}
           </Link>
           <Link href="/mice" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
-            {translate(t.mice, lang)}
-          </Link>
-          <Link href="/itineraries" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
-            {translate(t.itineraries, lang)}
+            {lang === "FR" ? "MICE" : "MICE"}
           </Link>
           <Link href="/#about" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
-            {translate(t.about, lang)}
+            {lang === "FR" ? "À Propos" : "About Us"}
           </Link>
           <Link href="/#contacts" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
-            {translate(t.contacts, lang)}
+            {lang === "FR" ? "Contact" : "Contact"}
           </Link>
         </div>
 
