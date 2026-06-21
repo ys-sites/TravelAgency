@@ -45,11 +45,11 @@ export default function Tours() {
   ];
 
   const cityPills = [
-    { id: "All", FR: "Toutes les Villes", EN: "All Cities" },
-    { id: "Marrakech", FR: "Marrakech", EN: "Marrakech" },
-    { id: "Agadir", FR: "Agadir", EN: "Agadir" },
-    { id: "Rabat", FR: "Rabat", EN: "Rabat" },
-    { id: "Imperial", FR: "Villes Impériales", EN: "Imperial Cities" }
+    { id: "All", FR: "Toutes les Villes", EN: "All Cities", image: "/images/moroco.webp" },
+    { id: "Marrakech", FR: "Marrakech", EN: "Marrakech", image: "/images/morocco-marrakech-riad.png" },
+    { id: "Agadir", FR: "Agadir", EN: "Agadir", image: "/images/tgz_course_ocean.jpg" },
+    { id: "Rabat", FR: "Rabat", EN: "Rabat", image: "/images/rgdes_parcours_rouge_18.jpg" },
+    { id: "Imperial", FR: "Villes Impériales", EN: "Imperial Cities", image: "/images/imperial_cities_fes.jpg" }
   ];
 
   const getCityKey = (id: number) => {
@@ -162,7 +162,7 @@ export default function Tours() {
                     <button
                       key={pill.id}
                       onClick={() => setActiveType(pill.id)}
-                      className={`group relative h-16 w-full rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-sm ${
+                      className={`group relative h-20 w-full rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-sm ${
                         isActive
                           ? "border-brand-gold ring-2 ring-brand-gold/45 scale-[1.02] font-bold"
                           : "border-zinc-200/80 hover:border-zinc-400"
@@ -191,11 +191,11 @@ export default function Tours() {
             <div className="w-full h-[1px] bg-zinc-200/60" />
 
             {/* Row 2: Cities/Regions */}
-            <div>
-              <span className="text-[10px] font-mono tracking-[0.2em] text-[#C5A880] uppercase block mb-2.5 font-semibold">
+            <div className="space-y-4">
+              <span className="text-[10px] font-mono tracking-[0.2em] text-[#C5A880] uppercase block font-semibold">
                 {lang === "FR" ? "2. Sélectionner une Ville / Région" : "2. Select a City / Region"}
               </span>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                 {cityPills.map((pill) => {
                   const label = lang === "FR" ? pill.FR : pill.EN;
                   const isActive = activeCity === pill.id;
@@ -203,13 +203,25 @@ export default function Tours() {
                     <button
                       key={pill.id}
                       onClick={() => setActiveCity(pill.id)}
-                      className={`px-5 py-2.5 text-[11px] md:text-[12px] font-sans font-semibold tracking-wider uppercase transition-all duration-300 rounded-full cursor-pointer ${
+                      className={`group relative h-20 w-full rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-sm ${
                         isActive
-                          ? "bg-brand-gold text-white shadow-sm border border-brand-gold font-bold"
-                          : "border border-zinc-300/80 text-zinc-600 hover:border-zinc-400 hover:text-zinc-800 bg-white"
+                          ? "border-brand-gold ring-2 ring-brand-gold/45 scale-[1.02] font-bold"
+                          : "border-zinc-200/80 hover:border-zinc-400"
                       }`}
                     >
-                      {label}
+                      <img 
+                        src={pill.image} 
+                        alt={label} 
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className={`absolute inset-0 transition-colors duration-300 ${
+                        isActive ? "bg-[#C5A880]/75" : "bg-black/55 group-hover:bg-black/45"
+                      }`} />
+                      <div className="absolute inset-0 flex items-center justify-center p-2 text-center z-10">
+                        <span className="text-white text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase leading-tight">
+                          {label}
+                        </span>
+                      </div>
                     </button>
                   );
                 })}
