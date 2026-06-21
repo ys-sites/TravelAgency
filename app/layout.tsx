@@ -40,7 +40,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <LangProvider>
           {children}
-          <WhatsAppFloatingButton />
+          <CallFloatingButton />
         </LangProvider>
       </body>
     </html>
