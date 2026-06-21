@@ -30,9 +30,9 @@ export default function Promotions() {
   const { lang } = useLang();
 
   const selectedDeals = [
-    dealsList.find(d => d.id === 10),
-    dealsList.find(d => d.id === 11),
-    dealsList.find(d => d.id === 14)
+    dealsList.find(d => d.id === 99), // MICE
+    dealsList.find(d => d.id === 8),  // Tour
+    dealsList.find(d => d.id === 11)  // Golf Package
   ].filter((d): d is typeof dealsList[0] => !!d);
 
   return (
@@ -157,6 +157,27 @@ export default function Promotions() {
               {/* Card Body */}
               <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
                 <div className="space-y-4">
+                  {/* Category Badge */}
+                  <div className="flex items-center gap-2">
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-sans font-bold tracking-widest uppercase border ${
+                      deal.tag === "mice"
+                        ? "bg-purple-50 text-purple-700 border-purple-200/60"
+                        : deal.tag === "tour"
+                        ? "bg-amber-50 text-amber-800 border-amber-200/60"
+                        : "bg-emerald-50 text-emerald-800 border-emerald-200/60"
+                    }`}>
+                      <span className={`w-1 h-1 rounded-full ${
+                        deal.tag === "mice" ? "bg-purple-600" : deal.tag === "tour" ? "bg-amber-600" : "bg-emerald-600"
+                      }`} />
+                      {deal.tag === "mice"
+                        ? (lang === "FR" ? "MICE & Corporatif" : "MICE & Corporate")
+                        : deal.tag === "tour"
+                        ? (lang === "FR" ? "Tours & Circuits" : "Tours & Discovery")
+                        : (lang === "FR" ? "Forfait Golf" : "Golf Package")
+                      }
+                    </span>
+                  </div>
+
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-zinc-500 font-sans font-medium tracking-wide">
                     <span>{translate(deal.duration, lang)}</span>
                     <span>{translate({ FR: "•", EN: "•" }, lang)}</span>
@@ -208,7 +229,15 @@ export default function Promotions() {
                   </div>
 
                   <Link 
-                    href={`/itineraries/${deal.id}`}
+                    href={
+                      deal.id === 99
+                        ? "/mice"
+                        : deal.id === 11 || deal.id === 12 || deal.id === 13
+                        ? "/golf-itineraries/agadir"
+                        : deal.id === 14 || deal.id === 15 || deal.id === 16
+                        ? "/golf-itineraries/marrakech"
+                        : `/itineraries/${deal.id}`
+                    }
                     className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
                   >
                     {lang === "FR" ? "EN SAVOIR PLUS" : "BOOK OFFER"}

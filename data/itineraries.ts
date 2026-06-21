@@ -273,7 +273,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 8,
-    image: "/images/morocco_adventure.png",
+    image: "/images/trekking_toubkal.png",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Aventure", EN: "Adventure" },
     title: { FR: "Trekking Toubkal & Marrakech", EN: "Trekking Toubkal & Marrakech" },
@@ -292,7 +292,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 9,
-    image: "/images/people-cliff.png",
+    image: "/images/german_circuit_imperial.png",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Découverte", EN: "Discovery" },
     title: { FR: "Circuit Allemand MPM", EN: "German Circuit MPM" },
@@ -456,6 +456,42 @@ export const dealsList: DealCard[] = [
     promoText: {
       FR: "Séjour court Marrakech — Vol direct Air Transat inclus",
       EN: "Short Stay Marrakech — Direct Air Transat flight included"
+    }
+  },
+  {
+    id: 99,
+    image: "/images/gulf-city-skyline.png",
+    badge: { FR: "Corporate", EN: "Corporate" },
+    title: { FR: "Séminaires & Team-Building", EN: "Seminars & Corporate Retreats" },
+    duration: { FR: "Sur mesure", EN: "Custom duration" },
+    flight: { FR: "Prestations incluses", EN: "All services included" },
+    meals: { FR: "Hébergement & Logistique", EN: "Accommodation & Logistics" },
+    inclusions: { FR: "Salles de conférence, logistique, activités de team building", EN: "Conference rooms, local logistics, and customized team building" },
+    oldPrice: "",
+    newPrice: { FR: "Sur devis", EN: "On request" },
+    tag: "mice",
+    city: { FR: "Séminaires d'Affaires", EN: "Business Events" },
+    promoText: {
+      FR: "Solutions clés en main pour entreprises",
+      EN: "Turnkey corporate solutions & retreats"
+    }
+  },
+  {
+    id: 8,
+    image: "/images/trekking_toubkal.png",
+    badge: { FR: "Aventure", EN: "Adventure" },
+    title: { FR: "Trekking Toubkal & Marrakech", EN: "Trekking Toubkal & Marrakech" },
+    duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
+    meals: { FR: "Pension Complète & Tout Inclus", EN: "Full Board & All Inclusive" },
+    inclusions: { FR: "5 nuits trek Atlas & lodge, 4 nuits resort 5★ Marrakech", EN: "5 nights Atlas trek & lodge, 4 nights 5★ resort Marrakech" },
+    oldPrice: "",
+    newPrice: { FR: "4 789 $", EN: "C$ 4,789" },
+    tag: "tour",
+    city: { FR: "Marrakech & Atlas", EN: "Marrakech & Atlas" },
+    promoText: {
+      FR: "Vol direct Air Transat inclus",
+      EN: "Direct Air Transat Flight Included"
     }
   }
 ];
@@ -1509,8 +1545,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "8": {
     id: 8,
-    image: "/images/morocco_adventure.png",
-    contentImage: "/images/people-cliff.png",
+    image: "/images/trekking_toubkal.png",
+    contentImage: "/images/trekking_toubkal.png",
     title: { FR: "Trekking Toubkal & Marrakech", EN: "Trekking Toubkal & Marrakech" },
     duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
     cost: { FR: "À partir de 4 789 $", EN: "Starting from C$ 4,789" },
@@ -1589,7 +1625,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "9": {
     id: 9,
-    image: "/images/people-cliff.png",
+    image: "/images/german_circuit_imperial.png",
     contentImage: "/images/moroco.webp",
     title: { FR: "Circuit Allemand MPM", EN: "German Circuit MPM" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
