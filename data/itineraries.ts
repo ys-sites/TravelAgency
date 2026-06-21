@@ -311,7 +311,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 99,
-    image: "/images/mice_corporate.png",
+    image: "/images/gulf-city-skyline.png",
     category: { FR: "MICE & Corporatif", EN: "MICE & Corporate" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
     title: { FR: "Séminaires & Événements d'Affaires", EN: "Meetings, Incentives & Business Events" },
@@ -460,7 +460,7 @@ export const dealsList: DealCard[] = [
   },
   {
     id: 99,
-    image: "/images/mice_corporate.png",
+    image: "/images/gulf-city-skyline.png",
     badge: { FR: "Corporate", EN: "Corporate" },
     title: { FR: "Séminaires & Team-Building", EN: "Seminars & Corporate Retreats" },
     duration: { FR: "Sur mesure", EN: "Custom duration" },
