@@ -147,15 +147,13 @@ export default function Footer() {
             href="https://www.ysdev.ca" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="flex items-center gap-2.5 pl-2 pr-4 py-1.5 rounded-full bg-white/0 border border-white/5 hover:bg-[#ea580c]/5 hover:border-[#ea580c]/20 transition-all duration-300 group"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/0 border border-white/5 hover:bg-[#ea580c]/5 hover:border-[#ea580c]/40 transition-all duration-300 group"
           >
-            <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#ea580c]/15 group-hover:border-[#ea580c]/30 group-hover:scale-105 group-hover:shadow-[0_0_8px_rgba(234,88,12,0.3)] transition-all duration-300">
-              <img 
-                src="/YS.png" 
-                alt="YS Logo" 
-                className="h-3.5 w-auto object-contain brightness-90 group-hover:brightness-100 transition-all duration-300" 
-              />
-            </div>
+            <img 
+              src="/YS.png" 
+              alt="YS Logo" 
+              className="h-4 w-auto object-contain brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" 
+            />
             <span className="text-[10px] text-zinc-500 group-hover:text-zinc-300 transition-colors duration-300 leading-none font-light">
               Made by <strong className="font-semibold text-white group-hover:text-[#ea580c] transition-colors duration-300">YS Marketing Solutions</strong> <span className="text-white/10 mx-1">|</span> Marketing Agency
             </span>

@@ -197,7 +197,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 15,
-    image: "/images/morocco-marrakech-riad.png",
+    image: "/images/marrakech_golf_blue5.jpg",
     category: { FR: "Golf & Luxe", EN: "Golf & Luxury" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
     title: { FR: "Jaal Riad Hôtel 5★ (10N)", EN: "Jaal Riad Hotel 5★ (10N)" },
@@ -254,7 +254,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 7,
-    image: "/images/morocco-marrakech-riad.png",
+    image: "/images/chefchaouen.png",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Signature", EN: "Signature" },
     title: { FR: "Grand Tour Impérial & Chefchaouen", EN: "Grand Imperial Tour & Chefchaouen" },
@@ -311,7 +311,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 99,
-    image: "/images/gulf-city-skyline.png",
+    image: "/images/mice_corporate.png",
     category: { FR: "MICE & Corporatif", EN: "MICE & Corporate" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
     title: { FR: "Séminaires & Événements d'Affaires", EN: "Meetings, Incentives & Business Events" },
@@ -460,7 +460,7 @@ export const dealsList: DealCard[] = [
   },
   {
     id: 99,
-    image: "/images/gulf-city-skyline.png",
+    image: "/images/mice_corporate.png",
     badge: { FR: "Corporate", EN: "Corporate" },
     title: { FR: "Séminaires & Team-Building", EN: "Seminars & Corporate Retreats" },
     duration: { FR: "Sur mesure", EN: "Custom duration" },
@@ -1152,7 +1152,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "15": {
     id: 15,
-    image: "/images/morocco-marrakech-riad.png",
+    image: "/images/marrakech_golf_blue5.jpg",
     contentImage: "/images/marrakech_sunset_hero.png",
     title: { FR: "Jaal Riad Hôtel 5★ (10N)", EN: "Jaal Riad Hotel 5★ (10N)" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
@@ -1458,7 +1458,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "7": {
     id: 7,
-    image: "/images/morocco-marrakech-riad.png",
+    image: "/images/chefchaouen.png",
     contentImage: "/images/moroco.webp",
     title: { FR: "Grand Tour Impérial & Chefchaouen", EN: "Grand Imperial Tour & Chefchaouen" },
     duration: { FR: "15 jours / 14 nuits", EN: "15 days / 14 nights" },
@@ -1949,7 +1949,7 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Imperial Cities, Chefchaouen & Atlantic Coast. A comprehensive 15-day itinerary covering Chefchaouen blue city, Tangier, Fes, Sahara camp, Marrakech, and Essaouira."
     },
     heroBtn: { FR: "Découvrir le Grand Voyage", EN: "Explore Grand Voyage" },
-    heroBg: "/images/morocco-marrakech-riad.png",
+    heroBg: "/images/chefchaouen.png",
     themeColor: "#C5A880",
     themeColorHover: "#A3835B",
     watercolorColor: "#C5A880",
