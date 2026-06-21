@@ -235,7 +235,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 6,
-    image: "/images/moroco.webp",
+    image: "/images/imperial_cities_fes.jpg",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Classique", EN: "Classic" },
     title: { FR: "Villes Impériales & Désert", EN: "Imperial Cities & Desert" },
@@ -292,7 +292,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 9,
-    image: "/images/german_circuit_imperial.png",
+    image: "/images/german_circuit_morocco.jpg",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Découverte", EN: "Discovery" },
     title: { FR: "Circuit Allemand MPM", EN: "German Circuit MPM" },
@@ -329,6 +329,8 @@ export const toursList: TourCard[] = [
     city: { FR: "Toutes Villes", EN: "All Cities" },
   }
 ];
+
+
 
 
 export const dealsList: DealCard[] = [

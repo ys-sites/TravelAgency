@@ -51,8 +51,7 @@ export default function ItinerariesClient() {
     { id: "All", FR: "Toutes les Villes", EN: "All Cities" },
     { id: "Marrakech", FR: "Marrakech", EN: "Marrakech" },
     { id: "Agadir", FR: "Agadir", EN: "Agadir" },
-    { id: "Rabat", FR: "Rabat", EN: "Rabat" },
-    { id: "Imperial", FR: "Villes Impériales", EN: "Imperial Cities" }
+    { id: "Rabat", FR: "Rabat", EN: "Rabat" }
   ];
 
   const getCityKey = (id: number) => {
@@ -217,15 +216,23 @@ export default function ItinerariesClient() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredTours.map((tour, index) => (
-            <motion.div
+            <Link
               key={tour.id}
+              href={
+                tour.id === 99
+                  ? "/mice"
+                  : `/itineraries/${tour.id}`
+              }
+              className="block"
+            >
+            <motion.div
               layout
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95 }}
               whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
               transition={{ duration: 0.5, delay: (index % 2) * 0.1, ease: "easeOut" }}
-              className="group relative flex flex-col rounded-[2.2rem] overflow-hidden border border-zinc-200/55 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300"
+              className="group relative flex flex-col rounded-[2.2rem] overflow-hidden border border-zinc-200/55 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300 cursor-pointer"
             >
               {/* Image Header with Tags */}
               <div className="h-[240px] w-full relative overflow-hidden">
@@ -341,23 +348,13 @@ export default function ItinerariesClient() {
                       })()}
                   </div>
 
-                  <Link 
-                    href={
-                      tour.id === 99
-                        ? "/mice"
-                        : tour.id === 11 || tour.id === 12 || tour.id === 13
-                        ? "/golf-itineraries/agadir"
-                        : tour.id === 14 || tour.id === 15 || tour.id === 16
-                        ? "/golf-itineraries/marrakech"
-                        : `/itineraries/${tour.id}`
-                    }
-                    className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
-                  >
+                  <span className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm">
                     {translate(t.book, lang)}
-                  </Link>
+                  </span>
                 </div>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
       </section>
