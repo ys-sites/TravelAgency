@@ -53,10 +53,10 @@ function ItinerariesClientContent() {
   }, [searchParams]);
 
   const typePills = [
-    { id: "All", FR: "Tous les Types", EN: "All Travel Types" },
-    { id: "Golf", FR: "Forfaits Golf", EN: "Golf Packages" },
-    { id: "Tours", FR: "Tours & Circuits", EN: "Tours & Discovery" },
-    { id: "Mice", FR: "MICE & Corporatif", EN: "MICE & Corporate" }
+    { id: "All", FR: "Tous les Types", EN: "All Travel Types", image: "/images/moroco.webp" },
+    { id: "Golf", FR: "Forfaits Golf", EN: "Golf Packages", image: "/images/royal_golf_aerial_1.jpg" },
+    { id: "Tours", FR: "Tours & Circuits", EN: "Tours & Discovery", image: "/images/tours_sunset.jpg" },
+    { id: "Mice", FR: "MICE & Corporatif", EN: "MICE & Corporate", image: "/images/casablanca_finance.jpg" }
   ];
 
   const cityPills = [
@@ -153,11 +153,11 @@ function ItinerariesClientContent() {
         {/* Combined Filter Section */}
         <div className="flex flex-col items-center space-y-6 mb-12 max-w-3xl mx-auto">
           {/* Row 1: Travel Types */}
-          <div className="w-full text-center">
-            <span className="text-[10px] font-mono tracking-[0.2em] text-[#C5A880] uppercase block mb-3 font-semibold">
+          <div className="w-full text-center space-y-4">
+            <span className="text-[10px] font-mono tracking-[0.2em] text-[#C5A880] uppercase block font-semibold">
               {lang === "FR" ? "1. Catégorie de Voyage" : "1. Travel Category"}
             </span>
-            <div className="flex flex-wrap justify-center gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto w-full">
               {typePills.map((pill) => {
                 const label = lang === "FR" ? pill.FR : pill.EN;
                 const isActive = activeType === pill.id;
@@ -165,13 +165,25 @@ function ItinerariesClientContent() {
                   <button
                     key={pill.id}
                     onClick={() => setActiveType(pill.id)}
-                    className={`px-5 py-2.5 text-[11px] md:text-[12px] font-sans font-semibold tracking-wider uppercase transition-all duration-300 rounded-full cursor-pointer ${
+                    className={`group relative h-16 w-full rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-sm ${
                       isActive
-                        ? "bg-brand-gold text-white shadow-sm border border-brand-gold font-bold"
-                        : "border border-zinc-300/80 text-zinc-600 hover:border-zinc-400 hover:text-zinc-800 bg-white"
+                        ? "border-brand-gold ring-2 ring-brand-gold/45 scale-[1.02] font-bold"
+                        : "border-zinc-200/80 hover:border-zinc-400"
                     }`}
                   >
-                    {label}
+                    <img 
+                      src={pill.image} 
+                      alt={label} 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className={`absolute inset-0 transition-colors duration-300 ${
+                      isActive ? "bg-[#C5A880]/75" : "bg-black/55 group-hover:bg-black/45"
+                    }`} />
+                    <div className="absolute inset-0 flex items-center justify-center p-2 text-center z-10">
+                      <span className="text-white text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase leading-tight">
+                        {label}
+                      </span>
+                    </div>
                   </button>
                 );
               })}

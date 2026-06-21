@@ -38,10 +38,10 @@ export default function Tours() {
   const [activeCity, setActiveCity] = React.useState("All"); // All, Marrakech, Agadir, Rabat, Imperial
 
   const typePills = [
-    { id: "All", FR: "Tous les Types", EN: "All Travel Types" },
-    { id: "Golf", FR: "Forfaits Golf", EN: "Golf Packages" },
-    { id: "Tours", FR: "Tours & Circuits", EN: "Tours & Discovery" },
-    { id: "Mice", FR: "MICE & Corporatif", EN: "MICE & Corporate" }
+    { id: "All", FR: "Tous les Types", EN: "All Travel Types", image: "/images/moroco.webp" },
+    { id: "Golf", FR: "Forfaits Golf", EN: "Golf Packages", image: "/images/royal_golf_aerial_1.jpg" },
+    { id: "Tours", FR: "Tours & Circuits", EN: "Tours & Discovery", image: "/images/tours_sunset.jpg" },
+    { id: "Mice", FR: "MICE & Corporatif", EN: "MICE & Corporate", image: "/images/casablanca_finance.jpg" }
   ];
 
   const cityPills = [
@@ -147,80 +147,14 @@ export default function Tours() {
         {/* Right Column: Curated Itineraries in a balanced 2x2 grid */}
         <div className="lg:col-span-9 w-full relative space-y-8">
           
-          {/* Task 3: Large Magazine-Style Visual Window Tiles */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {/* Golf Packages Tile */}
-            <Link 
-              href="/itineraries?type=Golf"
-              className="group relative aspect-[3/4.5] md:aspect-[3/4.2] rounded-[2rem] overflow-hidden border border-zinc-200/80 shadow-sm block transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <img 
-                src="/images/royal_golf_aerial_1.jpg" 
-                alt="Golf Packages" 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-              <div className="absolute bottom-6 left-6 right-6 z-10 space-y-1">
-                <span className="text-brand-gold font-mono text-[9px] tracking-[0.2em] uppercase font-semibold block">
-                  {lang === "FR" ? "SPORT DE PRESTIGE" : "ELITE SPORT"}
-                </span>
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-white uppercase tracking-wider">
-                  {lang === "FR" ? "Forfaits Golf" : "Golf Packages"}
-                </h3>
-              </div>
-            </Link>
-
-            {/* Tours & Discovery Tile */}
-            <Link 
-              href="/itineraries?type=Tours"
-              className="group relative aspect-[3/4.5] md:aspect-[3/4.2] rounded-[2rem] overflow-hidden border border-zinc-200/80 shadow-sm block transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <img 
-                src="/images/tours_sunset.jpg" 
-                alt="Tours & Discovery" 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-              <div className="absolute bottom-6 left-6 right-6 z-10 space-y-1">
-                <span className="text-brand-gold font-mono text-[9px] tracking-[0.2em] uppercase font-semibold block">
-                  {lang === "FR" ? "ÉVASION & CULTURE" : "ESCAPE & CULTURE"}
-                </span>
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-white uppercase tracking-wider">
-                  {lang === "FR" ? "Circuits & Découverte" : "Tours & Discovery"}
-                </h3>
-              </div>
-            </Link>
-
-            {/* MICE & Corporate Tile */}
-            <Link 
-              href="/mice"
-              className="group relative aspect-[3/4.5] md:aspect-[3/4.2] rounded-[2rem] overflow-hidden border border-zinc-200/80 shadow-sm block transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <img 
-                src="/images/casablanca_finance.jpg" 
-                alt="MICE & Corporate" 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-              <div className="absolute bottom-6 left-6 right-6 z-10 space-y-1">
-                <span className="text-brand-gold font-mono text-[9px] tracking-[0.2em] uppercase font-semibold block">
-                  {lang === "FR" ? "ÉVÉNEMENTIEL D'AFFAIRES" : "BUSINESS EVENTS"}
-                </span>
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-white uppercase tracking-wider">
-                  {lang === "FR" ? "MICE & Corporatif" : "MICE & Corporate"}
-                </h3>
-              </div>
-            </Link>
-          </div>
-
           {/* Combined Filter Section */}
-          <div className="flex flex-col space-y-5 w-full bg-zinc-50/50 p-6 rounded-3xl border border-zinc-200/50">
+          <div className="flex flex-col space-y-6 w-full bg-zinc-50/50 p-6 md:p-8 rounded-[2rem] border border-zinc-200/50">
             {/* Row 1: Travel Types */}
-            <div>
-              <span className="text-[10px] font-mono tracking-[0.2em] text-[#C5A880] uppercase block mb-2.5 font-semibold">
+            <div className="space-y-4">
+              <span className="text-[10px] font-mono tracking-[0.2em] text-[#C5A880] uppercase block font-semibold">
                 {lang === "FR" ? "1. Catégorie de Voyage" : "1. Travel Category"}
               </span>
-              <div className="flex flex-wrap gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {typePills.map((pill) => {
                   const label = lang === "FR" ? pill.FR : pill.EN;
                   const isActive = activeType === pill.id;
@@ -228,13 +162,25 @@ export default function Tours() {
                     <button
                       key={pill.id}
                       onClick={() => setActiveType(pill.id)}
-                      className={`px-5 py-2.5 text-[11px] md:text-[12px] font-sans font-semibold tracking-wider uppercase transition-all duration-300 rounded-full cursor-pointer ${
+                      className={`group relative h-16 w-full rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-sm ${
                         isActive
-                          ? "bg-brand-gold text-white shadow-sm border border-brand-gold font-bold"
-                          : "border border-zinc-300/80 text-zinc-600 hover:border-zinc-400 hover:text-zinc-800 bg-white"
+                          ? "border-brand-gold ring-2 ring-brand-gold/45 scale-[1.02] font-bold"
+                          : "border-zinc-200/80 hover:border-zinc-400"
                       }`}
                     >
-                      {label}
+                      <img 
+                        src={pill.image} 
+                        alt={label} 
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className={`absolute inset-0 transition-colors duration-300 ${
+                        isActive ? "bg-[#C5A880]/75" : "bg-black/55 group-hover:bg-black/45"
+                      }`} />
+                      <div className="absolute inset-0 flex items-center justify-center p-2 text-center z-10">
+                        <span className="text-white text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase leading-tight">
+                          {label}
+                        </span>
+                      </div>
                     </button>
                   );
                 })}
