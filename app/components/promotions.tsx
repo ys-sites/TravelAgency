@@ -123,7 +123,7 @@ export default function Promotions() {
                 viewport={{ once: true }}
                 whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
                 transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
-                className="bg-white rounded-[2rem] overflow-hidden border border-zinc-200/50 shadow-md hover:shadow-xl flex flex-col h-full group transition-shadow duration-300 cursor-pointer"
+                className="bg-white rounded-2xl overflow-hidden border border-zinc-200/50 shadow-md hover:shadow-xl flex flex-col h-full group transition-shadow duration-300 cursor-pointer"
               >
                 {/* Image Header with Tags */}
                 <div className="h-[240px] w-full relative overflow-hidden">
@@ -133,13 +133,7 @@ export default function Promotions() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none" />
-                  
-                  {/* Circular Promo Seal */}
-                  <div className="absolute bottom-3 right-3 z-10 w-14 h-14 rounded-full border border-[#faf9f5]/30 bg-[#8B2635]/85 backdrop-blur-xs flex flex-col items-center justify-center text-center p-1 rotate-12 shadow-md">
-                    <span className="text-[#faf9f5] text-[7.5px] font-mono font-bold uppercase leading-tight tracking-wider">
-                      {lang === "FR" ? "Offre Spéciale" : "Special Rate"}
-                    </span>
-                  </div>
+
 
                   {/* Badge container */}
                   <div className="absolute top-6 left-6 right-6 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">

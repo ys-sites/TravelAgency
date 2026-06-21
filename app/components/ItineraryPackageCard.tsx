@@ -88,7 +88,7 @@ export default function ItineraryPackageCard({
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
       transition={{ duration: 0.5, delay: (index % 2) * 0.1, ease: "easeOut" }}
-      className="group relative flex flex-col rounded-[2.2rem] overflow-hidden border border-zinc-200/55 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300"
+      className="group relative flex flex-col rounded-2xl overflow-hidden border border-zinc-200/55 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300"
     >
       {/* 1. Hero image with a small pill badge top-left and a star-rating chip top-right */}
       <div className="h-[240px] w-full relative overflow-hidden bg-zinc-100">
