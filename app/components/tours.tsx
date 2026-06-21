@@ -45,8 +45,8 @@ export default function Tours() {
   ];
 
   const cityPills = [
-    { id: "All", FR: "Toutes les Villes", EN: "All Cities", image: "/images/moroco.webp" },
-    { id: "Marrakech", FR: "Marrakech", EN: "Marrakech", image: "/images/morocco-marrakech-riad.png" },
+    { id: "All", FR: "Toutes les Villes", EN: "All Cities", image: "/images/morocco-sahara-dunes.png" },
+    { id: "Marrakech", FR: "Marrakech", EN: "Marrakech", image: "/images/marrakech_sunset_hero.png" },
     { id: "Agadir", FR: "Agadir", EN: "Agadir", image: "/images/tgz_course_ocean.jpg" },
     { id: "Rabat", FR: "Rabat", EN: "Rabat", image: "/images/rgdes_parcours_rouge_18.jpg" },
     { id: "Imperial", FR: "Villes Impériales", EN: "Imperial Cities", image: "/images/imperial_cities_fes.jpg" }
@@ -162,7 +162,7 @@ export default function Tours() {
                     <button
                       key={pill.id}
                       onClick={() => setActiveType(pill.id)}
-                      className={`group relative h-20 w-full rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-sm ${
+                      className={`group relative h-20 md:h-24 w-full rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-sm ${
                         isActive
                           ? "border-brand-gold ring-2 ring-brand-gold/45 scale-[1.02] font-bold"
                           : "border-zinc-200/80 hover:border-zinc-400"
@@ -177,7 +177,7 @@ export default function Tours() {
                         isActive ? "bg-[#C5A880]/75" : "bg-black/55 group-hover:bg-black/45"
                       }`} />
                       <div className="absolute inset-0 flex items-center justify-center p-2 text-center z-10">
-                        <span className="text-white text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase leading-tight">
+                        <span className="text-white text-[11px] sm:text-[12px] md:text-[13px] font-sans font-bold tracking-wider uppercase leading-tight">
                           {label}
                         </span>
                       </div>
@@ -195,19 +195,19 @@ export default function Tours() {
               <span className="text-[10px] font-mono tracking-[0.2em] text-[#C5A880] uppercase block font-semibold">
                 {lang === "FR" ? "2. Sélectionner une Ville / Région" : "2. Select a City / Region"}
               </span>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-                {cityPills.map((pill) => {
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 w-full">
+                {cityPills.map((pill, idx) => {
                   const label = lang === "FR" ? pill.FR : pill.EN;
                   const isActive = activeCity === pill.id;
                   return (
                     <button
                       key={pill.id}
                       onClick={() => setActiveCity(pill.id)}
-                      className={`group relative h-20 w-full rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-sm ${
+                      className={`group relative h-20 md:h-24 w-full rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer shadow-sm ${
                         isActive
                           ? "border-brand-gold ring-2 ring-brand-gold/45 scale-[1.02] font-bold"
                           : "border-zinc-200/80 hover:border-zinc-400"
-                      }`}
+                      } ${idx === 4 ? "col-span-2 sm:col-span-1" : ""}`}
                     >
                       <img 
                         src={pill.image} 
@@ -218,7 +218,7 @@ export default function Tours() {
                         isActive ? "bg-[#C5A880]/75" : "bg-black/55 group-hover:bg-black/45"
                       }`} />
                       <div className="absolute inset-0 flex items-center justify-center p-2 text-center z-10">
-                        <span className="text-white text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase leading-tight">
+                        <span className="text-white text-[11px] sm:text-[12px] md:text-[13px] font-sans font-bold tracking-wider uppercase leading-tight">
                           {label}
                         </span>
                       </div>

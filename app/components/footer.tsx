@@ -135,7 +135,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright border */}
-      <div className="max-w-[1200px] mx-auto mt-16 pt-8 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 items-center text-[11px] text-white/50 px-6">
+      <div className="max-w-[1200px] mx-auto mt-16 pt-8 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 items-center text-[11px] text-white/55 px-6">
         {/* Left: Copyright */}
         <span className="text-center md:text-left order-3 md:order-none">{translate(t.copyright, lang)}</span>
         
