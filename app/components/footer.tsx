@@ -154,8 +154,8 @@ export default function Footer() {
               alt="YS Logo" 
               className="h-4 w-auto object-contain brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" 
             />
-            <span className="text-[10px] text-zinc-500 group-hover:text-zinc-300 transition-colors duration-300 leading-none font-light">
-              Made by <strong className="font-semibold text-white group-hover:text-[#ea580c] transition-colors duration-300">YS Marketing Solutions</strong> <span className="text-white/10 mx-1">|</span> Marketing Agency
+            <span className="text-[10px] text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300 leading-none font-light">
+              Made by <strong className="font-semibold text-[#ea580c] transition-colors duration-300">YS Marketing Solutions</strong> <span className="text-white/10 mx-1">|</span> Marketing Agency
             </span>
           </a>
         </div>

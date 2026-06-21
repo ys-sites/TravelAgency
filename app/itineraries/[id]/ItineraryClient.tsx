@@ -334,7 +334,7 @@ export default function ItineraryClient({ id }: { id: string }) {
                   ))}
                 </div>
               </div>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide uppercase leading-tight font-bold text-brand-gold">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide uppercase leading-tight font-bold text-zinc-950">
                 {translate(itinerary.title, lang)}
               </h1>
             </div>
