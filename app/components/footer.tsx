@@ -147,15 +147,15 @@ export default function Footer() {
             href="https://www.ysdev.ca" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/0 border border-white/5 hover:bg-[#ea580c]/5 hover:border-[#ea580c]/40 transition-all duration-300 group"
+            className="ys-signature-btn"
           >
             <img 
               src="/YS.png" 
               alt="YS Logo" 
-              className="h-4 w-auto object-contain brightness-90 group-hover:brightness-100 group-hover:scale-105 transition-all duration-300" 
+              className="ys-sig-logo" 
             />
-            <span className="text-[10px] text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300 leading-none font-light">
-              Made by <strong className="font-semibold text-zinc-400 group-hover:text-[#ea580c] transition-colors duration-300">YS Marketing Solutions</strong> <span className="text-white/10 mx-1">|</span> Marketing Agency
+            <span className="ys-sig-text">
+              Made by <strong className="ys-sig-highlight">YS Marketing Solutions</strong> <span className="ys-sig-divider">|</span> Marketing Agency
             </span>
           </a>
         </div>
