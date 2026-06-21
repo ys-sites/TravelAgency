@@ -23,6 +23,7 @@ export interface ItineraryPackageCardProps {
   ctaHref: string;
   index?: number;
   city?: { FR: string; EN: string } | string;
+  tag?: "golf" | "tour" | "mice";
 }
 
 export default function ItineraryPackageCard({
@@ -41,6 +42,7 @@ export default function ItineraryPackageCard({
   ctaHref,
   index = 0,
   city,
+  tag = "golf",
 }: ItineraryPackageCardProps) {
   const { lang } = useLang();
 
@@ -132,6 +134,27 @@ export default function ItineraryPackageCard({
       {/* Card Content Body */}
       <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
         <div className="space-y-4">
+          {/* Category Badge */}
+          <div className="flex items-center gap-2">
+            <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-sans font-bold tracking-widest uppercase border ${
+              tag === "mice"
+                ? "bg-purple-50 text-purple-700 border-purple-200/60"
+                : tag === "tour"
+                ? "bg-amber-50 text-amber-800 border-amber-200/60"
+                : "bg-emerald-50 text-emerald-800 border-emerald-200/60"
+            }`}>
+              <span className={`w-1 h-1 rounded-full ${
+                tag === "mice" ? "bg-purple-600" : tag === "tour" ? "bg-amber-600" : "bg-emerald-600"
+              }`} />
+              {tag === "mice"
+                ? (lang === "FR" ? "MICE & Corporatif" : "MICE & Corporate")
+                : tag === "tour"
+                ? (lang === "FR" ? "Tours & Circuits" : "Tours & Discovery")
+                : (lang === "FR" ? "Forfait Golf" : "Golf Package")
+              }
+            </span>
+          </div>
+
           {/* 3. A meta row under the image: trip length • flight/transfer status • meal plan */}
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11.5px] text-zinc-500 font-sans font-medium tracking-wide">
             <span>{translatedDuration}</span>

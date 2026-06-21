@@ -271,6 +271,27 @@ export default function ItinerariesClient() {
               {/* Card Body */}
               <div className="p-8 flex-1 flex flex-col justify-between space-y-5">
                 <div className="space-y-4">
+                  {/* Category Badge */}
+                  <div className="flex items-center gap-2">
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-sans font-bold tracking-widest uppercase border ${
+                      tour.tag === "mice"
+                        ? "bg-purple-50 text-purple-700 border-purple-200/60"
+                        : tour.tag === "tour"
+                        ? "bg-amber-50 text-amber-800 border-amber-200/60"
+                        : "bg-emerald-50 text-emerald-800 border-emerald-200/60"
+                    }`}>
+                      <span className={`w-1 h-1 rounded-full ${
+                        tour.tag === "mice" ? "bg-purple-600" : tour.tag === "tour" ? "bg-amber-600" : "bg-emerald-600"
+                      }`} />
+                      {tour.tag === "mice"
+                        ? (lang === "FR" ? "MICE & Corporatif" : "MICE & Corporate")
+                        : tour.tag === "tour"
+                        ? (lang === "FR" ? "Tours & Circuits" : "Tours & Discovery")
+                        : (lang === "FR" ? "Forfait Golf" : "Golf Package")
+                      }
+                    </span>
+                  </div>
+
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-zinc-500 font-sans font-medium tracking-wide">
                     <span>{translate(tour.duration, lang)}</span>
                     <span>{translate({ FR: "•", EN: "•" }, lang)}</span>
