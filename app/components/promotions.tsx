@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Calendar, Users, Percent, Sparkles, Flame } from "lucide-react";
+import { Calendar, Users, Percent, Sparkles, Flame, MapPin, Plane } from "lucide-react";
 import { useLang, translate } from "../context/lang-context";
 import { dealsList } from "@/data/itineraries";
 import { getTierStyle } from "../utils/tier-styles";
@@ -104,114 +104,169 @@ export default function Promotions() {
         {/* Deals Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {selectedDeals.map((deal, index) => (
-            <motion.div
+            <Link 
               key={deal.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
-              transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
-              className="bg-white rounded-[2rem] overflow-hidden border border-zinc-200/50 shadow-md hover:shadow-xl flex flex-col group transition-shadow duration-300"
+              href={
+                deal.id === 99
+                  ? "/mice"
+                  : deal.id === 11 || deal.id === 12 || deal.id === 13
+                  ? "/golf-itineraries/agadir"
+                  : deal.id === 14 || deal.id === 15 || deal.id === 16
+                  ? "/golf-itineraries/marrakech"
+                  : `/itineraries/${deal.id}`
+              }
+              className="block"
             >
-              {/* Image Header with Tags */}
-              <div className="h-[240px] w-full relative overflow-hidden">
-                <img 
-                  src={deal.image} 
-                  alt={translate(deal.title, lang)} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none" />
-                
-                {/* Star Rating Overlay */}
-                <div className="absolute top-6 right-6 z-10 bg-black/45 backdrop-blur-md px-2.5 py-1.5 rounded-full flex gap-0.5 shadow-md border border-white/10 select-none">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[#C5A880] text-[11px] leading-none">★</span>
-                  ))}
-                </div>
-
-                {/* Badge container to prevent horizontal overlap on laptop/mobile screens */}
-                <div className="absolute top-6 left-6 right-6 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">
-                  {/* Styled Tier Badge with Framer Motion and Shimmer */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
-                    whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
-                    style={getTierStyle(translate(deal.badge, lang))}
-                    className="relative overflow-hidden px-3.5 py-1.5 rounded-full font-sans text-[11px] tracking-wider uppercase font-semibold shadow-md pointer-events-auto cursor-default"
-                  >
-                    {/* Shimmer overlay */}
-                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2.5s_infinite]" />
-                    <span className="relative z-10">{translate(deal.badge, lang)}</span>
-                  </motion.div>
-                </div>
-
-                {/* Booking Deadline Banner */}
-                {deal.promoText && (
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#8B2635]/95 backdrop-blur-xs text-[#faf9f5] text-[11px] font-sans py-2 px-4 tracking-wider text-center uppercase font-bold">
-                    {translate(deal.promoText, lang)}
-                  </div>
-                )}
-              </div>
-
-              {/* Card Body */}
-              <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
-                <div className="space-y-4">
-                  {/* Category Badge */}
-                  <div className="flex items-center gap-2">
-                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-sans font-bold tracking-widest uppercase border ${
-                      deal.tag === "mice"
-                        ? "bg-purple-50 text-purple-700 border-purple-200/60"
-                        : deal.tag === "tour"
-                        ? "bg-amber-50 text-amber-800 border-amber-200/60"
-                        : "bg-emerald-50 text-emerald-800 border-emerald-200/60"
-                    }`}>
-                      <span className={`w-1 h-1 rounded-full ${
-                        deal.tag === "mice" ? "bg-purple-600" : deal.tag === "tour" ? "bg-amber-600" : "bg-emerald-600"
-                      }`} />
-                      {deal.tag === "mice"
-                        ? (lang === "FR" ? "MICE & Corporatif" : "MICE & Corporate")
-                        : deal.tag === "tour"
-                        ? (lang === "FR" ? "Tours & Circuits" : "Tours & Discovery")
-                        : (lang === "FR" ? "Forfait Golf" : "Golf Package")
-                      }
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
+                className="bg-white rounded-[2rem] overflow-hidden border border-zinc-200/50 shadow-md hover:shadow-xl flex flex-col h-full group transition-shadow duration-300 cursor-pointer"
+              >
+                {/* Image Header with Tags */}
+                <div className="h-[240px] w-full relative overflow-hidden">
+                  <img 
+                    src={deal.image} 
+                    alt={translate(deal.title, lang)} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10 pointer-events-none" />
+                  
+                  {/* Circular Promo Seal */}
+                  <div className="absolute bottom-3 right-3 z-10 w-14 h-14 rounded-full border border-[#faf9f5]/30 bg-[#8B2635]/85 backdrop-blur-xs flex flex-col items-center justify-center text-center p-1 rotate-12 shadow-md">
+                    <span className="text-[#faf9f5] text-[7.5px] font-mono font-bold uppercase leading-tight tracking-wider">
+                      {lang === "FR" ? "Offre Spéciale" : "Special Rate"}
                     </span>
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-zinc-500 font-sans font-medium tracking-wide">
-                    <span>{translate(deal.duration, lang)}</span>
-                    <span>{translate({ FR: "•", EN: "•" }, lang)}</span>
-                    <span>{translate(deal.flight, lang)}</span>
-                    <span>{translate({ FR: "•", EN: "•" }, lang)}</span>
-                    <span>{translate(deal.meals, lang)}</span>
+                  {/* Badge container */}
+                  <div className="absolute top-6 left-6 right-6 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
+                      whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
+                      style={getTierStyle(translate(deal.badge, lang))}
+                      className="relative overflow-hidden px-3.5 py-1.5 rounded-full font-sans text-[11px] tracking-wider uppercase font-semibold shadow-md pointer-events-auto cursor-default"
+                    >
+                      <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2.5s_infinite]" />
+                      <span className="relative z-10">{translate(deal.badge, lang)}</span>
+                    </motion.div>
                   </div>
 
-                  <div className="pt-1">
-                    {deal.title && (
-                      <span className="text-[14px] md:text-[15px] font-mono tracking-[0.25em] uppercase font-bold text-[#8B2635] block mb-1.5">
-                        {cleanTitle(translate(deal.title, lang))}
+                  {/* Booking Deadline Banner */}
+                  {deal.promoText && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-[#8B2635]/95 backdrop-blur-xs text-[#faf9f5] text-[11px] font-sans py-2 px-4 tracking-wider text-center uppercase font-bold">
+                      {translate(deal.promoText, lang)}
+                    </div>
+                  )}
+                </div>
+
+                {/* Card Body */}
+                <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
+                  <div className="space-y-4">
+                    {/* Category Badge */}
+                    <div className="flex items-center gap-2">
+                      <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-sans font-bold tracking-widest uppercase border ${
+                        deal.tag === "mice"
+                          ? "bg-purple-50 text-purple-700 border-purple-200/60"
+                          : deal.tag === "tour"
+                          ? "bg-amber-50 text-amber-800 border-amber-200/60"
+                          : "bg-emerald-50 text-emerald-800 border-emerald-200/60"
+                      }`}>
+                        <span className={`w-1 h-1 rounded-full ${
+                          deal.tag === "mice" ? "bg-purple-600" : deal.tag === "tour" ? "bg-amber-600" : "bg-emerald-600"
+                        }`} />
+                        {deal.tag === "mice"
+                          ? (lang === "FR" ? "MICE & Corporatif" : "MICE & Corporate")
+                          : deal.tag === "tour"
+                          ? (lang === "FR" ? "Tours & Circuits" : "Tours & Discovery")
+                          : (lang === "FR" ? "Forfait Golf" : "Golf Package")
+                        }
                       </span>
-                    )}
-                    <h3 className="font-serif text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug uppercase">
-                      {translate(deal.city, lang)} {getNightsLabel(deal.duration, lang)}
-                    </h3>
+                    </div>
+
+                    {/* Title with aligned stars */}
+                    <div className="flex justify-between items-start gap-4">
+                      <div className="space-y-1">
+                        {deal.title && (
+                          <span className="text-[13px] md:text-[14px] font-mono tracking-[0.2em] uppercase font-bold text-[#8B2635] block">
+                            {cleanTitle(translate(deal.title, lang))}
+                          </span>
+                        )}
+                        <h3 className="font-serif text-lg md:text-xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug uppercase">
+                          {translate(deal.city, lang)} {getNightsLabel(deal.duration, lang)}
+                        </h3>
+                      </div>
+                      <div className="flex gap-0.5 text-brand-gold shrink-0 pt-2.5">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i} className="text-[12px] leading-none">★</span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Metadata Rows with Icons */}
+                    <div className="space-y-2.5 text-[11.5px] text-zinc-500 font-sans font-medium border-t border-b border-zinc-100/70 py-4">
+                      <div className="flex items-center gap-2.5">
+                        <MapPin className="w-4 h-4 text-brand-gold shrink-0" />
+                        <span>{translate(deal.city, lang)}, {lang === "FR" ? "Maroc" : "Morocco"}</span>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <Calendar className="w-4 h-4 text-brand-gold shrink-0" />
+                        <span>{translate(deal.duration, lang)} ({translate(deal.meals, lang)})</span>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <Plane className="w-4 h-4 text-brand-gold shrink-0" />
+                        <span>{translate(deal.flight, lang)}</span>
+                      </div>
+                    </div>
+
+                    {/* Inclusions & Highlights */}
+                    <div className="space-y-4">
+                      <p className="text-[13px] leading-relaxed text-zinc-600 font-light pt-1">
+                        <span className="font-heading text-[10px] uppercase tracking-wider font-bold text-brand-gold-dark block mb-1.5">
+                          {lang === "FR" ? "INCLUSIONS EXCLUSIVES" : "EXCLUSIVE INCLUSIONS"}
+                        </span>
+                        {translate(deal.inclusions, lang)}
+                      </p>
+
+                      <div className="flex flex-wrap gap-1.5">
+                        {(() => {
+                          let tags: string[] = [];
+                          if (deal.tag === "golf") {
+                            tags = lang === "FR" 
+                              ? ["Forfait Golf", "Hôtel 5★", "Buggy Inclus", "Vols de Montréal"] 
+                              : ["Golf Package", "5★ Hotel", "Buggy Included", "Montreal Flights"];
+                          } else if (deal.tag === "tour") {
+                            tags = lang === "FR" 
+                              ? ["Circuit Guidé", "Trek Toubkal", "Riad de Luxe", "Pension Complète"] 
+                              : ["Guided Tour", "Toubkal Trek", "Luxury Riad", "Full Board"];
+                          } else if (deal.tag === "mice") {
+                            tags = lang === "FR" 
+                              ? ["Corporatif", "Séminaire", "Sur Mesure", "Clé en Main"] 
+                              : ["Corporate", "Seminars", "Custom Made", "Turnkey"];
+                          }
+                          return tags.map((tagText, tIdx) => (
+                            <span 
+                              key={tIdx} 
+                              className="bg-zinc-100 hover:bg-zinc-200/50 text-zinc-600 border border-zinc-200/60 rounded px-2.5 py-1 text-[10px] font-sans font-semibold tracking-wide transition-colors"
+                            >
+                              {tagText}
+                            </span>
+                          ));
+                        })()}
+                      </div>
+                    </div>
                   </div>
 
-
-                  <p className="text-[13.5px] leading-relaxed text-zinc-600 font-light pt-2.5 border-t border-zinc-100">
-                    <span className="font-heading text-[10px] uppercase tracking-wider font-bold text-brand-gold-dark block mb-1">
-                      {lang === "FR" ? "INCLUSIONS EXCLUSIVES" : "EXCLUSIVE INCLUSIONS"}
-                    </span>
-                    {translate(deal.inclusions, lang)}
-                  </p>
-                </div>
-
-                {/* Footer / Pricing */}
-                <div className="flex items-center justify-between pt-5 border-t border-zinc-100">
-                  <div className="flex flex-col">
-                    <span className="text-[11px] font-mono line-through text-zinc-400 leading-none mb-1">
-                      {deal.oldPrice}
-                    </span>
+                  {/* Footer / Pricing */}
+                  <div className="flex items-center justify-between pt-5 border-t border-zinc-100">
+                    <div className="flex flex-col">
+                      <span className="text-[11px] font-mono line-through text-zinc-400 leading-none mb-1">
+                        {deal.oldPrice}
+                      </span>
                       {(() => {
                         const priceText = translate(deal.newPrice, lang);
                         const isRequest = priceText.toLowerCase().includes("devis") || priceText.toLowerCase().includes("request");
@@ -226,25 +281,17 @@ export default function Promotions() {
                           </span>
                         );
                       })()}
-                  </div>
+                    </div>
 
-                  <Link 
-                    href={
-                      deal.id === 99
-                        ? "/mice"
-                        : deal.id === 11 || deal.id === 12 || deal.id === 13
-                        ? "/golf-itineraries/agadir"
-                        : deal.id === 14 || deal.id === 15 || deal.id === 16
-                        ? "/golf-itineraries/marrakech"
-                        : `/itineraries/${deal.id}`
-                    }
-                    className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
-                  >
-                    {lang === "FR" ? "EN SAVOIR PLUS" : "BOOK OFFER"}
-                  </Link>
+                    <span 
+                      className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm animate-pulse group-hover:animate-none"
+                    >
+                      {lang === "FR" ? "DÉCOUVRIR" : "BOOK OFFER"}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
