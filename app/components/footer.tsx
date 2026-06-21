@@ -100,7 +100,6 @@ export default function Footer() {
             <li><Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors">{translate(t.agadirGolf, lang)}</Link></li>
             <li><Link href="/golf-itineraries/marrakech" className="hover:text-brand-gold transition-colors">{translate(t.marrakechGolf, lang)}</Link></li>
             <li><Link href="/mice" className="hover:text-brand-gold transition-colors">{translate(t.mice, lang)}</Link></li>
-            <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{translate(t.saudi, lang)}</Link></li>
           </ul>
         </div>
 
@@ -111,7 +110,6 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
             <li><Link href="/#about" className="hover:text-brand-gold transition-colors">{translate(t.about, lang)}</Link></li>
-            <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{translate(t.customTrip, lang)}</Link></li>
             <li><Link href="/travel-stories" className="hover:text-brand-gold transition-colors">{translate(t.news, lang)}</Link></li>
           </ul>
         </div>

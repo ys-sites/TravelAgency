@@ -71,10 +71,10 @@ export default function GulfHeroScrubber() {
               {lang === "FR" ? "Explorer les Itinéraires" : "Explore Itineraries"}
             </a>
             <Link
-              href="/custom-trip"
+              href="/itineraries"
               className="w-full sm:w-auto border border-white/40 bg-black/40 hover:bg-white hover:border-white text-white hover:text-zinc-950 font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[220px] cursor-pointer"
             >
-              {lang === "FR" ? "Voyage Sur Mesure" : "Custom Trip"}
+              {lang === "FR" ? "Nos Forfaits" : "View Our Packages"}
             </Link>
           </div>
         </motion.div>

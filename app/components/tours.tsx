@@ -141,19 +141,78 @@ export default function Tours() {
                 {translate({ FR: "→", EN: "→" }, lang)}
               </span>
             </Link>
-
-            <Link
-              href="/custom-trip"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase px-6 py-4 transition-luxury shadow-sm cursor-pointer hover:-translate-y-0.5"
-            >
-              {lang === "FR" ? "VOYAGE SUR MESURE" : "BUILD CUSTOM PASSAGE"}
-            </Link>
           </div>
         </div>
 
         {/* Right Column: Curated Itineraries in a balanced 2x2 grid */}
         <div className="lg:col-span-9 w-full relative space-y-8">
           
+          {/* Task 3: Large Magazine-Style Visual Window Tiles */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {/* Golf Packages Tile */}
+            <Link 
+              href="/itineraries?type=Golf"
+              className="group relative aspect-[3/4.5] md:aspect-[3/4.2] rounded-[2rem] overflow-hidden border border-zinc-200/80 shadow-sm block transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
+              <img 
+                src="/images/royal_golf_aerial_1.jpg" 
+                alt="Golf Packages" 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6 z-10 space-y-1">
+                <span className="text-brand-gold font-mono text-[9px] tracking-[0.2em] uppercase font-semibold block">
+                  {lang === "FR" ? "SPORT DE PRESTIGE" : "ELITE SPORT"}
+                </span>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-white uppercase tracking-wider">
+                  {lang === "FR" ? "Forfaits Golf" : "Golf Packages"}
+                </h3>
+              </div>
+            </Link>
+
+            {/* Tours & Discovery Tile */}
+            <Link 
+              href="/itineraries?type=Tours"
+              className="group relative aspect-[3/4.5] md:aspect-[3/4.2] rounded-[2rem] overflow-hidden border border-zinc-200/80 shadow-sm block transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
+              <img 
+                src="/images/tours_sunset.jpg" 
+                alt="Tours & Discovery" 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6 z-10 space-y-1">
+                <span className="text-brand-gold font-mono text-[9px] tracking-[0.2em] uppercase font-semibold block">
+                  {lang === "FR" ? "ÉVASION & CULTURE" : "ESCAPE & CULTURE"}
+                </span>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-white uppercase tracking-wider">
+                  {lang === "FR" ? "Circuits & Découverte" : "Tours & Discovery"}
+                </h3>
+              </div>
+            </Link>
+
+            {/* MICE & Corporate Tile */}
+            <Link 
+              href="/mice"
+              className="group relative aspect-[3/4.5] md:aspect-[3/4.2] rounded-[2rem] overflow-hidden border border-zinc-200/80 shadow-sm block transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
+              <img 
+                src="/images/casablanca_finance.jpg" 
+                alt="MICE & Corporate" 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+              <div className="absolute bottom-6 left-6 right-6 z-10 space-y-1">
+                <span className="text-brand-gold font-mono text-[9px] tracking-[0.2em] uppercase font-semibold block">
+                  {lang === "FR" ? "ÉVÉNEMENTIEL D'AFFAIRES" : "BUSINESS EVENTS"}
+                </span>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-white uppercase tracking-wider">
+                  {lang === "FR" ? "MICE & Corporatif" : "MICE & Corporate"}
+                </h3>
+              </div>
+            </Link>
+          </div>
+
           {/* Combined Filter Section */}
           <div className="flex flex-col space-y-5 w-full bg-zinc-50/50 p-6 rounded-3xl border border-zinc-200/50">
             {/* Row 1: Travel Types */}

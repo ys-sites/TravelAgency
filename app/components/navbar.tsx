@@ -57,9 +57,6 @@ export default function Navbar() {
           <Link href="/itineraries" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.itineraries, lang)}
           </Link>
-          <Link href="/custom-trip" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
-            {translate(t.customTrip, lang)}
-          </Link>
           <Link href="/#about" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {translate(t.about, lang)}
           </Link>

@@ -23,11 +23,11 @@ export default function Home() {
 
       {/* Main Body content */}
       <main className="relative z-10 bg-white">
+        <AboutUsSection />
         <Promotions />
         <div id="portfolios">
           <Tours />
         </div>
-        <AboutUsSection />
         <TestimonialsSection />
       </main>
 

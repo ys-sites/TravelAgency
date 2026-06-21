@@ -29,16 +29,16 @@ export default function AgadirGolfClient() {
       EN: "Discover Agadir, the jewel of the Moroccan Atlantic. Play on championship courses facing the ocean and enjoy exceptional hospitality at our 5★ partner resorts."
     },
     customTitle: {
-      FR: "Voyage de Golf Sur Mesure",
-      EN: "Custom Golf Experience"
+      FR: "Besoin d'Informations ?",
+      EN: "Need More Information?"
     },
     customDesc: {
-      FR: "Vous souhaitez personnaliser ce séjour ? Modifiez les parcours, étendez la durée ou ajoutez d'autres services de conciergerie privée.",
-      EN: "Want to customize this journey? Change courses, extend your stay, or add exclusive private concierge services."
+      FR: "Vous souhaitez en savoir plus sur ce forfait ou planifier votre séjour ? Contactez notre conciergerie privée.",
+      EN: "Would you like to know more about this package or plan your stay? Contact our private concierge."
     },
     customBtn: {
-      FR: "Personnaliser Mon Séjour",
-      EN: "Build My Trip"
+      FR: "Nous Contacter",
+      EN: "Contact Us"
     }
   };
 
@@ -187,7 +187,7 @@ export default function AgadirGolfClient() {
           </p>
           <div>
             <Link
-              href="/custom-trip"
+              href="/#contacts"
               className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury shadow-md cursor-pointer"
             >
               {translate(text.customBtn, lang)} &rarr;

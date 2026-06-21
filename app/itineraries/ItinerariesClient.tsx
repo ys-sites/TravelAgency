@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "motion/react";
@@ -9,6 +9,7 @@ import Footer from "../components/footer";
 import { useLang, translate } from "../context/lang-context";
 import { toursList } from "@/data/itineraries";
 import { getTierStyle } from "../utils/tier-styles";
+import { useSearchParams } from "next/navigation";
 
 const t = {
   book: {
@@ -35,10 +36,21 @@ const cleanTitle = (title: string) => {
 };
 
 
-export default function ItinerariesClient() {
+function ItinerariesClientContent() {
   const { lang } = useLang();
+  const searchParams = useSearchParams();
   const [activeType, setActiveType] = React.useState("All"); // All, Golf, Tours
   const [activeCity, setActiveCity] = React.useState("All"); // All, Marrakech, Agadir, Rabat, Imperial
+
+  React.useEffect(() => {
+    const typeParam = searchParams.get("type");
+    if (typeParam) {
+      const matched = ["All", "Golf", "Tours", "Mice"].find(t => t.toLowerCase() === typeParam.toLowerCase());
+      if (matched) {
+        setActiveType(matched);
+      }
+    }
+  }, [searchParams]);
 
   const typePills = [
     { id: "All", FR: "Tous les Types", EN: "All Travel Types" },
@@ -134,24 +146,6 @@ export default function ItinerariesClient() {
         </div>
       </section>
 
-      {/* Build-to-Order Custom Passage Banner */}
-      <section className="pt-12 pb-6 px-6 max-w-4xl mx-auto text-center z-20 relative bg-white">
-        <div className="bg-zinc-50 border border-zinc-200/60 p-8 rounded-[1.8rem] space-y-5 shadow-sm">
-          <p className="text-zinc-700 text-sm md:text-base font-light italic leading-relaxed max-w-2xl mx-auto">
-            {lang === "FR"
-              ? "Tous nos itinéraires sont construits sur mesure selon votre demande."
-              : "All our itineraries are built to order based on your request."}
-          </p>
-          <div>
-            <Link
-              href="/custom-trip"
-              className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury shadow-md cursor-pointer"
-            >
-              {lang === "FR" ? "Créer Mon Voyage" : "Build My Trip"} &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Grid of Cards */}
       <section className="pb-24 pt-6 px-6 max-w-6xl mx-auto z-20 relative bg-white">
@@ -361,5 +355,13 @@ export default function ItinerariesClient() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function ItinerariesClient() {
+  return (
+    <Suspense fallback={null}>
+      <ItinerariesClientContent />
+    </Suspense>
   );
 }

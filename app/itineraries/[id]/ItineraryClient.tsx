@@ -132,6 +132,13 @@ export default function ItineraryClient({ id }: { id: string }) {
   const { lang } = useLang();
 
   // Safe lookup to prevent securecoder CWE-94 dynamic bracket notation warning
+  const cleanTitle = (title: string) => {
+  return title.replace(/\s*\(\d+N\)\s*$/i, "");
+};
+
+// TODO: insurance link pending partner meeting
+const INSURANCE_LINK_URL = "#";
+
   const itinerary = (() => {
     switch (id) {
       case "6": return itinerariesData["6"];
@@ -631,13 +638,19 @@ export default function ItineraryClient({ id }: { id: string }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex justify-center pt-8 border-t border-zinc-100"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 border-t border-zinc-100"
           >
             <a
               href="#booking-form"
-              className="inline-flex items-center gap-2 rounded-full bg-[#8B2635] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-5 transition-luxury hover:bg-[#72202b] shadow-md cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#8B2635] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-5 transition-luxury hover:bg-[#72202b] shadow-md cursor-pointer min-w-[200px]"
             >
               {lang === "FR" ? "RÉSERVER VOTRE PASSAGE" : "RESERVE YOUR JOURNEY"} &rarr;
+            </a>
+            <a
+              href={INSURANCE_LINK_URL}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-5 transition-luxury hover:bg-zinc-50 shadow-sm cursor-pointer min-w-[200px]"
+            >
+              {lang === "FR" ? "ASSURANCE VOYAGE" : "TRAVEL INSURANCE"}
             </a>
           </motion.div>
 
@@ -814,12 +827,20 @@ export default function ItineraryClient({ id }: { id: string }) {
                     <Shield className="text-brand-gold w-4 h-4 shrink-0 mt-0.5" />
                     <span>{lang === "FR" ? "Aucun paiement n'est effectué à ce stade. Notre conciergerie vous contactera dans les 24 heures pour commencer à concevoir votre passage." : "No payment is taken at this stage. Our concierge will contact you within 24 hours to begin crafting your passage."}</span>
                   </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-[#8B2635] shadow-md cursor-pointer"
-                  >
-                    {lang === "FR" ? "DEMANDE POUR SOUMISSION" : "REQUEST A QUOTE"}
-                  </button>
+                  <div className="flex flex-col gap-3">
+                    <button
+                      type="submit"
+                      className="w-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-[#8B2635] shadow-md cursor-pointer"
+                    >
+                      {lang === "FR" ? "DEMANDE POUR SOUMISSION" : "REQUEST A QUOTE"}
+                    </button>
+                    <a
+                      href={INSURANCE_LINK_URL}
+                      className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase py-4 transition-luxury hover:bg-zinc-50 shadow-sm cursor-pointer text-center"
+                    >
+                      {lang === "FR" ? "ASSURANCE VOYAGE" : "TRAVEL INSURANCE"}
+                    </a>
+                  </div>
                 </div>
               </form>
             ) : (

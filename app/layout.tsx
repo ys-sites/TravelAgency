@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import { LangProvider } from "./context/lang-context";
-import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
+import CallFloatingButton from "./components/CallFloatingButton";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
