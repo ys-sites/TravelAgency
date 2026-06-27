@@ -230,6 +230,8 @@ const INSURANCE_LINK_URL = "#";
 
   const videoUrl = (() => {
     switch (id) {
+      case "7":
+        return "Morocco_Chefchaouen_Hero_16x9_Final.mov_eushqt";
       case "10":
         return "Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw";
       case "11":
