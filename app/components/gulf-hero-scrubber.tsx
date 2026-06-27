@@ -11,12 +11,13 @@ export default function GulfHeroScrubber() {
 
   return (
     <div className="relative h-screen w-full bg-black overflow-hidden">
-      {/* Render Smart Video Background */}
+      {/* Render Cloudinary Video Embed Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
-        <SmartVideo
-          source={videoSources.hero}
-          variant="hero"
-          className="animate-kenburns"
+        <iframe
+          src="https://player.cloudinary.com/embed/?cloud_name=dzgmvz6tc&public_id=Golf_in_Morocco_ssfati&autoplay=true&muted=true&loop=true&controls=false"
+          className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none border-none animate-kenburns"
+          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+          frameBorder="0"
         />
       </div>
       
