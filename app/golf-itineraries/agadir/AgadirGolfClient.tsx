@@ -133,11 +133,28 @@ export default function AgadirGolfClient() {
 
       {/* Hero Header Section */}
       <section className="relative h-[55vh] w-full overflow-hidden bg-zinc-950 flex flex-col justify-end pb-12 px-6 md:px-12">
-        <img
-          src="/images/tgz_course_ocean.jpg"
-          alt="Agadir Golf Packages"
-          className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
-        />
+        <video
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-45 pointer-events-none animate-kenburns"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.jpg"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.jpg')"
+          }}
+        >
+          {/* Mobile WebM */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.webm" type="video/webm" media="(max-width: 768px)" />
+          {/* Mobile MP4 */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.mp4" type="video/mp4" media="(max-width: 768px)" />
+          
+          {/* Desktop WebM */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.webm" type="video/webm" />
+          {/* Desktop MP4 */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none" />
         
