@@ -105,35 +105,14 @@ export default function AboutUsSection() {
             transition={{ duration: 0.6 }}
             className="w-full"
           >
-            <div className="relative aspect-video rounded-3xl overflow-hidden border border-zinc-200/80 bg-zinc-950 flex items-center justify-center group shadow-md animate-pulse hover:animate-none">
-              {/* Overlay with play button */}
-              <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center z-10 transition-colors duration-300 group-hover:bg-black/55">
-                <div className="h-16 w-16 rounded-full bg-white/95 text-zinc-900 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-                  <svg className="w-6 h-6 fill-current translate-x-0.5" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <span className="text-white text-xs font-mono tracking-[0.25em] uppercase mt-4 select-none opacity-80 group-hover:opacity-100 transition-opacity">
-                  {lang === "FR" ? "Vidéo Explicative (Bientôt)" : "Explainer Video (Coming Soon)"}
-                </span>
-              </div>
-              
-              {/* Placeholder Background Image */}
-              <img 
-                src="/images/tgz_course_hotel.jpg" 
-                alt="Explainer Video Placeholder" 
-                className="w-full h-full object-cover opacity-60"
+            <div className="relative aspect-video rounded-3xl overflow-hidden border border-zinc-200/80 bg-zinc-950 shadow-md">
+              <iframe
+                src="https://player.cloudinary.com/embed/?cloud_name=dzgmvz6tc&public_id=Golf_in_Morocco_New_tmjx9s"
+                className="absolute inset-0 w-full h-full border-none"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+                frameBorder="0"
               />
-              
-              {/* Real iframe placeholder ready for client URL */}
-              {/* 
-                // TODO: Replace src with the animated/illustrated explainer video link provided by client
-                <iframe
-                  src="YOUR_ANIMATED_EXPLAINER_VIDEO_URL_HERE"
-                  className="absolute inset-0 w-full h-full border-none hidden"
-                  allow="autoplay; fullscreen; encrypted-media"
-                />
-              */}
             </div>
           </motion.div>
         </div>
