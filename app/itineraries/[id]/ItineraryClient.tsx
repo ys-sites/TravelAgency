@@ -236,6 +236,10 @@ const INSURANCE_LINK_URL = "#";
       case "12":
       case "13":
         return "Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad";
+      case "14":
+      case "15":
+      case "16":
+        return "Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv";
       default:
         return null;
     }
