@@ -228,6 +228,19 @@ const INSURANCE_LINK_URL = "#";
     }
   })();
 
+  const videoUrl = (() => {
+    switch (id) {
+      case "10":
+        return "Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw";
+      case "11":
+      case "12":
+      case "13":
+        return "Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad";
+      default:
+        return null;
+    }
+  })();
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-body antialiased">
       <Navbar />
@@ -303,11 +316,31 @@ const INSURANCE_LINK_URL = "#";
         </section>
       ) : (
         <section className="relative w-full aspect-[16/10] md:aspect-[21/9] min-h-[400px] md:min-h-[500px] lg:min-h-[550px] overflow-hidden bg-zinc-950 flex flex-col justify-end">
-          <img
-            src={itinerary.image}
-            alt={translate(itinerary.title, lang)}
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
+          {videoUrl ? (
+            <video
+              className="absolute inset-0 w-full h-full object-cover object-center opacity-45 pointer-events-none animate-kenburns"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/${videoUrl}.jpg`}
+              style={{
+                backgroundImage: `url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/${videoUrl}.jpg')`
+              }}
+            >
+              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/${videoUrl}.webm`} type="video/webm" media="(max-width: 768px)" />
+              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/${videoUrl}.mp4`} type="video/mp4" media="(max-width: 768px)" />
+              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/${videoUrl}.webm`} type="video/webm" />
+              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/${videoUrl}.mp4`} type="video/mp4" />
+            </video>
+          ) : (
+            <img
+              src={itinerary.image}
+              alt={translate(itinerary.title, lang)}
+              className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-white" />
 
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-12 max-w-7xl mx-auto z-10">
