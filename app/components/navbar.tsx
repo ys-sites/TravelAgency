@@ -22,19 +22,19 @@ export default function Navbar() {
 
   return (
     <nav className="absolute top-0 left-1/2 z-50 w-[calc(100%-48px)] max-w-[1200px] -translate-x-1/2">
-      <div className="glass-nav flex h-[54px] sm:h-[64px] md:h-[74px] items-center justify-between rounded-full px-8 py-0.5">
+      <div className="glass-nav flex h-[48px] sm:h-[56px] md:h-[62px] items-center justify-between rounded-full px-6 py-0.5">
         {/* Logo and Company Name */}
-        <Link href="/" className="flex items-center gap-2 lg:gap-2.5 xl:gap-4 cursor-pointer decoration-none group">
+        <Link href="/" className="flex items-center gap-2 lg:gap-2.5 xl:gap-3 cursor-pointer decoration-none group">
           <img 
             src="/images/logo.png" 
-            className="h-[46px] sm:h-[56px] lg:h-[50px] xl:h-[66px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-90" 
+            className="h-[38px] sm:h-[44px] lg:h-[44px] xl:h-[48px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-90" 
             alt="Majestic Experiences Voyages" 
           />
           <div className="flex flex-col text-white">
-            <span className="font-serif text-[12px] sm:text-[15px] lg:text-[14px] xl:text-[18px] uppercase tracking-[0.25em] font-bold leading-none">
+            <span className="font-serif text-[10px] sm:text-[13px] lg:text-[12px] xl:text-[14px] uppercase tracking-[0.25em] font-bold leading-none">
               {translate(t.brandName1, lang)}
             </span>
-            <span className="font-sans text-[8px] sm:text-[9px] lg:text-[8px] xl:text-[11px] uppercase tracking-[0.35em] text-white font-light mt-1 lg:mt-1.5 leading-none">
+            <span className="font-sans text-[7px] sm:text-[8px] lg:text-[8px] xl:text-[9px] uppercase tracking-[0.35em] text-white/80 font-light mt-1 lg:mt-1.5 leading-none">
               {translate(t.brandName2, lang)}
             </span>
           </div>
