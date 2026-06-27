@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { useLang, translate } from "../context/lang-context";
 import { toursList } from "@/data/itineraries";
 import { getTierStyle } from "../utils/tier-styles";
+import { useSearchParams } from "next/navigation";
 
 const t = {
   book: {
@@ -32,10 +33,23 @@ const cleanTitle = (title: string) => {
 };
 
 
-export default function Tours() {
+function ToursContent() {
   const { lang } = useLang();
+  const searchParams = useSearchParams();
   const [activeType, setActiveType] = React.useState("All"); // All, Golf, Tours
   const [activeCity, setActiveCity] = React.useState("All"); // All, Marrakech, Agadir, Rabat, Imperial
+
+  React.useEffect(() => {
+    const cityParam = searchParams.get("city");
+    if (cityParam) {
+      const matched = ["All", "Marrakech", "Agadir", "Rabat", "Imperial"].find(
+        (c) => c.toLowerCase() === cityParam.toLowerCase()
+      );
+      if (matched) {
+        setActiveCity(matched);
+      }
+    }
+  }, [searchParams]);
 
   const typePills = [
     { id: "All", FR: "Tous les Types", EN: "All Travel Types", image: "/images/moroco.webp" },
@@ -377,7 +391,14 @@ export default function Tours() {
         </div>
 
       </div>
-
     </div>
+  );
+}
+
+export default function Tours() {
+  return (
+    <React.Suspense fallback={null}>
+      <ToursContent />
+    </React.Suspense>
   );
 }

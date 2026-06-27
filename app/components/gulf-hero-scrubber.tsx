@@ -3,34 +3,29 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useLang } from "../context/lang-context";
+import SmartVideo from "./smart-video";
+import { videoSources } from "../../data/videoSources";
 
 export default function GulfHeroScrubber() {
   const { lang } = useLang();
 
   return (
     <div className="relative h-screen w-full bg-black overflow-hidden">
-      {/* Render Cloudinary Video Embed Background */}
+      {/* Render Smart Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
-        <video
-          className="w-full h-full object-cover bg-black bg-center bg-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg')"
-          }}
-          poster="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg"
-        >
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920,vc_vp9/Golf_in_Morocco_ssfati.webm" type="video/webm" />
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920,vc_h264/Golf_in_Morocco_ssfati.mp4" type="video/mp4" />
-        </video>
+        <SmartVideo
+          source={videoSources.hero}
+          variant="hero"
+          className="animate-kenburns"
+        />
       </div>
       
       {/* Cinematic Vignette Gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-1" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none z-1" />
+      
+      {/* Bottom Soft Blend to Page Background */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#faf9f5] to-transparent pointer-events-none z-2" />
 
       {/* Centered Premium Logo */}
       <div className="absolute inset-0 flex items-center justify-center translate-y-2 z-10 px-6 select-none pointer-events-none">

@@ -194,6 +194,23 @@ input[type="range"]::-moz-range-thumb {
   margin: 0 4px;
 }
 
+@keyframes kenburns-slow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns-slow 24s ease-in-out infinite;
+}
+
+
 
 
 

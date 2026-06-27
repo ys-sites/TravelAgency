@@ -3,6 +3,7 @@ import { Playfair_Display, Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import { LangProvider } from "./context/lang-context";
 import CallFloatingButton from "./components/CallFloatingButton";
+import PageTransition from "./components/page-transition";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -37,9 +38,15 @@ export default function RootLayout({
       lang="en"
       className={`${playfairDisplay.variable} ${montserrat.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+      </head>
       <body className="min-h-full flex flex-col">
         <LangProvider>
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
           <CallFloatingButton />
         </LangProvider>
       </body>

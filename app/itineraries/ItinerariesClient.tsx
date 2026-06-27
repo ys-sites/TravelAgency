@@ -50,6 +50,13 @@ function ItinerariesClientContent() {
         setActiveType(matched);
       }
     }
+    const cityParam = searchParams.get("city");
+    if (cityParam) {
+      const matched = ["All", "Marrakech", "Agadir", "Rabat", "Imperial"].find(c => c.toLowerCase() === cityParam.toLowerCase());
+      if (matched) {
+        setActiveCity(matched);
+      }
+    }
   }, [searchParams]);
 
   const typePills = [

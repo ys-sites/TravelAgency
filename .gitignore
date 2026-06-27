@@ -57,6 +57,10 @@ public/images/*.pdf
 # Exclude large local video assets
 public/video/
 
+# Exclude local build binary tools
+.bin/
+
+
 
 
 
