@@ -20,13 +20,20 @@ export default function GulfHeroScrubber() {
           loop
           playsInline
           preload="auto"
-          poster="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg"
+          poster="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Golf_in_Morocco_ssfati.jpg"
           style={{
-            backgroundImage: "url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg')"
+            backgroundImage: "url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Golf_in_Morocco_ssfati.jpg')"
           }}
         >
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto/Golf_in_Morocco_ssfati.webm" type="video/webm" />
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto/Golf_in_Morocco_ssfati.mp4" type="video/mp4" />
+          {/* Mobile WebM */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/Golf_in_Morocco_ssfati.webm" type="video/webm" media="(max-width: 768px)" />
+          {/* Mobile MP4 */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/Golf_in_Morocco_ssfati.mp4" type="video/mp4" media="(max-width: 768px)" />
+          
+          {/* Desktop WebM */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/Golf_in_Morocco_ssfati.webm" type="video/webm" />
+          {/* Desktop MP4 */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/Golf_in_Morocco_ssfati.mp4" type="video/mp4" />
         </video>
       </div>
       

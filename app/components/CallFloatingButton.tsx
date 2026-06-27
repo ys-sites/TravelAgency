@@ -13,7 +13,7 @@ export default function CallFloatingButton() {
     <a
       href={`tel:${phoneNumber}`}
       aria-label={lang === "FR" ? "Appeler le Concierge" : "Call Concierge"}
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-8 md:bottom-8 z-50 flex items-center justify-center gap-2 bg-zinc-950/95 hover:bg-zinc-900 text-[#faf9f5] border border-brand-gold/30 hover:border-brand-gold/60 p-4 md:px-5 md:py-3.5 rounded-full shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:scale-105 transition-all duration-300 ease-out backdrop-blur-md cursor-pointer group"
+      className="fixed bottom-6 right-6 md:right-8 md:bottom-8 z-50 flex items-center justify-center gap-2 bg-zinc-950/95 hover:bg-zinc-900 text-[#faf9f5] border border-brand-gold/30 hover:border-brand-gold/60 p-4 md:px-5 md:py-3.5 rounded-full shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:scale-105 transition-all duration-300 ease-out backdrop-blur-md cursor-pointer group"
     >
       {/* Phone Icon */}
       <svg 
