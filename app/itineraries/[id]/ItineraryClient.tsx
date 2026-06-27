@@ -239,6 +239,8 @@ const INSURANCE_LINK_URL = "#";
         return "Morocco_Fez_Hero_16x9_UpdatedLogo_z5b24u";
       case "essaouira":
         return "Morocco_Essaouira_Hero_16x9_UpdatedLogo_k4v9gz";
+      case "ouarzazate":
+        return "Morocco_Ouarzazate_Hero_16x9_UpdatedLogo_jhmnuj";
       case "10":
         return "Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw";
       case "11":
