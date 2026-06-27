@@ -232,6 +232,13 @@ const INSURANCE_LINK_URL = "#";
     switch (id) {
       case "7":
         return "Morocco_Chefchaouen_Hero_16x9_Final.mov_eushqt";
+      case "6":
+      case "9":
+      case "fez":
+      case "fes":
+        return "Morocco_Fez_Hero_16x9_UpdatedLogo_z5b24u";
+      case "essaouira":
+        return "Morocco_Essaouira_Hero_16x9_UpdatedLogo_k4v9gz";
       case "10":
         return "Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw";
       case "11":
