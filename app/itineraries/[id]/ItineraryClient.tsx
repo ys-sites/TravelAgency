@@ -246,6 +246,7 @@ const INSURANCE_LINK_URL = "#";
       case "casablanca":
         return "Morocco_Casablanca_Hero_16x9_UpdatedLogo_htz5pb";
       case "tangier":
+      case "tanger":
         return "Morocco_Tangier_Hero_16x9_UpdatedLogo_f9kwsc";
       case "10":
         return "Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw";
