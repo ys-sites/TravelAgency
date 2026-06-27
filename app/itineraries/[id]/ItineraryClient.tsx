@@ -483,19 +483,36 @@ const INSURANCE_LINK_URL = "#";
                 </a>
               </div>
 
-              {/* Destination Showcase Image */}
+              {/* Destination Showcase Image or Video */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="w-full rounded-2xl overflow-hidden border border-zinc-100 shadow-sm"
+                className="w-full rounded-2xl overflow-hidden border border-zinc-100 shadow-sm bg-black"
               >
-                <img
-                  src={itinerary.contentImage}
-                  alt={translate(itinerary.title, lang)}
-                  className="w-full h-[320px] md:h-[420px] object-cover hover:scale-[1.02] transition-transform duration-700"
-                />
+                {videoUrl ? (
+                  <video
+                    className="w-full h-[320px] md:h-[420px] object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    poster={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/${videoUrl}.jpg`}
+                  >
+                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/${videoUrl}.webm`} type="video/webm" media="(max-width: 768px)" />
+                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/${videoUrl}.mp4`} type="video/mp4" media="(max-width: 768px)" />
+                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/${videoUrl}.webm`} type="video/webm" />
+                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/${videoUrl}.mp4`} type="video/mp4" />
+                  </video>
+                ) : (
+                  <img
+                    src={itinerary.contentImage}
+                    alt={translate(itinerary.title, lang)}
+                    className="w-full h-[320px] md:h-[420px] object-cover hover:scale-[1.02] transition-transform duration-700"
+                  />
+                )}
               </motion.div>
 
               {/* Image Gallery for Golf Packages */}
