@@ -5,7 +5,6 @@ import Tours from "./components/tours";
 import Promotions from "./components/promotions";
 import AboutUsSection from "./components/about-us-section";
 import TestimonialsSection from "./components/testimonials-section";
-import DestinationsShowcase from "./components/destinations-showcase";
 import Footer from "./components/footer";
 
 export const metadata: Metadata = {
@@ -25,7 +24,6 @@ export default function Home() {
       {/* Main Body content */}
       <main className="relative z-10 bg-white">
         <AboutUsSection />
-        <DestinationsShowcase />
         <Promotions />
         <div id="portfolios">
           <Tours />

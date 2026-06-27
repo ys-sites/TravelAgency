@@ -15,11 +15,11 @@ const CLOUD_BASE = "";
 export const videoSources: Record<string, VideoSource> = {
   hero: {
     id: "hero",
-    poster: "/images/posters/hero.jpg",
-    webm: `${CLOUD_BASE}/video/hero.webm`,
-    mp4: `${CLOUD_BASE}/video/hero.mp4`,
-    webmMobile: `${CLOUD_BASE}/video/hero-mobile.webm`,
-    mp4Mobile: `${CLOUD_BASE}/video/hero-mobile.mp4`,
+    poster: "https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg",
+    webm: "https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920,vc_vp9/Golf_in_Morocco_ssfati.webm",
+    mp4: "https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920,vc_h264/Golf_in_Morocco_ssfati.mp4",
+    webmMobile: "https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960,vc_vp9/Golf_in_Morocco_ssfati.webm",
+    mp4Mobile: "https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960,vc_h264/Golf_in_Morocco_ssfati.mp4",
   },
   marrakech: { 
     id: "marrakech", 
