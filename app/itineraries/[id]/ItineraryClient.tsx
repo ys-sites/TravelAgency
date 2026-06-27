@@ -243,6 +243,8 @@ const INSURANCE_LINK_URL = "#";
         return "Morocco_Ouarzazate_Hero_16x9_UpdatedLogo_jhmnuj";
       case "dakhla":
         return "Morocco_Dakhla_Hero_16x9_UpdatedLogo_cijwv8";
+      case "casablanca":
+        return "Morocco_Casablanca_Hero_16x9_UpdatedLogo_htz5pb";
       case "10":
         return "Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw";
       case "11":
