@@ -11,14 +11,23 @@ export default function GulfHeroScrubber() {
 
   return (
     <div className="relative h-screen w-full bg-black overflow-hidden">
-      {/* Render Cloudinary Video Embed Background */}
+      {/* Render Native Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
-        <iframe
-          src="https://player.cloudinary.com/embed/?cloud_name=dzgmvz6tc&public_id=Golf_in_Morocco_ssfati&autoplay=true&muted=true&loop=true&controls=false"
-          className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none border-none animate-kenburns"
-          allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-          frameBorder="0"
-        />
+        <video
+          className="w-full h-full object-cover bg-black bg-center bg-cover animate-kenburns"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg')"
+          }}
+        >
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto/Golf_in_Morocco_ssfati.webm" type="video/webm" />
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto/Golf_in_Morocco_ssfati.mp4" type="video/mp4" />
+        </video>
       </div>
       
       {/* Cinematic Vignette Gradients */}
