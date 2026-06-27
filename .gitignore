@@ -54,5 +54,9 @@ public/images/17 CHAMPIONSHIP.heic
 public/images/*.docx
 public/images/*.pdf
 
+# Exclude large local video assets
+public/video/
+
+
 
 
