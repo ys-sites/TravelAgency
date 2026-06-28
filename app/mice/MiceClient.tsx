@@ -94,7 +94,7 @@ export default function MiceClient() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    fetch("https://formsubmit.co/ajax/sharafath2001@hotmail.com", {
+    fetch("https://formsubmit.co/ajax/mevoyages75@gmail.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -169,7 +169,7 @@ export default function MiceClient() {
       {/* City Video Showcase */}
       <section className="px-6 max-w-6xl mx-auto pb-6">
         <div className="rounded-3xl overflow-hidden border border-zinc-200/60 shadow-md">
-          <SmartVideo variant="tile" source={videoSources.imperial} />
+          <SmartVideo variant="tile" source={videoSources.fez} />
         </div>
       </section>
 
