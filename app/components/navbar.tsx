@@ -26,7 +26,7 @@ export default function Navbar() {
         {/* Logo and Company Name */}
         <Link href="/" className="flex items-center gap-2 lg:gap-2.5 xl:gap-3 cursor-pointer decoration-none group">
           <img 
-            src="/images/logo.png" 
+            src="/images/logo.png?v=3" 
             className="h-[38px] sm:h-[44px] lg:h-[44px] xl:h-[48px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-90" 
             alt="Merveilles et Voyages" 
           />
@@ -34,7 +34,7 @@ export default function Navbar() {
             <span className="font-serif text-[10px] sm:text-[13px] lg:text-[12px] xl:text-[14px] uppercase tracking-[0.25em] font-bold leading-none">
               {translate(t.brandName1, lang)}
             </span>
-            <span className="font-sans text-[7px] sm:text-[8px] lg:text-[8px] xl:text-[9px] uppercase tracking-[0.35em] text-white/80 font-light mt-1 lg:mt-1.5 leading-none">
+            <span className="font-sans text-[7px] sm:text-[8px] lg:text-[8px] xl:text-[9px] uppercase tracking-[0.35em] text-white/95 font-semibold mt-1 lg:mt-1.5 leading-none">
               {translate(t.brandName2, lang)}
             </span>
           </div>

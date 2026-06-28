@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useLang, translate } from "../context/lang-context";
 import { toursList } from "@/data/itineraries";
 import { getTierStyle } from "../utils/tier-styles";
@@ -123,7 +123,7 @@ function ToursContent() {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="/images/logo.png" 
+              src="/images/logo.png?v=3" 
               className="h-16 w-auto object-contain" 
               alt="logo" 
             />
@@ -244,25 +244,27 @@ function ToursContent() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full">
-            {filteredTours.map((tour, index) => (
-              <Link
-                key={tour.id}
-                href={
-                  tour.id === 99
-                    ? "/mice"
-                    : `/itineraries/${tour.id}`
-                }
-                className="block"
-              >
+            <AnimatePresence mode="popLayout">
+              {filteredTours.map((tour, index) => (
                 <motion.div
                   layout
+                  key={tour.id}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   whileHover={{ y: -6, transition: { duration: 0.3, delay: 0 } }}
-                  transition={{ duration: 0.5, delay: (index % 2) * 0.1, ease: "easeOut" }}
-                  className="group relative flex flex-col rounded-[2.2rem] overflow-hidden border border-zinc-200/50 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300 cursor-pointer"
+                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                  className="block h-full"
                 >
+                  <Link
+                    href={
+                      tour.id === 99
+                        ? "/mice"
+                        : `/itineraries/${tour.id}`
+                    }
+                    className="block h-full"
+                  >
+                    <div className="group relative flex flex-col rounded-[2.2rem] overflow-hidden border border-zinc-200/50 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300 cursor-pointer">
                   {/* Image Header with Tags */}
                   <div className="h-[240px] w-full relative overflow-hidden">
                     <img
@@ -384,9 +386,11 @@ function ToursContent() {
                       </span>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </Link>
-            ))}
+            </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         </div>
 

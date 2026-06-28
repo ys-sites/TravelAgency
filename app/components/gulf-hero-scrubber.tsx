@@ -1,12 +1,29 @@
 'use client';
 
+import React, { useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useLang } from "../context/lang-context";
 
-
 export default function GulfHeroScrubber() {
   const { lang } = useLang();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Reinforce autoplay behavior on mount (mobile auto-play backup)
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Autoplay blocked by device settings (e.g. low power mode)
+      });
+    }
+  }, []);
+
+  const CLD = "https://res.cloudinary.com/dzgmvz6tc/video/upload";
+  const mobileWebM  = `${CLD}/q_auto,w_640,vc_vp9/Golf_in_Morocco_New_tmjx9s.webm`;
+  const mobileMp4   = `${CLD}/q_auto,w_640/Golf_in_Morocco_New_tmjx9s.mp4`;
+  const desktopWebM = `${CLD}/q_auto:best,fl_progressive,w_1920,vc_vp9/Golf_in_Morocco_New_tmjx9s.webm`;
+  const desktopMp4  = `${CLD}/q_auto:best,fl_progressive,w_1920/Golf_in_Morocco_New_tmjx9s.mp4`;
+  const posterUrl   = `${CLD}/q_auto,f_auto,w_1920/Golf_in_Morocco_New_tmjx9s.jpg`;
 
   return (
     <div
@@ -16,21 +33,27 @@ export default function GulfHeroScrubber() {
       {/* Render Native Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
         <video
+          ref={videoRef}
           className="w-full h-full object-cover bg-black bg-center bg-cover animate-kenburns"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          poster="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Golf_in_Morocco_ssfati.jpg"
+          poster={posterUrl}
           style={{
-            backgroundImage: "url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Golf_in_Morocco_ssfati.jpg')"
+            backgroundImage: `url('${posterUrl}')`
           }}
         >
-          {/* Mobile MP4 (Universal H264 Compatibility) */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960/Golf_in_Morocco_ssfati.mp4" type="video/mp4" media="(max-width: 768px)" />
-          {/* Desktop MP4 (Universal H264 Compatibility) */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920/Golf_in_Morocco_ssfati.mp4" type="video/mp4" />
+          {/* Mobile WebM */}
+          <source src={mobileWebM} type="video/webm" media="(max-width: 768px)" />
+          {/* Mobile MP4 */}
+          <source src={mobileMp4} type="video/mp4" media="(max-width: 768px)" />
+          
+          {/* Desktop WebM */}
+          <source src={desktopWebM} type="video/webm" />
+          {/* Desktop MP4 */}
+          <source src={desktopMp4} type="video/mp4" />
         </video>
       </div>
       
@@ -38,20 +61,19 @@ export default function GulfHeroScrubber() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-1" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none z-1" />
       
-
       {/* Cinematic Content Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 md:gap-8 z-10 px-6 text-center select-none pointer-events-none">
+      <div className="absolute inset-0 flex flex-col items-center justify-center pt-[90px] pb-[80px] gap-5 sm:gap-6 md:gap-8 z-10 px-6 text-center select-none pointer-events-none">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          className="pointer-events-auto flex justify-center"
+          className="pointer-events-auto flex justify-center shrink-0"
         >
           <img
-            src="/images/logo.png"
+            src="/images/logo.png?v=3"
             alt="Merveilles et Voyages Logo"
-            className="w-[140px] sm:w-[170px] md:w-[200px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
+            className="w-[110px] sm:w-[140px] md:w-[170px] lg:w-[190px] h-auto max-h-[22vh] object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
           />
         </motion.div>
 
@@ -60,9 +82,9 @@ export default function GulfHeroScrubber() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center max-w-4xl pointer-events-auto space-y-6"
+          className="flex flex-col items-center max-w-4xl pointer-events-auto space-y-4 sm:space-y-6"
         >
-          <h2 className="font-serif text-sm sm:text-base md:text-lg text-white tracking-[0.1em] uppercase font-light max-w-2xl leading-relaxed">
+          <h2 className="font-serif text-xs sm:text-sm md:text-base lg:text-lg text-white tracking-[0.1em] uppercase font-light max-w-2xl leading-relaxed">
             {lang === "FR"
               ? "Expériences de Voyage de Prestige et Séjours de Golf au Maroc"
               : "Exclusive Travel Experiences & Premium Golf Experiences in Morocco"
@@ -72,7 +94,7 @@ export default function GulfHeroScrubber() {
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-lg mx-auto">
             <a
               href="#itineraries"
-              className="w-full sm:w-auto border border-white bg-white hover:bg-brand-gold hover:border-brand-gold text-zinc-950 hover:text-zinc-950 font-semibold text-[10px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[200px] cursor-pointer"
+              className="w-full sm:w-auto border border-white bg-white hover:bg-brand-gold hover:border-brand-gold text-zinc-950 hover:text-zinc-950 font-semibold text-[10px] tracking-[0.2em] uppercase px-8 py-3 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[180px] sm:min-w-[200px] cursor-pointer"
             >
               {lang === "FR" ? "Explorer les Itinéraires" : "Explore Itineraries"}
             </a>
