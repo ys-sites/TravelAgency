@@ -97,7 +97,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const trustBadges = [
-  { label: { EN: "Bilingual Concierge Service", FR: "Service Concierge Bilingue" }, icon: Check },
+  { label: { EN: "Bilingual Assistance & Support", FR: "Assistance Bilingue & Accompagnement" }, icon: Check },
   { label: { EN: "256-Bit Secure Booking", FR: "Réservation Sécurisée 256-Bit" }, icon: Shield },
   { label: { EN: "100% Tailor-Made Itineraries", FR: "100% Itinéraires Sur Mesure" }, icon: Check },
   { label: { EN: "Canadian-Based, Globally Connected", FR: "Basé au Canada, Mondialement Connecté" }, icon: Check }

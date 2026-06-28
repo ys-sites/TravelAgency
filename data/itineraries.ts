@@ -295,8 +295,7 @@ export const toursList: TourCard[] = [
     image: "/images/german_circuit_morocco.jpg",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Découverte", EN: "Discovery" },
-    // TODO: rename pending client input
-    title: { FR: "Circuit Allemand MPM", EN: "German Circuit MPM" },
+    title: { FR: "Un Aperçu des Villes Impériales", EN: "A Glimpse of Imperial Cities" },
     description: {
       FR: "Un magnifique circuit de 7 nuits comprenant Marrakech, Beni Mellal, Fès, Meknès, Rabat et Casablanca avec des visites culturelles incluses.",
       EN: "A magnificent 7-night tour covering Marrakech, Beni Mellal, Fes, Meknes, Rabat, and Casablanca with cultural visits included."
@@ -1645,8 +1644,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     id: 9,
     image: "/images/german_circuit_imperial.png",
     contentImage: "/images/moroco.webp",
-    // TODO: rename pending client input
-    title: { FR: "Circuit Allemand MPM", EN: "German Circuit MPM" },
+    // Title updated per client request 2026-06-28
+    title: { FR: "Un Aperçu des Villes Impériales", EN: "A Glimpse of Imperial Cities" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     cost: { FR: "Sur devis", EN: "On request" },
     overview: {

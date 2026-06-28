@@ -3,8 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useLang } from "../context/lang-context";
-import SmartVideo from "./smart-video";
-import { videoSources } from "../../data/videoSources";
+
 
 export default function GulfHeroScrubber() {
   const { lang } = useLang();

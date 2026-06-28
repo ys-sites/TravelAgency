@@ -7,6 +7,8 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import ItineraryPackageCard from "../../components/ItineraryPackageCard";
 import { useLang, translate } from "../../context/lang-context";
+import SmartVideo from "../../components/smart-video";
+import { videoSources } from "../../../data/videoSources";
 
 export default function MarrakechGolfClient() {
   const { lang } = useLang();
@@ -177,6 +179,13 @@ export default function MarrakechGolfClient() {
         <p className="text-zinc-600 text-sm md:text-base font-light leading-relaxed max-w-2xl mx-auto">
           {translate(text.description, lang)}
         </p>
+      </section>
+
+      {/* City Video Showcase */}
+      <section className="px-6 max-w-6xl mx-auto pb-6 z-20 relative">
+        <div className="rounded-3xl overflow-hidden border border-zinc-200/60 shadow-md">
+          <SmartVideo variant="tile" source={videoSources.marrakech} />
+        </div>
       </section>
 
       {/* side-by-side packages grid */}

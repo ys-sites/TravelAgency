@@ -7,6 +7,8 @@ import { motion } from "motion/react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { useLang, translate } from "../context/lang-context";
+import SmartVideo from "../components/smart-video";
+import { videoSources } from "../../data/videoSources";
 
 export default function MiceClient() {
   const { lang } = useLang();
@@ -136,6 +138,13 @@ export default function MiceClient() {
         <p className="text-zinc-500 text-xs md:text-sm font-light leading-relaxed italic">
           {translate(t.overviewPoints, lang)}
         </p>
+      </section>
+
+      {/* City Video Showcase */}
+      <section className="px-6 max-w-6xl mx-auto pb-6">
+        <div className="rounded-3xl overflow-hidden border border-zinc-200/60 shadow-md">
+          <SmartVideo variant="tile" source={videoSources.imperial} />
+        </div>
       </section>
 
       {/* Services Grid */}

@@ -12,7 +12,7 @@ export default function CallFloatingButton() {
   return (
     <a
       href={`tel:${phoneNumber}`}
-      aria-label={lang === "FR" ? "Appeler le Concierge" : "Call Concierge"}
+      aria-label={lang === "FR" ? "Nous appeler" : "Call us"}
       className="fixed bottom-6 right-6 md:right-8 md:bottom-8 z-50 flex items-center justify-center gap-2 bg-zinc-950/95 hover:bg-zinc-900 text-[#faf9f5] border border-brand-gold/30 hover:border-brand-gold/60 p-4 md:px-5 md:py-3.5 rounded-full shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:scale-105 transition-all duration-300 ease-out backdrop-blur-md cursor-pointer group"
     >
       {/* Phone Icon */}
@@ -30,7 +30,7 @@ export default function CallFloatingButton() {
 
       {/* Button Text - Visible on Desktop only */}
       <span className="hidden md:inline text-[10px] font-mono font-bold tracking-[0.2em] uppercase text-zinc-200 group-hover:text-white transition-colors duration-300 selection:bg-transparent">
-        {lang === "FR" ? `APPELER LE CONCIERGE (${displayPhone})` : `CALL CONCIERGE (${displayPhone})`}
+        {lang === "FR" ? `NOUS APPELER (${displayPhone})` : `CALL US (${displayPhone})`}
       </span>
     </a>
   );

@@ -7,8 +7,8 @@ export type VideoSource = {
   mp4Mobile: string;
 };
 
-// CLOUD_BASE is empty for now (local /public/video). Once Jay uploads
-// to Cloudinary, set this to "https://res.cloudinary.com/<cloud_name>/video/upload/q_auto,f_auto"
+// CLOUD_BASE is empty for now (local /public/video). Once videos are uploaded to Bunny.net,
+// set this to your Bunny.net pull-zone base URL (e.g. "https://your-zone.b-cdn.net")
 // and prefix every path below with it — nothing else in the codebase changes.
 const CLOUD_BASE = "";
 

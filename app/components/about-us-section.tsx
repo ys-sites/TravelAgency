@@ -34,16 +34,16 @@ const t = {
     FR: "Élite"
   },
   credential2Desc: {
-    EN: "Curated golf packages designed and played by golfers",
-    FR: "Séjours de golf conçus et joués par des golfeurs"
+    EN: "Curated packages designed by Pros",
+    FR: "Séjours d'exception conçus par des professionnels"
   },
   credential3Label: {
     EN: "24/7",
     FR: "24h/24"
   },
   credential3Desc: {
-    EN: "Bilingual concierge — FR & EN, always reachable",
-    FR: "Concierge bilingue — FR & EN, toujours joignable"
+    EN: "24/7 Round-the-Clock Assistance Throughout Your Stay",
+    FR: "Assistance 24h/24, 7j/7 tout au long de votre séjour"
   },
   cta: {
     EN: "Explore Our Packages →",

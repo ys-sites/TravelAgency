@@ -33,8 +33,8 @@ const t = {
     EN: "Exclusive Packages"
   },
   company: {
-    FR: "Conciergerie",
-    EN: "Concierge"
+    FR: "Expériences",
+    EN: "Experiences"
   },
   about: {
     FR: "À Propos",
@@ -53,8 +53,8 @@ const t = {
     EN: "Contact"
   },
   copyright: {
-    FR: "© 2026 Merveilles et Voyages Concierge. Tous droits réservés.",
-    EN: "© 2026 Merveilles et Voyages Concierge. All rights reserved."
+    FR: "© 2026 Merveilles et Voyages. Tous droits réservés.",
+    EN: "© 2026 Merveilles et Voyages. All rights reserved."
   },
   privacySignoff: {
     FR: "Politique de Confidentialité",

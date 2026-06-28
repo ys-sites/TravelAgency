@@ -149,8 +149,8 @@ export default function Promotions() {
           </h2>
           <p className="text-zinc-500 font-light text-[13px] md:text-sm leading-relaxed">
             {lang === "FR" 
-              ? "Profitez d'avantages exclusifs, de tarifs de réservation anticipée et de privilèges de vol privé sur nos plus beaux voyages."
-              : "Discover limited-time pricing, early reservation privileges, and complimentary private transfers on our signature itineraries."
+              ? "Découvrez nos expériences signature au Maroc — séjours de golf de prestige, circuits et villes impériales, et solutions MICE sur mesure."
+              : "Explore our signature Morocco experiences — luxury golf stays, imperial city tours, and fully tailored MICE & corporate solutions."
             }
           </p>
         </div>
@@ -302,8 +302,8 @@ export default function Promotions() {
                   </div>
 
                   {/* Footer / Pricing */}
-                  <div className="flex items-center justify-between pt-5 border-t border-zinc-100">
-                    <div className="flex flex-col">
+                  <div className="flex items-center justify-between gap-3 pt-5 border-t border-zinc-100">
+                    <div className="flex flex-col min-w-0">
                       <span className="text-[11px] font-mono line-through text-zinc-400 leading-none mb-1">
                         {deal.oldPrice}
                       </span>
@@ -324,7 +324,7 @@ export default function Promotions() {
                     </div>
 
                     <span 
-                      className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm animate-pulse group-hover:animate-none"
+                      className="shrink-0 whitespace-nowrap bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm animate-pulse group-hover:animate-none"
                     >
                       {lang === "FR" ? "VOIR LES OFFRES" : "SEE OFFERS"}
                     </span>

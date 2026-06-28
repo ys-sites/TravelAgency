@@ -9,6 +9,9 @@ import Footer from "../../components/footer";
 import MapSection from "../../components/map-section";
 import { useLang, translate } from "../../context/lang-context";
 import { itinerariesData, itineraryThemes, ItineraryTheme } from "@/data/itineraries";
+import SmartVideo from "../../components/smart-video";
+import { videoSources } from "@/data/videoSources";
+import { getCityKey } from "../../utils/city-map";
 
 const getGalleryImages = (itineraryId: number) => {
   switch (itineraryId) {
@@ -296,7 +299,7 @@ const INSURANCE_LINK_URL = "#";
                   ))}
                 </div>
               </div>
-              <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide uppercase leading-tight font-bold text-brand-gold">
+              <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide uppercase leading-tight font-bold text-white drop-shadow-lg">
                 {translate(theme.heroTitle, lang)}
               </h1>
               <p className="text-[14px] sm:text-[16px] leading-relaxed text-zinc-300 font-light max-w-lg">
@@ -394,7 +397,7 @@ const INSURANCE_LINK_URL = "#";
                   ))}
                 </div>
               </div>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide uppercase leading-tight font-bold text-zinc-950">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide uppercase leading-tight font-bold text-white drop-shadow-lg">
                 {translate(itinerary.title, lang)}
               </h1>
             </div>
@@ -499,7 +502,7 @@ const INSURANCE_LINK_URL = "#";
                 </a>
               </div>
 
-              {/* Destination Showcase Image or Video */}
+              {/* Destination Showcase — city-matched SmartVideo tile */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -507,26 +510,11 @@ const INSURANCE_LINK_URL = "#";
                 transition={{ duration: 0.6 }}
                 className="w-full rounded-2xl overflow-hidden border border-zinc-100 shadow-sm bg-black"
               >
-                {videoUrl ? (
-                  <video
-                    className="w-full h-[320px] md:h-[420px] object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    poster={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/${videoUrl}.jpg`}
-                  >
-                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960/${videoUrl}.mp4`} type="video/mp4" media="(max-width: 768px)" />
-                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920/${videoUrl}.mp4`} type="video/mp4" />
-                  </video>
-                ) : (
-                  <img
-                    src={itinerary.contentImage}
-                    alt={translate(itinerary.title, lang)}
-                    className="w-full h-[320px] md:h-[420px] object-cover hover:scale-[1.02] transition-transform duration-700"
-                  />
-                )}
+                <SmartVideo
+                  variant="tile"
+                  source={videoSources[getCityKey(itinerary.id)]}
+                  className="h-[320px] md:h-[420px]"
+                />
               </motion.div>
 
               {/* Image Gallery for Golf Packages */}

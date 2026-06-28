@@ -14,7 +14,7 @@ export interface ConditionsSection {
 
 export const conditionsIntro = {
   p1: {
-    FR: "Ces conditions s’appliquent pour toute transaction effectuée auprès de Merveilles et Voyages, qu’il s’agisse notamment de la réservation d’un forfait voyage (groupe, tout-inclus ou personnalisé) réservé à l’agence, par téléphone ou par le site de réservation en ligne, de la souscription à une assurance-voyage ou de l’achat d’un certificat cadeau. Veuillez les lire attentivement et n’hésitez pas à communiquer avec nous pour toutes précisions.",
+    FR: "Ces conditions s'appliquent à toute transaction effectuée auprès de Merveilles et Voyages, qu'il s'agisse notamment de la réservation d'un forfait voyage (groupe, tout-inclus ou personnalisé) réservé à l'agence, par téléphone ou par le site de réservation en ligne, de la souscription à une assurance-voyage ou de l'achat d'un certificat cadeau. Veuillez les lire attentivement et n'hésitez pas à communiquer avec nous pour toutes précisions.",
     EN: "These general terms apply to all transactions carried out with Merveilles et Voyages, whether booking a travel package (group, all-inclusive, or customized), reserving via phone or online, subscribing to travel insurance, or purchasing gift certificates. Please read them carefully."
   },
   p2: {
@@ -35,11 +35,11 @@ export const conditionsSections: ConditionsSection[] = [
         EN: "All rates advertised on the website, brochures, or otherwise are in Canadian dollars and include GST and QST sales taxes. Prices are updated regularly and depend on availability at suppliers."
       },
       {
-        FR: "Le prix et la disponibilité des forfaits voyages de groupe affichés sur le site Web sont mis à jour régulièrement. Le prix des voyages personnalisés et des tout-inclus du site web et des brochures sont valides au moment de leur parution et peuvent changer tout dépendamment de la disponibilité chez les fournisseurs.",
+        FR: "Les prix et la disponibilité des forfaits voyages de groupe affichés sur le site Web sont mis à jour régulièrement. Le prix des voyages personnalisés et des tout-inclus du site web et des brochures sont valides au moment de leur parution et peuvent changer selon la disponibilité chez les fournisseurs.",
         EN: "Pursuant to consumer protection laws, Merveilles et Voyages may increase the price of travel in the event of fuel surcharges or exchange rate shifts prior to 45 days before departure."
       },
       {
-        FR: "Conformément aux lois de l’Office de la protection du consommateur, Merveilles et Voyages peut augmenter le prix d’un voyage déjà vendu à un client en cas de surcharge de carburant par le transporteur ou de modification du taux de change. Pour que le prix du voyage soit affecté par une augmentation du taux de change, il faut que le taux de change ait augmenté de plus de 5% entre la date d’achat du voyage et la 45e journée avant le départ. Dès que le prix du voyage augmente d’au moins 7% (avant taxes), le client peut décider d’annuler son voyage et d’être remboursé. Il peut sinon accepter un autre voyage en remplacement, en payant les frais excédents ou en étant remboursé des frais perçus en trop. L’augmentation des taxes de vente TPS ou TVQ pourrait entrainer une augmentation des tarifs affichés sur tous les médiums puisque ceux-ci incluent les taxes. Aucune modification de prix n’est permise dans les 30 jours qui précèdent la date de départ.",
+        FR: "Conformément aux lois de l'Office de la protection du consommateur, Merveilles et Voyages peut augmenter le prix d'un voyage déjà vendu à un client en cas de surcharge de carburant par le transporteur ou de modification du taux de change. Pour que le prix du voyage soit affecté par une augmentation du taux de change, il faut que le taux de change ait augmenté de plus de 5 % entre la date d'achat du voyage et la 45e journée avant le départ. Dès que le prix du voyage augmente d'au moins 7 % (avant taxes), le client peut décider d'annuler son voyage et d'être remboursé. Il peut sinon accepter un autre voyage en remplacement, en payant les frais excédentaires ou en étant remboursé des frais perçus en trop. L'augmentation des taxes de vente TPS ou TVQ pourrait entraîner une augmentation des tarifs affichés sur tous les médiums puisque ceux-ci incluent les taxes. Aucune modification de prix n'est permise dans les 30 jours qui précèdent la date de départ.",
         EN: "If price increases by 7% or more, the customer may cancel with a full refund. No price modifications are permitted within 30 days of departure."
       },
       {
@@ -107,7 +107,7 @@ export const conditionsSections: ConditionsSection[] = [
     },
     paragraphs: [
       {
-        FR: "Nous vous recommandons de réserver votre séjour au moins 45 jours avant la date de départ. Un dépôt de garantie de 10%* de la valeur totale du voyage (assurances en sus) est requis au moment de la réservation suivi du paiement final 45 jours avant la date du départ. Pour les réservations effectuées 44 jours ou MOINS avant le départ, le paiement complet doit être versé au moment de la réservation. Exceptions : L’échéancier de paiement peut varier pour certains hôtels, compagnies aériennes, compagnies de location de voiture ainsi que certains fournisseurs ou forfaits groupes ou promotions. Si tel est le cas, les modalités de paiements vous seront alors présentés dans votre devis ou sur le détail du forfait en question sur notre site web ainsi que sur votre facture.",
+        FR: "Nous vous recommandons de réserver votre séjour au moins 45 jours avant la date de départ. Un dépôt de garantie de 10 %* de la valeur totale du voyage (assurances en sus) est requis au moment de la réservation, suivi du paiement final 45 jours avant la date du départ. Pour les réservations effectuées 44 jours ou MOINS avant le départ, le paiement complet doit être versé au moment de la réservation. Exceptions : L'échéancier de paiement peut varier pour certains hôtels, compagnies aériennes, agences de location de voitures ainsi que certains fournisseurs ou forfaits groupes ou promotions. Si tel est le cas, les modalités de paiements vous seront présentées dans votre devis ou sur le détail du forfait en question sur notre site web ainsi que sur votre facture.",
         EN: "We recommend booking at least 45 days prior to departure. A security deposit of 10%* of the total value (excluding insurance) is required at booking, followed by final payment 45 days before departure. Complete payment is required immediately for bookings made 44 days or less prior to departure. Payment timelines may vary for specific hotels, airlines, car rentals, suppliers, group packages, or promotions, as detailed in your quote or invoice."
       },
       {
@@ -119,7 +119,7 @@ export const conditionsSections: ConditionsSection[] = [
       {
         title: { FR: "Autocar", EN: "Bus Tours" },
         desc: {
-          FR: "Paiement final à 45 jours du départ. Pour les voyages d’une journée, le montant total est dû lors de la réservation. Le paiement complet est exigé pour tous les séjours de 1 jour et d’une valeur de moins de 300 $. Les voyages réservés sont 100% non remboursables. En cas d’annulation, le montant du dépôt consistera du frais d’annulation.",
+          FR: "Paiement final à 45 jours du départ. Pour les voyages d'une journée, le montant total est dû lors de la réservation. Le paiement complet est exigé pour tous les séjours d'une journée d'une valeur de moins de 300 $. Les voyages réservés sont 100 % non remboursables. En cas d'annulation, le montant du dépôt constituera les frais d'annulation.",
           EN: "Final payment 45 days before departure. For single-day trips, full amount is due at booking. Single-day stays under $300 are 100% non-refundable."
         }
       },

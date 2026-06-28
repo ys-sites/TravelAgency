@@ -28,7 +28,7 @@ export default function Home() {
         <div id="portfolios">
           <Tours />
         </div>
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}{/* Hidden: re-enable when client confirms testimonials copy */}
       </main>
 
       <Footer />
