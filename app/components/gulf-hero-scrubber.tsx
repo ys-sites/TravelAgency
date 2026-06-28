@@ -9,7 +9,10 @@ export default function GulfHeroScrubber() {
   const { lang } = useLang();
 
   return (
-    <div className="relative h-screen w-full bg-black overflow-hidden">
+    <div
+      className="relative w-full bg-black overflow-hidden"
+      style={{ height: "min(100svh, 100dvh, 960px)" }}
+    >
       {/* Render Native Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
         <video

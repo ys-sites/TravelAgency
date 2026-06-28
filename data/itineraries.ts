@@ -110,7 +110,7 @@ export const toursList: TourCard[] = [
       FR: "Le joyau de Rabat conçu par Robert Trent Jones Sr, s'étendant sur 440 hectares de forêt. Un parcours légendaire qui accueille les compétitions internationales.",
       EN: "Rabat's masterpiece designed by Robert Trent Jones Sr, set on 440 hectares of forest. A legendary course that hosts international competitions."
     },
-    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
+    duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
     flight: { FR: "Vol optionnel", EN: "Flight optional" },
     meals: { FR: "Petit-déjeuner inclus", EN: "Breakfast included" },
     oldPrice: "",
@@ -504,7 +504,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     image: "/images/rgdes_parcours_rouge_18.jpg",
     contentImage: "/images/rgdes_parcours_rouge_09_17.jpg",
     title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
-    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
+    duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
     cost: { FR: "Sur devis", EN: "On request" },
     overview: {
       FR: "Né de la vision de Feu SM Le Roi Hassan II et dessiné par Robert Trent Jones Sr, le Royal Golf Dar Es Salam est un écosystème naturel somptueux de 440 hectares à seulement 15 minutes du centre de Rabat. Avec son légendaire Parcours Rouge (18 trous, parcours signature), son Parcours Bleu (18 trous) et son Parcours Vert (9 trous), ce site d'exception accueille chaque année le prestigieux Trophée Hassan II. Un séjour inoubliable alliant passion du golf, biodiversité riche et hébergement de très haut standing au Ritz-Carlton Rabat Dar Es Salam.",
@@ -514,7 +514,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
       {
         day: 1,
         title: { FR: "Arrivée à Rabat & Ritz-Carlton", EN: "Arrival in Rabat & Ritz-Carlton" },
-        desc: { FR: "Accueil VIP à l'aéroport Rabat-Salé (ou Casablanca), transfert privé et installation au Ritz-Carlton Rabat Dar Es Salam 5★. Dîner gastronomique de bienvenue.", EN: "VIP welcome at Rabat-Salé (or Casablanca) airport, private transfer and check-in at The Ritz-Carlton Rabat Dar Es Salam 5★. Gourmet welcome dinner." }
+        desc: { FR: "Accueil VIP à l'aéroport de Casablanca, transfert privé et installation au Ritz-Carlton Rabat Dar Es Salam 5★. Dîner gastronomique de bienvenue.", EN: "VIP welcome at Casablanca airport, private transfer and check-in at The Ritz-Carlton Rabat Dar Es Salam 5★. Gourmet welcome dinner." }
       },
       {
         day: 2,
@@ -523,33 +523,28 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
       },
       {
         day: 3,
-        title: { FR: "Visite Historique de Rabat", EN: "Historical Guided Tour of Rabat" },
-        desc: { FR: "Découvrez les merveilles de la capitale : la Tour Hassan, le Mausolée Mohammed V et la pittoresque Kasbah des Oudayas, suivie d'un déjeuner traditionnel.", EN: "Discover the wonders of the capital: Hassan Tower, the Mausoleum of Mohammed V, and the scenic Kasbah of the Udayas, followed by a traditional lunch." }
+        title: { FR: "Journée Découverte — Fès", EN: "Discovery Day — Fez" },
+        desc: { FR: "Excursion d'une journée complète dans la légendaire ville de Fès : découverte de son riche patrimoine culturel, promenade dans sa médina historique et visite de sites classés au patrimoine mondial de l'UNESCO. Dîner et nuit à l'hôtel.", EN: "Enjoy a full-day tour of the legendary city of Fez, where you'll discover its rich cultural heritage, wander through its historic medina, and visit remarkable UNESCO World Heritage sites. Dinner and overnight at the hotel." }
       },
       {
         day: 4,
         title: { FR: "Parcours Bleu (18 Trous) & Détente", EN: "Blue Course (18 Holes) & Relaxation" },
-        desc: { FR: "Matinée sur le Parcours Bleu. Après-midi détente au Spa et à la piscine du Ritz-Carlton ou practice de golf.", EN: "Morning round on the Blue Course. Afternoon relaxation at the Ritz-Carlton Spa and pool, or golf practice." }
+        desc: { FR: "Ronde matinale sur le Parcours Bleu. Après-midi détente au Spa et à la piscine du Ritz-Carlton, ou visite guidée de la médina de Rabat.", EN: "Morning round on the Blue Course. Afternoon relaxation at the Ritz-Carlton Spa and pool, or guided visit of Rabat's medina." }
       },
       {
         day: 5,
-        title: { FR: "Excursion à Casablanca", EN: "Excursion to Casablanca" },
-        desc: { FR: "Journée de visite à Casablanca (à 1h de route) pour explorer la majestueuse Mosquée Hassan II et vous promener sur la corniche.", EN: "Day excursion to Casablanca (1-hour drive) to explore the majestic Hassan II Mosque and stroll along the corniche." }
+        title: { FR: "Parcours Vert (9 Trous) & Session Practice", EN: "Green Course (9 Holes) & Practice Session" },
+        desc: { FR: "Ronde matinale sur le Parcours Vert (9 trous), suivie d'une session d'entraînement au practice du driving range de l'Académie Nationale de Golf. Soirée libre au Ritz-Carlton.", EN: "Morning round on the Green Course (9 holes), followed by a training session at the National Golf Academy driving range. Free evening at the Ritz-Carlton." }
       },
       {
         day: 6,
-        title: { FR: "Parcours Rouge — Deuxième Ronde", EN: "Red Course — Second Round" },
-        desc: { FR: "Rejouez le Parcours Rouge pour parfaire votre score sur ce tracé exigeant de niveau championnat.", EN: "Play the legendary Red Course once more to perfect your score on this challenging championship layout." }
+        title: { FR: "Parcours Bahia Golf (18 Trous)", EN: "Bahia Golf Course (18 Holes)" },
+        desc: { FR: "Journée complète sur le Parcours Bahia Golf. Voiturette électrique incluse.", EN: "A full day on the Bahia Golf Course. Electric cart included." }
       },
       {
         day: 7,
-        title: { FR: "Parcours Vert (9 Trous) & Spa Ritz-Carlton", EN: "Green Course (9 Holes) & Ritz-Carlton Spa" },
-        desc: { FR: "Ronde matinale sur le Parcours Vert (9 trous), suivie d'un soin relaxant au Spa du Ritz-Carlton.", EN: "Morning round on the Green Course (9 holes), followed by a relaxing body treatment at the Ritz-Carlton Spa." }
-      },
-      {
-        day: 8,
-        title: { FR: "Départ", EN: "Departure" },
-        desc: { FR: "Petit-déjeuner, transfert privé vers l'aéroport pour votre vol de retour.", EN: "Breakfast, private transfer to the airport for your return flight." }
+        title: { FR: "Journée Libre, Détente & Départ", EN: "Day Off, Relaxation & Departure" },
+        desc: { FR: "Journée libre pour profiter de Rabat à votre rythme — détente à l'hôtel, exploration de la médina, visite des marchés locaux ou activités optionnelles telles qu'un hammam traditionnel ou une excursion à la Kasbah des Oudayas. Petit-déjeuner le lendemain matin et transfert privé vers l'aéroport pour votre vol de retour.", EN: "Free day to enjoy Rabat at your own pace — relax at the hotel, explore the medina, visit local markets, or enjoy optional activities such as a traditional hammam or an excursion to the Kasbah of the Udayas. Breakfast the following morning and private transfer to the airport for your return flight." }
       }
     ],
     inclusions: {

@@ -14,23 +14,26 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-  
+  // Resolved at runtime so SSR always matches client
+  const [isMobile, setIsMobile] = useState(false);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // 1. Detect prefers-reduced-motion
+  // 1. Detect prefers-reduced-motion + mobile width
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
-    
-    const listener = (e: MediaQueryListEvent) => {
-      setPrefersReducedMotion(e.matches);
-    };
-    mediaQuery.addEventListener("change", listener);
-    return () => mediaQuery.removeEventListener("change", listener);
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mq.matches);
+    const listener = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mq.addEventListener("change", listener);
+
+    // Use screen width (not viewport) so tablet landscape is correctly classified
+    setIsMobile(window.screen.width <= 768);
+
+    return () => mq.removeEventListener("change", listener);
   }, []);
 
-  // 2. Intersection Observer for tile-based lazy loading
+  // 2. Intersection Observer for tile lazy-loading
   useEffect(() => {
     if (variant === "hero") {
       setIsInView(true);
@@ -38,94 +41,82 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
     }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInView(entry.isIntersecting);
-      },
+      ([entry]) => setIsInView(entry.isIntersecting),
       { rootMargin: "200px" }
     );
 
-    const currentContainer = containerRef.current;
-    if (currentContainer) {
-      observer.observe(currentContainer);
-    }
-
-    return () => {
-      if (currentContainer) {
-        observer.unobserve(currentContainer);
-      }
-    };
+    const el = containerRef.current;
+    if (el) observer.observe(el);
+    return () => { if (el) observer.unobserve(el); };
   }, [variant]);
 
-  // 3. Play or pause video when in view changes (for already mounted video element if we don't unmount)
+  // 3. Play / pause on visibility change
   useEffect(() => {
-    if (videoRef.current) {
-      if (isInView) {
-        videoRef.current.play().catch(() => {
-          // Ignore autoplay block errors
-        });
-      } else {
-        videoRef.current.pause();
-      }
+    const vid = videoRef.current;
+    if (!vid) return;
+    if (isInView) {
+      vid.play().catch(() => { /* autoplay blocked — silently ignored */ });
+    } else {
+      vid.pause();
     }
   }, [isInView]);
 
-  const handleLoadedData = () => {
-    setIsLoaded(true);
-  };
+  // 4. Re-load video when isMobile resolves (src changed)
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid || !isInView) return;
+    vid.load();
+    vid.play().catch(() => {});
+  }, [isMobile]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleError = () => {
-    setHasError(true);
-    setIsLoaded(false);
-  };
+  const handleLoadedData = () => setIsLoaded(true);
+  const handleError = () => { setHasError(true); setIsLoaded(false); };
 
-  // Determine classes
   const aspectClass = variant === "hero" ? "h-full w-full" : "aspect-video w-full";
   const shouldRenderVideo = isInView && !prefersReducedMotion && !hasError;
+
+  // Pick the correct resolution based on actual device width
+  const mp4Src  = isMobile ? source.mp4Mobile  : source.mp4;
+  const webmSrc = isMobile ? source.webmMobile : source.webm;
 
   return (
     <div
       ref={containerRef}
       className={`relative overflow-hidden ${aspectClass} ${className}`}
-      style={{
-        backgroundColor: "#000",
-      }}
+      style={{ backgroundColor: "#000" }}
     >
-      {/* 1. Poster Image (always rendered, fades out slightly or stays under the video) */}
+      {/* Poster — always visible, fades when video loads */}
       <img
         src={source.poster}
-        alt={`${source.id} background poster`}
+        alt={`${source.id} destination`}
         className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${
-          isLoaded ? "opacity-40" : "opacity-100"
+          isLoaded ? "opacity-30" : "opacity-100"
         }`}
-        style={{
-          filter: "brightness(0.95)",
-        }}
+        style={{ filter: "brightness(0.95)" }}
       />
 
-      {/* 2. Responsive Video element */}
+      {/* Video — rendered only when in-view, motion allowed, no error */}
       {shouldRenderVideo && (
         <video
           ref={videoRef}
-          className={`absolute inset-0 w-full h-full object-cover z-1 transition-opacity duration-500 ${
+          key={isMobile ? "mobile" : "desktop"} /* remount on resolution switch */
+          className={`absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-700 ${
             isLoaded ? "opacity-100" : "opacity-0"
           }`}
           autoPlay
           muted
           loop
           playsInline
-          preload={variant === "hero" ? "auto" : "metadata"}
+          preload="auto"
+          // @ts-ignore — fetchpriority is a valid HTML attribute not yet in React types
+          fetchpriority={variant === "hero" ? "high" : "auto"}
           onLoadedData={handleLoadedData}
           onError={handleError}
         >
-          {/* Mobile WebM */}
-          <source src={source.webmMobile} type="video/webm" media="(max-width: 768px)" />
-          {/* Mobile MP4 */}
-          <source src={source.mp4Mobile} type="video/mp4" media="(max-width: 768px)" />
-          
-          {/* Desktop WebM */}
-          <source src={source.webm} type="video/webm" />
-          {/* Desktop MP4 */}
-          <source src={source.mp4} type="video/mp4" />
+          {/* WebM first (smaller, VP9 — modern browsers) */}
+          <source src={webmSrc} type="video/webm" />
+          {/* MP4 fallback (H.264 — universal) */}
+          <source src={mp4Src} type="video/mp4" />
         </video>
       )}
     </div>
