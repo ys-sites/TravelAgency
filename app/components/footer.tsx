@@ -103,13 +103,17 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3: Company */}
+        {/* Column 3: Company & Services */}
         <div className="flex flex-col gap-4">
           <h4 className="font-heading text-[12px] font-bold uppercase tracking-wider text-white">
-            {translate(t.company, lang)}
+            {lang === "FR" ? "Services & Compagnie" : "Services & Company"}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
             <li><Link href="/#about" className="hover:text-brand-gold transition-colors">{translate(t.about, lang)}</Link></li>
+            <li><Link href="/conditions" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Conditions Générales" : "General Conditions"}</Link></li>
+            <li><Link href="/conditions" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Assurance Voyage" : "Travel Insurance"}</Link></li>
+            <li><Link href="/mice" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Services aux Entreprises" : "Corporate Services"}</Link></li>
+            <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Voyages Scolaires" : "School Trips"}</Link></li>
             <li><Link href="/travel-stories" className="hover:text-brand-gold transition-colors">{translate(t.news, lang)}</Link></li>
           </ul>
         </div>

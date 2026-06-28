@@ -39,31 +39,30 @@ export default function GulfHeroScrubber() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none z-1" />
       
 
-      {/* Centered Premium Logo */}
-      <div className="absolute inset-0 flex items-center justify-center translate-y-2 z-10 px-6 select-none pointer-events-none">
+      {/* Cinematic Content Overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 md:gap-8 z-10 px-6 text-center select-none pointer-events-none">
+        {/* Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center max-w-4xl pointer-events-auto text-center"
+          className="pointer-events-auto flex justify-center"
         >
           <img
             src="/images/logo.png"
             alt="Merveilles et Voyages Logo"
-            className="w-[200px] sm:w-[260px] md:w-[300px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
+            className="w-[140px] sm:w-[170px] md:w-[200px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
           />
         </motion.div>
-      </div>
-      
-      {/* Bottom Subtext & Call to Actions */}
-      <div className="absolute bottom-24 left-0 right-0 z-10 flex flex-col items-center px-6 select-none pointer-events-none">
+
+        {/* Subtext & Call to Actions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center max-w-4xl pointer-events-auto text-center space-y-6"
+          className="flex flex-col items-center max-w-4xl pointer-events-auto space-y-6"
         >
-          <h2 className="font-serif text-lg sm:text-xl md:text-2xl text-white tracking-[0.1em] uppercase font-light max-w-2xl leading-relaxed">
+          <h2 className="font-serif text-sm sm:text-base md:text-lg text-white tracking-[0.1em] uppercase font-light max-w-2xl leading-relaxed">
             {lang === "FR"
               ? "Expériences de Voyage de Prestige et Séjours de Golf au Maroc"
               : "Exclusive Travel Experiences & Premium Golf Experiences in Morocco"
@@ -73,7 +72,7 @@ export default function GulfHeroScrubber() {
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-lg mx-auto">
             <a
               href="#itineraries"
-              className="w-full sm:w-auto border border-white bg-white hover:bg-brand-gold hover:border-brand-gold text-zinc-950 hover:text-zinc-950 font-semibold text-[11px] tracking-[0.2em] uppercase px-8 py-4 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[220px] cursor-pointer"
+              className="w-full sm:w-auto border border-white bg-white hover:bg-brand-gold hover:border-brand-gold text-zinc-950 hover:text-zinc-950 font-semibold text-[10px] tracking-[0.2em] uppercase px-8 py-3.5 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[200px] cursor-pointer"
             >
               {lang === "FR" ? "Explorer les Itinéraires" : "Explore Itineraries"}
             </a>

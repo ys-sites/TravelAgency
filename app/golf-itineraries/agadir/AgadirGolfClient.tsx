@@ -54,7 +54,7 @@ export default function AgadirGolfClient() {
     },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flightIncluded: true,
-    mealPlan: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
+    mealPlan: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     packageName: { FR: "Hilton Taghazout Hôtel", EN: "Hilton Taghazout Hotel" },
     highlights: [
       { FR: "4 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "4 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
@@ -64,6 +64,7 @@ export default function AgadirGolfClient() {
       { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
     ],
     price: "3,879",
+    pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
     ctaHref: "/itineraries/11",
@@ -80,7 +81,7 @@ export default function AgadirGolfClient() {
     },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flightIncluded: true,
-    mealPlan: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
+    mealPlan: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     packageName: { FR: "White Beach Hôtel", EN: "White Beach Hotel" },
     highlights: [
       { FR: "4 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "4 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
@@ -106,7 +107,7 @@ export default function AgadirGolfClient() {
     },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
     flightIncluded: true,
-    mealPlan: { FR: "Demi-pension ou Petit-déjeuner", EN: "Half board or Breakfast" },
+    mealPlan: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     packageName: { FR: "Hilton Taghazout Hôtel (10N)", EN: "Hilton Taghazout Hotel (10N)" },
     highlights: [
       { FR: "6 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "6 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
@@ -116,6 +117,7 @@ export default function AgadirGolfClient() {
       { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
     ],
     price: "4,989",
+    pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
     ctaHref: "/itineraries/13",

@@ -23,16 +23,30 @@ export async function POST(request: Request) {
     }
     console.log("=========================================");
 
-    // Simulate network delay for realistic user interface response
-    await new Promise(resolve => setTimeout(resolve, 800));
+    // Forwarding to FormSubmit
+    const formSubmitResponse = await fetch("https://formsubmit.co/ajax/sharafath2001@hotmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        Type: isPremium ? "PREMIUM SOVEREIGN PASSAGE" : "STANDARD EXCLUSIVE PASSAGE",
+        Client: contact.fullName,
+        Email: contact.email,
+        Phone: contact.phone,
+        Duration: `${nights} Nights`,
+        "Total Cost": `${totalCostCAD} CAD`,
+        Destinations: destinations.join(", "),
+        Activities: activities.join(", "),
+        _subject: `Voyage Sur Mesure: ${contact.fullName}`
+      })
+    });
 
-    // Here, developers can plug in Nodemailer, Resend, or SendGrid integration.
-    // e.g.:
-    // await sendMail({
-    //   to: process.env.OWNER_EMAIL,
-    //   subject: `Exclusive Inquiry from ${contact.fullName}`,
-    //   text: `...`
-    // });
+    if (!formSubmitResponse.ok) {
+      const errorText = await formSubmitResponse.text();
+      console.error("FormSubmit API returned error status:", formSubmitResponse.status, errorText);
+    }
 
     return NextResponse.json({ success: true, message: "Transmission accepted." }, { status: 200 });
   } catch (error) {

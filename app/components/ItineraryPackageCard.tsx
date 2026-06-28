@@ -24,6 +24,7 @@ export interface ItineraryPackageCardProps {
   index?: number;
   city?: { FR: string; EN: string } | string;
   tag?: "golf" | "tour" | "mice";
+  pricePrefix?: { FR: string; EN: string } | string;
 }
 
 export default function ItineraryPackageCard({
@@ -43,6 +44,7 @@ export default function ItineraryPackageCard({
   index = 0,
   city,
   tag = "golf",
+  pricePrefix,
 }: ItineraryPackageCardProps) {
   const { lang } = useLang();
 
@@ -75,6 +77,7 @@ export default function ItineraryPackageCard({
   const translatedMeals = formatText(mealPlan);
   const translatedPackageName = formatText(packageName);
   const translatedCtaLabel = formatText(ctaLabel || { FR: "RÉSERVER L'OFFRE", EN: "BOOK OFFER" });
+  const translatedPricePrefix = pricePrefix ? formatText(pricePrefix) + " " : "";
 
   const highlightsTitle = {
     FR: "PRESTATIONS EXCLUSIVES",
@@ -196,6 +199,11 @@ export default function ItineraryPackageCard({
         <div className="flex items-center justify-between pt-5 border-t border-zinc-100">
           <div className="flex flex-col">
             <span className="text-[20px] font-bold text-zinc-900 font-heading leading-none">
+              {translatedPricePrefix && (
+                <span className="text-[12px] font-sans font-medium text-zinc-500 mr-1.5 normal-case tracking-wide">
+                  {translatedPricePrefix}
+                </span>
+              )}
               {currency} {price}
               <span className="text-[10px] font-mono text-zinc-400 ml-1.5 font-normal">
                 / {lang === "FR" ? "pers." : "guest"}

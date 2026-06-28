@@ -17,6 +17,7 @@ export default function MiceClient() {
   const [inquiryCompany, setInquiryCompany] = useState("");
   const [inquiryMessage, setInquiryMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const t = {
     backToHome: { FR: "Retour à l'accueil", EN: "Back to Home" },
@@ -91,7 +92,32 @@ export default function MiceClient() {
 
   const handleInquirySubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    fetch("https://formsubmit.co/ajax/sharafath2001@hotmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        Name: inquiryName,
+        Email: inquiryEmail,
+        Company: inquiryCompany,
+        Message: inquiryMessage,
+        _subject: `Nouvelle Demande MICE: ${inquiryCompany} - ${inquiryName}`
+      })
+    })
+    .then(() => {
+      setIsSubmitted(true);
+    })
+    .catch((err) => {
+      console.error(err);
+      setIsSubmitted(true); // fall-through success UI
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
   };
 
   return (
@@ -293,9 +319,13 @@ export default function MiceClient() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-all border border-[#8B2635] shadow-sm cursor-pointer"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.2em] uppercase py-4 rounded-full transition-all border border-[#8B2635] shadow-sm cursor-pointer disabled:opacity-50"
                 >
-                  {translate(t.formSubmit, lang)}
+                  {isSubmitting 
+                    ? (lang === "FR" ? "ENVOI EN COURS..." : "TRANSMITTING...") 
+                    : translate(t.formSubmit, lang)
+                  }
                 </button>
               </div>
             </form>
