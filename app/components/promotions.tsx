@@ -91,7 +91,7 @@ export default function Promotions() {
             <span>{lang === "FR" ? "OFFRES PRESTIGE" : "EXCLUSIVE PROMOTIONS"}</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-zinc-900 tracking-tight uppercase leading-tight">
-            {lang === "FR" ? "ÉDITIONS LIMITÉES & PRIVILÈGES" : "HOT DEALS & PRIVILEGES"}
+            {lang === "FR" ? "OFFRES & PRIVILÈGES" : "OFFERS & PRIVILEGES"}
           </h2>
           <p className="text-zinc-500 font-light text-[13px] md:text-sm leading-relaxed">
             {lang === "FR" 
