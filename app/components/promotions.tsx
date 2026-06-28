@@ -10,7 +10,7 @@ import { getTierStyle } from "../utils/tier-styles";
 
 const getNightsLabel = (duration: { FR: string; EN: string }, lang: "FR" | "EN") => {
   const text = lang === "FR" ? duration.FR : duration.EN;
-  const match = text.match(/(\d+)\s*(nuit|night)s?/i);
+  const match = text.match(/^(\d+)\s*(nuit|night)s?$/i);
   if (match) {
     const num = match[1];
     return lang === "FR" ? `- ${num} NUITS` : `- ${num} NIGHTS`;
@@ -30,10 +30,64 @@ export default function Promotions() {
   const { lang } = useLang();
 
   const selectedDeals = [
-    dealsList.find(d => d.id === 99), // MICE
-    dealsList.find(d => d.id === 8),  // Tour
-    dealsList.find(d => d.id === 11)  // Golf Package
-  ].filter((d): d is typeof dealsList[0] => !!d);
+    {
+      id: "mice",
+      image: "/images/corporate_meeting.png",
+      badge: { FR: "Prestige", EN: "Prestige" },
+      tag: "mice",
+      title: { FR: "MICE & Corporatif", EN: "MICE & Corporate" },
+      city: { FR: "Séminaires & Congrès", EN: "Seminars & Conferences" },
+      duration: { FR: "Sur mesure", EN: "Custom" },
+      meals: { FR: "Clé en main", EN: "Turnkey" },
+      flight: { FR: "Logistique et vols inclus", EN: "Logistics and flights included" },
+      inclusions: {
+        FR: "Des solutions clés en main pour vos congrès, séminaires, retraites de direction et team-building au Maroc.",
+        EN: "Turnkey solutions for your conferences, seminars, executive board retreats, and team-building in Morocco."
+      },
+      oldPrice: "",
+      newPrice: { FR: "Sur devis", EN: "On request" },
+      link: "/mice",
+      promoText: { FR: "Organisation Professionnelle", EN: "Professional Organization" }
+    },
+    {
+      id: "tours",
+      image: "/images/tours_sunset.jpg",
+      badge: { FR: "Découverte", EN: "Discovery" },
+      tag: "tour",
+      title: { FR: "Circuits & Aventures", EN: "Tours & Discovery" },
+      city: { FR: "Villes Impériales", EN: "Imperial Cities" },
+      duration: { FR: "À partir de 7 nuits", EN: "Starting from 7 nights" },
+      meals: { FR: "Demi-pension ou complet", EN: "Half or full board" },
+      flight: { FR: "Vols directs inclus", EN: "Direct flights included" },
+      inclusions: {
+        FR: "Villes impériales à partir de 7 nuits, trekking dans les montagnes de l'Atlas... Nous proposons également des circuits sur mesure.",
+        EN: "Imperial cities starting from 7 nights, trekking in the Atlas Mountains... We also offer customized tours."
+      },
+      oldPrice: "",
+      newPrice: { FR: "À partir de 3 200 $", EN: "From C$ 3,200" },
+      link: "/itineraries?type=Tours",
+      promoText: { FR: "Vols de Montréal Inclus", EN: "Montreal Flights Included" }
+    },
+    {
+      id: "golf",
+      image: "/images/royal_golf_aerial_1.jpg",
+      badge: { FR: "Élite", EN: "Elite" },
+      tag: "golf",
+      title: { FR: "Séjours Golf de Luxe", EN: "Luxury Golf Packages" },
+      city: { FR: "Marrakech & Agadir", EN: "Marrakech & Agadir" },
+      duration: { FR: "À partir de 7 nuits", EN: "Starting from 7 nights" },
+      meals: { FR: "Formule BB ou Tout-inclus", EN: "BB or All-inclusive" },
+      flight: { FR: "Vols directs et sac de golf", EN: "Direct flights and golf bag" },
+      inclusions: {
+        FR: "Forfaits de golf à partir de 7 nuits partout au Maroc en formule BB ou Tout-inclus. Séjours de golf à Marrakech et Agadir toute l'année.",
+        EN: "Golf packages starting from 7 nights, all around Morocco on BB basis or All-inclusive. Marrakech & Agadir golfing all year round."
+      },
+      oldPrice: "",
+      newPrice: { FR: "À partir de 3 879 $", EN: "From C$ 3,879" },
+      link: "/itineraries?type=Golf",
+      promoText: { FR: "Tee Times Garantis", EN: "Guaranteed Tee Times" }
+    }
+  ];
 
   return (
     <div className="w-full bg-zinc-50/50 py-24 relative overflow-hidden border-y border-zinc-200/40">
@@ -106,15 +160,7 @@ export default function Promotions() {
           {selectedDeals.map((deal, index) => (
             <Link 
               key={deal.id}
-              href={
-                deal.id === 99
-                  ? "/mice"
-                  : deal.id === 11 || deal.id === 12 || deal.id === 13
-                  ? "/golf-itineraries/agadir"
-                  : deal.id === 14 || deal.id === 15 || deal.id === 16
-                  ? "/golf-itineraries/marrakech"
-                  : `/itineraries/${deal.id}`
-              }
+              href={deal.link}
               className="block"
             >
               <motion.div
@@ -190,7 +236,7 @@ export default function Promotions() {
                             {cleanTitle(translate(deal.title, lang))}
                           </span>
                         )}
-                        <h3 className="font-serif text-lg md:text-xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug uppercase">
+                        <h3 className="font-serif text-xl md:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug uppercase">
                           {translate(deal.city, lang)} {getNightsLabel(deal.duration, lang)}
                         </h3>
                       </div>
@@ -280,7 +326,7 @@ export default function Promotions() {
                     <span 
                       className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm animate-pulse group-hover:animate-none"
                     >
-                      {lang === "FR" ? "DÉCOUVRIR" : "BOOK OFFER"}
+                      {lang === "FR" ? "VOIR LES OFFRES" : "SEE OFFERS"}
                     </span>
                   </div>
                 </div>
