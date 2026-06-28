@@ -216,17 +216,18 @@ const INSURANCE_LINK_URL = "#";
         "Accept": "application/json"
       },
       body: JSON.stringify({
-        Package: translate(itinerary.title, lang),
-        PackageID: itinerary.id,
-        Duration: translate(itinerary.duration, lang),
-        Cost: translate(itinerary.cost, lang),
-        ClientName: bookingName,
-        ClientEmail: bookingEmail,
-        ClientPhone: bookingPhone,
-        TravelDate: selectedDate,
-        GuestsCount: passengerCount,
-        GuestAges: passengerAges.join(", "),
-        Message: bookingMessage,
+        _template: "box",
+        "Forfait / Travel Package": translate(itinerary.title, lang),
+        "Identifiant / Package ID": itinerary.id,
+        "Durée / Duration": translate(itinerary.duration, lang),
+        "Tarif estimé / Cost": translate(itinerary.cost, lang),
+        "Nom du client / Client Name": bookingName,
+        "Courriel / Client Email": bookingEmail,
+        "Téléphone / Client Phone": bookingPhone,
+        "Date de départ / Travel Date": selectedDate,
+        "Nombre de participants / Guests Count": passengerCount,
+        "Âges des passagers / Guest Ages": passengerAges.join(", "),
+        "Message & Demandes spéciales / Message": bookingMessage,
         _subject: `Nouvelle Réservation: ${translate(itinerary.title, lang)} - ${bookingName}`
       })
     })

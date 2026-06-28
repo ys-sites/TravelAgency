@@ -102,11 +102,12 @@ export default function MiceClient() {
         "Accept": "application/json"
       },
       body: JSON.stringify({
-        Name: inquiryName,
-        Email: inquiryEmail,
-        Company: inquiryCompany,
-        Phone: inquiryPhone,
-        Message: inquiryMessage,
+        _template: "box",
+        "Nom complet / Full Name": inquiryName,
+        "Courriel / Email Address": inquiryEmail,
+        "Téléphone / Phone Number": inquiryPhone,
+        "Entreprise / Company": inquiryCompany,
+        "Détails de l'événement / Event Details": inquiryMessage,
         _subject: `Nouvelle Demande MICE: ${inquiryCompany} - ${inquiryName}`
       })
     })

@@ -31,14 +31,15 @@ export async function POST(request: Request) {
         "Accept": "application/json"
       },
       body: JSON.stringify({
-        Type: isPremium ? "PREMIUM SOVEREIGN PASSAGE" : "STANDARD EXCLUSIVE PASSAGE",
-        Client: contact.fullName,
-        Email: contact.email,
-        Phone: contact.phone,
-        Duration: `${nights} Nights`,
-        "Total Cost": `${totalCostCAD} CAD`,
-        Destinations: destinations.join(", "),
-        Activities: activities.join(", "),
+        _template: "box",
+        "Formule de Voyage / Travel Tier": isPremium ? "PREMIUM SOVEREIGN PASSAGE" : "STANDARD EXCLUSIVE PASSAGE",
+        "Nom du client / Client Name": contact.fullName,
+        "Courriel / Client Email": contact.email,
+        "Téléphone / Client Phone": contact.phone,
+        "Durée / Duration": `${nights} Nights / Nuits`,
+        "Tarif estimé / Total Cost": `${totalCostCAD} CAD`,
+        "Villes & Haltes / Destinations": destinations.join(", "),
+        "Expériences & Loisirs / Activities": activities.join(", "),
         _subject: `Voyage Sur Mesure: ${contact.fullName}`
       })
     });
