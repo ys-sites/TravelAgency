@@ -161,6 +161,7 @@ const INSURANCE_LINK_URL = "#";
 
   const [bookingName, setBookingName] = useState("");
   const [bookingEmail, setBookingEmail] = useState("");
+  const [bookingPhone, setBookingPhone] = useState("");
   const [bookingMessage, setBookingMessage] = useState("");
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -221,6 +222,7 @@ const INSURANCE_LINK_URL = "#";
         Cost: translate(itinerary.cost, lang),
         ClientName: bookingName,
         ClientEmail: bookingEmail,
+        ClientPhone: bookingPhone,
         TravelDate: selectedDate,
         GuestsCount: passengerCount,
         GuestAges: passengerAges.join(", "),
@@ -824,6 +826,19 @@ const INSURANCE_LINK_URL = "#";
                       value={bookingEmail}
                       onChange={(e) => setBookingEmail(e.target.value)}
                       placeholder="e.g. sterling@portfolio.com"
+                      className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                      {lang === "FR" ? "Votre numéro de téléphone" : "Your phone number"}
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={bookingPhone}
+                      onChange={(e) => setBookingPhone(e.target.value)}
+                      placeholder="e.g. +1 (514) 123-4567"
                       className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
                     />
                   </div>

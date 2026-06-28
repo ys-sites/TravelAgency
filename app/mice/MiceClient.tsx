@@ -15,6 +15,7 @@ export default function MiceClient() {
   const [inquiryName, setInquiryName] = useState("");
   const [inquiryEmail, setInquiryEmail] = useState("");
   const [inquiryCompany, setInquiryCompany] = useState("");
+  const [inquiryPhone, setInquiryPhone] = useState("");
   const [inquiryMessage, setInquiryMessage] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -104,6 +105,7 @@ export default function MiceClient() {
         Name: inquiryName,
         Email: inquiryEmail,
         Company: inquiryCompany,
+        Phone: inquiryPhone,
         Message: inquiryMessage,
         _subject: `Nouvelle Demande MICE: ${inquiryCompany} - ${inquiryName}`
       })
@@ -284,18 +286,33 @@ export default function MiceClient() {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
-                  {translate(t.formCompany, lang)}
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={inquiryCompany}
-                  onChange={(e) => setInquiryCompany(e.target.value)}
-                  placeholder="e.g. Acme Corporation"
-                  className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all rounded-lg"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                    {translate(t.formCompany, lang)}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={inquiryCompany}
+                    onChange={(e) => setInquiryCompany(e.target.value)}
+                    placeholder="e.g. YS marketing"
+                    className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all rounded-lg"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                    {lang === "FR" ? "Numéro de Téléphone" : "Phone Number"}
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={inquiryPhone}
+                    onChange={(e) => setInquiryPhone(e.target.value)}
+                    placeholder="e.g. +1 (514) 123-4567"
+                    className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all rounded-lg"
+                  />
+                </div>
               </div>
 
               <div>
