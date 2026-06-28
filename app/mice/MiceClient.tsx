@@ -28,8 +28,8 @@ export default function MiceClient() {
       EN: "Exclusive corporate solutions designed to achieve your business objectives."
     },
     overviewText: {
-      FR: "Chez Majestic Experiences Voyages, nous sommes spécialisés dans la création d'expériences MICE d'exception au Maroc. Qu'il s'agisse d'un séminaire d'entreprise, d'un voyage de récompense (incentive), d'un congrès d'envergure, d'un lancement de produit ou d'une retraite de direction, notre équipe offre des solutions fluides, créatives et adaptées à vos objectifs commerciaux.",
-      EN: "At Majestic Experiences Voyages, we specialize in creating exceptional MICE experiences in Morocco. Whether you are planning a corporate meeting, incentive trip, conference, product launch, or executive retreat, our team delivers seamless, customized solutions designed to achieve your business objectives."
+      FR: "Chez Merveilles et Voyages, nous sommes spécialisés dans la création d'expériences MICE d'exception au Maroc. Qu'il s'agisse d'un séminaire d'entreprise, d'un voyage de récompense (incentive), d'un congrès d'envergure, d'un lancement de produit ou d'une retraite de direction, notre équipe offre des solutions fluides, créatives et adaptées à vos objectifs commerciaux.",
+      EN: "At Merveilles et Voyages, we specialize in creating exceptional MICE experiences in Morocco. Whether you are planning a corporate meeting, incentive trip, conference, product launch, or executive retreat, our team delivers seamless, customized solutions designed to achieve your business objectives."
     },
     overviewPoints: {
       FR: "Grâce à notre expertise locale approfondie et à notre réseau de partenaires de confiance, nous gérons votre projet de A à Z avec un professionnalisme absolu.",

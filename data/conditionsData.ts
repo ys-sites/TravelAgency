@@ -14,12 +14,12 @@ export interface ConditionsSection {
 
 export const conditionsIntro = {
   p1: {
-    FR: "Ces conditions s’appliquent pour toute transaction effectuée auprès de Majestic Experiences Voyages, qu’il s’agisse notamment de la réservation d’un forfait voyage (groupe, tout-inclus ou personnalisé) réservé à l’agence, par téléphone ou par le site de réservation en ligne, de la souscription à une assurance-voyage ou de l’achat d’un certificat cadeau. Veuillez les lire attentivement et n’hésitez pas à communiquer avec nous pour toutes précisions.",
-    EN: "These general terms apply to all transactions carried out with Majestic Experiences Voyages, whether booking a travel package (group, all-inclusive, or customized), reserving via phone or online, subscribing to travel insurance, or purchasing gift certificates. Please read them carefully."
+    FR: "Ces conditions s’appliquent pour toute transaction effectuée auprès de Merveilles et Voyages, qu’il s’agisse notamment de la réservation d’un forfait voyage (groupe, tout-inclus ou personnalisé) réservé à l’agence, par téléphone ou par le site de réservation en ligne, de la souscription à une assurance-voyage ou de l’achat d’un certificat cadeau. Veuillez les lire attentivement et n’hésitez pas à communiquer avec nous pour toutes précisions.",
+    EN: "These general terms apply to all transactions carried out with Merveilles et Voyages, whether booking a travel package (group, all-inclusive, or customized), reserving via phone or online, subscribing to travel insurance, or purchasing gift certificates. Please read them carefully."
   },
   p2: {
-    FR: "Majestic Experiences Voyages est titulaire d’un permis d’Agence de voyage du Québec. Tous les clients ayant effectué une réservation de voyage auprès de Majestic Experiences Voyages sont admissibles pour des réclamations au Fonds d’indemnisation des clients des agences de voyage (FICAV), selon les conditions de l’Office de la protection du consommateur.",
-    EN: "Majestic Experiences Voyages holds a Quebec travel agency permit. All clients who have booked travel with Majestic Experiences Voyages are eligible for claims to the Travel Agents Client Compensation Fund (FICAV), in accordance with the Office de la protection du consommateur conditions."
+    FR: "Merveilles et Voyages est titulaire d’un permis d’Agence de voyage du Québec. Tous les clients ayant effectué une réservation de voyage auprès de Merveilles et Voyages sont admissibles pour des réclamations au Fonds d’indemnisation des clients des agences de voyage (FICAV), selon les conditions de l’Office de la protection du consommateur.",
+    EN: "Merveilles et Voyages holds a Quebec travel agency permit. All clients who have booked travel with Merveilles et Voyages are eligible for claims to the Travel Agents Client Compensation Fund (FICAV), in accordance with the Office de la protection du consommateur conditions."
   }
 };
 
@@ -31,20 +31,20 @@ export const conditionsSections: ConditionsSection[] = [
     },
     paragraphs: [
       {
-        FR: "Tous les tarifs de Majestic Experiences Voyages, qu’ils soient publicisés sur le site web, dans les brochures ou autre, sont en dollars canadiens et incluent les taxes de vente TPS et TVQ.",
+        FR: "Tous les tarifs de Merveilles et Voyages, qu’ils soient publicisés sur le site web, dans les brochures ou autre, sont en dollars canadiens et incluent les taxes de vente TPS et TVQ.",
         EN: "All rates advertised on the website, brochures, or otherwise are in Canadian dollars and include GST and QST sales taxes. Prices are updated regularly and depend on availability at suppliers."
       },
       {
         FR: "Le prix et la disponibilité des forfaits voyages de groupe affichés sur le site Web sont mis à jour régulièrement. Le prix des voyages personnalisés et des tout-inclus du site web et des brochures sont valides au moment de leur parution et peuvent changer tout dépendamment de la disponibilité chez les fournisseurs.",
-        EN: "Pursuant to consumer protection laws, Majestic Experiences Voyages may increase the price of travel in the event of fuel surcharges or exchange rate shifts prior to 45 days before departure."
+        EN: "Pursuant to consumer protection laws, Merveilles et Voyages may increase the price of travel in the event of fuel surcharges or exchange rate shifts prior to 45 days before departure."
       },
       {
-        FR: "Conformément aux lois de l’Office de la protection du consommateur, Majestic Experiences Voyages peut augmenter le prix d’un voyage déjà vendu à un client en cas de surcharge de carburant par le transporteur ou de modification du taux de change. Pour que le prix du voyage soit affecté par une augmentation du taux de change, il faut que le taux de change ait augmenté de plus de 5% entre la date d’achat du voyage et la 45e journée avant le départ. Dès que le prix du voyage augmente d’au moins 7% (avant taxes), le client peut décider d’annuler son voyage et d’être remboursé. Il peut sinon accepter un autre voyage en remplacement, en payant les frais excédents ou en étant remboursé des frais perçus en trop. L’augmentation des taxes de vente TPS ou TVQ pourrait entrainer une augmentation des tarifs affichés sur tous les médiums puisque ceux-ci incluent les taxes. Aucune modification de prix n’est permise dans les 30 jours qui précèdent la date de départ.",
+        FR: "Conformément aux lois de l’Office de la protection du consommateur, Merveilles et Voyages peut augmenter le prix d’un voyage déjà vendu à un client en cas de surcharge de carburant par le transporteur ou de modification du taux de change. Pour que le prix du voyage soit affecté par une augmentation du taux de change, il faut que le taux de change ait augmenté de plus de 5% entre la date d’achat du voyage et la 45e journée avant le départ. Dès que le prix du voyage augmente d’au moins 7% (avant taxes), le client peut décider d’annuler son voyage et d’être remboursé. Il peut sinon accepter un autre voyage en remplacement, en payant les frais excédents ou en étant remboursé des frais perçus en trop. L’augmentation des taxes de vente TPS ou TVQ pourrait entrainer une augmentation des tarifs affichés sur tous les médiums puisque ceux-ci incluent les taxes. Aucune modification de prix n’est permise dans les 30 jours qui précèdent la date de départ.",
         EN: "If price increases by 7% or more, the customer may cancel with a full refund. No price modifications are permitted within 30 days of departure."
       },
       {
-        FR: "Toute réduction de prix d’un voyage résultant d’une promotion ou d’une décision de Majestic Experiences Voyages s’applique aux nouvelles réservations seulement. Les frais de bagages ne sont pas inclus dans nos forfaits, sauf indication contraire. Les tarifs affichés sur le site web peuvent changer sans préavis.",
-        EN: "Any price reduction resulting from a promotion or decision by Majestic Experiences Voyages applies to new bookings only. Baggage fees are not included unless specified. Rates are subject to change without notice."
+        FR: "Toute réduction de prix d’un voyage résultant d’une promotion ou d’une décision de Merveilles et Voyages s’applique aux nouvelles réservations seulement. Les frais de bagages ne sont pas inclus dans nos forfaits, sauf indication contraire. Les tarifs affichés sur le site web peuvent changer sans préavis.",
+        EN: "Any price reduction resulting from a promotion or decision by Merveilles et Voyages applies to new bookings only. Baggage fees are not included unless specified. Rates are subject to change without notice."
       }
     ]
   },
@@ -66,7 +66,7 @@ export const conditionsSections: ConditionsSection[] = [
         "Virements Interac (maximum de 10 000 $);",
         "Cartes débit;",
         "Cartes de crédit : Visa, Mastercard, Discover et American Express;",
-        "Certificats-cadeaux ou crédits-voyages de Majestic Experiences Voyages."
+        "Certificats-cadeaux ou crédits-voyages de Merveilles et Voyages."
       ],
       EN: [
         "Cash;",
@@ -74,7 +74,7 @@ export const conditionsSections: ConditionsSection[] = [
         "Interac e-Transfers (maximum of $10,000);",
         "Debit cards;",
         "Credit cards: Visa, Mastercard, Discover, and American Express;",
-        "Majestic Experiences Voyages gift certificates or travel credits."
+        "Merveilles et Voyages gift certificates or travel credits."
       ]
     },
     subsections: [
@@ -153,7 +153,7 @@ export const conditionsSections: ConditionsSection[] = [
     },
     paragraphs: [
       {
-        FR: "Les conditions d’annulations des voyages réservés chez Majestic Experiences Voyages, dans certains cas, peuvent refléter les conditions d’annulations de nos fournisseurs et partenaires. Il est possible de demander à votre conseiller en voyage les conditions d’annulations pour chaque services de votre réservation si applicable. En cas d’annulation avant d’avoir acquitté le paiement final, le montant du dépôt sera considéré comme le frais d’annulation. En cas d’annulation après avoir acquitté le paiement final, le frais d’annulation d’un forfait individuel représentera ce que les fournisseurs et partenaires chargent à Majestic Experiences Voyages selon les contrats négociés entre eux en plus du montant correspondant au dépôt. En cas d’annulation pour un forfait groupe accompagné, après avoir acquitté le paiement final, le frais d’annulation est 100 % du montant déboursé pour le voyage, le forfait groupe accompagné est 100% non remboursable après le paiement final.",
+        FR: "Les conditions d’annulations des voyages réservés chez Merveilles et Voyages, dans certains cas, peuvent refléter les conditions d’annulations de nos fournisseurs et partenaires. Il est possible de demander à votre conseiller en voyage les conditions d’annulations pour chaque services de votre réservation si applicable. En cas d’annulation avant d’avoir acquitté le paiement final, le montant du dépôt sera considéré comme le frais d’annulation. En cas d’annulation après avoir acquitté le paiement final, le frais d’annulation d’un forfait individuel représentera ce que les fournisseurs et partenaires chargent à Merveilles et Voyages selon les contrats négociés entre eux en plus du montant correspondant au dépôt. En cas d’annulation pour un forfait groupe accompagné, après avoir acquitté le paiement final, le frais d’annulation est 100 % du montant déboursé pour le voyage, le forfait groupe accompagné est 100% non remboursable après le paiement final.",
         EN: "Cancellations must be made in writing. Security deposits are considered cancellation fees prior to final payments. Cancellation after final payments for individual packages aligns with supplier fee structures. Group bookings are 100% non-refundable after final payment."
       },
       {
@@ -173,7 +173,7 @@ export const conditionsSections: ConditionsSection[] = [
         EN: "Administrative fees apply for reservation modifications (hotel changes, room upgrades, car type, etc.), subject to supplier availability."
       },
       {
-        FR: "Aucun remboursement ne sera effectué par Majestic Experiences Voyages pour des services réservés et non utilisés par le client. Il n’est également pas possible d’utiliser ces services à une date ultérieure.",
+        FR: "Aucun remboursement ne sera effectué par Merveilles et Voyages pour des services réservés et non utilisés par le client. Il n’est également pas possible d’utiliser ces services à une date ultérieure.",
         EN: "No refunds are issued for services reserved but unused by the client. Unused services cannot be transferred or deferred."
       }
     ]
@@ -185,8 +185,8 @@ export const conditionsSections: ConditionsSection[] = [
     },
     paragraphs: [
       {
-        FR: "Majestic Experiences Voyages se dégage de toute responsabilité concernant un dommage relatif aux bagages ou tout équipement sportif (paddleboard, vélos, valises, etc.) durant tous types de transports et la manutention par les employés de Majestic Experiences Voyages ou de ses fournisseurs. Majestic Experiences Voyages ne peut être tenu responsable d’un bris ou d’une perte de bagages et d’équipements sportifs auprès d’un service de voyages Majestic ou d’un fournisseur.",
-        EN: "Majestic Experiences Voyages is not liable for loss or damage to baggage or sports equipment (paddleboards, surfboards, suitcases, etc.) during transport or handling by our staff and suppliers. Travel insurance is highly recommended."
+        FR: "Merveilles et Voyages se dégage de toute responsabilité concernant un dommage relatif aux bagages ou tout équipement sportif (paddleboard, vélos, valises, etc.) durant tous types de transports et la manutention par les employés de Merveilles et Voyages ou de ses fournisseurs. Merveilles et Voyages ne peut être tenu responsable d’un bris ou d’une perte de bagages et d’équipements sportifs auprès d’un service de voyages Majestic ou d’un fournisseur.",
+        EN: "Merveilles et Voyages is not liable for loss or damage to baggage or sports equipment (paddleboards, surfboards, suitcases, etc.) during transport or handling by our staff and suppliers. Travel insurance is highly recommended."
       }
     ]
   },
@@ -197,8 +197,8 @@ export const conditionsSections: ConditionsSection[] = [
     },
     paragraphs: [
       {
-        FR: "Majestic Experiences Voyages recommande fortement à ses clients de souscrire à une assurance voyage avant leur départ. Des assurances annulation, interruption et médicale peuvent être obtenues directement auprès de nos conseillers.",
-        EN: "Majestic Experiences Voyages highly recommends purchasing travel insurance before departure. Cancellation, interruption, and medical policies can be arranged through our concierges."
+        FR: "Merveilles et Voyages recommande fortement à ses clients de souscrire à une assurance voyage avant leur départ. Des assurances annulation, interruption et médicale peuvent être obtenues directement auprès de nos conseillers.",
+        EN: "Merveilles et Voyages highly recommends purchasing travel insurance before departure. Cancellation, interruption, and medical policies can be arranged through our concierges."
       },
       {
         FR: "Le passeport canadien est requis partout et en tout temps pour voyager à l’extérieur du Canada. Certains pays exigent que le passeport soit valide pour une période excédant de 6 mois la date de retour prévue. Il est de la responsabilité du client de s’assurer que son passeport est valide pour la durée du séjour.",
@@ -217,11 +217,11 @@ export const conditionsSections: ConditionsSection[] = [
     },
     paragraphs: [
       {
-        FR: "La protection de l’identité et des renseignements personnels des clients est une priorité pour Majestic Experiences Voyages. Nous demandons donc seulement les informations nécessaires au dossier pour le bon fonctionnement des opérations.",
+        FR: "La protection de l’identité et des renseignements personnels des clients est une priorité pour Merveilles et Voyages. Nous demandons donc seulement les informations nécessaires au dossier pour le bon fonctionnement des opérations.",
         EN: "The protection of client identity and personal data is a priority. We request only information strictly necessary for operational fulfillment."
       },
       {
-        FR: "Les présentes conditions générales et les rapports de droit entre Majestic Experiences Voyages et ses clients sont régis par les lois de la province du Québec.",
+        FR: "Les présentes conditions générales et les rapports de droit entre Merveilles et Voyages et ses clients sont régis par les lois de la province du Québec.",
         EN: "These terms and conditions and the legal relations between the parties are governed by the laws of the Province of Quebec, Canada."
       }
     ]

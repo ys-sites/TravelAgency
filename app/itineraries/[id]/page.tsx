@@ -35,13 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!itinerary) {
     return {
-      title: "Curated Luxury Itinerary | Majestic Experiences",
+      title: "Curated Luxury Itinerary | Merveilles et Voyages",
       description: "Exclusive ultra-luxury travel experiences designed for discerning travellers."
     };
   }
 
   return {
-    title: `${itinerary.title.EN} — ${itinerary.duration.EN} | Majestic Experiences`,
+    title: `${itinerary.title.EN} — ${itinerary.duration.EN} | Merveilles et Voyages`,
     description: itinerary.overview.EN
   };
 }

@@ -13,8 +13,8 @@ const t = {
   about:      { FR: "À Propos", EN: "About Us" },
   customTrip: { FR: "Voyage Sur Mesure", EN: "Custom Trip" },
   contacts:   { FR: "Contacts", EN: "Contacts" },
-  brandName1: { FR: "Majestic", EN: "Majestic" },
-  brandName2: { FR: "Experiences Voyages", EN: "Experiences Voyages" },
+  brandName1: { FR: "Merveilles", EN: "Merveilles" },
+  brandName2: { FR: "et Voyages", EN: "et Voyages" },
 };
 
 export default function Navbar() {
@@ -28,7 +28,7 @@ export default function Navbar() {
           <img 
             src="/images/logo.png" 
             className="h-[38px] sm:h-[44px] lg:h-[44px] xl:h-[48px] w-auto object-contain transition-opacity duration-300 group-hover:opacity-90" 
-            alt="Majestic Experiences Voyages" 
+            alt="Merveilles et Voyages" 
           />
           <div className="flex flex-col text-white">
             <span className="font-serif text-[10px] sm:text-[13px] lg:text-[12px] xl:text-[14px] uppercase tracking-[0.25em] font-bold leading-none">

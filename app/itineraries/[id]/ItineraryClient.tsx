@@ -351,10 +351,8 @@ const INSURANCE_LINK_URL = "#";
                 backgroundImage: `url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/${videoUrl}.jpg')`
               }}
             >
-              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/${videoUrl}.webm`} type="video/webm" media="(max-width: 768px)" />
-              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/${videoUrl}.mp4`} type="video/mp4" media="(max-width: 768px)" />
-              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/${videoUrl}.webm`} type="video/webm" />
-              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/${videoUrl}.mp4`} type="video/mp4" />
+              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960/${videoUrl}.mp4`} type="video/mp4" media="(max-width: 768px)" />
+              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920/${videoUrl}.mp4`} type="video/mp4" />
             </video>
           ) : (
             <img
@@ -519,10 +517,8 @@ const INSURANCE_LINK_URL = "#";
                     preload="auto"
                     poster={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/${videoUrl}.jpg`}
                   >
-                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/${videoUrl}.webm`} type="video/webm" media="(max-width: 768px)" />
-                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/${videoUrl}.mp4`} type="video/mp4" media="(max-width: 768px)" />
-                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/${videoUrl}.webm`} type="video/webm" />
-                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/${videoUrl}.mp4`} type="video/mp4" />
+                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960/${videoUrl}.mp4`} type="video/mp4" media="(max-width: 768px)" />
+                    <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920/${videoUrl}.mp4`} type="video/mp4" />
                   </video>
                 ) : (
                   <img

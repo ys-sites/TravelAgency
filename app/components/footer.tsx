@@ -53,8 +53,8 @@ const t = {
     EN: "Contact"
   },
   copyright: {
-    FR: "© 2026 Majestic Experiences Voyages Concierge. Tous droits réservés.",
-    EN: "© 2026 Majestic Experiences Voyages Concierge. All rights reserved."
+    FR: "© 2026 Merveilles et Voyages Concierge. Tous droits réservés.",
+    EN: "© 2026 Merveilles et Voyages Concierge. All rights reserved."
   },
   privacySignoff: {
     FR: "Politique de Confidentialité",
@@ -64,8 +64,8 @@ const t = {
     FR: "Conditions de Dépôt Fiduciaire",
     EN: "Security Escrow Terms"
   },
-  brandName1: { FR: "Majestic", EN: "Majestic" },
-  brandName2: { FR: "Experiences Voyages", EN: "Experiences Voyages" },
+  brandName1: { FR: "Merveilles", EN: "Merveilles" },
+  brandName2: { FR: "et Voyages", EN: "et Voyages" },
   phone: { FR: "514 919 6381", EN: "514 919 6381" },
   email: { FR: "info@mevoyages.com", EN: "info@mevoyages.com" }
 };
@@ -82,7 +82,7 @@ export default function Footer() {
             <img 
               src="/Logo1%20Merveilles%20et%20Voyages.png" 
               className="h-24 md:h-28 w-auto object-contain hover:opacity-90 transition-opacity duration-300" 
-              alt="Majestic Experiences Voyages Logo" 
+              alt="Merveilles et Voyages Logo" 
             />
           </div>
           <p className="text-[12px] text-white/50 leading-relaxed font-light max-w-[240px]">

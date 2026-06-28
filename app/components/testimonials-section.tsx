@@ -46,8 +46,8 @@ const testimonials: Testimonial[] = [
   },
   {
     quote: {
-      EN: "An incredible exploration of the Sultanate of Oman. Stargazing in the Wahiba desert, swimming in turquoise wadis, and sailing the Musandam fjords — Majestic Experiences designed a masterpiece.",
-      FR: "Une exploration incroyable du Sultanat d'Oman. L'observation des étoiles dans le désert de Wahiba, les baignades dans les wadis turquoise et la navigation dans les fjords du Musandam — Majestic Experiences a conçu un chef-d'œuvre."
+      EN: "An incredible exploration of the Sultanate of Oman. Stargazing in the Wahiba desert, swimming in turquoise wadis, and sailing the Musandam fjords — Merveilles et Voyages designed a masterpiece.",
+      FR: "Une exploration incroyable du Sultanat d'Oman. L'observation des étoiles dans le désert de Wahiba, les baignades dans les wadis turquoise et la navigation dans les fjords du Musandam — Merveilles et Voyages a conçu un chef-d'œuvre."
     },
     name: "Jean-Paul R.",
     location: "Laval, QC",
@@ -86,8 +86,8 @@ const testimonials: Testimonial[] = [
   },
   {
     quote: {
-      EN: "I was skeptical about booking through a boutique agency, but Majestic Experiences exceeded every expectation. The attention to detail, the hand-picked hotels, and the 24/7 support were extraordinary.",
-      FR: "J'étais sceptique quant à la réservation via une agence boutique, mais Majestic Experiences a dépassé toutes mes attentes. L'attention aux détails, les hôtels sélectionnés à la main et le support 24/7 étaient extraordinaires."
+      EN: "I was skeptical about booking through a boutique agency, but Merveilles et Voyages exceeded every expectation. The attention to detail, the hand-picked hotels, and the 24/7 support were extraordinary.",
+      FR: "J'étais sceptique quant à la réservation via une agence boutique, mais Merveilles et Voyages a dépassé toutes mes attentes. L'attention aux détails, les hôtels sélectionnés à la main et le support 24/7 étaient extraordinaires."
     },
     name: "David H.",
     location: "Vancouver, BC",

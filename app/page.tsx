@@ -8,8 +8,8 @@ import TestimonialsSection from "./components/testimonials-section";
 import Footer from "./components/footer";
 
 export const metadata: Metadata = {
-  title: "Majestic Experiences Voyages — Séjours de Golf & Voyage de Prestige au Maroc | Premium Golf & Exclusive Travel Morocco",
-  description: "Explore premium golf experiences and exclusive luxury travel in Morocco with Majestic Experiences Voyages. 24/7 bilingual concierge services based in Canada.",
+  title: "Merveilles et Voyages — Séjours de Golf & Voyage de Prestige au Maroc | Premium Golf & Exclusive Travel Morocco",
+  description: "Explore premium golf experiences and exclusive luxury travel in Morocco with Merveilles et Voyages. 24/7 bilingual concierge services based in Canada.",
 };
 
 export default function Home() {

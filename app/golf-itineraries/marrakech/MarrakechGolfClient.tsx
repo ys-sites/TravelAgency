@@ -145,15 +145,10 @@ export default function MarrakechGolfClient() {
             backgroundImage: "url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv.jpg')"
           }}
         >
-          {/* Mobile WebM */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv.webm" type="video/webm" media="(max-width: 768px)" />
-          {/* Mobile MP4 */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv.mp4" type="video/mp4" media="(max-width: 768px)" />
-          
-          {/* Desktop WebM */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv.webm" type="video/webm" />
-          {/* Desktop MP4 */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv.mp4" type="video/mp4" />
+          {/* Mobile MP4 (Universal H264 Compatibility) */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960/Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv.mp4" type="video/mp4" media="(max-width: 768px)" />
+          {/* Desktop MP4 (Universal H264 Compatibility) */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920/Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none" />

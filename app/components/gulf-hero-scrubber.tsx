@@ -25,15 +25,10 @@ export default function GulfHeroScrubber() {
             backgroundImage: "url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Golf_in_Morocco_ssfati.jpg')"
           }}
         >
-          {/* Mobile WebM */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/Golf_in_Morocco_ssfati.webm" type="video/webm" media="(max-width: 768px)" />
-          {/* Mobile MP4 */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_640,c_limit/Golf_in_Morocco_ssfati.mp4" type="video/mp4" media="(max-width: 768px)" />
-          
-          {/* Desktop WebM */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/Golf_in_Morocco_ssfati.webm" type="video/webm" />
-          {/* Desktop MP4 */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto:eco,w_1280,c_limit/Golf_in_Morocco_ssfati.mp4" type="video/mp4" />
+          {/* Mobile MP4 (Universal H264 Compatibility) */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960/Golf_in_Morocco_ssfati.mp4" type="video/mp4" media="(max-width: 768px)" />
+          {/* Desktop MP4 (Universal H264 Compatibility) */}
+          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920/Golf_in_Morocco_ssfati.mp4" type="video/mp4" />
         </video>
       </div>
       
@@ -52,7 +47,7 @@ export default function GulfHeroScrubber() {
         >
           <img
             src="/images/logo.png"
-            alt="Majestic Experiences Logo"
+            alt="Merveilles et Voyages Logo"
             className="w-[200px] sm:w-[260px] md:w-[300px] h-auto object-contain filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
           />
         </motion.div>
@@ -68,8 +63,8 @@ export default function GulfHeroScrubber() {
         >
           <h2 className="font-serif text-lg sm:text-xl md:text-2xl text-white tracking-[0.1em] uppercase font-light max-w-2xl leading-relaxed">
             {lang === "FR"
-              ? "Concierge de Voyage de Prestige et Séjours de Golf au Maroc"
-              : "Exclusive Travel Concierge & Premium Golf Experiences in Morocco"
+              ? "Expériences de Voyage de Prestige et Séjours de Golf au Maroc"
+              : "Exclusive Travel Experiences & Premium Golf Experiences in Morocco"
             }
           </h2>
 
