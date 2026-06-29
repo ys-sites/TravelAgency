@@ -65,7 +65,7 @@ export const conditionsSections: ConditionsSection[] = [
         "Chèques – Notez qu’un frais d’administration sera facturé pour le traitement d’un chèque sans provisions;",
         "Virements Interac (maximum de 10 000 $);",
         "Cartes débit;",
-        "Cartes de crédit : Visa, Mastercard, Discover et American Express;",
+        "Cartes de crédit : Visa et Mastercard;",
         "Certificats-cadeaux ou crédits-voyages de Merveilles et Voyages."
       ],
       EN: [
@@ -73,7 +73,7 @@ export const conditionsSections: ConditionsSection[] = [
         "Cheques (subject to administration fee if returned NSF);",
         "Interac e-Transfers (maximum of $10,000);",
         "Debit cards;",
-        "Credit cards: Visa, Mastercard, Discover, and American Express;",
+        "Credit cards: Visa and Mastercard;",
         "Merveilles et Voyages gift certificates or travel credits."
       ]
     },
@@ -94,7 +94,7 @@ export const conditionsSections: ConditionsSection[] = [
           EN: "REMOTE AND CONTACTLESS CREDIT CARD TRANSACTIONS"
         },
         paragraph: {
-          FR: "Le détenteur de la carte de crédit reconnaît que lorsque le conseiller en voyages autorisé effectue une transaction sans présenter la carte et en donnant uniquement son numéro de carte de crédit : Visa, Mastercard ou American Express (ex. : transaction téléphonique ou par internet) ou qu’il effectue une transaction à l’aide de la technologie sans contact, il assume les mêmes responsabilités que s’il avait signé une pièce justificative ou saisi son NIP sur un appareil accessible.",
+          FR: "Le détenteur de la carte de crédit reconnaît que lorsque le conseiller en voyages autorisé effectue une transaction sans présenter la carte et en donnant uniquement son numéro de carte de crédit : Visa ou Mastercard (ex. : transaction téléphonique ou par internet) ou qu’il effectue une transaction à l’aide de la technologie sans contact, il assume les mêmes responsabilités que s’il avait signé une pièce justificative ou saisi son NIP sur un appareil accessible.",
           EN: "The cardholder acknowledges that transactions conducted without physically presenting the card (e.g., via phone, internet, or contactless technology) carry the same legal and financial responsibilities as a signed sales slip or PIN entry."
         }
       }
