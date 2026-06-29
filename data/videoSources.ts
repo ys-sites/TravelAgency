@@ -11,8 +11,8 @@ export type VideoSource = {
 const CLD = "https://res.cloudinary.com/dzgmvz6tc/video/upload";
 
 // Quality and streaming optimization parameters
-const DQ = "q_auto:best,fl_progressive,w_1920"; // desktop quality + progressive stream
-const MQ = "q_auto,fl_progressive,w_960";        // mobile quality
+const DQ = "q_auto:best,fl_progressive,w_1920,du_60"; // desktop quality + progressive stream + 1 min limit
+const MQ = "q_auto,fl_progressive,w_960,du_60";        // mobile quality + 1 min limit
 const PQ = "q_auto,f_auto,w_1920";              // poster (desktop JPEG/WebP)
 
 export const videoSources: Record<string, VideoSource> = {

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useLang } from "../context/lang-context";
@@ -8,22 +8,32 @@ import { useLang } from "../context/lang-context";
 export default function GulfHeroScrubber() {
   const { lang } = useLang();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile width on mount
+  useEffect(() => {
+    setIsMobile(window.screen.width <= 768);
+  }, []);
 
   // Reinforce autoplay behavior on mount (mobile auto-play backup)
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        // Autoplay blocked by device settings (e.g. low power mode)
-      });
-    }
-  }, []);
+    const vid = videoRef.current;
+    if (!vid) return;
+    vid.load();
+    vid.play().catch(() => {
+      // Autoplay blocked by device settings (e.g. low power mode)
+    });
+  }, [isMobile]);
 
   const CLD = "https://res.cloudinary.com/dzgmvz6tc/video/upload";
-  const mobileWebM  = `${CLD}/q_auto,w_640,vc_vp9/Golf_in_Morocco_ssfati.webm`;
-  const mobileMp4   = `${CLD}/q_auto,w_640/Golf_in_Morocco_ssfati.mp4`;
-  const desktopWebM = `${CLD}/q_auto:best,fl_progressive,w_1920,vc_vp9/Golf_in_Morocco_ssfati.webm`;
-  const desktopMp4  = `${CLD}/q_auto:best,fl_progressive,w_1920/Golf_in_Morocco_ssfati.mp4`;
+  const mobileWebM  = `${CLD}/q_auto,w_640,vc_vp9,du_60/Golf_in_Morocco_ssfati.webm`;
+  const mobileMp4   = `${CLD}/q_auto,w_640,du_60/Golf_in_Morocco_ssfati.mp4`;
+  const desktopWebM = `${CLD}/q_auto:best,fl_progressive,w_1920,vc_vp9,du_60/Golf_in_Morocco_ssfati.webm`;
+  const desktopMp4  = `${CLD}/q_auto:best,fl_progressive,w_1920,du_60/Golf_in_Morocco_ssfati.mp4`;
   const posterUrl   = `${CLD}/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg`;
+
+  const webmSrc = isMobile ? mobileWebM : desktopWebM;
+  const mp4Src  = isMobile ? mobileMp4  : desktopMp4;
 
   return (
     <div
@@ -34,6 +44,7 @@ export default function GulfHeroScrubber() {
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0">
         <video
           ref={videoRef}
+          key={isMobile ? "mobile" : "desktop"}
           className="w-full h-full object-cover bg-black bg-center bg-cover animate-kenburns"
           autoPlay
           muted
@@ -45,15 +56,8 @@ export default function GulfHeroScrubber() {
             backgroundImage: `url('${posterUrl}')`
           }}
         >
-          {/* Mobile WebM */}
-          <source src={mobileWebM} type="video/webm" media="(max-width: 768px)" />
-          {/* Mobile MP4 */}
-          <source src={mobileMp4} type="video/mp4" media="(max-width: 768px)" />
-          
-          {/* Desktop WebM */}
-          <source src={desktopWebM} type="video/webm" />
-          {/* Desktop MP4 */}
-          <source src={desktopMp4} type="video/mp4" />
+          <source src={webmSrc} type="video/webm" />
+          <source src={mp4Src} type="video/mp4" />
         </video>
       </div>
       
