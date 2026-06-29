@@ -90,6 +90,7 @@ export default function MarrakechGolfClient() {
       { FR: "Transferts privés aéroport, hôtel et golfs", EN: "Private airport, hotel, and course transfers" }
     ],
     price: "4,669",
+    pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
     ctaHref: "/itineraries/15",
@@ -116,6 +117,7 @@ export default function MarrakechGolfClient() {
       { FR: "Transferts privés aéroport, hôtel et golfs", EN: "Private airport, hotel, and course transfers" }
     ],
     price: "3,979",
+    pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
     ctaHref: "/itineraries/16",
