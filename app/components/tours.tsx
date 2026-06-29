@@ -365,7 +365,7 @@ function ToursContent() {
                         </span>
                         {(() => {
                           const priceText = translate(tour.price, lang);
-                          const isRequest = priceText.toLowerCase().includes("devis") || priceText.toLowerCase().includes("request");
+                          const isRequest = priceText.toLowerCase().includes("devis") || priceText.toLowerCase().includes("demande") || priceText.toLowerCase().includes("request");
                           return (
                             <span className="text-[19px] font-bold text-zinc-900 font-heading leading-none">
                               {priceText}

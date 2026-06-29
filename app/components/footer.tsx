@@ -66,7 +66,7 @@ const t = {
   },
   brandName1: { FR: "Merveilles", EN: "Merveilles" },
   brandName2: { FR: "et Voyages", EN: "et Voyages" },
-  phone: { FR: "514 919 6381", EN: "514 919 6381" },
+  phone: { FR: "514 919 MEV1", EN: "514 919 MEV1" },
   email: { FR: "info@mevoyages.com", EN: "info@mevoyages.com" }
 };
 
@@ -120,8 +120,10 @@ export default function Footer() {
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
             <li><Link href="/#about" className="hover:text-brand-gold transition-colors">{translate(t.about, lang)}</Link></li>
             <li><Link href="/conditions" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Conditions Générales" : "General Conditions"}</Link></li>
+            <li><Link href="/#contacts" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Contact" : "Contact"}</Link></li>
             <li><Link href="/conditions" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Assurance Voyage" : "Travel Insurance"}</Link></li>
             <li><Link href="/mice" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Services aux Entreprises" : "Corporate Services"}</Link></li>
+            <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Voyages Scolaires" : "School Trips"}</Link></li>
             <li><Link href="/travel-stories" className="hover:text-brand-gold transition-colors">{translate(t.news, lang)}</Link></li>
           </ul>
         </div>
@@ -133,7 +135,7 @@ export default function Footer() {
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
             <li>
-              <a href={`tel:${translate(t.phone, lang).replace(/\s+/g, '')}`} className="hover:text-brand-gold transition-colors">
+              <a href="tel:5149196381" className="hover:text-brand-gold transition-colors">
                 {translate(t.phone, lang)}
               </a>
             </li>

@@ -783,7 +783,7 @@ const INSURANCE_LINK_URL = "#";
                   <div className="flex items-baseline justify-between">
                     {(() => {
                       const costText = translate(itinerary.cost, lang);
-                      const isRequest = costText.toLowerCase().includes("devis") || costText.toLowerCase().includes("request");
+                      const isRequest = costText.toLowerCase().includes("devis") || costText.toLowerCase().includes("demande") || costText.toLowerCase().includes("request");
                       return (
                         <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">
                           {costText}

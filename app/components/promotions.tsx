@@ -45,7 +45,7 @@ export default function Promotions() {
         EN: "Turnkey solutions for your conferences, seminars, executive board retreats, and team-building in Morocco."
       },
       oldPrice: "",
-      newPrice: { FR: "Sur devis", EN: "On request" },
+      newPrice: { FR: "Sur demande", EN: "On request" },
       link: "/mice",
       promoText: { FR: "Organisation Professionnelle", EN: "Professional Organization" }
     },
@@ -309,7 +309,7 @@ export default function Promotions() {
                       </span>
                       {(() => {
                         const priceText = translate(deal.newPrice, lang);
-                        const isRequest = priceText.toLowerCase().includes("devis") || priceText.toLowerCase().includes("request");
+                        const isRequest = priceText.toLowerCase().includes("devis") || priceText.toLowerCase().includes("demande") || priceText.toLowerCase().includes("request");
                         return (
                           <span className="text-[19px] font-bold text-zinc-900 font-heading leading-none">
                             {priceText}

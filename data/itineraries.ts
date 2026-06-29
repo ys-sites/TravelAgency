@@ -114,7 +114,7 @@ export const toursList: TourCard[] = [
     flight: { FR: "Vol optionnel", EN: "Flight optional" },
     meals: { FR: "Petit-déjeuner inclus", EN: "Breakfast included" },
     oldPrice: "",
-    price: { FR: "Sur devis", EN: "On request" },
+    price: { FR: "Sur demande", EN: "On request" },
     tag: "golf",
     iconType: "lighthouse",
     city: { FR: "Rabat", EN: "Rabat" },
@@ -247,7 +247,7 @@ export const toursList: TourCard[] = [
     flight: { FR: "Vol optionnel", EN: "Flight optional" },
     meals: { FR: "Demi-pension", EN: "Half Board" },
     oldPrice: "",
-    price: { FR: "Sur devis", EN: "On request" },
+    price: { FR: "Sur demande", EN: "On request" },
     tag: "tour",
     iconType: "lighthouse",
     city: { FR: "Villes Impériales", EN: "Imperial Cities" },
@@ -266,7 +266,7 @@ export const toursList: TourCard[] = [
     flight: { FR: "Vol optionnel", EN: "Flight optional" },
     meals: { FR: "Demi-pension", EN: "Half Board" },
     oldPrice: "",
-    price: { FR: "Sur devis", EN: "On request" },
+    price: { FR: "Sur demande", EN: "On request" },
     tag: "tour",
     iconType: "lighthouse",
     city: { FR: "Villes Impériales & Sud", EN: "Imperial Cities & South" },
@@ -304,7 +304,7 @@ export const toursList: TourCard[] = [
     flight: { FR: "Vol optionnel", EN: "Flight optional" },
     meals: { FR: "Demi-pension", EN: "Half Board" },
     oldPrice: "",
-    price: { FR: "Sur devis", EN: "On request" },
+    price: { FR: "Sur demande", EN: "On request" },
     tag: "tour",
     iconType: "lighthouse",
     city: { FR: "Villes Impériales", EN: "Imperial Cities" },
@@ -323,7 +323,7 @@ export const toursList: TourCard[] = [
     flight: { FR: "Prestations incluses", EN: "All services included" },
     meals: { FR: "Hébergement & Logistique", EN: "Accommodation & Logistics" },
     oldPrice: "",
-    price: { FR: "Sur devis", EN: "On request" },
+    price: { FR: "Sur demande", EN: "On request" },
     tag: "mice",
     iconType: "lighthouse",
     city: { FR: "Toutes Villes", EN: "All Cities" },
@@ -344,7 +344,7 @@ export const dealsList: DealCard[] = [
     meals: { FR: "Petit-déjeuner inclus", EN: "Breakfast included" },
     inclusions: { FR: "Parcours légendaires Rouge (18T) & Bleu (18T), séjour au Ritz-Carlton", EN: "Legendary Red (18H) & Blue (18H) courses, stay at Ritz-Carlton" },
     oldPrice: "",
-    newPrice: { FR: "Sur devis", EN: "On request" },
+    newPrice: { FR: "Sur demande", EN: "On request" },
     tag: "golf",
     city: { FR: "Rabat", EN: "Rabat" },
     promoText: {
@@ -470,7 +470,7 @@ export const dealsList: DealCard[] = [
     meals: { FR: "Hébergement & Logistique", EN: "Accommodation & Logistics" },
     inclusions: { FR: "Salles de conférence, logistique, activités de team building", EN: "Conference rooms, local logistics, and customized team building" },
     oldPrice: "",
-    newPrice: { FR: "Sur devis", EN: "On request" },
+    newPrice: { FR: "Sur demande", EN: "On request" },
     tag: "mice",
     city: { FR: "Séminaires d'Affaires", EN: "Business Events" },
     promoText: {
@@ -505,7 +505,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/rgdes_parcours_rouge_09_17.jpg",
     title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
     duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
-    cost: { FR: "Sur devis", EN: "On request" },
+    cost: { FR: "Sur demande", EN: "On request" },
     overview: {
       FR: "Né de la vision de Feu SM Le Roi Hassan II et dessiné par Robert Trent Jones Sr, le Royal Golf Dar Es Salam est un écosystème naturel somptueux de 440 hectares à seulement 15 minutes du centre de Rabat. Avec son légendaire Parcours Rouge (18 trous, parcours signature), son Parcours Bleu (18 trous) et son Parcours Vert (9 trous), ce site d'exception accueille chaque année le prestigieux Trophée Hassan II. Un séjour inoubliable alliant passion du golf, biodiversité riche et hébergement de très haut standing au Ritz-Carlton Rabat Dar Es Salam.",
       EN: "Born under the vision of His Majesty the late King Hassan II and designed by Robert Trent Jones Sr, Royal Golf Dar Es Salam is a majestic natural ecosystem spanning 440 hectares of forest, just 15 minutes from Rabat city center. Featuring the legendary Red Course (18H, signature), the Blue Course (18H), and the Green Course (9H), this exceptional venue hosts the annual Hassan II Golf Trophy. An unforgettable journey blending golf passion, rich biodiversity, and ultra-luxury stay at The Ritz-Carlton Rabat Dar Es Salam."
@@ -585,9 +585,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Upgrade Suite Ritz-Carlton", price: "Sur devis" },
-        { name: "Excursion historique guidée de Rabat", price: "Sur devis" },
-        { name: "Leçon privée avec un pro PGA", price: "Sur devis" }
+        { name: "Upgrade Suite Ritz-Carlton", price: "Sur demande" },
+        { name: "Excursion historique guidée de Rabat", price: "Sur demande" },
+        { name: "Leçon privée avec un pro PGA", price: "Sur demande" }
       ],
       EN: [
         { name: "Ritz-Carlton Suite Upgrade", price: "On request" },
@@ -725,9 +725,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Surclassement en Chambre Vue Océan", price: "Sur devis" },
-        { name: "Formule Demi-pension Premium", price: "Sur devis" },
-        { name: "Ronde de golf supplémentaire", price: "Sur devis" }
+        { name: "Surclassement en Chambre Vue Océan", price: "Sur demande" },
+        { name: "Formule Demi-pension Premium", price: "Sur demande" },
+        { name: "Ronde de golf supplémentaire", price: "Sur demande" }
       ],
       EN: [
         { name: "Ocean View Room Upgrade", price: "On request" },
@@ -877,9 +877,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Surclassement en Chambre Vue Mer", price: "Sur devis" },
-        { name: "Chambre Swim-Up avec accès piscine", price: "Sur devis" },
-        { name: "Ronde de golf supplémentaire", price: "Sur devis" }
+        { name: "Surclassement en Chambre Vue Mer", price: "Sur demande" },
+        { name: "Chambre Swim-Up avec accès piscine", price: "Sur demande" },
+        { name: "Ronde de golf supplémentaire", price: "Sur demande" }
       ],
       EN: [
         { name: "Sea View Room Upgrade", price: "On request" },
@@ -1004,9 +1004,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Surclassement Chambre Vue Mer", price: "Sur devis" },
-        { name: "Pension Complète", price: "Sur devis" },
-        { name: "Ronde de golf supplémentaire", price: "Sur devis" }
+        { name: "Surclassement Chambre Vue Mer", price: "Sur demande" },
+        { name: "Pension Complète", price: "Sur demande" },
+        { name: "Ronde de golf supplémentaire", price: "Sur demande" }
       ],
       EN: [
         { name: "Ocean View Room Upgrade", price: "On request" },
@@ -1117,9 +1117,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Surclassement en Suite", price: "Sur devis" },
-        { name: "Excursion d'une journée dans l'Atlas", price: "Sur devis" },
-        { name: "Ronde de golf supplémentaire", price: "Sur devis" }
+        { name: "Surclassement en Suite", price: "Sur demande" },
+        { name: "Excursion d'une journée dans l'Atlas", price: "Sur demande" },
+        { name: "Ronde de golf supplémentaire", price: "Sur demande" }
       ],
       EN: [
         { name: "Suite Upgrade", price: "On request" },
@@ -1230,9 +1230,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Surclassement en Chambre Deluxe", price: "Sur devis" },
-        { name: "Excursion Essaouira d'une journée", price: "Sur devis" },
-        { name: "Ronde de golf supplémentaire", price: "Sur devis" }
+        { name: "Surclassement en Chambre Deluxe", price: "Sur demande" },
+        { name: "Excursion Essaouira d'une journée", price: "Sur demande" },
+        { name: "Ronde de golf supplémentaire", price: "Sur demande" }
       ],
       EN: [
         { name: "Deluxe Room Upgrade", price: "On request" },
@@ -1340,9 +1340,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Surclassement en Chambre Deluxe", price: "Sur devis" },
-        { name: "Excursion à la journée à Essaouira", price: "Sur devis" },
-        { name: "Ronde de golf supplémentaire", price: "Sur devis" }
+        { name: "Surclassement en Chambre Deluxe", price: "Sur demande" },
+        { name: "Excursion à la journée à Essaouira", price: "Sur demande" },
+        { name: "Ronde de golf supplémentaire", price: "Sur demande" }
       ],
       EN: [
         { name: "Deluxe Room Upgrade", price: "On request" },
@@ -1391,7 +1391,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/morocco-sahara-dunes.png",
     title: { FR: "Villes Impériales & Désert", EN: "Imperial Cities & Desert" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
-    cost: { FR: "Sur devis", EN: "On request" },
+    cost: { FR: "Sur demande", EN: "On request" },
     overview: {
       FR: "Un circuit culturel exceptionnel de 10 nuits à travers les cités impériales marocaines et les dunes grandioses du Sahara. Visitez Casablanca, Rabat, Fès et Meknès, explorez les ruines romaines de Volubilis, traversez le Moyen Atlas et vivez la magie d'une nuit en bivouac au milieu des dunes de sable de l'Erg Chebbi à Merzouga avec promenade en chameau au coucher du soleil.",
       EN: "An exceptional 10-night cultural tour across the imperial strongholds of Morocco and the grand dunes of the Sahara. Discover Casablanca, Rabat, Fes, and Meknes, explore the ancient Roman ruins of Volubilis, traverse the Middle Atlas, and experience a magical overnight under the desert stars in Erg Chebbi dunes after a camel trek at sunset."
@@ -1449,8 +1449,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Surclassement en Riad Privé de luxe", price: "Sur devis" },
-        { name: "Option Pension Complète (déjeuners inclus)", price: "Sur devis" }
+        { name: "Surclassement en Riad Privé de luxe", price: "Sur demande" },
+        { name: "Option Pension Complète (déjeuners inclus)", price: "Sur demande" }
       ],
       EN: [
         { name: "Upgrade to luxury Private Riad", price: "On request" },
@@ -1474,7 +1474,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/moroco.webp",
     title: { FR: "Grand Tour Impérial & Chefchaouen", EN: "Grand Imperial Tour & Chefchaouen" },
     duration: { FR: "15 jours / 14 nuits", EN: "15 days / 14 nights" },
-    cost: { FR: "Sur devis", EN: "On request" },
+    cost: { FR: "Sur demande", EN: "On request" },
     overview: {
       FR: "Notre grand circuit de 14 nuits est le voyage culturel ultime au Maroc. Parcourez le royaume du Nord au Sud: de Casablanca et la capitale Rabat, découvrez Tanger face à l'Espagne, perdez-vous dans les ruelles bleues de Chefchaouen, visitez Fès, passez une nuit magique sous tente au Sahara à Merzouga, franchissez l'Atlas vers Marrakech, explorez Essaouira sur l'Atlantique et revenez par Casablanca.",
       EN: "Our grand 14-night tour is the ultimate cultural voyage across Morocco. Traverse the kingdom from North to South: starting in Casablanca and Rabat, discover Tangier overlooking the Strait of Gibraltar, explore the blue lanes of Chefchaouen, visit Fes, experience a magical night under the stars in the Sahara desert at Merzouga, cross the Atlas to Marrakech, enjoy coastal Essaouira, and return to Casablanca."
@@ -1536,8 +1536,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Surclassement en Riads Prestige Relais & Châteaux", price: "Sur devis" },
-        { name: "Option Pension Complète (déjeuners)", price: "Sur devis" }
+        { name: "Surclassement en Riads Prestige Relais & Châteaux", price: "Sur demande" },
+        { name: "Option Pension Complète (déjeuners)", price: "Sur demande" }
       ],
       EN: [
         { name: "Relais & Chateaux Prestige Riad Upgrade", price: "On request" },
@@ -1618,8 +1618,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Ascension du Mont Toubkal (4167m) avec guide", price: "Sur devis" },
-        { name: "Surclassement Suite Riad à Marrakech", price: "Sur devis" }
+        { name: "Ascension du Mont Toubkal (4167m) avec guide", price: "Sur demande" },
+        { name: "Surclassement Suite Riad à Marrakech", price: "Sur demande" }
       ],
       EN: [
         { name: "Mount Toubkal Ascent (4167m) with guide", price: "On request" },
@@ -1642,7 +1642,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     // Title updated per client request 2026-06-28
     title: { FR: "Un Aperçu des Villes Impériales", EN: "A Glimpse of Imperial Cities" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    cost: { FR: "Sur devis", EN: "On request" },
+    cost: { FR: "Sur demande", EN: "On request" },
     overview: {
       FR: "Un circuit culturel très complet en français couvrant les joyaux du Maroc de Marrakech à Fès. Voyagez à travers Beni Mellal, Ifrane la ville de montagne, et découvrez l'histoire impériale à Fès, Meknès, la capitale administrative Rabat et la métropole côtière Casablanca, avant de revenir à Marrakech.",
       EN: "A comprehensive cultural tour in French covering Morocco's finest highlights from Marrakech to Fes. Travel through Beni Mellal, Ifrane mountain town, and explore the imperial history in Fes, Meknes, the administrative capital Rabat, and coastal Casablanca, before returning to Marrakech."
@@ -1697,8 +1697,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     options: {
       FR: [
-        { name: "Surclassement en Chambre Single", price: "Sur devis" },
-        { name: "Visite guidée supplémentaire", price: "Sur devis" }
+        { name: "Surclassement en Chambre Single", price: "Sur demande" },
+        { name: "Visite guidée supplémentaire", price: "Sur demande" }
       ],
       EN: [
         { name: "Single Room Upgrade", price: "On request" },
