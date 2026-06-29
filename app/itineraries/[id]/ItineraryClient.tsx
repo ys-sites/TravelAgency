@@ -217,18 +217,22 @@ const INSURANCE_LINK_URL = "#";
       },
       body: JSON.stringify({
         _template: "box",
-        "Forfait / Travel Package": translate(itinerary.title, lang),
-        "Identifiant / Package ID": itinerary.id,
+        "Demande / Inquiry Type": "Demande de réservation d'itinéraire / Itinerary Booking Inquiry",
+        "Itinéraire / Itinerary Name": translate(itinerary.title, lang),
+        "Identifiant / Itinerary ID": itinerary.id,
+        "Lien de l'itinéraire / Itinerary Link": `https://www.mevoyages.com/itineraries/${itinerary.id}`,
         "Durée / Duration": translate(itinerary.duration, lang),
-        "Tarif estimé / Cost": translate(itinerary.cost, lang),
+        "Tarif estimé / Estimated Cost": translate(itinerary.cost, lang),
+        "Hôtels inclus / Included Hotels": itinerary.hotels ? itinerary.hotels.map(h => `${h.name} (${h.stars}★)`).join(", ") : "N/A",
+        "Activités incluses / Included Activities": itinerary.activities ? itinerary.activities.map(a => translate(a.title, lang)).join(", ") : "N/A",
         "Nom du client / Client Name": bookingName,
         "Courriel / Client Email": bookingEmail,
         "Téléphone / Client Phone": bookingPhone,
         "Date de départ / Travel Date": selectedDate,
         "Nombre de participants / Guests Count": passengerCount,
         "Âges des passagers / Guest Ages": passengerAges.join(", "),
-        "Message & Demandes spéciales / Message": bookingMessage,
-        _subject: `Nouvelle Réservation: ${translate(itinerary.title, lang)} - ${bookingName}`
+        "Message & Demandes spéciales / Client Message": bookingMessage,
+        _subject: `Réservation: ${translate(itinerary.title, lang)} - ${bookingName}`
       })
     })
     .then(() => {
