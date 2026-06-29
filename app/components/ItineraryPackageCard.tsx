@@ -94,7 +94,7 @@ export default function ItineraryPackageCard({
       className="group relative flex flex-col rounded-2xl overflow-hidden border border-zinc-200/55 shadow-md hover:shadow-xl bg-white h-full transition-shadow duration-300"
     >
       {/* 1. Hero image with a small pill badge top-left and a star-rating chip top-right */}
-      <div className="h-[240px] w-full relative overflow-hidden bg-zinc-100">
+      <div className="h-[160px] sm:h-[200px] md:h-[240px] w-full relative overflow-hidden bg-zinc-100">
         <img
           src={image}
           className="w-full h-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-105"
@@ -103,14 +103,14 @@ export default function ItineraryPackageCard({
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none" />
         
         {/* Star Rating Overlay */}
-        <div className="absolute top-6 right-6 z-10 bg-black/45 backdrop-blur-md px-2.5 py-1.5 rounded-full flex gap-0.5 shadow-md border border-white/10 select-none">
+        <div className="absolute top-3 right-3 sm:top-6 sm:right-6 z-10 bg-black/45 backdrop-blur-md px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-full flex gap-0.5 shadow-md border border-white/10 select-none">
           {[...Array(Math.max(0, Math.min(5, rating)))].map((_, i) => (
             <span key={i} className="text-[#C5A880] text-[11px] leading-none">★</span>
           ))}
         </div>
 
         {/* Badge container to prevent horizontal overlap on laptop/mobile screens */}
-        <div className="absolute top-6 left-6 right-6 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">
+        <div className="absolute top-3 left-3 sm:top-6 sm:left-6 right-16 flex flex-col items-start gap-2.5 z-10 pointer-events-none select-none">
           {/* Styled Tier Badge with Framer Motion and Shimmer */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -135,8 +135,8 @@ export default function ItineraryPackageCard({
       </div>
 
       {/* Card Content Body */}
-      <div className="p-8 flex-1 flex flex-col justify-between space-y-6">
-        <div className="space-y-4">
+      <div className="p-4 sm:p-6 md:p-8 flex-1 flex flex-col justify-between space-y-3 sm:space-y-5 md:space-y-6">
+        <div className="space-y-2 sm:space-y-3 md:space-y-4">
           {/* Category Badge */}
           <div className="flex items-center gap-2">
             <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-sans font-bold tracking-widest uppercase border ${
@@ -159,35 +159,37 @@ export default function ItineraryPackageCard({
           </div>
 
           {/* 3. A meta row under the image: trip length • flight/transfer status • meal plan */}
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11.5px] text-zinc-500 font-sans font-medium tracking-wide">
+          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[10px] sm:text-[11.5px] text-zinc-500 font-sans font-medium tracking-wide">
             <span>{translatedDuration}</span>
             <span>•</span>
             <span>{translatedFlight}</span>
-            <span>•</span>
-            <span>{translatedMeals}</span>
+            <span className="hidden sm:inline">•</span>
+            <span className="hidden sm:inline">{translatedMeals}</span>
           </div>
 
           {/* 4. The hotel/package name as a bold headline */}
           <div className="space-y-1">
             {city && (
-              <span className="text-[14px] md:text-[15px] font-mono tracking-[0.25em] uppercase font-bold text-[#8B2635] block">
+              <span className="text-[11px] md:text-[15px] font-mono tracking-[0.2em] sm:tracking-[0.25em] uppercase font-bold text-[#8B2635] block">
                 {formatText(city)}
               </span>
             )}
-            <h3 className="font-serif text-xl md:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
+            <h3 className="font-serif text-base sm:text-xl md:text-2xl font-bold text-zinc-900 group-hover:text-brand-gold transition-colors duration-300 leading-snug">
               {translatedPackageName}
             </h3>
           </div>
 
           {/* 5. A labeled highlights block listing the concrete deliverables */}
-          <div className="pt-4 border-t border-zinc-100 space-y-3">
-            <span className="font-heading text-[10px] uppercase tracking-wider font-bold text-brand-gold-dark block mb-2">
+          <div className="pt-2 sm:pt-4 border-t border-zinc-100 space-y-1.5 sm:space-y-3">
+            <span className="font-heading text-[9px] sm:text-[10px] uppercase tracking-wider font-bold text-brand-gold-dark block mb-1">
               {translate(highlightsTitle, lang)}
             </span>
-            <ul className="space-y-2.5 pl-0 list-none">
+            <ul className="space-y-1.5 sm:space-y-2.5 pl-0 list-none">
               {highlights.map((item, idx) => (
-                <li key={idx} className="text-zinc-600 text-[13px] leading-relaxed font-light flex items-start gap-2.5">
-                  <Check className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                <li key={idx} className={`text-zinc-600 text-[11px] sm:text-[13px] leading-relaxed font-light flex items-start gap-2 ${
+                  idx >= 3 ? 'hidden sm:flex' : ''
+                }`}>
+                  <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-gold shrink-0 mt-0.5" />
                   <span>{formatText(item)}</span>
                 </li>
               ))}
@@ -196,16 +198,16 @@ export default function ItineraryPackageCard({
         </div>
 
         {/* 6. A price line (currency + amount + "/guest") paired with a CTA button */}
-        <div className="flex items-center justify-between pt-5 border-t border-zinc-100">
+        <div className="flex items-center justify-between pt-3 sm:pt-5 border-t border-zinc-100">
           <div className="flex flex-col">
-            <span className="text-[20px] font-bold text-zinc-900 font-heading leading-none">
-              {translatedPricePrefix && (
-                <span className="text-[12px] font-sans font-medium text-zinc-500 mr-1.5 normal-case tracking-wide">
-                  {translatedPricePrefix}
-                </span>
-              )}
+            {translatedPricePrefix && (
+              <span className="text-[9px] sm:text-[12px] font-sans font-medium text-zinc-400 normal-case tracking-wide leading-none mb-0.5">
+                {translatedPricePrefix}
+              </span>
+            )}
+            <span className="text-[16px] sm:text-[20px] font-bold text-zinc-900 font-heading leading-none">
               {currency} {price}
-              <span className="text-[10px] font-mono text-zinc-400 ml-1.5 font-normal">
+              <span className="text-[9px] sm:text-[10px] font-mono text-zinc-400 ml-1 font-normal">
                 / {lang === "FR" ? "pers." : "guest"}
               </span>
             </span>
@@ -213,7 +215,7 @@ export default function ItineraryPackageCard({
 
           <Link 
             href={ctaHref}
-            className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[11px] tracking-[0.15em] uppercase px-5 py-3.5 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
+            className="bg-[#8B2635] hover:bg-[#72202b] text-[#faf9f5] font-semibold text-[10px] sm:text-[11px] tracking-[0.1em] sm:tracking-[0.15em] uppercase px-3.5 sm:px-5 py-2.5 sm:py-3.5 rounded-full border border-[#8B2635] hover:border-[#72202b] transition-luxury cursor-pointer shadow-sm"
           >
             {translatedCtaLabel}
           </Link>
