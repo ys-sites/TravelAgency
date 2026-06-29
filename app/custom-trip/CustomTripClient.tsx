@@ -63,8 +63,8 @@ const t = {
     FR: "2. Activités & Chartes de Prestige"
   },
   stepDuration: {
-    EN: "3. Duration & Escrow Parameters",
-    FR: "3. Paramètres de Durée & Escrow"
+    EN: "3. Duration & Timeline",
+    FR: "3. Durée & Chronologie"
   },
   stepContact: {
     EN: "4. Contact & Selected Itineraries",

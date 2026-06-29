@@ -104,9 +104,10 @@ export default function Footer() {
             <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">Chefchaouen</Link></li>
             <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Tétouan" : "Tetouan"}</Link></li>
             <li><Link href="/itineraries/9" className="hover:text-brand-gold transition-colors">Merzouga</Link></li>
-            <li><Link href="/itineraries/8" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Ouarzazate" : "Ouarzazat"}</Link></li>
+            <li><Link href="/itineraries/8" className="hover:text-brand-gold transition-colors">Ouarzazate</Link></li>
             <li><Link href="/golf-itineraries/marrakech" className="hover:text-brand-gold transition-colors">Marrakech</Link></li>
             <li><Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors">Agadir</Link></li>
+            <li><Link href="/itineraries/7" className="hover:text-brand-gold transition-colors">Essaouira</Link></li>
             <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">Dakhla</Link></li>
           </ul>
         </div>
@@ -121,7 +122,6 @@ export default function Footer() {
             <li><Link href="/conditions" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Conditions Générales" : "General Conditions"}</Link></li>
             <li><Link href="/conditions" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Assurance Voyage" : "Travel Insurance"}</Link></li>
             <li><Link href="/mice" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Services aux Entreprises" : "Corporate Services"}</Link></li>
-            <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Voyages Scolaires" : "School Trips"}</Link></li>
             <li><Link href="/travel-stories" className="hover:text-brand-gold transition-colors">{translate(t.news, lang)}</Link></li>
           </ul>
         </div>
@@ -173,7 +173,6 @@ export default function Footer() {
         {/* Right: Legal links */}
         <div className="flex justify-center md:justify-end items-center gap-6 font-light order-2 md:order-none">
           <Link href="/conditions" className="hover:text-brand-gold transition-colors">{translate(t.privacySignoff, lang)}</Link>
-          <Link href="/conditions" className="hover:text-brand-gold transition-colors">{translate(t.escrowTerms, lang)}</Link>
         </div>
       </div>
     </footer>
