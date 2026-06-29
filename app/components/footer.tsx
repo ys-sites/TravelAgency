@@ -99,7 +99,6 @@ export default function Footer() {
             <li><Link href="/itineraries/10" className="hover:text-brand-gold transition-colors">{translate(t.morocco, lang)}</Link></li>
             <li><Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors">{translate(t.agadirGolf, lang)}</Link></li>
             <li><Link href="/golf-itineraries/marrakech" className="hover:text-brand-gold transition-colors">{translate(t.marrakechGolf, lang)}</Link></li>
-            <li><Link href="/mice" className="hover:text-brand-gold transition-colors">{translate(t.mice, lang)}</Link></li>
           </ul>
         </div>
 
