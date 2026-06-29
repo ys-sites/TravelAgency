@@ -32,15 +32,16 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         _template: "box",
-        "Formule de Voyage / Travel Tier": isPremium ? "PREMIUM SOVEREIGN PASSAGE" : "STANDARD EXCLUSIVE PASSAGE",
+        "Type de Demande / Request Type": "Voyage sur mesure / Custom Trip Builder",
         "Nom du client / Client Name": contact.fullName,
-        "Courriel / Client Email": contact.email,
         "Téléphone / Client Phone": contact.phone,
+        "Courriel / Client Email": contact.email,
+        "Gamme de Prestige / Travel Tier": isPremium ? "PREMIUM SOVEREIGN PASSAGE" : "STANDARD EXCLUSIVE PASSAGE",
         "Durée / Duration": `${nights} Nights / Nuits`,
-        "Tarif estimé / Total Cost": `${totalCostCAD} CAD`,
+        "Estimation de budget / Estimated Budget": `${totalCostCAD} CAD`,
         "Villes & Haltes / Destinations": destinations.join(", "),
-        "Expériences & Loisirs / Activities": activities.join(", "),
-        _subject: `Voyage Sur Mesure: ${contact.fullName}`
+        "Activités / Activities": activities.join(", "),
+        _subject: `Merveilles & Voyages - Voyage Sur Mesure: ${contact.fullName}`
       })
     });
 

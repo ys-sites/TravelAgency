@@ -217,15 +217,16 @@ const INSURANCE_LINK_URL = "#";
       },
       body: JSON.stringify({
         _template: "box",
+        "Type de Demande / Request Type": "Réservation d'itinéraire / Itinerary Booking",
         "Itinéraire / Itinerary": translate(itinerary.title, lang),
         "Nom du client / Client Name": bookingName,
-        "Courriel / Client Email": bookingEmail,
         "Téléphone / Client Phone": bookingPhone,
+        "Courriel / Client Email": bookingEmail,
         "Date de départ / Travel Date": selectedDate,
-        "Nombre de participants / Guests Count": passengerCount,
+        "Participants / Guests Count": passengerCount,
         "Âges des passagers / Guest Ages": passengerAges.join(", "),
-        "Message & Demandes spéciales / Client Message": bookingMessage,
-        _subject: `Réservation: ${translate(itinerary.title, lang)} - ${bookingName}`
+        "Message & Demandes / Special Requests": bookingMessage,
+        _subject: `Merveilles & Voyages - Réservation: ${translate(itinerary.title, lang)}`
       })
     })
     .then(() => {
