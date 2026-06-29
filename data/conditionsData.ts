@@ -107,29 +107,11 @@ export const conditionsSections: ConditionsSection[] = [
     },
     paragraphs: [
       {
-        FR: "Nous vous recommandons de réserver votre séjour au moins 45 jours avant la date de départ. Un dépôt de garantie de 10 %* de la valeur totale du voyage (assurances en sus) est requis au moment de la réservation, suivi du paiement final 45 jours avant la date du départ. Pour les réservations effectuées 44 jours ou MOINS avant le départ, le paiement complet doit être versé au moment de la réservation. Exceptions : L'échéancier de paiement peut varier pour certains hôtels, compagnies aériennes, agences de location de voitures ainsi que certains fournisseurs ou forfaits groupes ou promotions. Si tel est le cas, les modalités de paiements vous seront présentées dans votre devis ou sur le détail du forfait en question sur notre site web ainsi que sur votre facture.",
-        EN: "We recommend booking at least 45 days prior to departure. A security deposit of 10%* of the total value (excluding insurance) is required at booking, followed by final payment 45 days before departure. Complete payment is required immediately for bookings made 44 days or less prior to departure. Payment timelines may vary for specific hotels, airlines, car rentals, suppliers, group packages, or promotions, as detailed in your quote or invoice."
-      },
-      {
-        FR: "*Pour les réservations de voyages en autocar, un dépôt de garantie de 25% de la valeur totale du voyage (assurances en sus) est requis au moment de la réservation.",
-        EN: "*For coach/bus tours, a 25% security deposit is required at booking."
+        FR: "Nous vous recommandons de réserver votre séjour au moins 45 jours avant la date de départ. Un dépôt de garantie de 10 % de la valeur totale du voyage (assurances en sus) est requis au moment de la réservation, suivi du paiement final 45 jours avant la date du départ. Pour les réservations effectuées 44 jours ou MOINS avant le départ, le paiement complet doit être versé au moment de la réservation. Exceptions : L'échéancier de paiement peut varier pour certains hôtels, compagnies aériennes, agences de location de voitures ainsi que certains fournisseurs ou forfaits groupes ou promotions. Si tel est le cas, les modalités de paiements vous seront présentées dans votre devis ou sur le détail du forfait en question sur notre site web ainsi que sur votre facture.",
+        EN: "We recommend booking at least 45 days prior to departure. A security deposit of 10% of the total value (excluding insurance) is required at booking, followed by final payment 45 days before departure. Complete payment is required immediately for bookings made 44 days or less prior to departure. Payment timelines may vary for specific hotels, airlines, car rentals, suppliers, group packages, or promotions, as detailed in your quote or invoice."
       }
     ],
     grid: [
-      {
-        title: { FR: "Autocar", EN: "Bus Tours" },
-        desc: {
-          FR: "Paiement final à 45 jours du départ. Pour les voyages d'une journée, le montant total est dû lors de la réservation. Le paiement complet est exigé pour tous les séjours d'une journée d'une valeur de moins de 300 $. Les voyages réservés sont 100 % non remboursables. En cas d'annulation, le montant du dépôt constituera les frais d'annulation.",
-          EN: "Final payment 45 days before departure. For single-day trips, full amount is due at booking. Single-day stays under $300 are 100% non-refundable."
-        }
-      },
-      {
-        title: { FR: "Croisières", EN: "Cruises" },
-        desc: {
-          FR: "Paiement final à 130 jours du départ.",
-          EN: "Final payment 130 days before departure."
-        }
-      },
       {
         title: { FR: "Forfaits Signature", EN: "Signature Packages" },
         desc: {
