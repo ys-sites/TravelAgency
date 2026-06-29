@@ -26,10 +26,10 @@ export default function GulfHeroScrubber() {
   }, [isMobile]);
 
   const CLD = "https://res.cloudinary.com/dzgmvz6tc/video/upload";
-  const mobileWebM  = `${CLD}/q_auto,w_640,vc_vp9,du_60/Golf_in_Morocco_ssfati.webm`;
-  const mobileMp4   = `${CLD}/q_auto,w_640,du_60/Golf_in_Morocco_ssfati.mp4`;
-  const desktopWebM = `${CLD}/q_auto:best,fl_progressive,w_1920,vc_vp9,du_60/Golf_in_Morocco_ssfati.webm`;
-  const desktopMp4  = `${CLD}/q_auto:best,fl_progressive,w_1920,du_60/Golf_in_Morocco_ssfati.mp4`;
+  const mobileWebM  = `${CLD}/c_fill,ar_9:16,w_640,q_auto,du_140,vc_vp9/Golf_in_Morocco_ssfati.webm`;
+  const mobileMp4   = `${CLD}/c_fill,ar_9:16,w_640,q_auto,du_140/Golf_in_Morocco_ssfati.mp4`;
+  const desktopWebM = `${CLD}/q_auto:best,fl_progressive,w_1920,vc_vp9,du_140/Golf_in_Morocco_ssfati.webm`;
+  const desktopMp4  = `${CLD}/q_auto:best,fl_progressive,w_1920,du_140/Golf_in_Morocco_ssfati.mp4`;
   const posterUrl   = `${CLD}/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg`;
 
   const webmSrc = isMobile ? mobileWebM : desktopWebM;
