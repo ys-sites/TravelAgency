@@ -96,9 +96,18 @@ export default function Footer() {
             {translate(t.destinations, lang)}
           </h4>
           <ul className="flex flex-col gap-2.5 text-[12px] text-white/50 font-light list-none p-0">
-            <li><Link href="/itineraries/10" className="hover:text-brand-gold transition-colors">{translate(t.morocco, lang)}</Link></li>
-            <li><Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors">{translate(t.agadirGolf, lang)}</Link></li>
-            <li><Link href="/golf-itineraries/marrakech" className="hover:text-brand-gold transition-colors">{translate(t.marrakechGolf, lang)}</Link></li>
+            <li><Link href="/itineraries/10" className="hover:text-brand-gold transition-colors">Rabat</Link></li>
+            <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">Casablanca</Link></li>
+            <li><Link href="/itineraries/7" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Meknès" : "Meknes"}</Link></li>
+            <li><Link href="/itineraries/7" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Fès" : "Fes"}</Link></li>
+            <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Tanger" : "Tangier"}</Link></li>
+            <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">Chefchaouen</Link></li>
+            <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Tétouan" : "Tetouan"}</Link></li>
+            <li><Link href="/itineraries/9" className="hover:text-brand-gold transition-colors">Merzouga</Link></li>
+            <li><Link href="/itineraries/8" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Ouarzazate" : "Ouarzazat"}</Link></li>
+            <li><Link href="/golf-itineraries/marrakech" className="hover:text-brand-gold transition-colors">Marrakech</Link></li>
+            <li><Link href="/golf-itineraries/agadir" className="hover:text-brand-gold transition-colors">Agadir</Link></li>
+            <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">Dakhla</Link></li>
           </ul>
         </div>
 
