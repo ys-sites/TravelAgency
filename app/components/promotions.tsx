@@ -51,7 +51,7 @@ export default function Promotions() {
     },
     {
       id: "tours",
-      image: "/images/tours_sunset.jpg",
+      image: "/images/moroccan_heritage.png",
       badge: { FR: "Découverte", EN: "Discovery" },
       tag: "tour",
       title: { FR: "Circuits & Aventures", EN: "Tours & Discovery" },
