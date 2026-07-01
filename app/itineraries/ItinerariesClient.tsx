@@ -62,7 +62,7 @@ function ItinerariesClientContent() {
   const typePills = [
     { id: "All", FR: "Tous les Types", EN: "All Travel Types", image: "/images/moroco.webp" },
     { id: "Golf", FR: "Forfaits Golf", EN: "Golf Packages", image: "/images/royal_golf_aerial_1.jpg" },
-    { id: "Tours", FR: "Tours & Circuits", EN: "Tours & Discovery", image: "/images/moroccan_heritage.png" },
+    { id: "Tours", FR: "Tours & Circuits", EN: "Tours & Discovery", image: "/images/imperial_cities_fes.jpg" },
     { id: "Mice", FR: "MICE & Corporatif", EN: "MICE & Corporate", image: "/images/casablanca_finance.jpg" }
   ];
 
