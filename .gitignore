@@ -55,7 +55,10 @@ public/images/*.docx
 public/images/*.pdf
 
 # Exclude large local video assets
-public/video/
+public/video/*
+!public/video/Films Destinations/
+public/video/Films Destinations/*
+!public/video/Films Destinations/Golf in Morocco.mp4
 
 # Exclude local build binary tools
 .bin/
