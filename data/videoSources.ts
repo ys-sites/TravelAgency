@@ -14,14 +14,13 @@ export const CDN =
 // One mp4 per asset: MEvoyages/{assetId}.mp4 (+ optional MEvoyages/{assetId}.jpg poster)
 export const videoAsset = (assetId: string): VideoSource => {
   const mp4 = `${CDN}/MEvoyages/${assetId}.mp4`;
-  const mp4Mobile = `${CDN}/MEvoyages/${assetId}_mobile.mp4`;
   return {
     id: assetId,
     poster: `${CDN}/MEvoyages/${assetId}.jpg`,
     webm: mp4,
     mp4,
-    webmMobile: mp4Mobile,
-    mp4Mobile,
+    webmMobile: `${CDN}/MEvoyages/${assetId}_mobile.mp4`,
+    mp4Mobile: `${CDN}/MEvoyages/${assetId}_mobile.mp4`,
   };
 };
 

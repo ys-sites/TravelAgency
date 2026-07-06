@@ -95,7 +95,7 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
   const handleError = () => { setHasError(true); setIsLoaded(false); };
 
   const aspectClass = variant === "hero" ? "h-full w-full" : "aspect-video w-full";
-  const shouldRenderVideo = isInView && !prefersReducedMotion && !hasError;
+  const shouldRenderVideo = variant === "hero" || (isInView && !prefersReducedMotion && !hasError);
 
   // Pick the correct resolution based on actual device width
   const mp4Src  = isMobile ? source.mp4Mobile  : source.mp4;
@@ -131,6 +131,7 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
           disablePictureInPicture
           disableRemotePlayback
           preload="auto"
+          poster={source.poster}
           // @ts-ignore — fetchpriority is a valid HTML attribute not yet in React types
           fetchpriority={variant === "hero" ? "high" : "auto"}
           onLoadedData={handleLoadedData}

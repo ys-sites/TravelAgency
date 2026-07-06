@@ -20,6 +20,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-body antialiased">
+      <link
+        rel="preload"
+        as="image"
+        href="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_ssfati.jpg"
+        // @ts-ignore
+        fetchPriority="high"
+      />
       {/* Header & Navbar */}
       <Navbar />
 
