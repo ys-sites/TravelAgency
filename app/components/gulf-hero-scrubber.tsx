@@ -11,9 +11,14 @@ export default function GulfHeroScrubber() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect mobile width on mount
+  // Detect mobile width on mount and window resize
   useEffect(() => {
-    setIsMobile(window.screen.width <= 768);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Fast start hardening: play on mount, canplay event, and on user touch/click gesture
@@ -60,6 +65,7 @@ export default function GulfHeroScrubber() {
           ref={videoRef}
           key={isMobile ? "mobile" : "desktop"}
           className="w-full h-full object-cover bg-black bg-center bg-cover animate-kenburns"
+          src={mp4Src}
           autoPlay
           muted
           loop
@@ -68,14 +74,12 @@ export default function GulfHeroScrubber() {
           disableRemotePlayback
           preload="auto"
           poster={posterUrl}
-          // @ts-ignore — fetchpriority is a valid HTML attribute not yet in React types
-          fetchpriority="high"
+          // @ts-ignore — fetchPriority is a valid HTML attribute in React 19 / Next 15
+          fetchPriority="high"
           style={{
             backgroundImage: `url('${posterUrl}')`
           }}
-        >
-          <source src={mp4Src} type="video/mp4" />
-        </video>
+        />
       </div>
       
       {/* Cinematic Vignette Gradients */}
