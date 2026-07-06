@@ -63,4 +63,5 @@ public/video/
 # Local video and poster asset downloads (uploaded to R2 separately)
 videos/
 posters/
+upload-to-cloudflare/
 

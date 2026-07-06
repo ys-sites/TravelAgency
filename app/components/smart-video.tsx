@@ -10,7 +10,8 @@ interface SmartVideoProps {
 }
 
 export default function SmartVideo({ source, variant, className = "" }: SmartVideoProps) {
-  const [isInView, setIsInView] = useState(false);
+  // Hero starts "in view" immediately so it renders and starts loading on mount
+  const [isInView, setIsInView] = useState(() => variant === "hero");
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -35,10 +36,7 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
 
   // 2. Intersection Observer for tile lazy-loading
   useEffect(() => {
-    if (variant === "hero") {
-      setIsInView(true);
-      return;
-    }
+    if (variant === "hero") return;
 
     const observer = new IntersectionObserver(
       ([entry]) => setIsInView(entry.isIntersecting),

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { preload } from "react-dom";
 import Navbar from "./components/navbar";
 import GulfHeroScrubber from "./components/gulf-hero-scrubber";
 import Tours from "./components/tours";
@@ -6,6 +7,7 @@ import Promotions from "./components/promotions";
 import AboutUsSection from "./components/about-us-section";
 import TestimonialsSection from "./components/testimonials-section";
 import Footer from "./components/footer";
+import { videoAsset } from "@/data/videoSources";
 
 export const metadata: Metadata = {
   title: "Merveilles et Voyages — Séjours de Golf & Voyage de Prestige au Maroc | Premium Golf & Exclusive Travel Morocco",
@@ -13,6 +15,9 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  // Kick off the hero poster fetch before hydration so the first paint isn't a blank/black frame
+  preload(videoAsset("Golf_in_Morocco_ssfati").poster, { as: "image", fetchPriority: "high" });
+
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-body antialiased">
       {/* Header & Navbar */}
