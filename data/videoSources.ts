@@ -14,11 +14,11 @@ export const CDN =
 // All variants are pre-encoded and stored at videos/{assetId}/{variant}
 export const videoAsset = (assetId: string): VideoSource => ({
   id: assetId,
-  poster: `${CDN}/videos/${assetId}/poster.jpg`,
-  webm: `${CDN}/videos/${assetId}/desktop.webm`,
-  mp4: `${CDN}/videos/${assetId}/desktop.mp4`,
-  webmMobile: `${CDN}/videos/${assetId}/mobile.webm`,
-  mp4Mobile: `${CDN}/videos/${assetId}/mobile.mp4`,
+  poster: `${CDN}/MEvoyages/videos/${assetId}/poster.jpg`,
+  webm: `${CDN}/MEvoyages/videos/${assetId}/desktop.webm`,
+  mp4: `${CDN}/MEvoyages/videos/${assetId}/desktop.mp4`,
+  webmMobile: `${CDN}/MEvoyages/videos/${assetId}/mobile.webm`,
+  mp4Mobile: `${CDN}/MEvoyages/videos/${assetId}/mobile.mp4`,
 });
 
 // Map of site keys -> R2 asset folders (original public IDs)
