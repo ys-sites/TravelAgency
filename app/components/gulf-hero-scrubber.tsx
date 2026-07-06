@@ -46,7 +46,7 @@ export default function GulfHeroScrubber() {
   const asset = videoAsset("Golf_in_Morocco_ssfati");
   const posterUrl = asset.poster;
   const mp4Src = isMobile
-    ? `${CDN}/MEvoyages/Golf_in_Morocco_ssfati_mobile.mp4`
+    ? "/video/Films%20Destinations/Golf%20in%20Morocco.mp4"
     : asset.mp4;
 
   return (
