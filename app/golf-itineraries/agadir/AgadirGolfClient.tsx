@@ -8,7 +8,7 @@ import Footer from "../../components/footer";
 import ItineraryPackageCard from "../../components/ItineraryPackageCard";
 import { useLang, translate } from "../../context/lang-context";
 import SmartVideo from "../../components/smart-video";
-import { videoSources } from "../../../data/videoSources";
+import { videoSources, videoAsset } from "../../../data/videoSources";
 
 export default function AgadirGolfClient() {
   const { lang } = useLang();
@@ -144,15 +144,15 @@ export default function AgadirGolfClient() {
           loop
           playsInline
           preload="auto"
-          poster="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.jpg"
+          poster={videoAsset("Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad").poster}
           style={{
-            backgroundImage: "url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.jpg')"
+            backgroundImage: `url('${videoAsset("Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad").poster}')`
           }}
         >
           {/* Mobile MP4 (Universal H264 Compatibility) */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.mp4" type="video/mp4" media="(max-width: 768px)" />
+          <source src={videoAsset("Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad").mp4Mobile} type="video/mp4" media="(max-width: 768px)" />
           {/* Desktop MP4 (Universal H264 Compatibility) */}
-          <source src="https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920/Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad.mp4" type="video/mp4" />
+          <source src={videoAsset("Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad").mp4} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none" />

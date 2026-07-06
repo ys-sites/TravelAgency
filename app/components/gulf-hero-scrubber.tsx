@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useLang } from "../context/lang-context";
+import { videoAsset } from "@/data/videoSources";
 
 export default function GulfHeroScrubber() {
   const { lang } = useLang();
@@ -25,15 +26,10 @@ export default function GulfHeroScrubber() {
     });
   }, [isMobile]);
 
-  const CLD = "https://res.cloudinary.com/dzgmvz6tc/video/upload";
-  const mobileWebM  = `${CLD}/c_fill,ar_9:16,w_640,q_auto,du_140,vc_vp9/Golf_in_Morocco_ssfati.webm`;
-  const mobileMp4   = `${CLD}/c_fill,ar_9:16,w_640,q_auto,du_140/Golf_in_Morocco_ssfati.mp4`;
-  const desktopWebM = `${CLD}/q_auto:best,fl_progressive,w_1920,vc_vp9,du_140/Golf_in_Morocco_ssfati.webm`;
-  const desktopMp4  = `${CLD}/q_auto:best,fl_progressive,w_1920,du_140/Golf_in_Morocco_ssfati.mp4`;
-  const posterUrl   = `${CLD}/q_auto,f_auto,w_1920/Golf_in_Morocco_ssfati.jpg`;
-
-  const webmSrc = isMobile ? mobileWebM : desktopWebM;
-  const mp4Src  = isMobile ? mobileMp4  : desktopMp4;
+  const asset = videoAsset("Golf_in_Morocco_ssfati");
+  const posterUrl = asset.poster;
+  const webmSrc = isMobile ? asset.webmMobile : asset.webm;
+  const mp4Src  = isMobile ? asset.mp4Mobile : asset.mp4;
 
   return (
     <div

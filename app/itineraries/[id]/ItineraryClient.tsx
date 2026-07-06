@@ -10,7 +10,7 @@ import MapSection from "../../components/map-section";
 import { useLang, translate } from "../../context/lang-context";
 import { itinerariesData, itineraryThemes, ItineraryTheme } from "@/data/itineraries";
 import SmartVideo from "../../components/smart-video";
-import { videoSources } from "@/data/videoSources";
+import { videoSources, videoAsset } from "@/data/videoSources";
 import { getCityKey } from "../../utils/city-map";
 
 const getGalleryImages = (itineraryId: number) => {
@@ -382,13 +382,13 @@ const INSURANCE_LINK_URL = "#";
               loop
               playsInline
               preload="auto"
-              poster={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/${videoUrl}.jpg`}
+              poster={videoAsset(videoUrl).poster}
               style={{
-                backgroundImage: `url('https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,f_auto,w_960/${videoUrl}.jpg')`
+                backgroundImage: `url('${videoAsset(videoUrl).poster}')`
               }}
             >
-              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_960/${videoUrl}.mp4`} type="video/mp4" media="(max-width: 768px)" />
-              <source src={`https://res.cloudinary.com/dzgmvz6tc/video/upload/q_auto,w_1920/${videoUrl}.mp4`} type="video/mp4" />
+              <source src={videoAsset(videoUrl).mp4Mobile} type="video/mp4" media="(max-width: 768px)" />
+              <source src={videoAsset(videoUrl).mp4} type="video/mp4" />
             </video>
           ) : (
             <img

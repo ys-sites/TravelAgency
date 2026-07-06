@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { useLang, translate } from "../context/lang-context";
+import { videoAsset } from "@/data/videoSources";
 
 const t = {
   heading: {
@@ -106,13 +107,15 @@ export default function AboutUsSection() {
             className="w-full"
           >
             <div className="relative aspect-video rounded-3xl overflow-hidden border border-zinc-200/80 bg-zinc-950 shadow-md">
-              <iframe
-                src="https://player.cloudinary.com/embed/?cloud_name=dzgmvz6tc&public_id=Golf_in_Morocco_New_tmjx9s"
-                className="absolute inset-0 w-full h-full border-none"
-                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                allowFullScreen
-                frameBorder="0"
-              />
+              <video
+                controls
+                preload="metadata"
+                poster={videoAsset("Golf_in_Morocco_New_tmjx9s").poster}
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src={videoAsset("Golf_in_Morocco_New_tmjx9s").webm} type="video/webm" />
+                <source src={videoAsset("Golf_in_Morocco_New_tmjx9s").mp4} type="video/mp4" />
+              </video>
             </div>
           </motion.div>
         </div>
