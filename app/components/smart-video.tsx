@@ -67,6 +67,30 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
     vid.play().catch(() => {});
   }, [isMobile]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // 5. Force playback: retry on canplay, and unlock via the first user touch/click —
+  // iOS Low Power Mode can block autoplay even when muted+playsInline until a real gesture happens.
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid || !isInView) return;
+
+    const tryPlay = () => { vid.play().catch(() => {}); };
+    vid.addEventListener("canplay", tryPlay);
+
+    const unlockOnGesture = () => {
+      tryPlay();
+      document.removeEventListener("touchstart", unlockOnGesture);
+      document.removeEventListener("click", unlockOnGesture);
+    };
+    document.addEventListener("touchstart", unlockOnGesture, { once: true });
+    document.addEventListener("click", unlockOnGesture, { once: true });
+
+    return () => {
+      vid.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("touchstart", unlockOnGesture);
+      document.removeEventListener("click", unlockOnGesture);
+    };
+  }, [isInView, isMobile]);
+
   const handleLoadedData = () => setIsLoaded(true);
   const handleError = () => { setHasError(true); setIsLoaded(false); };
 
@@ -104,6 +128,8 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
           muted
           loop
           playsInline
+          disablePictureInPicture
+          disableRemotePlayback
           preload="auto"
           // @ts-ignore — fetchpriority is a valid HTML attribute not yet in React types
           fetchpriority={variant === "hero" ? "high" : "auto"}

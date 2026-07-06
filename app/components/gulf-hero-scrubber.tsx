@@ -16,14 +16,32 @@ export default function GulfHeroScrubber() {
     setIsMobile(window.screen.width <= 768);
   }, []);
 
-  // Reinforce autoplay behavior on mount (mobile auto-play backup)
+  // Force playback: reload on source switch, retry on canplay, and unlock via the
+  // first user touch/click — iOS Low Power Mode can block autoplay even when
+  // muted+playsInline until a real gesture happens.
   useEffect(() => {
     const vid = videoRef.current;
     if (!vid) return;
+
+    const tryPlay = () => { vid.play().catch(() => {}); };
+
     vid.load();
-    vid.play().catch(() => {
-      // Autoplay blocked by device settings (e.g. low power mode)
-    });
+    tryPlay();
+    vid.addEventListener("canplay", tryPlay);
+
+    const unlockOnGesture = () => {
+      tryPlay();
+      document.removeEventListener("touchstart", unlockOnGesture);
+      document.removeEventListener("click", unlockOnGesture);
+    };
+    document.addEventListener("touchstart", unlockOnGesture, { once: true });
+    document.addEventListener("click", unlockOnGesture, { once: true });
+
+    return () => {
+      vid.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("touchstart", unlockOnGesture);
+      document.removeEventListener("click", unlockOnGesture);
+    };
   }, [isMobile]);
 
   const asset = videoAsset("Golf_in_Morocco_ssfati");
@@ -45,6 +63,8 @@ export default function GulfHeroScrubber() {
           muted
           loop
           playsInline
+          disablePictureInPicture
+          disableRemotePlayback
           preload="auto"
           poster={posterUrl}
           // @ts-ignore — fetchpriority is a valid HTML attribute not yet in React types
