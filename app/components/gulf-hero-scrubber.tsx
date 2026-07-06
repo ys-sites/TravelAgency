@@ -50,9 +50,7 @@ export default function GulfHeroScrubber() {
 
   const asset = videoAsset("Golf_in_Morocco_ssfati");
   const posterUrl = asset.poster;
-  const mp4Src = isMobile
-    ? "https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.mp4"
-    : asset.mp4;
+  const mp4Src = asset.mp4;
 
   return (
     <div
