@@ -113,7 +113,6 @@ export default function AboutUsSection() {
                 poster={videoAsset("Golf_in_Morocco_New_tmjx9s").poster}
                 className="absolute inset-0 w-full h-full object-cover"
               >
-                <source src={videoAsset("Golf_in_Morocco_New_tmjx9s").webm} type="video/webm" />
                 <source src={videoAsset("Golf_in_Morocco_New_tmjx9s").mp4} type="video/mp4" />
               </video>
             </div>

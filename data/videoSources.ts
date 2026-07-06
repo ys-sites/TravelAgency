@@ -7,21 +7,23 @@ export type VideoSource = {
   mp4Mobile: string;
 };
 
-// Cloudflare R2 CDN base (bucket: ysmarketingsolution)
+// Cloudflare R2 CDN — files live flat in the MEvoyages/ folder
 export const CDN =
   process.env.NEXT_PUBLIC_CDN_URL ?? "https://cdn.mevoyages.com";
 
-// All variants are pre-encoded and stored at videos/{assetId}/{variant}
-export const videoAsset = (assetId: string): VideoSource => ({
-  id: assetId,
-  poster: `${CDN}/MEvoyages/videos/${assetId}/poster.jpg`,
-  webm: `${CDN}/MEvoyages/videos/${assetId}/desktop.webm`,
-  mp4: `${CDN}/MEvoyages/videos/${assetId}/desktop.mp4`,
-  webmMobile: `${CDN}/MEvoyages/videos/${assetId}/mobile.webm`,
-  mp4Mobile: `${CDN}/MEvoyages/videos/${assetId}/mobile.mp4`,
-});
+// One mp4 per asset: MEvoyages/{assetId}.mp4 (+ optional MEvoyages/{assetId}.jpg poster)
+export const videoAsset = (assetId: string): VideoSource => {
+  const mp4 = `${CDN}/MEvoyages/${assetId}.mp4`;
+  return {
+    id: assetId,
+    poster: `${CDN}/MEvoyages/${assetId}.jpg`,
+    webm: mp4,
+    mp4,
+    webmMobile: mp4,
+    mp4Mobile: mp4,
+  };
+};
 
-// Map of site keys -> R2 asset folders (original public IDs)
 const ASSETS: Record<string, string> = {
   hero: "Golf_in_Morocco_New_tmjx9s",
   marrakech: "Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv",

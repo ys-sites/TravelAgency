@@ -28,7 +28,6 @@ export default function GulfHeroScrubber() {
 
   const asset = videoAsset("Golf_in_Morocco_ssfati");
   const posterUrl = asset.poster;
-  const webmSrc = isMobile ? asset.webmMobile : asset.webm;
   const mp4Src  = isMobile ? asset.mp4Mobile : asset.mp4;
 
   return (
@@ -52,7 +51,6 @@ export default function GulfHeroScrubber() {
             backgroundImage: `url('${posterUrl}')`
           }}
         >
-          <source src={webmSrc} type="video/webm" />
           <source src={mp4Src} type="video/mp4" />
         </video>
       </div>

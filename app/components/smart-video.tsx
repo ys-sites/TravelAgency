@@ -77,7 +77,6 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
 
   // Pick the correct resolution based on actual device width
   const mp4Src  = isMobile ? source.mp4Mobile  : source.mp4;
-  const webmSrc = isMobile ? source.webmMobile : source.webm;
 
   return (
     <div
@@ -113,9 +112,7 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
           onLoadedData={handleLoadedData}
           onError={handleError}
         >
-          {/* WebM first (smaller, VP9 — modern browsers) */}
-          <source src={webmSrc} type="video/webm" />
-          {/* MP4 fallback (H.264 — universal) */}
+          {/* MP4 (H.264 — universal) */}
           <source src={mp4Src} type="video/mp4" />
         </video>
       )}
