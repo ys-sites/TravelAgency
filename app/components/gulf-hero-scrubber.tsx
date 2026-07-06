@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useLang } from "../context/lang-context";
-import { videoAsset } from "@/data/videoSources";
+import { videoAsset, CDN } from "@/data/videoSources";
 
 export default function GulfHeroScrubber() {
   const { lang } = useLang();
@@ -16,16 +16,15 @@ export default function GulfHeroScrubber() {
     setIsMobile(window.screen.width <= 768);
   }, []);
 
-  // Force playback: reload on source switch, retry on canplay, and unlock via the
-  // first user touch/click — iOS Low Power Mode can block autoplay even when
-  // muted+playsInline until a real gesture happens.
+  // Fast start hardening: play on mount, canplay event, and on user touch/click gesture
   useEffect(() => {
     const vid = videoRef.current;
     if (!vid) return;
 
-    const tryPlay = () => { vid.play().catch(() => {}); };
+    const tryPlay = () => {
+      vid.play().catch(() => {});
+    };
 
-    vid.load();
     tryPlay();
     vid.addEventListener("canplay", tryPlay);
 
@@ -46,7 +45,9 @@ export default function GulfHeroScrubber() {
 
   const asset = videoAsset("Golf_in_Morocco_ssfati");
   const posterUrl = asset.poster;
-  const mp4Src  = isMobile ? asset.mp4Mobile : asset.mp4;
+  const mp4Src = isMobile
+    ? `${CDN}/MEvoyages/Golf_in_Morocco_ssfati_mobile.mp4`
+    : asset.mp4;
 
   return (
     <div
