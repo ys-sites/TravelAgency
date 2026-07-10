@@ -64,7 +64,7 @@ export default function Promotions() {
         EN: "Imperial cities starting from 7 nights, trekking in the Atlas Mountains... We also offer customized tours."
       },
       oldPrice: "",
-      newPrice: { FR: "À partir de 3 200 $", EN: "From C$ 3,200" },
+      newPrice: { FR: "À partir de 3 200 $", EN: "From 3,200" },
       link: "/itineraries?type=Tours",
       promoText: { FR: "Vols de Montréal Inclus", EN: "Montreal Flights Included" }
     },
@@ -83,7 +83,7 @@ export default function Promotions() {
         EN: "Golf packages starting from 7 nights, all around Morocco on BB basis or All-inclusive. Marrakech & Agadir golfing all year round."
       },
       oldPrice: "",
-      newPrice: { FR: "À partir de 3 879 $", EN: "From C$ 3,879" },
+      newPrice: { FR: "À partir de 3 879 $", EN: "From 3,879" },
       link: "/itineraries?type=Golf",
       promoText: { FR: "Tee Times Garantis", EN: "Guaranteed Tee Times" }
     }

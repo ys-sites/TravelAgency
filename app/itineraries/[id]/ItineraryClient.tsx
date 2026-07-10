@@ -782,7 +782,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                   <span className="text-brand-gold font-mono text-[9px] tracking-[0.25em] uppercase block mb-1">
                     {lang === "FR" ? "Frais de Voyage Estimés" : "Estimated Trip Cost"}
                   </span>
-                  <div className="flex items-baseline justify-between">
+                  <div className="flex items-start justify-between">
                     {(() => {
                       const costText = translate(itinerary.cost, lang);
                       const isRequest = costText.toLowerCase().includes("devis") || costText.toLowerCase().includes("demande") || costText.toLowerCase().includes("request");

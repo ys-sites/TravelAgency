@@ -136,9 +136,9 @@ export const toursList: TourCard[] = [
     flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     oldPrice: "",
-    price: { FR: "À partir de 3 879 $", EN: "Starting from C$ 3,879" },
+    price: { FR: "À partir de 3 879 $", EN: "Starting from 3,879" },
     // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 4 079 $", EN: "Starting from C$ 4,079" },
+    originalCost: { FR: "À partir de 4 079 $", EN: "Starting from 4,079" },
     tag: "golf",
     iconType: "water",
     city: { FR: "Agadir", EN: "Agadir" },
@@ -178,9 +178,9 @@ export const toursList: TourCard[] = [
     flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     oldPrice: "",
-    price: { FR: "À partir de 4 989 $", EN: "Starting from C$ 4,989" },
+    price: { FR: "À partir de 4 989 $", EN: "Starting from 4,989" },
     // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 5 189 $", EN: "Starting from C$ 5,189" },
+    originalCost: { FR: "À partir de 5 189 $", EN: "Starting from 5,189" },
     tag: "golf",
     iconType: "water",
     city: { FR: "Agadir", EN: "Agadir" },
@@ -669,9 +669,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/hilton_taghazout_1.avif",
     title: { FR: "Hilton Taghazout Hôtel", EN: "Hilton Taghazout Hotel" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    cost: { FR: "À partir de 3 879\u00A0$", EN: "Starting from C$\u00A03,879" },
+    cost: { FR: "À partir de 3 879\u00A0$", EN: "Starting from 3,879" },
     // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 4 079\u00A0$", EN: "Starting from C$\u00A04,079" },
+    originalCost: { FR: "À partir de 4 079\u00A0$", EN: "Starting from 4,079" },
     overview: {
       FR: "Offrez-vous un séjour de golf inoubliable à Agadir en résidant au prestigieux Hilton Taghazout Bay Beach Resort 5★. Ce forfait complet comprend les vols directs aller-retour de Montréal à Agadir avec Air Transat. Vous profiterez de 7 nuits d'hébergement en chambre double vue piscine, avec formule petit-déjeuner ou option demi-pension. Jouez 4 rondes de golf de classe mondiale sur les plus beaux parcours de la région : Tazegzout Golf (Championship face à l'océan), Golf du Soleil et Golf Les Dunes. Une voiturette électrique partagée est comprise pour chaque ronde.",
       EN: "Indulge in an unforgettable golf trip in Agadir, staying at the prestigious 5★ Hilton Taghazout Bay Beach Resort. This complete package includes direct round-trip flights from Montreal to Agadir with Air Transat. You'll enjoy 7 nights of accommodation in a double occupancy room with pool view, on a daily breakfast (BB) or optional half-board (HB) basis. Play 4 rounds of golf on Agadir's premier courses: Tazegzout Golf (oceanfront Championship course), Golf du Soleil, and Golf Les Dunes. A shared electric cart is included for each round."
@@ -825,9 +825,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/deluxe-room-sea-view.jpg",
     title: { FR: "White Beach Hôtel", EN: "White Beach Hotel" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    cost: { FR: "À partir de 4 255\u00A0$", EN: "Starting from C$\u00A04,255" },
+    cost: { FR: "À partir de 4 255\u00A0$", EN: "Starting from 4,255" },
     // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 4 455\u00A0$", EN: "Starting from C$\u00A04,455" },
+    originalCost: { FR: "À partir de 4 455\u00A0$", EN: "Starting from 4,455" },
     overview: {
       FR: "Découvrez le summum du confort tout compris au Pickalbatros White Beach Resort 5★ (Adults Only) à Agadir. Ce forfait exclusif de 8 jours comprend des vols directs Montréal – Agadir avec Air Transat. Séjournez 7 nuits en Chambre Vue Jardin de luxe avec pension tout compris haut de gamme. Profitez de 4 rondes de golf sur les parcours incontournables d'Agadir (Tazegzout Golf, Golf du Soleil et Golf Les Dunes) avec voiturette électrique partagée incluse. Un voyage d'exception alliant relaxation absolue en bord de mer et golf passionnant.",
       EN: "Discover the pinnacle of adults-only all-inclusive comfort at the 5★ Pickalbatros White Beach Resort in Agadir. This exclusive 8-day package features direct flights from Montreal to Agadir with Air Transat. Stay 7 nights in a luxury Garden View Room with premium all-inclusive boarding. Enjoy 4 rounds of golf on Agadir's premier courses (Tazegzout Golf, Golf du Soleil, and Golf Les Dunes) with a shared electric cart included. A perfect blend of absolute seaside relaxation and exceptional golf."
@@ -979,9 +979,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/hilton_taghazout_2.avif",
     title: { FR: "Hilton Taghazout Hôtel (10N)", EN: "Hilton Taghazout Hotel (10N)" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
-    cost: { FR: "À partir de 4 989 $", EN: "Starting from C$ 4,989" },
+    cost: { FR: "À partir de 4 989 $", EN: "Starting from 4,989" },
     // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 5 189 $", EN: "Starting from C$ 5,189" },
+    originalCost: { FR: "À partir de 5 189 $", EN: "Starting from 5,189" },
     overview: {
       FR: "Séjour prolongé de golf à Agadir au Hilton Taghazout Bay Beach Resort 5★. Ce forfait de 10 nuits comprend des vols aller-retour directs de Montréal (avec Royal Air Maroc via Casablanca, premier bagage et sac de golf inclus) et 6 rondes de golf de championnat sur les plus beaux parcours d'Agadir (Tazegzout, Les Dunes, Du Soleil) avec voiturette électrique partagée.",
       EN: "Extended golf stay in Agadir at the 5★ Hilton Taghazout Bay Beach Resort. This 10-night package includes direct round-trip flights from Montreal (via Casablanca with Royal Air Maroc, first checked bag and golf bag included) and 6 rounds of championship golf on Agadir's top courses (Tazegzout, Les Dunes, Du Soleil) with shared buggy."
@@ -1094,9 +1094,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/royal_golf_marrakech_2.jpg",
     title: { FR: "Hôtel du Golf 5★ (10N)", EN: "Hotel du Golf 5★ (10N)" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
-    cost: { FR: "À partir de 5 899 $", EN: "Starting from C$ 5,899" },
+    cost: { FR: "À partir de 5 899 $", EN: "Starting from 5,899" },
     // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 6 099 $", EN: "Starting from C$ 6,099" },
+    originalCost: { FR: "À partir de 6 099 $", EN: "Starting from 6,099" },
     overview: {
       FR: "Séjour de golf tout inclus ultime de 10 nuits au somptueux Hôtel du Golf 5★ à Marrakech. Ce forfait de prestige comprend les vols directs Montréal – Marrakech avec Air Transat (1er bagage inclus), l'hébergement tout inclus de luxe et 6 rondes de golf de classe mondiale sur les plus beaux parcours de Marrakech (Royal Golf, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika) avec voiturette électrique.",
       EN: "Ultimate 10-night all-inclusive golf escape at the prestigious 5★ Hotel du Golf in Marrakech. This luxury package includes direct flights from Montreal to Marrakech with Air Transat (1st bag included), premium all-inclusive boarding, and 6 rounds of world-class golf on Marrakech's top courses (Royal Golf, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika) with electric buggy."
@@ -1209,9 +1209,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/marrakech_sunset_hero.png",
     title: { FR: "Jaal Riad Hôtel 5★ (10N)", EN: "Jaal Riad Hotel 5★ (10N)" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
-    cost: { FR: "À partir de 4 669 $", EN: "Starting from C$ 4,669" },
+    cost: { FR: "À partir de 4 669 $", EN: "Starting from 4,669" },
     // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 4 869 $", EN: "Starting from C$ 4,869" },
+    originalCost: { FR: "À partir de 4 869 $", EN: "Starting from 4,869" },
     overview: {
       FR: "Découvrez Marrakech au Jaal Riad Resort 5★ (Adults Only). Ce forfait de golf de prestige de 10 nuits comprend des vols directs Montréal – Marrakech avec Air Transat, l'hébergement haut de gamme en formule petit-déjeuner (BB) ou pension complète (FB), et 6 rondes de golf sur les parcours emblématiques de Marrakech avec voiturette.",
       EN: "Discover Marrakech staying at the 5★ Jaal Riad Resort (Adults Only). This premium 10-night golf package features direct flights from Montreal to Marrakech with Air Transat, upscale accommodation with daily breakfast (BB) or full board (FB) option, and 6 rounds of golf on Marrakech's iconic courses with shared buggy."
@@ -1324,9 +1324,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/marrakech_golf_blue5.jpg",
     title: { FR: "Jaal Riad Hôtel 5★ (7N)", EN: "Jaal Riad Hotel 5★ (7N)" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    cost: { FR: "À partir de 3 979 $", EN: "Starting from C$ 3,979" },
+    cost: { FR: "À partir de 3 979 $", EN: "Starting from 3,979" },
     // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 4 179 $", EN: "Starting from C$ 4,179" },
+    originalCost: { FR: "À partir de 4 179 $", EN: "Starting from 4,179" },
     overview: {
       FR: "Escapade golf de 7 nuits à Marrakech au Jaal Riad Resort 5★ (Adults Only). Ce forfait comprend des vols directs Montréal – Marrakech avec Air Transat, l'hébergement de luxe en formule petit-déjeuner (BB) ou pension complète (FB), et 4 rondes de golf de championnat sur les plus beaux parcours de Marrakech avec voiturette électrique partagée.",
       EN: "7-night golf getaway to Marrakech staying at the 5★ Jaal Riad Resort (Adults Only). This package features direct flights from Montreal to Marrakech with Air Transat, luxury accommodation with daily breakfast (BB) or full board (FB), and 4 rounds of championship golf on Marrakech's premier courses with shared buggy."
@@ -1608,9 +1608,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/trekking_toubkal.png",
     title: { FR: "Trekking Toubkal & Marrakech", EN: "Trekking Toubkal & Marrakech" },
     duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
-    cost: { FR: "À partir de 4 789 $", EN: "Starting from C$ 4,789" },
+    cost: { FR: "À partir de 4 789 $", EN: "Starting from 4,789" },
     // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 4 989 $", EN: "Starting from C$ 4,989" },
+    originalCost: { FR: "À partir de 4 989 $", EN: "Starting from 4,989" },
     overview: {
       FR: "Une expérience d'aventure et de luxe unique de 9 nuits combinant une randonnée guidée dans le Parc National du Toubkal (Haut Atlas) avec hébergement d'exception au Kasbah du Toubkal et au Azzaden Trekking Lodge, suivie d'un séjour de détente absolue de 4 nuits dans un hôtel tout inclus 5★ à Marrakech. Vols directs de Montréal inclus.",
       EN: "A unique 9-night adventure and luxury experience combining a guided trek in the Toubkal National Park (High Atlas) with outstanding stays at Kasbah du Toubkal and Azzaden Trekking Lodge, followed by 4 nights of absolute relaxation in an all-inclusive 5★ hotel in Marrakech. Direct flights from Montreal included."
