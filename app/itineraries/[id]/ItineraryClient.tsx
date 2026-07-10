@@ -139,8 +139,8 @@ export default function ItineraryClient({ id }: { id: string }) {
   return title.replace(/\s*\(\d+N\)\s*$/i, "");
 };
 
-// TODO: insurance link pending partner meeting
-const INSURANCE_LINK_URL = "#";
+// TODO(JAY): set NEXT_PUBLIC_INSURANCE_URL in Vercel once client provides insurance partner link
+const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
 
   const itinerary = (() => {
     switch (id) {
@@ -735,12 +735,14 @@ const INSURANCE_LINK_URL = "#";
             >
               {lang === "FR" ? "RÉSERVER VOTRE PASSAGE" : "RESERVE YOUR JOURNEY"} &rarr;
             </a>
-            <a
-              href={INSURANCE_LINK_URL}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-5 transition-luxury hover:bg-zinc-50 shadow-sm cursor-pointer min-w-[200px]"
-            >
-              {lang === "FR" ? "ASSURANCE VOYAGE" : "TRAVEL INSURANCE"}
-            </a>
+            {INSURANCE_LINK_URL && (
+              <a
+                href={INSURANCE_LINK_URL}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-5 transition-luxury hover:bg-zinc-50 shadow-sm cursor-pointer min-w-[200px]"
+              >
+                {lang === "FR" ? "ASSURANCE VOYAGE" : "TRAVEL INSURANCE"}
+              </a>
+            )}
           </motion.div>
 
         </div>
@@ -770,7 +772,7 @@ const INSURANCE_LINK_URL = "#";
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden lg:sticky lg:top-28"
+            className="bg-zinc-50/50 p-6 md:p-8 border border-zinc-200/80 shadow-md rounded-[1.5rem] relative overflow-hidden lg:sticky lg:top-28 scroll-mt-28"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 blur-[50px] rounded-full pointer-events-none" />
 
@@ -940,12 +942,14 @@ const INSURANCE_LINK_URL = "#";
                         : (lang === "FR" ? "DEMANDE POUR SOUMISSION" : "REQUEST A QUOTE")
                       }
                     </button>
-                    <a
-                      href={INSURANCE_LINK_URL}
-                      className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase py-4 transition-luxury hover:bg-zinc-50 shadow-sm cursor-pointer text-center"
-                    >
-                      {lang === "FR" ? "ASSURANCE VOYAGE" : "TRAVEL INSURANCE"}
-                    </a>
+                    {INSURANCE_LINK_URL && (
+                      <a
+                        href={INSURANCE_LINK_URL}
+                        className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-zinc-300 bg-white text-zinc-700 font-semibold text-[11px] tracking-[0.2em] uppercase py-4 transition-luxury hover:bg-zinc-50 shadow-sm cursor-pointer text-center"
+                      >
+                        {lang === "FR" ? "ASSURANCE VOYAGE" : "TRAVEL INSURANCE"}
+                      </a>
+                    )}
                   </div>
                 </div>
               </form>

@@ -12,14 +12,16 @@ export default function CallFloatingButton() {
   const displayPhone = "514 919 MEV1";
 
   // Check if we are inside an itinerary detail page (starts with /itineraries/)
-  const isItineraryPage = pathname?.includes("/itineraries/");
+  const isItineraryPage = pathname?.startsWith("/itineraries/");
 
   const handleScrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (isItineraryPage) {
       e.preventDefault();
       const element = document.getElementById("booking-form");
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.location.hash = "booking-form";
       }
     }
   };
@@ -28,9 +30,13 @@ export default function CallFloatingButton() {
     return (
       <div className="fixed bottom-6 right-6 md:right-8 md:bottom-8 z-50 flex flex-col items-end gap-2 pointer-events-none">
         {/* Pulsing Hint Tooltip/Popup - Visible on all views */}
-        <div className="bg-zinc-950/95 border border-brand-gold/40 text-brand-gold text-[9px] font-mono font-bold tracking-wider px-3 py-1.5 rounded-lg shadow-lg uppercase animate-pulse select-none shrink-0 pointer-events-auto">
+        <a
+          href="#booking-form"
+          onClick={handleScrollToForm}
+          className="bg-zinc-950/95 border border-brand-gold/40 text-brand-gold text-[9px] font-mono font-bold tracking-wider px-3 py-1.5 rounded-lg shadow-lg uppercase animate-pulse select-none shrink-0 pointer-events-auto cursor-pointer block hover:bg-zinc-900 transition-colors"
+        >
           {lang === "FR" ? "✨ Cliquez pour réserver" : "✨ Click to request booking"}
-        </div>
+        </a>
         
         <a
           href="#booking-form"

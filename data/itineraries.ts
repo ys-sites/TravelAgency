@@ -745,7 +745,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
           FR: "Resort 5★ haut de gamme en bord de mer, proposant un spa primé, plusieurs piscines, un accès direct à la plage et des restaurants de renom.",
           EN: "Premium 5★ beachfront resort, featuring an award-winning spa, multiple pools, direct beach access, and top-tier dining."
         },
-        link: "https://www.hilton.com/en/hotels/agbhihi-hilton-taghazout-bay-beach-resort-and-spa/"
+        link: "https://www.hilton.com/en/hotels/agatmhi-hilton-taghazout-bay-beach-resort-and-spa/" // TODO(JAY): confirm final Hilton Taghazout URL
       }
     ],
     activities: [
@@ -1024,7 +1024,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
           FR: "Resort 5★ haut de gamme en bord de mer, proposant un spa primé, plusieurs piscines et un service d'excellence.",
           EN: "Premium 5★ beachfront resort, featuring an award-winning spa, multiple pools, and excellent service."
         },
-        link: "https://www.hilton.com/"
+        link: "https://www.hilton.com/en/hotels/agatmhi-hilton-taghazout-bay-beach-resort-and-spa/" // TODO(JAY): confirm final Hilton Taghazout URL
       }
     ],
     activities: [
