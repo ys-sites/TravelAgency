@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { useLang, translate } from "../context/lang-context";
 import { itineraryThemes, MapPinDetail } from "@/data/itineraries";
+
+const MAP_BACKGROUND_IMAGE = "/images/moroco.webp"; // Current map aspect ratio: 830 x 553 (approx 3:2)
 
 // Detailed maps data configuration for each country
 const mapsData: Record<string, {
@@ -464,7 +466,7 @@ const mapsData: Record<string, {
 
 export default function MapSection({ countryId = "1", itineraryId }: { countryId?: string; itineraryId?: string }) {
   const { lang } = useLang();
-  
+
   // Safe lookup of map configuration based on prop
   const mapConfig = (() => {
     switch (countryId) {
@@ -481,6 +483,51 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
 
   const [activeRegion, setActiveRegion] = useState<typeof mapConfig.regions[number] | null>(null);
   const [activeItineraryPin, setActiveItineraryPin] = useState<MapPinDetail | null>(null);
+
+  // Dev-only pin calibration mode — visit an itinerary page with ?pinDebug=1 in development
+  // to click/drag on the map and read off the exact top%/left% for a pin.
+  const [pinDebugEnabled, setPinDebugEnabled] = useState(false);
+  const [debugClickCoord, setDebugClickCoord] = useState<{ top: number; left: number } | null>(null);
+  const [debugPinOverrides, setDebugPinOverrides] = useState<Record<number, { top: number; left: number }>>({});
+  const [draggingPinIndex, setDraggingPinIndex] = useState<number | null>(null);
+  const mapBoxRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === "development" && new URLSearchParams(window.location.search).get("pinDebug") === "1") {
+      setPinDebugEnabled(true);
+    }
+  }, []);
+
+  const coordFromPointer = (clientX: number, clientY: number) => {
+    const rect = mapBoxRef.current?.getBoundingClientRect();
+    if (!rect) return null;
+    const left = Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100));
+    const top = Math.min(100, Math.max(0, ((clientY - rect.top) / rect.height) * 100));
+    return { top: Math.round(top * 10) / 10, left: Math.round(left * 10) / 10 };
+  };
+
+  const handleDebugMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!pinDebugEnabled || draggingPinIndex !== null) return;
+    const coord = coordFromPointer(e.clientX, e.clientY);
+    if (!coord) return;
+    setDebugClickCoord(coord);
+    console.log(`[pinDebug] top: "${coord.top}%", left: "${coord.left}%"`);
+  };
+
+  const handlePinDragMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (draggingPinIndex === null) return;
+    const coord = coordFromPointer(e.clientX, e.clientY);
+    if (!coord) return;
+    setDebugPinOverrides((prev) => ({ ...prev, [draggingPinIndex]: coord }));
+  };
+
+  const handlePinDragEnd = (index: number) => {
+    setDraggingPinIndex(null);
+    const coord = debugPinOverrides[index];
+    if (coord) {
+      console.log(`[pinDebug] pin ${index} dropped at top: "${coord.top}%", left: "${coord.left}%"`);
+    }
+  };
 
   // Determine current active text elements
   const currentTitle = activeRegion 
@@ -513,7 +560,15 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
 
       {/* Map Column (lg:col-span-7) */}
       <div className="lg:col-span-7 relative w-full h-[460px] sm:h-[520px] bg-white rounded-3xl border border-zinc-200/40 p-4 shadow-sm overflow-hidden flex items-center justify-center z-10">
-        
+
+        {/* aspect-[3/2] box keeps the SVG/pins and any future swappable MAP_BACKGROUND_IMAGE in lockstep across viewports */}
+        <div
+          ref={mapBoxRef}
+          onClick={handleDebugMapClick}
+          onPointerMove={handlePinDragMove}
+          onPointerUp={() => draggingPinIndex !== null && handlePinDragEnd(draggingPinIndex)}
+          className={`aspect-[3/2] w-full max-h-full max-w-full relative flex items-center justify-center ${pinDebugEnabled ? "cursor-crosshair" : ""}`}
+        >
         {/* Interactive SVG Map */}
         <svg
           viewBox={mapConfig.viewBox}
@@ -764,6 +819,50 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
             </motion.div>
           );
         })}
+
+        {/* Dev-only pin calibration overlay (?pinDebug=1) */}
+        {pinDebugEnabled && (
+          <>
+            {/* Reference background — swap MAP_BACKGROUND_IMAGE once the client picks a final map photo on the call */}
+            <img
+              src={MAP_BACKGROUND_IMAGE}
+              alt="Calibration reference"
+              className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none"
+            />
+
+            {itineraryPins && itineraryPins.map((pin, index) => {
+              const override = debugPinOverrides[index];
+              const top = override ? `${override.top}%` : pin.top;
+              const left = override ? `${override.left}%` : pin.left;
+              return (
+                <div
+                  key={`debug-${index}`}
+                  onPointerDown={(e) => {
+                    e.stopPropagation();
+                    setDraggingPinIndex(index);
+                  }}
+                  style={{ top, left }}
+                  className="absolute -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-red-500/80 border-2 border-white shadow-lg cursor-grab active:cursor-grabbing z-40"
+                  title={translate(pin.name, lang)}
+                />
+              );
+            })}
+
+            {/* Live coordinate readout */}
+            <div className="absolute top-2 left-2 z-50 bg-black/85 text-white text-[10px] font-mono px-2 py-1.5 rounded-md pointer-events-none space-y-0.5">
+              <div>pinDebug: click map or drag red dots</div>
+              {debugClickCoord && (
+                <div>last click → top: "{debugClickCoord.top}%", left: "{debugClickCoord.left}%"</div>
+              )}
+              {draggingPinIndex !== null && debugPinOverrides[draggingPinIndex] && (
+                <div>
+                  dragging pin {draggingPinIndex} → top: "{debugPinOverrides[draggingPinIndex].top}%", left: "{debugPinOverrides[draggingPinIndex].left}%"
+                </div>
+              )}
+            </div>
+          </>
+        )}
+        </div>
 
         {/* Hover/Tap Hint Badge */}
         <div className="absolute bottom-4 right-4 bg-zinc-950/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 text-white font-sans text-[8px] sm:text-[9px] tracking-wider uppercase font-semibold">
