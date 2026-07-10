@@ -1517,7 +1517,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   "7": {
     id: 7,
     image: "/images/chefchaouen.png",
-    contentImage: "/images/moroco.webp",
+    // TODO(JAY): swap for a distinct second Chefchaouen photo (Google Drive)
+    contentImage: "/images/chefchaouen.png",
     title: { FR: "Grand Tour Impérial & Chefchaouen", EN: "Grand Imperial Tour & Chefchaouen" },
     duration: { FR: "15 jours / 14 nuits", EN: "15 days / 14 nights" },
     cost: { FR: "Sur demande", EN: "On request" },
@@ -2038,7 +2039,9 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Essaouira", EN: "Essaouira" }, top: "56%", left: "44%" }
     ],
     experienceGrid: [
-      { label: { FR: "Chefchaouen la Bleue", EN: "Chefchaouen Blue" }, img: "/images/moroco.webp" },
+      // TODO(JAY): swap for a distinct second Chefchaouen photo (Google Drive)
+      { label: { FR: "Chefchaouen la Bleue", EN: "Chefchaouen Blue" }, img: "/images/chefchaouen.png" },
+      // TODO(JAY): add essaouira_coast.jpg from Google Drive
       { label: { FR: "Essaouira", EN: "Essaouira Coast" }, img: "/images/people-cliff.png" },
       { label: { FR: "Sahara Dunes", EN: "Sahara Desert" }, img: "/images/morocco-sahara-dunes.png" },
       { label: { FR: "Marrakech Souk", EN: "Marrakech Life" }, img: "/images/morocco-marrakech-riad.png" },
