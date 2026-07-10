@@ -122,7 +122,7 @@ export const conditionsSections: ConditionsSection[] = [
       {
         title: { FR: "Séjours et Circuits", EN: "Stays and Circuits" },
         desc: {
-          FR: "Paiement final à 70 jours du départ pour tous les groupes accompagnés Majestic. Pour les voyages forfaits individuels, le paiement final est dû à 45 jours du départ.",
+          FR: "Paiement final à 70 jours du départ pour tous les groupes accompagnés Merveilles et Voyages. Pour les voyages forfaits individuels, le paiement final est dû à 45 jours du départ.",
           EN: "Final payment 70 days before departure for hosted groups, and 45 days for individual packages."
         }
       }
@@ -167,8 +167,8 @@ export const conditionsSections: ConditionsSection[] = [
     },
     paragraphs: [
       {
-        FR: "Merveilles et Voyages se dégage de toute responsabilité concernant un dommage relatif aux bagages ou tout équipement sportif (paddleboard, vélos, valises, etc.) durant tous types de transports et la manutention par les employés de Merveilles et Voyages ou de ses fournisseurs. Merveilles et Voyages ne peut être tenu responsable d’un bris ou d’une perte de bagages et d’équipements sportifs auprès d’un service de voyages Majestic ou d’un fournisseur.",
-        EN: "Merveilles et Voyages is not liable for loss or damage to baggage or sports equipment (paddleboards, surfboards, suitcases, etc.) during transport or handling by our staff and suppliers. Travel insurance is highly recommended."
+        FR: "Merveilles et Voyages se dégage de toute responsabilité concernant un dommage relatif aux bagages ou tout équipement sportif (paddleboard, vélos, valises, etc.) durant tous types de transports et la manutention par les employés de Merveilles et Voyages ou de ses fournisseurs. Merveilles et Voyages ne peut être tenu responsable d’un bris ou d’une perte de bagages et d’équipements sportifs auprès d’un service de voyages Merveilles et Voyages ou d’un fournisseur.",
+        EN: "Merveilles et Voyages disclaims all liability for any damage to baggage or sports equipment (paddleboards, bicycles, suitcases, etc.) during any type of transport and while being handled by Merveilles et Voyages employees or its suppliers. Merveilles et Voyages cannot be held responsible for the breakage or loss of baggage and sports equipment through a Merveilles et Voyages travel service or supplier. Travel insurance is highly recommended."
       }
     ]
   },
