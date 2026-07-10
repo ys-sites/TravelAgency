@@ -111,8 +111,8 @@ export const toursList: TourCard[] = [
       EN: "Rabat's masterpiece designed by Robert Trent Jones Sr, set on 440 hectares of forest. A legendary course that hosts international competitions."
     },
     duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
-    flight: { FR: "Vol optionnel", EN: "Flight optional" },
-    meals: { FR: "Petit-déjeuner inclus", EN: "Breakfast included" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
+    meals: { FR: "Tout Inclus", EN: "All Inclusive" },
     oldPrice: "",
     price: { FR: "Sur demande", EN: "On request" },
     tag: "golf",
@@ -244,7 +244,7 @@ export const toursList: TourCard[] = [
       EN: "An exceptional 10-night tour connecting Casablanca, Rabat, Fes, Meknes, and the magnificent Sahara dunes in Merzouga."
     },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
-    flight: { FR: "Vol optionnel", EN: "Flight optional" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Demi-pension", EN: "Half Board" },
     oldPrice: "",
     price: { FR: "Sur demande", EN: "On request" },
@@ -340,8 +340,8 @@ export const dealsList: DealCard[] = [
     badge: { FR: "Signature", EN: "Signature" },
     title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    flight: { FR: "Vol optionnel", EN: "Flight optional" },
-    meals: { FR: "Petit-déjeuner inclus", EN: "Breakfast included" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
+    meals: { FR: "Tout Inclus", EN: "All Inclusive" },
     inclusions: { FR: "Parcours légendaires Rouge (18T) & Bleu (18T), séjour au Ritz-Carlton", EN: "Legendary Red (18H) & Blue (18H) courses, stay at Ritz-Carlton" },
     oldPrice: "",
     newPrice: { FR: "Sur demande", EN: "On request" },
@@ -505,6 +505,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/rgdes_parcours_rouge_09_17.jpg",
     title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
     duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
+    // TODO(JAY): confirm final id 10 price with client (flights + all-inclusive now included)
+    // TODO(JAY): client to confirm if any other package needs flights moved to inclusions
     cost: { FR: "Sur demande", EN: "On request" },
     overview: {
       FR: "Né de la vision de Feu SM Le Roi Hassan II et dessiné par Robert Trent Jones Sr, le Royal Golf Dar Es Salam est un écosystème naturel somptueux de 440 hectares à seulement 15 minutes du centre de Rabat. Avec son légendaire Parcours Rouge (18 trous, parcours signature), son Parcours Bleu (18 trous) et son Parcours Vert (9 trous), ce site d'exception accueille chaque année le prestigieux Trophée Hassan II. Un séjour inoubliable alliant passion du golf, biodiversité riche et hébergement de très haut standing au Ritz-Carlton Rabat Dar Es Salam.",
@@ -549,8 +551,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
+        "Vols internationaux aller-retour depuis Montréal",
         "Hébergement 5★ de luxe au Ritz-Carlton Rabat Dar Es Salam",
-        "Petit-déjeuner quotidien inclus (BB)",
+        "Formule Tout Inclus",
         "Green fees pour les parcours Rouge, Bleu et Vert",
         "Voiturette électrique partagée et buggy de practice inclus",
         "Accès complet au Driving Range, Chipping & Putting greens",
@@ -558,8 +561,9 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Assistance conciergerie bilingue 24/7"
       ],
       EN: [
+        "Round-trip international flights from Montreal",
         "Luxury 5★ accommodation at The Ritz-Carlton Rabat Dar Es Salam",
-        "Daily breakfast included (BB)",
+        "All-Inclusive plan",
         "Green fees on the Red, Blue, and Green courses",
         "Shared electric golf cart and practice buggy included",
         "Full access to Driving Range, Chipping & Putting greens",
@@ -569,17 +573,15 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     exclusions: {
       FR: [
-        "Vols internationaux",
         "Assurance voyage",
         "Repas et boissons non spécifiés",
-        "Frais de caddie (env. 30$ USD par ronde)",
+        "Frais de caddie (env. 30$ CAD par ronde)",
         "Dépenses personnelles et pourboires"
       ],
       EN: [
-        "International flights",
         "Travel insurance",
         "Meals and beverages not specified",
-        "Caddie fee (approx. $30 USD per round)",
+        "Caddie fee (approx. $30 CAD per round)",
         "Personal expenses and gratuities"
       ]
     },
@@ -710,7 +712,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Activités optionnelles hors programme",
         "Repas et boissons non spécifiés",
         "Pourboires",
-        "Frais de caddie (env. 30$ USD par ronde)",
+        "Frais de caddie (env. 30$ CAD par ronde)",
         "Taxes d'hôtel (env. 5$ CAD par nuit)"
       ],
       EN: [
@@ -719,7 +721,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Optional activities not specified",
         "Meals and beverages not specified",
         "Gratuities",
-        "Caddie fee (approx. $30 USD per round)",
+        "Caddie fee (approx. $30 CAD per round)",
         "Hotel taxes (approx. $5 CAD per night)"
       ]
     },
@@ -862,7 +864,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Assurance voyage",
         "Frais pour le 2ème bagage enregistré",
         "Activités optionnelles hors programme",
-        "Frais de caddie (env. 30$ USD par ronde)",
+        "Frais de caddie (env. 30$ CAD par ronde)",
         "Taxes d'hôtel (env. 5$ CAD par nuit)",
         "Dépenses personnelles et pourboires"
       ],
@@ -870,7 +872,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Travel insurance",
         "Second checked bag fee",
         "Optional activities not specified",
-        "Caddie fee (approx. $30 USD per round)",
+        "Caddie fee (approx. $30 CAD per round)",
         "Hotel taxes (approx. $5 CAD per night)",
         "Personal expenses and gratuities"
       ]
@@ -989,7 +991,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Activités optionnelles hors programme",
         "Repas et boissons non spécifiés",
         "Pourboires",
-        "Frais de caddie (env. 30$ USD par ronde)",
+        "Frais de caddie (env. 30$ CAD par ronde)",
         "Taxes d'hôtel (env. 5$ CAD par nuit)"
       ],
       EN: [
@@ -998,7 +1000,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Optional activities not specified",
         "Meals and beverages not specified",
         "Gratuities",
-        "Caddie fee (approx. $30 USD per round)",
+        "Caddie fee (approx. $30 CAD per round)",
         "Hotel taxes (approx. $5 CAD per night)"
       ]
     },
@@ -1102,7 +1104,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Activités optionnelles hors programme",
         "Repas et boissons non spécifiés dans la formule",
         "Pourboires et dépenses personnelles",
-        "Frais de caddie (env. 30$ USD par ronde)",
+        "Frais de caddie (env. 30$ CAD par ronde)",
         "Taxes d'hôtel (env. 5$ CAD par nuit)"
       ],
       EN: [
@@ -1111,7 +1113,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Optional activities not specified",
         "Meals and beverages not included in the plan",
         "Gratuities and personal expenses",
-        "Caddie fee (approx. $30 USD per round)",
+        "Caddie fee (approx. $30 CAD per round)",
         "Hotel taxes (approx. $5 CAD per night)"
       ]
     },
@@ -1215,7 +1217,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Activités optionnelles hors programme",
         "Repas et boissons non spécifiés",
         "Pourboires et dépenses personnelles",
-        "Frais de caddie (env. 30$ USD par ronde)",
+        "Frais de caddie (env. 30$ CAD par ronde)",
         "Taxes d'hôtel (env. 5$ CAD par nuit)"
       ],
       EN: [
@@ -1224,7 +1226,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Optional activities not specified",
         "Meals and beverages not specified",
         "Gratuities and personal expenses",
-        "Caddie fee (approx. $30 USD per round)",
+        "Caddie fee (approx. $30 CAD per round)",
         "Hotel taxes (approx. $5 CAD per night)"
       ]
     },
@@ -1325,7 +1327,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Activités optionnelles hors programme",
         "Repas et boissons non spécifiés dans la formule",
         "Pourboires et dépenses personnelles",
-        "Frais de caddie (env. 30$ USD par ronde)",
+        "Frais de caddie (env. 30$ CAD par ronde)",
         "Taxes d'hôtel (env. 5$ CAD par nuit)"
       ],
       EN: [
@@ -1334,7 +1336,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Optional activities not specified",
         "Meals and beverages not included in the plan",
         "Gratuities and personal expenses",
-        "Caddie fee (approx. $30 USD per round)",
+        "Caddie fee (approx. $30 CAD per round)",
         "Hotel taxes (approx. $5 CAD per night)"
       ]
     },
@@ -1391,6 +1393,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     contentImage: "/images/morocco-sahara-dunes.png",
     title: { FR: "Villes Impériales & Désert", EN: "Imperial Cities & Desert" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
+    // TODO(JAY): confirm id 6 price with client now that flights are included
     cost: { FR: "Sur demande", EN: "On request" },
     overview: {
       FR: "Un circuit culturel exceptionnel de 10 nuits à travers les cités impériales marocaines et les dunes grandioses du Sahara. Visitez Casablanca, Rabat, Fès et Meknès, explorez les ruines romaines de Volubilis, traversez le Moyen Atlas et vivez la magie d'une nuit en bivouac au milieu des dunes de sable de l'Erg Chebbi à Merzouga avec promenade en chameau au coucher du soleil.",
@@ -1411,6 +1414,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
+        "Vols internationaux aller-retour depuis Montréal",
         "10 nuits d'hébergement dans des hôtels de catégorie supérieure 4★/5★ et bivouac de luxe",
         "Formule Demi-pension (petit-déjeuner quotidien et dîners)",
         "Transferts et transports privés climatisés avec chauffeur professionnel",
@@ -1421,6 +1425,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Contribution FICAV incluse"
       ],
       EN: [
+        "Round-trip international flights from Montreal",
         "10 nights accommodation in premium 4★/5★ hotels and luxury desert camp",
         "Half-board plan (daily breakfast and dinners)",
         "Private air-conditioned transportation with a professional driver",
@@ -1433,14 +1438,12 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     exclusions: {
       FR: [
-        "Vols internationaux",
         "Assurance voyage",
         "Déjeuners et boissons non mentionnés",
         "Pourboires et dépenses personnelles",
         "Activités optionnelles"
       ],
       EN: [
-        "International flights",
         "Travel insurance",
         "Lunches and beverages not specified",
         "Gratuities and personal expenses",
