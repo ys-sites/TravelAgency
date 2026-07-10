@@ -18,6 +18,7 @@ export interface ItineraryPackageCardProps {
   packageName: { FR: string; EN: string } | string;
   highlights: ({ FR: string; EN: string } | string)[];
   price: string | number;
+  originalPrice?: { FR: string; EN: string } | string;
   currency?: string;
   ctaLabel?: { FR: string; EN: string } | string;
   ctaHref: string;
@@ -38,6 +39,7 @@ export default function ItineraryPackageCard({
   packageName,
   highlights,
   price,
+  originalPrice,
   currency = "C$",
   ctaLabel,
   ctaHref,
@@ -205,12 +207,19 @@ export default function ItineraryPackageCard({
                 {translatedPricePrefix}
               </span>
             )}
-            <span className="text-[16px] sm:text-[20px] font-bold text-zinc-900 font-heading leading-none">
-              {currency} {price}
-              <span className="text-[9px] sm:text-[10px] font-mono text-zinc-400 ml-1 font-normal">
-                / {lang === "FR" ? "pers." : "guest"}
+            <div className="flex items-baseline gap-2 flex-wrap">
+              {originalPrice && (
+                <span className="text-[11px] sm:text-[13px] font-mono line-through text-zinc-400 font-normal">
+                  {formatText(originalPrice)}
+                </span>
+              )}
+              <span className={`text-[16px] sm:text-[20px] font-bold font-heading leading-none ${originalPrice ? 'text-[#8B2635]' : 'text-zinc-900'}`}>
+                {currency} {price}
+                <span className="text-[9px] sm:text-[10px] font-mono text-zinc-400 ml-1 font-normal">
+                  / {lang === "FR" ? "pers." : "guest"}
+                </span>
               </span>
-            </span>
+            </div>
           </div>
 
           <Link 

@@ -64,6 +64,7 @@ export default function AgadirGolfClient() {
       { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
     ],
     price: "3,879",
+    originalPrice: { FR: "4 079 $", EN: "C$ 4,079" },
     pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
@@ -91,6 +92,7 @@ export default function AgadirGolfClient() {
       { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
     ],
     price: "4,255",
+    originalPrice: { FR: "4 455 $", EN: "C$ 4,455" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
     ctaHref: "/itineraries/12",
@@ -117,6 +119,7 @@ export default function AgadirGolfClient() {
       { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
     ],
     price: "4,989",
+    originalPrice: { FR: "5 189 $", EN: "C$ 5,189" },
     pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },

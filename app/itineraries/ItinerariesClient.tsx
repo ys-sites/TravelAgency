@@ -355,14 +355,22 @@ function ItinerariesClientContent() {
                 {/* Footer / Pricing */}
                 <div className="flex items-center justify-between pt-5 border-t border-zinc-100">
                   <div className="flex flex-col">
-                    <span className="text-[11px] font-mono line-through text-zinc-400 leading-none mb-1">
-                      {tour.oldPrice}
-                    </span>
+                    {tour.originalCost ? (
+                      <span className="text-[11px] font-mono line-through text-zinc-400 leading-none mb-1">
+                        {translate(tour.originalCost, lang)}
+                      </span>
+                    ) : (
+                      tour.oldPrice && (
+                        <span className="text-[11px] font-mono line-through text-zinc-400 leading-none mb-1">
+                          {tour.oldPrice}
+                        </span>
+                      )
+                    )}
                       {(() => {
                         const priceText = translate(tour.price, lang);
                         const isRequest = priceText.toLowerCase().includes("devis") || priceText.toLowerCase().includes("demande") || priceText.toLowerCase().includes("request");
                         return (
-                          <span className="text-[19px] font-bold text-zinc-900 font-heading leading-none">
+                          <span className={`text-[19px] font-bold font-heading leading-none ${tour.originalCost ? 'text-[#8B2635]' : 'text-zinc-900'}`}>
                             {priceText}
                             {!isRequest && (
                               <span className="text-[10px] font-mono text-zinc-400 ml-1">

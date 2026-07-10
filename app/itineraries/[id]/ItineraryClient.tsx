@@ -786,15 +786,23 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                     {(() => {
                       const costText = translate(itinerary.cost, lang);
                       const isRequest = costText.toLowerCase().includes("devis") || costText.toLowerCase().includes("demande") || costText.toLowerCase().includes("request");
+                      const originalCostText = itinerary.originalCost ? translate(itinerary.originalCost, lang) : null;
                       return (
-                        <h3 className="text-3xl font-bold text-zinc-900 font-serif tabular-nums">
-                          {costText}
-                          {!isRequest && (
-                            <span className="text-[10px] font-mono text-zinc-400 ml-1">
-                              {lang === "FR" ? "CAD / pers." : "CAD / guest"}
+                        <div className="flex flex-col items-start">
+                          {originalCostText && (
+                            <span className="text-sm line-through text-zinc-400 font-serif mb-1">
+                              {originalCostText}
                             </span>
                           )}
-                        </h3>
+                          <h3 className={`text-3xl font-bold font-serif tabular-nums ${originalCostText ? 'text-[#8B2635]' : 'text-zinc-900'}`}>
+                            {costText}
+                            {!isRequest && (
+                              <span className="text-[10px] font-mono text-zinc-400 ml-1">
+                                {lang === "FR" ? "CAD / pers." : "CAD / guest"}
+                              </span>
+                            )}
+                          </h3>
+                        </div>
                       );
                     })()}
                     <span className="text-[9px] font-mono text-[#faf9f5] uppercase bg-[#8B2635] px-2 py-0.5 rounded shadow-sm">
