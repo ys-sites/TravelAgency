@@ -656,7 +656,7 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
 
           {/* Regional Interactive Layer Paths */}
           {mapConfig.regions.map((reg) => {
-            const isActive = !itineraryId && activeRegion?.id === reg.id;
+            const isActive = !itineraryPins && activeRegion?.id === reg.id;
             return (
               <path
                 key={reg.id}
@@ -687,7 +687,7 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
           )}
 
           {/* Connection Lines from Label to Pin */}
-          {!itineraryId && mapConfig.regions.map((reg) => {
+          {!itineraryPins && mapConfig.regions.map((reg) => {
             if (!reg.hasLine || !reg.linePath) return null;
             const isActive = activeRegion?.id === reg.id;
             return (
@@ -704,7 +704,7 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
           })}
 
           {/* Interactive Pointer Text Labels */}
-          {!itineraryId && mapConfig.regions.map((reg) => {
+          {!itineraryPins && mapConfig.regions.map((reg) => {
             const isActive = activeRegion?.id === reg.id;
             return (
               <text
@@ -724,7 +724,7 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
           })}
 
           {/* Animated Cities / Regions Pin Nodes */}
-          {!itineraryId && mapConfig.regions.map((reg) => {
+          {!itineraryPins && mapConfig.regions.map((reg) => {
             const isActive = activeRegion?.id === reg.id;
             return (
               <g
