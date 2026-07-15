@@ -1790,14 +1790,13 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Morocco has many different aspects to its personality. Adventure, Culinary, Culture; it's all here. Experience the many different, rich, exciting layers of Morocco. Experience it your way."
     },
     mapPins: [
-      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "36%", left: "53%" },
-      { name: { FR: "Rabat", EN: "Rabat" }, top: "32%", left: "56%" },
-      { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
-      { name: { FR: "Merzouga (Sahara)", EN: "Merzouga" }, // PROVISIONAL — finalize on call
-      top: "62%", left: "78%" },
-      { name: { FR: "Skoura", EN: "Skoura" }, top: "60%", left: "61%" },
-      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" }
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "32.9%", left: "30.5%" },
+      { name: { FR: "Rabat", EN: "Rabat" }, top: "28.0%", left: "35.1%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "28.1%", left: "46.3%" },
+      { name: { FR: "Merzouga (Sahara)", EN: "Merzouga" }, top: "60.0%", left: "52.5%" },
+      { name: { FR: "Skoura", EN: "Skoura" }, top: "60.2%", left: "36.8%" },
+      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60.4%", left: "33.3%" },
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "54.0%", left: "28.1%" }
     ],
     experienceGrid: [
       { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
@@ -1831,16 +1830,15 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Experience the deep architectural roots and traditions of Morocco. Learn historical stories, taste street foods, and see how tanneries still operate."
     },
     mapPins: [
-      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "36%", left: "53%" },
-      { name: { FR: "Rabat", EN: "Rabat" }, top: "32%", left: "56%" },
-      { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "21%", left: "63%" },
-      { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
-      { name: { FR: "Meknès & Volubilis", EN: "Meknes & Volubilis" }, top: "33%", left: "63%" },
-      { name: { FR: "Merzouga", EN: "Merzouga" }, // PROVISIONAL — finalize on call
-      top: "62%", left: "78%" },
-      { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "55%", left: "66%" },
-      { name: { FR: "Vallée du Dadès", EN: "Dades Valley" }, top: "56%", left: "63%" },
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" }
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "32.9%", left: "30.5%" },
+      { name: { FR: "Rabat", EN: "Rabat" }, top: "28.0%", left: "35.1%" },
+      { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "15.6%", left: "44.8%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "28.1%", left: "46.3%" },
+      { name: { FR: "Meknès & Volubilis", EN: "Meknes & Volubilis" }, top: "29.4%", left: "43.0%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "60.0%", left: "52.5%" },
+      { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "54.9%", left: "43.1%" },
+      { name: { FR: "Vallée du Dadès", EN: "Dades Valley" }, top: "56.8%", left: "40.3%" },
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "54.0%", left: "28.1%" }
     ],
     experienceGrid: [
       { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
@@ -1874,13 +1872,12 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Deep desert immersion allows you to stargaze under the world's cleanest skies, sleep in tents, and travel the sandstone gorges of Todra and Dades."
     },
     mapPins: [
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" },
-      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
-      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61%", left: "59%" },
-      { name: { FR: "Vallée du Dadès", EN: "Dades Valley" }, top: "56%", left: "63%" },
-      { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "55%", left: "66%" },
-      { name: { FR: "Merzouga — 3 nuits désert", EN: "Merzouga — 3 desert nights" }, // PROVISIONAL — finalize on call
-      top: "62%", left: "78%" }
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "54.0%", left: "28.1%" },
+      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60.4%", left: "33.3%" },
+      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61.8%", left: "34.8%" },
+      { name: { FR: "Vallée du Dadès", EN: "Dades Valley" }, top: "56.8%", left: "40.3%" },
+      { name: { FR: "Gorges du Todra", EN: "Todra Gorges" }, top: "54.9%", left: "43.1%" },
+      { name: { FR: "Merzouga — 3 nuits désert", EN: "Merzouga — 3 desert nights" }, top: "60.0%", left: "52.5%" }
     ],
     experienceGrid: [
       { label: { FR: "Aventure", EN: "Adventure" }, img: "/images/morocco_adventure.png" },
@@ -1988,16 +1985,15 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Discover ancient historic tales, gaze at infinite stars from the desert camp, and tour the beautiful Roman ruins of Volubilis."
     },
     mapPins: [
-      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "36%", left: "53%" },
-      { name: { FR: "Rabat", EN: "Rabat" }, top: "32%", left: "56%" },
-      { name: { FR: "Meknès", EN: "Meknes" }, top: "33%", left: "63%" },
-      { name: { FR: "Volubilis", EN: "Volubilis" }, top: "32%", left: "63%" },
-      { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
-      { name: { FR: "Merzouga", EN: "Merzouga" }, // PROVISIONAL — finalize on call
-      top: "62%", left: "78%" },
-      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
-      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61%", left: "59%" },
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" }
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "32.9%", left: "30.5%" },
+      { name: { FR: "Rabat", EN: "Rabat" }, top: "28.0%", left: "35.1%" },
+      { name: { FR: "Meknès", EN: "Meknes" }, top: "29.4%", left: "43.0%" },
+      { name: { FR: "Volubilis", EN: "Volubilis" }, top: "27.5%", left: "43.0%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "28.1%", left: "46.3%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "60.0%", left: "52.5%" },
+      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60.4%", left: "33.3%" },
+      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61.8%", left: "34.8%" },
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "54.0%", left: "28.1%" }
     ],
     experienceGrid: [
       { label: { FR: "Histoire", EN: "History" }, img: "/images/moroco.webp" },
@@ -2031,17 +2027,16 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       EN: "Experience the ultimate Moroccan journey: blue pathways, Marrakech souks, desert camp stargazing, and sea air at Essaouira."
     },
     mapPins: [
-      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "36%", left: "53%" },
-      { name: { FR: "Rabat", EN: "Rabat" }, top: "32%", left: "56%" },
-      { name: { FR: "Tanger", EN: "Tangier" }, top: "15%", left: "60%" },
-      { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "21%", left: "63%" },
-      { name: { FR: "Fès", EN: "Fes" }, top: "32%", left: "66%" },
-      { name: { FR: "Merzouga", EN: "Merzouga" }, // PROVISIONAL — finalize on call
-      top: "62%", left: "78%" },
-      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60%", left: "58%" },
-      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61%", left: "59%" },
-      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "55%", left: "53%" },
-      { name: { FR: "Essaouira", EN: "Essaouira" }, top: "56%", left: "44%" }
+      { name: { FR: "Casablanca", EN: "Casablanca" }, top: "32.9%", left: "30.5%" },
+      { name: { FR: "Rabat", EN: "Rabat" }, top: "28.0%", left: "35.1%" },
+      { name: { FR: "Tanger", EN: "Tangier" }, top: "9.1%", left: "41.3%" },
+      { name: { FR: "Chefchaouen", EN: "Chefchaouen" }, top: "15.6%", left: "44.8%" },
+      { name: { FR: "Fès", EN: "Fes" }, top: "28.1%", left: "46.3%" },
+      { name: { FR: "Merzouga", EN: "Merzouga" }, top: "60.0%", left: "52.5%" },
+      { name: { FR: "Aït-Ben-Haddou", EN: "Ait Ben Haddou" }, top: "60.4%", left: "33.3%" },
+      { name: { FR: "Ouarzazate", EN: "Ouarzazate" }, top: "61.8%", left: "34.8%" },
+      { name: { FR: "Marrakech", EN: "Marrakech" }, top: "54.0%", left: "28.1%" },
+      { name: { FR: "Essaouira", EN: "Essaouira" }, top: "55.3%", left: "17.1%" }
     ],
     experienceGrid: [
       // TODO(JAY): swap for a distinct second Chefchaouen photo (Google Drive)

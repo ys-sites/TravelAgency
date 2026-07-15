@@ -43,6 +43,13 @@ const mapsData: Record<string, {
     description: { EN: string; FR: string };
   }[];
 }> = {
+  // GEOGRAPHIC CALIBRATION (Morocco map "1") — generated from Natural Earth 50m (public domain).
+  // Equirectangular projection, cos-lat corrected. viewBox 900x600 == the aspect-[3/2] wrapper,
+  // so SVG coords and HTML pin percentages are THE SAME SPACE. Never eyeball a pin again:
+  //   left% = (lng + 12.55) / 16.273 * 100
+  //   top%  = (36.6 - lat) / 9.2 * 100
+  //   svgX = left% * 9   svgY = top% * 6
+  // Bounds: lat 27.4..36.6, lng -12.55..3.723
   // Morocco — ID "1"
   "1": {
     discoverRealm: { FR: "DÉCOUVREZ LE ROYAUME", EN: "DISCOVER THE REALM" },
@@ -56,34 +63,33 @@ const mapsData: Record<string, {
     highlightsLabel: { FR: "POINTS FORTS DE LA RÉGION :", EN: "REGION HIGHLIGHTS:" },
     hoverPrompt: { FR: "Survolez les régions pour explorer le Royaume.", EN: "Hover over regions to explore the Kingdom." },
     
-    viewBox: "0 0 500 500",
-    oceanPath: "M 0 0 L 320 0 L 280 150 L 265 180 L 250 200 L 235 230 L 225 260 L 220 290 L 210 320 L 180 370 L 155 395 L 125 440 L 120 490 L 0 500 Z",
+    viewBox: "0 0 900 600",
+    oceanPath: "M 0 0 L 900 0 L 900 600 L 0 600 Z",
     oceanLabel: { FR: "Océan Atlantique Nord", EN: "North Atlantic Ocean" },
-    oceanLabelPos: { x: 80, y: 220 },
-    
-    landPath: "M 320 60 L 350 70 L 390 85 L 410 110 L 410 220 L 360 260 L 330 270 L 330 310 L 290 340 L 270 340 L 260 420 L 180 480 L 120 490 L 125 440 L 155 395 L 180 370 L 210 320 L 220 290 L 225 260 L 235 230 L 250 200 L 265 180 L 280 150 L 305 95 Z",
-    spainLandPath: "M 250 15 L 390 15 L 370 45 L 300 40 Z",
+    oceanLabelPos: { x: 35.9, y: 326.1 },
+
+    landPath: "M 214.1 515.9 L 213.9 691.6 L 29.5 691.6 L 29.5 697.8 L -83.0 697.8 L -83.0 661.6 L -77.5 659.4 L -56.7 643.4 L -52.3 634.4 L -47.6 616.5 L -39.1 597.7 L -34.6 583.3 L -27.1 575.9 L -22.1 566.5 L -13.5 562.3 L 4.5 560.3 L 31.2 552.4 L 55.2 540.6 L 61.9 536.0 L 69.2 526.6 L 81.2 514.3 L 103.8 499.6 L 114.1 491.4 L 129.9 470.8 L 140.5 453.8 L 149.2 442.9 L 155.2 433.2 L 159.4 423.3 L 161.8 407.4 L 160.2 401.2 L 153.6 391.1 L 149.1 388.4 L 147.9 383.6 L 150.3 375.2 L 151.6 337.5 L 159.0 318.8 L 177.1 294.4 L 180.5 284.3 L 182.7 262.7 L 205.4 240.0 L 218.7 222.6 L 223.3 218.3 L 235.0 210.4 L 275.9 193.0 L 299.0 180.6 L 312.4 171.6 L 320.5 160.9 L 342.7 119.0 L 366.4 53.1 L 383.1 50.3 L 395.6 43.7 L 402.2 45.5 L 398.9 48.5 L 398.9 55.7 L 403.6 64.3 L 411.7 73.8 L 426.6 86.0 L 438.1 90.9 L 454.6 93.8 L 473.9 88.5 L 484.6 88.4 L 489.8 86.1 L 495.5 89.5 L 506.4 90.5 L 516.8 88.8 L 524.7 83.7 L 529.7 77.8 L 530.8 83.8 L 537.0 96.0 L 571.3 97.6 L 572.9 102.4 L 576.2 106.2 L 594.8 120.5 L 595.0 122.4 L 591.8 130.0 L 597.9 137.2 L 598.2 139.1 L 595.0 145.6 L 599.7 158.1 L 600.5 170.2 L 599.3 183.8 L 599.9 188.0 L 603.9 197.8 L 601.2 214.0 L 604.2 222.8 L 608.3 230.0 L 610.6 242.8 L 613.9 248.8 L 632.7 264.0 L 635.2 269.5 L 625.5 278.0 L 624.3 282.3 L 626.3 289.3 L 626.3 293.0 L 623.6 294.2 L 558.7 291.5 L 535.7 295.1 L 532.0 297.2 L 527.2 310.8 L 503.9 319.3 L 485.7 320.2 L 482.5 322.0 L 481.4 324.8 L 481.2 328.3 L 484.1 336.7 L 484.5 341.6 L 482.1 352.3 L 483.3 354.4 L 491.0 358.0 L 493.6 360.9 L 493.5 365.2 L 491.3 367.6 L 489.4 368.8 L 473.7 370.9 L 455.0 384.9 L 429.8 394.4 L 419.3 400.1 L 407.6 419.6 L 401.3 426.6 L 392.8 433.2 L 374.7 439.0 L 362.0 441.4 L 350.4 442.8 L 335.7 442.2 L 334.2 444.5 L 333.5 452.6 L 331.0 456.3 L 327.1 458.6 L 299.1 455.2 L 294.0 458.2 L 280.1 470.1 L 272.4 471.2 L 269.1 472.9 L 251.7 487.0 L 237.0 496.9 L 220.8 510.8 L 215.2 514.0 L 214.1 515.9 Z",
+    spainLandPath: "M 656.3 -90.8 L 652.5 -81.5 L 649.1 -76.3 L 648.6 -72.5 L 654.2 -67.2 L 648.6 -64.0 L 620.7 -62.7 L 603.4 -51.3 L 594.7 -41.3 L 586.9 -22.6 L 577.3 -11.5 L 573.1 -9.5 L 566.6 -14.3 L 558.4 -15.1 L 550.5 -13.5 L 546.4 -9.6 L 539.9 -7.5 L 533.6 -9.3 L 519.9 -10.3 L 513.9 -10.2 L 504.3 -7.0 L 496.2 -9.1 L 482.4 -10.2 L 452.6 -7.7 L 448.8 -6.5 L 445.1 -1.9 L 435.6 6.1 L 421.1 6.4 L 408.1 11.5 L 404.8 14.8 L 399.3 23.8 L 397.6 30.3 L 395.0 28.8 L 393.0 29.3 L 392.0 34.3 L 383.0 37.4 L 372.9 33.4 L 364.4 27.3 L 360.0 26.8 L 352.8 17.4 L 349.7 11.3 L 347.6 4.8 L 347.4 0.2 L 341.0 -2.4 L 339.5 -8.4 L 344.1 -16.2 L 350.3 -20.5 L 344.5 -20.1 L 340.4 -15.1 L 335.0 -23.1 L 313.3 -38.8 L 314.5 -44.3 L 310.9 -40.1 L 308.4 -39.0 L 297.3 -39.7 L 284.5 -37.8 L 279.1 -64.3 L 282.4 -73.6 L 290.8 -85.2 L 296.7 -91.7 L 305.7 -94.2 L 307.3 -97.8 L 657.7 -97.8 L 656.3 -90.8 Z M -68.2 505.7 L -72.4 504.2 L -70.4 494.8 L -68.5 492.0 L -60.8 487.9 L -54.5 486.2 L -52.6 481.9 L -50.5 480.2 L -48.3 482.8 L -50.0 485.8 L -51.3 495.2 L -55.6 498.2 L -64.5 501.4 L -68.2 505.7 Z M -83.0 523.0 L -80.4 514.8 L -77.7 512.5 L -72.3 512.7 L -70.6 515.8 L -70.7 522.7 L -72.6 534.2 L -76.2 544.3 L -83.0 546.8 L -83.0 523.0 Z",
     spainLabel: { FR: "ESPAGNE", EN: "SPAIN" },
-    spainLabelPos: { x: 320, y: 32 },
-    
+    spainLabelPos: { x: 423.1, y: 17.6 },
+
     extraLandPaths: [
-      { path: "M 75 390 Q 80 385 85 392 T 75 390 Z" },
-      { path: "M 95 397 Q 100 392 105 399 T 95 397 Z" },
-      { path: "M 60 384 Q 65 379 70 386 T 60 384 Z" }
+      { path: "M 344.2 697.8 L 213.9 607.4 L 214.1 515.9 L 269.1 472.9 L 280.1 470.1 L 298.1 455.7 L 327.1 458.6 L 333.5 452.6 L 335.7 442.2 L 362.0 441.4 L 392.8 433.2 L 407.6 419.6 L 419.3 400.1 L 455.0 384.9 L 473.7 370.9 L 491.3 367.6 L 493.6 360.9 L 482.1 352.3 L 484.5 341.6 L 481.4 324.8 L 485.7 320.2 L 503.9 319.3 L 527.2 310.8 L 532.0 297.2 L 535.7 295.1 L 558.7 291.5 L 626.3 293.0 L 625.5 278.0 L 635.2 269.5 L 632.7 264.0 L 613.9 248.8 L 601.2 214.0 L 603.9 197.8 L 599.3 183.8 L 599.7 158.1 L 595.0 145.6 L 598.2 139.1 L 591.8 130.0 L 594.8 120.5 L 576.2 106.2 L 571.3 97.6 L 588.3 98.2 L 601.5 92.4 L 620.2 80.6 L 634.0 66.6 L 670.5 48.2 L 691.4 50.0 L 702.5 35.0 L 711.4 28.5 L 747.9 10.2 L 763.6 5.2 L 837.5 -0.0 L 858.5 -12.0 L 888.8 -12.7 L 903.1 -19.3 L 957.3 -19.3 L 983.0 -4.5 L 983.0 697.8 L 344.2 697.8 Z" },
+      { path: "M 29.5 691.6 L 213.9 691.6 L 213.9 607.4 L 344.2 697.8 L 29.5 697.8 L 29.5 691.6 Z" }
     ],
     extraLabels: [
-      { text: { EN: "Canary Islands", FR: "Îles Canaries" }, x: 85, y: 415 }
+      { text: { EN: "ALGERIA", FR: "ALGÉRIE" }, x: 757.7, y: 404.3 }
     ],
     
     regions: [
       {
         id: "north",
         name: { EN: "The North", FR: "Le Nord" },
-        labelPos: { x: 380, y: 100, align: "start" },
-        pinPos: { x: 330, y: 95 },
+        labelPos: { x: 465, y: 93, align: "start" },
+        pinPos: { x: 403.0, y: 93.3 },
         hasLine: true,
-        linePath: "M 330 95 L 375 100",
-        path: "M 320 60 L 350 70 L 390 85 L 370 120 L 330 135 L 305 95 Z",
+        linePath: "M 403 93 L 459 90",
+        path: "M 342.7 119.0 L 366.4 53.1 L 383.1 50.3 L 395.6 43.7 L 402.2 45.5 L 398.9 48.5 L 398.9 55.7 L 411.7 73.8 L 426.6 86.0 L 438.1 90.9 L 454.6 93.8 L 489.8 86.1 L 495.5 89.5 L 506.4 90.5 L 516.8 88.8 L 524.7 83.7 L 529.7 77.8 L 530.8 83.8 L 537.0 96.0 L 571.3 97.6 L 576.2 106.2 L 594.8 120.5 L 591.8 130.0 L 594.1 133.7 L 334.9 133.7 L 342.7 119.0 Z",
         highlights: { EN: "Chefchaouen, Tangier & Rif Mountains", FR: "Chefchaouen, Tanger & les montagnes du Rif" },
         description: {
           EN: "Discover the breathtaking blue streets of Chefchaouen, the historic coastal fortress of Tangier, and the dramatic pine forests of the Rif Mountains.",
@@ -93,11 +99,11 @@ const mapsData: Record<string, {
       {
         id: "fes-meknes",
         name: { EN: "Fes, Meknes & The Middle Atlas", FR: "Fès, Meknès & le Moyen Atlas" },
-        labelPos: { x: 120, y: 130, align: "end" },
-        pinPos: { x: 330, y: 160 },
+        labelPos: { x: 479, y: 168, align: "start" },
+        pinPos: { x: 417.1, y: 168.4 },
         hasLine: true,
-        linePath: "M 130 130 L 330 160",
-        path: "M 280 150 L 330 135 L 370 120 L 410 110 L 410 200 L 340 230 L 290 200 Z",
+        linePath: "M 417 168 L 473 165",
+        path: "M 598.2 139.1 L 595.0 145.6 L 599.7 158.1 L 599.3 183.8 L 603.9 197.8 L 601.2 214.0 L 608.3 230.0 L 610.6 242.8 L 613.9 248.8 L 629.0 260.9 L 406.5 260.9 L 345.7 215.2 L 345.7 133.7 L 594.1 133.7 L 598.2 139.1 Z",
         highlights: { EN: "Imperial Medinas & Cedar Forests", FR: "Médinas impériales & forêts de cèdres" },
         description: {
           EN: "Explore the ancient medieval streets of Fes El Bali, the Roman ruins of Volubilis, and the majestic Barbary macaque cedar forests of Ifrane.",
@@ -107,11 +113,11 @@ const mapsData: Record<string, {
       {
         id: "casablanca",
         name: { EN: "Casablanca", FR: "Casablanca" },
-        labelPos: { x: 170, y: 180, align: "end" },
-        pinPos: { x: 265, y: 180 },
+        labelPos: { x: 212, y: 197, align: "end" },
+        pinPos: { x: 274.3, y: 197.4 },
         hasLine: true,
-        linePath: "M 180 180 L 265 180",
-        path: "M 235 230 L 250 200 L 265 180 L 280 150 L 290 200 L 260 250 Z",
+        linePath: "M 274 197 L 218 194",
+        path: "M 218.7 222.6 L 235.0 210.4 L 275.9 193.0 L 312.4 171.6 L 320.5 160.9 L 334.9 133.7 L 345.7 133.7 L 345.7 215.2 L 201.9 260.9 L 184.5 260.9 L 205.4 240.0 L 218.7 222.6 Z",
         highlights: { EN: "Hassan II Mosque & Coastal Elegance", FR: "Mosquée Hassan II & élégance côtière" },
         description: {
           EN: "Experience the grand architecture of Casablanca's Hassan II Mosque and the royal heritage sites of Rabat along the breezy Atlantic shores.",
@@ -121,11 +127,11 @@ const mapsData: Record<string, {
       {
         id: "marrakech",
         name: { EN: "Marrakech & The Coastal Plain", FR: "Marrakech & la Plaine Côtière" },
-        labelPos: { x: 120, y: 240, align: "end" },
-        pinPos: { x: 250, y: 250 },
+        labelPos: { x: 191, y: 318, align: "end" },
+        pinPos: { x: 252.7, y: 324.2 },
         hasLine: true,
-        linePath: "M 130 240 L 250 250",
-        path: "M 220 290 L 225 260 L 235 230 L 260 250 L 260 280 L 240 290 Z",
+        linePath: "M 253 324 L 197 315",
+        path: "M 151.6 337.5 L 159.0 318.8 L 177.1 294.4 L 180.5 284.3 L 182.7 262.7 L 184.5 260.9 L 406.5 260.9 L 331.8 306.5 L 232.3 345.7 L 179.7 362.0 L 150.3 362.0 L 151.6 337.5 Z",
         highlights: { EN: "Vibrant Souks & Red City Walls", FR: "Souks vibrants & remparts rouges" },
         description: {
           EN: "Lose yourself in the bustling spice markets of Jemaa el-Fnaa, visit historic palaces, and wander through lush botanical gardens.",
@@ -135,11 +141,11 @@ const mapsData: Record<string, {
       {
         id: "high-atlas",
         name: { EN: "High Atlas Mountains", FR: "Montagnes du Haut Atlas" },
-        labelPos: { x: 380, y: 270, align: "start" },
-        pinPos: { x: 305, y: 265 },
+        labelPos: { x: 194, y: 371, align: "end" },
+        pinPos: { x: 256.3, y: 361.3 },
         hasLine: true,
-        linePath: "M 305 265 L 375 270",
-        path: "M 260 250 L 290 200 L 340 230 L 350 250 L 310 280 L 260 280 Z",
+        linePath: "M 256 361 L 200 368",
+        path: "M 331.8 306.5 L 406.5 260.9 L 439.7 287.0 L 290.4 352.2 L 273.8 383.5 L 201.9 394.6 L 179.7 362.0 L 232.3 345.7 L 331.8 306.5 Z",
         highlights: { EN: "Mount Toubkal & Berber Valleys", FR: "Mont Toubkal & vallées berbères" },
         description: {
           EN: "Trek through high altitude mountain passes, summit Mount Toubkal (4,167m), and experience warm hospitality in remote clay Berber villages.",
@@ -149,11 +155,11 @@ const mapsData: Record<string, {
       {
         id: "ouarzazate",
         name: { EN: "Ouarzazate", FR: "Ouarzazate" },
-        labelPos: { x: 370, y: 310, align: "start" },
-        pinPos: { x: 310, y: 310 },
+        labelPos: { x: 375, y: 370, align: "start" },
+        pinPos: { x: 312.9, y: 370.5 },
         hasLine: true,
-        linePath: "M 310 310 L 365 310",
-        path: "M 260 280 L 310 280 L 350 250 L 410 200 L 410 220 L 360 260 L 330 270 L 330 310 L 290 340 Z",
+        linePath: "M 313 370 L 369 367",
+        path: "M 439.7 287.0 L 453.5 296.7 L 412.0 410.9 L 318.0 423.9 L 273.8 383.5 L 290.4 352.2 L 439.7 287.0 Z",
         highlights: { EN: "Ait Benhaddou & Desert Gates", FR: "Aït-Ben-Haddou & portes du désert" },
         description: {
           EN: "Marvel at the UNESCO clay fortress of Kasbah Ait Benhaddou, traverse the Dades Gorges, and see the gateways of Morocco's film capital.",
@@ -163,11 +169,11 @@ const mapsData: Record<string, {
       {
         id: "agadir",
         name: { EN: "Agadir & Anti-Atlas", FR: "Agadir & l'Anti-Atlas" },
-        labelPos: { x: 130, y: 330, align: "end" },
-        pinPos: { x: 230, y: 330 },
+        labelPos: { x: 101, y: 402, align: "end" },
+        pinPos: { x: 163.3, y: 402.5 },
         hasLine: true,
-        linePath: "M 140 330 L 230 330",
-        path: "M 210 320 L 220 290 L 240 290 L 260 280 L 290 340 L 270 340 L 260 420 L 210 360 Z",
+        linePath: "M 163 402 L 107 399",
+        path: "M 214.1 515.9 L 213.9 691.6 L 29.5 691.6 L 29.5 697.8 L -83.0 697.8 L -83.0 661.6 L -77.5 659.4 L -56.7 643.4 L -34.6 583.3 L -27.1 575.9 L -22.1 566.5 L -13.5 562.3 L 4.5 560.3 L 31.2 552.4 L 55.2 540.6 L 61.9 536.0 L 81.2 514.3 L 114.1 491.4 L 129.9 470.8 L 155.2 433.2 L 159.4 423.3 L 161.8 407.4 L 160.2 401.2 L 153.6 391.1 L 149.1 388.4 L 147.9 383.6 L 150.3 375.2 L 150.3 362.0 L 179.7 362.0 L 201.9 394.6 L 273.8 383.5 L 318.0 423.9 L 313.4 456.2 L 299.1 455.2 L 280.1 470.1 L 269.1 472.9 L 214.1 515.9 Z",
         highlights: { EN: "Argan Valleys & Sunny Coasts", FR: "Vallées d'arganiers & côtes ensoleillées" },
         description: {
           EN: "Unwind on the golden beaches of Agadir, see argan trees where goats climb, and hike through the bizarre red granite formations of Tafraout.",
@@ -177,10 +183,10 @@ const mapsData: Record<string, {
       {
         id: "sahara",
         name: { EN: "Sahara Desert", FR: "Désert du Sahara" },
-        labelPos: { x: 200, y: 430, align: "middle" },
-        pinPos: { x: 200, y: 430 },
+        labelPos: { x: 472, y: 382, align: "middle" },
+        pinPos: { x: 472.2, y: 360.0 },
         hasLine: false,
-        path: "M 120 490 L 125 440 L 155 395 L 180 370 L 210 320 L 210 360 L 260 420 L 180 480 Z",
+        path: "M 532.0 297.2 L 527.2 310.8 L 503.9 319.3 L 489.5 319.6 L 482.5 322.0 L 481.2 328.3 L 484.5 341.6 L 482.1 352.3 L 493.6 360.9 L 493.5 365.2 L 491.3 367.6 L 473.7 370.9 L 455.0 384.9 L 419.3 400.1 L 407.6 419.6 L 392.8 433.2 L 362.0 441.4 L 335.7 442.2 L 333.5 452.6 L 329.2 457.9 L 313.4 456.2 L 318.0 423.9 L 412.0 410.9 L 453.5 296.7 L 532.0 297.2 Z",
         highlights: { EN: "Erg Chebbi Dunes & Starry Nights", FR: "Dunes de l'Erg Chebbi & nuits étoilées" },
         description: {
           EN: "Journey deep into the golden dunes of Erg Chebbi on a camel, sleep in luxury desert camps, and stargaze under one of the world's clearest skies.",
@@ -670,8 +676,8 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
           {/* Sahara special text overlay (for Morocco map) */}
           {countryId === "1" && (
             <text
-              x="200"
-              y="435"
+              x="442.5"
+              y="459.8"
               pointerEvents="none"
               className="font-heading font-semibold text-[10px] tracking-[0.3em] fill-[#6B5335]/70 uppercase text-center"
               style={{ textAnchor: "middle" }}
