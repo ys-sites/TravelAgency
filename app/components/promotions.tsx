@@ -32,7 +32,7 @@ export default function Promotions() {
   const selectedDeals = [
     {
       id: "mice",
-      image: "/images/corporate_meeting.png",
+      image: "/images/casablanca_finance.jpg",
       badge: { FR: "Prestige", EN: "Prestige" },
       tag: "mice",
       title: { FR: "MICE & Corporatif", EN: "MICE & Corporate" },
