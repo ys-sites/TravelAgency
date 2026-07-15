@@ -175,7 +175,7 @@ const getGalleryImages = (itineraryId: number) => {
       ];
     case 99:
       return [
-        "/images/casablanca_finance.jpg",
+        "/images/corporate_meeting.png",
         "/images/almaaden_restaurant1.jpg"
       ];
     default:

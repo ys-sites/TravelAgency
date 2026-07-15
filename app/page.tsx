@@ -24,7 +24,6 @@ export default function Home() {
         rel="preload"
         as="image"
         href="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_ssfati.jpg"
-        // @ts-ignore
         fetchPriority="high"
       />
       {/* Header & Navbar */}
