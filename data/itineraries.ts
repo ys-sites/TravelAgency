@@ -208,7 +208,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 15,
-    image: "/images/marrakech_golf_blue5.jpg",
+    image: "/images/almaaden_golf_5.jpg",
     category: { FR: "Golf & Luxe", EN: "Golf & Luxury" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
     title: { FR: "Jaal Riad Hôtel 5★ (10N)", EN: "Jaal Riad Hotel 5★ (10N)" },
@@ -451,7 +451,7 @@ export const dealsList: DealCard[] = [
   },
   {
     id: 15,
-    image: "/images/morocco-marrakech-riad.png",
+    image: "/images/almaaden_golf_5.jpg",
     badge: { FR: "Exclusif", EN: "Exclusive" },
     title: { FR: "Jaal Riad Hôtel 5★ (10N)", EN: "Jaal Riad Hotel 5★ (10N)" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
@@ -1205,8 +1205,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "15": {
     id: 15,
-    image: "/images/marrakech_golf_blue5.jpg",
-    contentImage: "/images/marrakech_sunset_hero.png",
+    image: "/images/almaaden_golf_5.jpg",
+    contentImage: "/images/almaaden_golf_3.jpg",
     title: { FR: "Jaal Riad Hôtel 5★ (10N)", EN: "Jaal Riad Hotel 5★ (10N)" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
     cost: { FR: "À partir de 4 669 $", EN: "Starting from 4,669" },
@@ -1321,7 +1321,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   "16": {
     id: 16,
     image: "/images/royal_golf_marrakech_2.jpg",
-    contentImage: "/images/marrakech_golf_blue5.jpg",
+    contentImage: "/images/royal_golf_evening.jpg",
     title: { FR: "Jaal Riad Hôtel 5★ (7N)", EN: "Jaal Riad Hotel 5★ (7N)" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     cost: { FR: "À partir de 3 979 $", EN: "Starting from 3,979" },

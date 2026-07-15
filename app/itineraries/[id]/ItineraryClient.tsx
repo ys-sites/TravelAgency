@@ -42,8 +42,6 @@ const getGalleryImages = (itineraryId: number) => {
         "/images/tgz_course_3.jpg",
         "/images/tgz_course_4.jpg",
         "/images/tgz_course_aerial.jpg",
-        "/images/tgz_course_bleu7.jpg",
-        "/images/tgz_course_bleu9.jpg",
         "/images/tgz_course_hotel.jpg",
         "/images/tgz_course_ocean.jpg",
         "/images/akenza_golf_1.jpg",
@@ -92,8 +90,6 @@ const getGalleryImages = (itineraryId: number) => {
         "/images/tgz_course_3.jpg",
         "/images/tgz_course_4.jpg",
         "/images/tgz_course_aerial.jpg",
-        "/images/tgz_course_bleu7.jpg",
-        "/images/tgz_course_bleu9.jpg",
         "/images/tgz_course_hotel.jpg",
         "/images/tgz_course_ocean.jpg",
         "/images/hilton_taghazout_1.avif",
@@ -112,19 +108,38 @@ const getGalleryImages = (itineraryId: number) => {
         "/images/almaaden_golf_3.jpg",
         "/images/akenza_golf_1.jpg",
         "/images/akenza_golf_2.jpg",
-        "/images/akenza_golf_3.jpg"
+        "/images/akenza_golf_3.jpg",
+        "/images/royal_golf_aerial_2.jpg",
+        "/images/royal_golf_aerial_3.jpg",
+        "/images/royal_golf_rouge11.jpg",
+        "/images/almaaden_golf_4.jpg",
+        "/images/almaaden_golf_5.jpg"
       ];
     case 15:
     case 16:
       return [
-        "/images/morocco-marrakech-riad.png",
-        "/images/marrakech_sunset_hero.png",
-        "/images/marrakech_golf_blue5.jpg",
-        "/images/marrakech_golf_rouge18.jpg",
         "/images/royal_golf_marrakech_1.jpg",
         "/images/royal_golf_marrakech_2.jpg",
+        "/images/royal_golf_aerial_2.jpg",
+        "/images/royal_golf_aerial_3.jpg",
+        "/images/royal_golf_aerial_4.jpg",
+        "/images/royal_golf_aerial_5.jpg",
+        "/images/royal_golf_aerial_6.jpg",
+        "/images/royal_golf_clubhouse.jpg",
+        "/images/royal_golf_evening.jpg",
+        "/images/royal_golf_sunset.jpg",
         "/images/almaaden_golf_1.jpg",
-        "/images/almaaden_golf_2.jpg"
+        "/images/almaaden_golf_2.jpg",
+        "/images/almaaden_golf_3.jpg",
+        "/images/almaaden_golf_4.jpg",
+        "/images/almaaden_golf_5.jpg",
+        "/images/almaaden_golf_6.jpg",
+        "/images/almaaden_golf_7.jpg",
+        "/images/almaaden_golf_8.jpg",
+        "/images/almaaden_restaurant1.jpg",
+        "/images/almaaden_restaurant2.jpg",
+        "/images/AKENZA-102.jpg",
+        "/images/AKENZA-139.jpg"
       ];
     default:
       return [];
