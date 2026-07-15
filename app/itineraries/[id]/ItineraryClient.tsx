@@ -113,7 +113,12 @@ const getGalleryImages = (itineraryId: number) => {
         "/images/royal_golf_aerial_3.jpg",
         "/images/royal_golf_rouge11.jpg",
         "/images/almaaden_golf_4.jpg",
-        "/images/almaaden_golf_5.jpg"
+        "/images/almaaden_golf_5.jpg",
+        "/images/marrakech_golf_pro_1.webp",
+        "/images/marrakech_golf_pro_2.webp",
+        "/images/marrakech_golf_pro_3.webp",
+        "/images/marrakech_golf_pro_4.webp",
+        "/images/marrakech_golf_pro_5.webp"
       ];
     case 15:
     case 16:
@@ -139,7 +144,12 @@ const getGalleryImages = (itineraryId: number) => {
         "/images/almaaden_restaurant1.jpg",
         "/images/almaaden_restaurant2.jpg",
         "/images/AKENZA-102.jpg",
-        "/images/AKENZA-139.jpg"
+        "/images/AKENZA-139.jpg",
+        "/images/marrakech_golf_pro_6.webp",
+        "/images/marrakech_golf_pro_7.webp",
+        "/images/marrakech_golf_pro_8.webp",
+        "/images/marrakech_golf_pro_9.webp",
+        "/images/marrakech_golf_pro_10.webp"
       ];
     case 6:
       return [
