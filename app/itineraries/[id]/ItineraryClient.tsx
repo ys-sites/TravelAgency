@@ -141,6 +141,33 @@ const getGalleryImages = (itineraryId: number) => {
         "/images/AKENZA-102.jpg",
         "/images/AKENZA-139.jpg"
       ];
+    case 6:
+      return [
+        "/images/imperial_cities_fes.jpg",
+        "/images/morocco-sahara-dunes.png",
+        "/images/german_circuit_morocco.jpg"
+      ];
+    case 7:
+      return [
+        "/images/chefchaouen.png",
+        "/images/imperial_cities_fes.jpg"
+      ];
+    case 8:
+      return [
+        "/images/trekking_toubkal.png",
+        "/images/german_circuit_morocco.jpg",
+        "/images/marrakech_sunset_hero.png"
+      ];
+    case 9:
+      return [
+        "/images/german_circuit_morocco.jpg",
+        "/images/imperial_cities_fes.jpg"
+      ];
+    case 99:
+      return [
+        "/images/casablanca_finance.jpg",
+        "/images/almaaden_restaurant1.jpg"
+      ];
     default:
       return [];
   }

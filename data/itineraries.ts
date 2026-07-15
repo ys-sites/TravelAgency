@@ -328,7 +328,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 99,
-    image: "/images/corporate_meeting.png",
+    image: "/images/casablanca_finance.jpg",
     category: { FR: "MICE & Corporatif", EN: "MICE & Corporate" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
     title: { FR: "Séminaires & Événements d'Affaires", EN: "Meetings, Incentives & Business Events" },
@@ -491,7 +491,7 @@ export const dealsList: DealCard[] = [
   },
   {
     id: 99,
-    image: "/images/corporate_meeting.png",
+    image: "/images/casablanca_finance.jpg",
     badge: { FR: "Corporate", EN: "Corporate" },
     title: { FR: "Séminaires & Team-Building", EN: "Seminars & Corporate Retreats" },
     duration: { FR: "Sur mesure", EN: "Custom duration" },
@@ -1432,7 +1432,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "6": {
     id: 6,
-    image: "/images/moroco.webp",
+    image: "/images/imperial_cities_fes.jpg",
     contentImage: "/images/morocco-sahara-dunes.png",
     title: { FR: "Villes Impériales & Désert", EN: "Imperial Cities & Desert" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
@@ -1686,8 +1686,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "9": {
     id: 9,
-    image: "/images/german_circuit_imperial.png",
-    contentImage: "/images/moroco.webp",
+    image: "/images/german_circuit_morocco.jpg",
+    contentImage: "/images/imperial_cities_fes.jpg",
     // Title updated per client request 2026-06-28
     title: { FR: "Un Aperçu des Villes Impériales", EN: "A Glimpse of Imperial Cities" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
