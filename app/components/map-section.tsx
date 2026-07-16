@@ -8,6 +8,14 @@ import { itineraryThemes, MapPinDetail } from "@/data/itineraries";
 
 const MAP_BACKGROUND_IMAGE = "/images/moroco.webp"; // Current map aspect ratio: 830 x 553 (approx 3:2)
 
+// GEOGRAPHIC CALIBRATION (Morocco map "1") — generated from Natural Earth 50m (public domain).
+// Equirectangular projection, cos-lat corrected. viewBox 900x600 == the aspect-[3/2] wrapper,
+// so SVG coords and HTML pin percentages are THE SAME SPACE. Never eyeball a pin again:
+//   left% = (lng + 12.55) / 16.273 * 100
+//   top%  = (36.6 - lat) / 9.2 * 100
+//   svgX = left% * 9   svgY = top% * 6
+// Bounds: lat 27.4..36.6, lng -12.55..3.723
+
 // Detailed maps data configuration for each country
 const mapsData: Record<string, {
   discoverRealm: { FR: string; EN: string };
@@ -43,13 +51,6 @@ const mapsData: Record<string, {
     description: { EN: string; FR: string };
   }[];
 }> = {
-  // GEOGRAPHIC CALIBRATION (Morocco map "1") — generated from Natural Earth 50m (public domain).
-  // Equirectangular projection, cos-lat corrected. viewBox 900x600 == the aspect-[3/2] wrapper,
-  // so SVG coords and HTML pin percentages are THE SAME SPACE. Never eyeball a pin again:
-  //   left% = (lng + 12.55) / 16.273 * 100
-  //   top%  = (36.6 - lat) / 9.2 * 100
-  //   svgX = left% * 9   svgY = top% * 6
-  // Bounds: lat 27.4..36.6, lng -12.55..3.723
   // Morocco — ID "1"
   "1": {
     discoverRealm: { FR: "DÉCOUVREZ LE ROYAUME", EN: "DISCOVER THE REALM" },
@@ -568,12 +569,13 @@ export default function MapSection({ countryId = "1", itineraryId }: { countryId
       <div className="lg:col-span-7 relative w-full h-[460px] sm:h-[520px] bg-white rounded-3xl border border-zinc-200/40 p-4 shadow-sm overflow-hidden flex items-center justify-center z-10">
 
         {/* aspect-[3/2] box keeps the SVG/pins and any future swappable MAP_BACKGROUND_IMAGE in lockstep across viewports */}
+        {/* If container heights h-[460px] sm:h-[520px] change, these min widths must be re-derived */}
         <div
           ref={mapBoxRef}
           onClick={handleDebugMapClick}
           onPointerMove={handlePinDragMove}
           onPointerUp={() => draggingPinIndex !== null && handlePinDragEnd(draggingPinIndex)}
-          className={`aspect-[3/2] w-full max-h-full max-w-full relative flex items-center justify-center ${pinDebugEnabled ? "cursor-crosshair" : ""}`}
+          className={`aspect-[3/2] w-[min(100%,638px)] sm:w-[min(100%,726px)] relative flex items-center justify-center ${pinDebugEnabled ? "cursor-crosshair" : ""}`}
         >
         {/* Interactive SVG Map */}
         <svg
