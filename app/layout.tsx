@@ -24,8 +24,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Merveilles et Voyages — Golf & Voyage de Prestige au Maroc",
-  description: "Explore the beauty of Morocco with premium golf packages and exclusive curated experiences organized by Merveilles et Voyages.",
+  metadataBase: new URL("https://www.mevoyages.com"),
+  title: {
+    default: "Merveilles et Voyages — Golf & Voyage de Prestige au Maroc",
+    template: "%s | Merveilles et Voyages",
+  },
+  description:
+    "Explore the beauty of Morocco with premium golf packages and exclusive curated experiences organized by Merveilles et Voyages.",
+  applicationName: "Merveilles et Voyages",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: "Merveilles et Voyages",
+    url: "https://www.mevoyages.com",
+    title: "Merveilles et Voyages — Golf & Voyage de Prestige au Maroc",
+    description:
+      "Premium golf packages and exclusive curated experiences in Morocco by Merveilles et Voyages.",
+    locale: "fr_CA",
+    alternateLocale: ["en_CA"],
+  },
 };
 
 export default function RootLayout({
@@ -41,6 +58,29 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://cdn.mevoyages.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://cdn.mevoyages.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  name: "Merveilles et Voyages",
+                  alternateName: "MEV",
+                  url: "https://www.mevoyages.com",
+                },
+                {
+                  "@type": "TravelAgency",
+                  name: "Merveilles et Voyages",
+                  url: "https://www.mevoyages.com",
+                  logo: "https://www.mevoyages.com/images/logo.png",
+                  areaServed: ["MA", "CA"],
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <LangProvider>
