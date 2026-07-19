@@ -80,7 +80,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center">
             <img 
-              src="/Logo1%20Merveilles%20et%20Voyages.png" 
+              src="/images/logo.png" 
               className="h-24 md:h-28 w-auto object-contain hover:opacity-90 transition-opacity duration-300" 
               alt="Merveilles et Voyages Logo" 
             />
