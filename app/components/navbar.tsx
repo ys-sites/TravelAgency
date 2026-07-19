@@ -63,28 +63,30 @@ export default function Navbar() {
         </div>
 
         {/* Language Toggle FR / EN */}
-        <div className="flex items-center gap-1.5 bg-black/20 rounded-full p-1 border border-white/10">
+        <div className="flex items-center bg-black/40 rounded-full p-0.5 border border-white/10">
           <button
             id="lang-fr"
             onClick={() => setLang("FR")}
-            className={`flex h-8 w-8 items-center justify-center rounded-full text-[11px] font-bold transition-colors duration-300 ${
+            className={`flex h-[28px] sm:h-[32px] items-center gap-1 rounded-full px-3.5 sm:px-4 text-[10px] sm:text-[11px] font-bold transition-all duration-300 cursor-pointer ${
               lang === "FR"
-                ? "bg-brand-gold text-brand-black shadow-sm"
-                : "text-white/60 hover:text-white cursor-pointer"
+                ? "bg-white text-zinc-950 shadow-sm"
+                : "text-white/60 hover:text-white"
             }`}
           >
-            FR
+            <span>FR</span>
+            {lang === "FR" && <ChevronDown className="h-3 w-3 text-zinc-950" />}
           </button>
           <button
             id="lang-en"
             onClick={() => setLang("EN")}
-            className={`flex h-8 items-center gap-1 rounded-full px-3 lg:px-2.5 xl:px-4 text-[11px] font-bold transition-colors duration-300 ${
+            className={`flex h-[28px] sm:h-[32px] items-center gap-1 rounded-full px-3.5 sm:px-4 text-[10px] sm:text-[11px] font-bold transition-all duration-300 cursor-pointer ${
               lang === "EN"
-                ? "bg-white text-brand-black shadow-sm"
-                : "text-white/60 hover:text-white cursor-pointer"
+                ? "bg-white text-zinc-950 shadow-sm"
+                : "text-white/60 hover:text-white"
             }`}
           >
-            EN <ChevronDown className="h-3 w-3" />
+            <span>EN</span>
+            {lang === "EN" && <ChevronDown className="h-3 w-3 text-zinc-950" />}
           </button>
         </div>
       </div>
