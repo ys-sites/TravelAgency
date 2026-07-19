@@ -93,6 +93,12 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
 
   const handleLoadedData = () => setIsLoaded(true);
   const handleError = () => { setHasError(true); setIsLoaded(false); };
+  const handleTimeUpdate = () => {
+    const vid = videoRef.current;
+    if (vid && variant !== "hero" && vid.currentTime >= 60) {
+      vid.currentTime = 0;
+    }
+  };
 
   const aspectClass = variant === "hero" ? "h-full w-full" : "aspect-video w-full";
   const shouldRenderVideo = variant === "hero" || (isInView && !prefersReducedMotion && !hasError);
@@ -136,6 +142,7 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
           fetchpriority={variant === "hero" ? "high" : "auto"}
           onLoadedData={handleLoadedData}
           onError={handleError}
+          onTimeUpdate={variant === "hero" ? undefined : handleTimeUpdate}
         >
           {/* MP4 (H.264 — universal) */}
           <source src={mp4Src} type="video/mp4" />
