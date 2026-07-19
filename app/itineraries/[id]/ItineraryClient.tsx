@@ -372,7 +372,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                   ))}
                 </div>
               </div>
-              <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide uppercase leading-tight font-bold text-white drop-shadow-lg">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wide uppercase leading-[1.1] font-bold text-white drop-shadow-lg max-w-4xl text-balance">
                 {translate(theme.heroTitle, lang)}
               </h1>
               <p className="text-[14px] sm:text-[16px] leading-relaxed text-zinc-300 font-light max-w-lg">
