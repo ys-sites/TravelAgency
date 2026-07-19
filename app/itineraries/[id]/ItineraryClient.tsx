@@ -17,14 +17,8 @@ const getGalleryImages = (itineraryId: number) => {
   switch (itineraryId) {
     case 10:
       return [
-        "/images/rgdes_parcours_rouge_18.jpg",
-        "/images/rgdes_parcours_bleu_10.jpg",
-        "/images/rgdes_blue_course_5.jpg",
-        "/images/rgdes_rouge_5.jpg",
-        "/images/rgdes_bleu_7_tgp.jpg",
         "/images/rgdes_jaune_9.jpg",
         "/images/rgdes_bleu_9_matin.jpg",
-        "/images/rgdes_clubhouse.jpg",
         "/images/rgdes_img_3723.jpg",
         "/images/rgdes_img_3752.jpg",
         "/images/rgdes_paradise_flowers.jpg",
@@ -38,15 +32,9 @@ const getGalleryImages = (itineraryId: number) => {
     case 11:
       return [
         "/images/tgz_course_1.jpg",
-        "/images/tgz_course_2.jpg",
-        "/images/tgz_course_3.jpg",
-        "/images/tgz_course_4.jpg",
         "/images/tgz_course_aerial.jpg",
         "/images/tgz_course_hotel.jpg",
         "/images/tgz_course_ocean.jpg",
-        "/images/akenza_golf_1.jpg",
-        "/images/akenza_golf_2.jpg",
-        "/images/akenza_golf_3.jpg",
         "/images/hilton_taghazout_1.avif",
         "/images/hilton_taghazout_2.avif",
         "/images/hilton_taghazout_3.avif",
@@ -482,7 +470,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                   ))}
                 </div>
               </div>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide uppercase leading-tight font-bold text-white drop-shadow-lg">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wide uppercase leading-[1.1] font-bold text-white drop-shadow-lg max-w-4xl text-balance">
                 {translate(itinerary.title, lang)}
               </h1>
             </div>
@@ -576,6 +564,11 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                         </li>
                       ))}
                     </ul>
+                    <p className="text-[11px] md:text-xs text-zinc-500 font-light italic border-t border-zinc-200/60 pt-3">
+                      {lang === "FR"
+                        ? "D'autres dates de départ sont disponibles sur demande — notre conciergerie se fera un plaisir d'organiser un séjour parfaitement adapté à votre horaire. Contactez-nous pour planifier votre voyage."
+                        : "Additional departure dates are available upon request — our concierge team will gladly arrange a departure tailored to your schedule. Contact us to plan your trip."}
+                    </p>
                   </div>
                 )}
 
@@ -813,6 +806,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                 loop
                 playsInline
                 preload="auto"
+                onTimeUpdate={(e) => { const v = e.currentTarget; if (v.currentTime >= 60) v.currentTime = 0; }}
               />
             </div>
           )}
@@ -858,7 +852,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                       );
                     })()}
                     <span className="text-[9px] font-mono text-[#faf9f5] uppercase bg-[#8B2635] px-2 py-0.5 rounded shadow-sm">
-                      {lang === "FR" ? "Haut de Gamme" : "All Inclusive"}
+                      {itinerary.planLabel ? translate(itinerary.planLabel, lang) : (lang === "FR" ? "Haut de Gamme" : "All Inclusive")}
                     </span>
                   </div>
                 </div>
@@ -1048,8 +1042,8 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
               </h4>
               <p className="text-[10px] md:text-[11px] leading-relaxed text-zinc-500 italic font-light mb-4">
                 {lang === "FR"
-                  ? "Tarif calculé le 1 juin 2026, pour un séjour du 13 au 20 janvier 2027 (à destination). Les dates et composantes sont modifiables à votre guise. Les hôtels et activités proposés le sont à titre indicatif et peuvent être modifiés selon vos besoins."
-                  : "Rate calculated on June 1, 2026, for a stay from January 13 to 20, 2027 (at destination). Dates and components can be modified at your convenience. Proposed hotels and activities are indicative and can be modified according to your needs."
+                  ? "Tarif calculé le 1 juin 2026. Les dates et composantes sont modifiables à votre guise. Les hôtels et activités proposés le sont à titre indicatif et peuvent être modifiés selon vos besoins."
+                  : "Rate calculated on June 1, 2026. Dates and components can be modified at your convenience. Proposed hotels and activities are indicative and can be modified according to your needs."
                 }
               </p>
               <p className="text-[10px] md:text-[11px] leading-relaxed text-zinc-500 italic font-light mb-4">
