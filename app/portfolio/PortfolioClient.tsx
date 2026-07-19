@@ -72,13 +72,13 @@ export default function PortfolioClient() {
   const { lang, setLang } = useLang();
 
   return (
-    <div className="min-h-screen w-full bg-[#010906] bg-[radial-gradient(circle_at_75%_20%,rgba(197,168,128,0.22),transparent_55%),radial-gradient(circle_at_25%_80%,rgba(16,185,129,0.15),transparent_55%)] flex items-center justify-center font-sans antialiased text-white selection:bg-[#C5A880]/30 selection:text-white">
+    <div className="min-h-screen w-full bg-[#010704] bg-[radial-gradient(circle_at_75%_20%,rgba(13,148,136,0.22),transparent_55%),radial-gradient(circle_at_25%_80%,rgba(16,185,129,0.18),transparent_55%)] flex items-center justify-center font-sans antialiased text-white selection:bg-[#C5A880]/30 selection:text-white">
       <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-emerald-900/40 md:shadow-[0_0_60px_rgba(0,0,0,0.85),0_0_35px_rgba(16,185,129,0.05)] bg-[#020704]/95 overflow-hidden flex flex-col relative">
         
         {/* Glow Spots inside the card for dual-tone texture */}
-        <div className="absolute top-[-30px] right-[-60px] w-[220px] h-[220px] bg-[#C5A880]/18 rounded-full blur-[65px] pointer-events-none z-0" />
-        <div className="absolute top-[320px] left-[-90px] w-[240px] h-[240px] bg-[#10b981]/12 rounded-full blur-[70px] pointer-events-none z-0" />
-        <div className="absolute bottom-[80px] right-[-70px] w-[220px] h-[220px] bg-[#C5A880]/15 rounded-full blur-[65px] pointer-events-none z-0" />
+        <div className="absolute top-[-30px] right-[-60px] w-[220px] h-[220px] bg-[#059669]/18 rounded-full blur-[65px] pointer-events-none z-0" />
+        <div className="absolute top-[320px] left-[-90px] w-[240px] h-[240px] bg-[#10b981]/15 rounded-full blur-[70px] pointer-events-none z-0" />
+        <div className="absolute bottom-[80px] right-[-70px] w-[220px] h-[220px] bg-[#14b8a6]/15 rounded-full blur-[65px] pointer-events-none z-0" />
 
         {/* Cover Strip */}
         <div className="relative w-full h-[180px] flex-shrink-0 bg-[#020704] overflow-hidden z-10">

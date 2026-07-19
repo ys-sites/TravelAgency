@@ -144,6 +144,10 @@ export default function Footer() {
                 {translate(t.email, lang)}
               </a>
             </li>
+            <li className="pt-2 border-t border-white/5 text-white/40 leading-relaxed text-[11px]">
+              14050 rue des saules<br />
+              Mirabel, Québec J7N 3G3
+            </li>
           </ul>
         </div>
       </div>
