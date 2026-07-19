@@ -41,14 +41,14 @@ const QUICK_LINKS = [
 ];
 
 const TikTokIcon = () => (
-  <svg className="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24">
-    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.09-1.5-.77-.56-1.39-1.31-1.81-2.15-.08 3.51-.04 7.02-.04 10.53-.13 5.46-4.64 10.01-10.12 9.9-5.13-.1-9.5-4.22-9.31-9.45.17-4.58 3.85-8.5 8.43-8.73v4.05c-2.28.21-4.28 2.02-4.41 4.34-.17 2.87 2.19 5.43 5.08 5.25 2.53-.16 4.54-2.26 4.54-4.79.02-4.77.01-9.55.01-14.33-.01 0-.01-.01-.01-.02Z" />
+  <svg className="w-[18px] h-[18px] fill-none stroke-current stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
   </svg>
 );
 
 const FacebookIcon = () => (
-  <svg className="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24">
-    <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
+  <svg className="w-[18px] h-[18px] fill-none stroke-current stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
   </svg>
 );
 
@@ -72,16 +72,16 @@ export default function PortfolioClient() {
   const { lang, setLang } = useLang();
 
   return (
-    <div className="min-h-screen w-full bg-[#020b08] bg-[radial-gradient(circle_at_top_right,rgba(197,168,128,0.18),transparent_60%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.12),transparent_60%)] flex items-center justify-center font-sans antialiased text-white selection:bg-[#C5A880]/30 selection:text-white">
-      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-emerald-900/40 md:shadow-[0_0_50px_rgba(0,0,0,0.85),0_0_30px_rgba(16,185,129,0.04)] bg-[#020705]/95 overflow-hidden flex flex-col relative">
+    <div className="min-h-screen w-full bg-[#010906] bg-[radial-gradient(circle_at_75%_20%,rgba(197,168,128,0.22),transparent_55%),radial-gradient(circle_at_25%_80%,rgba(16,185,129,0.15),transparent_55%)] flex items-center justify-center font-sans antialiased text-white selection:bg-[#C5A880]/30 selection:text-white">
+      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-emerald-900/40 md:shadow-[0_0_60px_rgba(0,0,0,0.85),0_0_35px_rgba(16,185,129,0.05)] bg-[#020704]/95 overflow-hidden flex flex-col relative">
         
         {/* Glow Spots inside the card for dual-tone texture */}
-        <div className="absolute top-[-40px] right-[-80px] w-[260px] h-[260px] bg-[#C5A880]/15 rounded-full blur-[80px] pointer-events-none z-0" />
-        <div className="absolute bottom-[240px] left-[-100px] w-[260px] h-[260px] bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none z-0" />
-        <div className="absolute bottom-[-30px] right-[-80px] w-[240px] h-[240px] bg-[#C5A880]/12 rounded-full blur-[70px] pointer-events-none z-0" />
+        <div className="absolute top-[-30px] right-[-60px] w-[220px] h-[220px] bg-[#C5A880]/18 rounded-full blur-[65px] pointer-events-none z-0" />
+        <div className="absolute top-[320px] left-[-90px] w-[240px] h-[240px] bg-[#10b981]/12 rounded-full blur-[70px] pointer-events-none z-0" />
+        <div className="absolute bottom-[80px] right-[-70px] w-[220px] h-[220px] bg-[#C5A880]/15 rounded-full blur-[65px] pointer-events-none z-0" />
 
         {/* Cover Strip */}
-        <div className="relative w-full h-[180px] flex-shrink-0 bg-[#020705] overflow-hidden z-10">
+        <div className="relative w-full h-[180px] flex-shrink-0 bg-[#020704] overflow-hidden z-10">
           <video
             className="absolute inset-0 w-full h-full object-cover object-center opacity-65 pointer-events-none"
             autoPlay
@@ -94,7 +94,7 @@ export default function PortfolioClient() {
             <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
             <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020705]/40 to-[#020705] z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020704]/40 to-[#020704] z-10" />
         </div>
 
         {/* Animated Contents Column */}
@@ -102,7 +102,7 @@ export default function PortfolioClient() {
           
           {/* Logo & Header Info */}
           <motion.div {...premiumFadeUp(0)} className="flex flex-col items-center text-center space-y-3">
-            <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#C5A880] bg-[#020705] p-1 flex items-center justify-center shadow-lg">
+            <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#C5A880] bg-[#020704] p-1 flex items-center justify-center shadow-lg">
               <img 
                 src="/images/logo.png" 
                 alt="Merveilles et Voyages Logo" 
@@ -114,7 +114,7 @@ export default function PortfolioClient() {
               <h1 className="font-serif text-2xl font-bold tracking-wide text-white">
                 Merveilles et Voyages
               </h1>
-              <p className="text-[#C5A880] font-mono text-[9px] sm:text-[10px] tracking-widest uppercase font-medium">
+              <p className="text-[#C5A880] font-mono text-[9px] sm:text-[10px] tracking-[0.2em] uppercase font-medium">
                 {lang === "FR" ? "Golf & Voyages de Prestige — Maroc" : "Prestige Golf & Travel — Morocco"}
               </p>
               <p className="text-zinc-400 text-xs font-light">
@@ -137,7 +137,7 @@ export default function PortfolioClient() {
               href={SOCIALS.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/20 hover:border-[#C5A880] hover:bg-white/5 text-white font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all hover:scale-[1.03] active:scale-95 duration-300"
+              className="border border-[#C5A880]/30 bg-[#C5A880]/5 hover:bg-[#C5A880]/10 text-white font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all hover:scale-[1.03] active:scale-95 duration-300"
             >
               {lang === "FR" ? "Visiter le site" : "Visit website"}
             </a>
@@ -173,7 +173,7 @@ export default function PortfolioClient() {
               href={`tel:${PHONE}`}
               className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
             >
-              <Phone className="w-[18px] h-[18px]" />
+              <Phone className="w-[18px] h-[18px] stroke-2" />
             </a>
           </motion.div>
 
@@ -191,7 +191,7 @@ export default function PortfolioClient() {
 
           {/* Signature Packages */}
           <div className="mt-8 space-y-4">
-            <motion.h3 {...premiumFadeUp(0.32)} className="text-[#C5A880] font-mono text-[10px] tracking-widest uppercase mb-1">
+            <motion.h3 {...premiumFadeUp(0.32)} className="text-[#C5A880] font-mono text-[10px] tracking-[0.15em] font-bold uppercase mb-1">
               {lang === "FR" ? "Nos Signatures" : "Signature Journeys"}
             </motion.h3>
             <div className="space-y-3">
@@ -202,7 +202,7 @@ export default function PortfolioClient() {
                   <motion.div key={id} {...premiumFadeUp(0.38 + index * 0.08)}>
                     <Link
                       href={`/itineraries/${id}`}
-                      className="bg-[#071710]/40 border border-emerald-500/10 hover:border-[#C5A880]/30 rounded-2xl p-3 flex items-center gap-3.5 transition-all hover:scale-[1.02] duration-300 group"
+                      className="bg-[#04120b]/60 backdrop-blur-xl border border-emerald-500/15 hover:border-[#C5A880]/40 rounded-2xl p-3 flex items-center gap-3.5 transition-all hover:scale-[1.02] duration-300 group shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_4px_20px_rgba(0,0,0,0.4)]"
                     >
                       <div className="w-[72px] h-[72px] rounded-xl overflow-hidden flex-shrink-0 bg-zinc-950">
                         <img
@@ -234,7 +234,7 @@ export default function PortfolioClient() {
               <motion.div key={idx} {...premiumFadeUp(0.62 + idx * 0.06)}>
                 <Link
                   href={link.url}
-                  className="block w-full bg-[#071710]/20 hover:bg-[#071710]/40 border border-emerald-500/10 hover:border-[#C5A880] rounded-full py-3.5 text-center text-sm font-medium text-white transition-all hover:scale-[1.02] duration-300"
+                  className="block w-full bg-[#04120b]/30 hover:bg-[#04120b]/60 border border-emerald-500/10 hover:border-[#C5A880] rounded-full py-3.5 text-center text-sm font-medium text-white transition-all hover:scale-[1.02] duration-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]"
                 >
                   {translate(link.label, lang)}
                 </Link>
