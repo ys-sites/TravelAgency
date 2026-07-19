@@ -71,6 +71,7 @@ export interface ItineraryDetail {
   activities: ActivityDetail[];
   dates?: { FR: string[]; EN: string[] };
   originalCost?: { FR: string; EN: string };
+  planLabel?: { FR: string; EN: string };
 }
 
 export interface MapPinDetail {
@@ -115,7 +116,7 @@ export const toursList: TourCard[] = [
     },
     duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Tout Inclus", EN: "All Inclusive" },
+    meals: { FR: "BB ou Demi-pension", EN: "BB or Half Board" },
     oldPrice: "",
     price: { FR: "Sur demande", EN: "On request" },
     tag: "golf",
@@ -278,7 +279,7 @@ export const toursList: TourCard[] = [
       EN: "Our grand 14-night tour across Morocco: Chefchaouen, Tangier, Fes, Merzouga desert, Marrakech, and Essaouira."
     },
     duration: { FR: "15 jours / 14 nuits", EN: "15 days / 14 nights" },
-    flight: { FR: "Vol optionnel", EN: "Flight optional" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Demi-pension", EN: "Half Board" },
     oldPrice: "",
     price: { FR: "Sur demande", EN: "On request" },
@@ -318,7 +319,7 @@ export const toursList: TourCard[] = [
       EN: "A magnificent 7-night tour covering Marrakech, Beni Mellal, Fes, Meknes, Rabat, and Casablanca with cultural visits included."
     },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    flight: { FR: "Vol optionnel", EN: "Flight optional" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Demi-pension", EN: "Half Board" },
     oldPrice: "",
     price: { FR: "Sur demande", EN: "On request" },
@@ -358,7 +359,7 @@ export const dealsList: DealCard[] = [
     title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
-    meals: { FR: "Tout Inclus", EN: "All Inclusive" },
+    meals: { FR: "BB ou Demi-pension", EN: "BB or Half Board" },
     inclusions: { FR: "Parcours légendaires Rouge (18T) & Bleu (18T), séjour au Ritz-Carlton", EN: "Legendary Red (18H) & Blue (18H) courses, stay at Ritz-Carlton" },
     oldPrice: "",
     newPrice: { FR: "Sur demande", EN: "On request" },
@@ -385,8 +386,8 @@ export const dealsList: DealCard[] = [
     tag: "golf",
     city: { FR: "Agadir", EN: "Agadir" },
     promoText: {
-      FR: "Tarif spécial — Vue piscine & vol Air Transat inclus",
-      EN: "Special Rate — Pool View & Air Transat Included"
+      FR: "Tarif spécial — Vue piscine & vol inclus",
+      EN: "Special Rate — Pool View & Flight Included"
     }
   },
   {
@@ -405,8 +406,8 @@ export const dealsList: DealCard[] = [
     tag: "golf",
     city: { FR: "Agadir", EN: "Agadir" },
     promoText: {
-      FR: "Séjour de luxe — Vue jardin & vol Air Transat inclus",
-      EN: "Luxury Stay — Garden View & Air Transat Included"
+      FR: "Séjour de luxe — Vue jardin & vol inclus",
+      EN: "Luxury Stay — Garden View & Flight Included"
     }
   },
   {
@@ -445,8 +446,8 @@ export const dealsList: DealCard[] = [
     tag: "golf",
     city: { FR: "Marrakech", EN: "Marrakech" },
     promoText: {
-      FR: "Golf & Riad Marrakech — Vol direct Air Transat inclus",
-      EN: "Marrakech Golf & Riad — Direct Air Transat flight included"
+      FR: "Golf & Riad Marrakech — Vol direct inclus",
+      EN: "Marrakech Golf & Riad — Direct flight included"
     }
   },
   {
@@ -465,8 +466,8 @@ export const dealsList: DealCard[] = [
     tag: "golf",
     city: { FR: "Marrakech", EN: "Marrakech" },
     promoText: {
-      FR: "Évasion de luxe Marrakech — Vol direct Air Transat inclus",
-      EN: "Luxury Escape Marrakech — Direct Air Transat flight included"
+      FR: "Évasion de luxe Marrakech — Vol direct inclus",
+      EN: "Luxury Escape Marrakech — Direct flight included"
     }
   },
   {
@@ -485,8 +486,8 @@ export const dealsList: DealCard[] = [
     tag: "golf",
     city: { FR: "Marrakech", EN: "Marrakech" },
     promoText: {
-      FR: "Séjour court Marrakech — Vol direct Air Transat inclus",
-      EN: "Short Stay Marrakech — Direct Air Transat flight included"
+      FR: "Séjour court Marrakech — Vol direct inclus",
+      EN: "Short Stay Marrakech — Direct flight included"
     }
   },
   {
@@ -523,8 +524,8 @@ export const dealsList: DealCard[] = [
     tag: "tour",
     city: { FR: "Marrakech & Atlas", EN: "Marrakech & Atlas" },
     promoText: {
-      FR: "Vol direct Air Transat inclus",
-      EN: "Direct Air Transat Flight Included"
+      FR: "Vol direct inclus",
+      EN: "Direct Flight Included"
     }
   }
 ];
@@ -532,6 +533,7 @@ export const dealsList: DealCard[] = [
 export const itinerariesData: Record<string, ItineraryDetail> = {
   "10": {
     id: 10,
+    planLabel: { FR: "BB / Demi-pension", EN: "BB / HB Plan" },
     image: "/images/rgdes_parcours_rouge_18.jpg",
     contentImage: "/images/rgdes_parcours_rouge_09_17.jpg",
     title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
@@ -584,8 +586,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
       FR: [
         "Vols internationaux aller-retour depuis Montréal",
         "Hébergement 5★ de luxe au Ritz-Carlton Rabat Dar Es Salam",
-        "Formule Tout Inclus",
-        "Green fees pour les parcours Rouge, Bleu et Vert",
+        "Formule BB ou HB (Petit-déjeuner ou Demi-pension)",
+        "Green fees",
         "Voiturette électrique partagée et buggy de practice inclus",
         "Accès complet au Driving Range, Chipping & Putting greens",
         "Transferts privés aéroport ↔ hôtel",
@@ -594,8 +596,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
       EN: [
         "Round-trip international flights from Montreal",
         "Luxury 5★ accommodation at The Ritz-Carlton Rabat Dar Es Salam",
-        "All-Inclusive plan",
-        "Green fees on the Red, Blue, and Green courses",
+        "BB or HB plan (Bed & Breakfast or Half Board)",
+        "Green fees",
         "Shared electric golf cart and practice buggy included",
         "Full access to Driving Range, Chipping & Putting greens",
         "Private airport ↔ hotel transfers",
@@ -673,14 +675,14 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     // TODO(JAY): confirm anchor price with client
     originalCost: { FR: "À partir de 4 079\u00A0$", EN: "Starting from 4,079" },
     overview: {
-      FR: "Offrez-vous un séjour de golf inoubliable à Agadir en résidant au prestigieux Hilton Taghazout Bay Beach Resort 5★. Ce forfait complet comprend les vols directs aller-retour de Montréal à Agadir avec Air Transat. Vous profiterez de 7 nuits d'hébergement en chambre double vue piscine, avec formule petit-déjeuner ou option demi-pension. Jouez 4 rondes de golf de classe mondiale sur les plus beaux parcours de la région : Tazegzout Golf (Championship face à l'océan), Golf du Soleil et Golf Les Dunes. Une voiturette électrique partagée est comprise pour chaque ronde.",
-      EN: "Indulge in an unforgettable golf trip in Agadir, staying at the prestigious 5★ Hilton Taghazout Bay Beach Resort. This complete package includes direct round-trip flights from Montreal to Agadir with Air Transat. You'll enjoy 7 nights of accommodation in a double occupancy room with pool view, on a daily breakfast (BB) or optional half-board (HB) basis. Play 4 rounds of golf on Agadir's premier courses: Tazegzout Golf (oceanfront Championship course), Golf du Soleil, and Golf Les Dunes. A shared electric cart is included for each round."
+      FR: "Offrez-vous un séjour de golf inoubliable à Agadir en résidant au prestigieux Hilton Taghazout Bay Beach Resort 5★. Ce forfait complet comprend les vols directs aller-retour de Montréal à Agadir. Vous profiterez de 7 nuits d'hébergement en chambre double vue piscine, avec formule petit-déjeuner ou option demi-pension. Jouez 4 rondes de golf de classe mondiale sur les plus beaux parcours de la région : Tazegzout Golf (Championship face à l'océan), Golf du Soleil et Golf Les Dunes. Une voiturette électrique partagée est comprise pour chaque ronde.",
+      EN: "Indulge in an unforgettable golf trip in Agadir, staying at the prestigious 5★ Hilton Taghazout Bay Beach Resort. This complete package includes direct round-trip flights from Montreal to Agadir. You'll enjoy 7 nights of accommodation in a double occupancy room with pool view, on a daily breakfast (BB) or optional half-board (HB) basis. Play 4 rounds of golf on Agadir's premier courses: Tazegzout Golf (oceanfront Championship course), Golf du Soleil, and Golf Les Dunes. A shared electric cart is included for each round."
     },
     timeline: [
       {
         day: 1,
         title: { FR: "Vol Montréal – Agadir & Installation", EN: "Montreal – Agadir Flight & Check-In" },
-        desc: { FR: "Vol direct avec Air Transat. Accueil à l'aéroport d'Agadir-Al Massira, transfert privé et installation au Hilton Taghazout Bay 5★. Soirée détente.", EN: "Direct flight with Air Transat. Welcome at Agadir-Al Massira Airport, private transfer and check-in at 5★ Hilton Taghazout Bay. Relaxing evening." }
+        desc: { FR: "Vol direct. Accueil à l'aéroport d'Agadir-Al Massira, transfert privé et installation au Hilton Taghazout Bay 5★. Soirée détente.", EN: "Direct flight. Welcome at Agadir-Al Massira Airport, private transfer and check-in at 5★ Hilton Taghazout Bay. Relaxing evening." }
       },
       {
         day: 2,
@@ -720,7 +722,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
-        "Vols directs aller-retour Montréal – Agadir avec Air Transat (1er bagage enregistré inclus)",
+        "Vols directs aller-retour Montréal – Agadir (1er bagage enregistré inclus)",
         "7 nuits au Hilton Taghazout Hôtel 5★ en Chambre double Vue Piscine",
         "Petit-déjeuner quotidien ou option Demi-pension (dîner 3 services, vin, eau, café/thé)",
         "4 rondes de golf sur Tazegzout, Golf du Soleil et Golf Les Dunes",
@@ -729,7 +731,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Toutes les taxes de vol et contribution au FICAV incluse"
       ],
       EN: [
-        "Direct round-trip flights Montreal – Agadir with Air Transat (first checked bag included)",
+        "Direct round-trip flights Montreal – Agadir (first checked bag included)",
         "7 nights at the 5★ Hilton Taghazout Hotel in a double occupancy Pool View Room",
         "Daily breakfast (BB) or Half Board (HB) with 3-course dinner, wine, water, coffee/tea",
         "4 rounds of golf on Tazegzout, Golf du Soleil, and Golf Les Dunes",
@@ -829,14 +831,14 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     // TODO(JAY): confirm anchor price with client
     originalCost: { FR: "À partir de 4 455\u00A0$", EN: "Starting from 4,455" },
     overview: {
-      FR: "Découvrez le summum du confort tout compris au Pickalbatros White Beach Resort 5★ (Adults Only) à Agadir. Ce forfait exclusif de 8 jours comprend des vols directs Montréal – Agadir avec Air Transat. Séjournez 7 nuits en Chambre Vue Jardin de luxe avec pension tout compris haut de gamme. Profitez de 4 rondes de golf sur les parcours incontournables d'Agadir (Tazegzout Golf, Golf du Soleil et Golf Les Dunes) avec voiturette électrique partagée incluse. Un voyage d'exception alliant relaxation absolue en bord de mer et golf passionnant.",
-      EN: "Discover the pinnacle of adults-only all-inclusive comfort at the 5★ Pickalbatros White Beach Resort in Agadir. This exclusive 8-day package features direct flights from Montreal to Agadir with Air Transat. Stay 7 nights in a luxury Garden View Room with premium all-inclusive boarding. Enjoy 4 rounds of golf on Agadir's premier courses (Tazegzout Golf, Golf du Soleil, and Golf Les Dunes) with a shared electric cart included. A perfect blend of absolute seaside relaxation and exceptional golf."
+      FR: "Découvrez le summum du confort tout compris au Pickalbatros White Beach Resort 5★ (Adults Only) à Agadir. Ce forfait exclusif de 8 jours comprend des vols directs Montréal – Agadir. Séjournez 7 nuits en Chambre Vue Jardin de luxe avec pension tout compris haut de gamme. Profitez de 4 rondes de golf sur les parcours incontournables d'Agadir (Tazegzout Golf, Golf du Soleil et Golf Les Dunes) avec voiturette électrique partagée incluse. Un voyage d'exception alliant relaxation absolue en bord de mer et golf passionnant.",
+      EN: "Discover the pinnacle of adults-only all-inclusive comfort at the 5★ Pickalbatros White Beach Resort in Agadir. This exclusive 8-day package features direct flights from Montreal to Agadir. Stay 7 nights in a luxury Garden View Room with premium all-inclusive boarding. Enjoy 4 rounds of golf on Agadir's premier courses (Tazegzout Golf, Golf du Soleil, and Golf Les Dunes) with a shared electric cart included. A perfect blend of absolute seaside relaxation and exceptional golf."
     },
     timeline: [
       {
         day: 1,
         title: { FR: "Vol Montréal – Agadir & Accueil VIP", EN: "Montreal – Agadir Flight & VIP Welcome" },
-        desc: { FR: "Vol direct avec Air Transat. Transfert privé et installation au White Beach Resort 5★. Dîner gastronomique inclus.", EN: "Direct flight with Air Transat. Private transfer and check-in at 5★ White Beach Resort. Gourmet dinner included." }
+        desc: { FR: "Vol direct. Transfert privé et installation au White Beach Resort 5★. Dîner gastronomique inclus.", EN: "Direct flight. Private transfer and check-in at 5★ White Beach Resort. Gourmet dinner included." }
       },
       {
         day: 2,
@@ -876,7 +878,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
-        "Vols directs aller-retour Montréal – Agadir avec Air Transat (1er bagage enregistré inclus)",
+        "Vols directs aller-retour Montréal – Agadir (1er bagage enregistré inclus)",
         "7 nuits à l'hôtel 5★ White Beach Resort en Chambre double Vue Jardin",
         "Pension Tout Compris (All-Inclusive) incluant repas, collations et boissons",
         "4 rondes de golf sur Tazegzout, Golf du Soleil et Golf Les Dunes",
@@ -885,7 +887,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Toutes les taxes de vol et contribution au FICAV incluse"
       ],
       EN: [
-        "Direct round-trip flights Montreal – Agadir with Air Transat (first checked bag included)",
+        "Direct round-trip flights Montreal – Agadir (first checked bag included)",
         "7 nights at the 5★ White Beach Resort in a double occupancy Garden View Room",
         "Premium All-Inclusive boarding including meals, snacks, and drinks",
         "4 rounds of golf on Tazegzout, Golf du Soleil, and Golf Les Dunes",
@@ -1098,11 +1100,11 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     // TODO(JAY): confirm anchor price with client
     originalCost: { FR: "À partir de 6 099 $", EN: "Starting from 6,099" },
     overview: {
-      FR: "Séjour de golf tout inclus ultime de 10 nuits au somptueux Hôtel du Golf 5★ à Marrakech. Ce forfait de prestige comprend les vols directs Montréal – Marrakech avec Air Transat (1er bagage inclus), l'hébergement tout inclus de luxe et 6 rondes de golf de classe mondiale sur les plus beaux parcours de Marrakech (Royal Golf, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika) avec voiturette électrique.",
-      EN: "Ultimate 10-night all-inclusive golf escape at the prestigious 5★ Hotel du Golf in Marrakech. This luxury package includes direct flights from Montreal to Marrakech with Air Transat (1st bag included), premium all-inclusive boarding, and 6 rounds of world-class golf on Marrakech's top courses (Royal Golf, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika) with electric buggy."
+      FR: "Séjour de golf tout inclus ultime de 10 nuits au somptueux Hôtel du Golf 5★ à Marrakech. Ce forfait de prestige comprend les vols directs Montréal – Marrakech (1er bagage inclus), l'hébergement tout inclus de luxe et 6 rondes de golf de classe mondiale sur les plus beaux parcours de Marrakech (Royal Golf, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika) avec voiturette électrique.",
+      EN: "Ultimate 10-night all-inclusive golf escape at the prestigious 5★ Hotel du Golf in Marrakech. This luxury package includes direct flights from Montreal to Marrakech (1st bag included), premium all-inclusive boarding, and 6 rounds of world-class golf on Marrakech's top courses (Royal Golf, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika) with electric buggy."
     },
     timeline: [
-      { day: 1, title: { FR: "Vol Montréal – Marrakech & Installation", EN: "Montreal – Marrakech Flight & Arrival" }, desc: { FR: "Vol direct Air Transat. Transfert privé et installation à l'Hôtel du Golf 5★ en formule Tout Inclus.", EN: "Direct flight with Air Transat. Private transfer and check-in at 5★ Hotel du Golf, All-Inclusive basis." } },
+      { day: 1, title: { FR: "Vol Montréal – Marrakech & Installation", EN: "Montreal – Marrakech Flight & Arrival" }, desc: { FR: "Vol direct. Transfert privé et installation à l'Hôtel du Golf 5★ en formule Tout Inclus.", EN: "Direct flight. Private transfer and check-in at 5★ Hotel du Golf, All-Inclusive basis." } },
       { day: 2, title: { FR: "Royal Golf de Marrakech (18 Trous)", EN: "Royal Golf de Marrakech (18 Holes)" }, desc: { FR: "Ronde d'ouverture sur l'historique Royal Golf de Marrakech, apprécié pour ses allées bordées de palmiers.", EN: "Opening round on the historic Royal Golf de Marrakech, beloved for its palm-lined fairways." } },
       { day: 3, title: { FR: "Golf Amelkis (18 Trous)", EN: "Golf Amelkis (18 Holes)" }, desc: { FR: "Deuxième ronde au Golf Amelkis, tracé spectaculaire dessiné par Cabell B. Robinson.", EN: "Second round at Golf Amelkis, a spectacular layout designed by Cabell B. Robinson." } },
       { day: 4, title: { FR: "Détente au Spa & Exploration", EN: "Spa Relaxation & Exploration" }, desc: { FR: "Journée libre. Détendez-vous au spa du resort ou explorez les magnifiques jardins de l'hôtel.", EN: "Free day. Relax at the resort spa or explore the hotel's gorgeous gardens." } },
@@ -1116,7 +1118,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
-        "Vols directs aller-retour Montréal – Marrakech avec Air Transat (1er bagage inclus)",
+        "Vols directs aller-retour Montréal – Marrakech (1er bagage inclus)",
         "10 nuits à l'Hôtel du Golf 5★ en Chambre double occupancy",
         "Formule Tout Inclus (All Inclusive) incluant repas, collations et boissons à volonté",
         "6 rondes de golf de championnat à Marrakech (Royal, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika)",
@@ -1126,7 +1128,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Contribution FICAV incluse"
       ],
       EN: [
-        "Direct round-trip flights Montreal – Marrakech with Air Transat (first checked bag included)",
+        "Direct round-trip flights Montreal – Marrakech (first checked bag included)",
         "10 nights at the 5★ Hotel du Golf in a double occupancy room",
         "All Inclusive plan including meals, snacks, and unlimited drinks",
         "6 rounds of championship golf in Marrakech (Royal, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika)",
@@ -1176,7 +1178,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
           FR: "Élégant hôtel 5★ situé au cœur du circuit de Palmeraie, offrant une architecture contemporaine, de superbes piscines et des options gastronomiques exceptionnelles.",
           EN: "Elegant 5★ hotel set in the heart of the Palmeraie circuit, offering contemporary architecture, superb pools, and exceptional dining options."
         },
-        link: "https://www.rotana.com/"
+        link: "https://www.pickalbatros.com/hotel-du-golf-palmeraie"
       }
     ],
     activities: [
@@ -1213,11 +1215,11 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     // TODO(JAY): confirm anchor price with client
     originalCost: { FR: "À partir de 4 869 $", EN: "Starting from 4,869" },
     overview: {
-      FR: "Découvrez Marrakech au Jaal Riad Resort 5★ (Adults Only). Ce forfait de golf de prestige de 10 nuits comprend des vols directs Montréal – Marrakech avec Air Transat, l'hébergement haut de gamme en formule petit-déjeuner (BB) ou pension complète (FB), et 6 rondes de golf sur les parcours emblématiques de Marrakech avec voiturette.",
-      EN: "Discover Marrakech staying at the 5★ Jaal Riad Resort (Adults Only). This premium 10-night golf package features direct flights from Montreal to Marrakech with Air Transat, upscale accommodation with daily breakfast (BB) or full board (FB) option, and 6 rounds of golf on Marrakech's iconic courses with shared buggy."
+      FR: "Découvrez Marrakech au Jaal Riad Resort 5★ (Adults Only). Ce forfait de golf de prestige de 10 nuits comprend des vols directs Montréal – Marrakech, l'hébergement haut de gamme en formule petit-déjeuner (BB) ou pension complète (FB), et 6 rondes de golf sur les parcours emblématiques de Marrakech avec voiturette.",
+      EN: "Discover Marrakech staying at the 5★ Jaal Riad Resort (Adults Only). This premium 10-night golf package features direct flights from Montreal to Marrakech, upscale accommodation with daily breakfast (BB) or full board (FB) option, and 6 rounds of golf on Marrakech's iconic courses with shared buggy."
     },
     timeline: [
-      { day: 1, title: { FR: "Vol Montréal – Marrakech & Installation", EN: "Montreal – Marrakech Flight & Arrival" }, desc: { FR: "Vol direct avec Air Transat. Accueil VIP, transfert privé et installation au Jaal Riad Hôtel 5★.", EN: "Direct flight with Air Transat. VIP welcome, private transfer and check-in at 5★ Jaal Riad Hotel." } },
+      { day: 1, title: { FR: "Vol Montréal – Marrakech & Installation", EN: "Montreal – Marrakech Flight & Arrival" }, desc: { FR: "Vol direct. Accueil VIP, transfert privé et installation au Jaal Riad Hôtel 5★.", EN: "Direct flight. VIP welcome, private transfer and check-in at 5★ Jaal Riad Hotel." } },
       { day: 2, title: { FR: "Golf du Soleil / Royal Golf (18 Trous)", EN: "Royal Golf de Marrakech (18 Holes)" }, desc: { FR: "Première ronde sur le parcours historique du Royal Golf de Marrakech.", EN: "First round on the historical course of Royal Golf de Marrakech." } },
       { day: 3, title: { FR: "Golf Amelkis (18 Trous)", EN: "Golf Amelkis (18 Holes)" }, desc: { FR: "Deuxième ronde au Golf Amelkis, parcours exigeant bordé d'arbres.", EN: "Second round at Golf Amelkis, a challenging tree-lined course." } },
       { day: 4, title: { FR: "Spa & Détente Adults Only", EN: "Spa & Relaxation Adults Only" }, desc: { FR: "Journée libre. Profitez de l'atmosphère calme et reposante du Jaal Riad, réservé aux adultes.", EN: "Free day. Enjoy the quiet and restful adults-only atmosphere of Jaal Riad." } },
@@ -1231,7 +1233,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
-        "Vols directs aller-retour Montréal – Marrakech avec Air Transat (1er bagage inclus)",
+        "Vols directs aller-retour Montréal – Marrakech (1er bagage inclus)",
         "10 nuits au Jaal Riad Hôtel 5★ en Chambre double double occupancy (Adults Only)",
         "Formule Petit-déjeuner (BB) ou pension complète (Full Board) selon option",
         "6 rondes de golf (Royal, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika)",
@@ -1241,7 +1243,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Contribution FICAV incluse"
       ],
       EN: [
-        "Direct round-trip flights Montreal – Marrakech with Air Transat (first checked bag included)",
+        "Direct round-trip flights Montreal – Marrakech (first checked bag included)",
         "10 nights at the 5★ Jaal Riad Hotel in a double occupancy room (Adults Only)",
         "Daily breakfast (BB) or optional Full Board (FB)",
         "6 rounds of golf (Royal, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika)",
@@ -1328,11 +1330,11 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     // TODO(JAY): confirm anchor price with client
     originalCost: { FR: "À partir de 4 179 $", EN: "Starting from 4,179" },
     overview: {
-      FR: "Escapade golf de 7 nuits à Marrakech au Jaal Riad Resort 5★ (Adults Only). Ce forfait comprend des vols directs Montréal – Marrakech avec Air Transat, l'hébergement de luxe en formule petit-déjeuner (BB) ou pension complète (FB), et 4 rondes de golf de championnat sur les plus beaux parcours de Marrakech avec voiturette électrique partagée.",
-      EN: "7-night golf getaway to Marrakech staying at the 5★ Jaal Riad Resort (Adults Only). This package features direct flights from Montreal to Marrakech with Air Transat, luxury accommodation with daily breakfast (BB) or full board (FB), and 4 rounds of championship golf on Marrakech's premier courses with shared buggy."
+      FR: "Escapade golf de 7 nuits à Marrakech au Jaal Riad Resort 5★ (Adults Only). Ce forfait comprend des vols directs Montréal – Marrakech, l'hébergement de luxe en formule petit-déjeuner (BB) ou pension complète (FB), et 4 rondes de golf de championnat sur les plus beaux parcours de Marrakech avec voiturette électrique partagée.",
+      EN: "7-night golf getaway to Marrakech staying at the 5★ Jaal Riad Resort (Adults Only). This package features direct flights from Montreal to Marrakech, luxury accommodation with daily breakfast (BB) or full board (FB), and 4 rounds of championship golf on Marrakech's premier courses with shared buggy."
     },
     timeline: [
-      { day: 1, title: { FR: "Vol Montréal – Marrakech & Installation", EN: "Montreal – Marrakech Flight & Arrival" }, desc: { FR: "Vol direct avec Air Transat. Transfert privé et installation au Jaal Riad Hôtel 5★.", EN: "Direct flight with Air Transat. Private transfer and check-in at 5★ Jaal Riad Hotel." } },
+      { day: 1, title: { FR: "Vol Montréal – Marrakech & Installation", EN: "Montreal – Marrakech Flight & Arrival" }, desc: { FR: "Vol direct. Transfert privé et installation au Jaal Riad Hôtel 5★.", EN: "Direct flight. Private transfer and check-in at 5★ Jaal Riad Hotel." } },
       { day: 2, title: { FR: "Royal Golf de Marrakech (18 Trous)", EN: "Royal Golf de Marrakech (18 Holes)" }, desc: { FR: "Première ronde sur le parcours historique du Royal Golf de Marrakech.", EN: "First round on the historical course of Royal Golf de Marrakech." } },
       { day: 3, title: { FR: "Golf Amelkis (18 Trous)", EN: "Golf Amelkis (18 Holes)" }, desc: { FR: "Deuxième ronde au Golf Amelkis, parcours de championnat dessiné par Cabell B. Robinson.", EN: "Second round at Golf Amelkis, a championship course designed by Cabell B. Robinson." } },
       { day: 4, title: { FR: "Détente au Spa & Piscine", EN: "Spa Relaxation & Pool" }, desc: { FR: "Journée libre pour relaxer près de la piscine ou réserver un hammam traditionnel.", EN: "Free day to relax near the pool or book a traditional hammam." } },
@@ -1343,7 +1345,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
-        "Vols directs aller-retour Montréal – Marrakech avec Air Transat (1er bagage inclus)",
+        "Vols directs aller-retour Montréal – Marrakech (1er bagage inclus)",
         "7 nuits au Jaal Riad Hôtel 5★ en Chambre double double occupancy (Adults Only)",
         "Formule Petit-déjeuner (BB) ou pension complète (Full Board) selon option",
         "4 rondes de golf (Royal, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika)",
@@ -1353,7 +1355,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Contribution FICAV incluse"
       ],
       EN: [
-        "Direct round-trip flights Montreal – Marrakech with Air Transat (first checked bag included)",
+        "Direct round-trip flights Montreal – Marrakech (first checked bag included)",
         "7 nights at the 5★ Jaal Riad Hotel in a double occupancy room (Adults Only)",
         "Daily breakfast (BB) or optional Full Board (FB)",
         "4 rounds of golf (Royal, Amelkis, Noria, Akenza, Maaden, Assoufid, Palm Ourika)",
@@ -1545,6 +1547,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
+        "Vols internationaux aller-retour depuis Montréal",
         "14 nuits dans des riads et hôtels de luxe 4★/5★ et bivouac de luxe",
         "Formule Demi-pension (petit-déjeuner quotidien et dîners)",
         "Transports privés climatisés avec chauffeur professionnel",
@@ -1555,6 +1558,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Contribution FICAV incluse"
       ],
       EN: [
+        "Round-trip international flights from Montreal",
         "14 nights in premium 4★/5★ hotels, riads, and luxury desert camp",
         "Half-board plan (daily breakfast and dinners)",
         "Private air-conditioned transport with professional driver",
@@ -1567,14 +1571,12 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     exclusions: {
       FR: [
-        "Vols internationaux",
         "Assurance voyage",
         "Déjeuners et boissons non spécifiés",
         "Pourboires et dépenses personnelles",
         "Activités optionnelles"
       ],
       EN: [
-        "International flights",
         "Travel insurance",
         "Lunches and beverages not specified",
         "Gratuities and personal expenses",
@@ -1616,7 +1618,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
       EN: "A unique 9-night adventure and luxury experience combining a guided trek in the Toubkal National Park (High Atlas) with outstanding stays at Kasbah du Toubkal and Azzaden Trekking Lodge, followed by 4 nights of absolute relaxation in an all-inclusive 5★ hotel in Marrakech. Direct flights from Montreal included."
     },
     timeline: [
-      { day: 1, title: { FR: "Vol Montréal – Marrakech – Imlil", EN: "Montreal – Marrakech Flight & Imlil" }, desc: { FR: "Vol direct avec Air Transat. Accueil et transfert avec votre guide privé vers Imlil dans l'Atlas. Dîner et nuit au Kasbah du Toubkal.", EN: "Direct flight with Air Transat. Welcome and transfer with your private guide to Imlil in the Atlas. Dinner and stay at Kasbah du Toubkal." } },
+      { day: 1, title: { FR: "Vol Montréal – Marrakech – Imlil", EN: "Montreal – Marrakech Flight & Imlil" }, desc: { FR: "Vol direct. Accueil et transfert avec votre guide privé vers Imlil dans l'Atlas. Dîner et nuit au Kasbah du Toubkal.", EN: "Direct flight. Welcome and transfer with your private guide to Imlil in the Atlas. Dinner and stay at Kasbah du Toubkal." } },
       { day: 2, title: { FR: "Exploration de la Vallée d'Imlil", EN: "Imlil Valley Exploration" }, desc: { FR: "Journée d'acclimatation libre ou randonnée avec votre guide personnel. Déjeuner pique-nique et nuit au Kasbah du Toubkal.", EN: "Acclimatization free day or guided walk with your personal guide. Picnic lunch and night at Kasbah du Toubkal." } },
       { day: 3, title: { FR: "Trek vers la Vallée d'Azzaden", EN: "Trek to the Azzaden Valley" }, desc: { FR: "Randonnée soutenue avec guide, muletier et mules vers notre lodge de montagne dans la vallée d'Azzaden. Pique-nique en cours de route. Nuit au Azzaden Trekking Lodge.", EN: "Supported trek with guide, muleer, and mules to our mountain lodge in the Azzaden Valley. Picnic lunch en route. Overnight at Azzaden Trekking Lodge." } },
       { day: 4, title: { FR: "Exploration de la Vallée d'Azzaden", EN: "Azzaden Valley Discovery" }, desc: { FR: "Journée de randonnée dans la superbe vallée d'Azzaden, à travers des villages de terre rouge. Dîner et nuit au Azzaden Trekking Lodge.", EN: "Day of trekking in the stunning Azzaden Valley, through red clay villages. Dinner and night at Azzaden Trekking Lodge." } },
@@ -1629,7 +1631,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
-        "Vols aller-retour Montréal – Marrakech avec Air Transat (1er bagage inclus)",
+        "Vols aller-retour Montréal – Marrakech (1er bagage inclus)",
         "5 nuits d'hébergement en pension complète au Kasbah du Toubkal & Azzaden Trekking Lodge",
         "4 nuits d'hébergement en formule Tout Inclus dans un hôtel 5★ de Marrakech",
         "Services d'un guide de montagne personnel certifié pour les treks",
@@ -1639,7 +1641,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Contribution FICAV incluse"
       ],
       EN: [
-        "Round-trip flights Montreal – Marrakech with Air Transat (first bag included)",
+        "Round-trip flights Montreal – Marrakech (first bag included)",
         "5 nights full-board accommodation at Kasbah du Toubkal & Azzaden Trekking Lodge",
         "4 nights all-inclusive accommodation at a 5★ hotel in Marrakech",
         "Services of a certified personal mountain guide for treks",
@@ -1708,6 +1710,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     ],
     inclusions: {
       FR: [
+        "Vols internationaux aller-retour depuis Montréal",
         "7 nuits d'hébergement dans des hôtels de catégorie supérieure 4★/5★",
         "Formule Demi-pension (petit-déjeuner et dîner)",
         "Transferts privés climatisés tout au long du circuit",
@@ -1718,6 +1721,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         "Contribution FICAV incluse"
       ],
       EN: [
+        "Round-trip international flights from Montreal",
         "7 nights accommodation in superior 4★/5★ hotels",
         "Half Board plan (breakfast and dinners)",
         "Private air-conditioned transfers throughout the tour",
@@ -1730,14 +1734,12 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     },
     exclusions: {
       FR: [
-        "Vols internationaux",
         "Assurance voyage",
         "Boissons",
         "Pourboires et dépenses personnelles",
         "Activités facultatives"
       ],
       EN: [
-        "International flights",
         "Travel insurance",
         "Beverages",
         "Gratuities and personal expenses",
