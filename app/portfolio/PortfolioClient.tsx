@@ -4,7 +4,7 @@ import { useLang, translate } from "../context/lang-context";
 import { itinerariesData } from "@/data/itineraries";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Globe, Download, ChevronRight } from "lucide-react";
+import { Download, ChevronRight, Phone } from "lucide-react";
 
 const SOCIALS = {
   instagram: "TODO_INSTAGRAM_URL",
@@ -42,7 +42,7 @@ const QUICK_LINKS = [
 
 const TikTokIcon = () => (
   <svg className="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24">
-    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.09-1.5-.77-.56-1.39-1.31-1.81-2.15-.08 3.51-.04 7.02-.04 10.53-.13 5.46-4.64 10.01-10.12 9.9-5.13-.1-9.5-4.22-9.31-9.45.17-4.58 3.85-8.5 8.43-8.73v4.05c-2.28.21-4.28 2.02-4.41 4.34-.17 2.87 2.19 5.43 5.08 5.25 2.53-.16 4.54-2.26 4.54-4.79.02-4.77.01-9.55.01-14.33-.01 0-.01-.01-.01-.02Z" />
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .77.1v-3.5a6.39 6.39 0 0 0-.77-.05 6.33 6.33 0 0 0-6.32 6.33 6.33 0 0 0 10.74 4.54 6.27 6.27 0 0 0 1.95-4.54V9.08a10.84 10.84 0 0 0 6.32 2.05V7.63a7.42 7.42 0 0 1-2.58-.94Z" />
   </svg>
 );
 
@@ -60,49 +60,44 @@ const InstagramIcon = () => (
   </svg>
 );
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 15 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as any } },
-};
+// Premium fadeUp with blur dissolve from hyliox-pixel-perfect
+const premiumFadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 26, filter: "blur(10px)" },
+  whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
+  viewport: { once: true, margin: "-40px" },
+  transition: { duration: 0.7, ease: "easeOut" as any, delay },
+});
 
 export default function PortfolioClient() {
   const { lang, setLang } = useLang();
 
   return (
-    <div className="min-h-screen w-full bg-zinc-950 bg-[radial-gradient(circle_at_center,rgba(197,168,128,0.08),transparent_65%)] flex items-center justify-center font-sans antialiased text-white selection:bg-[#C5A880]/30 selection:text-white">
-      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-white/10 md:shadow-2xl bg-zinc-950 overflow-hidden flex flex-col">
+    <div className="min-h-screen w-full bg-[#030c08] bg-[radial-gradient(circle_at_top_right,rgba(197,168,128,0.12),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.08),transparent_60%)] flex items-center justify-center font-sans antialiased text-white selection:bg-[#C5A880]/30 selection:text-white">
+      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-emerald-950/60 md:shadow-[0_0_50px_rgba(0,0,0,0.8),0_0_30px_rgba(16,185,129,0.02)] bg-[#030906]/95 overflow-hidden flex flex-col">
         
         {/* Cover Strip */}
-        <div className="relative w-full h-[180px] flex-shrink-0">
-          <img 
-            src="/images/rgdes_parcours_rouge_18.jpg" 
-            alt="Royal Golf Dar Es Salam" 
-            className="w-full h-full object-cover" 
-            loading="lazy" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/40 to-zinc-950" />
+        <div className="relative w-full h-[180px] flex-shrink-0 bg-[#030906] overflow-hidden">
+          <video
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-60 pointer-events-none"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="https://cdn.mevoyages.com/MEvoyages/Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw.jpg"
+          >
+            <source src="https://cdn.mevoyages.com/MEvoyages/Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+            <source src="https://cdn.mevoyages.com/MEvoyages/Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030906]/40 to-[#030906] z-10" />
         </div>
 
-        {/* Animated Contents */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex-1 flex flex-col px-6 -mt-12 pb-8 relative z-10"
-        >
+        {/* Animated Contents Column */}
+        <div className="flex-1 flex flex-col px-6 -mt-12 pb-8 relative z-10">
+          
           {/* Logo & Header Info */}
-          <motion.div variants={itemVariants} className="flex flex-col items-center text-center space-y-3">
-            <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#C5A880] bg-zinc-950 p-1 flex items-center justify-center shadow-lg">
+          <motion.div {...premiumFadeUp(0)} className="flex flex-col items-center text-center space-y-3">
+            <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#C5A880] bg-[#030906] p-1 flex items-center justify-center shadow-lg">
               <img 
                 src="/images/logo.png" 
                 alt="Merveilles et Voyages Logo" 
@@ -124,30 +119,32 @@ export default function PortfolioClient() {
           </motion.div>
 
           {/* Primary CTAs */}
-          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3.5 mt-6">
+          <motion.div {...premiumFadeUp(0.08)} className="grid grid-cols-2 gap-3.5 mt-6">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all shadow-md active:scale-95 duration-200"
+              className="bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all shadow-md hover:scale-[1.03] active:scale-95 duration-300"
             >
               {lang === "FR" ? "Écrivez-nous" : "Chat with us"}
             </a>
             <a
-              href={`tel:${PHONE}`}
-              className="border border-white/20 hover:border-[#C5A880] hover:bg-white/5 text-white font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all active:scale-95 duration-200"
+              href={SOCIALS.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/20 hover:border-[#C5A880] hover:bg-white/5 text-white font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all hover:scale-[1.03] active:scale-95 duration-300"
             >
-              {lang === "FR" ? "Appelez-nous" : "Call us"}
+              {lang === "FR" ? "Visiter le site" : "Visit website"}
             </a>
           </motion.div>
 
           {/* Social Icons */}
-          <motion.div variants={itemVariants} className="flex justify-center gap-3.5 mt-6">
+          <motion.div {...premiumFadeUp(0.16)} className="flex justify-center gap-3.5 mt-6">
             <a
               href={SOCIALS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] transition-colors"
+              className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
             >
               <InstagramIcon />
             </a>
@@ -155,7 +152,7 @@ export default function PortfolioClient() {
               href={SOCIALS.tiktok}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] transition-colors"
+              className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
             >
               <TikTokIcon />
             </a>
@@ -163,77 +160,77 @@ export default function PortfolioClient() {
               href={SOCIALS.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] transition-colors"
+              className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
             >
               <FacebookIcon />
             </a>
             <a
-              href={SOCIALS.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] transition-colors"
+              href={`tel:${PHONE}`}
+              className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
             >
-              <Globe className="w-[18px] h-[18px]" />
+              <Phone className="w-[18px] h-[18px]" />
             </a>
           </motion.div>
 
           {/* Signature Packages */}
-          <motion.div variants={itemVariants} className="mt-8">
-            <h3 className="text-[#C5A880] font-mono text-[10px] tracking-widest uppercase mb-4">
+          <div className="mt-8 space-y-4">
+            <motion.h3 {...premiumFadeUp(0.24)} className="text-[#C5A880] font-mono text-[10px] tracking-widest uppercase mb-1">
               {lang === "FR" ? "Nos Signatures" : "Signature Journeys"}
-            </h3>
+            </motion.h3>
             <div className="space-y-3">
-              {SIGNATURE_IDS.map((id) => {
+              {SIGNATURE_IDS.map((id, index) => {
                 const pkg = itinerariesData[id];
                 if (!pkg) return null;
                 return (
-                  <Link
-                    key={id}
-                    href={`/itineraries/${id}`}
-                    className="bg-zinc-900/80 border border-white/10 hover:border-[#C5A880]/30 rounded-2xl p-3 flex items-center gap-3.5 transition-colors group"
-                  >
-                    <div className="w-[72px] h-[72px] rounded-xl overflow-hidden flex-shrink-0 bg-zinc-950">
-                      <img
-                        src={pkg.image}
-                        alt={translate(pkg.title, lang)}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-serif text-sm font-semibold text-white truncate leading-tight">
-                        {translate(pkg.title, lang)}
-                      </h4>
-                      <p className="text-zinc-400 text-xs mt-1.5 font-light">
-                        {translate(pkg.duration, lang)}
-                      </p>
-                    </div>
-                    <ChevronRight className="text-[#C5A880] w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-1" />
-                  </Link>
+                  <motion.div key={id} {...premiumFadeUp(0.3 + index * 0.08)}>
+                    <Link
+                      href={`/itineraries/${id}`}
+                      className="bg-[#071710]/50 border border-emerald-500/10 hover:border-[#C5A880]/30 rounded-2xl p-3 flex items-center gap-3.5 transition-all hover:scale-[1.02] duration-300 group"
+                    >
+                      <div className="w-[72px] h-[72px] rounded-xl overflow-hidden flex-shrink-0 bg-zinc-950">
+                        <img
+                          src={pkg.image}
+                          alt={translate(pkg.title, lang)}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-serif text-sm font-semibold text-white truncate leading-tight">
+                          {translate(pkg.title, lang)}
+                        </h4>
+                        <p className="text-zinc-400 text-xs mt-1.5 font-light">
+                          {translate(pkg.duration, lang)}
+                        </p>
+                      </div>
+                      <ChevronRight className="text-[#C5A880] w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </motion.div>
                 );
               })}
             </div>
-          </motion.div>
+          </div>
 
           {/* Quick Links */}
-          <motion.div variants={itemVariants} className="mt-8 space-y-3">
+          <div className="mt-8 space-y-3">
             {QUICK_LINKS.map((link, idx) => (
-              <Link
-                key={idx}
-                href={link.url}
-                className="block w-full bg-zinc-900/50 hover:bg-zinc-900 border border-white/10 hover:border-[#C5A880] rounded-full py-3.5 text-center text-sm font-medium text-white transition-colors"
-              >
-                {translate(link.label, lang)}
-              </Link>
+              <motion.div key={idx} {...premiumFadeUp(0.54 + idx * 0.06)}>
+                <Link
+                  href={link.url}
+                  className="block w-full bg-[#071710]/30 hover:bg-[#071710]/50 border border-emerald-500/10 hover:border-[#C5A880] rounded-full py-3.5 text-center text-sm font-medium text-white transition-all hover:scale-[1.02] duration-300"
+                >
+                  {translate(link.label, lang)}
+                </Link>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Save Contact */}
-          <motion.div variants={itemVariants} className="mt-8">
+          <motion.div {...premiumFadeUp(0.86)} className="mt-8">
             <a
               href="/mevoyages.vcf"
               download
-              className="flex items-center justify-center gap-2.5 w-full border border-[#C5A880] hover:bg-[#C5A880]/10 text-[#C5A880] rounded-full py-3.5 text-center font-semibold text-sm transition-colors active:scale-95 duration-200"
+              className="flex items-center justify-center gap-2.5 w-full border border-[#C5A880] hover:bg-[#C5A880]/10 text-[#C5A880] rounded-full py-3.5 text-center font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 duration-300"
             >
               <Download className="w-4 h-4" />
               <span>{lang === "FR" ? "Enregistrer notre contact" : "Save our contact"}</span>
@@ -241,7 +238,7 @@ export default function PortfolioClient() {
           </motion.div>
 
           {/* Footer Micro */}
-          <motion.div variants={itemVariants} className="mt-auto pt-12 flex flex-col items-center gap-4">
+          <motion.div {...premiumFadeUp(0.94)} className="mt-auto pt-12 flex flex-col items-center gap-4">
             <div className="flex gap-4 text-xs font-mono">
               <button
                 onClick={() => setLang("FR")}
@@ -266,7 +263,7 @@ export default function PortfolioClient() {
             </p>
           </motion.div>
 
-        </motion.div>
+        </div>
       </div>
     </div>
   );
