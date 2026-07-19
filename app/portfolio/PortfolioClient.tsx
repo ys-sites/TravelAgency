@@ -42,7 +42,7 @@ const QUICK_LINKS = [
 
 const TikTokIcon = () => (
   <svg className="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .77.1v-3.5a6.39 6.39 0 0 0-.77-.05 6.33 6.33 0 0 0-6.32 6.33 6.33 0 0 0 10.74 4.54 6.27 6.27 0 0 0 1.95-4.54V9.08a10.84 10.84 0 0 0 6.32 2.05V7.63a7.42 7.42 0 0 1-2.58-.94Z" />
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.09-1.5-.77-.56-1.39-1.31-1.81-2.15-.08 3.51-.04 7.02-.04 10.53-.13 5.46-4.64 10.01-10.12 9.9-5.13-.1-9.5-4.22-9.31-9.45.17-4.58 3.85-8.5 8.43-8.73v4.05c-2.28.21-4.28 2.02-4.41 4.34-.17 2.87 2.19 5.43 5.08 5.25 2.53-.16 4.54-2.26 4.54-4.79.02-4.77.01-9.55.01-14.33-.01 0-.01-.01-.01-.02Z" />
   </svg>
 );
 
@@ -72,24 +72,29 @@ export default function PortfolioClient() {
   const { lang, setLang } = useLang();
 
   return (
-    <div className="min-h-screen w-full bg-[#030c08] bg-[radial-gradient(circle_at_top_right,rgba(197,168,128,0.12),transparent_50%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.08),transparent_60%)] flex items-center justify-center font-sans antialiased text-white selection:bg-[#C5A880]/30 selection:text-white">
-      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-emerald-950/60 md:shadow-[0_0_50px_rgba(0,0,0,0.8),0_0_30px_rgba(16,185,129,0.02)] bg-[#030906]/95 overflow-hidden flex flex-col">
+    <div className="min-h-screen w-full bg-[#020b08] bg-[radial-gradient(circle_at_top_right,rgba(197,168,128,0.18),transparent_60%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.12),transparent_60%)] flex items-center justify-center font-sans antialiased text-white selection:bg-[#C5A880]/30 selection:text-white">
+      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-emerald-900/40 md:shadow-[0_0_50px_rgba(0,0,0,0.85),0_0_30px_rgba(16,185,129,0.04)] bg-[#020705]/95 overflow-hidden flex flex-col relative">
         
+        {/* Glow Spots inside the card for dual-tone texture */}
+        <div className="absolute top-[-40px] right-[-80px] w-[260px] h-[260px] bg-[#C5A880]/15 rounded-full blur-[80px] pointer-events-none z-0" />
+        <div className="absolute bottom-[240px] left-[-100px] w-[260px] h-[260px] bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none z-0" />
+        <div className="absolute bottom-[-30px] right-[-80px] w-[240px] h-[240px] bg-[#C5A880]/12 rounded-full blur-[70px] pointer-events-none z-0" />
+
         {/* Cover Strip */}
-        <div className="relative w-full h-[180px] flex-shrink-0 bg-[#030906] overflow-hidden">
+        <div className="relative w-full h-[180px] flex-shrink-0 bg-[#020705] overflow-hidden z-10">
           <video
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-60 pointer-events-none"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-65 pointer-events-none"
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
-            poster="https://cdn.mevoyages.com/MEvoyages/Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw.jpg"
+            poster="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.jpg"
           >
-            <source src="https://cdn.mevoyages.com/MEvoyages/Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-            <source src="https://cdn.mevoyages.com/MEvoyages/Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw.mp4" type="video/mp4" />
+            <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+            <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#030906]/40 to-[#030906] z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020705]/40 to-[#020705] z-10" />
         </div>
 
         {/* Animated Contents Column */}
@@ -97,7 +102,7 @@ export default function PortfolioClient() {
           
           {/* Logo & Header Info */}
           <motion.div {...premiumFadeUp(0)} className="flex flex-col items-center text-center space-y-3">
-            <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#C5A880] bg-[#030906] p-1 flex items-center justify-center shadow-lg">
+            <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#C5A880] bg-[#020705] p-1 flex items-center justify-center shadow-lg">
               <img 
                 src="/images/logo.png" 
                 alt="Merveilles et Voyages Logo" 
@@ -113,7 +118,7 @@ export default function PortfolioClient() {
                 {lang === "FR" ? "Golf & Voyages de Prestige — Maroc" : "Prestige Golf & Travel — Morocco"}
               </p>
               <p className="text-zinc-400 text-xs font-light">
-                Montréal · Canada
+                Canada
               </p>
             </div>
           </motion.div>
@@ -172,9 +177,21 @@ export default function PortfolioClient() {
             </a>
           </motion.div>
 
+          {/* Save Contact (Positioned immediately after social icons) */}
+          <motion.div {...premiumFadeUp(0.24)} className="mt-6">
+            <a
+              href="/mevoyages.vcf"
+              download
+              className="flex items-center justify-center gap-2.5 w-full border border-[#C5A880] hover:bg-[#C5A880]/10 text-[#C5A880] rounded-full py-3.5 text-center font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 duration-300"
+            >
+              <Download className="w-4 h-4" />
+              <span>{lang === "FR" ? "Enregistrer notre contact" : "Save our contact"}</span>
+            </a>
+          </motion.div>
+
           {/* Signature Packages */}
           <div className="mt-8 space-y-4">
-            <motion.h3 {...premiumFadeUp(0.24)} className="text-[#C5A880] font-mono text-[10px] tracking-widest uppercase mb-1">
+            <motion.h3 {...premiumFadeUp(0.32)} className="text-[#C5A880] font-mono text-[10px] tracking-widest uppercase mb-1">
               {lang === "FR" ? "Nos Signatures" : "Signature Journeys"}
             </motion.h3>
             <div className="space-y-3">
@@ -182,10 +199,10 @@ export default function PortfolioClient() {
                 const pkg = itinerariesData[id];
                 if (!pkg) return null;
                 return (
-                  <motion.div key={id} {...premiumFadeUp(0.3 + index * 0.08)}>
+                  <motion.div key={id} {...premiumFadeUp(0.38 + index * 0.08)}>
                     <Link
                       href={`/itineraries/${id}`}
-                      className="bg-[#071710]/50 border border-emerald-500/10 hover:border-[#C5A880]/30 rounded-2xl p-3 flex items-center gap-3.5 transition-all hover:scale-[1.02] duration-300 group"
+                      className="bg-[#071710]/40 border border-emerald-500/10 hover:border-[#C5A880]/30 rounded-2xl p-3 flex items-center gap-3.5 transition-all hover:scale-[1.02] duration-300 group"
                     >
                       <div className="w-[72px] h-[72px] rounded-xl overflow-hidden flex-shrink-0 bg-zinc-950">
                         <img
@@ -214,10 +231,10 @@ export default function PortfolioClient() {
           {/* Quick Links */}
           <div className="mt-8 space-y-3">
             {QUICK_LINKS.map((link, idx) => (
-              <motion.div key={idx} {...premiumFadeUp(0.54 + idx * 0.06)}>
+              <motion.div key={idx} {...premiumFadeUp(0.62 + idx * 0.06)}>
                 <Link
                   href={link.url}
-                  className="block w-full bg-[#071710]/30 hover:bg-[#071710]/50 border border-emerald-500/10 hover:border-[#C5A880] rounded-full py-3.5 text-center text-sm font-medium text-white transition-all hover:scale-[1.02] duration-300"
+                  className="block w-full bg-[#071710]/20 hover:bg-[#071710]/40 border border-emerald-500/10 hover:border-[#C5A880] rounded-full py-3.5 text-center text-sm font-medium text-white transition-all hover:scale-[1.02] duration-300"
                 >
                   {translate(link.label, lang)}
                 </Link>
@@ -225,20 +242,8 @@ export default function PortfolioClient() {
             ))}
           </div>
 
-          {/* Save Contact */}
-          <motion.div {...premiumFadeUp(0.86)} className="mt-8">
-            <a
-              href="/mevoyages.vcf"
-              download
-              className="flex items-center justify-center gap-2.5 w-full border border-[#C5A880] hover:bg-[#C5A880]/10 text-[#C5A880] rounded-full py-3.5 text-center font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 duration-300"
-            >
-              <Download className="w-4 h-4" />
-              <span>{lang === "FR" ? "Enregistrer notre contact" : "Save our contact"}</span>
-            </a>
-          </motion.div>
-
           {/* Footer Micro */}
-          <motion.div {...premiumFadeUp(0.94)} className="mt-auto pt-12 flex flex-col items-center gap-4">
+          <motion.div {...premiumFadeUp(0.92)} className="mt-auto pt-12 flex flex-col items-center gap-4">
             <div className="flex gap-4 text-xs font-mono">
               <button
                 onClick={() => setLang("FR")}
