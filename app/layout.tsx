@@ -3,7 +3,6 @@ import { Playfair_Display, Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import { LangProvider } from "./context/lang-context";
 import CallFloatingButton from "./components/CallFloatingButton";
-import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 import PageTransition from "./components/page-transition";
 import Script from "next/script";
 
@@ -114,7 +113,6 @@ export default function RootLayout({
             {children}
           </PageTransition>
           <CallFloatingButton />
-          <WhatsAppFloatingButton />
         </LangProvider>
 
         {/* Google Analytics GA4 — G-WEM88RMSG9 */}
