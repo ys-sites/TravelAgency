@@ -73,7 +73,7 @@ export default function HomeContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const inputClass =
-    "w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200";
+    "w-full bg-white border border-zinc-400 rounded-xl px-4 py-3 text-sm text-zinc-800 placeholder:text-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-all duration-200";
   const labelClass = "block text-[10px] font-mono tracking-[0.18em] uppercase text-zinc-500 mb-1.5";
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -194,7 +194,7 @@ export default function HomeContactForm() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2"
           >
-            <div className="bg-zinc-50 border border-zinc-200/60 rounded-[2rem] p-8 md:p-10 shadow-sm relative overflow-hidden">
+            <div className="bg-zinc-50 border border-zinc-300 rounded-[2rem] p-8 md:p-10 shadow-sm relative overflow-hidden">
               {/* Decorative glow */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-brand-gold/5 blur-[60px] rounded-full pointer-events-none" />
 

@@ -57,7 +57,7 @@ export default function Navbar() {
           <Link href="/conditions" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {lang === "FR" ? "Conditions Générales" : "General Conditions"}
           </Link>
-          <Link href="/#contacts" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+          <Link href="/#contact-form" className="whitespace-nowrap hover:text-brand-gold transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {lang === "FR" ? "Contact" : "Contact"}
           </Link>
         </div>
