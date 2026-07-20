@@ -7,7 +7,7 @@ export default function WhatsAppFloatingButton() {
   const { lang } = useLang();
 
   // WhatsApp link using the target concierge number
-  const whatsappUrl = "https://wa.me/12125550000";
+  const whatsappUrl = "https://wa.me/15149196381";
 
   return (
     <a

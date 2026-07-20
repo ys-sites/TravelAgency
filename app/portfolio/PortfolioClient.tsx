@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef, useEffect } from "react";
 import { useLang, translate } from "../context/lang-context";
 import { itinerariesData } from "@/data/itineraries";
 import Link from "next/link";
@@ -7,12 +8,12 @@ import { motion } from "motion/react";
 import { Download, ChevronRight, Phone } from "lucide-react";
 
 const SOCIALS = {
-  instagram: "TODO_INSTAGRAM_URL",
+  instagram: "https://www.instagram.com/merveilles.et.voyages?igsh=MTRzc2xmZDA5dGJxbg%3D%3D&utm_source=qr",
   tiktok: "TODO_TIKTOK_URL",
-  facebook: "TODO_FACEBOOK_URL",
+  facebook: "https://www.facebook.com/share/1K4URaBPHt/?mibextid=wwXIfr",
   website: "https://www.mevoyages.com",
 };
-const WHATSAPP_URL = "https://wa.me/1TODO_REAL_NUMBER";
+const WHATSAPP_URL = "https://wa.me/15149196381";
 const PHONE = "5149196381";
 
 const SIGNATURE_IDS = ["10", "11", "6"];
@@ -70,6 +71,17 @@ const premiumFadeUp = (delay = 0) => ({
 
 export default function PortfolioClient() {
   const { lang, setLang } = useLang();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.pause();
+      }
+    }, 120000); // Stop/pause loop after 2 minutes (120,000 ms)
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="min-h-screen w-full bg-[#010704] bg-[radial-gradient(circle_at_75%_20%,rgba(13,148,136,0.22),transparent_55%),radial-gradient(circle_at_25%_80%,rgba(16,185,129,0.18),transparent_55%)] flex items-center justify-center font-sans antialiased text-white selection:bg-[#C5A880]/30 selection:text-white">
@@ -83,6 +95,7 @@ export default function PortfolioClient() {
         {/* Cover Strip */}
         <div className="relative w-full h-[180px] flex-shrink-0 bg-[#020704] overflow-hidden z-10">
           <video
+            ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover object-center opacity-65 pointer-events-none"
             autoPlay
             muted
@@ -153,14 +166,7 @@ export default function PortfolioClient() {
             >
               <InstagramIcon />
             </a>
-            <a
-              href={SOCIALS.tiktok}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
-            >
-              <TikTokIcon />
-            </a>
+
             <a
               href={SOCIALS.facebook}
               target="_blank"
