@@ -4,6 +4,7 @@ import "./globals.css";
 import { LangProvider } from "./context/lang-context";
 import CallFloatingButton from "./components/CallFloatingButton";
 import PageTransition from "./components/page-transition";
+import Script from "next/script";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -102,6 +103,20 @@ export default function RootLayout({
           </PageTransition>
           <CallFloatingButton />
         </LangProvider>
+
+        {/* Google Analytics GA4 — G-WEM88RMSG9 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WEM88RMSG9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WEM88RMSG9');
+          `}
+        </Script>
       </body>
     </html>
   );
