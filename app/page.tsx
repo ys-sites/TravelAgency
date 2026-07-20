@@ -10,8 +10,8 @@ import Footer from "./components/footer";
 import { videoAsset } from "@/data/videoSources";
 
 export const metadata: Metadata = {
-  title: "Merveilles et Voyages — Séjours de Golf & Voyage de Prestige au Maroc | Premium Golf & Exclusive Travel Morocco",
-  description: "Explore premium golf experiences and exclusive luxury travel in Morocco with Merveilles et Voyages. 24/7 bilingual concierge services based in Canada.",
+  title: "Agence de Voyage Montréal — Golf au Maroc & Voyages de Prestige | Merveilles et Voyages",
+  description: "Agence de voyage à Mirabel au service du Grand Montréal : forfaits golf au Maroc, voyages de luxe sur mesure (Dubaï, Oman, AlUla) et services MICE. Conciergerie bilingue 24/7. ✆ 514 919 6381",
 };
 
 export default function Home() {

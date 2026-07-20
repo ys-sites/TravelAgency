@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="fr"
       className={`${playfairDisplay.variable} ${montserrat.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
@@ -72,10 +72,23 @@ export default function RootLayout({
                 },
                 {
                   "@type": "TravelAgency",
-                  name: "Merveilles et Voyages",
-                  url: "https://www.mevoyages.com",
-                  logo: "https://www.mevoyages.com/images/logo.png",
-                  areaServed: ["MA", "CA"],
+                  "@id": "https://www.mevoyages.com/#agency",
+                  "name": "Merveilles et Voyages",
+                  "url": "https://www.mevoyages.com",
+                  "logo": "https://www.mevoyages.com/images/logo.png",
+                  "telephone": "+15149196381",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "14050 rue des Saules",
+                    "addressLocality": "Mirabel",
+                    "addressRegion": "QC",
+                    "postalCode": "J7N 3G3",
+                    "addressCountry": "CA"
+                  },
+                  "areaServed": ["Montréal", "Laval", "Mirabel", "Grand Montréal", "QC", "MA"],
+                  "priceRange": "$$$",
+                  "sameAs": ["GBP_MAPS_URL_PLACEHOLDER", "INSTAGRAM_URL_PLACEHOLDER"],
+                  "knowsAbout": ["Forfaits golf Maroc", "Voyages de luxe", "MICE", "Voyages sur mesure Dubaï Oman Arabie Saoudite"]
                 },
               ],
             }),

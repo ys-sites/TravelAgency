@@ -107,12 +107,12 @@ export default function GulfHeroScrubber() {
           transition={{ delay: 0.5, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center max-w-4xl pointer-events-auto space-y-4 sm:space-y-6"
         >
-          <h2 className="font-serif text-xs sm:text-sm md:text-base lg:text-lg text-white tracking-[0.1em] uppercase font-light max-w-2xl leading-relaxed">
+          <h1 className="font-serif text-xs sm:text-sm md:text-base lg:text-lg text-white tracking-[0.1em] uppercase font-light max-w-2xl leading-relaxed">
             {lang === "FR"
-              ? "Expériences de Voyage de Prestige et Séjours de Golf au Maroc"
-              : "Exclusive Travel Experiences & Premium Golf Experiences in Morocco"
+              ? "Agence de Voyage de Prestige — Golf au Maroc & Voyages Sur Mesure depuis Montréal"
+              : "Luxury Travel Agency — Morocco Golf & Bespoke Journeys from Montreal"
             }
-          </h2>
+          </h1>
 
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-lg mx-auto">
             <a

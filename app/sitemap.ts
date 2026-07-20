@@ -14,13 +14,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/travel-stories",
     "/custom-trip",
     "/conditions",
+    "/agence-de-voyage-montreal",
   ];
 
   const staticEntries = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    priority: route === "" ? 1.0 : route === "/agence-de-voyage-montreal" ? 0.9 : 0.8,
   }));
 
   // Dynamic routes based on itineraries
