@@ -7,6 +7,8 @@ import Promotions from "./components/promotions";
 import AboutUsSection from "./components/about-us-section";
 import TestimonialsSection from "./components/testimonials-section";
 import Footer from "./components/footer";
+import HomeFaqSection from "./components/home-faq-section";
+import HomeContactForm from "./components/home-contact-form";
 import { videoAsset } from "@/data/videoSources";
 
 export const metadata: Metadata = {
@@ -40,6 +42,8 @@ export default function Home() {
           <Tours />
         </div>
         {/* <TestimonialsSection /> */}{/* Hidden: re-enable when client confirms testimonials copy */}
+        <HomeContactForm />
+        <HomeFaqSection />
       </main>
 
       <Footer />
