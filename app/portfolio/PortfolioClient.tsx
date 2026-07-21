@@ -91,213 +91,227 @@ export default function PortfolioClient() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-[#FAF9F5] bg-[radial-gradient(circle_at_75%_20%,rgba(197,168,128,0.12),transparent_55%),radial-gradient(circle_at_25%_80%,rgba(197,168,128,0.08),transparent_55%)] flex items-center justify-center font-sans antialiased text-zinc-900 selection:bg-[#C5A880]/20 selection:text-zinc-900">
-      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-zinc-200/80 md:shadow-[0_20px_50px_rgba(0,0,0,0.08)] bg-white overflow-hidden flex flex-col relative">
+    <div className="min-h-screen w-full bg-gradient-to-b from-[#eef2f3] to-[#e4e7eb] flex items-center justify-center font-sans antialiased text-zinc-800 selection:bg-[#C5A880]/20 selection:text-zinc-900 relative overflow-hidden">
+      
+      {/* Background Soft Glow Blobs matching screenshot */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#C5A880]/12 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-200/25 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-white/50 md:shadow-[0_25px_60px_rgba(0,0,0,0.06)] bg-white/45 backdrop-blur-2xl overflow-hidden flex flex-col relative px-6 py-10">
         
-        {/* Dark Green / Black Top Section */}
-        <div className="bg-[#020704] text-white relative overflow-hidden flex flex-col pb-8 border-b border-zinc-200/5">
-          {/* Glow Spots inside the card for dual-tone texture */}
-          <div className="absolute top-[-30px] right-[-60px] w-[220px] h-[220px] bg-[#C5A880]/8 rounded-full blur-[65px] pointer-events-none z-0" />
-          <div className="absolute top-[320px] left-[-90px] w-[240px] h-[240px] bg-[#C5A880]/6 rounded-full blur-[70px] pointer-events-none z-0" />
+        {/* Cover Strip (Looping Video) */}
+        <div className="relative w-full h-[180px] flex-shrink-0 bg-transparent overflow-hidden rounded-3xl shadow-inner z-10 border border-white/20">
+          <video
+            ref={videoRef}
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-85 pointer-events-none"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.jpg"
+          >
+            <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+            <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 to-white/95 z-10" />
+        </div>
 
-          {/* Cover Strip */}
-          <div className="relative w-full h-[180px] flex-shrink-0 bg-[#020704] overflow-hidden z-10">
-            <video
-              ref={videoRef}
-              className="absolute inset-0 w-full h-full object-cover object-center opacity-75 pointer-events-none"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              poster="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.jpg"
-            >
-              <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-              <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020704]/40 to-[#020704] z-10" />
-          </div>
-
-          {/* Animated Contents Column */}
-          <div className="px-6 -mt-12 relative z-10 flex flex-col">
-            
-            {/* Logo & Header Info */}
-            <motion.div {...premiumFadeUp(0)} className="flex flex-col items-center text-center space-y-3">
-              <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#C5A880] bg-[#020704] p-1 flex items-center justify-center shadow-lg">
+        {/* Animated Contents Column */}
+        <div className="flex-1 flex flex-col -mt-12 relative z-10">
+          
+          {/* Logo & Header Info */}
+          <motion.div {...premiumFadeUp(0)} className="flex flex-col items-center text-center space-y-3.5">
+            {/* Double layered logo circle */}
+            <div className="relative w-[100px] h-[100px] rounded-full p-1 border-2 border-[#C5A880] shadow-lg flex items-center justify-center bg-black">
+              <div className="w-full h-full rounded-full overflow-hidden border border-white/20 flex items-center justify-center bg-black">
                 <img 
                   src="/images/logo.png" 
                   alt="Merveilles et Voyages Logo" 
-                  className="w-full h-full object-contain" 
+                  className="w-[85%] h-[85%] object-contain" 
                   loading="lazy" 
                 />
               </div>
-              <div className="space-y-1">
-                <h1 className="font-serif text-2xl font-bold tracking-wide text-white">
+            </div>
+
+            <div className="space-y-1.5">
+              <div className="flex items-center gap-1.5 justify-center">
+                <span className="font-sans text-xl font-extrabold tracking-tight text-zinc-900 leading-none">
                   Merveilles et Voyages
-                </h1>
-                <p className="text-[#C5A880] font-mono text-[9px] sm:text-[10px] tracking-[0.2em] uppercase font-medium">
-                  {lang === "FR" ? "Golf & Voyages de Prestige — Maroc" : "Prestige Golf & Travel — Morocco"}
-                </p>
-                <p className="text-zinc-400 text-xs font-light">
-                  Canada
-                </p>
+                </span>
+                {/* Gold Verification badge icon */}
+                <svg className="w-[18px] h-[18px] fill-current text-[#C5A880] shrink-0" viewBox="0 0 24 24">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
               </div>
-            </motion.div>
 
-            {/* Primary CTAs */}
-            <motion.div {...premiumFadeUp(0.08)} className="grid grid-cols-2 gap-3.5 mt-6">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all shadow-md hover:scale-[1.03] active:scale-95 duration-300"
-              >
-                {lang === "FR" ? "Écrivez-nous" : "Chat with us"}
-              </a>
-              <a
-                href={SOCIALS.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-[#C5A880]/30 bg-[#C5A880]/5 hover:bg-[#C5A880]/15 text-white font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all hover:scale-[1.03] active:scale-95 duration-300"
-              >
-                {lang === "FR" ? "Visiter le site" : "Visit website"}
-              </a>
-            </motion.div>
+              <p className="text-zinc-600 text-xs font-medium max-w-[280px] mx-auto leading-relaxed">
+                {lang === "FR" ? "Golf & Voyages de Prestige — Maroc" : "Prestige Golf & Travel — Morocco"}
+              </p>
+              <p className="text-zinc-400 font-mono text-[10px] tracking-wider uppercase font-semibold">
+                Canada
+              </p>
+            </div>
+          </motion.div>
 
-            {/* Social Icons */}
-            <motion.div {...premiumFadeUp(0.16)} className="flex justify-center gap-3.5 mt-6">
-              <a
-                href={SOCIALS.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
-              >
-                <InstagramIcon />
-              </a>
+          {/* Social Icons (Black circular buttons matching screenshot) */}
+          <motion.div {...premiumFadeUp(0.08)} className="flex justify-center gap-3 mt-6">
+            <a
+              href={SOCIALS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[42px] h-[42px] rounded-full bg-zinc-900 hover:bg-[#C5A880] text-white hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+            >
+              <InstagramIcon />
+            </a>
 
-              <a
-                href={SOCIALS.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
-              >
-                <FacebookIcon />
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
-              >
-                <WhatsAppIcon />
-              </a>
-              <a
-                href={`tel:${PHONE}`}
-                className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
-              >
-                <Phone className="w-[18px] h-[18px] stroke-2" />
-              </a>
-            </motion.div>
+            <a
+              href={SOCIALS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[42px] h-[42px] rounded-full bg-zinc-900 hover:bg-[#C5A880] text-white hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+            >
+              <FacebookIcon />
+            </a>
+            
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[42px] h-[42px] rounded-full bg-zinc-900 hover:bg-[#C5A880] text-white hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+            >
+              <WhatsAppIcon />
+            </a>
 
-            {/* Save Contact (Positioned immediately after social icons) */}
-            <motion.div {...premiumFadeUp(0.24)} className="mt-6">
-              <a
-                href="/mevoyages.vcf"
-                download
-                className="flex items-center justify-center gap-2.5 w-full border border-[#C5A880] hover:bg-[#C5A880]/10 text-[#C5A880] rounded-full py-3.5 text-center font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 duration-300"
-              >
-                <Download className="w-4 h-4" />
-                <span>{lang === "FR" ? "Enregistrer notre contact" : "Save our contact"}</span>
-              </a>
-            </motion.div>
-          </div>
-        </div>
+            <a
+              href={`tel:${PHONE}`}
+              className="w-[42px] h-[42px] rounded-full bg-zinc-900 text-white hover:bg-[#C5A880] hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+            >
+              <Phone className="w-4 h-4 stroke-2" />
+            </a>
+          </motion.div>
 
-        {/* White / Light Bottom Section */}
-        <div className="flex-1 flex flex-col px-6 pt-6 pb-8 bg-white relative">
-          <div className="absolute bottom-[80px] right-[-70px] w-[220px] h-[220px] bg-[#C5A880]/4 rounded-full blur-[65px] pointer-events-none z-0" />
-          
-          <div className="relative z-10 flex-1 flex flex-col">
-            {/* Signature Packages */}
+          {/* Primary CTAs */}
+          <motion.div {...premiumFadeUp(0.12)} className="grid grid-cols-2 gap-3 mt-6">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 font-bold uppercase text-[10px] tracking-wider rounded-full py-4 text-center transition-all shadow-[0_4px_12px_rgba(197,168,128,0.2)] hover:scale-[1.03] active:scale-95 duration-300 cursor-pointer"
+            >
+              {lang === "FR" ? "Écrivez-nous" : "Chat with us"}
+            </a>
+            <a
+              href={SOCIALS.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-zinc-300/80 bg-white/40 hover:bg-white/80 text-zinc-800 font-bold uppercase text-[10px] tracking-wider rounded-full py-4 text-center transition-all hover:scale-[1.03] active:scale-95 duration-300 cursor-pointer"
+            >
+              {lang === "FR" ? "Visiter le site" : "Visit website"}
+            </a>
+          </motion.div>
+
+          {/* Save Contact (Full-width outline button) */}
+          <motion.div {...premiumFadeUp(0.18)} className="mt-4">
+            <a
+              href="/mevoyages.vcf"
+              download
+              className="flex items-center justify-center gap-2 w-full border border-zinc-300/90 bg-white/20 hover:bg-white/50 text-zinc-700 hover:text-zinc-900 rounded-full py-4 text-center font-bold text-xs uppercase tracking-wider transition-all hover:scale-[1.02] active:scale-95 duration-300 cursor-pointer"
+            >
+              <Download className="w-4 h-4 text-zinc-500" />
+              <span>{lang === "FR" ? "Enregistrer le contact" : "Save contact"}</span>
+            </a>
+          </motion.div>
+
+          {/* Signature Packages (Feature Cards layout matching screenshot) */}
+          <div className="mt-8 space-y-4">
+            <motion.h3 {...premiumFadeUp(0.24)} className="text-[#C5A880] font-mono text-[10px] tracking-[0.15em] font-bold uppercase mb-1">
+              {lang === "FR" ? "Nos Signatures" : "Signature Journeys"}
+            </motion.h3>
             <div className="space-y-4">
-              <motion.h3 {...premiumFadeUp(0.32)} className="text-[#C5A880] font-mono text-[10px] tracking-[0.15em] font-bold uppercase mb-1">
-                {lang === "FR" ? "Nos Signatures" : "Signature Journeys"}
-              </motion.h3>
-              <div className="space-y-3">
-                {SIGNATURE_IDS.map((id, index) => {
-                  const pkg = itinerariesData[id];
-                  if (!pkg) return null;
-                  return (
-                    <motion.div key={id} {...premiumFadeUp(0.38 + index * 0.08)}>
-                      <Link
-                        href={`/itineraries/${id}`}
-                        className="bg-zinc-50/60 backdrop-blur-xl border border-zinc-200/80 hover:border-[#C5A880]/40 rounded-2xl p-3 flex items-center gap-3.5 transition-all hover:scale-[1.02] duration-300 group shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
-                      >
-                        <div className="w-[72px] h-[72px] rounded-xl overflow-hidden flex-shrink-0 bg-zinc-100">
+              {SIGNATURE_IDS.map((id, index) => {
+                const pkg = itinerariesData[id];
+                if (!pkg) return null;
+                return (
+                  <motion.div key={id} {...premiumFadeUp(0.30 + index * 0.08)}>
+                    <div className="bg-white/40 border border-white/60 rounded-[2rem] p-4 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col space-y-3.5 hover:border-[#C5A880]/30 transition-all duration-300">
+                      
+                      {/* Package Card Top Info */}
+                      <div className="flex items-center gap-4">
+                        <div className="w-[72px] h-[72px] rounded-2xl overflow-hidden bg-zinc-100 border border-white/40 shrink-0">
                           <img
                             src={pkg.image}
                             alt={translate(pkg.title, lang)}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            className="w-full h-full object-cover"
                             loading="lazy"
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-serif text-sm font-semibold text-zinc-800 truncate leading-tight">
+                          <h4 className="font-serif text-[15px] font-bold text-zinc-900 leading-snug line-clamp-1">
                             {translate(pkg.title, lang)}
                           </h4>
-                          <p className="text-zinc-500 text-xs mt-1.5 font-light">
+                          <p className="text-zinc-500 text-xs mt-1 font-light leading-relaxed">
                             {translate(pkg.duration, lang)}
                           </p>
+                          <span className="inline-block text-[#C5A880] font-mono text-[9px] tracking-wider uppercase font-bold mt-1.5">
+                            {lang === "FR" ? "Forfait prestige" : "Prestige package"}
+                          </span>
                         </div>
-                        <ChevronRight className="text-[#C5A880] w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+                      </div>
+
+                      {/* Package Card Bottom Full Width Button (matches screenshot CTA) */}
+                      <Link
+                        href={`/itineraries/${id}`}
+                        className="w-full bg-zinc-950 hover:bg-zinc-900 text-white hover:text-[#C5A880] font-sans font-bold text-[10px] tracking-[0.2em] uppercase py-3.5 rounded-full transition-all duration-300 shadow-md text-center cursor-pointer block hover:scale-[1.01]"
+                      >
+                        {lang === "FR" ? "Voir l'itinéraire" : "View Itinerary"}
                       </Link>
-                    </motion.div>
-                  );
-                })}
-              </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
-
-            {/* Quick Links */}
-            <div className="mt-8 space-y-3">
-              {QUICK_LINKS.map((link, idx) => (
-                <motion.div key={idx} {...premiumFadeUp(0.62 + idx * 0.06)}>
-                  <Link
-                    href={link.url}
-                    className="block w-full bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/80 hover:border-[#C5A880] rounded-full py-3.5 text-center text-sm font-medium text-zinc-800 transition-all hover:scale-[1.02] duration-300 shadow-sm"
-                  >
-                    {translate(link.label, lang)}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Footer Micro */}
-            <motion.div {...premiumFadeUp(0.92)} className="mt-auto pt-12 flex flex-col items-center gap-4">
-              <div className="flex gap-4 text-xs font-mono">
-                <button
-                  onClick={() => setLang("FR")}
-                  className={`transition-colors uppercase cursor-pointer font-bold ${
-                    lang === "FR" ? "text-[#C5A880]" : "text-zinc-400 hover:text-zinc-900"
-                  }`}
-                >
-                  FR
-                </button>
-                <span className="text-zinc-200">|</span>
-                <button
-                  onClick={() => setLang("EN")}
-                  className={`transition-colors uppercase cursor-pointer font-bold ${
-                    lang === "EN" ? "text-[#C5A880]" : "text-zinc-400 hover:text-zinc-900"
-                  }`}
-                >
-                  EN
-                </button>
-              </div>
-              <p className="text-zinc-400 text-[10px] tracking-widest uppercase font-mono">
-                © Merveilles et Voyages
-              </p>
-            </motion.div>
           </div>
-        </div>
+
+          {/* Quick Links (Glass Pills) */}
+          <div className="mt-8 space-y-3">
+            {QUICK_LINKS.map((link, idx) => (
+              <motion.div key={idx} {...premiumFadeUp(0.54 + idx * 0.06)}>
+                <Link
+                  href={link.url}
+                  className="block w-full bg-white/45 hover:bg-white/85 border border-zinc-200 hover:border-[#C5A880]/50 rounded-full py-4 text-center text-xs font-bold uppercase tracking-wider text-zinc-800 transition-all hover:scale-[1.02] duration-300 shadow-sm"
+                >
+                  {translate(link.label, lang)}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Footer Micro */}
+          <motion.div {...premiumFadeUp(0.78)} className="mt-auto pt-12 flex flex-col items-center gap-4">
+            <div className="flex gap-4 text-xs font-mono">
+              <button
+                onClick={() => setLang("FR")}
+                className={`transition-colors uppercase cursor-pointer font-bold ${
+                  lang === "FR" ? "text-[#C5A880]" : "text-zinc-400 hover:text-zinc-900"
+                }`}
+              >
+                FR
+              </button>
+              <span className="text-zinc-200">|</span>
+              <button
+                onClick={() => setLang("EN")}
+                className={`transition-colors uppercase cursor-pointer font-bold ${
+                  lang === "EN" ? "text-[#C5A880]" : "text-zinc-400 hover:text-zinc-900"
+                }`}
+              >
+                EN
+              </button>
+            </div>
+            <p className="text-zinc-400 text-[10px] tracking-widest uppercase font-mono">
+              © Merveilles et Voyages
+            </p>
+          </motion.div></div>
       </div>
     </div>
   );
