@@ -67,7 +67,6 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-
 // Premium fadeUp with blur dissolve from hyliox-pixel-perfect
 const premiumFadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 26, filter: "blur(10px)" },
