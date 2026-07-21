@@ -91,213 +91,204 @@ export default function PortfolioClient() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-[#FAF9F5] bg-[radial-gradient(circle_at_75%_20%,rgba(197,168,128,0.12),transparent_55%),radial-gradient(circle_at_25%_80%,rgba(197,168,128,0.08),transparent_55%)] flex items-center justify-center font-sans antialiased text-zinc-900 selection:bg-[#C5A880]/20 selection:text-zinc-900">
-      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-zinc-200/80 md:shadow-[0_20px_50px_rgba(0,0,0,0.08)] bg-white overflow-hidden flex flex-col relative">
+    <div className="min-h-screen w-full bg-[#FAF9F5] bg-[radial-gradient(circle_at_75%_20%,rgba(197,168,128,0.15),transparent_55%),radial-gradient(circle_at_25%_80%,rgba(197,168,128,0.1),transparent_55%)] flex items-center justify-center font-sans antialiased text-zinc-900 selection:bg-[#C5A880]/20 selection:text-zinc-900">
+      <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-zinc-200/80 md:shadow-[0_20px_50px_rgba(0,0,0,0.06)] bg-white/90 backdrop-blur-xl overflow-hidden flex flex-col relative">
         
-        {/* Dark Green / Black Top Section */}
-        <div className="bg-[#020704] text-white relative overflow-hidden flex flex-col pb-8 border-b border-zinc-200/5">
-          {/* Glow Spots inside the card for dual-tone texture */}
-          <div className="absolute top-[-30px] right-[-60px] w-[220px] h-[220px] bg-[#C5A880]/8 rounded-full blur-[65px] pointer-events-none z-0" />
-          <div className="absolute top-[320px] left-[-90px] w-[240px] h-[240px] bg-[#C5A880]/6 rounded-full blur-[70px] pointer-events-none z-0" />
+        {/* Glow Spots inside the card for warm tone texture */}
+        <div className="absolute top-[-30px] right-[-60px] w-[220px] h-[220px] bg-[#C5A880]/10 rounded-full blur-[65px] pointer-events-none z-0" />
+        <div className="absolute top-[320px] left-[-90px] w-[240px] h-[240px] bg-[#C5A880]/8 rounded-full blur-[70px] pointer-events-none z-0" />
+        <div className="absolute bottom-[80px] right-[-70px] w-[220px] h-[220px] bg-[#C5A880]/8 rounded-full blur-[65px] pointer-events-none z-0" />
 
-          {/* Cover Strip */}
-          <div className="relative w-full h-[180px] flex-shrink-0 bg-[#020704] overflow-hidden z-10">
-            <video
-              ref={videoRef}
-              className="absolute inset-0 w-full h-full object-cover object-center opacity-75 pointer-events-none"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              poster="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.jpg"
-            >
-              <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-              <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#020704]/40 to-[#020704] z-10" />
-          </div>
-
-          {/* Animated Contents Column */}
-          <div className="px-6 -mt-12 relative z-10 flex flex-col">
-            
-            {/* Logo & Header Info */}
-            <motion.div {...premiumFadeUp(0)} className="flex flex-col items-center text-center space-y-3">
-              <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#C5A880] bg-[#020704] p-1 flex items-center justify-center shadow-lg">
-                <img 
-                  src="/images/logo.png" 
-                  alt="Merveilles et Voyages Logo" 
-                  className="w-full h-full object-contain" 
-                  loading="lazy" 
-                />
-              </div>
-              <div className="space-y-1">
-                <h1 className="font-serif text-2xl font-bold tracking-wide text-white">
-                  Merveilles et Voyages
-                </h1>
-                <p className="text-[#C5A880] font-mono text-[9px] sm:text-[10px] tracking-[0.2em] uppercase font-medium">
-                  {lang === "FR" ? "Golf & Voyages de Prestige — Maroc" : "Prestige Golf & Travel — Morocco"}
-                </p>
-                <p className="text-zinc-400 text-xs font-light">
-                  Canada
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Primary CTAs */}
-            <motion.div {...premiumFadeUp(0.08)} className="grid grid-cols-2 gap-3.5 mt-6">
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all shadow-md hover:scale-[1.03] active:scale-95 duration-300"
-              >
-                {lang === "FR" ? "Écrivez-nous" : "Chat with us"}
-              </a>
-              <a
-                href={SOCIALS.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border border-[#C5A880]/30 bg-[#C5A880]/5 hover:bg-[#C5A880]/15 text-white font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all hover:scale-[1.03] active:scale-95 duration-300"
-              >
-                {lang === "FR" ? "Visiter le site" : "Visit website"}
-              </a>
-            </motion.div>
-
-            {/* Social Icons */}
-            <motion.div {...premiumFadeUp(0.16)} className="flex justify-center gap-3.5 mt-6">
-              <a
-                href={SOCIALS.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
-              >
-                <InstagramIcon />
-              </a>
-
-              <a
-                href={SOCIALS.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
-              >
-                <FacebookIcon />
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
-              >
-                <WhatsAppIcon />
-              </a>
-              <a
-                href={`tel:${PHONE}`}
-                className="w-11 h-11 rounded-full border border-white/15 hover:border-[#C5A880] flex items-center justify-center text-white hover:text-[#C5A880] hover:scale-110 transition-all duration-300"
-              >
-                <Phone className="w-[18px] h-[18px] stroke-2" />
-              </a>
-            </motion.div>
-
-            {/* Save Contact (Positioned immediately after social icons) */}
-            <motion.div {...premiumFadeUp(0.24)} className="mt-6">
-              <a
-                href="/mevoyages.vcf"
-                download
-                className="flex items-center justify-center gap-2.5 w-full border border-[#C5A880] hover:bg-[#C5A880]/10 text-[#C5A880] rounded-full py-3.5 text-center font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 duration-300"
-              >
-                <Download className="w-4 h-4" />
-                <span>{lang === "FR" ? "Enregistrer notre contact" : "Save our contact"}</span>
-              </a>
-            </motion.div>
-          </div>
+        {/* Cover Strip */}
+        <div className="relative w-full h-[180px] flex-shrink-0 bg-[#FAF9F5] overflow-hidden z-10">
+          <video
+            ref={videoRef}
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-85 pointer-events-none"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.jpg"
+          >
+            <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+            <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white z-10" />
         </div>
 
-        {/* White / Light Bottom Section */}
-        <div className="flex-1 flex flex-col px-6 pt-6 pb-8 bg-white relative">
-          <div className="absolute bottom-[80px] right-[-70px] w-[220px] h-[220px] bg-[#C5A880]/4 rounded-full blur-[65px] pointer-events-none z-0" />
+        {/* Contents Column */}
+        <div className="flex-1 flex flex-col px-6 -mt-12 pb-8 relative z-10">
           
-          <div className="relative z-10 flex-1 flex flex-col">
-            {/* Signature Packages */}
-            <div className="space-y-4">
-              <motion.h3 {...premiumFadeUp(0.32)} className="text-[#C5A880] font-mono text-[10px] tracking-[0.15em] font-bold uppercase mb-1">
-                {lang === "FR" ? "Nos Signatures" : "Signature Journeys"}
-              </motion.h3>
-              <div className="space-y-3">
-                {SIGNATURE_IDS.map((id, index) => {
-                  const pkg = itinerariesData[id];
-                  if (!pkg) return null;
-                  return (
-                    <motion.div key={id} {...premiumFadeUp(0.38 + index * 0.08)}>
-                      <Link
-                        href={`/itineraries/${id}`}
-                        className="bg-zinc-50/60 backdrop-blur-xl border border-zinc-200/80 hover:border-[#C5A880]/40 rounded-2xl p-3 flex items-center gap-3.5 transition-all hover:scale-[1.02] duration-300 group shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
-                      >
-                        <div className="w-[72px] h-[72px] rounded-xl overflow-hidden flex-shrink-0 bg-zinc-100">
-                          <img
-                            src={pkg.image}
-                            alt={translate(pkg.title, lang)}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            loading="lazy"
-                          />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-serif text-sm font-semibold text-zinc-800 truncate leading-tight">
-                            {translate(pkg.title, lang)}
-                          </h4>
-                          <p className="text-zinc-500 text-xs mt-1.5 font-light">
-                            {translate(pkg.duration, lang)}
-                          </p>
-                        </div>
-                        <ChevronRight className="text-[#C5A880] w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    </motion.div>
-                  );
-                })}
-              </div>
+          {/* Logo & Header Info */}
+          <motion.div {...premiumFadeUp(0)} className="flex flex-col items-center text-center space-y-3">
+            {/* Keeping the logo circle background black as requested */}
+            <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-2 border-[#C5A880] bg-black p-1 flex items-center justify-center shadow-lg">
+              <img 
+                src="/images/logo.png" 
+                alt="Merveilles et Voyages Logo" 
+                className="w-full h-full object-contain" 
+                loading="lazy" 
+              />
             </div>
-
-            {/* Quick Links */}
-            <div className="mt-8 space-y-3">
-              {QUICK_LINKS.map((link, idx) => (
-                <motion.div key={idx} {...premiumFadeUp(0.62 + idx * 0.06)}>
-                  <Link
-                    href={link.url}
-                    className="block w-full bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/80 hover:border-[#C5A880] rounded-full py-3.5 text-center text-sm font-medium text-zinc-800 transition-all hover:scale-[1.02] duration-300 shadow-sm"
-                  >
-                    {translate(link.label, lang)}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Footer Micro */}
-            <motion.div {...premiumFadeUp(0.92)} className="mt-auto pt-12 flex flex-col items-center gap-4">
-              <div className="flex gap-4 text-xs font-mono">
-                <button
-                  onClick={() => setLang("FR")}
-                  className={`transition-colors uppercase cursor-pointer font-bold ${
-                    lang === "FR" ? "text-[#C5A880]" : "text-zinc-400 hover:text-zinc-900"
-                  }`}
-                >
-                  FR
-                </button>
-                <span className="text-zinc-200">|</span>
-                <button
-                  onClick={() => setLang("EN")}
-                  className={`transition-colors uppercase cursor-pointer font-bold ${
-                    lang === "EN" ? "text-[#C5A880]" : "text-zinc-400 hover:text-zinc-900"
-                  }`}
-                >
-                  EN
-                </button>
-              </div>
-              <p className="text-zinc-400 text-[10px] tracking-widest uppercase font-mono">
-                © Merveilles et Voyages
+            <div className="space-y-1">
+              <h1 className="font-serif text-2xl font-bold tracking-wide text-zinc-900">
+                Merveilles et Voyages
+              </h1>
+              <p className="text-[#C5A880] font-mono text-[9px] sm:text-[10px] tracking-[0.2em] uppercase font-medium">
+                {lang === "FR" ? "Golf & Voyages de Prestige — Maroc" : "Prestige Golf & Travel — Morocco"}
               </p>
-            </motion.div>
+              <p className="text-zinc-500 text-xs font-light">
+                Canada
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Primary CTAs */}
+          <motion.div {...premiumFadeUp(0.08)} className="grid grid-cols-2 gap-3.5 mt-6">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all shadow-md hover:scale-[1.03] active:scale-95 duration-300"
+            >
+              {lang === "FR" ? "Écrivez-nous" : "Chat with us"}
+            </a>
+            <a
+              href={SOCIALS.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-zinc-300 hover:bg-zinc-50/50 text-zinc-800 font-semibold uppercase text-[11px] tracking-wider rounded-full py-3.5 text-center transition-all hover:scale-[1.03] active:scale-95 duration-300"
+            >
+              {lang === "FR" ? "Visiter le site" : "Visit website"}
+            </a>
+          </motion.div>
+
+          {/* Social Icons (Filled dark circles with white icons, matching the reference image) */}
+          <motion.div {...premiumFadeUp(0.16)} className="flex justify-center gap-3.5 mt-6">
+            <a
+              href={SOCIALS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 rounded-full bg-zinc-900 text-white hover:bg-[#C5A880] hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-md"
+            >
+              <InstagramIcon />
+            </a>
+
+            <a
+              href={SOCIALS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 rounded-full bg-zinc-900 text-white hover:bg-[#C5A880] hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-md"
+            >
+              <FacebookIcon />
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 rounded-full bg-zinc-900 text-white hover:bg-[#C5A880] hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-md"
+            >
+              <WhatsAppIcon />
+            </a>
+            <a
+              href={`tel:${PHONE}`}
+              className="w-11 h-11 rounded-full bg-zinc-900 text-white hover:bg-[#C5A880] hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-md"
+            >
+              <Phone className="w-[18px] h-[18px] stroke-2" />
+            </a>
+          </motion.div>
+
+          {/* Save Contact */}
+          <motion.div {...premiumFadeUp(0.24)} className="mt-6">
+            <a
+              href="/mevoyages.vcf"
+              download
+              className="flex items-center justify-center gap-2.5 w-full border border-[#C5A880] hover:bg-[#C5A880]/10 text-[#C5A880] rounded-full py-3.5 text-center font-semibold text-sm transition-all hover:scale-[1.02] active:scale-95 duration-300"
+            >
+              <Download className="w-4 h-4" />
+              <span>{lang === "FR" ? "Enregistrer notre contact" : "Save our contact"}</span>
+            </a>
+          </motion.div>
+
+          {/* Signature Packages */}
+          <div className="mt-8 space-y-4">
+            <motion.h3 {...premiumFadeUp(0.32)} className="text-[#C5A880] font-mono text-[10px] tracking-[0.15em] font-bold uppercase mb-1">
+              {lang === "FR" ? "Nos Signatures" : "Signature Journeys"}
+            </motion.h3>
+            <div className="space-y-3">
+              {SIGNATURE_IDS.map((id, index) => {
+                const pkg = itinerariesData[id];
+                if (!pkg) return null;
+                return (
+                  <motion.div key={id} {...premiumFadeUp(0.38 + index * 0.08)}>
+                    <Link
+                      href={`/itineraries/${id}`}
+                      className="bg-zinc-50/60 backdrop-blur-xl border border-zinc-200/80 hover:border-[#C5A880]/40 rounded-2xl p-3 flex items-center gap-3.5 transition-all hover:scale-[1.02] duration-300 group shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
+                    >
+                      <div className="w-[72px] h-[72px] rounded-xl overflow-hidden flex-shrink-0 bg-zinc-100">
+                        <img
+                          src={pkg.image}
+                          alt={translate(pkg.title, lang)}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-serif text-sm font-semibold text-zinc-800 truncate leading-tight">
+                          {translate(pkg.title, lang)}
+                        </h4>
+                        <p className="text-zinc-500 text-xs mt-1.5 font-light">
+                          {translate(pkg.duration, lang)}
+                        </p>
+                      </div>
+                      <ChevronRight className="text-[#C5A880] w-5 h-5 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+
+          {/* Quick Links */}
+          <div className="mt-8 space-y-3">
+            {QUICK_LINKS.map((link, idx) => (
+              <motion.div key={idx} {...premiumFadeUp(0.62 + idx * 0.06)}>
+                <Link
+                  href={link.url}
+                  className="block w-full bg-zinc-50/70 hover:bg-zinc-100/90 border border-zinc-200/80 hover:border-[#C5A880] rounded-full py-3.5 text-center text-sm font-medium text-zinc-800 transition-all hover:scale-[1.02] duration-300 shadow-sm"
+                >
+                  {translate(link.label, lang)}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Footer Micro */}
+          <motion.div {...premiumFadeUp(0.92)} className="mt-auto pt-12 flex flex-col items-center gap-4">
+            <div className="flex gap-4 text-xs font-mono">
+              <button
+                onClick={() => setLang("FR")}
+                className={`transition-colors uppercase cursor-pointer font-bold ${
+                  lang === "FR" ? "text-[#C5A880]" : "text-zinc-400 hover:text-zinc-900"
+                }`}
+              >
+                FR
+              </button>
+              <span className="text-zinc-200">|</span>
+              <button
+                onClick={() => setLang("EN")}
+                className={`transition-colors uppercase cursor-pointer font-bold ${
+                  lang === "EN" ? "text-[#C5A880]" : "text-zinc-400 hover:text-zinc-900"
+                }`}
+              >
+                EN
+              </button>
+            </div>
+            <p className="text-zinc-400 text-[10px] tracking-widest uppercase font-mono">
+              © Merveilles et Voyages
+            </p>
+          </motion.div></div>
       </div>
     </div>
   );
