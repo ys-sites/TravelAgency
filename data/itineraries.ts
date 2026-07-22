@@ -270,7 +270,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 7,
-    image: "/images/chefchaouen.png",
+    image: "/images/marrakech_sunset_hero.png",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Signature", EN: "Signature" },
     title: { FR: "Grand Tour Impérial & Chefchaouen", EN: "Grand Imperial Tour & Chefchaouen" },
@@ -289,7 +289,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 8,
-    image: "/images/trekking_toubkal.png",
+    image: "/images/german_circuit_morocco.jpg",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Aventure", EN: "Adventure" },
     title: { FR: "Trekking Toubkal & Marrakech", EN: "Trekking Toubkal & Marrakech" },
@@ -310,7 +310,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 9,
-    image: "/images/german_circuit_morocco.jpg",
+    image: "/images/moroco.webp",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Découverte", EN: "Discovery" },
     title: { FR: "Un Aperçu des Villes Impériales", EN: "A Glimpse of Imperial Cities" },
@@ -510,7 +510,7 @@ export const dealsList: DealCard[] = [
   },
   {
     id: 8,
-    image: "/images/trekking_toubkal.png",
+    image: "/images/german_circuit_morocco.jpg",
     badge: { FR: "Aventure", EN: "Adventure" },
     title: { FR: "Trekking Toubkal & Marrakech", EN: "Trekking Toubkal & Marrakech" },
     duration: { FR: "10 jours / 9 nuits", EN: "10 days / 9 nights" },
