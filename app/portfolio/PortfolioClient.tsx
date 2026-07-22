@@ -153,13 +153,13 @@ export default function PortfolioClient() {
             </div>
           </motion.div>
 
-          {/* Social Icons (Black circular buttons matching screenshot) */}
+          {/* Social Icons (Theme colored circular buttons) */}
           <motion.div {...premiumFadeUp(0.08)} className="flex justify-center gap-3 mt-6">
             <a
               href={SOCIALS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[42px] h-[42px] rounded-full bg-zinc-900 hover:bg-[#C5A880] text-white hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(197,168,128,0.25)]"
             >
               <InstagramIcon />
             </a>
@@ -168,7 +168,7 @@ export default function PortfolioClient() {
               href={SOCIALS.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[42px] h-[42px] rounded-full bg-zinc-900 hover:bg-[#C5A880] text-white hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(197,168,128,0.25)]"
             >
               <FacebookIcon />
             </a>
@@ -177,14 +177,14 @@ export default function PortfolioClient() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[42px] h-[42px] rounded-full bg-zinc-900 hover:bg-[#C5A880] text-white hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(197,168,128,0.25)]"
             >
               <WhatsAppIcon />
             </a>
 
             <a
               href={`tel:${PHONE}`}
-              className="w-[42px] h-[42px] rounded-full bg-zinc-900 text-white hover:bg-[#C5A880] hover:text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.15)]"
+              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(197,168,128,0.25)]"
             >
               <Phone className="w-4 h-4 stroke-2" />
             </a>
