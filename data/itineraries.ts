@@ -472,7 +472,7 @@ export const dealsList: DealCard[] = [
   },
   {
     id: 16,
-    image: "/images/royal_golf_marrakech_2.jpg",
+    image: "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal.webp",
     badge: { FR: "Premium", EN: "Premium" },
     title: { FR: "Jaal Riad Hôtel 5★ (7N)", EN: "Jaal Riad Hotel 5★ (7N)" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
@@ -1322,8 +1322,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "16": {
     id: 16,
-    image: "/images/royal_golf_marrakech_2.jpg",
-    contentImage: "/images/royal_golf_evening.jpg",
+    image: "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal.webp",
+    contentImage: "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(2).webp",
     title: { FR: "Jaal Riad Hôtel 5★ (7N)", EN: "Jaal Riad Hotel 5★ (7N)" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     cost: { FR: "À partir de 3 979 $", EN: "Starting from 3,979" },
