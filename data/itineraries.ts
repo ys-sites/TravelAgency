@@ -251,7 +251,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 6,
-    image: "/images/imperial_cities_fes.jpg",
+    image: "/images/gulf-desert-sunset.png",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Classique", EN: "Classic" },
     title: { FR: "Villes Impériales & Désert", EN: "Imperial Cities & Desert" },
@@ -1998,9 +1998,9 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Marrakech", EN: "Marrakech" }, top: "54.0%", left: "28.1%" }
     ],
     experienceGrid: [
-      { label: { FR: "Histoire", EN: "History" }, img: "/images/imperial_cities_fes.jpg" },
+      { label: { FR: "Histoire", EN: "History" }, img: "https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=1200&q=80" },
       { label: { FR: "Désert", EN: "Desert" }, img: "/images/gulf-desert-sunset.png" },
-      { label: { FR: "Culture", EN: "Culture" }, img: "/images/chefchaouen.png" },
+      { label: { FR: "Culture", EN: "Culture" }, img: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80" },
       { label: { FR: "Monuments", EN: "Monuments" }, img: "/images/german_circuit_morocco.jpg" },
       { label: { FR: "Tradition", EN: "Tradition" }, img: "/images/morocco_culinary.png" }
     ]
