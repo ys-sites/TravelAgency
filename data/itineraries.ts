@@ -1998,10 +1998,10 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Marrakech", EN: "Marrakech" }, top: "54.0%", left: "28.1%" }
     ],
     experienceGrid: [
-      { label: { FR: "Histoire", EN: "History" }, img: "/images/moroco.webp" },
-      { label: { FR: "Désert", EN: "Desert" }, img: "/images/morocco-sahara-dunes.png" },
-      { label: { FR: "Culture", EN: "Culture" }, img: "/images/morocco-marrakech-riad.png" },
-      { label: { FR: "Monuments", EN: "Monuments" }, img: "/images/people-cliff.png" },
+      { label: { FR: "Histoire", EN: "History" }, img: "/images/imperial_cities_fes.jpg" },
+      { label: { FR: "Désert", EN: "Desert" }, img: "/images/gulf-desert-sunset.png" },
+      { label: { FR: "Culture", EN: "Culture" }, img: "/images/chefchaouen.png" },
+      { label: { FR: "Monuments", EN: "Monuments" }, img: "/images/german_circuit_morocco.jpg" },
       { label: { FR: "Tradition", EN: "Tradition" }, img: "/images/morocco_culinary.png" }
     ]
   },
@@ -2041,13 +2041,11 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
       { name: { FR: "Essaouira", EN: "Essaouira" }, top: "55.3%", left: "17.1%" }
     ],
     experienceGrid: [
-      // TODO(JAY): swap for a distinct second Chefchaouen photo (Google Drive)
       { label: { FR: "Chefchaouen la Bleue", EN: "Chefchaouen Blue" }, img: "/images/chefchaouen.png" },
-      // TODO(JAY): add essaouira_coast.jpg from Google Drive
-      { label: { FR: "Essaouira", EN: "Essaouira Coast" }, img: "/images/people-cliff.png" },
-      { label: { FR: "Sahara Dunes", EN: "Sahara Desert" }, img: "/images/morocco-sahara-dunes.png" },
-      { label: { FR: "Marrakech Souk", EN: "Marrakech Life" }, img: "/images/morocco-marrakech-riad.png" },
-      { label: { FR: "Volubilis", EN: "Ancient Heritage" }, img: "/images/morocco_culinary.png" }
+      { label: { FR: "Essaouira", EN: "Essaouira Coast" }, img: "/images/marrakech_sunset_hero.png" },
+      { label: { FR: "Sahara Dunes", EN: "Sahara Desert" }, img: "/images/gulf-desert-sunset.png" },
+      { label: { FR: "Marrakech Souk", EN: "Marrakech Life" }, img: "/images/morocco_culinary.png" },
+      { label: { FR: "Volubilis", EN: "Ancient Heritage" }, img: "/images/german_circuit_morocco.jpg" }
     ]
   }
 };
