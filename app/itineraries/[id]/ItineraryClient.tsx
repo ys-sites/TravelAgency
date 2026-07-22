@@ -612,8 +612,8 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                 />
               </motion.div>
 
-              {/* Image Gallery for Golf Packages */}
-              {(itinerary.id === 10 || itinerary.id === 11 || itinerary.id === 12) && (
+              {/* Image Gallery for Golf & Travel Packages */}
+              {getGalleryImages(itinerary.id).length > 0 && (
                 <div className="space-y-6 pt-10 border-t border-zinc-100">
                   <h3 className="font-serif text-2xl md:text-3xl text-zinc-900 border-b border-zinc-200 pb-4">
                     {lang === "FR" ? "Galerie Photos" : "Photo Gallery"}
