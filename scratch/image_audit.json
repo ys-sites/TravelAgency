@@ -1,0 +1,879 @@
+[
+  {
+    "type": "pdf",
+    "original": "Beaches and sport Brochure.pdf",
+    "path": "C:\\Users\\Sharafath\\Desktop\\Website\\Travel agent\\public\\Client Request must be added\\general Photos of Morocco in Brochures-20260722T100350Z-1-001\\general Photos of Morocco in Brochures\\Beaches and sport Brochure.pdf",
+    "status": "Skipped PDF document"
+  },
+  {
+    "type": "pdf",
+    "original": "Cultural Experiences Brochure.pdf",
+    "path": "C:\\Users\\Sharafath\\Desktop\\Website\\Travel agent\\public\\Client Request must be added\\general Photos of Morocco in Brochures-20260722T100350Z-1-001\\general Photos of Morocco in Brochures\\Cultural Experiences Brochure.pdf",
+    "status": "Skipped PDF document"
+  },
+  {
+    "type": "pdf",
+    "original": "Hidden Gems Brochure.pdf",
+    "path": "C:\\Users\\Sharafath\\Desktop\\Website\\Travel agent\\public\\Client Request must be added\\general Photos of Morocco in Brochures-20260722T100350Z-1-001\\general Photos of Morocco in Brochures\\Hidden Gems Brochure.pdf",
+    "status": "Skipped PDF document"
+  },
+  {
+    "type": "pdf",
+    "original": "Marrakech Hidden Gems Brochure.pdf",
+    "path": "C:\\Users\\Sharafath\\Desktop\\Website\\Travel agent\\public\\Client Request must be added\\general Photos of Morocco in Brochures-20260722T100350Z-1-001\\general Photos of Morocco in Brochures\\Marrakech Hidden Gems Brochure.pdf",
+    "status": "Skipped PDF document"
+  },
+  {
+    "type": "pdf",
+    "original": "Morocco Golf Brochure.pdf",
+    "path": "C:\\Users\\Sharafath\\Desktop\\Website\\Travel agent\\public\\Client Request must be added\\general Photos of Morocco in Brochures-20260722T100350Z-1-001\\general Photos of Morocco in Brochures\\Morocco Golf Brochure.pdf",
+    "status": "Skipped PDF document"
+  },
+  {
+    "type": "pdf",
+    "original": "Nature and Adventure Brochure.pdf",
+    "path": "C:\\Users\\Sharafath\\Desktop\\Website\\Travel agent\\public\\Client Request must be added\\general Photos of Morocco in Brochures-20260722T100350Z-1-001\\general Photos of Morocco in Brochures\\Nature and Adventure Brochure.pdf",
+    "status": "Skipped PDF document"
+  },
+  {
+    "type": "image",
+    "original": "0L7A9294.png",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/0l7a9294.png",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "10 parcours BLEU.jpg",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/10_parcours_bleu.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "18 parcours rouge.jpg",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/18_parcours_rouge.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "error",
+    "original": "2 JAUNE.heic",
+    "folder": "golf_agadir_photos",
+    "error": "Input file has corrupt header: heif: Invalid input: Security limit exceeded: Number of references in iref box (40) exceeds the security limits of 16 references. (2.1000)"
+  },
+  {
+    "type": "image",
+    "original": "5 BLUE COURSE.JPG",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/5_blue_course.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "5ROUGE.JPG",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/5rouge.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "7bleu TGP.JPG",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/7bleu_tgp.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "9 JAUNE.JPG",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/9_jaune.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "9BLEU MATIN.JPG",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/9bleu_matin.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "CLUB HOUSE .JPG",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/club_house_.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "coucher d_été.jpg",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/coucher_d__t_.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "DJI_0053.png",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/dji_0053.png",
+    "status": "Copied"
+  },
+  {
+    "type": "error",
+    "original": "FUN DISCOVERY.heic",
+    "folder": "golf_agadir_photos",
+    "error": "Input file has corrupt header: heif: Invalid input: Security limit exceeded: Number of references in iref box (42) exceeds the security limits of 16 references. (2.1000)"
+  },
+  {
+    "type": "image",
+    "original": "Golf Le Soleil  (10).webp",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/golf_le_soleil__(10).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Les Dunes (7).webp",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/golf_les_dunes_(7).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Tazegzout 2.webp",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/golf_tazegzout_2.webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Tazegzout 3.webp",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/golf_tazegzout_3.webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "IMG_3723.JPG",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/img_3723.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "error",
+    "original": "IMG_6717.heic",
+    "folder": "golf_agadir_photos",
+    "error": "Input file has corrupt header: heif: Invalid input: Security limit exceeded: Number of references in iref box (40) exceeds the security limits of 16 references. (2.1000)"
+  },
+  {
+    "type": "image",
+    "original": "PARADISE OF FLOWERS .JPG",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/paradise_of_flowers_.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "soleil couchant.JPG",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/soleil_couchant.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "tgz 10 side.jpg",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/tgz_10_side.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "tgz 17 zoom.jpg",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/tgz_17_zoom.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "tgz 18 hotel.jpg",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/tgz_18_hotel.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "tgz 8th high.jpg",
+    "folder": "golf_agadir_photos",
+    "webPath": "/images/client_request/golf_agadir_photos/tgz_8th_high.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "error",
+    "original": "TOURNAMENTS .heic",
+    "folder": "golf_agadir_photos",
+    "error": "Input file has corrupt header: heif: Invalid input: Security limit exceeded: Number of references in iref box (40) exceeds the security limits of 16 references. (2.1000)"
+  },
+  {
+    "type": "error",
+    "original": "17 CHAMPIONSHIP.heic",
+    "folder": "golf_marrakech_photos",
+    "error": "Input file has corrupt header: heif: Invalid input: Security limit exceeded: Number of references in iref box (40) exceeds the security limits of 16 references. (2.1000)"
+  },
+  {
+    "type": "image",
+    "original": "Akenza teeshot 2.jpg",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/akenza_teeshot_2.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "AKENZA-102.jpg",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/akenza-102.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "AKENZA-139.jpg",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/akenza-139.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "ASSOUFID-1.png",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/assoufid-1.png",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "ASSOUFID.png",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/assoufid.png",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "ASSOUFID2.jpg",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/assoufid2.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Akenza (3).jpg",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/golf_akenza_(3).jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Akenza.avif",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/golf_akenza.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Al Maaden (4).webp",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/golf_al_maaden_(4).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Amelkis (3).webp",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/golf_amelkis_(3).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Assoufid (4).webp",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/golf_assoufid_(4).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Le Royal (15).webp",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/golf_le_royal_(15).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Golf Noria (2).webp",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/golf_noria_(2).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "IMG_3752.JPG",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/img_3752.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "_XC_0779 copie.jpg",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/_xc_0779_copie.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "_XC_0808 copie.jpg",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/_xc_0808_copie.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "_XC_0856 copie.jpg",
+    "folder": "golf_marrakech_photos",
+    "webPath": "/images/client_request/golf_marrakech_photos/_xc_0856_copie.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "PARCOURS ROUGE Trous n°09-17.jpg",
+    "folder": "golf_rabat_photos",
+    "webPath": "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_09-17.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "PARCOURS ROUGE Trous n°11-n°12.jpg",
+    "folder": "golf_rabat_photos",
+    "webPath": "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_11-n_12.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "PARCOURS ROUGE Trous n°11.jpg",
+    "folder": "golf_rabat_photos",
+    "webPath": "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_11.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "PARCOURS ROUGE Trous n°12.jpg",
+    "folder": "golf_rabat_photos",
+    "webPath": "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_12.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "PARCOURS ROUGE Trous n°13.jpg",
+    "folder": "golf_rabat_photos",
+    "webPath": "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_13.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "converted_image",
+    "original": "PARCOURS ROUGE Trous n°17.tif",
+    "folder": "golf_rabat_photos",
+    "webPath": "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_17.jpg",
+    "status": "Converted to JPG"
+  },
+  {
+    "type": "pdf",
+    "original": "Plaquette RGDES .pdf",
+    "path": "C:\\Users\\Sharafath\\Desktop\\Website\\Travel agent\\public\\Client Request must be added\\golf Rabat Photos-20260722T100553Z-1-001\\golf Rabat Photos\\Plaquette RGDES .pdf",
+    "status": "Skipped PDF document"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 1.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_1.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 10.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_10.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 11.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_11.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 12.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_12.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 13.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_13.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 14.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_14.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 15.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_15.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 16.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_16.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 17.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_17.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 18.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_18.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 19.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_19.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 2.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_2.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 20.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_20.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 3.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_3.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 4.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_4.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 5.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_5.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 6.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_6.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 7.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_7.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 8.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_8.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hilton Taghazout 9.avif",
+    "folder": "hilton_taghazout_agadir",
+    "webPath": "/images/client_request/hilton_taghazout_agadir/hilton_taghazout_9.avif",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (1).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(1).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (11).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(11).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (12).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(12).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (13).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(13).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (14).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(14).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (15).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(15).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (16).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(16).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (17).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(17).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (2).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(2).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (3).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(3).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (4).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(4).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (5).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(5).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (6).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(6).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (7).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(7).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (8).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(8).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel du Golf Marrakech (9).webp",
+    "folder": "hotel_du_golf_marrakech",
+    "webPath": "/images/client_request/hotel_du_golf_marrakech/hotel_du_golf_marrakech_(9).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (10).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(10).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (11).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(11).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (12).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(12).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (13).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(13).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (14).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(14).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (15).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(15).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (16).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(16).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (17).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(17).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (18).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(18).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (19).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(19).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (2).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(2).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (3).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(3).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (4).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(4).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (5).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(5).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (6).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(6).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (7).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(7).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (8).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(8).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal (9).webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal_(9).webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "Hotel Le Jaal.webp",
+    "folder": "hotel_jaal_marrakech",
+    "webPath": "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal.webp",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "beach-area.jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/beach-area.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "deluxe-room-sea-view.jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/deluxe-room-sea-view.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "deluxe-room-swim-up-view.jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/deluxe-room-swim-up-view.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "food-court.jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/food-court.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "gym.jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/gym.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "lobby (1).jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/lobby_(1).jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "lobby.jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/lobby.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "main-restaurant.jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/main-restaurant.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "pickalbatros-white-beach-resort-in-agadir (1).jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/pickalbatros-white-beach-resort-in-agadir_(1).jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "pickalbatros-white-beach-resort-in-agadir.jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/pickalbatros-white-beach-resort-in-agadir.jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "pool (1).jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/pool_(1).jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "pool (2).jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/pool_(2).jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "spa (1).jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/spa_(1).jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "spa (2).jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/spa_(2).jpg",
+    "status": "Copied"
+  },
+  {
+    "type": "image",
+    "original": "tagine-restaurant.jpg",
+    "folder": "white_beach_hotel_agadir",
+    "webPath": "/images/client_request/white_beach_hotel_agadir/tagine-restaurant.jpg",
+    "status": "Copied"
+  }
+]
