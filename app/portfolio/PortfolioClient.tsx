@@ -258,10 +258,10 @@ export default function PortfolioClient() {
                         </div>
                       </div>
 
-                      {/* Package Card Bottom Full Width Button (matches screenshot CTA) */}
+                      {/* Package Card Bottom Full Width Button (beige theme) */}
                       <Link
                         href={`/itineraries/${id}`}
-                        className="w-full bg-zinc-950 hover:bg-zinc-900 text-white hover:text-[#C5A880] font-sans font-bold text-[10px] tracking-[0.2em] uppercase py-3.5 rounded-full transition-all duration-300 shadow-md text-center cursor-pointer block hover:scale-[1.01]"
+                        className="w-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 font-sans font-bold text-[10px] tracking-[0.2em] uppercase py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_12px_rgba(197,168,128,0.25)] text-center cursor-pointer block hover:scale-[1.01]"
                       >
                         {lang === "FR" ? "Voir l'itinéraire" : "View Itinerary"}
                       </Link>
