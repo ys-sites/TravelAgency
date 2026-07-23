@@ -112,8 +112,14 @@ export default function AboutUsSection() {
                 preload="metadata"
                 poster={videoAsset("Golf_in_Morocco_New_tmjx9s").poster}
                 className="absolute inset-0 w-full h-full object-cover"
+                onTimeUpdate={(e) => {
+                  if (e.currentTarget.currentTime >= 59) {
+                    e.currentTarget.pause();
+                    e.currentTarget.currentTime = 59;
+                  }
+                }}
               >
-                <source src={videoAsset("Golf_in_Morocco_New_tmjx9s").mp4 + "#t=0.001"} type="video/mp4" />
+                <source src={videoAsset("Golf_in_Morocco_New_tmjx9s").mp4 + "#t=0.001,59"} type="video/mp4" />
               </video>
             </div>
           </motion.div>
