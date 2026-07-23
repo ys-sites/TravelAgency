@@ -1,17 +1,13 @@
 'use client';
 
-import React, { useRef, useEffect } from "react";
-import { useLang, translate } from "../context/lang-context";
+import React from "react";
+import { useLang } from "../context/lang-context";
 import { usePathname } from "next/navigation";
 
 export default function CallFloatingButton() {
   const { lang } = useLang();
   const pathname = usePathname();
-  
-  const phoneNumber = "5149196381";
-  const displayPhone = "514 919 MEV1";
 
-  // Check if we are inside an itinerary detail page (starts with /itineraries/)
   const isItineraryPage = pathname?.startsWith("/itineraries/");
 
   const handleScrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -28,12 +24,12 @@ export default function CallFloatingButton() {
 
   if (isItineraryPage) {
     return (
-      <div className="fixed bottom-6 right-6 md:right-8 md:bottom-8 z-50 flex flex-col items-end gap-2 pointer-events-none">
-        {/* Pulsing Hint Tooltip/Popup - Visible on all views */}
+      <div className="fixed bottom-6 right-6 md:right-8 md:bottom-8 z-50 flex flex-col items-end gap-2.5 pointer-events-none">
+        {/* Pulsing Hint Tooltip/Popup */}
         <a
           href="#booking-form"
           onClick={handleScrollToForm}
-          className="bg-zinc-950/95 border border-brand-gold/40 text-brand-gold text-[9px] font-mono font-bold tracking-wider px-3 py-1.5 rounded-lg shadow-lg uppercase animate-pulse select-none shrink-0 pointer-events-auto cursor-pointer block hover:bg-zinc-900 transition-colors"
+          className="bg-zinc-950/95 border border-[#C5A880]/60 text-[#C5A880] text-[10px] font-sans font-semibold tracking-widest px-3.5 py-1.5 rounded-full shadow-xl uppercase animate-pulse select-none shrink-0 pointer-events-auto cursor-pointer block hover:bg-zinc-900 transition-colors"
         >
           {lang === "FR" ? "✨ Cliquez pour réserver" : "✨ Click to request booking"}
         </a>
@@ -42,17 +38,17 @@ export default function CallFloatingButton() {
           href="#booking-form"
           onClick={handleScrollToForm}
           aria-label={lang === "FR" ? "Aller au formulaire de contact" : "Go to contact form"}
-          className="flex items-center justify-center gap-2 bg-brand-gold hover:bg-[#cba358] text-zinc-950 border border-brand-gold p-3.5 px-4 md:px-5 md:py-3.5 rounded-full shadow-[0_12px_45px_rgba(0,0,0,0.5)] hover:scale-105 transition-all duration-300 ease-out cursor-pointer group pointer-events-auto shrink-0 font-bold"
+          className="flex items-center justify-center gap-2.5 bg-[#C5A880] hover:bg-[#b8986c] text-zinc-950 border border-[#C5A880] px-5 py-3.5 rounded-full shadow-[0_12px_35px_rgba(0,0,0,0.4)] hover:scale-105 transition-all duration-300 ease-out cursor-pointer group pointer-events-auto shrink-0 font-bold"
         >
           {/* Clipboard / Form Icon */}
           <svg 
             viewBox="0 0 24 24" 
             fill="none" 
             stroke="currentColor" 
-            strokeWidth="2.5" 
+            strokeWidth="2.2" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
-            className="w-5 h-5 text-zinc-950 transition-colors duration-300 shrink-0"
+            className="w-4 h-4 text-zinc-950 transition-colors duration-300 shrink-0"
           >
             <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
             <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
@@ -62,7 +58,7 @@ export default function CallFloatingButton() {
           </svg>
 
           {/* Button Text */}
-          <span className="text-[10px] font-mono tracking-[0.15em] uppercase text-zinc-950">
+          <span className="text-[11px] font-sans font-bold tracking-[0.18em] uppercase text-zinc-950">
             {lang === "FR" ? "Soumettre Demande" : "Submit Request"}
           </span>
         </a>
@@ -70,27 +66,34 @@ export default function CallFloatingButton() {
     );
   }
 
-  // Default: WhatsApp button on other pages
+  // Default: Modern WhatsApp button on other pages
   return (
     <a
       href="https://wa.me/15149196381"
       target="_blank"
       rel="noopener noreferrer"
       aria-label={lang === "FR" ? "Nous écrire sur WhatsApp" : "Chat with us on WhatsApp"}
-      className="fixed bottom-6 right-6 md:right-8 md:bottom-8 z-50 flex items-center justify-center gap-2 glass-nav text-[#faf9f5] p-4 md:px-5 md:py-3.5 rounded-full hover:scale-105 transition-all duration-300 ease-out cursor-pointer group"
+      className="fixed bottom-6 right-6 md:right-8 md:bottom-8 z-50 flex items-center justify-center gap-3 bg-zinc-950/90 hover:bg-zinc-950 text-white border border-[#C5A880]/40 hover:border-[#C5A880] px-4 py-3 md:px-5 md:py-3.5 rounded-full shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:scale-105 transition-all duration-300 ease-out backdrop-blur-xl cursor-pointer group"
     >
-      {/* WhatsApp SVG Icon */}
-      <svg 
-        viewBox="0 0 24 24" 
-        className="w-5 h-5 fill-current text-brand-gold group-hover:text-white transition-colors duration-300 shrink-0"
-      >
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.46h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-      </svg>
+      {/* WhatsApp Emerald/Gold Icon Circle */}
+      <div className="w-7 h-7 rounded-full bg-[#25D366]/15 group-hover:bg-[#25D366] flex items-center justify-center transition-colors duration-300 shrink-0 border border-[#25D366]/30">
+        <svg 
+          viewBox="0 0 24 24" 
+          className="w-4 h-4 fill-current text-[#25D366] group-hover:text-zinc-950 transition-colors duration-300 shrink-0"
+        >
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.46h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+      </div>
 
-      {/* Button Text - Visible on Desktop only */}
-      <span className="hidden md:inline text-[10px] font-mono font-bold tracking-[0.2em] uppercase text-zinc-200 group-hover:text-white transition-colors duration-300 selection:bg-transparent">
-        {lang === "FR" ? "WHATSAPP (514 919 MEV1)" : "WHATSAPP (514 919 MEV1)"}
-      </span>
+      {/* Button Text */}
+      <div className="flex items-center gap-1.5">
+        <span className="text-[11px] font-sans font-bold tracking-[0.15em] uppercase text-zinc-100 group-hover:text-white transition-colors duration-300">
+          WHATSAPP
+        </span>
+        <span className="text-[#C5A880] text-[10px] font-mono font-semibold">
+          (514 919 MEV1)
+        </span>
+      </div>
     </a>
   );
 }
