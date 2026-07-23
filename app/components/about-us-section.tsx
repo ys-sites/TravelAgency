@@ -178,19 +178,29 @@ export default function AboutUsSection() {
             <div 
               ref={containerRef}
               className="relative aspect-video rounded-3xl overflow-hidden border border-zinc-200/80 bg-zinc-950 shadow-md group cursor-pointer"
+              style={{
+                backgroundImage: `url('${videoAsset("Golf_in_Morocco_New_tmjx9s").poster}')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
               onMouseEnter={() => setShowControls(true)}
               onMouseLeave={() => isPlaying && setShowControls(false)}
             >
               <video
                 ref={videoRef}
-                preload="metadata"
+                preload="auto"
                 poster={videoAsset("Golf_in_Morocco_New_tmjx9s").poster}
                 className="absolute inset-0 w-full h-full object-cover"
                 onTimeUpdate={handleTimeUpdate}
                 onClick={togglePlay}
                 playsInline
+                style={{
+                  backgroundImage: `url('${videoAsset("Golf_in_Morocco_New_tmjx9s").poster}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
               >
-                <source src={videoAsset("Golf_in_Morocco_New_tmjx9s").mp4} type="video/mp4" />
+                <source src={videoAsset("Golf_in_Morocco_New_tmjx9s").mp4 + "#t=0.001"} type="video/mp4" />
               </video>
 
               {/* Centered Large Play Button when Paused */}
