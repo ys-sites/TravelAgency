@@ -90,7 +90,7 @@ export default function PortfolioClient() {
         {/* Cover Strip (Fast Loading Hero Image) */}
         <div className="relative w-full h-[180px] flex-shrink-0 bg-transparent overflow-hidden rounded-3xl shadow-inner z-10 border border-white/20">
           <img
-            src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.jpg"
+            src="/images/golf_cover.jpg"
             alt="Golf in Morocco"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-85 pointer-events-none"
             loading="eager"

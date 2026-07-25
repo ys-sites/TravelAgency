@@ -9,6 +9,11 @@ export default function CallFloatingButton() {
   const pathname = usePathname();
 
   const isItineraryPage = pathname?.startsWith("/itineraries/");
+  const isPortfolioPage = pathname?.startsWith("/portfolio");
+
+  if (isPortfolioPage) {
+    return null;
+  }
 
   const handleScrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (isItineraryPage) {
