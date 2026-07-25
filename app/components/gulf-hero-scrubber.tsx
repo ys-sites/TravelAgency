@@ -52,6 +52,16 @@ export default function GulfHeroScrubber() {
   const posterUrl = asset.poster;
   const mp4Src = asset.mp4;
 
+  const handleTimeUpdate = () => {
+    const vid = videoRef.current;
+    if (vid && vid.duration && !isNaN(vid.duration) && vid.duration > 5) {
+      if (vid.currentTime >= vid.duration - 5) {
+        vid.currentTime = 0;
+        vid.play().catch(() => {});
+      }
+    }
+  };
+
   return (
     <div
       className="relative w-full bg-black overflow-hidden"
@@ -72,6 +82,7 @@ export default function GulfHeroScrubber() {
           disableRemotePlayback
           preload="auto"
           poster={posterUrl}
+          onTimeUpdate={handleTimeUpdate}
           // @ts-ignore — fetchPriority is a valid HTML attribute in React 19 / Next 15
           fetchPriority="high"
           style={{

@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from "react";
+import React from "react";
 import { useLang, translate } from "../context/lang-context";
 import { itinerariesData } from "@/data/itineraries";
 import Link from "next/link";
@@ -11,10 +11,10 @@ const SOCIALS = {
   instagram: "https://www.instagram.com/merveilles.et.voyages?igsh=MTRzc2xmZDA5dGJxbg%3D%3D&utm_source=qr",
   tiktok: "TODO_TIKTOK_URL",
   facebook: "https://www.facebook.com/share/1K4URaBPHt/?mibextid=wwXIfr",
-  website: "https://www.mevoyages.com",
+  website: "/",
 };
-const WHATSAPP_URL = "https://wa.me/15149196381";
-const PHONE = "5149196381";
+const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=15149196381";
+const PHONE = "15149196381";
 
 const SIGNATURE_IDS = ["10", "11", "6"];
 
@@ -72,22 +72,11 @@ const premiumFadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 26, filter: "blur(10px)" },
   whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
   viewport: { once: true, margin: "-40px" },
-  transition: { duration: 0.7, ease: "easeOut" as any, delay },
+  transition: { duration: 0.5, ease: "easeOut" as any, delay },
 });
 
 export default function PortfolioClient() {
   const { lang, setLang } = useLang();
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (videoRef.current) {
-        videoRef.current.pause();
-      }
-    }, 1500); // Pause cover video after 1.5 seconds (1500 ms)
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#eef2f3] to-[#e4e7eb] flex items-center justify-center font-sans antialiased text-zinc-800 selection:bg-[#C5A880]/20 selection:text-zinc-900 relative overflow-hidden">
@@ -98,21 +87,14 @@ export default function PortfolioClient() {
 
       <div className="w-full max-w-[430px] mx-auto min-h-screen md:min-h-[850px] md:my-10 md:rounded-[2.5rem] md:border md:border-white/50 md:shadow-[0_25px_60px_rgba(0,0,0,0.06)] bg-white/45 backdrop-blur-2xl overflow-hidden flex flex-col relative px-6 py-10">
         
-        {/* Cover Strip (Looping Video) */}
+        {/* Cover Strip (Fast Loading Hero Image) */}
         <div className="relative w-full h-[180px] flex-shrink-0 bg-transparent overflow-hidden rounded-3xl shadow-inner z-10 border border-white/20">
-          <video
-            ref={videoRef}
+          <img
+            src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.jpg"
+            alt="Golf in Morocco"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-85 pointer-events-none"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.jpg"
-          >
-            <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-            <source src="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_New_tmjx9s.mp4" type="video/mp4" />
-          </video>
+            loading="eager"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/40 to-white/95 z-10" />
         </div>
 
@@ -128,7 +110,7 @@ export default function PortfolioClient() {
                   src="/images/logo.png" 
                   alt="Merveilles et Voyages Logo" 
                   className="w-[85%] h-[85%] object-contain" 
-                  loading="lazy" 
+                  loading="eager" 
                 />
               </div>
             </div>
@@ -154,12 +136,12 @@ export default function PortfolioClient() {
           </motion.div>
 
           {/* Social Icons (Theme colored circular buttons) */}
-          <motion.div {...premiumFadeUp(0.08)} className="flex justify-center gap-3 mt-6">
+          <motion.div {...premiumFadeUp(0.04)} className="flex justify-center gap-3 mt-6">
             <a
               href={SOCIALS.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(197,168,128,0.25)]"
+              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] active:scale-90 text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-150 shadow-[0_4px_10px_rgba(197,168,128,0.25)] cursor-pointer"
             >
               <InstagramIcon />
             </a>
@@ -168,7 +150,7 @@ export default function PortfolioClient() {
               href={SOCIALS.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(197,168,128,0.25)]"
+              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] active:scale-90 text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-150 shadow-[0_4px_10px_rgba(197,168,128,0.25)] cursor-pointer"
             >
               <FacebookIcon />
             </a>
@@ -177,45 +159,44 @@ export default function PortfolioClient() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(197,168,128,0.25)]"
+              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] active:scale-90 text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-150 shadow-[0_4px_10px_rgba(197,168,128,0.25)] cursor-pointer"
             >
               <WhatsAppIcon />
             </a>
 
             <a
               href={`tel:${PHONE}`}
-              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-[0_4px_10px_rgba(197,168,128,0.25)]"
+              className="w-[42px] h-[42px] rounded-full bg-[#C5A880] hover:bg-[#b5966c] active:scale-90 text-zinc-950 flex items-center justify-center hover:scale-110 transition-all duration-150 shadow-[0_4px_10px_rgba(197,168,128,0.25)] cursor-pointer"
             >
               <Phone className="w-4 h-4 stroke-2" />
             </a>
           </motion.div>
 
           {/* Primary CTAs */}
-          <motion.div {...premiumFadeUp(0.12)} className="grid grid-cols-2 gap-3 mt-6">
+          <motion.div {...premiumFadeUp(0.08)} className="grid grid-cols-2 gap-3 mt-6">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 font-bold uppercase text-[10px] tracking-wider rounded-full py-4 text-center transition-all shadow-[0_4px_12px_rgba(197,168,128,0.2)] hover:scale-[1.03] active:scale-95 duration-300 cursor-pointer"
+              className="bg-[#C5A880] hover:bg-[#b5966c] active:scale-95 text-zinc-950 font-bold uppercase text-[10px] tracking-wider rounded-full py-4 text-center transition-all shadow-[0_4px_12px_rgba(197,168,128,0.2)] hover:scale-[1.03] duration-150 cursor-pointer block"
             >
               {lang === "FR" ? "Écrivez-nous" : "Chat with us"}
             </a>
-            <a
-              href={SOCIALS.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-zinc-300/80 bg-white/40 hover:bg-white/80 text-zinc-800 font-bold uppercase text-[10px] tracking-wider rounded-full py-4 text-center transition-all hover:scale-[1.03] active:scale-95 duration-300 cursor-pointer"
+            <Link
+              href="/"
+              prefetch={true}
+              className="border border-zinc-300/80 bg-white/40 hover:bg-white/80 active:scale-95 text-zinc-800 font-bold uppercase text-[10px] tracking-wider rounded-full py-4 text-center transition-all hover:scale-[1.03] duration-150 cursor-pointer block"
             >
               {lang === "FR" ? "Visiter le site" : "Visit website"}
-            </a>
+            </Link>
           </motion.div>
 
           {/* Save Contact (Full-width outline button) */}
-          <motion.div {...premiumFadeUp(0.18)} className="mt-4">
+          <motion.div {...premiumFadeUp(0.12)} className="mt-4">
             <a
               href="/mevoyages.vcf"
-              download
-              className="flex items-center justify-center gap-2 w-full border border-zinc-300/90 bg-white/20 hover:bg-white/50 text-zinc-700 hover:text-zinc-900 rounded-full py-4 text-center font-bold text-xs uppercase tracking-wider transition-all hover:scale-[1.02] active:scale-95 duration-300 cursor-pointer"
+              download="Merveilles-et-Voyages.vcf"
+              className="flex items-center justify-center gap-2 w-full border border-zinc-300/90 bg-white/20 hover:bg-white/50 active:scale-95 text-zinc-700 hover:text-zinc-900 rounded-full py-4 text-center font-bold text-xs uppercase tracking-wider transition-all hover:scale-[1.02] duration-150 cursor-pointer"
             >
               <Download className="w-4 h-4 text-zinc-500" />
               <span>{lang === "FR" ? "Enregistrer le contact" : "Save contact"}</span>
@@ -224,7 +205,7 @@ export default function PortfolioClient() {
 
           {/* Signature Packages (Feature Cards layout matching screenshot) */}
           <div className="mt-8 space-y-4">
-            <motion.h3 {...premiumFadeUp(0.24)} className="text-[#C5A880] font-mono text-[10px] tracking-[0.15em] font-bold uppercase mb-1">
+            <motion.h3 {...premiumFadeUp(0.16)} className="text-[#C5A880] font-mono text-[10px] tracking-[0.15em] font-bold uppercase mb-1">
               {lang === "FR" ? "Nos Signatures" : "Signature Journeys"}
             </motion.h3>
             <div className="space-y-4">
@@ -232,8 +213,8 @@ export default function PortfolioClient() {
                 const pkg = itinerariesData[id];
                 if (!pkg) return null;
                 return (
-                  <motion.div key={id} {...premiumFadeUp(0.30 + index * 0.08)}>
-                    <div className="bg-white/40 border border-white/60 rounded-[2rem] p-4 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col space-y-3.5 hover:border-[#C5A880]/30 transition-all duration-300">
+                  <motion.div key={id} {...premiumFadeUp(0.18 + index * 0.04)}>
+                    <div className="bg-white/40 border border-white/60 rounded-[2rem] p-4 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col space-y-3.5 hover:border-[#C5A880]/30 transition-all duration-200">
                       
                       {/* Package Card Top Info */}
                       <div className="flex items-center gap-4">
@@ -242,7 +223,7 @@ export default function PortfolioClient() {
                             src={pkg.image}
                             alt={translate(pkg.title, lang)}
                             className="w-full h-full object-cover"
-                            loading="lazy"
+                            loading="eager"
                           />
                         </div>
                         <div className="flex-1 min-w-0">
@@ -261,7 +242,8 @@ export default function PortfolioClient() {
                       {/* Package Card Bottom Full Width Button (beige theme) */}
                       <Link
                         href={`/itineraries/${id}`}
-                        className="w-full bg-[#C5A880] hover:bg-[#b5966c] text-zinc-950 font-sans font-bold text-[10px] tracking-[0.2em] uppercase py-3.5 rounded-full transition-all duration-300 shadow-[0_4px_12px_rgba(197,168,128,0.25)] text-center cursor-pointer block hover:scale-[1.01]"
+                        prefetch={true}
+                        className="w-full bg-[#C5A880] hover:bg-[#b5966c] active:scale-95 text-zinc-950 font-sans font-bold text-[10px] tracking-[0.2em] uppercase py-3.5 rounded-full transition-all duration-150 shadow-[0_4px_12px_rgba(197,168,128,0.25)] text-center cursor-pointer block hover:scale-[1.01]"
                       >
                         {lang === "FR" ? "Voir l'itinéraire" : "View Itinerary"}
                       </Link>
@@ -275,10 +257,11 @@ export default function PortfolioClient() {
           {/* Quick Links (Glass Pills) */}
           <div className="mt-8 space-y-3">
             {QUICK_LINKS.map((link, idx) => (
-              <motion.div key={idx} {...premiumFadeUp(0.54 + idx * 0.06)}>
+              <motion.div key={idx} {...premiumFadeUp(0.30 + idx * 0.04)}>
                 <Link
                   href={link.url}
-                  className="block w-full bg-white/45 hover:bg-white/85 border border-zinc-200 hover:border-[#C5A880]/50 rounded-full py-4 text-center text-xs font-bold uppercase tracking-wider text-zinc-800 transition-all hover:scale-[1.02] duration-300 shadow-sm"
+                  prefetch={true}
+                  className="block w-full bg-white/45 hover:bg-white/85 active:scale-95 border border-zinc-200 hover:border-[#C5A880]/50 rounded-full py-4 text-center text-xs font-bold uppercase tracking-wider text-zinc-800 transition-all hover:scale-[1.02] duration-150 shadow-sm cursor-pointer"
                 >
                   {translate(link.label, lang)}
                 </Link>
