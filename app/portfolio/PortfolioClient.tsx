@@ -8,7 +8,7 @@ import { motion } from "motion/react";
 import { Download, ChevronRight, Phone } from "lucide-react";
 
 const SOCIALS = {
-  instagram: "https://www.instagram.com/merveilles.et.voyages?igsh=MTRzc2xmZDA5dGJxbg%3D%3D&utm_source=qr",
+  instagram: "https://www.instagram.com/m.e.voyages?utm_source=qr",
   tiktok: "TODO_TIKTOK_URL",
   facebook: "https://www.facebook.com/share/1K4URaBPHt/?mibextid=wwXIfr",
   website: "/",

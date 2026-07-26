@@ -102,7 +102,7 @@ export default function Footer() {
               </svg>
             </a>
             <a 
-              href="https://www.instagram.com/merveilles.et.voyages?igsh=MTRzc2xmZDA5dGJxbg%3D%3D&utm_source=qr" 
+              href="https://www.instagram.com/m.e.voyages?utm_source=qr" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-white/50 hover:text-brand-gold transition-colors duration-300"
