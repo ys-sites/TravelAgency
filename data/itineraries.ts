@@ -313,7 +313,7 @@ export const toursList: TourCard[] = [
     image: "/images/moroco.webp",
     category: { FR: "Tours & Découvertes", EN: "Tours & Discovery" },
     badge: { FR: "Découverte", EN: "Discovery" },
-    title: { FR: "Un Aperçu des Villes Impériales", EN: "A Glimpse of Imperial Cities" },
+    title: { FR: "Villes Impériales", EN: "Imperial Cities" },
     description: {
       FR: "Un magnifique circuit de 7 nuits comprenant Marrakech, Beni Mellal, Fès, Meknès, Rabat et Casablanca avec des visites culturelles incluses.",
       EN: "A magnificent 7-night tour covering Marrakech, Beni Mellal, Fes, Meknes, Rabat, and Casablanca with cultural visits included."
@@ -1691,7 +1691,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
     image: "/images/german_circuit_morocco.jpg",
     contentImage: "/images/imperial_cities_fes.jpg",
     // Title updated per client request 2026-06-28
-    title: { FR: "Un Aperçu des Villes Impériales", EN: "A Glimpse of Imperial Cities" },
+    title: { FR: "Villes Impériales", EN: "Imperial Cities" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     cost: { FR: "Sur demande", EN: "On request" },
     overview: {
