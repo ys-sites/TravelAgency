@@ -101,10 +101,11 @@ export default function CustomTripClient() {
   const [selectedActs, setSelectedActs] = useState<string[]>([]);
   const [nights, setNights] = useState(7);
   
-  // Contact details
+  // Contact & Travel details
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [departureCity, setDepartureCity] = useState("Montreal");
 
   // Passenger details
   const [passengerCount, setPassengerCount] = useState(1);
@@ -168,6 +169,7 @@ export default function CustomTripClient() {
       destinations: selectedDests,
       activities: selectedActs,
       nights,
+      departureCity,
       contact: { fullName, email, phone },
       totalCostCAD: calculateTotalCost()
     };
@@ -446,6 +448,25 @@ export default function CustomTripClient() {
                     />
                   </div>
 
+                  {/* Departure City Selector */}
+                  <div>
+                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                      {lang === "FR" ? "Ville de départ préférée" : "Preferred departure city"}
+                    </label>
+                    <select
+                      value={departureCity}
+                      onChange={(e) => setDepartureCity(e.target.value)}
+                      className="w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 bg-white border border-zinc-200 text-zinc-800 font-medium cursor-pointer"
+                    >
+                      <option value="Montreal">Montréal (YUL) — Québec / Canada</option>
+                      <option value="New York">New York (JFK / EWR) — USA</option>
+                      <option value="Washington D.C.">Washington D.C. (IAD) — USA</option>
+                      <option value="Los Angeles">Los Angeles (LAX) — USA</option>
+                      <option value="Toronto">Toronto (YYZ) — Ontario / Canada</option>
+                      <option value="Other">Other North American City / Autre ville</option>
+                    </select>
+                  </div>
+
                   {/* Travelling party (Passengers) */}
                   <div className="pt-4 border-t space-y-3 border-zinc-200">
                     <div className="flex items-center justify-between">
@@ -615,6 +636,10 @@ export default function CustomTripClient() {
                 <div>
                   <span className="text-zinc-400">{lang === "FR" ? "Durée:" : "Duration:"}</span>{" "}
                   <span className="font-bold text-brand-gold">{nights} {lang === "FR" ? "Nuits" : "Nights"}</span>
+                </div>
+                <div>
+                  <span className="text-zinc-400">{lang === "FR" ? "Départ:" : "Departure:"}</span>{" "}
+                  <span className="font-bold text-brand-gold">{departureCity}</span>
                 </div>
                 <div>
                   <span className="text-zinc-400">{lang === "FR" ? "Catégorie:" : "Tier:"}</span>{" "}

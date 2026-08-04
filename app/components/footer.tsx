@@ -163,7 +163,8 @@ export default function Footer() {
             <li><Link href="/conditions" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Conditions Générales" : "General Conditions"}</Link></li>
             <li><Link href="/#contacts" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Contact" : "Contact"}</Link></li>
             <li><Link href="/conditions" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Assurance Voyage" : "Travel Insurance"}</Link></li>
-            <li><Link href="/mice" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Services aux Entreprises" : "Corporate Services"}</Link></li>
+            <li><Link href="/mice" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Services aux Entreprises (MICE)" : "Corporate Services (MICE)"}</Link></li>
+            <li><Link href="/heritage" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Patrimoine & Culture Maroc" : "Morocco Heritage & Culture"}</Link></li>
             <li><Link href="/custom-trip" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Voyages Scolaires" : "School Trips"}</Link></li>
             <li><Link href="/travel-stories" className="hover:text-brand-gold transition-colors">{translate(t.news, lang)}</Link></li>
             <li><Link href="/agence-de-voyage-montreal" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Agence de Voyage Montréal" : "Montreal Travel Agency"}</Link></li>

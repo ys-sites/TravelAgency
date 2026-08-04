@@ -60,7 +60,7 @@ export default function AgadirGolfClient() {
       { FR: "4 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "4 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
       { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
       { FR: "Hébergement 5★ en chambre vue piscine", EN: "5★ accommodation in a Pool View Room" },
-      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
+      { FR: "Vols directs disponibles depuis Montréal, NYC, Washington, LA, Toronto & grands hubs", EN: "Direct flights available from Montreal, NYC, Washington, LA, Toronto & major hubs" },
       { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
     ],
     price: "3,879",
@@ -88,7 +88,7 @@ export default function AgadirGolfClient() {
       { FR: "4 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "4 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
       { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
       { FR: "Séjour tout compris haut de gamme (Adulte Seul)", EN: "Premium all-inclusive stay (Adults Only)" },
-      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
+      { FR: "Vols directs disponibles depuis Montréal, NYC, Washington, LA, Toronto & grands hubs", EN: "Direct flights available from Montreal, NYC, Washington, LA, Toronto & major hubs" },
       { FR: "Transferts privés aéroport et terrains de golf", EN: "Private airport and golf course transfers" }
     ],
     price: "4,255",

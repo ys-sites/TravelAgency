@@ -95,6 +95,24 @@ export default function GulfHeroScrubber() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80 pointer-events-none z-1" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.5)_100%)] pointer-events-none z-1" />
       
+      {/* Hero Corner Teaser to Heritage Sub-Page */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute top-24 right-4 sm:right-8 z-20 pointer-events-auto"
+      >
+        <Link
+          href="/heritage"
+          className="group flex items-center gap-2 bg-zinc-950/70 hover:bg-zinc-900/90 backdrop-blur-md border border-brand-gold/40 hover:border-brand-gold px-3.5 py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+        >
+          <span className="w-2 h-2 rounded-full bg-brand-gold animate-ping" />
+          <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-200 group-hover:text-brand-gold transition-colors">
+            {lang === "FR" ? "Patrimoine Maroc →" : "Morocco Heritage →"}
+          </span>
+        </Link>
+      </motion.div>
+
       {/* Cinematic Content Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center pt-[90px] pb-[80px] gap-5 sm:gap-6 md:gap-8 z-10 px-6 text-center select-none pointer-events-none">
         {/* Logo */}

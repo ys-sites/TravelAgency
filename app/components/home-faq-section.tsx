@@ -23,10 +23,10 @@ const faqs = [
     },
   },
   {
-    q: { FR: "Vos forfaits incluent-ils les vols depuis Montréal ?", EN: "Do your packages include flights from Montreal?" },
+    q: { FR: "Depuis quelles villes puis-je m'envoler vers le Maroc ?", EN: "Which departure cities are available for direct/connecting flights to Morocco?" },
     a: {
-      FR: "Oui, nous pouvons organiser vos vols réguliers au départ de Montréal (YUL) vers le Maroc. Nous travaillons avec les principales compagnies aériennes desservant cette route pour vous proposer les meilleures options selon votre budget et vos dates.",
-      EN: "Yes, we can arrange your scheduled flights departing from Montreal (YUL) to Morocco. We work with the main airlines serving this route to offer you the best options based on your budget and dates.",
+      FR: "Nous organisons des vols directs et réguliers au départ de nombreuses métropoles d'Amérique du Nord, notamment Montréal (YUL), New York (JFK/EWR), Washington D.C. (IAD), Los Angeles (LAX), Toronto (YYZ) et d'autres grands hubs. Notre conciergerie adapte votre itinéraire aérien selon votre ville de départ et votre classe de voyage.",
+      EN: "We arrange direct and scheduled flights departing from major North American gateways including Montreal (YUL), New York (JFK/EWR), Washington D.C. (IAD), Los Angeles (LAX), Toronto (YYZ), and major connecting hubs. Our concierge customizes your flight itinerary based on your origin city and preferred travel class.",
     },
   },
   {

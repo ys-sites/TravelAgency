@@ -60,7 +60,7 @@ export default function MarrakechGolfClient() {
       { FR: "6 rondes de golf de championnat à Marrakech", EN: "6 rounds of championship golf in Marrakech" },
       { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
       { FR: "Hébergement 5★ haut de gamme tout inclus", EN: "5★ premium all-inclusive accommodation" },
-      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
+      { FR: "Vols directs disponibles depuis Montréal, NYC, Washington, LA, Toronto & grands hubs", EN: "Direct flights available from Montreal, NYC, Washington, LA, Toronto & major hubs" },
       { FR: "Transferts privés aéroport, hôtel et golfs", EN: "Private airport, hotel, and course transfers" }
     ],
     price: "5,899",
@@ -87,7 +87,7 @@ export default function MarrakechGolfClient() {
       { FR: "6 rondes de golf de championnat à Marrakech", EN: "6 rounds of championship golf in Marrakech" },
       { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
       { FR: "Séjour de luxe 5★ réservé aux adultes (Riad)", EN: "Adults-only 5★ luxury Riad accommodation" },
-      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
+      { FR: "Vols directs disponibles depuis Montréal, NYC, Washington, LA, Toronto & grands hubs", EN: "Direct flights available from Montreal, NYC, Washington, LA, Toronto & major hubs" },
       { FR: "Transferts privés aéroport, hôtel et golfs", EN: "Private airport, hotel, and course transfers" }
     ],
     price: "4,669",
@@ -115,7 +115,7 @@ export default function MarrakechGolfClient() {
       { FR: "4 rondes de golf de championnat à Marrakech", EN: "4 rounds of championship golf in Marrakech" },
       { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
       { FR: "Séjour 5★ d'exception réservé aux adultes", EN: "Exceptional 5★ adults-only stay" },
-      { FR: "Vol direct aller-retour de Montréal inclus", EN: "Direct round-trip flight from Montreal included" },
+      { FR: "Vols directs disponibles depuis Montréal, NYC, Washington, LA, Toronto & grands hubs", EN: "Direct flights available from Montreal, NYC, Washington, LA, Toronto & major hubs" },
       { FR: "Transferts privés aéroport, hôtel et golfs", EN: "Private airport, hotel, and course transfers" }
     ],
     price: "3,979",

@@ -66,7 +66,7 @@ export default function Promotions() {
       oldPrice: "",
       newPrice: { FR: "À partir de 3 200 $", EN: "From 3,200" },
       link: "/itineraries?type=Tours",
-      promoText: { FR: "Vols de Montréal Inclus", EN: "Montreal Flights Included" }
+      promoText: { FR: "Vols Multi-Villes (YUL, NYC, YYZ, LAX...)", EN: "Multi-City Flights (YUL, NYC, YYZ, LAX...)" }
     },
     {
       id: "golf",
@@ -277,8 +277,8 @@ export default function Promotions() {
                           let tags: string[] = [];
                           if (deal.tag === "golf") {
                             tags = lang === "FR" 
-                              ? ["Forfait Golf", "Hôtel 5★", "Buggy Inclus", "Vols de Montréal"] 
-                              : ["Golf Package", "5★ Hotel", "Buggy Included", "Montreal Flights"];
+                              ? ["Forfait Golf", "Hôtel 5★", "Buggy Inclus", "Vols Directs (YUL, NYC, YYZ...)"] 
+                              : ["Golf Package", "5★ Hotel", "Buggy Included", "Direct Flights (YUL, NYC, YYZ...)"];
                           } else if (deal.tag === "tour") {
                             tags = lang === "FR" 
                               ? ["Circuit Guidé", "Trek Toubkal", "Riad de Luxe", "Pension Complète"] 

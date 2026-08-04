@@ -51,6 +51,9 @@ export default function Navbar() {
           <Link href="/mice" className="hover:text-brand-gold transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {lang === "FR" ? "MICE" : "MICE"}
           </Link>
+          <Link href="/heritage" className="hover:text-brand-gold transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
+            {lang === "FR" ? "Patrimoine" : "Heritage"}
+          </Link>
           <Link href="/#about" className="hover:text-brand-gold transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {lang === "FR" ? "À Propos" : "About Us"}
           </Link>

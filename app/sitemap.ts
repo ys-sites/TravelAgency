@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/travel-stories",
     "/custom-trip",
     "/conditions",
+    "/heritage",
     "/agence-de-voyage-montreal",
   ];
 

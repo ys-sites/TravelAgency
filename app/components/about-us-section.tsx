@@ -13,16 +13,16 @@ const t = {
     FR: "Notre Mission"
   },
   subheading: {
-    EN: "Morocco Specialists & Passionate Golfers",
-    FR: "Spécialistes du Maroc & Golfeurs Passionnés"
+    EN: "One Destination. Endless Expertise.",
+    FR: "Une Seule Destination. Une Expertise Sans Limites."
   },
   paragraph1: {
-    EN: "At Merveilles et Voyages, we specialize exclusively in Morocco. Because we focus on a single destination, we know it more deeply than anyone else—from its most prestigious royal golf courses to its finest hidden gems. As passionate golfers ourselves, we understand exactly what players expect: perfect tee times, seamless logistics, and exceptional service on and off the course.",
-    FR: "Chez Merveilles et Voyages, nous nous spécialisons exclusivement au Maroc. En nous concentrant sur une seule destination, nous la connaissons plus profondément que quiconque—de ses parcours de golf royaux les plus prestigieux à ses joyaux cachés. En tant que golfeurs passionnés, nous comprenons exactement ce que les joueurs attendent : des départs parfaits, une logistique fluide et un service exceptionnel sur le parcours et en dehors."
+    EN: "Whether you are planning an executive corporate event, a high-end cultural tour, or an unforgettable classic vacation, we are your dedicated Morocco specialists. At Merveilles et Voyages, we specialize exclusively in Morocco. Because we focus on a single destination, we know it more deeply than generalist agencies—from its most prestigious royal golf courses and luxury riads to its finest hidden UNESCO treasures.",
+    FR: "Que vous planifiiez un événement d'entreprise de prestige, un circuit culturel haut de gamme ou des vacances classiques inoubliables, nous sommes vos spécialistes exclusifs du Maroc. Chez Merveilles et Voyages, nous nous consacrons uniquement au Maroc. En nous concentrant sur une seule destination, nous la maîtrisons plus profondément que les agences généralistes—de ses parcours de golf royaux aux riads d'exception et trésors classés à l'UNESCO."
   },
   paragraph2: {
-    EN: "Driven by our deep knowledge of Morocco and our commitment to excellence, we accompany you throughout your journey with personalized guidance and local expertise. We take you beyond the guidebooks, beyond the landmarks, and beyond expectations. From breathtaking landscapes to authentic cultural encounters, our goal is not simply to show you Morocco—it is to make you feel it, live it, and return home forever changed.",
-    FR: "Guidés par notre connaissance approfondie du Maroc et notre engagement envers l'excellence, nous vous accompagnons tout au long de votre voyage avec des conseils personnalisés et une expertise locale. Nous vous emmenons au-delà des guides, au-delà des monuments et au-delà des attentes. Des paysages à couper le souffle aux rencontres culturelles authentiques, notre but n'est pas seulement de vous faire découvrir le Maroc—c'est de vous le faire ressentir, vivre et de vous faire revenir transformé à jamais."
+    EN: "Driven by our deep regional mastery, we accompany you throughout your journey with personalized concierge guidance, seamless logistics, and direct North American flight coordination. From breathtaking Atlas peaks and Sahara dunes to luxury coastal retreats, our goal is to deliver an extraordinary passage tailored to your exact vision.",
+    FR: "Guidés par notre maîtrise régionale approfondie, nous vous accompagnons à chaque étape avec une conciergerie personnalisée, une logistique irréprochable et la coordination de vols directs depuis l'Amérique du Nord. Des sommets de l'Atlas aux dunes du Sahara en passant par les stations côtières de prestige, notre mission est de vous offrir un voyage d'exception."
   },
   credential1Label: {
     EN: "15+",
