@@ -134,10 +134,13 @@ export default function HeritageClient() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#1C1A17] font-body antialiased selection:bg-[#C5A880] selection:text-white">
-      <Navbar />
+      {/* Dark header band — gives the shared transparent Navbar a solid dark background on this page only */}
+      <div className="relative bg-[#1C1A17]" style={{ height: "76px" }}>
+        <Navbar />
+      </div>
 
       {/* Hero Section */}
-      <section className="relative pt-36 pb-24 md:pt-44 md:pb-32 px-6 md:px-12 bg-gradient-to-b from-[#F4F0EA] via-[#FAF8F5] to-[#FAF8F5] text-[#1C1A17] overflow-hidden border-b border-[#E8E2D8]">
+      <section className="relative pt-16 pb-24 md:pt-20 md:pb-32 px-6 md:px-12 bg-gradient-to-b from-[#F4F0EA] via-[#FAF8F5] to-[#FAF8F5] text-[#1C1A17] overflow-hidden border-b border-[#E8E2D8]">
         {/* Decorative Architectural Pattern Grid */}
         <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#1C1A17_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
