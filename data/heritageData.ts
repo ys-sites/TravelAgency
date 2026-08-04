@@ -185,7 +185,7 @@ export const IMPERIAL_CITIES: ImperialCity[] = [
       FR: "Cœur intellectuel et spirituel du Royaume depuis 808 ap. J.-C., réputé pour ses médersas sculptées et son artisanat d'excellence.",
       EN: "Morocco's intellectual heart since 808 AD, famed for intricate carved madrasas and centuries of leather tanning mastery."
     },
-    image: "/heritage/Fez%20%E2%80%94%20The%20Spiritual%20Capital.jpg"
+    image: "/heritage/Medina%20of%20Fez%20(Fes%20el-Bali).jpg"
   },
   {
     id: "marrakech-imperial",
@@ -197,7 +197,7 @@ export const IMPERIAL_CITIES: ImperialCity[] = [
       FR: "Cité ocre impériale au pied de l'Atlas, symbole des riads somptueux, de la gastronomie et de l'art de vivre d'exception.",
       EN: "Red-ochre imperial oasis at the foot of the High Atlas, synonymous with palatial riads, fine dining, and royal hospitality."
     },
-    image: "/heritage/Marrakech%20%E2%80%94%20The%20Southern%20Pearl.jpg"
+    image: "/heritage/Medina%20of%20Marrakech.jpg"
   },
   {
     id: "meknes-imperial",
@@ -209,7 +209,7 @@ export const IMPERIAL_CITIES: ImperialCity[] = [
       FR: "Fortifiée par des kilomètres de murailles et des portes monumentales sculptées, au milieu des oliviers et vignobles fertiles.",
       EN: "Ringed by massive ramparts and towering gates, surrounded by ancient olive groves and fertile plateau vineyards."
     },
-    image: "/heritage/Meknes%20%E2%80%94%20The%20Versaillese%20Empire.jpg"
+    image: "/heritage/Historic%20City%20of%20Meknes.jpg"
   },
   {
     id: "rabat-imperial",
@@ -221,7 +221,7 @@ export const IMPERIAL_CITIES: ImperialCity[] = [
       FR: "Siège actuel du Gouvernement et de la Famille Royale, alliant l'élégance côtière atlantique et les grands musées nationaux.",
       EN: "Current capital of the Crown, blending cliffside Atlantic fortresses, royal palaces, and world-class modern museums."
     },
-    image: "/heritage/Rabat%20%E2%80%94%20The%20Royal%20Seat%20of%20Power.jpg"
+    image: "/heritage/Rabat%2C%20Modern%20Capital%20%26%20Historic%20City.jpg"
   }
 ];
 

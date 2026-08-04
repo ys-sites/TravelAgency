@@ -195,7 +195,7 @@ export default function HeritageClient() {
               className="pt-2 flex flex-wrap gap-4 items-center"
             >
               <Link
-                href="/custom-trip"
+                href="/#contact-form"
                 className="bg-[#1C1A17] hover:bg-[#36332E] text-white font-semibold text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2.5"
               >
                 <span>{lang === "FR" ? "Créer Mon Voyage Sur Mesure" : "Design Custom Journey"}</span>
@@ -388,7 +388,7 @@ export default function HeritageClient() {
                 {/* Card Footer Action */}
                 <div className="px-6 pb-6 pt-2 border-t border-[#FAF8F5]">
                   <Link
-                    href="/custom-trip"
+                    href="/#contact-form"
                     className="inline-flex items-center gap-2 font-mono text-[11px] font-bold text-[#1C1A17] uppercase tracking-wider group-hover:text-[#B8975A] transition-colors"
                   >
                     <span>{lang === "FR" ? "Explorer cette région →" : "Explore This Region →"}</span>
@@ -522,7 +522,7 @@ export default function HeritageClient() {
                     {translate(item.caption, lang)}
                   </p>
                   <Link
-                    href="/custom-trip"
+                    href="/#contact-form"
                     className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#1C1A17] uppercase tracking-wider group-hover:text-[#B8975A] transition-colors pt-2"
                   >
                     <span>{lang === "FR" ? "Explorer ce paysage →" : "Explore Landscape →"}</span>
@@ -699,7 +699,7 @@ export default function HeritageClient() {
 
                 <div className="px-6 pb-6 pt-2 border-t border-[#FAF8F5]">
                   <Link
-                    href="/custom-trip"
+                    href="/#contact-form"
                     className="inline-flex items-center gap-1.5 font-mono text-[11px] font-bold text-[#1C1A17] uppercase tracking-wider group-hover:text-[#B8975A] transition-colors"
                   >
                     <span>{lang === "FR" ? "Réserver une table privée →" : "Book Private Dining →"}</span>
@@ -867,7 +867,7 @@ export default function HeritageClient() {
                 </p>
               </div>
               <Link
-                href="/custom-trip"
+                href="/#contact-form"
                 className="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#1C1A17] uppercase tracking-wider group-hover:text-[#B8975A] transition-colors"
               >
                 <span>{lang === "FR" ? "Personnaliser Mon Circuit →" : "Customize Cultural Tour →"}</span>
@@ -967,7 +967,7 @@ export default function HeritageClient() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-4">
             <Link
-              href="/custom-trip"
+              href="/#contact-form"
               className="bg-[#B8975A] hover:bg-[#9E7F44] text-zinc-950 font-bold text-xs tracking-[0.2em] uppercase px-10 py-4 rounded-full transition-all duration-300 shadow-xl shadow-[#B8975A]/20"
             >
               {lang === "FR" ? "Demander Mon Devis Sur Mesure" : "Request Custom Quote"}
