@@ -712,6 +712,96 @@ export default function HeritageClient() {
         </div>
       </section>
 
+      {/* Filterable Photo Gallery (Editorial Layout) */}
+      <section id="gallery" className="py-24 px-6 md:px-12 bg-[#F4F0EA] border-b border-[#E8E2D8]">
+        <div className="max-w-6xl mx-auto space-y-12">
+          
+          <div className="text-center space-y-4 max-w-2xl mx-auto">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#8C6D37] font-semibold">
+              {lang === "FR" ? "Galerie Photographique" : "Photographic Gallery"}
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1C1A17]">
+              {lang === "FR" ? "Hôtels, Plages & Architecture" : "Hotels, Beaches & Architecture"}
+            </h2>
+            <p className="text-[#4A4640] text-xs sm:text-sm font-light">
+              {lang === "FR"
+                ? "Explorez notre sélection visuelle captivante reflétant la diversité et le prestige du Maroc."
+                : "Explore our captivating visual selection reflecting Morocco's diverse landscape and prestige."
+              }
+            </p>
+          </div>
+
+          {/* Editorial Filter Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {[
+              { id: "all", label: { EN: "All Photography", FR: "Toutes les Photos" } },
+              { id: "heritage", label: { EN: "UNESCO & Heritage", FR: "UNESCO & Patrimoine" } },
+              { id: "architecture", label: { EN: "Architecture & Medinas", FR: "Architecture & Médinas" } },
+              { id: "hotels", label: { EN: "Luxury Hotels & Riads", FR: "Hôtels de Luxe & Riads" } },
+              { id: "beaches", label: { EN: "Atlantic Beaches", FR: "Plages Atlantiques" } },
+              { id: "culture", label: { EN: "Culture & Sahara", FR: "Culture & Sahara" } },
+            ].map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-5 py-2.5 rounded-full text-xs font-mono tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+                  activeTab === tab.id
+                    ? "bg-[#1C1A17] text-white font-bold shadow-md"
+                    : "bg-white border border-[#D4C8B5] text-[#4A4640] hover:text-[#1C1A17] hover:border-[#1C1A17]"
+                }`}
+              >
+                {translate(tab.label, lang)}
+              </button>
+            ))}
+          </div>
+
+          {/* Gallery Grid */}
+          <motion.div 
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            <AnimatePresence>
+              {filteredGallery.map(item => (
+                <motion.div
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4 }}
+                  className="group relative rounded-3xl overflow-hidden bg-white border-2 border-white shadow-[0_10px_30px_rgba(28,26,23,0.05)] aspect-[4/5] cursor-pointer"
+                >
+                  <img
+                    src={item.image}
+                    alt={translate(item.title, lang)}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1C1A17]/85 via-[#1C1A17]/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 rounded-full text-[8px] font-mono uppercase tracking-widest bg-white/90 text-[#1C1A17] font-bold backdrop-blur-md shadow-sm">
+                      {translate(item.tag, lang)}
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-4 left-4 right-4 space-y-1 text-white">
+                    <span className="text-[10px] font-mono text-zinc-300 flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-[#D4B87E]" />
+                      {translate(item.location, lang)}
+                    </span>
+                    <h4 className="font-serif text-sm font-bold group-hover:text-[#D4B87E] transition-colors leading-tight">
+                      {translate(item.title, lang)}
+                    </h4>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* 3-Card Experience Showcase (Off-White Editorial Style) */}
       <section className="py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-[#E8E2D8]">
         <div className="max-w-6xl mx-auto space-y-12">

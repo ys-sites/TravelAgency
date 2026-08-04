@@ -5,6 +5,8 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { useLang } from "../context/lang-context";
 
+import { videoSources } from "@/data/videoSources";
+
 export default function GulfHeroScrubber() {
   const { lang } = useLang();
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -47,8 +49,9 @@ export default function GulfHeroScrubber() {
     };
   }, [isMobile]);
 
-  const posterUrl = "/images/logo.png";
-  const mp4Src = isMobile ? "/video/hero-mobile.mp4" : "/video/hero.mp4";
+  const asset = videoSources.hero;
+  const posterUrl = asset.poster;
+  const mp4Src = asset.mp4;
 
   const handleTimeUpdate = () => {
     const vid = videoRef.current;
