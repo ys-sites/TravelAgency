@@ -215,6 +215,31 @@ input[type="range"]::-moz-range-thumb {
   animation: kenburns-slow 24s ease-in-out infinite;
 }
 
+@keyframes shimmer-gold {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer-gold {
+  background: linear-gradient(110deg, #1C1A17 35%, #B8975A 50%, #1C1A17 65%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-gold 6s ease-in-out infinite;
+}
+
+.animate-shimmer-gold-light {
+  background: linear-gradient(110deg, #8C6D37 35%, #D4B87E 50%, #8C6D37 65%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-gold 5s ease-in-out infinite;
+}
+
 
 
 
