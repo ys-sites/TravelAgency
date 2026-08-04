@@ -115,10 +115,10 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
       <img
         src={source.poster}
         alt={`${source.id} destination`}
-        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${
+        className={`absolute inset-0 w-full h-full z-0 transition-opacity duration-500 ${
           isLoaded ? "opacity-30" : "opacity-100"
         }`}
-        style={{ filter: "brightness(0.95)" }}
+        style={{ objectFit: "cover", width: "100%", height: "100%", filter: "brightness(0.95)" }}
       />
 
       {/* Video — rendered only when in-view, motion allowed, no error */}
@@ -126,9 +126,10 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
         <video
           ref={videoRef}
           key={isMobile ? "mobile" : "desktop"} /* remount on resolution switch */
-          className={`absolute inset-0 min-w-full min-h-full w-full h-full object-cover scale-[1.08] z-10 transition-opacity duration-700 ${
+          className={`absolute inset-0 w-full h-full z-10 transition-opacity duration-700 ${
             isLoaded ? "opacity-100" : "opacity-0"
           }`}
+          style={{ objectFit: "cover", width: "100%", height: "100%", minWidth: "100%", minHeight: "100%" }}
           autoPlay
           muted
           loop

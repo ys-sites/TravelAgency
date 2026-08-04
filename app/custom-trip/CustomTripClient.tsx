@@ -450,12 +450,14 @@ export default function CustomTripClient() {
 
                   {/* Departure City Selector */}
                   <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                    <label htmlFor="departure-city-select" className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
                       {lang === "FR" ? "Ville de départ préférée" : "Preferred departure city"}
                     </label>
                     <select
+                      id="departure-city-select"
                       value={departureCity}
                       onChange={(e) => setDepartureCity(e.target.value)}
+                      aria-label={lang === "FR" ? "Ville de départ préférée" : "Preferred departure city"}
                       className="w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 bg-white border border-zinc-200 text-zinc-800 font-medium cursor-pointer"
                     >
                       <option value="Montreal">Montréal (YUL) — Québec / Canada</option>
@@ -477,12 +479,14 @@ export default function CustomTripClient() {
                         <button
                           type="button"
                           onClick={() => updatePassengerCount(-1)}
+                          aria-label={lang === "FR" ? "Réduire le nombre de passagers" : "Decrease passenger count"}
                           className="w-7 h-7 rounded-full border flex items-center justify-center font-bold text-sm transition-colors cursor-pointer border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700"
                         >−</button>
                         <span className="text-[14px] font-bold font-heading tabular-nums w-5 text-center text-zinc-900">{passengerCount}</span>
                         <button
                           type="button"
                           onClick={() => updatePassengerCount(1)}
+                          aria-label={lang === "FR" ? "Augmenter le nombre de passagers" : "Increase passenger count"}
                           className="w-7 h-7 rounded-full border flex items-center justify-center font-bold text-sm transition-colors cursor-pointer border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-700"
                         >+</button>
                       </div>
@@ -492,17 +496,19 @@ export default function CustomTripClient() {
                     <div className="grid grid-cols-2 gap-2">
                       {passengerAges.map((age, idx) => (
                         <div key={idx} className="flex flex-col gap-0.5">
-                          <span className="text-[8px] font-mono uppercase tracking-wider text-zinc-400">
+                          <label htmlFor={`passenger-age-${idx}`} className="text-[8px] font-mono uppercase tracking-wider text-zinc-400">
                             {lang === "FR" ? `Passager ${idx + 1}` : `Passenger ${idx + 1}`}
-                          </span>
+                          </label>
                           <div className="flex items-center gap-1.5 border rounded-lg px-2.5 py-1.5 bg-zinc-50 border-zinc-200">
                             <input
+                              id={`passenger-age-${idx}`}
                               type="number"
                               min={0}
                               max={120}
                               value={age === 0 ? "" : age}
                               onChange={(e) => updatePassengerAge(idx, parseInt(e.target.value) || 0)}
                               placeholder="Age"
+                              aria-label={lang === "FR" ? `Âge passager ${idx + 1}` : `Passenger ${idx + 1} age`}
                               className="w-full bg-transparent text-xs focus:outline-none tabular-nums text-zinc-800 placeholder-zinc-300"
                             />
                             <span className="text-[9px] font-mono shrink-0 text-zinc-400">
@@ -517,7 +523,7 @@ export default function CustomTripClient() {
                   {/* Nights Duration Slider */}
                   <div className="pt-4 border-t space-y-3 border-zinc-200">
                     <div className="flex items-center justify-between">
-                      <label className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
+                      <label htmlFor="duration-nights-slider" className="text-[9px] font-mono tracking-widest uppercase text-brand-gold font-bold">
                         {lang === "FR" ? "Durée préférée" : "Preferred duration"}
                       </label>
                       <span className="text-[13px] font-bold font-heading tabular-nums text-zinc-900">
@@ -526,12 +532,14 @@ export default function CustomTripClient() {
                     </div>
                     <div className="relative pt-1">
                       <input
+                        id="duration-nights-slider"
                         type="range"
                         min={5}
                         max={30}
                         step={1}
                         value={nights}
                         onChange={(e) => setNights(Number(e.target.value))}
+                        aria-label={lang === "FR" ? "Durée du séjour en nuits" : "Stay duration in nights"}
                         className="w-full h-[3px] appearance-none rounded-full cursor-pointer"
                         style={{
                           background: `linear-gradient(to right, #C5A880 ${((nights - 5) / 25) * 100}%, #e4e4e7 ${((nights - 5) / 25) * 100}%)`

@@ -876,53 +876,61 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                    <label htmlFor="booking-name-input" className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
                       {lang === "FR" ? "Votre nom" : "Your name"}
                     </label>
                     <input
+                      id="booking-name-input"
                       type="text"
                       required
                       value={bookingName}
                       onChange={(e) => setBookingName(e.target.value)}
                       placeholder="e.g. Sterling Hunt"
+                      aria-label={lang === "FR" ? "Votre nom" : "Your name"}
                       className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
                     />
                   </div>
                   <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                    <label htmlFor="booking-email-input" className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
                       {lang === "FR" ? "Votre adresse courriel" : "Your email address"}
                     </label>
                     <input
+                      id="booking-email-input"
                       type="email"
                       required
                       value={bookingEmail}
                       onChange={(e) => setBookingEmail(e.target.value)}
                       placeholder="e.g. sterling@portfolio.com"
+                      aria-label={lang === "FR" ? "Votre adresse courriel" : "Your email address"}
                       className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
                     />
                   </div>
                   <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                    <label htmlFor="booking-phone-input" className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
                       {lang === "FR" ? "Votre numéro de téléphone" : "Your phone number"}
                     </label>
                     <input
+                      id="booking-phone-input"
                       type="tel"
                       required
                       value={bookingPhone}
                       onChange={(e) => setBookingPhone(e.target.value)}
                       placeholder="e.g. +1 (514) 123-4567"
+                      aria-label={lang === "FR" ? "Votre numéro de téléphone" : "Your phone number"}
                       className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300"
                     />
                   </div>
                   {itinerary.dates && (
                     <div>
-                      <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
+                      <label htmlFor="booking-date-select" className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500">
                         {lang === "FR" ? "Date de départ souhaitée" : "Desired Departure Date"}
                       </label>
                       <select
+                        id="booking-date-select"
                         required
                         value={selectedDate}
                         onChange={(e) => setSelectedDate(e.target.value)}
+                        aria-label={lang === "FR" ? "Date de départ souhaitée" : "Desired Departure Date"}
                         className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 cursor-pointer"
                       >
                         <option value="">
@@ -937,14 +945,16 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                     </div>
                   )}
                   <div>
-                    <label className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500 text-wrap leading-tight">
+                    <label htmlFor="booking-message-input" className="block text-[9px] font-mono tracking-widest uppercase mb-1.5 text-zinc-500 text-wrap leading-tight">
                       {lang === "FR" ? "Vos souhaits particuliers, besoins alimentaires ou occasions spéciales ?" : "Any special wishes, dietary needs, or occasions we should know about?"}
                     </label>
                     <textarea
+                      id="booking-message-input"
                       rows={4}
                       value={bookingMessage}
                       onChange={(e) => setBookingMessage(e.target.value)}
                       placeholder={lang === "FR" ? "Ex. Régimes alimentaires, hélicoptère privé..." : "e.g. Jet charter transfers, close protection, dietaries..."}
+                      aria-label={lang === "FR" ? "Vos souhaits particuliers" : "Special wishes"}
                       className="w-full bg-white border border-zinc-200 px-4 py-3 text-xs text-zinc-800 placeholder-zinc-400 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 resize-none"
                     />
                   </div>

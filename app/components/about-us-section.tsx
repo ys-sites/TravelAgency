@@ -230,6 +230,7 @@ export default function AboutUsSection() {
                   step={0.1}
                   value={currentTime}
                   onChange={handleSeek}
+                  aria-label={lang === "FR" ? "Barre de lecture vidéo" : "Video timeline scrubber"}
                   className="w-full h-1.5 bg-white/30 rounded-lg appearance-none cursor-pointer accent-[#C5A880] focus:outline-none"
                 />
 

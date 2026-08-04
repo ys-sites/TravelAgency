@@ -203,24 +203,28 @@ export default function HomeContactForm() {
                   {/* Name + Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className={labelClass}>{translate(t.labelName, lang)}</label>
+                      <label htmlFor="contact-form-name" className={labelClass}>{translate(t.labelName, lang)}</label>
                       <input
+                        id="contact-form-name"
                         type="text"
                         required
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder={translate(t.placeholderName, lang)}
+                        aria-label={translate(t.labelName, lang)}
                         className={inputClass}
                       />
                     </div>
                     <div>
-                      <label className={labelClass}>{translate(t.labelEmail, lang)}</label>
+                      <label htmlFor="contact-form-email" className={labelClass}>{translate(t.labelEmail, lang)}</label>
                       <input
+                        id="contact-form-email"
                         type="email"
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder={translate(t.placeholderEmail, lang)}
+                        aria-label={translate(t.labelEmail, lang)}
                         className={inputClass}
                       />
                     </div>
@@ -229,21 +233,25 @@ export default function HomeContactForm() {
                   {/* Phone + Subject */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className={labelClass}>{translate(t.labelPhone, lang)}</label>
+                      <label htmlFor="contact-form-phone" className={labelClass}>{translate(t.labelPhone, lang)}</label>
                       <input
+                        id="contact-form-phone"
                         type="tel"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder={translate(t.placeholderPhone, lang)}
+                        aria-label={translate(t.labelPhone, lang)}
                         className={inputClass}
                       />
                     </div>
                     <div>
-                      <label className={labelClass}>{translate(t.labelSubject, lang)}</label>
+                      <label htmlFor="contact-form-subject" className={labelClass}>{translate(t.labelSubject, lang)}</label>
                       <select
+                        id="contact-form-subject"
                         required
                         value={subject}
                         onChange={(e) => setSubject(e.target.value)}
+                        aria-label={translate(t.labelSubject, lang)}
                         className={`${inputClass} cursor-pointer`}
                       >
                         <option value="" disabled>{lang === "FR" ? "Choisissez un sujet" : "Select a subject"}</option>
@@ -256,13 +264,15 @@ export default function HomeContactForm() {
 
                   {/* Message */}
                   <div>
-                    <label className={labelClass}>{translate(t.labelMessage, lang)}</label>
+                    <label htmlFor="contact-form-message" className={labelClass}>{translate(t.labelMessage, lang)}</label>
                     <textarea
-                      rows={5}
+                      id="contact-form-message"
                       required
+                      rows={5}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder={translate(t.placeholderMessage, lang)}
+                      aria-label={translate(t.labelMessage, lang)}
                       className={`${inputClass} resize-none`}
                     />
                   </div>
