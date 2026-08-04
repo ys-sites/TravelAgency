@@ -264,13 +264,17 @@ export default function HeritageClient() {
 
           {/* Smart Video Feature */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900 relative">
-              <SmartVideo
-                source={videoAsset("Morocco_Fez_Hero_16x9_UpdatedLogo_z5b24u")}
-                variant="tile"
-                className="w-full aspect-video object-cover"
-              />
-            </div>
+              <div className="relative w-full aspect-video rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950">
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/9wfdX2N1RA0?si=38glEpgnrc09By72" 
+                  title="UNESCO Moroccan Heritage & Music" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                />
+              </div>
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-4">
                 <span className="px-3 py-1 rounded-full text-[9px] font-mono uppercase tracking-widest bg-brand-gold/15 text-brand-gold border border-brand-gold/30">
