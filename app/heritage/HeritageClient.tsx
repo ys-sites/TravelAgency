@@ -457,14 +457,6 @@ export default function HeritageClient() {
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#E8E2D8]">
-                  <Link
-                    href="/custom-trip"
-                    className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#1C1A17] uppercase tracking-wider group-hover:text-[#B8975A] transition-colors"
-                  >
-                    <span>{lang === "FR" ? "Inclure au Circuit →" : "Add to Circuit →"}</span>
-                  </Link>
-                </div>
               </div>
             ))}
           </div>
@@ -617,17 +609,17 @@ export default function HeritageClient() {
               {lang === "FR" ? "Les Merveilles de l'Artisanat Marocain" : "Master Crafts & Living Traditions"}
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
               {CRAFT_TRADITIONS.map((craft) => (
                 <div 
                   key={craft.id}
-                  className="bg-white rounded-3xl border border-[#E8E2D8] p-6 space-y-4 hover:border-[#B8975A] transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="bg-white rounded-3xl border border-[#E8E2D8] p-8 space-y-4 hover:border-[#B8975A] transition-all duration-300 shadow-sm hover:shadow-md"
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="text-[9px] font-mono uppercase tracking-widest text-[#B8975A] font-bold bg-[#FAF8F5] px-2.5 py-1 rounded-full border border-[#E8E2D8]">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="text-[9px] font-mono uppercase tracking-widest text-[#B8975A] font-bold bg-[#FAF8F5] px-3 py-1.5 rounded-full border border-[#E8E2D8] whitespace-nowrap shrink-0">
                       {translate(craft.badge, lang)}
                     </span>
-                    <span className="text-[10px] font-mono text-[#78726A]">{craft.origin}</span>
+                    <span className="text-[10px] font-mono text-[#78726A] text-right">{craft.origin}</span>
                   </div>
                   
                   <div className="space-y-1">
