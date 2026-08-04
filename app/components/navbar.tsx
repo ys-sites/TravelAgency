@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { useLang, translate } from "../context/lang-context";
 
@@ -25,10 +26,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo and Company Name */}
         <Link href="/" className="flex items-center gap-3 cursor-pointer group decoration-none">
-          <img 
-            src="/images/logo.png?v=3" 
-            className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
-            alt="Merveilles et Voyages" 
+          <Image
+            src="/images/logo.png"
+            alt="Merveilles et Voyages Logo"
+            width={190}
+            height={44}
+            priority
+            className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            style={{ width: "auto" }}
           />
           <div className="flex flex-col text-white">
             <span className="font-serif text-sm sm:text-base uppercase tracking-[0.25em] font-bold leading-none">

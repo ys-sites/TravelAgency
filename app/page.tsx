@@ -9,7 +9,7 @@ import TestimonialsSection from "./components/testimonials-section";
 import Footer from "./components/footer";
 import HomeFaqSection from "./components/home-faq-section";
 import HomeContactForm from "./components/home-contact-form";
-import { videoAsset } from "@/data/videoSources";
+import { videoSources } from "@/data/videoSources";
 
 export const metadata: Metadata = {
   title: "Agence de Voyage Montréal — Golf au Maroc & Voyages de Prestige | Merveilles et Voyages",
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
 
 export default function Home() {
   // Kick off the hero poster fetch before hydration so the first paint isn't a blank/black frame
-  preload(videoAsset("Golf_in_Morocco_ssfati").poster, { as: "image", fetchPriority: "high" });
+  preload(videoSources.hero.poster, { as: "image", fetchPriority: "high" });
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-body antialiased">
       <link
         rel="preload"
         as="image"
-        href="https://cdn.mevoyages.com/MEvoyages/Golf_in_Morocco_ssfati.jpg"
+        href={videoSources.hero.poster}
         fetchPriority="high"
       />
       {/* Header & Navbar */}

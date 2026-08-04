@@ -57,7 +57,7 @@ export const UNESCO_SITES: UNESCOSite[] = [
       EN: "Founded in the 9th century, the world's largest car-free urban area spans 9,000+ alleys and houses the University of Al Quaraouiyine (859 AD), the world's oldest continuously operating university."
     },
     bestFor: { FR: "Histoire & Artisanat", EN: "History & Master Craftsmanship" },
-    image: "/images/imperial_cities_fes.jpg",
+    image: "/heritage/Medina%20of%20Fez%20(Fes%20el-Bali).jpg",
     slug: "fez"
   },
   {
@@ -71,7 +71,7 @@ export const UNESCO_SITES: UNESCOSite[] = [
       EN: "Almoravid capital founded in 1070, famed for the Koutoubia Mosque minaret, Bahia Palace, Saadian Tombs, and the timeless energy of Jemaa el-Fnaa square."
     },
     bestFor: { FR: "Architecture & Vie Nocturne", EN: "Architecture & Vibrant Souks" },
-    image: "/images/morocco-marrakech-riad.png",
+    image: "/heritage/Medina%20of%20Marrakech.jpg",
     slug: "marrakech"
   },
   {
@@ -85,7 +85,7 @@ export const UNESCO_SITES: UNESCOSite[] = [
       EN: "Fortified earthen-clay village along the ancient Sahara caravan route, an extraordinary masterpiece of southern Moroccan earthen architecture."
     },
     bestFor: { FR: "Cinéma & Décors Désertiques", EN: "Cinematic Horizons & Caravans" },
-    image: "/images/gulf-desert-sunset.png",
+    image: "/heritage/Ksar%20of%20A%C3%AFt-Ben-Haddou.jpg",
     slug: "ait-ben-haddou"
   },
   {
@@ -99,7 +99,7 @@ export const UNESCO_SITES: UNESCOSite[] = [
       EN: "17th-century imperial capital of Sultan Moulay Ismail, renowned for the monumental Bab Mansour gate and vast royal equestrian vaults."
     },
     bestFor: { FR: "Portes Monumentales & Écuries", EN: "Imperial Gates & Stables" },
-    image: "/images/morocco_adventure.png",
+    image: "/heritage/Historic%20City%20of%20Meknes.jpg",
     slug: "meknes"
   },
   {
@@ -113,7 +113,7 @@ export const UNESCO_SITES: UNESCOSite[] = [
       EN: "The most pristine Roman archaeological site in North Africa, ancient capital of Mauretania Tingitana with remarkably preserved in-situ mosaics."
     },
     bestFor: { FR: "Ruines Romaines & Mosaïques", EN: "Roman Ruins & Mosaic Art" },
-    image: "/images/people-cliff.png",
+    image: "/heritage/Archaeological%20Site%20of%20Volubilis.jpg",
     slug: "volubilis"
   },
   {
@@ -127,7 +127,7 @@ export const UNESCO_SITES: UNESCOSite[] = [
       EN: "Reflects deep Andalusian heritage, rebuilt in the 15th century by refugees from Spain; distinct in its white-washed urban planning and master tilecraft."
     },
     bestFor: { FR: "Héritage Andalou", EN: "Andalusian Heritage" },
-    image: "/images/chefchaouen.png",
+    image: "/heritage/Medina%20of%20T%C3%A9touan.jpg",
     slug: "tetouan"
   },
   {
@@ -141,7 +141,7 @@ export const UNESCO_SITES: UNESCOSite[] = [
       EN: "Fortified 18th-century Atlantic port city combining European military ramparts with traditional Moroccan urban design and Gnaoua musical roots."
     },
     bestFor: { FR: "Remparts Atlantiques & Gnaoua", EN: "Atlantic Ramparts & Music" },
-    image: "/images/food-court.jpg",
+    image: "/heritage/Atlantic%20Coast%20%26%20Taghazou.jpg",
     slug: "essaouira"
   },
   {
@@ -155,7 +155,7 @@ export const UNESCO_SITES: UNESCOSite[] = [
       EN: "Exceptional example of early-16th-century Portuguese fortification in West Africa, featuring the famous atmospheric subterranean Manueline cistern."
     },
     bestFor: { FR: "Citerne Souterraine & Bastions", EN: "Subterranean Cisterns & Forts" },
-    image: "/images/deluxe-room-sea-view.jpg",
+    image: "/heritage/Portuguese%20City%20of%20Mazagan.jpg",
     slug: "mazagan"
   },
   {
@@ -169,7 +169,7 @@ export const UNESCO_SITES: UNESCOSite[] = [
       EN: "Unique harmony between ancient monuments (Kasbah of the Udayas, Hassan Tower) and 20th-century garden city urbanism along the Bou Regreg river."
     },
     bestFor: { FR: "Kasbah Royale & Architecture", EN: "Royal Kasbah & Ocean Views" },
-    image: "/images/gulf-city-skyline.png",
+    image: "/heritage/Rabat%2C%20Modern%20Capital%20%26%20Historic%20City.jpg",
     slug: "rabat"
   }
 ];
@@ -185,7 +185,7 @@ export const IMPERIAL_CITIES: ImperialCity[] = [
       FR: "Cœur intellectuel et spirituel du Royaume depuis 808 ap. J.-C., réputé pour ses médersas sculptées et son artisanat d'excellence.",
       EN: "Morocco's intellectual heart since 808 AD, famed for intricate carved madrasas and centuries of leather tanning mastery."
     },
-    image: "/images/imperial_cities_fes.jpg"
+    image: "/heritage/Fez%20%E2%80%94%20The%20Spiritual%20Capital.jpg"
   },
   {
     id: "marrakech-imperial",
@@ -197,7 +197,7 @@ export const IMPERIAL_CITIES: ImperialCity[] = [
       FR: "Cité ocre impériale au pied de l'Atlas, symbole des riads somptueux, de la gastronomie et de l'art de vivre d'exception.",
       EN: "Red-ochre imperial oasis at the foot of the High Atlas, synonymous with palatial riads, fine dining, and royal hospitality."
     },
-    image: "/images/morocco-marrakech-riad.png"
+    image: "/heritage/Marrakech%20%E2%80%94%20The%20Southern%20Pearl.jpg"
   },
   {
     id: "meknes-imperial",
@@ -209,7 +209,7 @@ export const IMPERIAL_CITIES: ImperialCity[] = [
       FR: "Fortifiée par des kilomètres de murailles et des portes monumentales sculptées, au milieu des oliviers et vignobles fertiles.",
       EN: "Ringed by massive ramparts and towering gates, surrounded by ancient olive groves and fertile plateau vineyards."
     },
-    image: "/images/morocco_adventure.png"
+    image: "/heritage/Meknes%20%E2%80%94%20The%20Versaillese%20Empire.jpg"
   },
   {
     id: "rabat-imperial",
@@ -221,7 +221,7 @@ export const IMPERIAL_CITIES: ImperialCity[] = [
       FR: "Siège actuel du Gouvernement et de la Famille Royale, alliant l'élégance côtière atlantique et les grands musées nationaux.",
       EN: "Current capital of the Crown, blending cliffside Atlantic fortresses, royal palaces, and world-class modern museums."
     },
-    image: "/images/gulf-city-skyline.png"
+    image: "/heritage/Rabat%20%E2%80%94%20The%20Royal%20Seat%20of%20Power.jpg"
   }
 ];
 
@@ -234,7 +234,7 @@ export const LANDSCAPE_STRIP: LandscapeItem[] = [
       FR: "Dunes dorées s'élevant jusqu'à 150 mètres, caravanes à dos de dromadaire et bivouacs de luxe sous les étoiles.",
       EN: "Golden dunes towering 150 meters high, sunset camel rides, and luxury desert camps under crystal starlight."
     },
-    image: "/images/morocco-sahara-dunes.png"
+    image: "/heritage/Sahara%20Desert%20(Erg%20Chebbi).jpeg"
   },
   {
     id: "atlas",
@@ -244,7 +244,7 @@ export const LANDSCAPE_STRIP: LandscapeItem[] = [
       FR: "Sommets enneigés culminant à 4 167 m et villages berbéres authentiques à seulement 90 minutes de Marrakech.",
       EN: "Snow-capped peaks rising to 4,167m and cliffside Amazigh villages just 90 minutes from Marrakech."
     },
-    image: "/images/trekking_toubkal.png"
+    image: "/heritage/igh%20Atlas%20%26%20Mount%20Toubkal.webp"
   },
   {
     id: "atlantic",
@@ -254,7 +254,7 @@ export const LANDSCAPE_STRIP: LandscapeItem[] = [
       FR: "Plages océaniques préservées, ports de pêche traditionnels et resorts balnéaires 5 étoiles avec parcours de golf.",
       EN: "Pristine ocean beaches, colorful fishing harbors, and 5-star oceanfront golf resorts."
     },
-    image: "/images/food-court.jpg"
+    image: "/heritage/Atlantic%20Coast%20%26%20Taghazou.jpg"
   },
   {
     id: "chefchaouen",
@@ -264,7 +264,7 @@ export const LANDSCAPE_STRIP: LandscapeItem[] = [
       FR: "Médina sacrée nichée dans le Rif, réputée mondialement pour ses ruelles déclinées dans toutes les nuances de bleu.",
       EN: "Mountain sanctuary famous worldwide for its enchanting maze of cobalt and indigo washed streets."
     },
-    image: "/images/chefchaouen.png"
+    image: "/heritage/Chefchaouen%2C%20The%20Blue%20Pearl.jpg"
   },
   {
     id: "oases",
@@ -274,7 +274,7 @@ export const LANDSCAPE_STRIP: LandscapeItem[] = [
       FR: "Palmeraies séculaires bordées de kasbahs fortifiées et de systèmes d'irrigation ancestraux (khettaras).",
       EN: "Ancient palmeries sheltering centuries-old earthen kasbahs and traditional oasis agriculture."
     },
-    image: "/images/gulf-desert-sunset.png"
+    image: "/heritage/Palm%20Palmeries%20%26%20Draa%20Valley.jpeg"
   },
   {
     id: "majorelle",
@@ -284,7 +284,7 @@ export const LANDSCAPE_STRIP: LandscapeItem[] = [
       FR: "Oasis botanique créée par Jacques Majorelle et restaurée par Yves Saint Laurent, joyau du patrimoine moderne.",
       EN: "Botanical sanctuary restored by Yves Saint Laurent, showcasing Morocco's modern creative legacy."
     },
-    image: "/images/marrakech_sunset_hero.png"
+    image: "/heritage/Majorelle%20Garden%20%26%20Ville%20Nouvelle.jpg"
   }
 ];
 
@@ -344,7 +344,7 @@ export const CUISINE_HIGHLIGHTS: CuisineHighlight[] = [
       FR: "Le thé au pignon et à la menthe fraîche servi en hauteur pour former la mousse 'mousse de verre', geste universel de fraternité et de bienvenue.",
       EN: "Fresh spearmint leaves steeped with green gunpowder tea, poured gracefully from high above to create the traditional crown of foam."
     },
-    image: "/images/morocco_culinary.png"
+    image: "/heritage/The%20Mint%20Tea%20Hospitality%20Ceremony.jpg"
   },
   {
     id: "tagine",
@@ -354,7 +354,7 @@ export const CUISINE_HIGHLIGHTS: CuisineHighlight[] = [
       FR: "Mijoté lent au safran de Taliouine, ras el hanout, citrons confits et olives de Meknès cuit dans un plat en terre cuite sur braises.",
       EN: "Infused with Taliouine saffron, ras el hanout, preserved lemons, and Meknes olives, slow-simmered over charcoal in conical clay tagines."
     },
-    image: "/images/food-court.jpg"
+    image: "/heritage/Tagine%20Simmer%20%26%20Souk%20Spices.jpg"
   },
   {
     id: "argan",
@@ -364,6 +364,6 @@ export const CUISINE_HIGHLIGHTS: CuisineHighlight[] = [
       FR: "L'or liquide extrait à la main par les coopératives de femmes dans la région d'Agadir-Essaouira, joyau gastronomique et cosmétique unique au monde.",
       EN: "Pure liquid gold hand-pressed by female cooperatives in the UNESCO-protected Arganeraie Biosphere, celebrated in fine dining worldwide."
     },
-    image: "/images/taghazout_flowers.jpg"
+    image: "/heritage/Argan%20Oil%20Biosphere%20Reserve.jpg"
   }
 ];

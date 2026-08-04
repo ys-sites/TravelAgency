@@ -136,7 +136,7 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
           playsInline
           disablePictureInPicture
           disableRemotePlayback
-          preload="auto"
+          preload="metadata"
           poster={source.poster}
           // @ts-ignore — fetchpriority is a valid HTML attribute not yet in React types
           fetchpriority={variant === "hero" ? "high" : "auto"}
@@ -146,6 +146,8 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
         >
           {/* MP4 (H.264 — universal) */}
           <source src={mp4Src} type="video/mp4" />
+          {/* Captions track for accessibility */}
+          <track kind="captions" srcLang="fr" label="Français" default />
         </video>
       )}
     </div>

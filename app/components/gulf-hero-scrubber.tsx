@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useLang } from "../context/lang-context";
-import { videoAsset, CDN } from "@/data/videoSources";
+import { videoSources } from "@/data/videoSources";
 
 export default function GulfHeroScrubber() {
   const { lang } = useLang();
@@ -48,7 +48,7 @@ export default function GulfHeroScrubber() {
     };
   }, [isMobile]);
 
-  const asset = videoAsset("Golf_in_Morocco_ssfati");
+  const asset = videoSources.hero;
   const posterUrl = asset.poster;
   const mp4Src = asset.mp4;
 
@@ -88,7 +88,9 @@ export default function GulfHeroScrubber() {
           style={{
             backgroundImage: `url('${posterUrl}')`
           }}
-        />
+        >
+          <track kind="captions" srcLang="fr" label="Français" default />
+        </video>
       </div>
       
       {/* Cinematic Vignette Gradients */}

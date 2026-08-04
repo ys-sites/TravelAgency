@@ -46,7 +46,7 @@ const GALLERY_ITEMS = [
     category: "hotels",
     title: { EN: "Jaal Riad Resort & Spa", FR: "Jaal Riad Resort & Spa (Adults Only)" },
     location: { EN: "Marrakech, Morocco", FR: "Marrakech, Maroc" },
-    image: "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal.webp",
+    image: "/heritage/Jaal%20Riad%20Resort%20%26%20Spa.jpg",
     tag: { EN: "5★ Luxury Riad", FR: "Riad 5★ de Luxe" }
   },
   {
@@ -54,7 +54,7 @@ const GALLERY_ITEMS = [
     category: "heritage",
     title: { EN: "Ancient Medina of Fez el-Bali", FR: "Médina Millénaire de Fès el-Bali" },
     location: { EN: "Fez, Morocco", FR: "Fès, Maroc" },
-    image: "/images/imperial_cities_fes.jpg",
+    image: "/heritage/Ancient%20Medina%20of%20Fez%20el-Bali.jpg",
     tag: { EN: "UNESCO World Heritage", FR: "Patrimoine UNESCO" }
   },
   {
@@ -62,7 +62,7 @@ const GALLERY_ITEMS = [
     category: "architecture",
     title: { EN: "Royal Golf Dar Es Salam Clubhouse", FR: "Clubhouse Royal Golf Dar Es Salam" },
     location: { EN: "Rabat, Morocco", FR: "Rabat, Maroc" },
-    image: "/images/rgdes_clubhouse.jpg",
+    image: "/heritage/Royal%20Golf%20Dar%20Es%20Salam%20Clubhouse.jpg",
     tag: { EN: "Royal Heritage", FR: "Patrimoine Royal" }
   },
   {
@@ -70,7 +70,7 @@ const GALLERY_ITEMS = [
     category: "hotels",
     title: { EN: "Royal Golf Marrakech Resort & Greens", FR: "Royal Golf Marrakech & Parcours" },
     location: { EN: "Marrakech, Morocco", FR: "Marrakech, Maroc" },
-    image: "/images/royal_golf_marrakech_1.jpg",
+    image: "/heritage/Royal%20Golf%20Marrakech%20Resort%20%26%20Greens.jpg",
     tag: { EN: "Prestige Golf", FR: "Golf de Prestige" }
   },
   {
@@ -78,7 +78,7 @@ const GALLERY_ITEMS = [
     category: "hotels",
     title: { EN: "Pickalbatros White Beach Resort", FR: "Résort White Beach Agadir 5★" },
     location: { EN: "Agadir Atlantic Ocean", FR: "Agadir Côte Atlantique" },
-    image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
+    image: "/heritage/Pickalbatros%20White%20Beach%20Resort.jpg",
     tag: { EN: "5★ Luxury Resort", FR: "Résort 5★ de Luxe" }
   },
   {
@@ -86,7 +86,7 @@ const GALLERY_ITEMS = [
     category: "beaches",
     title: { EN: "Golden Sands & Atlantic Lounge", FR: "Sables Dorés & Lounge Atlantique" },
     location: { EN: "Agadir Coast", FR: "Côte d'Agadir" },
-    image: "/images/beach-area.jpg",
+    image: "/heritage/Golden%20Sands%20%26%20Atlantic%20Lounge.jpg",
     tag: { EN: "Atlantic Coast", FR: "Côte Atlantique" }
   },
   {
@@ -94,7 +94,7 @@ const GALLERY_ITEMS = [
     category: "heritage",
     title: { EN: "Chefchaouen Blue Medina", FR: "Médina Bleue de Chefchaouen" },
     location: { EN: "Rif Mountains, Morocco", FR: "Montagnes du Rif, Maroc" },
-    image: "/images/chefchaouen.png",
+    image: "/heritage/Chefchaouen%20Blue%20Medina.jpg",
     tag: { EN: "Mountain Sanctuary", FR: "Sanctuaire du Rif" }
   },
   {
@@ -102,7 +102,7 @@ const GALLERY_ITEMS = [
     category: "hotels",
     title: { EN: "Deluxe Ocean View Suite", FR: "Suite Deluxe Vue Sur Mer" },
     location: { EN: "Taghazout Bay", FR: "Baie de Taghazout" },
-    image: "/images/deluxe-room-sea-view.jpg",
+    image: "/heritage/Deluxe%20Ocean%20View%20Suite.webp",
     tag: { EN: "Oceanfront Suite", FR: "Suite Front de Mer" }
   },
   {
@@ -110,7 +110,7 @@ const GALLERY_ITEMS = [
     category: "culture",
     title: { EN: "Moroccan Fine Dining & Gastronomy", FR: "Gastronomie & Restaurant 5★" },
     location: { EN: "5★ Resort Dining", FR: "Restauration 5★" },
-    image: "/images/main-restaurant.jpg",
+    image: "/heritage/Moroccan%20Fine%20Dining%20%26%20Gastronomy.jpg",
     tag: { EN: "Culinary Art", FR: "Art Culinaire" }
   }
 ];

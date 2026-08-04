@@ -9,5 +9,3 @@ export const metadata: Metadata = {
 export default function HeritagePage() {
   return <HeritageClient />;
 }
-
-export const dynamic = "force-dynamic";
