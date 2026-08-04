@@ -143,13 +143,19 @@ export default function GulfHeroScrubber() {
             }
           </h1>
 
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-lg mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-xl mx-auto">
             <a
               href="#itineraries"
               className="w-full sm:w-auto border border-white bg-white hover:bg-brand-gold hover:border-brand-gold text-zinc-950 hover:text-zinc-950 font-semibold text-[10px] tracking-[0.2em] uppercase px-8 py-3 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[180px] sm:min-w-[200px] cursor-pointer"
             >
               {lang === "FR" ? "Explorer les Itinéraires" : "Explore Itineraries"}
             </a>
+            <Link
+              href="/heritage"
+              className="w-full sm:w-auto border border-white/80 bg-zinc-950/60 backdrop-blur-md hover:bg-brand-gold hover:border-brand-gold hover:text-zinc-950 text-white font-semibold text-[10px] tracking-[0.2em] uppercase px-8 py-3 transition-luxury rounded-full shadow-md hover:-translate-y-0.5 inline-block text-center min-w-[180px] sm:min-w-[200px] cursor-pointer"
+            >
+              {lang === "FR" ? "Patrimoine & Culture" : "Heritage & Culture"}
+            </Link>
           </div>
         </motion.div>
       </div>
