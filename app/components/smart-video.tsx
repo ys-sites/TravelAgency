@@ -110,7 +110,6 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
     <div
       ref={containerRef}
       className={`relative overflow-hidden ${aspectClass} ${className}`}
-      style={{ backgroundColor: "#000" }}
     >
       {/* Poster — always visible, fades when video loads */}
       <img
@@ -127,7 +126,7 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
         <video
           ref={videoRef}
           key={isMobile ? "mobile" : "desktop"} /* remount on resolution switch */
-          className={`absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-700 ${
+          className={`absolute inset-0 min-w-full min-h-full w-full h-full object-cover scale-[1.08] z-10 transition-opacity duration-700 ${
             isLoaded ? "opacity-100" : "opacity-0"
           }`}
           autoPlay

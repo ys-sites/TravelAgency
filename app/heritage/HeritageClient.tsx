@@ -116,11 +116,10 @@ export default function HeritageClient() {
     <div className="min-h-screen bg-[#FAF8F5] text-[#1C1A17] font-body antialiased selection:bg-[#C5A880] selection:text-white">
       <Navbar />
 
-      {/* Dark Cinematic Hero Section (Matching Home Hero) */}
-      <section className="relative pt-36 pb-24 md:pt-44 md:pb-32 px-6 md:px-12 bg-zinc-950 text-white overflow-hidden border-b border-zinc-800">
-        {/* Subtle Decorative Architectural Grid & Vignette Pattern */}
-        <div className="absolute inset-0 opacity-[0.06] bg-[radial-gradient(#FFFFFF_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-zinc-950 pointer-events-none" />
+      {/* Off-White Hero Section with Header backdrop */}
+      <section className="relative pt-36 pb-24 md:pt-44 md:pb-32 px-6 md:px-12 bg-gradient-to-b from-[#F4F0EA] via-[#FAF8F5] to-[#FAF8F5] text-[#1C1A17] overflow-hidden border-b border-[#E8E2D8]">
+        {/* Decorative Architectural Pattern Grid */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#1C1A17_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           
@@ -131,10 +130,10 @@ export default function HeritageClient() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-brand-gold/40 bg-brand-gold/10 backdrop-blur-md"
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#D4C8B5] bg-white/80 shadow-sm backdrop-blur-md"
             >
-              <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
-              <span className="font-mono text-[10px] sm:text-xs tracking-[0.25em] text-brand-gold uppercase font-semibold">
+              <Sparkles className="w-3.5 h-3.5 text-[#B8975A]" />
+              <span className="font-mono text-[10px] sm:text-xs tracking-[0.25em] text-[#8C6D37] uppercase font-semibold">
                 {lang === "FR" ? "Patrimoine & Culture Exclusifs" : "Exclusive Heritage & Culture"}
               </span>
             </motion.div>
@@ -145,11 +144,11 @@ export default function HeritageClient() {
               transition={{ duration: 0.9, delay: 0.1 }}
               className="space-y-4"
             >
-              <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08]">
+              <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#1C1A17] leading-[1.08]">
                 {lang === "FR" ? (
-                  <>Une Seule Destination. <span className="block italic font-normal font-serif text-brand-gold">Une Expertise Sans Limites.</span></>
+                  <>Une Seule Destination. <span className="block italic font-normal font-serif text-[#B8975A]">Une Expertise Sans Limites.</span></>
                 ) : (
-                  <>One Destination. <span className="block italic font-normal font-serif text-brand-gold">Endless Expertise.</span></>
+                  <>One Destination. <span className="block italic font-normal font-serif text-[#B8975A]">Endless Expertise.</span></>
                 )}
               </h1>
             </motion.div>
@@ -158,7 +157,7 @@ export default function HeritageClient() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.2 }}
-              className="text-zinc-300 text-base sm:text-lg font-light leading-relaxed max-w-xl"
+              className="text-[#4A4640] text-base sm:text-lg font-light leading-relaxed max-w-xl"
             >
               {lang === "FR"
                 ? "Que vous planifiiez un événement d'entreprise de prestige (MICE), un circuit culturel immersif ou des vacances classiques inoubliables, nous sommes vos spécialistes exclusifs du Maroc."
@@ -174,15 +173,15 @@ export default function HeritageClient() {
             >
               <Link
                 href="/custom-trip"
-                className="bg-brand-gold hover:bg-brand-gold-dark text-zinc-950 font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-brand-gold/20 hover:-translate-y-0.5 flex items-center gap-2.5"
+                className="bg-[#1C1A17] hover:bg-[#36332E] text-white font-semibold text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2.5"
               >
                 <span>{lang === "FR" ? "Créer Mon Voyage Sur Mesure" : "Design Custom Journey"}</span>
-                <ArrowRight className="w-4 h-4 text-zinc-950" />
+                <ArrowRight className="w-4 h-4 text-[#D4B87E]" />
               </Link>
 
               <a
                 href="#gallery"
-                className="bg-transparent border border-white/30 hover:border-white text-white font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 hover:bg-white/10"
+                className="bg-white border border-[#D4C8B5] hover:border-[#1C1A17] text-[#1C1A17] font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 {lang === "FR" ? "Explorer la Galerie" : "Explore Gallery"}
               </a>
@@ -193,14 +192,14 @@ export default function HeritageClient() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="pt-6 border-t border-zinc-800 flex items-center gap-8 text-zinc-400 text-xs font-mono uppercase tracking-wider"
+              className="pt-6 border-t border-[#E8E2D8] flex items-center gap-8 text-[#78726A] text-xs font-mono uppercase tracking-wider"
             >
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-brand-gold" />
+                <CheckCircle2 className="w-4 h-4 text-[#B8975A]" />
                 <span>{lang === "FR" ? "100% Spécialiste Maroc" : "100% Morocco Specialist"}</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-brand-gold" />
+                <CheckCircle2 className="w-4 h-4 text-[#B8975A]" />
                 <span>{lang === "FR" ? "Conciergerie Bilingue 24/7" : "24/7 Bilingual Concierge"}</span>
               </div>
             </motion.div>
@@ -214,23 +213,23 @@ export default function HeritageClient() {
             transition={{ duration: 1 }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-zinc-800 bg-zinc-900">
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(28,26,23,0.12)] border-4 border-white bg-white w-full h-[480px] lg:h-[540px]">
               <SmartVideo
                 source={videoSources.marrakech}
                 variant="hero"
-                className="w-full h-[480px] lg:h-[540px] object-cover"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1A17]/80 via-transparent to-transparent pointer-events-none" />
               
               {/* Floating Overlay Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-zinc-900/90 backdrop-blur-md border border-zinc-800 shadow-xl text-white space-y-2">
+              <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E8E2D8] shadow-lg text-[#1C1A17] space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-bold">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#B8975A] font-bold">
                     {lang === "FR" ? "Joyau Architectural" : "Architectural Masterpiece"}
                   </span>
-                  <span className="text-[10px] font-mono text-zinc-400">Marrakech, Morocco</span>
+                  <span className="text-[10px] font-mono text-[#78726A]">Marrakech, Morocco</span>
                 </div>
-                <h4 className="font-serif text-lg font-bold text-white">
+                <h4 className="font-serif text-lg font-bold text-[#1C1A17]">
                   {lang === "FR" ? "L'Élégance des Riads Royaux" : "The Elegance of Royal Riads"}
                 </h4>
               </div>
