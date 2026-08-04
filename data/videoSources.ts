@@ -25,7 +25,7 @@ export const videoAsset = (assetId: string): VideoSource => {
 };
 
 const ASSETS: Record<string, string> = {
-  hero: "Golf_in_Morocco_New_tmjx9s",
+  hero: "Golf_in_Morocco_ssfati",
   marrakech: "Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv",
   agadir: "Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad",
   rabat: "Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw",

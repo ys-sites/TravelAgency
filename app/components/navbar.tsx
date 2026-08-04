@@ -65,19 +65,12 @@ export default function Navbar() {
           <Link href="/conditions" className="hover:text-brand-gold transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full">
             {lang === "FR" ? "Conditions Générales" : "General Conditions"}
           </Link>
-          <button
-            onClick={() => {
-              const el = document.getElementById("contact-form");
-              if (el) {
-                el.scrollIntoView({ behavior: "smooth", block: "start" });
-              } else {
-                window.location.href = "/#contact-form";
-              }
-            }}
-            className="hover:text-brand-gold transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full cursor-pointer"
+          <Link
+            href="/contact"
+            className="hover:text-brand-gold transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-brand-gold after:transition-[width] after:duration-300 hover:after:w-full"
           >
             {lang === "FR" ? "Contact" : "Contact"}
-          </button>
+          </Link>
         </div>
 
         {/* Language Toggle FR / EN */}
