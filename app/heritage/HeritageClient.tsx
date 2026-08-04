@@ -318,7 +318,7 @@ export default function HeritageClient() {
               <div className="relative w-full aspect-video">
                 <iframe 
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/9wfdX2N1RA0?si=38glEpgnrc09By72" 
+                  src="https://www.youtube.com/embed/9wfdX2N1RA0?vq=hd720&hd=1&rel=0&modestbranding=1" 
                   title="UNESCO Moroccan Heritage & Music" 
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
