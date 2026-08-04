@@ -17,21 +17,20 @@ import {
   CheckCircle2,
   Briefcase,
   Palmtree,
-  Star
+  Star,
+  ChevronRight
 } from "lucide-react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import MapSection from "../components/map-section";
-import SmartVideo from "../components/smart-video";
 import { useLang, translate } from "../context/lang-context";
-import { videoAsset } from "@/data/videoSources";
 
-// Heritage Photo Gallery Items
+// Heritage Photo Gallery Data
 const GALLERY_ITEMS = [
   {
     id: "1",
     category: "architecture",
-    title: { EN: "Marrakech Royal Riad Architecture", FR: "Architecture des Riads Royaux de Marrakech" },
+    title: { EN: "Marrakech Royal Riad & Courtyard", FR: "Riad Royal & Cour Intérieure à Marrakech" },
     location: { EN: "Marrakech Medina", FR: "Médina de Marrakech" },
     image: "/images/morocco-marrakech-riad.png",
     tag: { EN: "UNESCO Heritage", FR: "Patrimoine UNESCO" }
@@ -39,7 +38,7 @@ const GALLERY_ITEMS = [
   {
     id: "2",
     category: "architecture",
-    title: { EN: "Ancient Tanneries & Blue Alleys of Fes", FR: "Tanneries Anciennes & Rueles de Fès" },
+    title: { EN: "Ancient Tanneries & Blue Alleys", FR: "Tanneries Millénaires & Ruelles Bleues" },
     location: { EN: "Fes el Bali", FR: "Fès el-Bali" },
     image: "/images/imperial_cities_fes.jpg",
     tag: { EN: "Imperial City", FR: "Ville Impériale" }
@@ -47,31 +46,31 @@ const GALLERY_ITEMS = [
   {
     id: "3",
     category: "culture",
-    title: { EN: "Chefchaouen Blue Pearl Medina", FR: "Médina Bleue de Chefchaouen" },
+    title: { EN: "Chefchaouen Mountain Pearl", FR: "La Perle Bleue de Chefchaouen" },
     location: { EN: "Rif Mountains", FR: "Montagnes du Rif" },
     image: "/images/chefchaouen.png",
-    tag: { EN: "Cultural Icon", FR: "Icône Culturelle" }
+    tag: { EN: "Cultural Jewel", FR: "Joyau Culturel" }
   },
   {
     id: "4",
     category: "hotels",
-    title: { EN: "Pickalbatros White Beach Resort", FR: "Hôtel Pickalbatros White Beach" },
-    location: { EN: "Agadir Atlantic Ocean", FR: "Agadir Océan Atlantique" },
+    title: { EN: "Pickalbatros White Beach Resort", FR: "Résort White Beach Agadir" },
+    location: { EN: "Agadir Atlantic Ocean", FR: "Agadir Côte Atlantique" },
     image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
-    tag: { EN: "5★ Luxury Resort", FR: "Resort 5★ de Luxe" }
+    tag: { EN: "5★ Luxury Resort", FR: "Résort 5★ de Luxe" }
   },
   {
     id: "5",
     category: "hotels",
-    title: { EN: "Hilton Taghazout Bay Beachfront", FR: "Hilton Taghazout Bay Front de Mer" },
+    title: { EN: "Hilton Taghazout Bay Oceanfront", FR: "Hilton Taghazout Bay Front de Mer" },
     location: { EN: "Taghazout Coast", FR: "Côte de Taghazout" },
     image: "/images/hilton_taghazout_1.avif",
-    tag: { EN: "Luxury Oceanfront", FR: "Front de Mer de Luxe" }
+    tag: { EN: "Luxury Haven", FR: "Havre de Luxe" }
   },
   {
     id: "6",
     category: "beaches",
-    title: { EN: "Taghazout Golden Atlantic Bay", FR: "Baie Dorée de Taghazout" },
+    title: { EN: "Golden Sands of Taghazout Bay", FR: "Sables Dorés de la Baie de Taghazout" },
     location: { EN: "Agadir Coast", FR: "Côte d'Agadir" },
     image: "/images/beach-area.jpg",
     tag: { EN: "Atlantic Coast", FR: "Côte Atlantique" }
@@ -79,7 +78,7 @@ const GALLERY_ITEMS = [
   {
     id: "7",
     category: "culture",
-    title: { EN: "Erg Chebbi Desert Camp & Sahara Sunset", FR: "Campement Erg Chebbi & Coucher de Soleil Sahara" },
+    title: { EN: "Erg Chebbi Desert Camp & Dunes", FR: "Campement de Luxe dans l'Erg Chebbi" },
     location: { EN: "Merzouga Sahara", FR: "Désert de Merzouga" },
     image: "/images/morocco-sahara-dunes.png",
     tag: { EN: "Sahara Odyssey", FR: "Odyssée Saharienne" }
@@ -87,20 +86,20 @@ const GALLERY_ITEMS = [
   {
     id: "8",
     category: "culture",
-    title: { EN: "Moroccan Gastronomy & Tea Ceremonies", FR: "Gastronomie Marocaine & Cérémonie du Thé" },
+    title: { EN: "Moroccan Tea & Gastronomy Art", FR: "Art du Thé & Gastronomie Marocaine" },
     location: { EN: "National Heritage", FR: "Patrimoine National" },
     image: "/images/tagine-restaurant.jpg",
-    tag: { EN: "Culinary Heritage", FR: "Patrimoine Culinaire" }
+    tag: { EN: "Culinary Art", FR: "Art Culinaire" }
   }
 ];
 
-// Direct Flight Departure Cities
+// Direct Flight Departure Gateways
 const DEPARTURE_CITIES = [
-  { code: "YUL", name: "Montréal", country: "Canada", note: { EN: "Direct regular flights", FR: "Vols directs réguliers" } },
-  { code: "JFK / EWR", name: "New York", country: "USA", note: { EN: "Direct non-stop service", FR: "Service direct sans escale" } },
+  { code: "YUL", name: "Montréal", country: "Canada", note: { EN: "Direct non-stop service", FR: "Vols directs sans escale" } },
+  { code: "JFK / EWR", name: "New York", country: "USA", note: { EN: "Daily direct flights", FR: "Vols directs quotidiens" } },
   { code: "IAD", name: "Washington D.C.", country: "USA", note: { EN: "Direct capital hub", FR: "Hub de la capitale" } },
-  { code: "LAX", name: "Los Angeles", country: "USA", note: { EN: "West coast connection", FR: "Connexion Côte Ouest" } },
-  { code: "YYZ", name: "Toronto", country: "Canada", note: { EN: "Direct & connecting flights", FR: "Vols directs et correspondances" } },
+  { code: "LAX", name: "Los Angeles", country: "USA", note: { EN: "West Coast gateway", FR: "Portail Côte Ouest" } },
+  { code: "YYZ", name: "Toronto", country: "Canada", note: { EN: "Direct & connecting hubs", FR: "Vols directs & correspondances" } },
 ];
 
 export default function HeritageClient() {
@@ -111,160 +110,212 @@ export default function HeritageClient() {
     ? GALLERY_ITEMS 
     : GALLERY_ITEMS.filter(item => item.category === activeTab);
 
-  const videoAssetData = videoAsset("Golf_in_Morocco_ssfati");
-
   return (
-    <div className="min-h-screen bg-zinc-950 text-white font-body antialiased selection:bg-brand-gold selection:text-zinc-950">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#1C1A17] font-body antialiased selection:bg-[#C5A880] selection:text-white">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex flex-col justify-end pt-32 pb-20 px-6 md:px-12 overflow-hidden bg-zinc-950">
-        {/* Background Image Vignette */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/morocco-marrakech-riad.png"
-            alt="Morocco Heritage & Architecture"
-            className="w-full h-full object-cover object-center opacity-40 animate-kenburns"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(9,9,11,0.8)_100%)]" />
-        </div>
+      {/* Editorial Off-White Hero Section */}
+      <section className="relative pt-36 pb-24 md:pt-44 md:pb-32 px-6 md:px-12 bg-gradient-to-b from-[#F4F0EA] via-[#FAF8F5] to-[#FAF8F5] overflow-hidden border-b border-[#E8E2D8]">
+        {/* Subtle Decorative Architectural Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#1C1A17_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
-        <div className="relative z-10 max-w-6xl mx-auto w-full space-y-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+          
+          {/* Left Editorial Copy Column */}
+          <div className="lg:col-span-7 space-y-8">
+            
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#D4C8B5] bg-white/80 shadow-sm backdrop-blur-md"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#B8975A]" />
+              <span className="font-mono text-[10px] sm:text-xs tracking-[0.25em] text-[#8C6D37] uppercase font-semibold">
+                {lang === "FR" ? "Patrimoine & Culture Exclusifs" : "Exclusive Heritage & Culture"}
+              </span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.1 }}
+              className="space-y-4"
+            >
+              <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#1C1A17] leading-[1.08]">
+                {lang === "FR" ? (
+                  <>Une Seule Destination. <span className="block italic font-normal font-serif text-[#B8975A]">Une Expertise Sans Limites.</span></>
+                ) : (
+                  <>One Destination. <span className="block italic font-normal font-serif text-[#B8975A]">Endless Expertise.</span></>
+                )}
+              </h1>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="text-[#4A4640] text-base sm:text-lg font-light leading-relaxed max-w-xl"
+            >
+              {lang === "FR"
+                ? "Que vous planifiiez un événement d'entreprise de prestige (MICE), un circuit culturel immersif ou des vacances classiques inoubliables, nous sommes vos spécialistes exclusifs du Maroc."
+                : "Whether you are planning an executive corporate event (MICE), an immersive cultural tour, or an unforgettable classic vacation, we are your dedicated Morocco specialists."
+              }
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.3 }}
+              className="pt-2 flex flex-wrap gap-4 items-center"
+            >
+              <Link
+                href="/custom-trip"
+                className="bg-[#1C1A17] hover:bg-[#36332E] text-white font-semibold text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2.5"
+              >
+                <span>{lang === "FR" ? "Créer Mon Voyage Sur Mesure" : "Design Custom Journey"}</span>
+                <ArrowRight className="w-4 h-4 text-[#D4B87E]" />
+              </Link>
+
+              <a
+                href="#gallery"
+                className="bg-white border border-[#D4C8B5] hover:border-[#1C1A17] text-[#1C1A17] font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                {lang === "FR" ? "Explorer la Galerie" : "Explore Gallery"}
+              </a>
+            </motion.div>
+
+            {/* Quick Proof Badges */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="pt-6 border-t border-[#E8E2D8] flex items-center gap-8 text-[#78726A] text-xs font-mono uppercase tracking-wider"
+            >
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#B8975A]" />
+                <span>{lang === "FR" ? "100% Spécialiste Maroc" : "100% Morocco Specialist"}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#B8975A]" />
+                <span>{lang === "FR" ? "Conciergerie Bilingue 24/7" : "24/7 Bilingual Concierge"}</span>
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* Right Editorial Hero Imagery */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-gold/40 bg-brand-gold/10 backdrop-blur-md"
+            className="lg:col-span-5 relative"
           >
-            <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
-            <span className="font-mono text-[10px] sm:text-xs tracking-[0.25em] text-brand-gold uppercase">
-              {lang === "FR" ? "Patrimoine & Culture Exclusifs" : "Exclusive Heritage & Culture"}
-            </span>
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(28,26,23,0.12)] border-4 border-white bg-white">
+              <img
+                src="/images/morocco-marrakech-riad.png"
+                alt="Moroccan Heritage Riad Architecture"
+                className="w-full h-[480px] lg:h-[540px] object-cover hover:scale-105 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1A17]/80 via-transparent to-transparent" />
+              
+              {/* Floating Overlay Badge */}
+              <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-white/95 backdrop-blur-md border border-[#E8E2D8] shadow-lg text-[#1C1A17] space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#B8975A] font-bold">
+                    {lang === "FR" ? "Joyau Architectural" : "Architectural Masterpiece"}
+                  </span>
+                  <span className="text-[10px] font-mono text-[#78726A]">Marrakech, Morocco</span>
+                </div>
+                <h4 className="font-serif text-lg font-bold">
+                  {lang === "FR" ? "L'Élégance des Riads Royaux" : "The Elegance of Royal Riads"}
+                </h4>
+              </div>
+            </div>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight uppercase leading-[1.1] max-w-4xl"
-          >
-            {lang === "FR" ? (
-              <>Une Seule Destination. <span className="text-brand-gold block italic font-normal font-serif">Une Expertise Sans Limites.</span></>
-            ) : (
-              <>One Destination. <span className="text-brand-gold block italic font-normal font-serif">Endless Expertise.</span></>
-            )}
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="text-zinc-300 text-sm sm:text-lg max-w-2xl font-light leading-relaxed"
-          >
-            {lang === "FR"
-              ? "Que vous organisiez un séminaire corporatif de prestige, un circuit culturel immersif ou des vacances classiques d'exception, nous sommes les spécialistes exclusifs du Maroc."
-              : "Whether you are planning an executive corporate event, an immersive cultural tour, or an unforgettable classic vacation, we are the dedicated Morocco specialists."
-            }
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="pt-4 flex flex-wrap gap-4 items-center"
-          >
-            <Link
-              href="/custom-trip"
-              className="bg-brand-gold hover:bg-brand-gold-dark text-zinc-950 font-bold text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-luxury hover:-translate-y-0.5 shadow-lg shadow-brand-gold/20 flex items-center gap-2"
-            >
-              <span>{lang === "FR" ? "Créer Mon Voyage Sur Mesure" : "Design Custom Journey"}</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <a
-              href="#gallery"
-              className="border border-white/30 hover:border-white text-white font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-luxury hover:bg-white/10"
-            >
-              {lang === "FR" ? "Explorer la Galerie" : "Explore Gallery"}
-            </a>
-          </motion.div>
         </div>
       </section>
 
-      {/* Brand Specialization Positioning Strip */}
-      <section className="py-20 px-6 md:px-12 bg-zinc-900/60 border-y border-zinc-800/80">
+      {/* Specialization Pillar Cards */}
+      <section className="py-20 px-6 md:px-12 bg-white border-b border-[#E8E2D8]">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-8 rounded-2xl bg-zinc-950 border border-zinc-800/80 space-y-4 hover:border-brand-gold/50 transition-colors group">
-            <div className="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
+          
+          <div className="p-8 rounded-3xl bg-[#FAF8F5] border border-[#E8E2D8] space-y-4 hover:border-[#B8975A] transition-all duration-300 shadow-sm hover:shadow-md group">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-[#D4C8B5] flex items-center justify-center text-[#B8975A] group-hover:scale-110 transition-transform shadow-sm">
               <Award className="w-6 h-6" />
             </div>
-            <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-white">
+            <h3 className="font-serif text-xl font-bold text-[#1C1A17]">
               {lang === "FR" ? "Spécialisation Exclusive" : "Exclusive Specialization"}
             </h3>
-            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+            <p className="text-[#4A4640] text-xs sm:text-sm leading-relaxed font-light">
               {lang === "FR"
-                ? "Contrairement aux agences généralistes, nous nous consacrons à 100% au Maroc. Notre connaissance intime du terrain vous garantit des privilèges et accès inédits."
-                : "Unlike generalist agencies, we focus 100% on Morocco. Our intimate ground knowledge ensures unparalleled access and exclusive privileges."
+                ? "Contrairement aux agences généralistes, nous nous consacrons exclusivement au Maroc. Notre maîtrise du terrain vous garantit un accès inédit et privilégié."
+                : "Unlike generalist travel agencies, we focus exclusively on Morocco. Our deep ground expertise ensures unmatched access and privileged privileges."
               }
             </p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-zinc-950 border border-zinc-800/80 space-y-4 hover:border-brand-gold/50 transition-colors group">
-            <div className="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
+          <div className="p-8 rounded-3xl bg-[#FAF8F5] border border-[#E8E2D8] space-y-4 hover:border-[#B8975A] transition-all duration-300 shadow-sm hover:shadow-md group">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-[#D4C8B5] flex items-center justify-center text-[#B8975A] group-hover:scale-110 transition-transform shadow-sm">
               <Globe2 className="w-6 h-6" />
             </div>
-            <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-white">
+            <h3 className="font-serif text-xl font-bold text-[#1C1A17]">
               {lang === "FR" ? "Flexibilité Multi-Villes" : "Multi-City Departure Flexibility"}
             </h3>
-            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+            <p className="text-[#4A4640] text-xs sm:text-sm leading-relaxed font-light">
               {lang === "FR"
-                ? "Vols directs et réguliers au départ de Montréal, New York, Washington D.C., Los Angeles et Toronto pour une logistique aérienne adaptée à vos besoins."
-                : "Direct scheduled flights departing from Montreal, New York, Washington D.C., Los Angeles, and Toronto tailored to your preferred itinerary."
+                ? "Vols directs et réguliers au départ de Montréal, New York, Washington D.C., Los Angeles et Toronto pour une logistique aérienne fluide."
+                : "Scheduled direct flights departing from Montreal, New York, Washington D.C., Los Angeles, and Toronto tailored to your travel preference."
               }
             </p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-zinc-950 border border-zinc-800/80 space-y-4 hover:border-brand-gold/50 transition-colors group">
-            <div className="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
+          <div className="p-8 rounded-3xl bg-[#FAF8F5] border border-[#E8E2D8] space-y-4 hover:border-[#B8975A] transition-all duration-300 shadow-sm hover:shadow-md group">
+            <div className="w-12 h-12 rounded-2xl bg-white border border-[#D4C8B5] flex items-center justify-center text-[#B8975A] group-hover:scale-110 transition-transform shadow-sm">
               <Sparkles className="w-6 h-6" />
             </div>
-            <h3 className="font-serif text-xl font-bold uppercase tracking-wider text-white">
+            <h3 className="font-serif text-xl font-bold text-[#1C1A17]">
               {lang === "FR" ? "Conciergerie Bilingue 24/7" : "24/7 Bilingual Concierge"}
             </h3>
-            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed font-light">
+            <p className="text-[#4A4640] text-xs sm:text-sm leading-relaxed font-light">
               {lang === "FR"
-                ? "Assistance de prestige disponible 24h/24 en français et en anglais, de votre réservation initiale jusqu'à votre retour à la maison."
-                : "Round-the-clock prestige assistance available in English and French from initial booking until your safe return home."
+                ? "Assistance de prestige bilingue (français et anglais) disponible 24h/24, de l'élaboration de votre itinéraire jusqu'à votre retour."
+                : "Bilingual prestige concierge available round-the-clock in English and French from itinerary creation to your safe return."
               }
             </p>
           </div>
+
         </div>
       </section>
 
       {/* UNESCO Cultural & Musical Spotlight Section */}
-      <section className="py-24 px-6 md:px-12 bg-zinc-950 relative overflow-hidden">
+      <section className="py-24 px-6 md:px-12 bg-[#F4F0EA] border-b border-[#E8E2D8]">
         <div className="max-w-6xl mx-auto space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-zinc-800 pb-8">
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#D4C8B5] pb-8">
             <div className="space-y-3 max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-brand-gold font-mono text-[10px] uppercase tracking-[0.25em]">
-                <Music className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 text-[#8C6D37] font-mono text-[10px] uppercase tracking-[0.25em] font-semibold">
+                <Music className="w-3.5 h-3.5 text-[#B8975A]" />
                 <span>{lang === "FR" ? "Spotlight Culturel & Musique UNESCO" : "UNESCO Cultural & Musical Spotlight"}</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white">
+              <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1C1A17] tracking-tight">
                 {lang === "FR" ? "L'Âme & Le Patrimoine du Maroc" : "The Soul & Heritage of Morocco"}
               </h2>
             </div>
-            <p className="text-zinc-400 text-xs sm:text-sm max-w-md font-light leading-relaxed">
+            <p className="text-[#4A4640] text-xs sm:text-sm max-w-md font-light leading-relaxed">
               {lang === "FR"
-                ? "Découvrez l'harmonie fascinante entre la musique traditionnelle andalouse, l'architecture séculaire des médinas et le charme intemporel des cités royales."
-                : "Experience the mesmerizing harmony between traditional Andalusian music, centuries-old Medina architecture, and the timeless charm of royal cities."
+                ? "Découvrez l'harmonie fascinante entre les traditions musicales séculaires, l'architecture des médinas et le charme intemporel des cités royales."
+                : "Experience the mesmerizing harmony between centuries-old musical traditions, Medina architecture, and the timeless charm of royal cities."
               }
             </p>
           </div>
 
-          {/* Smart Video Feature */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="relative w-full aspect-video rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-950">
+          {/* Embedded UNESCO YouTube Video Player */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <div className="lg:col-span-7 rounded-3xl overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(28,26,23,0.08)] bg-white relative">
+              <div className="relative w-full aspect-video">
                 <iframe 
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/9wfdX2N1RA0?si=38glEpgnrc09By72" 
@@ -275,15 +326,17 @@ export default function HeritageClient() {
                   allowFullScreen
                 />
               </div>
+            </div>
+
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-4">
-                <span className="px-3 py-1 rounded-full text-[9px] font-mono uppercase tracking-widest bg-brand-gold/15 text-brand-gold border border-brand-gold/30">
-                  {lang === "FR" ? "Trésors Vivants UNESCO" : "UNESCO Living Treasures"}
+                <span className="px-3.5 py-1 rounded-full text-[9px] font-mono uppercase tracking-widest bg-white text-[#8C6D37] border border-[#D4C8B5] font-semibold shadow-sm inline-block">
+                  {lang === "FR" ? "Patrimoine Culturel Immatériel UNESCO" : "UNESCO Intangible Cultural Heritage"}
                 </span>
-                <h3 className="font-serif text-2xl font-bold uppercase text-white">
-                  {lang === "FR" ? "Cités Impériales & Médinas Légendaires" : "Imperial Cities & Legendary Medinas"}
+                <h3 className="font-serif text-2xl font-bold text-[#1C1A17]">
+                  {lang === "FR" ? "Musique Traditionnelle & Cités Impériales" : "Traditional Music & Imperial Cities"}
                 </h3>
-                <p className="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                <p className="text-[#4A4640] text-xs sm:text-sm font-light leading-relaxed">
                   {lang === "FR"
                     ? "De la médina millénaire de Fès el-Bali aux kasbahs spectaculaires d'Aït-Ben-Haddou et aux jardins luxuriants de Marrakech, chaque itinéraire que nous traçons célèbre le patrimoine authentique du royaume."
                     : "From the thousand-year-old Medina of Fes el-Bali to the majestic Kasbahs of Ait Ben Haddou and the lush gardens of Marrakech, every passage we design celebrates the authentic kingdom heritage."
@@ -292,43 +345,46 @@ export default function HeritageClient() {
               </div>
 
               <div className="space-y-3 pt-2">
-                <div className="flex items-start gap-3 text-xs text-zinc-300">
-                  <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-xs text-[#2D2A26]">
+                  <CheckCircle2 className="w-4 h-4 text-[#B8975A] shrink-0 mt-0.5" />
                   <span>{lang === "FR" ? "Visites privées avec historiens du patrimoine agréés" : "Private guided tours with certified heritage historians"}</span>
                 </div>
-                <div className="flex items-start gap-3 text-xs text-zinc-300">
-                  <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-xs text-[#2D2A26]">
+                  <CheckCircle2 className="w-4 h-4 text-[#B8975A] shrink-0 mt-0.5" />
                   <span>{lang === "FR" ? "Séjours exclusifs dans des Riads royaux restaurés" : "Exclusive stays in authentically restored royal Riads"}</span>
                 </div>
-                <div className="flex items-start gap-3 text-xs text-zinc-300">
-                  <CheckCircle2 className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 text-xs text-[#2D2A26]">
+                  <CheckCircle2 className="w-4 h-4 text-[#B8975A] shrink-0 mt-0.5" />
                   <span>{lang === "FR" ? "Expériences musicales andalouses et nomades privées" : "Private Andalusian and nomadic musical performances"}</span>
                 </div>
               </div>
             </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* Interactive Heritage Photo Gallery */}
-      <section id="gallery" className="py-24 px-6 md:px-12 bg-zinc-900/40">
-        <div className="max-w-6xl mx-auto space-y-10">
+      {/* Filterable Photo Gallery (Editorial Layout) */}
+      <section id="gallery" className="py-24 px-6 md:px-12 bg-[#FAF8F5] border-b border-[#E8E2D8]">
+        <div className="max-w-6xl mx-auto space-y-12">
+          
           <div className="text-center space-y-4 max-w-2xl mx-auto">
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand-gold">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#8C6D37] font-semibold">
               {lang === "FR" ? "Galerie Photographique" : "Photographic Gallery"}
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold uppercase tracking-tight text-white">
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1C1A17]">
               {lang === "FR" ? "Hôtels, Plages & Architecture" : "Hotels, Beaches & Architecture"}
             </h2>
-            <p className="text-zinc-400 text-xs sm:text-sm font-light">
+            <p className="text-[#4A4640] text-xs sm:text-sm font-light">
               {lang === "FR"
-                ? "Parcourez une sélection visuelle captivante reflétant la diversité et le prestige du Maroc."
-                : "Browse a captivating visual selection reflecting Morocco's diverse landscape and prestige."
+                ? "Explorez notre sélection visuelle captivante reflétant la diversité et le prestige du Maroc."
+                : "Explore our captivating visual selection reflecting Morocco's diverse landscape and prestige."
               }
             </p>
           </div>
 
-          {/* Filter Tabs */}
+          {/* Editorial Filter Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-2">
             {[
               { id: "all", label: { EN: "All Photography", FR: "Toutes les Photos" } },
@@ -342,8 +398,8 @@ export default function HeritageClient() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-5 py-2.5 rounded-full text-xs font-mono tracking-wider uppercase transition-all duration-300 cursor-pointer ${
                   activeTab === tab.id
-                    ? "bg-brand-gold text-zinc-950 font-bold shadow-md"
-                    : "bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700"
+                    ? "bg-[#1C1A17] text-white font-bold shadow-md"
+                    : "bg-white border border-[#D4C8B5] text-[#4A4640] hover:text-[#1C1A17] hover:border-[#1C1A17]"
                 }`}
               >
                 {translate(tab.label, lang)}
@@ -361,31 +417,31 @@ export default function HeritageClient() {
                 <motion.div
                   key={item.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.4 }}
-                  className="group relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800 aspect-[4/5] shadow-lg cursor-pointer"
+                  className="group relative rounded-3xl overflow-hidden bg-white border-2 border-white shadow-[0_10px_30px_rgba(28,26,23,0.05)] aspect-[4/5] cursor-pointer"
                 >
                   <img
                     src={item.image}
                     alt={translate(item.title, lang)}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1C1A17]/85 via-[#1C1A17]/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                   
                   <div className="absolute top-4 left-4">
-                    <span className="px-2.5 py-1 rounded-full text-[8px] font-mono uppercase tracking-widest bg-zinc-950/80 text-brand-gold border border-brand-gold/30 backdrop-blur-md">
+                    <span className="px-3 py-1 rounded-full text-[8px] font-mono uppercase tracking-widest bg-white/90 text-[#1C1A17] font-bold backdrop-blur-md shadow-sm">
                       {translate(item.tag, lang)}
                     </span>
                   </div>
 
-                  <div className="absolute bottom-4 left-4 right-4 space-y-1">
-                    <span className="text-[10px] font-mono text-zinc-400 flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-brand-gold" />
+                  <div className="absolute bottom-4 left-4 right-4 space-y-1 text-white">
+                    <span className="text-[10px] font-mono text-zinc-300 flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-[#D4B87E]" />
                       {translate(item.location, lang)}
                     </span>
-                    <h4 className="font-serif text-sm font-bold text-white group-hover:text-brand-gold transition-colors leading-tight">
+                    <h4 className="font-serif text-sm font-bold group-hover:text-[#D4B87E] transition-colors leading-tight">
                       {translate(item.title, lang)}
                     </h4>
                   </div>
@@ -393,150 +449,148 @@ export default function HeritageClient() {
               ))}
             </AnimatePresence>
           </motion.div>
+
         </div>
       </section>
 
-      {/* 3-Card Experience Showcase Section */}
-      <section className="py-24 px-6 md:px-12 bg-zinc-950 border-t border-zinc-800/80">
+      {/* 3-Card Experience Showcase (Off-White Editorial Style) */}
+      <section className="py-24 px-6 md:px-12 bg-[#F4F0EA] border-b border-[#E8E2D8]">
         <div className="max-w-6xl mx-auto space-y-12">
+          
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand-gold">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#8C6D37] font-semibold">
               {lang === "FR" ? "Offres sur Mesure" : "Tailored Offerings"}
             </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold uppercase tracking-tight text-white">
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1C1A17]">
               {lang === "FR"
                 ? "Que vous planifiiez un événement d'entreprise, un circuit culturel ou des vacances de luxe..."
                 : "Whether you are planning a corporate event, cultural tour, or classic vacation..."
               }
             </h2>
-            <p className="text-zinc-400 text-xs sm:text-sm font-light">
-              {lang === "FR"
-                ? "Découvrez nos trois piliers d'excellence conçus sur mesure au Maroc."
-                : "Discover our three pillars of tailored travel excellence in Morocco."
-              }
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Card 1: Corporate / MICE */}
-            <div className="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-6 flex flex-col justify-between hover:border-brand-gold/60 transition-all duration-300 group">
+            
+            {/* Card 1: MICE */}
+            <div className="p-8 rounded-3xl bg-white border border-[#E8E2D8] space-y-6 flex flex-col justify-between hover:border-[#B8975A] transition-all duration-300 shadow-sm hover:shadow-lg group">
               <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-2xl bg-[#FAF8F5] border border-[#D4C8B5] flex items-center justify-center text-[#B8975A] group-hover:scale-110 transition-transform shadow-sm">
                   <Briefcase className="w-7 h-7" />
                 </div>
-                <span className="text-[9px] font-mono uppercase tracking-widest text-brand-gold block">
+                <span className="text-[9px] font-mono uppercase tracking-widest text-[#8C6D37] font-bold block">
                   {lang === "FR" ? "Événements d'Entreprise" : "Corporate Events"}
                 </span>
-                <h3 className="font-serif text-2xl font-bold uppercase text-white">
+                <h3 className="font-serif text-2xl font-bold text-[#1C1A17]">
                   {lang === "FR" ? "MICE & Séminaires de Prestige" : "MICE & Executive Retreats"}
                 </h3>
-                <p className="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                <p className="text-[#4A4640] text-xs sm:text-sm font-light leading-relaxed">
                   {lang === "FR"
-                    ? "Organisation complète de congrès, voyages d'incentive, retraites exécutives et lancements de produits d'exception à Marrakech et Casablanca."
-                    : "End-to-end management of corporate conventions, incentive travel, executive retreats, and product launches in Marrakech and Casablanca."
+                    ? "Organisation clé en main de congrès, séminaires, retraites exécutives et lancements de produits d'exception à Marrakech et Casablanca."
+                    : "Turnkey event management of corporate conventions, executive retreats, and product launches in Marrakech and Casablanca."
                   }
                 </p>
               </div>
               <Link
                 href="/mice"
-                className="inline-flex items-center gap-2 font-mono text-xs font-bold text-brand-gold uppercase tracking-wider hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#1C1A17] uppercase tracking-wider group-hover:text-[#B8975A] transition-colors"
               >
                 <span>{lang === "FR" ? "Explorer MICE →" : "Explore MICE →"}</span>
               </Link>
             </div>
 
             {/* Card 2: Cultural Tours */}
-            <div className="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-6 flex flex-col justify-between hover:border-brand-gold/60 transition-all duration-300 group">
+            <div className="p-8 rounded-3xl bg-white border border-[#E8E2D8] space-y-6 flex flex-col justify-between hover:border-[#B8975A] transition-all duration-300 shadow-sm hover:shadow-lg group">
               <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-2xl bg-[#FAF8F5] border border-[#D4C8B5] flex items-center justify-center text-[#B8975A] group-hover:scale-110 transition-transform shadow-sm">
                   <Compass className="w-7 h-7" />
                 </div>
-                <span className="text-[9px] font-mono uppercase tracking-widest text-brand-gold block">
+                <span className="text-[9px] font-mono uppercase tracking-widest text-[#8C6D37] font-bold block">
                   {lang === "FR" ? "Immersion Culturelle" : "Cultural Immersion"}
                 </span>
-                <h3 className="font-serif text-2xl font-bold uppercase text-white">
+                <h3 className="font-serif text-2xl font-bold text-[#1C1A17]">
                   {lang === "FR" ? "Circuits Villes Impériales & Sahara" : "Imperial Cities & Sahara Tours"}
                 </h3>
-                <p className="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                <p className="text-[#4A4640] text-xs sm:text-sm font-light leading-relaxed">
                   {lang === "FR"
-                    ? "Circuits privés accompagnés à la découverte des 4 cités impériales, des oasis du sud, des dunes de Merzouga et des ateliers d'artisanat ancestral."
-                    : "Private guided tours exploring Morocco's 4 imperial cities, southern desert oases, Merzouga sand dunes, and ancestral artisan workshops."
+                    ? "Circuits privés guidés à la découverte des 4 cités impériales, des oasis du désert, des dunes de Merzouga et de l'artisanat d'art."
+                    : "Private guided tours exploring Morocco's 4 imperial cities, desert oases, Merzouga sand dunes, and master craft workshops."
                   }
                 </p>
               </div>
               <Link
                 href="/custom-trip"
-                className="inline-flex items-center gap-2 font-mono text-xs font-bold text-brand-gold uppercase tracking-wider hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#1C1A17] uppercase tracking-wider group-hover:text-[#B8975A] transition-colors"
               >
                 <span>{lang === "FR" ? "Personnaliser Mon Circuit →" : "Customize Cultural Tour →"}</span>
               </Link>
             </div>
 
-            {/* Card 3: Classic Vacations & Golf */}
-            <div className="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 space-y-6 flex flex-col justify-between hover:border-brand-gold/60 transition-all duration-300 group">
+            {/* Card 3: Golf & Relaxation */}
+            <div className="p-8 rounded-3xl bg-white border border-[#E8E2D8] space-y-6 flex flex-col justify-between hover:border-[#B8975A] transition-all duration-300 shadow-sm hover:shadow-lg group">
               <div className="space-y-4">
-                <div className="w-14 h-14 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 flex items-center justify-center text-brand-gold group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-2xl bg-[#FAF8F5] border border-[#D4C8B5] flex items-center justify-center text-[#B8975A] group-hover:scale-110 transition-transform shadow-sm">
                   <Palmtree className="w-7 h-7" />
                 </div>
-                <span className="text-[9px] font-mono uppercase tracking-widest text-brand-gold block">
+                <span className="text-[9px] font-mono uppercase tracking-widest text-[#8C6D37] font-bold block">
                   {lang === "FR" ? "Vacances & Golf" : "Vacations & Golf"}
                 </span>
-                <h3 className="font-serif text-2xl font-bold uppercase text-white">
+                <h3 className="font-serif text-2xl font-bold text-[#1C1A17]">
                   {lang === "FR" ? "Séjours Golf Royal & Détente 5★" : "Royal Golf & 5★ Relaxation"}
                 </h3>
-                <p className="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed">
+                <p className="text-[#4A4640] text-xs sm:text-sm font-light leading-relaxed">
                   {lang === "FR"
-                    ? "Forfaits golf d'élite sur les parcours royaux de Rabat, Marrakech et Taghazout Bay avec hébergement 5★, buggies inclus et conciergerie 24/7."
-                    : "Elite golf packages on royal courses in Rabat, Marrakech, and Taghazout Bay featuring 5★ resorts, included buggies, and 24/7 concierge."
+                    ? "Forfaits golf d'élite sur les parcours royaux de Rabat, Marrakech et Taghazout Bay avec hébergement 5★ et conciergerie 24/7."
+                    : "Elite golf packages on royal courses in Rabat, Marrakech, and Taghazout Bay featuring 5★ luxury resorts and 24/7 concierge."
                   }
                 </p>
               </div>
               <Link
                 href="/itineraries?type=Golf"
-                className="inline-flex items-center gap-2 font-mono text-xs font-bold text-brand-gold uppercase tracking-wider hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 font-mono text-xs font-bold text-[#1C1A17] uppercase tracking-wider group-hover:text-[#B8975A] transition-colors"
               >
                 <span>{lang === "FR" ? "Voir nos Forfaits Golf →" : "View Golf Packages →"}</span>
               </Link>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Multi-City Flight Hub Trust Strip */}
-      <section className="py-20 px-6 md:px-12 bg-zinc-900/70 border-t border-zinc-800">
+      {/* Multi-City Direct Flight Gateway Hubs */}
+      <section className="py-20 px-6 md:px-12 bg-[#FAF8F5] border-b border-[#E8E2D8]">
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="text-center space-y-3">
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand-gold">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#8C6D37] font-semibold">
               {lang === "FR" ? "Vols Amérique du Nord → Maroc" : "North America → Morocco Direct Flights"}
             </span>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold uppercase text-white">
-              {lang === "FR" ? "Envolez-vous Depuis Votre Métropole" : "Depart From Your Preferred North American Gateway"}
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1C1A17]">
+              {lang === "FR" ? "Envolez-vous Depuis Votre Métropole" : "Depart From Your Preferred Gateway"}
             </h3>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
             {DEPARTURE_CITIES.map((city, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-zinc-950 border border-zinc-800 text-center space-y-2 hover:border-brand-gold/40 transition-colors">
-                <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-gold/10 text-brand-gold mx-auto">
+              <div key={idx} className="p-5 rounded-2xl bg-white border border-[#E8E2D8] text-center space-y-2 hover:border-[#B8975A] transition-all duration-300 shadow-sm">
+                <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#FAF8F5] text-[#B8975A] mx-auto border border-[#E8E2D8]">
                   <Plane className="w-4 h-4" />
                 </div>
-                <div className="font-mono text-sm font-bold text-brand-gold">{city.code}</div>
-                <div className="font-serif text-base font-bold text-white">{city.name}</div>
-                <div className="text-[10px] font-mono text-zinc-400">{translate(city.note, lang)}</div>
+                <div className="font-mono text-sm font-bold text-[#8C6D37]">{city.code}</div>
+                <div className="font-serif text-base font-bold text-[#1C1A17]">{city.name}</div>
+                <div className="text-[10px] font-mono text-[#78726A]">{translate(city.note, lang)}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Interactive Morocco Map Section */}
-      <section className="py-20 px-6 md:px-12 bg-zinc-950">
+      {/* Interactive Kingdom Map Section */}
+      <section className="py-20 px-6 md:px-12 bg-white">
         <div className="max-w-6xl mx-auto space-y-8">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand-gold">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#8C6D37] font-semibold">
               {lang === "FR" ? "Carte du Royaume" : "Interactive Kingdom Map"}
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold uppercase text-white">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1C1A17]">
               {lang === "FR" ? "Explorez les Régions du Maroc" : "Explore Morocco's Regions"}
             </h2>
           </div>
@@ -544,34 +598,34 @@ export default function HeritageClient() {
         </div>
       </section>
 
-      {/* Final Call to Action */}
-      <section className="py-24 px-6 md:px-12 bg-gradient-to-b from-zinc-900 to-zinc-950 border-t border-zinc-800 text-center">
+      {/* Editorial Luxury Concierge CTA */}
+      <section className="py-24 px-6 md:px-12 bg-[#1C1A17] text-white text-center">
         <div className="max-w-4xl mx-auto space-y-8">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-brand-gold block">
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#D4B87E] block font-semibold">
             {lang === "FR" ? "Conciergerie de Prestige" : "Prestige Concierge"}
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl font-bold uppercase text-white leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
             {lang === "FR"
               ? "Prêt à vivre le vrai Maroc avec les spécialistes de la destination ?"
               : "Ready to experience authentic Morocco with true destination specialists?"
             }
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base font-light max-w-xl mx-auto">
+          <p className="text-zinc-300 text-sm sm:text-base font-light max-w-xl mx-auto">
             {lang === "FR"
-              ? "Contactez notre équipe d'architectes de voyage pour concevoir votre itinéraire sur mesure en 24h."
-              : "Contact our team of travel architects to craft your bespoke passage within 24 hours."
+              ? "Contactez nos architectes de voyage pour concevoir votre itinéraire sur mesure en 24h."
+              : "Contact our travel architects to craft your bespoke passage within 24 hours."
             }
           </p>
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-4">
             <Link
               href="/custom-trip"
-              className="bg-brand-gold hover:bg-brand-gold-dark text-zinc-950 font-bold text-xs tracking-[0.2em] uppercase px-10 py-4 rounded-full transition-luxury hover:-translate-y-0.5 shadow-xl shadow-brand-gold/20"
+              className="bg-[#B8975A] hover:bg-[#9E7F44] text-zinc-950 font-bold text-xs tracking-[0.2em] uppercase px-10 py-4 rounded-full transition-all duration-300 shadow-xl shadow-[#B8975A]/20"
             >
               {lang === "FR" ? "Demander Mon Devis Sur Mesure" : "Request Custom Quote"}
             </Link>
             <a
               href="tel:5149196381"
-              className="border border-zinc-700 hover:border-white text-zinc-300 hover:text-white font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-luxury"
+              className="border border-zinc-600 hover:border-white text-zinc-200 hover:text-white font-medium text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-full transition-all duration-300"
             >
               {lang === "FR" ? "Appeler le 514 919 6381" : "Call +1 (514) 919-6381"}
             </a>
