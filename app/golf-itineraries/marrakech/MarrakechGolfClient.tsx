@@ -74,7 +74,7 @@ export default function MarrakechGolfClient() {
   const packageB = {
     tierLabel: { FR: "Exclusif", EN: "Exclusive" },
     rating: 5,
-    image: "/images/morocco-marrakech-riad.png",
+    image: "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal.webp",
     bannerText: {
       FR: "Évasion de luxe — Riad Adults Only & vol direct",
       EN: "Luxury escape — Adults Only Riad & direct flight"

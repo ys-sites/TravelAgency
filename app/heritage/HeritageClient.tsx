@@ -25,36 +25,36 @@ import Footer from "../components/footer";
 import MapSection from "../components/map-section";
 import { useLang, translate } from "../context/lang-context";
 
-// Heritage Photo Gallery Data
+// Heritage Photo Gallery Data — Real Client Itinerary Photos
 const GALLERY_ITEMS = [
   {
     id: "1",
-    category: "architecture",
-    title: { EN: "Marrakech Royal Riad & Courtyard", FR: "Riad Royal & Cour Intérieure à Marrakech" },
-    location: { EN: "Marrakech Medina", FR: "Médina de Marrakech" },
-    image: "/images/morocco-marrakech-riad.png",
-    tag: { EN: "UNESCO Heritage", FR: "Patrimoine UNESCO" }
+    category: "hotels",
+    title: { EN: "Jaal Riad Resort & Spa", FR: "Jaal Riad Resort & Spa (Adults Only)" },
+    location: { EN: "Marrakech, Morocco", FR: "Marrakech, Maroc" },
+    image: "/images/client_request/hotel_jaal_marrakech/hotel_le_jaal.webp",
+    tag: { EN: "5★ Luxury Riad", FR: "Riad 5★ de Luxe" }
   },
   {
     id: "2",
     category: "architecture",
-    title: { EN: "Ancient Tanneries & Blue Alleys", FR: "Tanneries Millénaires & Ruelles Bleues" },
-    location: { EN: "Fes el Bali", FR: "Fès el-Bali" },
-    image: "/images/imperial_cities_fes.jpg",
-    tag: { EN: "Imperial City", FR: "Ville Impériale" }
+    title: { EN: "Royal Golf Dar Es Salam Clubhouse", FR: "Clubhouse Royal Golf Dar Es Salam" },
+    location: { EN: "Rabat, Morocco", FR: "Rabat, Maroc" },
+    image: "/images/rgdes_clubhouse.jpg",
+    tag: { EN: "Royal Heritage", FR: "Patrimoine Royal" }
   },
   {
     id: "3",
-    category: "culture",
-    title: { EN: "Chefchaouen Mountain Pearl", FR: "La Perle Bleue de Chefchaouen" },
-    location: { EN: "Rif Mountains", FR: "Montagnes du Rif" },
-    image: "/images/chefchaouen.png",
-    tag: { EN: "Cultural Jewel", FR: "Joyau Culturel" }
+    category: "hotels",
+    title: { EN: "Royal Golf Marrakech Resort & Greens", FR: "Royal Golf Marrakech & Parcours" },
+    location: { EN: "Marrakech, Morocco", FR: "Marrakech, Maroc" },
+    image: "/images/royal_golf_marrakech_1.jpg",
+    tag: { EN: "Prestige Golf", FR: "Golf de Prestige" }
   },
   {
     id: "4",
     category: "hotels",
-    title: { EN: "Pickalbatros White Beach Resort", FR: "Résort White Beach Agadir" },
+    title: { EN: "Pickalbatros White Beach Resort", FR: "Résort White Beach Agadir 5★" },
     location: { EN: "Agadir Atlantic Ocean", FR: "Agadir Côte Atlantique" },
     image: "/images/pickalbatros-white-beach-resort-in-agadir.jpg",
     tag: { EN: "5★ Luxury Resort", FR: "Résort 5★ de Luxe" }
@@ -70,25 +70,25 @@ const GALLERY_ITEMS = [
   {
     id: "6",
     category: "beaches",
-    title: { EN: "Golden Sands of Taghazout Bay", FR: "Sables Dorés de la Baie de Taghazout" },
+    title: { EN: "Golden Sands & Atlantic Lounge", FR: "Sables Dorés & Lounge Atlantique" },
     location: { EN: "Agadir Coast", FR: "Côte d'Agadir" },
     image: "/images/beach-area.jpg",
     tag: { EN: "Atlantic Coast", FR: "Côte Atlantique" }
   },
   {
     id: "7",
-    category: "culture",
-    title: { EN: "Erg Chebbi Desert Camp & Dunes", FR: "Campement de Luxe dans l'Erg Chebbi" },
-    location: { EN: "Merzouga Sahara", FR: "Désert de Merzouga" },
-    image: "/images/morocco-sahara-dunes.png",
-    tag: { EN: "Sahara Odyssey", FR: "Odyssée Saharienne" }
+    category: "hotels",
+    title: { EN: "Deluxe Ocean View Suite", FR: "Suite Deluxe Vue Sur Mer" },
+    location: { EN: "Taghazout Bay", FR: "Baie de Taghazout" },
+    image: "/images/deluxe-room-sea-view.jpg",
+    tag: { EN: "Oceanfront Suite", FR: "Suite Front de Mer" }
   },
   {
     id: "8",
     category: "culture",
-    title: { EN: "Moroccan Tea & Gastronomy Art", FR: "Art du Thé & Gastronomie Marocaine" },
-    location: { EN: "National Heritage", FR: "Patrimoine National" },
-    image: "/images/tagine-restaurant.jpg",
+    title: { EN: "Moroccan Fine Dining & Gastronomy", FR: "Gastronomie & Restaurant 5★" },
+    location: { EN: "5★ Resort Dining", FR: "Restauration 5★" },
+    image: "/images/main-restaurant.jpg",
     tag: { EN: "Culinary Art", FR: "Art Culinaire" }
   }
 ];
@@ -213,8 +213,8 @@ export default function HeritageClient() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(28,26,23,0.12)] border-4 border-white bg-white">
               <img
-                src="/images/morocco-marrakech-riad.png"
-                alt="Moroccan Heritage Riad Architecture"
+                src="/images/client_request/hotel_jaal_marrakech/hotel_le_jaal.webp"
+                alt="Jaal Riad Resort 5★ Marrakech"
                 className="w-full h-[480px] lg:h-[540px] object-cover hover:scale-105 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1C1A17]/80 via-transparent to-transparent" />
