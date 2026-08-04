@@ -125,6 +125,7 @@ const itemVariants = {
 
 export default function HeritageClient() {
   const { lang } = useLang();
+  const [isYoutubePlaying, setIsYoutubePlaying] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-[#1C1A17] font-body antialiased selection:bg-[#C5A880] selection:text-white overflow-x-hidden">
@@ -612,19 +613,40 @@ export default function HeritageClient() {
             </p>
           </motion.div>
 
-          {/* Embedded UNESCO YouTube Video Player */}
+          {/* Embedded UNESCO YouTube Video Player (Facade for Performance) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 rounded-3xl overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(28,26,23,0.08)] bg-white relative">
-              <div className="relative w-full aspect-video">
-                <iframe 
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/9wfdX2N1RA0?vq=hd720&hd=1&rel=0&modestbranding=1" 
-                  title="UNESCO Moroccan Heritage & Music" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  referrerPolicy="strict-origin-when-cross-origin" 
-                  allowFullScreen
-                />
+              <div className="relative w-full aspect-video bg-zinc-900 group cursor-pointer overflow-hidden">
+                {!isYoutubePlaying ? (
+                  <div 
+                    onClick={() => setIsYoutubePlaying(true)}
+                    className="relative w-full h-full flex items-center justify-center"
+                  >
+                    <img 
+                      src="https://img.youtube.com/vi/9wfdX2N1RA0/hqdefault.jpg" 
+                      alt="UNESCO Moroccan Heritage & Music" 
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
+                    <div className="absolute w-16 h-16 rounded-full bg-[#B8975A] text-zinc-950 flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                      <div className="w-0 h-0 border-y-8 border-y-transparent border-l-[14px] border-l-zinc-950 ml-1" />
+                    </div>
+                    <span className="absolute bottom-4 left-4 text-[10px] font-mono uppercase tracking-widest text-white/90 bg-black/60 px-3 py-1 rounded-full backdrop-blur-md">
+                      {lang === "FR" ? "Cliquer pour lire la vidéo" : "Click to Play Video"}
+                    </span>
+                  </div>
+                ) : (
+                  <iframe 
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/9wfdX2N1RA0?autoplay=1&vq=hd720&hd=1&rel=0&modestbranding=1" 
+                    title="UNESCO Moroccan Heritage & Music" 
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allowFullScreen
+                  />
+                )}
               </div>
             </div>
 
