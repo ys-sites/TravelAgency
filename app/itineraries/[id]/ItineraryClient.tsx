@@ -12,6 +12,7 @@ import { itinerariesData, itineraryThemes, ItineraryTheme } from "@/data/itinera
 import SmartVideo from "../../components/smart-video";
 import { videoSources, videoAsset } from "@/data/videoSources";
 import { getCityKey } from "../../utils/city-map";
+import MichlifenFeatureBlock from "@/components/ui/michlifen-feature-block";
 
 const getGalleryImages = (itineraryId: number) => {
   switch (itineraryId) {
@@ -596,6 +597,12 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                   {lang === "FR" ? "Réserver ce voyage" : "Book this Journey"} &rarr;
                 </a>
               </div>
+
+              {itinerary.id === 10 && (
+                <div className="my-10 border-t border-b border-zinc-200/60 py-6">
+                  <MichlifenFeatureBlock />
+                </div>
+              )}
 
               {/* Destination Showcase — city-matched SmartVideo tile */}
               <motion.div

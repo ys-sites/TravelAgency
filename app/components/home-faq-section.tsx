@@ -18,8 +18,8 @@ const faqs = [
   {
     q: { FR: "Quelles destinations proposez-vous au Maroc ?", EN: "Which destinations do you offer in Morocco?" },
     a: {
-      FR: "Nous proposons des séjours dans toutes les grandes villes du Maroc : Marrakech, Agadir, Rabat, Casablanca, Fès, Chefchaouen, Tanger, Essaouira et Ouarzazate. Nous couvrons également des destinations de golf spécifiques comme le Royal Golf Dar Es Salam à Rabat et les prestigieux parcours de Taghazout Bay à Agadir.",
-      EN: "We offer stays in all major Moroccan cities: Marrakech, Agadir, Rabat, Casablanca, Fes, Chefchaouen, Tangier, Essaouira, and Ouarzazate. We also cover specific golf destinations like the Royal Golf Dar Es Salam in Rabat and the prestigious courses at Taghazout Bay in Agadir.",
+      FR: "Nous proposons des séjours dans toutes les grandes villes du Maroc : Marrakech, Agadir, Rabat, Casablanca, Fès, Chefchaouen, Tanger, Essaouira et Ouarzazate. Nous couvrons également des destinations de golf d'exception à Tanger, Fès et Michlifen, ainsi qu'à Marrakech et Agadir.",
+      EN: "We offer stays in all major Moroccan cities: Marrakech, Agadir, Rabat, Casablanca, Fes, Chefchaouen, Tangier, Essaouira, and Ouarzazate. We also cover exceptional golf destinations in Tangier, Fez, and Michlifen, as well as Marrakech and Agadir.",
     },
   },
   {

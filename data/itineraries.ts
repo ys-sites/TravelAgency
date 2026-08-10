@@ -106,7 +106,7 @@ export interface ItineraryTheme {
 export const toursList: TourCard[] = [
   {
     id: 10,
-    image: "/images/royal_golf_aerial_1.jpg",
+    image: "/michlifen.jpg",
     category: { FR: "Golf & Prestige", EN: "Golf & Prestige" },
     badge: { FR: "Signature", EN: "Signature" },
     title: { FR: "Michlifen Resort & Golf 5★", EN: "Michlifen Resort & Golf 5★" },
@@ -125,7 +125,7 @@ export const toursList: TourCard[] = [
   },
   {
     id: 11,
-    image: "/images/royal_golf_marrakech_1.jpg",
+    image: "/Tangier.jpg",
     category: { FR: "Golf & Océan", EN: "Golf & Ocean" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
     title: { FR: "Tanger Golf & Resort 5★ (7N)", EN: "Tangier Golf & Resort 5★ (7N)" },
@@ -137,9 +137,7 @@ export const toursList: TourCard[] = [
     flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     oldPrice: "",
-    price: { FR: "À partir de 3 879 $", EN: "Starting from 3,879" },
-    // TODO(JAY): confirm anchor price with client
-    originalCost: { FR: "À partir de 4 079 $", EN: "Starting from 4,079" },
+    price: { FR: "Sur demande", EN: "On request" },
     tag: "golf",
     iconType: "water",
     city: { FR: "Tanger", EN: "Tangier" },
@@ -534,8 +532,8 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   "10": {
     id: 10,
     planLabel: { FR: "BB / Demi-pension", EN: "BB / HB Plan" },
-    image: "/images/royal_golf_aerial_1.jpg",
-    contentImage: "/images/royal_golf_marrakech_1.jpg",
+    image: "/michlifen.jpg",
+    contentImage: "/michlifen.jpg",
     title: { FR: "Michlifen Resort & Golf 5★", EN: "Michlifen Resort & Golf 5★" },
     duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
     cost: { FR: "Sur demande", EN: "On request" },
@@ -656,12 +654,11 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "11": {
     id: 11,
-    image: "/images/royal_golf_marrakech_1.jpg",
-    contentImage: "/images/royal_golf_marrakech_2.jpg",
+    image: "/Tangier.jpg",
+    contentImage: "/Tangier.jpg",
     title: { FR: "Tanger Golf & Resort 5★ (7N)", EN: "Tangier Golf & Resort 5★ (7N)" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    cost: { FR: "À partir de 3 879\u00A0$", EN: "Starting from 3,879" },
-    originalCost: { FR: "À partir de 4 079\u00A0$", EN: "Starting from 4,079" },
+    cost: { FR: "Sur demande", EN: "On request" },
     overview: {
       FR: "Découvrez la magie du golf au nord du Maroc à Tanger. Ce séjour d'exception de 7 nuits en hôtel 5★ comprend vos vols au départ de Montréal et 4 rondes de golf de championnat sur le mythique Royal Golf de Tanger (fondé en 1914, plus ancien golf d'Afrique) et l'Al Houara Golf Club bordant l'océan Atlantique. Voiturette électrique partagée et transferts privés inclus.",
       EN: "Discover golf magic in northern Morocco in Tangier. This 7-night luxury package in a 5★ resort includes flights departing from Montreal and 4 championship golf rounds on the historic Royal Golf de Tanger (founded in 1914, Africa's oldest golf course) and the oceanfront Al Houara Golf Club. Shared buggy and private transfers included."
