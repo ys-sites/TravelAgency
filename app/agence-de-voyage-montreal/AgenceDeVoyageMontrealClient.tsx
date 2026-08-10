@@ -32,8 +32,8 @@ export default function AgenceDeVoyageMontrealClient() {
     
     serviceGolfTitle: { FR: "Forfaits Golf au Maroc", EN: "Morocco Golf Packages" },
     serviceGolfDesc: { 
-      FR: "Des séjours exclusifs combinant des parcours de classe mondiale à Agadir, Marrakech et Rabat avec un hébergement 5 étoiles et des transferts privés.", 
-      EN: "Exclusive packages combining world-class courses in Agadir, Marrakech, and Rabat with 5-star accommodations and private transfers." 
+      FR: "Des séjours exclusifs combinant des parcours de classe mondiale à Marrakech, Agadir, Tanger, Fès et Michlifen avec un hébergement 5 étoiles et des transferts privés.", 
+      EN: "Exclusive packages combining world-class courses in Marrakech, Agadir, Tangier, Fez, and Michlifen with 5-star accommodations and private transfers." 
     },
     serviceGolfLink: { FR: "Découvrir les Golfs", EN: "Discover Golf Packages" },
 

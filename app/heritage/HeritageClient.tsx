@@ -42,7 +42,7 @@ import {
 // Direct Flight Departure Gateways
 const DEPARTURE_CITIES = [
   { code: "YUL", name: "Montréal", country: "Canada", note: { EN: "Direct non-stop service", FR: "Vols directs sans escale" } },
-  { code: "JFK / EWR", name: "New York", country: "USA", note: { EN: "Daily direct flights", FR: "Vols directs quotidiens" } },
+  { code: "JFK", name: "New York", country: "USA", note: { EN: "Daily direct flights", FR: "Vols directs quotidiens" } },
   { code: "IAD", name: "Washington D.C.", country: "USA", note: { EN: "Direct capital hub", FR: "Hub de la capitale" } },
   { code: "LAX", name: "Los Angeles", country: "USA", note: { EN: "West Coast gateway", FR: "Portail Côte Ouest" } },
   { code: "YYZ", name: "Toronto", country: "Canada", note: { EN: "Direct & connecting hubs", FR: "Vols directs & correspondances" } },
@@ -908,8 +908,8 @@ export default function HeritageClient() {
                   </h3>
                   <p className="text-[#4A4640] text-xs sm:text-sm font-light leading-relaxed">
                     {lang === "FR"
-                      ? "Forfaits golf d'élite sur les parcours royaux de Rabat, Marrakech et Taghazout Bay avec hébergement 5★ et conciergerie 24/7."
-                      : "Elite golf packages on royal courses in Rabat, Marrakech, and Taghazout Bay featuring 5★ luxury resorts and 24/7 concierge."
+                      ? "Forfaits golf d'élite sur les parcours de Tanger, Fès, Michlifen, Marrakech et Agadir avec hébergement 5★ et conciergerie 24/7."
+                      : "Elite golf packages on premier courses in Tangier, Fez, Michlifen, Marrakech, and Agadir featuring 5★ luxury resorts and 24/7 concierge."
                     }
                   </p>
                 </div>
