@@ -461,7 +461,7 @@ export default function CustomTripClient() {
                       className="w-full px-4 py-3 text-xs focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-[border-color,box-shadow] duration-300 bg-white border border-zinc-200 text-zinc-800 font-medium cursor-pointer"
                     >
                       <option value="Montreal">Montréal (YUL) — Québec / Canada</option>
-                      <option value="New York">New York (JFK) — USA</option>
+                      <option value="New York">New York (JFK / EWR) — USA</option>
                       <option value="Washington D.C.">Washington D.C. (IAD) — USA</option>
                       <option value="Los Angeles">Los Angeles (LAX) — USA</option>
                       <option value="Toronto">Toronto (YYZ) — Ontario / Canada</option>

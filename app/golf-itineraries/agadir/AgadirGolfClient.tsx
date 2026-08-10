@@ -55,9 +55,9 @@ export default function AgadirGolfClient() {
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flightIncluded: true,
     mealPlan: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
-    packageName: { FR: "Agadir Golf & Spa Resort 5★", EN: "Agadir Golf & Spa Resort 5★" },
+    packageName: { FR: "Hilton Taghazout Hôtel", EN: "Hilton Taghazout Hotel" },
     highlights: [
-      { FR: "4 rondes de golf (Golf du Soleil, Les Dunes, Golf de l'Océan)", EN: "4 rounds of golf (Golf du Soleil, Les Dunes, Ocean Golf)" },
+      { FR: "4 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "4 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
       { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
       { FR: "Hébergement 5★ en chambre vue piscine", EN: "5★ accommodation in a Pool View Room" },
       { FR: "Vols directs disponibles depuis Montréal, NYC, Washington, LA, Toronto & grands hubs", EN: "Direct flights available from Montreal, NYC, Washington, LA, Toronto & major hubs" },
@@ -85,7 +85,7 @@ export default function AgadirGolfClient() {
     mealPlan: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     packageName: { FR: "White Beach Hôtel", EN: "White Beach Hotel" },
     highlights: [
-      { FR: "4 rondes de golf (Golf du Soleil, Les Dunes, Golf de l'Océan)", EN: "4 rounds of golf (Golf du Soleil, Les Dunes, Ocean Golf)" },
+      { FR: "4 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "4 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
       { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
       { FR: "Séjour tout compris haut de gamme (Adulte Seul)", EN: "Premium all-inclusive stay (Adults Only)" },
       { FR: "Vols directs disponibles depuis Montréal, NYC, Washington, LA, Toronto & grands hubs", EN: "Direct flights available from Montreal, NYC, Washington, LA, Toronto & major hubs" },
@@ -110,9 +110,9 @@ export default function AgadirGolfClient() {
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
     flightIncluded: true,
     mealPlan: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
-    packageName: { FR: "Agadir Golf & Spa Resort 5★ (10N)", EN: "Agadir Golf & Spa Resort 5★ (10N)" },
+    packageName: { FR: "Hilton Taghazout Hôtel (10N)", EN: "Hilton Taghazout Hotel (10N)" },
     highlights: [
-      { FR: "6 rondes de golf (Golf du Soleil, Les Dunes, Golf de l'Océan)", EN: "6 rounds of golf (Golf du Soleil, Les Dunes, Ocean Golf)" },
+      { FR: "6 rondes de golf (Tazegzout, du Soleil, Les Dunes)", EN: "6 rounds of golf (Tazegzout, du Soleil, Les Dunes)" },
       { FR: "Voiturette électrique (buggy) partagée incluse", EN: "Shared electric golf buggy included" },
       { FR: "Hébergement 5★ en chambre double vue jardin", EN: "5★ accommodation in a double garden view room" },
       { FR: "Vol direct aller-retour et sac de golf inclus", EN: "Direct round-trip flight and golf bag included" },
