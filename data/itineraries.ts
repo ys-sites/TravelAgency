@@ -125,22 +125,23 @@ export const toursList: TourCard[] = [
   },
   {
     id: 11,
-    image: "/Tangier.jpg",
+    image: "/images/tgz_course_ocean.jpg",
     category: { FR: "Golf & Océan", EN: "Golf & Ocean" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
-    title: { FR: "Tanger Golf & Resort 5★ (7N)", EN: "Tangier Golf & Resort 5★ (7N)" },
+    title: { FR: "Hilton Taghazout Hôtel (7N)", EN: "Hilton Taghazout Hotel (7N)" },
     description: {
-      FR: "Forfait comprenant vols de Montréal, 7 nuits en resort 5★ à Tanger et 4 rondes de golf sur le Royal Golf de Tanger et Al Houara Golf Club.",
-      EN: "Package including Montreal flights, 7 nights at a 5★ resort in Tangier, and 4 rounds of golf on Royal Golf de Tanger and Al Houara Golf Club."
+      FR: "Forfait comprenant vols de Montréal, 7 nuits au Hilton Taghazout 5★ en chambre vue piscine et 4 rondes sur les plus beaux parcours d'Agadir.",
+      EN: "Package including Montreal flights, 7 nights at the 5★ Hilton Taghazout in a pool view room, and 4 rounds on Agadir's top courses."
     },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     oldPrice: "",
-    price: { FR: "Sur demande", EN: "On request" },
+    price: { FR: "À partir de 3 879 $", EN: "Starting from 3,879" },
+    originalCost: { FR: "À partir de 4 079 $", EN: "Starting from 4,079" },
     tag: "golf",
     iconType: "water",
-    city: { FR: "Tanger", EN: "Tangier" },
+    city: { FR: "Agadir", EN: "Agadir" },
   },
   {
     id: 12,
@@ -157,7 +158,6 @@ export const toursList: TourCard[] = [
     meals: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     oldPrice: "",
     price: { FR: "4 255 $", EN: "C$ 4,255" },
-    // TODO(JAY): confirm anchor price with client
     originalCost: { FR: "4 455 $", EN: "C$ 4,455" },
     tag: "golf",
     iconType: "lighthouse",
@@ -165,24 +165,23 @@ export const toursList: TourCard[] = [
   },
   {
     id: 13,
-    image: "/images/imperial_cities_fes.jpg",
-    category: { FR: "Golf & Patrimoine", EN: "Golf & Heritage" },
+    image: "/images/tgz_course_hotel.jpg",
+    category: { FR: "Golf & Océan", EN: "Golf & Ocean" },
     badge: { FR: "Exclusif", EN: "Exclusive" },
-    title: { FR: "Fès Royal Golf & Spa (10N)", EN: "Fez Royal Golf & Spa (10N)" },
+    title: { FR: "Hilton Taghazout Hôtel (10N)", EN: "Hilton Taghazout Hotel (10N)" },
     description: {
-      FR: "Profitez d'un séjour de golf de 10 nuits à Fès en hôtel 5★, avec 6 rondes sur le Royal Golf de Fès et découverte du patrimoine culturel impérial.",
-      EN: "Enjoy a 10-night golf package in Fez at a 5★ resort, including 6 rounds on Royal Golf de Fès and cultural exploration of the imperial capital."
+      FR: "Profitez d'un séjour de golf de 10 nuits au Hilton Taghazout 5★ en chambre double vue jardin, avec 6 rondes sur les parcours d'Agadir et vols inclus.",
+      EN: "Enjoy a 10-night golf package at the 5★ Hilton Taghazout in a double garden view room, including 6 rounds on Agadir courses and flights."
     },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
     oldPrice: "",
     price: { FR: "À partir de 4 989 $", EN: "Starting from 4,989" },
-    // TODO(JAY): confirm anchor price with client
     originalCost: { FR: "À partir de 5 189 $", EN: "Starting from 5,189" },
     tag: "golf",
     iconType: "water",
-    city: { FR: "Fès", EN: "Fez" },
+    city: { FR: "Agadir", EN: "Agadir" },
   },
   {
     id: 14,
@@ -204,6 +203,25 @@ export const toursList: TourCard[] = [
     tag: "golf",
     iconType: "lighthouse",
     city: { FR: "Marrakech", EN: "Marrakech" },
+  },
+  {
+    id: 17,
+    image: "/Tangier.jpg",
+    category: { FR: "Golf & Océan", EN: "Golf & Ocean" },
+    badge: { FR: "Exclusif", EN: "Exclusive" },
+    title: { FR: "Tanger Golf & Resort 5★ (7N)", EN: "Tangier Golf & Resort 5★ (7N)" },
+    description: {
+      FR: "Forfait comprenant vols de Montréal, 7 nuits en resort 5★ à Tanger et 4 rondes de golf sur le Royal Golf de Tanger et Al Houara Golf Club.",
+      EN: "Package including Montreal flights, 7 nights at a 5★ resort in Tangier, and 4 rounds of golf on Royal Golf de Tanger and Al Houara Golf Club."
+    },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
+    meals: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
+    oldPrice: "",
+    price: { FR: "Sur demande", EN: "On request" },
+    tag: "golf",
+    iconType: "water",
+    city: { FR: "Tanger", EN: "Tangier" },
   },
   {
     id: 15,
@@ -654,140 +672,120 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "11": {
     id: 11,
-    image: "/Tangier.jpg",
-    contentImage: "/Tangier.jpg",
-    title: { FR: "Tanger Golf & Resort 5★ (7N)", EN: "Tangier Golf & Resort 5★ (7N)" },
+    image: "/images/tgz_course_ocean.jpg",
+    contentImage: "/images/hilton_taghazout_1.avif",
+    title: { FR: "Hilton Taghazout Hôtel (7N)", EN: "Hilton Taghazout Hotel (7N)" },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
-    cost: { FR: "Sur demande", EN: "On request" },
+    cost: { FR: "À partir de 3 879 $", EN: "Starting from 3,879" },
+    originalCost: { FR: "À partir de 4 079 $", EN: "Starting from 4,079" },
     overview: {
-      FR: "Découvrez la magie du golf au nord du Maroc à Tanger. Ce séjour d'exception de 7 nuits en hôtel 5★ comprend vos vols au départ de Montréal et 4 rondes de golf de championnat sur le mythique Royal Golf de Tanger (fondé en 1914, plus ancien golf d'Afrique) et l'Al Houara Golf Club bordant l'océan Atlantique. Voiturette électrique partagée et transferts privés inclus.",
-      EN: "Discover golf magic in northern Morocco in Tangier. This 7-night luxury package in a 5★ resort includes flights departing from Montreal and 4 championship golf rounds on the historic Royal Golf de Tanger (founded in 1914, Africa's oldest golf course) and the oceanfront Al Houara Golf Club. Shared buggy and private transfers included."
+      FR: "Offrez-vous un séjour de golf inoubliable à Agadir en résidant au prestigieux Hilton Taghazout Bay Beach Resort 5★. Ce forfait complet comprend les vols directs aller-retour de Montréal à Agadir. Vous profiterez de 7 nuits d'hébergement en chambre double vue piscine, avec formule petit-déjeuner ou option demi-pension. Jouez 4 rondes de golf de classe mondiale sur les plus beaux parcours de la région : Tazegzout Golf (Championship face à l'océan), Golf du Soleil et Golf Les Dunes. Une voiturette électrique partagée est comprise pour chaque ronde.",
+      EN: "Indulge in an unforgettable golf trip in Agadir, staying at the prestigious 5★ Hilton Taghazout Bay Beach Resort. This complete package includes direct round-trip flights from Montreal to Agadir. You'll enjoy 7 nights of accommodation in a double occupancy room with pool view, on a daily breakfast (BB) or optional half-board (HB) basis. Play 4 rounds of golf on Agadir's premier courses: Tazegzout Golf (oceanfront Championship course), Golf du Soleil, and Golf Les Dunes. A shared electric cart is included for each round."
     },
     timeline: [
       {
         day: 1,
-        title: { FR: "Vol Montréal – Tanger & Installation 5★", EN: "Montreal – Tangier Flight & 5★ Check-In" },
-        desc: { FR: "Vol international. Accueil à l'aéroport de Tanger Ibn Battouta, transfert privé et installation en resort 5★ face à l'océan.", EN: "International flight. Welcome at Tangier Ibn Battouta Airport, private transfer and check-in at 5★ oceanfront resort." }
+        title: { FR: "Vol Montréal – Agadir & Installation 5★", EN: "Montreal – Agadir Flight & Arrival" },
+        desc: { FR: "Vol direct vers Agadir. Accueil VIP, transfert privé vers le Hilton Taghazout Bay 5★ et verre de bienvenue.", EN: "Direct flight to Agadir. VIP welcome, private transfer to 5★ Hilton Taghazout Bay, and welcome drink." }
       },
       {
         day: 2,
-        title: { FR: "Royal Golf de Tanger — Tracé Historique", EN: "Royal Golf de Tanger — Historic Course" },
-        desc: { FR: "Première ronde au Royal Golf de Tanger, fondé en 1914. Un digne tracé au cœur de pins et d'eucalyptus avec buggy inclus.", EN: "First golf round at Royal Golf de Tanger, founded in 1914. A historic pine and eucalyptus course with buggy included." }
+        title: { FR: "Première Ronde — Golf Tazegzout (18 Trous)", EN: "Opening Round — Golf Tazegzout (18 Holes)" },
+        desc: { FR: "Première ronde au Tazegzout Golf surplombant l'océan Atlantique. Voiturette électrique partagée.", EN: "Opening round at Tazegzout Golf overlooking the Atlantic Ocean. Shared electric cart included." }
       },
       {
         day: 3,
-        title: { FR: "Al Houara Golf Club — Parcours Côtier", EN: "Al Houara Golf Club — Coastal Layout" },
-        desc: { FR: "Deuxième ronde à l'Al Houara Golf Club, tracé de championnat dessiné par Graham Cooke & Vijay Singh au bord de l'océan.", EN: "Second golf round at Al Houara Golf Club, a championship oceanfront layout designed by Graham Cooke & Vijay Singh." }
+        title: { FR: "Deuxième Ronde — Golf Du Soleil", EN: "Second Round — Golf Du Soleil" },
+        desc: { FR: "Parcours au cœur d'une oasis de palmiers et d'eucalyptus. Voiturette électrique partagée.", EN: "Play amidst palm and eucalyptus trees at Golf Du Soleil with shared electric cart." }
       },
       {
         day: 4,
-        title: { FR: "Découverte de Tanger & Cap Spartel", EN: "Exploring Tangier & Cap Spartel" },
-        desc: { FR: "Journée libre. Visite guidée du Cap Spartel, des Grottes d'Hercule et de la Kasbah historique surplombant le détroit de Gibraltar.", EN: "Free day. Guided tour of Cap Spartel, Hercules Caves, and the historic Kasbah overlooking the Strait of Gibraltar." }
+        title: { FR: "Troisième Ronde — Golf Les Dunes", EN: "Third Round — Golf Les Dunes" },
+        desc: { FR: "Tracé exigeant de Cabell B. Robinson à travers la forêt d'eucalyptus.", EN: "Challenging Cabell B. Robinson design through the eucalyptus forest." }
       },
       {
         day: 5,
-        title: { FR: "Deuxième Ronde — Royal Golf de Tanger", EN: "Second Round — Royal Golf de Tanger" },
-        desc: { FR: "Troisième ronde de golf pour affiner votre jeu sur les vallonnements et greens rapides du Royal Golf.", EN: "Third golf round to refine your game on the rolling fairways and fast greens of the Royal Golf." }
+        title: { FR: "Journée Libre & Spa eforea", EN: "Leisure Day & eforea Spa" },
+        desc: { FR: "Journée de détente au resort. Plage privée, piscines et soin au spa eforea.", EN: "Relaxation day at the resort. Private beach, pools, and eforea spa session." }
       },
       {
         day: 6,
-        title: { FR: "Deuxième Ronde — Al Houara Golf Club", EN: "Second Round — Al Houara Golf Club" },
-        desc: { FR: "Quatrième ronde de golf sur le tracé marin d'Al Houara pour profiter une seconde fois du vent et des vues océaniques.", EN: "Fourth golf round on Al Houara coastal links to enjoy the ocean breeze and dramatic views." }
+        title: { FR: "Quatrième Ronde — Golf Tazegzout", EN: "Fourth Round — Golf Tazegzout" },
+        desc: { FR: "Dernière ronde sur le tracé signature de Tazegzout face au coucher de soleil.", EN: "Final golf round on Tazegzout's signature layout facing the sunset." }
       },
       {
         day: 7,
-        title: { FR: "Détente en Resort & Médina de Tanger", EN: "Resort Relaxation & Tangier Medina" },
-        desc: { FR: "Dernière journée libre pour vous détendre au spa, profiter de la piscine et faire vos achats dans la médina.", EN: "Final free day relaxing at the spa, poolside lounging, and local medina shopping." }
+        title: { FR: "Journée Souk & Dîner de Clôture", EN: "Souk Exploration & Farewell Dinner" },
+        desc: { FR: "Visite du Souk El Had d'Agadir et dîner gastronomique de clôture.", EN: "Visit Agadir's Souk El Had and enjoy a gourmet farewell dinner." }
       },
       {
         day: 8,
-        title: { FR: "Vol de retour", EN: "Return Flight" },
-        desc: { FR: "Petit-déjeuner, transfert privé vers l'aéroport de Tanger et vol de retour vers Montréal.", EN: "Breakfast, private transfer to Tangier airport and return flight to Montreal." }
+        title: { FR: "Vol de retour vers Montréal", EN: "Return Flight to Montreal" },
+        desc: { FR: "Petit-déjeuner, transfert privé vers l'aéroport d'Agadir pour votre vol de retour.", EN: "Breakfast, private transfer to Agadir airport for your return flight." }
       }
     ],
     inclusions: {
       FR: [
-        "Vols internationaux aller-retour Montréal – Tanger",
-        "7 nuits en Hôtel / Resort 5★ de luxe à Tanger",
-        "Formule Petit-déjeuner quotidien (BB) ou option Demi-pension (HB)",
-        "4 rondes de golf sur le Royal Golf de Tanger et Al Houara Golf Club",
+        "Vols directs aller-retour Montréal – Agadir",
+        "7 nuits au Hilton Taghazout Hôtel 5★ en Chambre double Vue Piscine",
+        "Formule Petit-déjeuner (BB) ou option Demi-pension",
+        "4 rondes de golf (Tazegzout, Golf du Soleil, Golf Les Dunes)",
         "Réservations de Tee times & Voiturette électrique partagée",
         "Transferts privés aéroport ↔ hôtel et terrains de golf",
         "Assistance conciergerie 24/7 sur place"
       ],
       EN: [
-        "Round-trip international flights Montreal – Tangier",
-        "7 nights at 5★ luxury Resort / Hotel in Tangier",
-        "Daily breakfast (BB) or optional Half Board (HB)",
-        "4 rounds of golf on Royal Golf de Tanger and Al Houara Golf Club",
+        "Direct round-trip flights Montreal – Agadir",
+        "7 nights at 5★ Hilton Taghazout Hotel in double occupancy Pool View Room",
+        "Daily breakfast (BB) or optional Half Board",
+        "4 rounds of golf (Tazegzout, Golf du Soleil, Golf Les Dunes)",
         "Tee time reservations & Shared electric golf cart",
-        "Private airport ↔ hotel and golf transfers",
+        "Private airport ↔ hotel and golf course transfers",
         "24/7 on-site concierge assistance"
       ]
     },
     exclusions: {
       FR: [
         "Assurance voyage",
+        "Frais pour le 2ème bagage enregistré",
+        "Activités optionnelles hors programme",
         "Repas et boissons non spécifiés",
-        "Dépenses personnelles et pourboires"
+        "Pourboires"
       ],
       EN: [
         "Travel insurance",
+        "Second checked bag fee",
+        "Optional activities not specified",
         "Meals and beverages not specified",
-        "Personal expenses and gratuities"
+        "Gratuities"
       ]
     },
     options: {
       FR: [
-        { name: "Excursion d'une journée à Chefchaouen", price: "Sur demande" },
-        { name: "Surclassement en Suite 5★", price: "Sur demande" }
+        { name: "Surclassement Chambre Vue Mer", price: "Sur demande" },
+        { name: "Pension Demi-pension", price: "Sur demande" }
       ],
       EN: [
-        { name: "Day trip excursion to Chefchaouen", price: "On request" },
-        { name: "5★ Suite Upgrade", price: "On request" }
+        { name: "Ocean View Room Upgrade", price: "On request" },
+        { name: "Half Board Option", price: "On request" }
       ]
     },
     hotels: [
       {
-        name: "Hilton Tangier Al Houara Resort & Spa 5★",
+        name: "Hilton Taghazout Bay Beach Resort & Spa",
         stars: 5,
         desc: {
-          FR: "Resort 5★ haut de gamme en bord de mer à Tanger, proposant un spa d'exception, plusieurs piscines et un accès direct au golf.",
-          EN: "Premium 5★ beachfront resort in Tangier featuring a luxury spa, pools, and direct golf access."
+          FR: "Resort 5★ haut de gamme en bord de mer, proposant un spa primé, plusieurs piscines et un service d'excellence.",
+          EN: "Premium 5★ beachfront resort, featuring an award-winning spa, multiple pools, and excellent service."
         },
-        link: "https://www.hilton.com"
+        link: "https://www.hilton.com/en/hotels/agatmhi-hilton-taghazout-bay-beach-resort-and-spa/"
       }
     ],
     activities: [
-      {
-        title: { FR: "Royal Golf de Tanger (18T)", EN: "Royal Golf de Tanger (18H)" },
-        desc: {
-          FR: "Fondé en 1914, le plus ancien golf d'Afrique au cœur des pins.",
-          EN: "Founded in 1914, Africa's oldest golf course nestled in pines."
-        }
-      },
-      {
-        title: { FR: "Al Houara Golf Club (18T)", EN: "Al Houara Golf Club (18H)" },
-        desc: {
-          FR: "Parcours de championnat sur la côte Atlantique dessiné par Graham Cooke & Vijay Singh.",
-          EN: "Oceanfront championship layout designed by Graham Cooke & Vijay Singh."
-        }
-      }
-    ],
-    dates: {
-      FR: [
-        "25 septembre 2026 – 3 octobre 2026",
-        "2 octobre 2026 – 10 octobre 2026",
-        "9 octobre 2026 – 17 octobre 2026",
-        "16 octobre 2026 – 24 octobre 2026"
-      ],
-      EN: [
-        "September 25, 2026 – October 3, 2026",
-        "October 2, 2026 – October 10, 2026",
-        "October 9, 2026 – October 17, 2026",
-        "October 16, 2026 – October 24, 2026"
-      ]
-    }
+      { title: { FR: "Golf Tazegzout (18T)", EN: "Golf Tazegzout (18H)" }, desc: { FR: "Dessiné par Kyle Phillips face à l'océan.", EN: "Designed by Kyle Phillips facing the ocean." } },
+      { title: { FR: "Golf Les Dunes (18T)", EN: "Golf Les Dunes (18H)" }, desc: { FR: "Dessiné par Cabell B. Robinson.", EN: "Designed by Cabell B. Robinson." } },
+      { title: { FR: "Golf Du Soleil (18T)", EN: "Golf Du Soleil (18H)" }, desc: { FR: "Splendide oasis de 85 hectares.", EN: "Splendid 85-hectare oasis." } }
+    ]
   },
   "12": {
     id: 12,
@@ -914,7 +912,7 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
         }
       },
       {
-        title: { FR: "Golf du Soleil (18T)", EN: "Golf du Soleil (18H)" },
+        title: { FR: "Golf Du Soleil (18T)", EN: "Golf Du Soleil (18H)" },
         desc: {
           FR: "Un oasis magnifique de 85 hectares avec des lacs scintillants.",
           EN: "A beautiful 85-hectare oasis with shimmering lakes."
@@ -931,96 +929,115 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   },
   "13": {
     id: 13,
-    image: "/images/imperial_cities_fes.jpg",
-    contentImage: "/images/imperial_cities_fes.jpg",
-    title: { FR: "Fès Royal Golf & Spa (10N)", EN: "Fez Royal Golf & Spa (10N)" },
+    image: "/images/tgz_course_hotel.jpg",
+    contentImage: "/images/hilton_taghazout_2.avif",
+    title: { FR: "Hilton Taghazout Hôtel (10N)", EN: "Hilton Taghazout Hotel (10N)" },
     duration: { FR: "11 jours / 10 nuits", EN: "11 days / 10 nights" },
     cost: { FR: "À partir de 4 989 $", EN: "Starting from 4,989" },
-    // TODO(JAY): confirm anchor price with client
     originalCost: { FR: "À partir de 5 189 $", EN: "Starting from 5,189" },
     overview: {
-      FR: "Séjour de golf d'exception de 10 nuits à Fès, capitale spirituelle et culturelle du Maroc. Résidez dans un hôtel 5★ d'exception et jouez 6 rondes de golf sur le digne tracé du Royal Golf de Fès (dessiné par Cabell B. Robinson) et sur les parcours environnants du Moyen Atlas. Forfait incluant vols au départ de Montréal, transferts privés et découvertes culturelles.",
-      EN: "Exceptional 10-night golf journey in Fez, Morocco's spiritual and cultural capital. Stay at a 5★ luxury resort and enjoy 6 championship golf rounds on Royal Golf de Fès (designed by Cabell B. Robinson) and surrounding Middle Atlas courses. Package includes flights from Montreal, private transfers, and cultural tours."
+      FR: "Séjour prolongé de golf à Agadir au Hilton Taghazout Bay Beach Resort 5★. Ce forfait de 10 nuits comprend des vols aller-retour directs de Montréal (avec Royal Air Maroc via Casablanca, premier bagage et sac de golf inclus) et 6 rondes de golf de championnat sur les plus beaux parcours d'Agadir (Tazegzout, Les Dunes, Du Soleil) avec voiturette électrique partagée.",
+      EN: "Extended golf stay in Agadir at the 5★ Hilton Taghazout Bay Beach Resort. This 10-night package includes direct round-trip flights from Montreal (via Casablanca with Royal Air Maroc, first checked bag and golf bag included) and 6 rounds of championship golf on Agadir's top courses (Tazegzout, Les Dunes, Du Soleil) with shared buggy."
     },
     timeline: [
-      { day: 1, title: { FR: "Vol Montréal – Fès & Installation 5★", EN: "Montreal – Fez Flight & Arrival" }, desc: { FR: "Vol international. Transfert privé vers votre hôtel 5★ à Fès. Dîner de bienvenue.", EN: "International flight. Private transfer to your 5★ hotel in Fez. Welcome dinner." } },
-      { day: 2, title: { FR: "Royal Golf de Fès — Première Ronde", EN: "Royal Golf de Fès — Opening Round" }, desc: { FR: "Première ronde au Royal Golf de Fès face aux montagnes de l'Atlas. Buggy inclus.", EN: "First golf round at Royal Golf de Fès facing the Atlas Mountains. Buggy included." } },
-      { day: 3, title: { FR: "Immersion Médina de Fès (UNESCO)", EN: "Fez UNESCO Medina Immersion" }, desc: { FR: "Journée guidée dans la médina historique, la mosquée Al Karaouine et les tanneries Chouara.", EN: "Full-day guided tour of the historic medina, Al Karaouine Mosque, and Chouara tanneries." } },
-      { day: 4, title: { FR: "Royal Golf de Fès — Deuxième Ronde", EN: "Royal Golf de Fès — Second Round" }, desc: { FR: "Deuxième ronde de golf au pied des oliviers centenaires et des obstacles d'eau.", EN: "Second golf round amidst olive groves and water hazards." } },
-      { day: 5, title: { FR: "Excursion à Volubilis & Meknès", EN: "Volubilis & Meknes Day Trip" }, desc: { FR: "Excursion culturelle vers la cité romaine de Volubilis et la ville impériale de Meknès.", EN: "Cultural day trip to ancient Roman ruins of Volubilis and imperial Meknes." } },
-      { day: 6, title: { FR: "Troisième Ronde de Golf à Fès", EN: "Third Golf Round in Fez" }, desc: { FR: "Troisième ronde de golf pour affiner votre score sur le tracé Cabell B. Robinson.", EN: "Third golf round to refine your score on Cabell B. Robinson's layout." } },
-      { day: 7, title: { FR: "Journée Escapade à Ifrane", EN: "Ifrane Mountain Day Trip" }, desc: { FR: "Journée d'escapade fraîcheur dans la petite Suisse marocaine à Ifrane.", EN: "Fresh mountain day trip to Ifrane, the Little Switzerland of Morocco." } },
-      { day: 8, title: { FR: "Quatrième Ronde de Golf", EN: "Fourth Golf Round" }, desc: { FR: "Quatrième ronde de golf sur les fairways du Royal Golf de Fès.", EN: "Fourth round of golf on the lush fairways of Royal Golf de Fès." } },
-      { day: 9, title: { FR: "Cinquième & Sixième Ronde de Golf", EN: "Fifth & Sixth Golf Rounds" }, desc: { FR: "Dernières rondes de golf de compétition pour achever votre séjour sportif.", EN: "Final competition golf rounds to complete your golf journey." } },
-      { day: 10, title: { FR: "Détente au Spa & Hammam Traditionnel", EN: "Spa Relaxation & Traditional Hammam" }, desc: { FR: "Profitez d'un rituel hammam traditionnel et massage au spa pour votre dernière journée.", EN: "Enjoy a traditional hammam ritual and spa massage for your final day." } },
-      { day: 11, title: { FR: "Vol de retour vers Montréal", EN: "Return Flight to Montreal" }, desc: { FR: "Petit-déjeuner, transfert privé vers l'aéroport de Fès pour votre vol de retour.", EN: "Breakfast, private transfer to Fez airport for your return flight." } }
+      { day: 1, title: { FR: "Vol Montréal – Agadir & Installation 5★", EN: "Montreal – Agadir Flight & Arrival" }, desc: { FR: "Vol international vers Agadir via Casablanca. Transfert privé vers le Hilton Taghazout Bay 5★. Installation et cocktail d'accueil.", EN: "International flight to Agadir via Casablanca. Private transfer to 5★ Hilton Taghazout Bay. Check-in and welcome drink." } },
+      { day: 2, title: { FR: "Première Ronde — Golf Tazegzout (18 Trous)", EN: "Opening Round — Golf Tazegzout (18 Holes)" }, desc: { FR: "Première ronde sur le somptueux parcours de Tazegzout surplombant la baie. Voiturette électrique partagée.", EN: "First golf round on the oceanfront Tazegzout course overlooking the bay. Shared electric cart included." } },
+      { day: 3, title: { FR: "Deuxième Ronde — Golf Du Soleil", EN: "Second Round — Golf Du Soleil" }, desc: { FR: "Parcours au cœur d'une oasis de palmiers et d'eucalyptus. Perfectionnez votre swing sur un tracé accessible.", EN: "Play amidst palm and eucalyptus trees at Golf Du Soleil. Refine your swing on a fair layout." } },
+      { day: 4, title: { FR: "Troisième Ronde — Golf Les Dunes", EN: "Third Round — Golf Les Dunes" }, desc: { FR: "Ronde de golf sur le tracé exigeant de Cabell B. Robinson à travers la forêt d'eucalyptus.", EN: "Golf round on Cabell B. Robinson's challenging design through eucalyptus trees." } },
+      { day: 5, title: { FR: "Journée Libre & Spa eforea", EN: "Leisure Day & eforea Spa" }, desc: { FR: "Journée de détente au resort. Profitez de la plage privée, de la piscine et d'un soin au spa eforea.", EN: "Relaxing day at the resort. Enjoy the private beach, swimming pools, and eforea spa treatment." } },
+      { day: 6, title: { FR: "Quatrième Ronde — Golf Tazegzout", EN: "Fourth Round — Golf Tazegzout" }, desc: { FR: "Deuxième passage sur le parcours signature de Tazegzout pour défier les trous du cliffside.", EN: "Return to Tazegzout signature layout to challenge the dramatic cliffside holes." } },
+      { day: 7, title: { FR: "Cinquième Ronde — Golf Du Soleil", EN: "Fifth Round — Golf Du Soleil" }, desc: { FR: "Cinquième ronde de golf sur le tracé du Golf Du Soleil. Voiturette électrique partagée.", EN: "Fifth golf round on Golf Du Soleil layout with shared electric cart." } },
+      { day: 8, title: { FR: "Sixième Ronde — Golf Les Dunes", EN: "Sixth Round — Golf Les Dunes" }, desc: { FR: "Dernière ronde de compétition pour achever votre séjour golfique en beauté.", EN: "Final competition round to conclude your golf journey in style." } },
+      { day: 9, title: { FR: "Journée Escapade — Vallée du Paradis & Souk", EN: "Excursion Day — Paradise Valley & Souk" }, desc: { FR: "Découverte des piscines naturelles de la Vallée du Paradis et visite du célèbre Souk El Had.", EN: "Explore Paradise Valley natural pools and visit the vibrant Souk El Had." } },
+      { day: 10, title: { FR: "Détente Plage & Dîner de Clôture", EN: "Beach Relaxation & Farewell Dinner" }, desc: { FR: "Dernière journée farniente au resort et dîner de clôture face au coucher de soleil sur l'Atlantique.", EN: "Final leisure day at the resort followed by a farewell dinner facing Atlantic sunset." } },
+      { day: 11, title: { FR: "Vol de retour vers Montréal", EN: "Return Flight to Montreal" }, desc: { FR: "Petit-déjeuner, transfert privé vers l'aéroport d'Agadir Al Massira pour votre vol de retour.", EN: "Breakfast, private transfer to Agadir Al Massira airport for your return flight." } }
     ],
     inclusions: {
       FR: [
-        "Vols internationaux aller-retour Montréal – Fès",
-        "10 nuits en Hôtel / Resort 5★ de luxe à Fès",
-        "Formule Petit-déjeuner (BB) ou option Demi-pension (HB)",
-        "6 rondes de golf sur le Royal Golf de Fès et parcours partenaires",
+        "Vols Montréal – Agadir (via Casablanca) avec Royal Air Maroc (1er bagage et sac de golf inclus)",
+        "10 nuits au Hilton Taghazout Hôtel 5★ en Chambre double Vue Jardin",
+        "Formule Petit-déjeuner (BB) ou option Demi-pension (dîner 3 services, vin, eau, café/thé)",
+        "6 rondes de golf (Tazegzout, Golf du Soleil, Golf Les Dunes)",
         "Réservations de Tee times & Voiturette électrique partagée",
         "Transferts privés aéroport ↔ hôtel et terrains de golf",
-        "Assistance conciergerie 24/7 sur place"
+        "Assistance conciergerie 24/7 sur place",
+        "Contribution FICAV incluse"
       ],
       EN: [
-        "Round-trip international flights Montreal – Fez",
-        "10 nights at 5★ luxury Hotel / Resort in Fez",
-        "Daily breakfast (BB) or Half Board (HB)",
-        "6 rounds of golf on Royal Golf de Fès and partner courses",
+        "Montreal – Agadir flights (via Casablanca) with Royal Air Maroc (1st bag & golf bag included)",
+        "10 nights at 5★ Hilton Taghazout Hotel in double occupancy Garden View Room",
+        "Daily breakfast (BB) or Half Board (HB) with 3-course dinner, wine, water, coffee/tea",
+        "6 rounds of golf (Tazegzout, Golf du Soleil, Golf Les Dunes)",
         "Tee time reservations & Shared electric golf cart",
         "Private airport ↔ hotel and golf course transfers",
-        "24/7 on-site concierge assistance"
+        "24/7 on-site concierge assistance",
+        "FICAV protection included"
       ]
     },
     exclusions: {
       FR: [
         "Assurance voyage",
+        "Frais pour le 2ème bagage enregistré",
+        "Activités optionnelles hors programme",
         "Repas et boissons non spécifiés",
-        "Dépenses personnelles et pourboires"
+        "Pourboires",
+        "Frais de caddie (env. 30$ CAD par ronde)",
+        "Taxes d'hôtel (env. 5$ CAD par nuit)"
       ],
       EN: [
         "Travel insurance",
+        "Second checked bag fee",
+        "Optional activities not specified",
         "Meals and beverages not specified",
-        "Personal expenses and gratuities"
+        "Gratuities",
+        "Caddie fee (approx. $30 CAD per round)",
+        "Hotel taxes (approx. $5 CAD per night)"
       ]
     },
     options: {
       FR: [
-        { name: "Surclassement Chambre Vue Jardin", price: "Sur demande" },
-        { name: "Pension Demi-pension", price: "Sur demande" }
+        { name: "Surclassement Chambre Vue Mer", price: "Sur demande" },
+        { name: "Pension Complète", price: "Sur demande" },
+        { name: "Ronde de golf supplémentaire", price: "Sur demande" }
       ],
       EN: [
-        { name: "Garden View Room Upgrade", price: "On request" },
-        { name: "Half Board Option", price: "On request" }
+        { name: "Ocean View Room Upgrade", price: "On request" },
+        { name: "Full Board Upgrade", price: "On request" },
+        { name: "Extra golf round", price: "On request" }
       ]
     },
     hotels: [
       {
-        name: "Palais Medina & Spa Fès 5★",
+        name: "Hilton Taghazout Bay Beach Resort & Spa",
         stars: 5,
         desc: {
-          FR: "Un hôtel 5★ majestueux avec vue sur la médina médiévale de Fès, grands jardins, piscine extérieure et spa luxueux.",
-          EN: "A majestic 5★ hotel overlooking the medieval medina of Fez, featuring lush gardens, outdoor pool, and luxury spa."
+          FR: "Resort 5★ haut de gamme en bord de mer, proposant un spa primé, plusieurs piscines et un service d'excellence.",
+          EN: "Premium 5★ beachfront resort, featuring an award-winning spa, multiple pools, and excellent service."
         },
-        link: "https://www.leshotelsdupalais.com"
+        link: "https://www.hilton.com/en/hotels/agatmhi-hilton-taghazout-bay-beach-resort-and-spa/"
       }
     ],
     activities: [
-      { title: { FR: "Royal Golf de Fès (18T)", EN: "Royal Golf de Fès (18H)" }, desc: { FR: "Dessiné par Cabell B. Robinson face à l'Atlas.", EN: "Designed by Cabell B. Robinson facing the Atlas." } }
+      { title: { FR: "Golf Tazegzout (18T)", EN: "Golf Tazegzout (18H)" }, desc: { FR: "Dessiné par Kyle Phillips face à l'océan.", EN: "Designed by Kyle Phillips facing the ocean." } },
+      { title: { FR: "Golf Les Dunes (18T)", EN: "Golf Les Dunes (18H)" }, desc: { FR: "Dessiné par Cabell B. Robinson.", EN: "Designed by Cabell B. Robinson." } },
+      { title: { FR: "Golf Du Soleil (18T)", EN: "Golf Du Soleil (18H)" }, desc: { FR: "Splendide oasis de 85 hectares.", EN: "Splendid 85-hectare oasis." } }
     ],
     dates: {
       FR: [
         "26 septembre 2026 – 7 octobre 2026",
         "17 octobre 2026 – 28 octobre 2026",
-        "31 octobre 2026 – 11 novembre 2026"
+        "31 octobre 2026 – 11 novembre 2026",
+        "21 novembre 2026 – 2 décembre 2026",
+        "12 décembre 2026 – 23 décembre 2026",
+        "9 janvier 2027 – 20 janvier 2027"
       ],
       EN: [
         "September 26, 2026 – October 07, 2026",
         "October 17, 2026 – October 28, 2026",
-        "October 31, 2026 – November 11, 2026"
+        "October 31, 2026 – November 11, 2026",
+        "November 21, 2026 – December 02, 2026",
+        "December 12, 2026 – December 23, 2026",
+        "January 09, 2027 – January 20, 2027"
       ]
     }
   },

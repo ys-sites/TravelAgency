@@ -18,19 +18,15 @@ const getGalleryImages = (itineraryId: number) => {
   switch (itineraryId) {
     case 10:
       return [
-        "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_09-17.jpg",
-        "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_11-n_12.jpg",
-        "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_11.jpg",
-        "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_12.jpg",
-        "/images/client_request/golf_rabat_photos/parcours_rouge_trous_n_13.jpg",
-        "/images/rgdes_jaune_9.jpg",
-        "/images/rgdes_bleu_9_matin.jpg",
-        "/images/rgdes_img_3723.jpg",
-        "/images/rgdes_img_3752.jpg",
-        "/images/rgdes_paradise_flowers.jpg",
-        "/images/rgdes_parcours_rouge_09_17.jpg",
-        "/images/rgdes_coucher_dete.jpg",
-        "/images/rgdes_soleil_couchant.jpg"
+        "/michlifen.jpg",
+        "/images/royal_golf_aerial_1.jpg",
+        "/images/royal_golf_marrakech_1.jpg"
+      ];
+    case 17:
+      return [
+        "/Tangier.jpg",
+        "/images/royal_golf_marrakech_1.jpg",
+        "/images/royal_golf_marrakech_2.jpg"
       ];
     case 11:
       return [
@@ -213,6 +209,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
       case "14": return itinerariesData["14"];
       case "15": return itinerariesData["15"];
       case "16": return itinerariesData["16"];
+      case "17": return itinerariesData["17"];
       default: return null;
     }
   })();
@@ -341,9 +338,10 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
         return "Morocco_Casablanca_Hero_16x9_UpdatedLogo_htz5pb";
       case "tangier":
       case "tanger":
+      case "17":
         return "Morocco_Tangier_Hero_16x9_UpdatedLogo_f9kwsc";
       case "10":
-        return "Morocco_Rabat_Hero_16x9_UpdatedLogo_m8pybw";
+        return null;
       case "11":
       case "12":
       case "13":
@@ -597,12 +595,6 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                   {lang === "FR" ? "Réserver ce voyage" : "Book this Journey"} &rarr;
                 </a>
               </div>
-
-              {itinerary.id === 10 && (
-                <div className="my-10 border-t border-b border-zinc-200/60 py-6">
-                  <MichlifenFeatureBlock />
-                </div>
-              )}
 
               {/* Destination Showcase — city-matched SmartVideo tile */}
               <motion.div
