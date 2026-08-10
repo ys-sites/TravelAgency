@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+@import "tailwindcss";
 
 @keyframes wave-scroll {
   0% { transform: translateX(0px); }
