@@ -137,11 +137,11 @@ export default function Footer() {
             {translate(t.destinations, lang)}
           </h4>
           <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 text-[12px] text-white/50 font-light list-none p-0">
-            <li><Link href="/itineraries/10" className="hover:text-brand-gold transition-colors">Rabat</Link></li>
+            <li><Link href="/itineraries/10" className="hover:text-brand-gold transition-colors">Michlifen</Link></li>
             <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">Casablanca</Link></li>
             <li><Link href="/itineraries/7" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Meknès" : "Meknes"}</Link></li>
             <li><Link href="/itineraries/7" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Fès" : "Fes"}</Link></li>
-            <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Tanger" : "Tangier"}</Link></li>
+            <li><Link href="/itineraries/17" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Tanger" : "Tangier"}</Link></li>
             <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">Chefchaouen</Link></li>
             <li><Link href="/itineraries/6" className="hover:text-brand-gold transition-colors">{lang === "FR" ? "Tétouan" : "Tetouan"}</Link></li>
             <li><Link href="/itineraries/9" className="hover:text-brand-gold transition-colors">Merzouga</Link></li>

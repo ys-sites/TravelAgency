@@ -1383,6 +1383,143 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
       ]
     }
   },
+  "17": {
+    id: 17,
+    image: "/Tangier.jpg",
+    contentImage: "/Tangier.jpg",
+    title: { FR: "Tanger Golf & Resort 5★ (7N)", EN: "Tangier Golf & Resort 5★ (7N)" },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
+    cost: { FR: "Sur demande", EN: "On request" },
+    overview: {
+      FR: "Découvrez la magie du golf au nord du Maroc à Tanger. Ce séjour d'exception de 7 nuits en hôtel 5★ comprend vos vols au départ de Montréal et 4 rondes de golf de championnat sur le mythique Royal Golf de Tanger (fondé en 1914, plus ancien golf d'Afrique) et l'Al Houara Golf Club bordant l'océan Atlantique. Voiturette électrique partagée et transferts privés inclus.",
+      EN: "Discover golf magic in northern Morocco in Tangier. This 7-night luxury package in a 5★ resort includes flights departing from Montreal and 4 championship golf rounds on the historic Royal Golf de Tanger (founded in 1914, Africa's oldest golf course) and the oceanfront Al Houara Golf Club. Shared buggy and private transfers included."
+    },
+    timeline: [
+      {
+        day: 1,
+        title: { FR: "Vol Montréal – Tanger & Installation 5★", EN: "Montreal – Tangier Flight & 5★ Check-In" },
+        desc: { FR: "Vol international. Accueil à l'aéroport de Tanger Ibn Battouta, transfert privé et installation en resort 5★ face à l'océan.", EN: "International flight. Welcome at Tangier Ibn Battouta Airport, private transfer and check-in at 5★ oceanfront resort." }
+      },
+      {
+        day: 2,
+        title: { FR: "Royal Golf de Tanger — Tracé Historique", EN: "Royal Golf de Tanger — Historic Course" },
+        desc: { FR: "Première ronde au Royal Golf de Tanger, fondé en 1914. Un digne tracé au cœur de pins et d'eucalyptus avec buggy inclus.", EN: "First golf round at Royal Golf de Tanger, founded in 1914. A historic pine and eucalyptus course with buggy included." }
+      },
+      {
+        day: 3,
+        title: { FR: "Al Houara Golf Club — Parcours Côtier", EN: "Al Houara Golf Club — Coastal Layout" },
+        desc: { FR: "Deuxième ronde à l'Al Houara Golf Club, tracé de championnat dessiné par Graham Cooke & Vijay Singh au bord de l'océan.", EN: "Second golf round at Al Houara Golf Club, a championship oceanfront layout designed by Graham Cooke & Vijay Singh." }
+      },
+      {
+        day: 4,
+        title: { FR: "Découverte de Tanger & Cap Spartel", EN: "Exploring Tangier & Cap Spartel" },
+        desc: { FR: "Journée libre. Visite guidée du Cap Spartel, des Grottes d'Hercule et de la Kasbah historique surplombant le détroit de Gibraltar.", EN: "Free day. Guided tour of Cap Spartel, Hercules Caves, and the historic Kasbah overlooking the Strait of Gibraltar." }
+      },
+      {
+        day: 5,
+        title: { FR: "Deuxième Ronde — Royal Golf de Tanger", EN: "Second Round — Royal Golf de Tanger" },
+        desc: { FR: "Troisième ronde de golf pour affiner votre jeu sur les vallonnements et greens rapides du Royal Golf.", EN: "Third golf round to refine your game on the rolling fairways and fast greens of the Royal Golf." }
+      },
+      {
+        day: 6,
+        title: { FR: "Deuxième Ronde — Al Houara Golf Club", EN: "Second Round — Al Houara Golf Club" },
+        desc: { FR: "Quatrième ronde de golf sur le tracé marin d'Al Houara pour profiter une seconde fois du vent et des vues océaniques.", EN: "Fourth golf round on Al Houara coastal links to enjoy the ocean breeze and dramatic views." }
+      },
+      {
+        day: 7,
+        title: { FR: "Détente en Resort & Médina de Tanger", EN: "Resort Relaxation & Tangier Medina" },
+        desc: { FR: "Dernière journée libre pour vous détendre au spa, profiter de la piscine et faire vos achats dans la médina.", EN: "Final free day relaxing at the spa, poolside lounging, and local medina shopping." }
+      },
+      {
+        day: 8,
+        title: { FR: "Vol de retour", EN: "Return Flight" },
+        desc: { FR: "Petit-déjeuner, transfert privé vers l'aéroport de Tanger et vol de retour vers Montréal.", EN: "Breakfast, private transfer to Tangier airport and return flight to Montreal." }
+      }
+    ],
+    inclusions: {
+      FR: [
+        "Vols internationaux aller-retour Montréal – Tanger",
+        "7 nuits en Hôtel / Resort 5★ de luxe à Tanger",
+        "Formule Petit-déjeuner quotidien (BB) ou option Demi-pension (HB)",
+        "4 rondes de golf sur le Royal Golf de Tanger et Al Houara Golf Club",
+        "Réservations de Tee times & Voiturette électrique partagée",
+        "Transferts privés aéroport ↔ hôtel et terrains de golf",
+        "Assistance conciergerie 24/7 sur place"
+      ],
+      EN: [
+        "Round-trip international flights Montreal – Tangier",
+        "7 nights at 5★ luxury Resort / Hotel in Tangier",
+        "Daily breakfast (BB) or optional Half Board (HB)",
+        "4 rounds of golf on Royal Golf de Tanger and Al Houara Golf Club",
+        "Tee time reservations & Shared electric golf cart",
+        "Private airport ↔ hotel and golf transfers",
+        "24/7 on-site concierge assistance"
+      ]
+    },
+    exclusions: {
+      FR: [
+        "Assurance voyage",
+        "Repas et boissons non spécifiés",
+        "Dépenses personnelles et pourboires"
+      ],
+      EN: [
+        "Travel insurance",
+        "Meals and beverages not specified",
+        "Personal expenses and gratuities"
+      ]
+    },
+    options: {
+      FR: [
+        { name: "Excursion d'une journée à Chefchaouen", price: "Sur demande" },
+        { name: "Surclassement en Suite 5★", price: "Sur demande" }
+      ],
+      EN: [
+        { name: "Day trip excursion to Chefchaouen", price: "On request" },
+        { name: "5★ Suite Upgrade", price: "On request" }
+      ]
+    },
+    hotels: [
+      {
+        name: "Hilton Tangier Al Houara Resort & Spa 5★",
+        stars: 5,
+        desc: {
+          FR: "Resort 5★ haut de gamme en bord de mer à Tanger, proposant un spa d'exception, plusieurs piscines et un accès direct au golf.",
+          EN: "Premium 5★ beachfront resort in Tangier featuring a luxury spa, pools, and direct golf access."
+        },
+        link: "https://www.hilton.com"
+      }
+    ],
+    activities: [
+      {
+        title: { FR: "Royal Golf de Tanger (18T)", EN: "Royal Golf de Tanger (18H)" },
+        desc: {
+          FR: "Fondé en 1914, le plus ancien golf d'Afrique au cœur des pins.",
+          EN: "Founded in 1914, Africa's oldest golf course nestled in pines."
+        }
+      },
+      {
+        title: { FR: "Al Houara Golf Club (18T)", EN: "Al Houara Golf Club (18H)" },
+        desc: {
+          FR: "Parcours de championnat sur la côte Atlantique dessiné par Graham Cooke & Vijay Singh.",
+          EN: "Oceanfront championship layout designed by Graham Cooke & Vijay Singh."
+        }
+      }
+    ],
+    dates: {
+      FR: [
+        "25 septembre 2026 – 3 octobre 2026",
+        "2 octobre 2026 – 10 octobre 2026",
+        "9 octobre 2026 – 17 octobre 2026",
+        "16 octobre 2026 – 24 octobre 2026"
+      ],
+      EN: [
+        "September 25, 2026 – October 3, 2026",
+        "October 2, 2026 – October 10, 2026",
+        "October 9, 2026 – October 17, 2026",
+        "October 16, 2026 – October 24, 2026"
+      ]
+    }
+  },
   "6": {
     id: 6,
     image: "/images/imperial_cities_fes.jpg",
