@@ -339,7 +339,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
       case "tangier":
       case "tanger":
       case "17":
-        return "Morocco_Tangier_Hero_16x9_UpdatedLogo_f9kwsc";
+        return null;
       case "10":
         return null;
       case "11":
