@@ -82,7 +82,7 @@ export default function AgadirGolfClient() {
     },
     duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flightIncluded: true,
-    mealPlan: { FR: "Petit-déjeuner ou Demi-pension", EN: "Breakfast or Half board" },
+    mealPlan: { FR: "Tout compris", EN: "All inclusive" },
     packageName: { FR: "White Beach Hôtel", EN: "White Beach Hotel" },
     highlights: [
       { FR: "4 rondes de golf (Golf du Soleil, Les Dunes, Golf de l'Océan)", EN: "4 rounds of golf (Golf du Soleil, Les Dunes, Ocean Golf)" },
