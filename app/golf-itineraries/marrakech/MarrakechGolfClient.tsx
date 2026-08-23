@@ -148,6 +148,7 @@ export default function MarrakechGolfClient() {
           playsInline
           preload="auto"
           poster={videoAsset("Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv").poster}
+          onTimeUpdate={(e) => { const v = e.currentTarget; if (v.currentTime >= 60) v.currentTime = 0; }}
           style={{
             backgroundImage: `url('${videoAsset("Morocco_Marrakech_Hero_16x9_UpdatedLogo_wv2yxv").poster}')`
           }}

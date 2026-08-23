@@ -95,7 +95,7 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
   const handleError = () => { setHasError(true); setIsLoaded(false); };
   const handleTimeUpdate = () => {
     const vid = videoRef.current;
-    if (vid && variant !== "hero" && vid.currentTime >= 60) {
+    if (vid && vid.currentTime >= 60) {
       vid.currentTime = 0;
     }
   };
@@ -142,7 +142,7 @@ export default function SmartVideo({ source, variant, className = "" }: SmartVid
           fetchpriority={variant === "hero" ? "high" : "auto"}
           onLoadedData={handleLoadedData}
           onError={handleError}
-          onTimeUpdate={variant === "hero" ? undefined : handleTimeUpdate}
+          onTimeUpdate={handleTimeUpdate}
         >
           {/* MP4 (H.264 — universal) */}
           <source src={mp4Src} type="video/mp4" />

@@ -55,11 +55,9 @@ export default function GulfHeroScrubber() {
 
   const handleTimeUpdate = () => {
     const vid = videoRef.current;
-    if (vid && vid.duration && !isNaN(vid.duration) && vid.duration > 5) {
-      if (vid.currentTime >= vid.duration - 5) {
-        vid.currentTime = 0;
-        vid.play().catch(() => {});
-      }
+    if (vid && vid.currentTime >= 60) {
+      vid.currentTime = 0;
+      vid.play().catch(() => {});
     }
   };
 

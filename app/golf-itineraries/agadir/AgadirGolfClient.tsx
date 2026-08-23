@@ -148,6 +148,7 @@ export default function AgadirGolfClient() {
           playsInline
           preload="auto"
           poster={videoAsset("Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad").poster}
+          onTimeUpdate={(e) => { const v = e.currentTarget; if (v.currentTime >= 60) v.currentTime = 0; }}
           style={{
             backgroundImage: `url('${videoAsset("Morocco_Agadir_Hero_16x9_UpdatedLogo_btpcad").poster}')`
           }}

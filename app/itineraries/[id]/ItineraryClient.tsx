@@ -439,6 +439,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
               playsInline
               preload="auto"
               poster={videoAsset(videoUrl).poster}
+              onTimeUpdate={(e) => { const v = e.currentTarget; if (v.currentTime >= 60) v.currentTime = 0; }}
               style={{
                 backgroundImage: `url('${videoAsset(videoUrl).poster}')`
               }}
