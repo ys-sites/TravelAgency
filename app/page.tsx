@@ -10,10 +10,26 @@ import Footer from "./components/footer";
 import HomeFaqSection from "./components/home-faq-section";
 import HomeContactForm from "./components/home-contact-form";
 import { videoSources } from "@/data/videoSources";
+import { homeFaqs } from "@/data/faqs";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd from "./components/json-ld";
 
-export const metadata: Metadata = {
-  title: "Agence de Voyage Montréal — Golf au Maroc & Voyages de Prestige | Merveilles et Voyages",
-  description: "Agence de voyage à Mirabel au service du Grand Montréal : forfaits golf de prestige au Maroc, circuits impériaux et voyages de luxe sur mesure, et services MICE. Conciergerie bilingue 24/7. ✆ 514 919 6381",
+export const metadata: Metadata = pageMetadata({
+  title: "Agence de Voyage Montréal — Golf au Maroc & Voyages de Prestige",
+  description: "Agence de voyage du Grand Montréal : forfaits golf de prestige au Maroc, circuits impériaux, voyages de luxe sur mesure et MICE. Conciergerie bilingue 24/7.",
+  path: "/",
+  image: "/og/home.jpg",
+});
+
+// English copy matches what the FAQ section renders by default (LangProvider starts in EN)
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q.EN,
+    acceptedAnswer: { "@type": "Answer", text: faq.a.EN },
+  })),
 };
 
 export default function Home() {
@@ -22,6 +38,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-body antialiased">
+      <JsonLd data={faqJsonLd} />
       <link
         rel="preload"
         as="image"

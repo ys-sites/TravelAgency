@@ -5,6 +5,7 @@ import { LangProvider } from "./context/lang-context";
 import CallFloatingButton from "./components/CallFloatingButton";
 import PageTransition from "./components/page-transition";
 import Script from "next/script";
+import { DEFAULT_OG_IMAGE, GBP_URL } from "@/lib/seo";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
@@ -33,16 +34,21 @@ export const metadata: Metadata = {
   description:
     "Explore the beauty of Morocco with premium golf packages and exclusive curated experiences organized by Merveilles et Voyages.",
   applicationName: "Merveilles et Voyages",
-  alternates: { canonical: "/" },
+  // No canonical here: a layout-level canonical is inherited by every page.
+  // Each page sets its own self-referencing canonical via pageMetadata().
   openGraph: {
     type: "website",
     siteName: "Merveilles et Voyages",
-    url: "https://www.mevoyages.com",
     title: "Merveilles et Voyages — Golf & Voyage de Prestige au Maroc",
     description:
       "Premium golf packages and exclusive curated experiences in Morocco by Merveilles et Voyages.",
     locale: "fr_CA",
     alternateLocale: ["en_CA"],
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "Merveilles et Voyages" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
@@ -88,7 +94,7 @@ export default function RootLayout({
                   },
                   "areaServed": ["Montréal", "Laval", "Mirabel", "Grand Montréal", "QC", "MA"],
                   "priceRange": "$$$",
-                  "sameAs": ["GBP_MAPS_URL_PLACEHOLDER", "https://www.instagram.com/m.e.voyages?utm_source=qr"],
+                  "sameAs": [GBP_URL, "https://www.instagram.com/m.e.voyages"].filter(Boolean),
                   "knowsAbout": ["Forfaits golf Maroc", "Voyages de luxe", "MICE", "Voyages sur mesure Maroc", "Circuits Villes Impériales"]
                 },
               ],
