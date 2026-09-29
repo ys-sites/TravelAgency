@@ -60,7 +60,7 @@ export default async function Page({ params }: Props) {
     name,
     description: seo.description,
     url,
-    image: [`${SITE_URL}${itinerary.image}`, `${SITE_URL}${seo.ogImage}`],
+    image: `${SITE_URL}${seo.ogImage}`,
     provider: { "@id": `${SITE_URL}/#agency` },
     itinerary: {
       "@type": "ItemList",

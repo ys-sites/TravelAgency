@@ -11,15 +11,23 @@ import HomeFaqSection from "./components/home-faq-section";
 import HomeContactForm from "./components/home-contact-form";
 import { videoSources } from "@/data/videoSources";
 import { homeFaqs } from "@/data/faqs";
-import { pageMetadata } from "@/lib/seo";
+import { SITE_NAME, pageMetadata } from "@/lib/seo";
 import JsonLd from "./components/json-ld";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Agence de Voyage Montréal — Golf au Maroc & Voyages de Prestige",
+const HOME_TITLE = "Agence de Voyage Montréal — Golf au Maroc & Voyages de Prestige";
+
+const homeSeo = pageMetadata({
+  title: HOME_TITLE,
   description: "Agence de voyage du Grand Montréal : forfaits golf de prestige au Maroc, circuits impériaux, voyages de luxe sur mesure et MICE. Conciergerie bilingue 24/7.",
   path: "/",
   image: "/og/home.jpg",
 });
+
+// The layout's title template only applies to child segments, so the homepage sets its full title
+export const metadata: Metadata = {
+  ...homeSeo,
+  title: { absolute: `${HOME_TITLE} | ${SITE_NAME}` },
+};
 
 // English copy matches what the FAQ section renders by default (LangProvider starts in EN)
 const faqJsonLd = {

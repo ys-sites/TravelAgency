@@ -7,7 +7,6 @@ export const metadata: Metadata = pageMetadata({
   title: "Conditions Générales de Vente — Terms & Conditions",
   description: "Nos conditions générales de vente : tarifs, modes de paiement, dépôts, politique d'annulation et modifications de réservation pour vos voyages au Maroc.",
   path: "/conditions",
-  image: "/og/conditions.jpg",
 });
 
 export default function ConditionsLayout({ children }: { children: React.ReactNode }) {
