@@ -18,6 +18,26 @@ const getGalleryImages = (itineraryId: number) => {
   switch (itineraryId) {
     case 10:
       return [
+        "/images/rgdes_parcours_rouge_18.jpg",
+        "/images/rgdes_parcours_bleu_10.jpg",
+        "/images/rgdes_blue_course_5.jpg",
+        "/images/rgdes_rouge_5.jpg",
+        "/images/rgdes_bleu_7_tgp.jpg",
+        "/images/rgdes_jaune_9.jpg",
+        "/images/rgdes_bleu_9_matin.jpg",
+        "/images/rgdes_clubhouse.jpg",
+        "/images/rgdes_img_3723.jpg",
+        "/images/rgdes_img_3752.jpg",
+        "/images/rgdes_paradise_flowers.jpg",
+        "/images/rgdes_parcours_rouge_09_17.jpg",
+        "/images/rgdes_parcours_rouge_11.jpg",
+        "/images/rgdes_parcours_rouge_12.jpg",
+        "/images/rgdes_parcours_rouge_13.jpg",
+        "/images/rgdes_coucher_dete.jpg",
+        "/images/rgdes_soleil_couchant.jpg"
+      ];
+    case 18:
+      return [
         "/michlifen.jpg",
         "/images/royal_golf_aerial_1.jpg",
         "/images/royal_golf_marrakech_1.jpg"
@@ -210,6 +230,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
       case "15": return itinerariesData["15"];
       case "16": return itinerariesData["16"];
       case "17": return itinerariesData["17"];
+      case "18": return itinerariesData["18"];
       default: return null;
     }
   })();
@@ -339,6 +360,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
       case "tangier":
       case "tanger":
       case "17":
+      case "18":
         return null;
       case "10":
         return null;
@@ -463,6 +485,8 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                   ? "/golf-itineraries/agadir"
                   : itinerary.id === 14 || itinerary.id === 15 || itinerary.id === 16
                   ? "/golf-itineraries/marrakech"
+                  : itinerary.id === 10 || itinerary.id === 17 || itinerary.id === 18
+                  ? "/itineraries?type=Golf"
                   : "/"
               }
               className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
@@ -473,6 +497,8 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
                   ? (lang === "FR" ? "Retour au Golf Agadir" : "Back to Agadir Golf")
                   : itinerary.id === 14 || itinerary.id === 15 || itinerary.id === 16
                   ? (lang === "FR" ? "Retour au Golf Marrakech" : "Back to Marrakech Golf")
+                  : itinerary.id === 10 || itinerary.id === 17 || itinerary.id === 18
+                  ? (lang === "FR" ? "Retour aux Forfaits Golf" : "Back to Golf Packages")
                   : (lang === "FR" ? "Retour à l'accueil" : "Back to Home")}
               </span>
             </Link>

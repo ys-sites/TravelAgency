@@ -86,10 +86,7 @@ const t = {
     EN: "No payment is taken at this stage. Our concierge will contact you within 24 hours to begin crafting your passage.",
     FR: "Aucun paiement n'est effectué à ce stade. Notre concierge vous contactera dans les 24 heures pour commencer à concevoir votre passage."
   },
-  moroccoLabel: { EN: "Morocco", FR: "Maroc" },
-  uaeLabel: { EN: "United Arab Emirates", FR: "Émirats Arabes Unis" },
-  omanLabel: { EN: "Oman", FR: "Oman" },
-  saudiLabel: { EN: "Saudi Arabia", FR: "Arabie Saoudite" }
+  moroccoLabel: { EN: "Morocco", FR: "Maroc" }
 };
 
 export default function CustomTripClient() {

@@ -90,6 +90,8 @@ function ItinerariesClientContent() {
       case 6:
       case 7:
       case 9:
+      case 17:
+      case 18:
         return "Imperial";
       case 99:
         return activeCity;

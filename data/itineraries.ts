@@ -106,22 +106,22 @@ export interface ItineraryTheme {
 export const toursList: TourCard[] = [
   {
     id: 10,
-    image: "/michlifen.jpg",
+    image: "/images/rgdes_parcours_rouge_18.jpg",
     category: { FR: "Golf & Prestige", EN: "Golf & Prestige" },
     badge: { FR: "Signature", EN: "Signature" },
-    title: { FR: "Michlifen Resort & Golf 5★", EN: "Michlifen Resort & Golf 5★" },
+    title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
     description: {
-      FR: "Hébergement d'exception au Michlifen Resort 5★ à Ifrane et rondes de golf sur le prestigieux parcours d'altitude Jack Nicklaus Signature à Michlifen Golf & Country Club.",
-      EN: "Luxury stay at the 5★ Michlifen Resort in Ifrane featuring rounds on the Jack Nicklaus Signature championship golf course at Michlifen Golf & Country Club."
+      FR: "Le joyau de Rabat conçu par Robert Trent Jones Sr, s'étendant sur 440 hectares de forêt. Un parcours légendaire qui accueille les compétitions internationales avec excursion culturelle à Fès.",
+      EN: "Rabat's masterpiece designed by Robert Trent Jones Sr, set on 440 hectares of forest. A legendary championship course with a cultural day tour to Fez."
     },
-    duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
+    duration: { FR: "8 jours / 7 nuits", EN: "8 days / 7 nights" },
     flight: { FR: "Vol inclus", EN: "Flight included" },
     meals: { FR: "BB ou Demi-pension", EN: "BB or Half Board" },
     oldPrice: "",
     price: { FR: "Sur demande", EN: "On request" },
     tag: "golf",
     iconType: "lighthouse",
-    city: { FR: "Michlifen", EN: "Michlifen" },
+    city: { FR: "Rabat", EN: "Rabat" },
   },
   {
     id: 11,
@@ -222,6 +222,25 @@ export const toursList: TourCard[] = [
     tag: "golf",
     iconType: "water",
     city: { FR: "Tanger", EN: "Tangier" },
+  },
+  {
+    id: 18,
+    image: "/michlifen.jpg",
+    category: { FR: "Golf & Altitude", EN: "Mountain & Golf" },
+    badge: { FR: "Signature", EN: "Signature" },
+    title: { FR: "Michlifen Resort & Golf 5★", EN: "Michlifen Resort & Golf 5★" },
+    description: {
+      FR: "Hébergement d'exception au Michlifen Resort 5★ à Ifrane et rondes de golf sur le prestigieux parcours d'altitude Jack Nicklaus Signature à Michlifen Golf & Country Club.",
+      EN: "Luxury stay at the 5★ Michlifen Resort in Ifrane featuring rounds on the Jack Nicklaus Signature championship golf course at Michlifen Golf & Country Club."
+    },
+    duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
+    flight: { FR: "Vol inclus", EN: "Flight included" },
+    meals: { FR: "BB ou Demi-pension", EN: "BB or Half Board" },
+    oldPrice: "",
+    price: { FR: "Sur demande", EN: "On request" },
+    tag: "golf",
+    iconType: "lighthouse",
+    city: { FR: "Michlifen", EN: "Michlifen" },
   },
   {
     id: 15,
@@ -550,70 +569,72 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
   "10": {
     id: 10,
     planLabel: { FR: "BB / Demi-pension", EN: "BB / HB Plan" },
-    image: "/michlifen.jpg",
-    contentImage: "/michlifen.jpg",
-    title: { FR: "Michlifen Resort & Golf 5★", EN: "Michlifen Resort & Golf 5★" },
+    image: "/images/rgdes_parcours_rouge_18.jpg",
+    contentImage: "/images/rgdes_parcours_rouge_09_17.jpg",
+    title: { FR: "Royal Golf Dar Es Salam", EN: "Royal Golf Dar Es Salam" },
     duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
+    // TODO(JAY): confirm final id 10 price with client (flights + all-inclusive now included)
+    // TODO(JAY): client to confirm if any other package needs flights moved to inclusions
     cost: { FR: "Sur demande", EN: "On request" },
     overview: {
-      FR: "Le Michlifen Golf & Country Club à Ifrane est un parcours d'altitude d'exception dessiné par la légende Jack Nicklaus (18 trous, par 72). Niché à 1 650 mètres d'altitude au cœur des magnifiques forêts de cèdres du Moyen Atlas, ce joyau offre des panoramas alpins spectaculaires, une académie de golf à la pointe de la technologie et un séjour somptueux au Michlifen Resort & Golf 5★.",
-      EN: "Michlifen Golf & Country Club in Ifrane is an exceptional high-altitude championship course designed by golf legend Jack Nicklaus (18 holes, par 72). Perched at 1,650 meters altitude amidst the cedar forests of the Middle Atlas mountains, this jewel offers breathtaking mountain views, a state-of-the-art golf academy, and an ultra-luxury stay at the 5★ Michlifen Resort & Golf."
+      FR: "Né de la vision de Feu SM Le Roi Hassan II et dessiné par Robert Trent Jones Sr, le Royal Golf Dar Es Salam est un écosystème naturel somptueux de 440 hectares à seulement 15 minutes du centre de Rabat. Avec son légendaire Parcours Rouge (18 trous, parcours signature), son Parcours Bleu (18 trous) et son Parcours Vert (9 trous), ce site d'exception accueille chaque année le prestigieux Trophée Hassan II. Un séjour inoubliable alliant passion du golf, biodiversité riche et hébergement de très haut standing au Ritz-Carlton Rabat Dar Es Salam.",
+      EN: "Born under the vision of His Majesty the late King Hassan II and designed by Robert Trent Jones Sr, Royal Golf Dar Es Salam is a majestic natural ecosystem spanning 440 hectares of forest, just 15 minutes from Rabat city center. Featuring the legendary Red Course (18H, signature), the Blue Course (18H), and the Green Course (9H), this exceptional venue hosts the annual Hassan II Golf Trophy. An unforgettable journey blending golf passion, rich biodiversity, and ultra-luxury stay at The Ritz-Carlton Rabat Dar Es Salam."
     },
     timeline: [
       {
         day: 1,
-        title: { FR: "Arrivée & Installation au Michlifen Resort 5★", EN: "Arrival & Check-in at Michlifen Resort 5★" },
-        desc: { FR: "Accueil VIP à l'aéroport de Fès-Saïss, transfert privé vers Ifrane et installation au Michlifen Resort & Golf 5★. Dîner gastronomique de bienvenue.", EN: "VIP welcome at Fez-Saïss airport, private transfer to Ifrane, and check-in at 5★ Michlifen Resort & Golf. Gourmet welcome dinner." }
+        title: { FR: "Arrivée à Rabat & Ritz-Carlton", EN: "Arrival in Rabat & Ritz-Carlton" },
+        desc: { FR: "Accueil VIP à l'aéroport de Casablanca, transfert privé et installation au Ritz-Carlton Rabat Dar Es Salam 5★. Dîner gastronomique de bienvenue.", EN: "VIP welcome at Casablanca airport, private transfer and check-in at The Ritz-Carlton Rabat Dar Es Salam 5★. Gourmet welcome dinner." }
       },
       {
         day: 2,
-        title: { FR: "Michlifen Golf — Jack Nicklaus Signature (18 Trous)", EN: "Michlifen Golf — Jack Nicklaus Signature (18 Holes)" },
-        desc: { FR: "Première ronde sur le tracé spectaculaire d'altitude. Voiturette électrique et buggy de practice inclus.", EN: "First golf round on the spectacular high-altitude course. Electric cart and practice buggy included." }
+        title: { FR: "Parcours Rouge — Le Signature (18 Trous)", EN: "Red Course — The Signature (18 Holes)" },
+        desc: { FR: "Une journée complète sur le parcours signature. Voiturette électrique et caddie inclus pour relever les défis de ce chef-d'œuvre restauré par James Duncan.", EN: "A full day on the signature course. Electric cart and caddie included to challenge this masterpiece restored by James Duncan." }
       },
       {
         day: 3,
-        title: { FR: "Académie de Golf & Session Swing", EN: "Golf Academy & Swing Session" },
-        desc: { FR: "Session personnalisée à l'Académie de Golf Michlifen équipée des dernières technologies d'analyse de swing. Après-midi détente au Spa alpin.", EN: "Personalized coaching session at Michlifen Golf Academy with cutting-edge swing tech. Afternoon relaxation at the Alpine Spa." }
+        title: { FR: "Journée Découverte — Fès", EN: "Discovery Day — Fez" },
+        desc: { FR: "Excursion d'une journée complète dans la légendaire ville de Fès : découverte de son riche patrimoine culturel, promenade dans sa médina historique et visite de sites classés au patrimoine mondial de l'UNESCO. Dîner et nuit à l'hôtel.", EN: "Enjoy a full-day tour of the legendary city of Fez, where you'll discover its rich cultural heritage, wander through its historic medina, and visit remarkable UNESCO World Heritage sites. Dinner and overnight at the hotel." }
       },
       {
         day: 4,
-        title: { FR: "Deuxième Ronde Michlifen & Panoramas du Moyen Atlas", EN: "Second Michlifen Round & Middle Atlas Panoramas" },
-        desc: { FR: "Deuxième ronde de golf pour relever le défi des trous signatures surplombant les falaises de cèdres.", EN: "Second golf round challenging the signature holes overlooking cedar cliffs." }
+        title: { FR: "Parcours Bleu (18 Trous) & Détente", EN: "Blue Course (18 Holes) & Relaxation" },
+        desc: { FR: "Ronde matinale sur le Parcours Bleu. Après-midi détente au Spa et à la piscine du Ritz-Carlton, ou visite guidée de la médina de Rabat.", EN: "Morning round on the Blue Course. Afternoon relaxation at the Ritz-Carlton Spa and pool, or guided visit of Rabat's medina." }
       },
       {
         day: 5,
-        title: { FR: "Journée Découverte — Fès Médina UNESCO", EN: "Discovery Day — Fez UNESCO Medina" },
-        desc: { FR: "Excursion d'une journée complète dans la ville historique de Fès : découverte des souks artisanaux et des palais impériaux avec un guide certifié.", EN: "Full-day excursion to historic Fez: explore artisanal souks and imperial palaces with a certified local guide." }
+        title: { FR: "Parcours Vert (9 Trous) & Session Practice", EN: "Green Course (9 Holes) & Practice Session" },
+        desc: { FR: "Ronde matinale sur le Parcours Vert (9 trous), suivie d'une session d'entraînement au practice du driving range de l'Académie Nationale de Golf. Soirée libre au Ritz-Carlton.", EN: "Morning round on the Green Course (9 holes), followed by a training session at the National Golf Academy driving range. Free evening at the Ritz-Carlton." }
       },
       {
         day: 6,
-        title: { FR: "Troisième Ronde Michlifen & Challenge d'Altitude", EN: "Third Michlifen Round & High Altitude Challenge" },
-        desc: { FR: "Dernière ronde de championnat sur le tracé Jack Nicklaus pour peaufiner votre carte de score.", EN: "Final championship round on the Jack Nicklaus layout to refine your scorecard." }
+        title: { FR: "Parcours Bahia Golf (18 Trous)", EN: "Bahia Golf Course (18 Holes)" },
+        desc: { FR: "Journée complète sur le Parcours Bahia Golf. Voiturette électrique incluse.", EN: "A full day on the Bahia Golf Course. Electric cart included." }
       },
       {
         day: 7,
-        title: { FR: "Détente au Spa Alpin, Gastronomie & Départ", EN: "Alpine Spa Relaxation, Fine Dining & Departure" },
-        desc: { FR: "Matinée libre au spa et déjeuner au restaurant gastronomique. Transfert privé vers l'aéroport pour votre vol de retour.", EN: "Free morning at the spa and lunch at the fine-dining restaurant. Private airport transfer for your return flight." }
+        title: { FR: "Journée Libre, Détente & Départ", EN: "Day Off, Relaxation & Departure" },
+        desc: { FR: "Journée libre pour profiter de Rabat à votre rythme — détente à l'hôtel, exploration de la médina, visite des marchés locaux ou activités optionnelles telles qu'un hammam traditionnel ou une excursion à la Kasbah des Oudayas. Petit-déjeuner le lendemain matin et transfert privé vers l'aéroport pour votre vol de retour.", EN: "Free day to enjoy Rabat at your own pace — relax at the hotel, explore the medina, visit local markets, or enjoy optional activities such as a traditional hammam or an excursion to the Kasbah of the Udayas. Breakfast the following morning and private transfer to the airport for your return flight." }
       }
     ],
     inclusions: {
       FR: [
         "Vols internationaux aller-retour depuis Montréal",
-        "Hébergement 5★ de luxe au Michlifen Resort & Golf à Ifrane",
+        "Hébergement 5★ de luxe au Ritz-Carlton Rabat Dar Es Salam",
         "Formule BB ou HB (Petit-déjeuner ou Demi-pension)",
-        "Rondes de golf sur le parcours Michlifen Jack Nicklaus Signature",
+        "Green fees",
         "Voiturette électrique partagée et buggy de practice inclus",
-        "Accès complet au Driving Range & Académie de Golf",
+        "Accès complet au Driving Range, Chipping & Putting greens",
         "Transferts privés aéroport ↔ hôtel",
         "Assistance conciergerie bilingue 24/7"
       ],
       EN: [
         "Round-trip international flights from Montreal",
-        "Luxury 5★ accommodation at Michlifen Resort & Golf in Ifrane",
+        "Luxury 5★ accommodation at The Ritz-Carlton Rabat Dar Es Salam",
         "BB or HB plan (Bed & Breakfast or Half Board)",
-        "Golf rounds on Michlifen Jack Nicklaus Signature Course",
+        "Green fees",
         "Shared electric golf cart and practice buggy included",
-        "Full access to Driving Range & Golf Academy",
+        "Full access to Driving Range, Chipping & Putting greens",
         "Private airport ↔ hotel transfers",
         "24/7 bilingual concierge assistance"
       ]
@@ -622,50 +643,59 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
       FR: [
         "Assurance voyage",
         "Repas et boissons non spécifiés",
+        "Frais de caddie (env. 30$ CAD par ronde)",
         "Dépenses personnelles et pourboires"
       ],
       EN: [
         "Travel insurance",
         "Meals and beverages not specified",
+        "Caddie fee (approx. $30 CAD per round)",
         "Personal expenses and gratuities"
       ]
     },
     options: {
       FR: [
-        { name: "Upgrade Suite Michlifen Resort", price: "Sur demande" },
-        { name: "Excursion guidée de Fès", price: "Sur demande" },
-        { name: "Leçon privée Académie Golf", price: "Sur demande" }
+        { name: "Upgrade Suite Ritz-Carlton", price: "Sur demande" },
+        { name: "Excursion historique guidée de Rabat", price: "Sur demande" },
+        { name: "Leçon privée avec un pro PGA", price: "Sur demande" }
       ],
       EN: [
-        { name: "Michlifen Resort Suite Upgrade", price: "On request" },
-        { name: "Guided tour of Fez", price: "On request" },
-        { name: "Private Golf Academy lesson", price: "On request" }
+        { name: "Ritz-Carlton Suite Upgrade", price: "On request" },
+        { name: "Guided historical tour of Rabat", price: "On request" },
+        { name: "Private pro PGA lesson", price: "On request" }
       ]
     },
     hotels: [
       {
-        name: "Michlifen Resort & Golf",
+        name: "The Ritz-Carlton Rabat Dar Es Salam",
         stars: 5,
         desc: {
-          FR: "Un chalet alpin d'exception 5★ niché à Ifrane. Spa d'exception de 3 500 m², piscine couverte chauffée et gastronomie raffinée.",
-          EN: "An exceptional 5★ alpine luxury resort in Ifrane. Features a 3,500 sqm spa, heated indoor pool, and fine dining restaurants."
+          FR: "Un havre de paix 5★ niché au cœur d'une forêt de chênes, à côté du prestigieux golf. Spa de classe mondiale, restaurants raffinés et service d'exception.",
+          EN: "A 5★ oasis nestled in an oak forest adjacent to the prestigious golf course. World-class spa, fine dining, and legendary service."
         },
-        link: "https://www.michlifen.com"
+        link: "https://www.ritzcarlton.com/en/hotels/rbarz-the-ritz-carlton-rabat-dar-es-salam/overview/"
       }
     ],
     activities: [
       {
-        title: { FR: "Michlifen Golf (18T Jack Nicklaus)", EN: "Michlifen Golf (18H Jack Nicklaus)" },
+        title: { FR: "Parcours Rouge Signature (18T)", EN: "Red Signature Course (18H)" },
         desc: {
-          FR: "Parcours de championnat d'altitude dessiné par Jack Nicklaus.",
-          EN: "High-altitude championship course designed by Jack Nicklaus."
+          FR: "Dessiné par Robert Trent Jones Sr. Un tracé technique et majestueux bordé d'arbres.",
+          EN: "Designed by Robert Trent Jones Sr. A technical and majestic tree-lined layout."
         }
       },
       {
-        title: { FR: "Académie de Golf Michlifen", EN: "Michlifen Golf Academy" },
+        title: { FR: "Parcours Bleu (18T)", EN: "Blue Course (18H)" },
         desc: {
-          FR: "Centre d'entraînement haute technologie avec analyse de swing.",
-          EN: "High-tech training center with swing analysis."
+          FR: "Parcours de championnat technique, très apprécié pour son tracé varié.",
+          EN: "Technical championship course, highly appreciated for its varied layout."
+        }
+      },
+      {
+        title: { FR: "Practice de l'Académie Nationale", EN: "National Academy Practice" },
+        desc: {
+          FR: "Installations de pratique haut de gamme pour affiner votre swing.",
+          EN: "Premium practice facilities to perfect your swing."
         }
       }
     ]
@@ -1520,6 +1550,129 @@ export const itinerariesData: Record<string, ItineraryDetail> = {
       ]
     }
   },
+  "18": {
+    id: 18,
+    planLabel: { FR: "BB / Demi-pension", EN: "BB / HB Plan" },
+    image: "/michlifen.jpg",
+    contentImage: "/michlifen.jpg",
+    title: { FR: "Michlifen Resort & Golf 5★", EN: "Michlifen Resort & Golf 5★" },
+    duration: { FR: "7 jours / 7 nuits", EN: "7 days / 7 nights" },
+    cost: { FR: "Sur demande", EN: "On request" },
+    overview: {
+      FR: "Le Michlifen Golf & Country Club à Ifrane est un parcours d'altitude d'exception dessiné par la légende Jack Nicklaus (18 trous, par 72). Niché à 1 650 mètres d'altitude au cœur des magnifiques forêts de cèdres du Moyen Atlas, ce joyau offre des panoramas alpins spectaculaires, une académie de golf à la pointe de la technologie et un séjour somptueux au Michlifen Resort & Golf 5★.",
+      EN: "Michlifen Golf & Country Club in Ifrane is an exceptional high-altitude championship course designed by golf legend Jack Nicklaus (18 holes, par 72). Perched at 1,650 meters altitude amidst the cedar forests of the Middle Atlas mountains, this jewel offers breathtaking mountain views, a state-of-the-art golf academy, and an ultra-luxury stay at the 5★ Michlifen Resort & Golf."
+    },
+    timeline: [
+      {
+        day: 1,
+        title: { FR: "Arrivée & Installation au Michlifen Resort 5★", EN: "Arrival & Check-in at Michlifen Resort 5★" },
+        desc: { FR: "Accueil VIP à l'aéroport de Fès-Saïss, transfert privé vers Ifrane et installation au Michlifen Resort & Golf 5★. Dîner gastronomique de bienvenue.", EN: "VIP welcome at Fez-Saïss airport, private transfer to Ifrane, and check-in at 5★ Michlifen Resort & Golf. Gourmet welcome dinner." }
+      },
+      {
+        day: 2,
+        title: { FR: "Michlifen Golf — Jack Nicklaus Signature (18 Trous)", EN: "Michlifen Golf — Jack Nicklaus Signature (18 Holes)" },
+        desc: { FR: "Première ronde sur le tracé spectaculaire d'altitude. Voiturette électrique et buggy de practice inclus.", EN: "First golf round on the spectacular high-altitude course. Electric cart and practice buggy included." }
+      },
+      {
+        day: 3,
+        title: { FR: "Académie de Golf & Session Swing", EN: "Golf Academy & Swing Session" },
+        desc: { FR: "Session personnalisée à l'Académie de Golf Michlifen équipée des dernières technologies d'analyse de swing. Après-midi détente au Spa alpin.", EN: "Personalized coaching session at Michlifen Golf Academy with cutting-edge swing tech. Afternoon relaxation at the Alpine Spa." }
+      },
+      {
+        day: 4,
+        title: { FR: "Deuxième Ronde Michlifen & Panoramas du Moyen Atlas", EN: "Second Michlifen Round & Middle Atlas Panoramas" },
+        desc: { FR: "Deuxième ronde de golf pour relever le défi des trous signatures surplombant les falaises de cèdres.", EN: "Second golf round challenging the signature holes overlooking cedar cliffs." }
+      },
+      {
+        day: 5,
+        title: { FR: "Journée Découverte — Fès Médina UNESCO", EN: "Discovery Day — Fez UNESCO Medina" },
+        desc: { FR: "Excursion d'une journée complète dans la ville historique de Fès : découverte des souks artisanaux et des palais impériaux avec un guide certifié.", EN: "Full-day excursion to historic Fez: explore artisanal souks and imperial palaces with a certified local guide." }
+      },
+      {
+        day: 6,
+        title: { FR: "Troisième Ronde Michlifen & Challenge d'Altitude", EN: "Third Michlifen Round & High Altitude Challenge" },
+        desc: { FR: "Dernière ronde de championnat sur le tracé Jack Nicklaus pour peaufiner votre carte de score.", EN: "Final championship round on the Jack Nicklaus layout to refine your scorecard." }
+      },
+      {
+        day: 7,
+        title: { FR: "Détente au Spa Alpin, Gastronomie & Départ", EN: "Alpine Spa Relaxation, Fine Dining & Departure" },
+        desc: { FR: "Matinée libre au spa et déjeuner au restaurant gastronomique. Transfert privé vers l'aéroport pour votre vol de retour.", EN: "Free morning at the spa and lunch at the fine-dining restaurant. Private airport transfer for your return flight." }
+      }
+    ],
+    inclusions: {
+      FR: [
+        "Vols internationaux aller-retour depuis Montréal",
+        "Hébergement 5★ de luxe au Michlifen Resort & Golf à Ifrane",
+        "Formule BB ou HB (Petit-déjeuner ou Demi-pension)",
+        "Rondes de golf sur le parcours Michlifen Jack Nicklaus Signature",
+        "Voiturette électrique partagée et buggy de practice inclus",
+        "Accès complet au Driving Range & Académie de Golf",
+        "Transferts privés aéroport ↔ hôtel",
+        "Assistance conciergerie bilingue 24/7"
+      ],
+      EN: [
+        "Round-trip international flights from Montreal",
+        "Luxury 5★ accommodation at Michlifen Resort & Golf in Ifrane",
+        "BB or HB plan (Bed & Breakfast or Half Board)",
+        "Golf rounds on Michlifen Jack Nicklaus Signature Course",
+        "Shared electric golf cart and practice buggy included",
+        "Full access to Driving Range & Golf Academy",
+        "Private airport ↔ hotel transfers",
+        "24/7 bilingual concierge assistance"
+      ]
+    },
+    exclusions: {
+      FR: [
+        "Assurance voyage",
+        "Repas et boissons non spécifiés",
+        "Dépenses personnelles et pourboires"
+      ],
+      EN: [
+        "Travel insurance",
+        "Meals and beverages not specified",
+        "Personal expenses and gratuities"
+      ]
+    },
+    options: {
+      FR: [
+        { name: "Upgrade Suite Michlifen Resort", price: "Sur demande" },
+        { name: "Excursion guidée de Fès", price: "Sur demande" },
+        { name: "Leçon privée Académie Golf", price: "Sur demande" }
+      ],
+      EN: [
+        { name: "Michlifen Resort Suite Upgrade", price: "On request" },
+        { name: "Guided tour of Fez", price: "On request" },
+        { name: "Private Golf Academy lesson", price: "On request" }
+      ]
+    },
+    hotels: [
+      {
+        name: "Michlifen Resort & Golf",
+        stars: 5,
+        desc: {
+          FR: "Un chalet alpin d'exception 5★ niché à Ifrane. Spa d'exception de 3 500 m², piscine couverte chauffée et gastronomie raffinée.",
+          EN: "An exceptional 5★ alpine luxury resort in Ifrane. Features a 3,500 sqm spa, heated indoor pool, and fine dining restaurants."
+        },
+        link: "https://www.michlifen.com"
+      }
+    ],
+    activities: [
+      {
+        title: { FR: "Michlifen Golf (18T Jack Nicklaus)", EN: "Michlifen Golf (18H Jack Nicklaus)" },
+        desc: {
+          FR: "Parcours de championnat d'altitude dessiné par Jack Nicklaus.",
+          EN: "High-altitude championship course designed by Jack Nicklaus."
+        }
+      },
+      {
+        title: { FR: "Académie de Golf Michlifen", EN: "Michlifen Golf Academy" },
+        desc: {
+          FR: "Centre d'entraînement haute technologie avec analyse de swing.",
+          EN: "High-tech training center with swing analysis."
+        }
+      }
+    ]
+  },
   "6": {
     id: 6,
     image: "/images/imperial_cities_fes.jpg",
@@ -1978,77 +2131,79 @@ export const itineraryThemes: Record<string, ItineraryTheme> = {
     ]
   },
   "4": {
-    country: "UAE",
-    heroTitle: { FR: "Dubaï & Abou Dabi", EN: "Dubai & Abu Dhabi" },
+    country: "Morocco",
+    heroTitle: { FR: "Golf à Taghazout", EN: "Golf in Taghazout" },
     heroSub: {
-      FR: "Splendeurs du Golfe : Dubaï & Abou Dabi. Un voyage ultra-luxe entre modernité et traditions.",
-      EN: "Gulf Splendors: Dubai & Abu Dhabi. An ultra-luxury escape balancing futuristic wonder and desert heritage."
+      FR: "Forfait Golf de Prestige à Taghazout Bay. Séjournez 7 nuits au Hilton Taghazout 5★ et jouez 4 parties de golf sur les parcours de Tazegzout, du Soleil et des Dunes.",
+      EN: "Bespoke Golf Escape in Taghazout Bay. Stay 7 nights at the 5★ Hilton Taghazout and play 4 rounds of golf at Tazegzout, du Soleil, and Les Dunes courses."
     },
-    heroBtn: { FR: "Découvrir le Golfe", EN: "Explore the Gulf" },
-    heroBg: "/images/gulf-city-skyline.png",
-    themeColor: "#C5A880",
-    themeColorHover: "#A3835B",
-    watercolorColor: "#C5A880",
-    mapImage: "/images/gulf-city-skyline.png",
-    discoverTitle: { FR: "Découvrir les Émirats", EN: "Discover UAE" },
+    heroBtn: { FR: "Découvrir le Forfait", EN: "Explore Golf Escape" },
+    heroBg: "/images/tgz_course_ocean.jpg",
+    themeColor: "#00A3C4",
+    themeColorHover: "#00839C",
+    watercolorColor: "#00A3C4",
+    mapImage: "/images/moroco.webp",
+    discoverTitle: { FR: "Découvrir Taghazout", EN: "Discover Taghazout" },
     discoverDesc: {
-      FR: "Découvrez le luxe contemporain, l'architecture futuriste et les déserts intemporels.",
-      EN: "Experience the contemporary luxury, futuristic architecture, and timeless deserts."
+      FR: "Vivez le golf de premier choix face à l'océan Atlantique, avec des plages de sable fin, la découverte de l'argan et le bien-être.",
+      EN: "Experience first-class golf facing the Atlantic ocean, with pristine sandy beaches, argan oil discovery, and premium wellness."
     },
-    experienceTitle: { FR: "Vivre le Golfe", EN: "Experience the Gulf" },
+    experienceTitle: { FR: "Vivre le Golf Côtier", EN: "Experience Atlantic Golf" },
     experienceDesc: {
-      FR: "Vivez des moments inoubliables : croisière sur yacht privé, survol en hélicoptère et dîners d'exception dans le désert.",
-      EN: "Create unforgettable memories: private yacht cruises, helicopter flights, and gourmet desert safaris."
+      FR: "Jouez sur fairways dessinés par Kyle Phillips au sommet des falaises côtières, savourez des dîners gastronomiques et détendez-vous à Taghazout.",
+      EN: "Play on Kyle Phillips-designed fairways carved into seaside cliffs, enjoy gourmet dining with wine, and relax at Taghazout Bay."
     },
     mapPins: [
-      { name: { FR: "Dubaï", EN: "Dubai" }, top: "32.2%", left: "66.6%" },
-      { name: { FR: "Abou Dabi", EN: "Abu Dhabi" }, top: "48.9%", left: "51.6%" },
-      { name: { FR: "Désert de Liwa", EN: "Liwa Desert" }, top: "72.9%", left: "40%" },
-      { name: { FR: "Yas Island", EN: "Yas Island" }, top: "41.6%", left: "58.3%" }
+      { name: { FR: "Agadir", EN: "Agadir" }, top: "66%", left: "46%" },
+      { name: { FR: "Taghazout Bay", EN: "Taghazout Bay" }, top: "65%", left: "45%" },
+      { name: { FR: "Golf Tazegzout", EN: "Tazegzout Golf" }, top: "64%", left: "44%" },
+      { name: { FR: "Golf du Soleil", EN: "Golf du Soleil" }, top: "67%", left: "46%" },
+      { name: { FR: "Golf Les Dunes", EN: "Golf Les Dunes" }, top: "68%", left: "47%" }
     ],
     experienceGrid: [
-      { label: { FR: "Dubaï Marina", EN: "Dubai Marina" }, img: "/images/gulf-city-skyline.png" },
-      { label: { FR: "Yacht Privé", EN: "Private Yacht" }, img: "/images/gulf-city-skyline.png" },
-      { label: { FR: "Safari Désert", EN: "Desert Safari" }, img: "/images/gulf-desert-sunset.png" },
-      { label: { FR: "Vol Hélicoptère", EN: "Helicopter Charter" }, img: "/images/gulf-city-skyline.png" },
-      { label: { FR: "Musée du Louvre", EN: "Louvre Abu Dhabi" }, img: "/images/gulf-city-skyline.png" }
+      { label: { FR: "Fairways Côtiers", EN: "Clifftop Fairways" }, img: "/images/tgz_course_1.jpg" },
+      { label: { FR: "Vue Océan", EN: "Ocean Views" }, img: "/images/tgz_course_ocean.jpg" },
+      { label: { FR: "Trou 18", EN: "Hole 18" }, img: "/images/tgz_course_hotel.jpg" },
+      { label: { FR: "Parcours Aérien", EN: "Aerial Course" }, img: "/images/tgz_course_aerial.jpg" },
+      { label: { FR: "Face à la Mer", EN: "Beachfront" }, img: "/images/hilton_taghazout_5.avif" }
     ]
   },
   "5": {
-    country: "Oman",
-    heroTitle: { FR: "Oman Souverain", EN: "Sovereign Oman" },
+    country: "Morocco",
+    heroTitle: { FR: "Golf à Marrakech", EN: "Golf in Marrakech" },
     heroSub: {
-      FR: "Oman Souverain : Désert & Canyons. Une immersion royale dans le Sultanat d'Oman, entre wadis sauvages et glamping étoilé.",
-      EN: "Sovereign Oman: Desert & Canyons. A royal immersion in the Sultanate of Oman, across wild wadis and stargazing glamping."
+      FR: "Séjour Golf Royal & Bien-être Tout-Inclus à Marrakech. Séjournez 11 nuits à l'Hôtel du Golf 5★ et jouez 6 parties sur les plus prestigieux parcours de Marrakech.",
+      EN: "Royal Golf & All-Inclusive Wellness in Marrakech. Stay 11 nights at 5★ Hôtel du Golf and play 6 rounds at Royal Golf, Assoufid, Amelkis, Samanah, Ourika, and Noria."
     },
-    heroBtn: { FR: "Découvrir l'Oman", EN: "Explore Oman" },
-    heroBg: "/images/gulf-desert-sunset.png",
-    themeColor: "#C5A880",
-    themeColorHover: "#A3835B",
-    watercolorColor: "#C5A880",
-    mapImage: "/images/gulf-desert-sunset.png",
-    discoverTitle: { FR: "Découvrir l'Oman", EN: "Discover Oman" },
+    heroBtn: { FR: "Découvrir le Golf Royal", EN: "Explore Royal Golf" },
+    heroBg: "/images/almaaden_golf_2.jpg",
+    themeColor: "#8B2635",
+    themeColorHover: "#72202b",
+    watercolorColor: "#8B2635",
+    mapImage: "/images/moroco.webp",
+    discoverTitle: { FR: "Découvrir les Parcours", EN: "Discover Marrakech Golf" },
     discoverDesc: {
-      FR: "Explorez les wadis de montagne, les forts médiévaux et naviguez dans les fjords du Musandam.",
-      EN: "Explore mountain wadis, ancient converted forts, and cruise Musandam fjords."
+      FR: "Jouez sur des parcours de légende aux portes du désert et face aux sommets enneigés de l'Atlas.",
+      EN: "Play on some of the world's most historic and design-signature courses located at the gates of the Sahara and facing the Atlas mountains."
     },
-    experienceTitle: { FR: "Vivre l'Oman", EN: "Experience Oman" },
+    experienceTitle: { FR: "Vivre le Golf de Légende", EN: "Experience Royal Courses" },
     experienceDesc: {
-      FR: "Une immersion profonde dans le désert pour observer les étoiles sous le ciel le plus pur au monde, dormir sous tente et explorer les wadis.",
-      EN: "Deep desert immersion allows you to stargaze under the cleanest skies, sleep in luxury camps, and swim in turquoise wadis."
+      FR: "Bénéficiez d'un vol direct Transat, d'une formule tout-inclus gourmet, de visites privées de la médina et d'un rituel bien-être hammam privé.",
+      EN: "Experience direct flight Transat access, all-inclusive gourmet dining, historic clay medina tours, and wellness spa hammam buyouts."
     },
     mapPins: [
-      { name: { FR: "Mascate", EN: "Muscat" }, top: "31%", left: "71%" },
-      { name: { FR: "Djebel Akhdar", EN: "Jebel Akhdar" }, top: "33%", left: "53%" },
-      { name: { FR: "Désert de Wahiba", EN: "Wahiba Desert" }, top: "47%", left: "71%" },
-      { name: { FR: "Fjords de Musandam", EN: "Musandam Fjords" }, top: "4%", left: "50%" }
+      { name: { FR: "Marrakech — Hôtel du Golf", EN: "Marrakech — Hotel du Golf" }, top: "55%", left: "53%" },
+      { name: { FR: "Royal Golf de Marrakech", EN: "Royal Golf" }, top: "56%", left: "52%" },
+      { name: { FR: "Golf Amelkis", EN: "Golf Amelkis" }, top: "54%", left: "54%" },
+      { name: { FR: "Golf Assoufid", EN: "Golf Assoufid" }, top: "57%", left: "53%" },
+      { name: { FR: "Vallée de l'Ourika", EN: "Ourika Valley" }, top: "59%", left: "55%" }
     ],
     experienceGrid: [
-      { label: { FR: "Wahiba Sands", EN: "Wahiba Sands" }, img: "/images/gulf-desert-sunset.png" },
-      { label: { FR: "Mascate", EN: "Muscat Coast" }, img: "/images/gulf-city-skyline.png" },
-      { label: { FR: "Djebel Akhdar", EN: "Jebel Akhdar" }, img: "/images/gulf-desert-sunset.png" },
-      { label: { FR: "Fjords Musandam", EN: "Musandam Fjords" }, img: "/images/gulf-city-skyline.png" },
-      { label: { FR: "Wadi Bani Khalid", EN: "Wadi Bani Khalid" }, img: "/images/gulf-desert-sunset.png" }
+      { label: { FR: "Al Maaden — Vue Atlas", EN: "Al Maaden — Atlas Views" }, img: "/images/almaaden_golf_2.jpg" },
+      { label: { FR: "Royal Golf de Marrakech", EN: "Royal Golf Club" }, img: "/images/royal_golf_marrakech_1.jpg" },
+      { label: { FR: "Akenza Golf", EN: "Akenza Golf" }, img: "/images/akenza_golf_1.jpg" },
+      { label: { FR: "Coucher de Soleil", EN: "Sunset Round" }, img: "/images/royal_golf_sunset.jpg" },
+      { label: { FR: "Restaurant Gourmet", EN: "Gourmet Dining" }, img: "/images/almaaden_restaurant1.jpg" }
     ]
   },
   "6": {

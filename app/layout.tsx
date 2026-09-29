@@ -89,7 +89,7 @@ export default function RootLayout({
                   "areaServed": ["Montréal", "Laval", "Mirabel", "Grand Montréal", "QC", "MA"],
                   "priceRange": "$$$",
                   "sameAs": ["GBP_MAPS_URL_PLACEHOLDER", "https://www.instagram.com/m.e.voyages?utm_source=qr"],
-                  "knowsAbout": ["Forfaits golf Maroc", "Voyages de luxe", "MICE", "Voyages sur mesure Dubaï Oman Arabie Saoudite"]
+                  "knowsAbout": ["Forfaits golf Maroc", "Voyages de luxe", "MICE", "Voyages sur mesure Maroc", "Circuits Villes Impériales"]
                 },
               ],
             }),

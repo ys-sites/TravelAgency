@@ -29,6 +29,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       case "14": return itinerariesData["14"];
       case "15": return itinerariesData["15"];
       case "16": return itinerariesData["16"];
+      case "17": return itinerariesData["17"];
+      case "18": return itinerariesData["18"];
       default: return null;
     }
   })();

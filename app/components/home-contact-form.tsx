@@ -49,7 +49,7 @@ const subjectOptions = {
     "Voyage de Luxe Sur Mesure",
     "Voyage Corporatif / MICE",
     "Voyage Scolaire ou Groupe",
-    "Dubaï / Oman / Arabie Saoudite",
+    "Circuits Villes Impériales & Désert",
     "Autre Demande",
   ],
   EN: [
@@ -57,7 +57,7 @@ const subjectOptions = {
     "Bespoke Luxury Journey",
     "Corporate / MICE Travel",
     "School or Group Trip",
-    "Dubai / Oman / Saudi Arabia",
+    "Imperial Cities & Desert Tour",
     "Other Inquiry",
   ],
 };

@@ -39,8 +39,8 @@ export default function AgenceDeVoyageMontrealClient() {
 
     serviceLuxeTitle: { FR: "Voyages de Luxe Sur Mesure", EN: "Bespoke Luxury Journeys" },
     serviceLuxeDesc: { 
-      FR: "Création d'itinéraires uniques de l'Afrique du Nord au Moyen-Orient (Dubaï, Oman, AlUla) incluant des hébergements de luxe et un service VIP.", 
-      EN: "Creation of unique itineraries from North Africa to the Middle East (Dubai, Oman, AlUla) including luxury lodging and VIP services." 
+      FR: "Création d'itinéraires uniques à travers le Royaume du Maroc (Marrakech, Fès, Rabat, Sahara, Chefchaouen) incluant des hébergements de luxe et un service VIP.", 
+      EN: "Creation of unique bespoke itineraries across Morocco (Marrakech, Fez, Rabat, Sahara, Chefchaouen) including luxury lodging and VIP services." 
     },
     serviceLuxeLink: { FR: "Créer un Voyage", EN: "Build Custom Trip" },
 
@@ -62,8 +62,8 @@ export default function AgenceDeVoyageMontrealClient() {
     whyPrivateTitle: { FR: "Circuits Privés Exclusifs", EN: "Exclusive Private Tours" },
     whyPrivateDesc: { FR: "Des itinéraires personnalisés hors des sentiers battus avec guides locaux certifiés.", EN: "Bespoke itineraries off the beaten path with certified local guides." },
     
-    whyExpertiseTitle: { FR: "Expertise Maroc & Golfe", EN: "Morocco & Gulf Expertise" },
-    whyExpertiseDesc: { FR: "Une parfaite connaissance du terrain au Maroc, à Dubaï, Oman et en Arabie Saoudite.", EN: "Flawless local knowledge of Morocco, Dubai, Oman, and Saudi Arabia." },
+    whyExpertiseTitle: { FR: "Expertise Royaume du Maroc", EN: "Morocco Destination Expertise" },
+    whyExpertiseDesc: { FR: "Une parfaite connaissance du terrain à travers toutes les régions et cités impériales du Maroc.", EN: "Flawless local knowledge across all regions, golf courses, and imperial cities of Morocco." },
 
     napTitle: { FR: "Coordonnées de l'Agence", EN: "Agency Contact Info" },
     napOffice: { FR: "Bureau Principal", EN: "Main Office" },
