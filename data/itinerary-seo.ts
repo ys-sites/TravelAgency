@@ -8,14 +8,14 @@ export interface ItinerarySeo {
   // Main destination(s), used in TouristTrip schema
   destinations: string[];
   // Breadcrumb parent (category page) for this tour
-  parent: { name: string; path: string };
+  parent: { name: { FR: string; EN: string }; path: string };
   // og:image rendered at 1200×630 by scripts/generate-og-images.mjs
   ogImage: string;
 }
 
-const GOLF_AGADIR = { name: "Agadir Golf", path: "/golf-itineraries/agadir" };
-const GOLF_MARRAKECH = { name: "Marrakech Golf", path: "/golf-itineraries/marrakech" };
-const ITINERARIES = { name: "Itineraries", path: "/itineraries" };
+const GOLF_AGADIR = { name: { FR: "Golf Agadir", EN: "Agadir Golf" }, path: "/golf-itineraries/agadir" };
+const GOLF_MARRAKECH = { name: { FR: "Golf Marrakech", EN: "Marrakech Golf" }, path: "/golf-itineraries/marrakech" };
+const ITINERARIES = { name: { FR: "Itinéraires", EN: "Itineraries" }, path: "/itineraries" };
 
 export const itinerarySeo: Record<string, ItinerarySeo> = {
   "10": {

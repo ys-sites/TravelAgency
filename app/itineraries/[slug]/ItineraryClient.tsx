@@ -2,11 +2,12 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Shield, CheckCircle, Hotel } from "lucide-react";
+import { Shield, CheckCircle, Hotel } from "lucide-react";
 import { motion } from "motion/react";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import MapSection from "../../components/map-section";
+import Breadcrumbs, { type BreadcrumbItem } from "../../components/breadcrumbs";
 import { useLang, translate } from "../../context/lang-context";
 import { itinerariesData, itineraryThemes, ItineraryTheme } from "@/data/itineraries";
 import SmartVideo from "../../components/smart-video";
@@ -205,7 +206,7 @@ const getGalleryImages = (itineraryId: number) => {
   }
 };
 
-export default function ItineraryClient({ id }: { id: string }) {
+export default function ItineraryClient({ id, crumbs }: { id: string; crumbs: BreadcrumbItem[] }) {
   const { lang } = useLang();
 
   // Safe lookup to prevent securecoder CWE-94 dynamic bracket notation warning
@@ -392,13 +393,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
 
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-24 max-w-7xl mx-auto z-10">
-            <Link
-              href="/"
-              className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>{lang === "FR" ? "Retour à l'accueil" : "Back to Home"}</span>
-            </Link>
+            <Breadcrumbs items={crumbs} className="mb-6" />
             <div className="max-w-2xl space-y-6">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
@@ -479,29 +474,7 @@ const INSURANCE_LINK_URL = process.env.NEXT_PUBLIC_INSURANCE_URL ?? "";
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-white" />
 
           <div className="absolute inset-0 flex flex-col justify-end px-6 md:px-12 pb-12 max-w-7xl mx-auto z-10">
-            <Link
-              href={
-                itinerary.id === 11 || itinerary.id === 12 || itinerary.id === 13
-                  ? "/golf-itineraries/agadir"
-                  : itinerary.id === 14 || itinerary.id === 15 || itinerary.id === 16
-                  ? "/golf-itineraries/marrakech"
-                  : itinerary.id === 10 || itinerary.id === 17 || itinerary.id === 18
-                  ? "/itineraries?type=Golf"
-                  : "/"
-              }
-              className="inline-flex items-center space-x-2 text-brand-gold hover:text-white font-mono text-[10px] tracking-widest uppercase mb-6 transition-colors font-semibold"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>
-                {itinerary.id === 11 || itinerary.id === 12 || itinerary.id === 13
-                  ? (lang === "FR" ? "Retour au Golf Agadir" : "Back to Agadir Golf")
-                  : itinerary.id === 14 || itinerary.id === 15 || itinerary.id === 16
-                  ? (lang === "FR" ? "Retour au Golf Marrakech" : "Back to Marrakech Golf")
-                  : itinerary.id === 10 || itinerary.id === 17 || itinerary.id === 18
-                  ? (lang === "FR" ? "Retour aux Forfaits Golf" : "Back to Golf Packages")
-                  : (lang === "FR" ? "Retour à l'accueil" : "Back to Home")}
-              </span>
-            </Link>
+            <Breadcrumbs items={crumbs} className="mb-6" />
             <div className="space-y-4">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="bg-brand-gold/15 text-brand-gold border border-brand-gold/30 px-4 py-1.5 font-mono text-[10px] tracking-[0.25em] uppercase rounded-full inline-block">
