@@ -6,6 +6,7 @@ import { itinerariesData } from "@/data/itineraries";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Download, ChevronRight, Phone } from "lucide-react";
+import { getItineraryPath } from "@/data/itinerary-seo";
 
 const SOCIALS = {
   instagram: "https://www.instagram.com/m.e.voyages?utm_source=qr",
@@ -241,7 +242,7 @@ export default function PortfolioClient() {
 
                       {/* Package Card Bottom Full Width Button (beige theme) */}
                       <Link
-                        href={`/itineraries/${id}`}
+                        href={getItineraryPath(id)}
                         prefetch={true}
                         className="w-full bg-[#C5A880] hover:bg-[#b5966c] active:scale-95 text-zinc-950 font-sans font-bold text-[10px] tracking-[0.2em] uppercase py-3.5 rounded-full transition-all duration-150 shadow-[0_4px_12px_rgba(197,168,128,0.25)] text-center cursor-pointer block hover:scale-[1.01]"
                       >

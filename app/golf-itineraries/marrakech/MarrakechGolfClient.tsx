@@ -9,6 +9,7 @@ import ItineraryPackageCard from "../../components/ItineraryPackageCard";
 import { useLang, translate } from "../../context/lang-context";
 import SmartVideo from "../../components/smart-video";
 import { videoSources, videoAsset } from "../../../data/videoSources";
+import { getItineraryPath } from "@/data/itinerary-seo";
 
 export default function MarrakechGolfClient() {
   const { lang } = useLang();
@@ -67,7 +68,7 @@ export default function MarrakechGolfClient() {
     originalPrice: { FR: "6 099 $", EN: "C$ 6,099" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/14",
+    ctaHref: getItineraryPath(14),
     city: { FR: "Marrakech", EN: "Marrakech" }
   };
 
@@ -95,7 +96,7 @@ export default function MarrakechGolfClient() {
     pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/15",
+    ctaHref: getItineraryPath(15),
     city: { FR: "Marrakech", EN: "Marrakech" }
   };
 
@@ -123,7 +124,7 @@ export default function MarrakechGolfClient() {
     pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/16",
+    ctaHref: getItineraryPath(16),
     city: { FR: "Marrakech", EN: "Marrakech" }
   };
 

@@ -7,6 +7,7 @@ import { useLang, translate } from "../context/lang-context";
 import { toursList } from "@/data/itineraries";
 import { getTierStyle } from "../utils/tier-styles";
 import { useSearchParams } from "next/navigation";
+import { getItineraryPath } from "@/data/itinerary-seo";
 
 const t = {
   book: {
@@ -260,7 +261,7 @@ function ToursContent() {
                     href={
                       tour.id === 99
                         ? "/mice"
-                        : `/itineraries/${tour.id}`
+                        : getItineraryPath(tour.id)
                     }
                     className="block h-full"
                   >

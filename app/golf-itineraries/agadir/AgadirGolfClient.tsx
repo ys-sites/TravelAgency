@@ -9,6 +9,7 @@ import ItineraryPackageCard from "../../components/ItineraryPackageCard";
 import { useLang, translate } from "../../context/lang-context";
 import SmartVideo from "../../components/smart-video";
 import { videoSources, videoAsset } from "../../../data/videoSources";
+import { getItineraryPath } from "@/data/itinerary-seo";
 
 export default function AgadirGolfClient() {
   const { lang } = useLang();
@@ -68,7 +69,7 @@ export default function AgadirGolfClient() {
     pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/11",
+    ctaHref: getItineraryPath(11),
     city: { FR: "Agadir", EN: "Agadir" }
   };
 
@@ -95,7 +96,7 @@ export default function AgadirGolfClient() {
     originalPrice: { FR: "4 455 $", EN: "C$ 4,455" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/12",
+    ctaHref: getItineraryPath(12),
     city: { FR: "Agadir", EN: "Agadir" }
   };
 
@@ -123,7 +124,7 @@ export default function AgadirGolfClient() {
     pricePrefix: { FR: "À partir de", EN: "Starting from" },
     currency: "C$",
     ctaLabel: { FR: "DÉCOUVRIR L'OFFRE", EN: "BOOK OFFER" },
-    ctaHref: "/itineraries/13",
+    ctaHref: getItineraryPath(13),
     city: { FR: "Agadir", EN: "Agadir" }
   };
 
