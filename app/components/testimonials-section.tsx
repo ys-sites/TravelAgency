@@ -137,8 +137,8 @@ export default function TestimonialsSection() {
           </h2>
           <p className="text-zinc-500 text-sm font-light max-w-xl mx-auto">
             {lang === "EN"
-              ? "What our guests say about their curated Moroccan & Gulf experience."
-              : "Ce que nos voyageurs disent de leur expérience sur mesure au Maroc et dans le Golfe."
+              ? "What our guests say about their curated Moroccan experience."
+              : "Ce que nos voyageurs disent de leur expérience sur mesure au Maroc."
             }
           </p>
         </motion.div>

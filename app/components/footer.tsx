@@ -29,10 +29,7 @@ const t = {
     FR: "MICE & Corporatif",
     EN: "MICE & Corporate"
   },
-  saudi: {
-    FR: "Forfaits Personnalisés",
-    EN: "Exclusive Packages"
-  },
+
   company: {
     FR: "Expériences",
     EN: "Experiences"
